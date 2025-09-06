@@ -7,8 +7,8 @@
 # ` INDEX `
 
 
-<kbd> <br> [**justkaarlo.github.io**](https://justkaarlo.github.io) <br> </kbd> <br>
-[<kbd> <br> /README.md <br> </kbd>](https://justkaarlo.github.io/README.md)<br>
+<kbd> <br> [**www.justkaarlo.com**](www.justkaarlo.com) <br> </kbd> <br>
+[<kbd> <br> /README.md <br> </kbd>](www.justkaarlo.com/README.md)<br>
 
 
 
