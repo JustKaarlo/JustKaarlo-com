@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Repository Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --fg: #111;
+      --muted: #666;
+      --border: #e5e7eb;
+      --link: #2563eb;
+      --card: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827;
+        --fg: #f3f4f6;
+        --muted: #9ca3af;
+        --border: #374151;
+        --link: #60a5fa;
+        --card: #1f2937;
+      }
+    }
+    body {
+      font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      margin: 0;
+    }
+    header, footer {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 16px;
+      margin: 0;
+    }
+    #controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    input, button {
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    button {
+      cursor: pointer;
+      background: var(--link);
+      color: #fff;
+      border: none;
+      transition: background 0.2s;
+    }
+    button:hover { background: #1d4ed8; }
+    main { padding: 16px 20px; }
+    ul.tree { list-style: none; padding-left: 18px; }
+    .folder > summary {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .folder > summary:hover { background: rgba(0,0,0,0.05); }
+    @media (prefers-color-scheme: dark) {
+      .folder > summary:hover { background: rgba(255,255,255,0.05); }
+    }
+    .caret::before { content: "▶"; display: inline-block; width: 1em; transition: transform 0.2s; }
+    details[open] > summary .caret::before { transform: rotate(90deg); }
+    .file .caret::before { content: "•"; color: var(--muted); }
+    .name { margin-left: 4px; }
+    .links a {
+      margin-left: 8px;
+      text-decoration: none;
+      color: var(--link);
+      font-size: 12px;
+    }
+    .links a:hover { text-decoration: underline; }
+    #status { margin-bottom: 10px; color: var(--muted); }
+    .spinner {
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid var(--border);
+      border-top-color: var(--fg);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    footer {
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Repository Index</h1>
+    <div id="controls">
+      <input id="owner" placeholder="owner" />
+      <input id="repo" placeholder="repo" />
+      <input id="branch" placeholder="branch" />
+      <button id="loadBtn">Load</button>
+    </div>
+  </header>
+  <main>
+    <div id="status">Idle</div>
+    <div id="treeContainer"></div>
+  </main>
+  <footer>
+    Public repos only without a token. Rate limit applies. Private repos need a token.
+  </footer>
+
+<script>
+  const OWNER="owner-name",REPO="repo-name",BRANCH="main",AUTH_TOKEN="";
+  const ownerEl=document.getElementById("owner"),repoEl=document.getElementById("repo"),branchEl=document.getElementById("branch");
+  const loadBtn=document.getElementById("loadBtn"),statusEl=document.getElementById("status"),treeEl=document.getElementById("treeContainer");
+  ownerEl.value=OWNER; repoEl.value=REPO; branchEl.value=BRANCH;
+  loadBtn.addEventListener("click",()=>loadIndex(ownerEl.value.trim(),repoEl.value.trim(),branchEl.value.trim()));
+  window.addEventListener("DOMContentLoaded",()=>{if(OWNER&&REPO&&BRANCH)loadIndex(OWNER,REPO,BRANCH)});
+  async function loadIndex(owner,repo,branch){
+    if(!owner||!repo||!branch){setStatus("Set owner, repo, and branch.");return;}
+    setStatus(`Fetching tree <span class="spinner"></span>`); treeEl.innerHTML="";
+    try{
+      const headers={"Accept":"application/vnd.github+json"}; if(AUTH_TOKEN)headers.Authorization=`Bearer ${AUTH_TOKEN}`;
+      const refRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`,{headers});
+      if(!refRes.ok)throw await apiError(refRes,"Failed to resolve branch"); const refData=await refRes.json();
+      const commitSha=refData.object?.sha||refData.sha||null; if(!commitSha)throw new Error("Could not resolve branch.");
+      const treeRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/${commitSha}?recursive=1`,{headers});
+      if(!treeRes.ok)throw await apiError(treeRes,"Failed to fetch tree"); const treeData=await treeRes.json();
+      const nodes=treeData.tree||[]; const root={children:new Map()}; for(const item of nodes){const parts=item.path.split("/");insertNode(root,parts,item.type);}
+      const ul=document.createElement("ul"); ul.className="tree"; renderNode(root,ul,{owner,repo,branch}); treeEl.appendChild(ul);
+      setStatus(`Indexed ${nodes.length} items.`);
+    }catch(err){setStatus("Error: "+err.message);}
+  }
+  function insertNode(node,parts,type){if(parts.length===0)return; const [head,...rest]=parts;
+    if(!node.children.has(head)){node.children.set(head,{name:head,type:rest.length?"tree":type,children:new Map()});}
+    if(rest.length)insertNode(node.children.get(head),rest,type);}
+  function renderNode(node,parent,ctx,base=""){for(const [name,child] of [...node.children].sort(sortEntries)){const path=base?`${base}/${name}`:name;
+      if(child.type==="tree"){const details=document.createElement("details"); details.className="folder";
+        const summary=document.createElement("summary"); const caret=document.createElement("span"); caret.className="caret";
+        const label=document.createElement("span"); label.className="name"; label.textContent=name; summary.append(caret,label); details.appendChild(summary);
+        const ul=document.createElement("ul"); ul.className="tree"; renderNode(child,ul,ctx,path); details.appendChild(ul);
+        const li=document.createElement("li"); li.appendChild(details); parent.appendChild(li);}
+      else{const li=document.createElement("li"); li.className="file";
+        const caret=document.createElement("span"); caret.className="caret"; const nm=document.createElement("span"); nm.className="name"; nm.textContent=name;
+        const links=document.createElement("span"); links.className="links";
+        const gh=document.createElement("a"); gh.href=`https://github.com/${ctx.owner}/${ctx.repo}/blob/${encodeURIComponent(ctx.branch)}/${encodeURIComponent(path)}`; gh.textContent="view"; gh.target="_blank"; gh.rel="noopener";
+        const raw=document.createElement("a"); raw.href=`https://raw.githubusercontent.com/${ctx.owner}/${ctx.repo}/${encodeURIComponent(ctx.branch)}/${encodeURIComponent(path)}`; raw.textContent="raw"; raw.target="_blank"; raw.rel="noopener";
+        links.append(gh,raw); li.append(caret,nm,links); parent.appendChild(li);}}}
+  function sortEntries([aName,a],[bName,b]){if(a.type!==b.type)return a.type==="tree"?-1:1; return aName.localeCompare(bName);}
+  async function apiError(res,prefix){let msg=`${prefix}. HTTP ${res.status}`; try{const j=await res.json(); if(j.message)msg+=" · "+j.message;}catch{} return new Error(msg);}
+  function setStatus(html){statusEl.innerHTML=html;}
+</script>
+</body>
+</html>
