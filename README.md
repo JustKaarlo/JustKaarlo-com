@@ -1,4 +1,4 @@
-![](res\src\header-cards\card-justkaarlo.png)
+![](https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png)
 
 > [!NOTE]
 > Custom Domians **[<kbd>justkaarlo.com<br></kbd>](https://justkaarlo.com)** and also **[<kbd>www.justkaarlo.com<br></kbd>](https://www.justkaarlo.com)**.
