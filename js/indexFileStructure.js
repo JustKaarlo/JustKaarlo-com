@@ -2,12 +2,12 @@ const fileStructure = [
     {
         type: "file",
         name: "index.html",
-        openUrl: "",
+        openUrl: "https://justkaarlo.github.io/",
         rawUrl: "https://raw.githubusercontent.com/JustKaarlo/JustKaarlo/refs/heads/Home/index.html",
         size: 0,
         icon: "https://images.icon-icons.com/2107/PNG/512/file_type_html_icon_130541.png",
         highlighted: true,
-        showOpenButton: false,
+        showOpenButton: true,
         showRawButton: true,
         showSizeTag: false
     },
@@ -101,4 +101,5 @@ const fileStructure = [
             }
         ]
     },
+
 ];
