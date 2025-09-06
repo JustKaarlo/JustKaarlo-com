@@ -48,9 +48,9 @@
 
 <script>
   // ===== CONFIG =====
-  const OWNER  = "owner-name";   // e.g. "torvalds"
-  const REPO   = "repo-name";    // e.g. "linux"
-  const BRANCH = "main";         // e.g. "main"
+  const OWNER  = "justkaarlo";   // e.g. "torvalds"
+  const REPO   = "justkaarlo.github.io";    // e.g. "linux"
+  const BRANCH = "Home";         // e.g. "main"
   const AUTH_TOKEN = "";         // optionally "ghp_…". Leave empty for public repos.
 
   // ===== UI wiring =====
@@ -174,7 +174,7 @@
   }
 
   function sortEntries([aName, a], [bName, b]) {
-    if (a.type !== b.type) return a.type === "tree" ? -1 : 1; // folders first
+    if (a.type !== b.type) return a.type === "tree" ? -1 : 1;
     return aName.localeCompare(bName);
   }
 
