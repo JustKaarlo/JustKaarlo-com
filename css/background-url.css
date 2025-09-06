@@ -1,0 +1,18 @@
+/* html, body {
+    background: url('../_assets/bg/DarkWaveBlur.png') no-repeat center center fixed;
+    background-size: cover;
+} */
+
+/* <link rel="stylesheet" href="style.css?page=home"> */
+/* <link rel="stylesheet" href="style.css?page=about"> */
+
+html[bg="DarkWave"] body {
+    background: url('../res/bg/DarkWave.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+html[bg="DarkWaveBlur"] body {
+    background: url('../res/bg/DarkWaveBlur.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
