@@ -1,0 +1,33 @@
+name: Generate Image Pages
+on:
+  push:
+    branches: [ Home ]
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Generate image pages
+        run: |
+          mkdir -p _images
+          find assets/images -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" \) | while read img; do
+            filename=$(basename "$img" | sed 's/\.[^.]*$//')
+            cat > "_images/${filename}.md" << EOF
+          ---
+          title: "${filename}"
+          image_path: "/${img}"
+          layout: image
+          ---
+          EOF
+          done
+          
+      - name: Commit generated files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add _images/
+          git diff --staged --quiet || git commit -m "Auto-generate image pages"
+          git push
