@@ -5,10 +5,10 @@
 <br>
 
 # ` INDEX `
+> **[`www.justkaarlo.com`](https://www.justkaarlo.com)**
 
-
-<kbd> <br> [**www.justkaarlo.com**](www.justkaarlo.com) <br> </kbd> <br>
-[<kbd> <br> /README.md <br> </kbd>](www.justkaarlo.com/README.md)<br>
+<kbd> <br> [**www.justkaarlo.com**](https://www.justkaarlo.com) <br> </kbd> <br>
+[<kbd> <br> /README.md <br> </kbd>](https://www.justkaarlo.com/README.md)<br>
 
 
 
