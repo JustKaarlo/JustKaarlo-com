@@ -2,165 +2,400 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Repository Directory</title>
+  <title>Repo Index</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f9fafb;
-      --fg: #111;
-      --muted: #666;
-      --border: #e5e7eb;
-      --link: #2563eb;
-      --card: #fff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #111827;
-        --fg: #f3f4f6;
-        --muted: #9ca3af;
-        --border: #374151;
-        --link: #60a5fa;
-        --card: #1f2937;
-      }
-    }
+    /* === THEME YOU PROVIDED === */
     body {
-      font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color: var(--fg);
-      background: var(--bg);
       margin: 0;
-    }
-    header, footer {
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 20px;
+      padding: 0;
+      min-height: 100vh;
+      background: url("/res/bg/bgDarkWaveBlur.png");
+      background-size: cover;
+      font-family: 'Rubik', sans-serif;
+      color: #eeebebbe;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      overflow-x: hidden;
     }
-    header h1 {
-      font-size: 16px;
-      margin: 0;
-    }
-    #controls {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    input, button {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--bg);
-      color: var(--fg);
-    }
-    button {
-      cursor: pointer;
-      background: var(--link);
-      color: #fff;
-      border: none;
-      transition: background 0.2s;
-    }
-    button:hover { background: #1d4ed8; }
-    main { padding: 16px 20px; }
-    ul.tree { list-style: none; padding-left: 18px; }
-    .folder > summary {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      padding: 2px 4px;
-      border-radius: 4px;
-    }
-    .folder > summary:hover { background: rgba(0,0,0,0.05); }
-    @media (prefers-color-scheme: dark) {
-      .folder > summary:hover { background: rgba(255,255,255,0.05); }
-    }
-    .caret::before { content: "▶"; display: inline-block; width: 1em; transition: transform 0.2s; }
-    details[open] > summary .caret::before { transform: rotate(90deg); }
-    .file .caret::before { content: "•"; color: var(--muted); }
-    .name { margin-left: 4px; }
-    .links a {
-      margin-left: 8px;
-      text-decoration: none;
-      color: var(--link);
-      font-size: 12px;
-    }
-    .links a:hover { text-decoration: underline; }
-    #status { margin-bottom: 10px; color: var(--muted); }
-    .spinner {
-      display: inline-block;
-      width: 14px; height: 14px;
-      border: 2px solid var(--border);
-      border-top-color: var(--fg);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    footer {
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--muted);
-    }
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url("../res/bg/bgDarkWaveBlur.png");
+    background-size: cover;
+    font-family: 'Rubik', sans-serif;
+    color: #eeebebbe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.main-frame {
+    width: 90%;
+    max-width: 800px;
+    min-height: 80vh;
+    max-height: 95vh;
+    background: rgba(30, 30, 30, 0.85);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: height 0.3s ease, max-height 0.3s ease;
+}
+
+.main-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.02) 100%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+a {
+    color: #eeebebbe;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgba(253, 255, 255, 0.72) !important;
+}
+
+li img {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#fileList {
+    height: calc(80vh - 120px);
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: none;
+    margin: 15px 0;
+}
+
+#fileList li {
+    margin: 8px 0;
+    padding: 6px 12px;
+    background-color: rgba(96, 95, 95, 0.05);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Poppins', monospace;
+    color: #eeebebbe;
+    cursor: pointer;
+}
+
+#fileList li.folder-open {
+    background-color: rgba(255, 255, 255, 0.055);
+}
+
+#fileList li:hover:not(:has(.folder-open-button:hover)):not(:has(.folder-raw-button:hover)) {
+    background-color: rgba(255, 255, 255, 0.055);
+}
+
+#fileList::-webkit-scrollbar {
+    display: none;
+}
+
+#fileList li.highlighted {
+    background: rgba(128, 128, 128, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    color: #eeebebbe;
+    transition: background 0.3s ease;
+    backdrop-filter: brightness(-0.5);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#fileList li.highlighted:hover {
+    border: 1.5px solid rgba(128, 128, 128, 0.1);
+    transition: all 0.2s ease;
+}
+
+#fileList li.folder-entry span,
+#fileList li .file-entry a {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease;
+}
+
+.file-size-tag {
+    background: rgba(120, 120, 120, 0.25);
+    color: rgba(170, 170, 170, 0.8);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: auto;
+    white-space: nowrap;
+    font-family: 'Poppins', monospace;
+    font-weight: 600;
+}
+
+.file-count-tag {
+    background: rgba(120, 120, 120, 0.25);
+    color: rgba(170, 170, 170, 0.8);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 6px;
+    white-space: nowrap;
+    font-family: 'Poppins', monospace;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.file-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.file-entry:hover a {
+    color: rgba(253, 255, 255, 0.72);
+}
+
+.file-entry img:hover,
+.folder-entry img:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+li.folder-open .folder-entry img {
+    filter: brightness(1.3);
+    transform: scale(1.1);
+}
+
+.folder-arrow {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    transition: transform 0.2s ease;
+    fill: #9b9b9bc9;
+    flex-shrink: 0;
+}
+
+.folder-arrow.open {
+    transform: rotate(90deg);
+}
+
+.folder-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #eeebebbe;
+    position: relative;
+}
+
+.folder-entry:hover {
+    color: rgba(253, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+.folder-open-button,
+.folder-raw-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    padding: 6px;
+    margin-left: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.folder-open-button:first-child {
+    margin-left: 10px;
+}
+
+.folder-open-button:hover,
+.folder-raw-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.folder-open-button svg,
+.folder-raw-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.folder-open-button svg path,
+.folder-raw-button svg path {
+    fill: rgba(170, 170, 170, 0.7);
+    transition: fill 0.2s ease;
+}
+
+.folder-open-button:hover svg path,
+.folder-raw-button:hover svg path {
+    fill: rgba(170, 170, 170, 0.9);
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.custom-tooltip {
+    position: absolute;
+    bottom: 15px;
+    left: -20px;
+    transform: translateX(-50%);
+    background: rgba(50, 50, 50, 0.6);
+    color: rgba(161, 161, 161, 0.79);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    font-weight: 700;
+    font-family: 'Poppins', monospace;
+    transition: opacity 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.folder-open-button:hover .custom-tooltip,
+.folder-raw-button:hover .custom-tooltip {
+    opacity: 1;
+    transition-delay: 150ms;
+}
+
+.sub-list {
+    margin-left: 20px;
+    margin-top: 8px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 15px;
+}
+
+.sub-list li {
+    margin: 6px 0;
+}
+
+.hide-size-tag .file-size-tag {
+    display: none !important;
+}
+
+.hide-count-tag .file-count-tag {
+    display: none !important;
+}
+
+/* Performance optimizations */
+* {
+    box-sizing: border-box;
+}
+
+.main-frame {
+    contain: layout style;
+}
+
+#fileList {
+    contain: layout style;
+}
+
+.file-entry,
+.folder-entry {
+    contain: layout;
+}
   </style>
 </head>
 <body>
-  <header>
+  <div class="main-frame">
     <h1>Repository Index</h1>
-    <div id="controls">
-      <input id="owner" placeholder="owner" />
-      <input id="repo" placeholder="repo" />
-      <input id="branch" placeholder="branch" />
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+      <input id="owner" placeholder="owner">
+      <input id="repo" placeholder="repo">
+      <input id="branch" placeholder="branch">
       <button id="loadBtn">Load</button>
     </div>
-  </header>
-  <main>
-    <div id="status">Idle</div>
-    <div id="treeContainer"></div>
-  </main>
-  <footer>
-    Public repos only without a token. Rate limit applies. Private repos need a token.
-  </footer>
+    <ul id="fileList"></ul>
+  </div>
 
 <script>
-  const OWNER="owner-name",REPO="repo-name",BRANCH="main",AUTH_TOKEN="";
-  const ownerEl=document.getElementById("owner"),repoEl=document.getElementById("repo"),branchEl=document.getElementById("branch");
-  const loadBtn=document.getElementById("loadBtn"),statusEl=document.getElementById("status"),treeEl=document.getElementById("treeContainer");
-  ownerEl.value=OWNER; repoEl.value=REPO; branchEl.value=BRANCH;
-  loadBtn.addEventListener("click",()=>loadIndex(ownerEl.value.trim(),repoEl.value.trim(),branchEl.value.trim()));
-  window.addEventListener("DOMContentLoaded",()=>{if(OWNER&&REPO&&BRANCH)loadIndex(OWNER,REPO,BRANCH)});
-  async function loadIndex(owner,repo,branch){
-    if(!owner||!repo||!branch){setStatus("Set owner, repo, and branch.");return;}
-    setStatus(`Fetching tree <span class="spinner"></span>`); treeEl.innerHTML="";
-    try{
-      const headers={"Accept":"application/vnd.github+json"}; if(AUTH_TOKEN)headers.Authorization=`Bearer ${AUTH_TOKEN}`;
-      const refRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`,{headers});
-      if(!refRes.ok)throw await apiError(refRes,"Failed to resolve branch"); const refData=await refRes.json();
-      const commitSha=refData.object?.sha||refData.sha||null; if(!commitSha)throw new Error("Could not resolve branch.");
-      const treeRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/${commitSha}?recursive=1`,{headers});
-      if(!treeRes.ok)throw await apiError(treeRes,"Failed to fetch tree"); const treeData=await treeRes.json();
-      const nodes=treeData.tree||[]; const root={children:new Map()}; for(const item of nodes){const parts=item.path.split("/");insertNode(root,parts,item.type);}
-      const ul=document.createElement("ul"); ul.className="tree"; renderNode(root,ul,{owner,repo,branch}); treeEl.appendChild(ul);
-      setStatus(`Indexed ${nodes.length} items.`);
-    }catch(err){setStatus("Error: "+err.message);}
-  }
-  function insertNode(node,parts,type){if(parts.length===0)return; const [head,...rest]=parts;
-    if(!node.children.has(head)){node.children.set(head,{name:head,type:rest.length?"tree":type,children:new Map()});}
-    if(rest.length)insertNode(node.children.get(head),rest,type);}
-  function renderNode(node,parent,ctx,base=""){for(const [name,child] of [...node.children].sort(sortEntries)){const path=base?`${base}/${name}`:name;
-      if(child.type==="tree"){const details=document.createElement("details"); details.className="folder";
-        const summary=document.createElement("summary"); const caret=document.createElement("span"); caret.className="caret";
-        const label=document.createElement("span"); label.className="name"; label.textContent=name; summary.append(caret,label); details.appendChild(summary);
-        const ul=document.createElement("ul"); ul.className="tree"; renderNode(child,ul,ctx,path); details.appendChild(ul);
-        const li=document.createElement("li"); li.appendChild(details); parent.appendChild(li);}
-      else{const li=document.createElement("li"); li.className="file";
-        const caret=document.createElement("span"); caret.className="caret"; const nm=document.createElement("span"); nm.className="name"; nm.textContent=name;
-        const links=document.createElement("span"); links.className="links";
-        const gh=document.createElement("a"); gh.href=`https://github.com/${ctx.owner}/${ctx.repo}/blob/${encodeURIComponent(ctx.branch)}/${encodeURIComponent(path)}`; gh.textContent="view"; gh.target="_blank"; gh.rel="noopener";
-        const raw=document.createElement("a"); raw.href=`https://raw.githubusercontent.com/${ctx.owner}/${ctx.repo}/${encodeURIComponent(ctx.branch)}/${encodeURIComponent(path)}`; raw.textContent="raw"; raw.target="_blank"; raw.rel="noopener";
-        links.append(gh,raw); li.append(caret,nm,links); parent.appendChild(li);}}}
-  function sortEntries([aName,a],[bName,b]){if(a.type!==b.type)return a.type==="tree"?-1:1; return aName.localeCompare(bName);}
-  async function apiError(res,prefix){let msg=`${prefix}. HTTP ${res.status}`; try{const j=await res.json(); if(j.message)msg+=" · "+j.message;}catch{} return new Error(msg);}
-  function setStatus(html){statusEl.innerHTML=html;}
+const OWNER="owner-name",REPO="repo-name",BRANCH="main",AUTH_TOKEN="";
+const ownerEl=document.getElementById("owner"),repoEl=document.getElementById("repo"),branchEl=document.getElementById("branch");
+const loadBtn=document.getElementById("loadBtn"),fileList=document.getElementById("fileList");
+ownerEl.value=OWNER; repoEl.value=REPO; branchEl.value=BRANCH;
+loadBtn.addEventListener("click",()=>loadIndex(ownerEl.value.trim(),repoEl.value.trim(),branchEl.value.trim()));
+window.addEventListener("DOMContentLoaded",()=>{if(OWNER&&REPO&&BRANCH)loadIndex(OWNER,REPO,BRANCH);});
+
+async function loadIndex(owner,repo,branch){
+  fileList.innerHTML="<li>Loading…</li>";
+  try{
+    const headers={"Accept":"application/vnd.github+json"}; if(AUTH_TOKEN)headers.Authorization=`Bearer ${AUTH_TOKEN}`;
+    const refRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${encodeURIComponent(branch)}`,{headers});
+    if(!refRes.ok)throw new Error("Branch not found");
+    const refData=await refRes.json(); const sha=refData.object?.sha||refData.sha;
+    const treeRes=await fetch(`https://api.github.com/repos/${owner}/${repo}/git/trees/${sha}?recursive=1`,{headers});
+    if(!treeRes.ok)throw new Error("Tree fetch failed");
+    const tree=await treeRes.json();
+    const root={children:new Map()}; for(const item of tree.tree){insertNode(root,item.path.split("/"),item.type);}
+    fileList.innerHTML=""; renderNode(root,fileList,{owner,repo,branch});
+  }catch(e){fileList.innerHTML=`<li>Error: ${e.message}</li>`;}
+}
+function insertNode(node,parts,type){if(parts.length===0)return;const[head,...rest]=parts;
+  if(!node.children.has(head)){node.children.set(head,{name:head,type:rest.length?"tree":type,children:new Map()});}
+  if(rest.length)insertNode(node.children.get(head),rest,type);}
+function renderNode(node,parent,ctx,base=""){for(const[name,child]of[...node.children].sort(sortEntries)){const path=base?`${base}/${name}`:name;
+  if(child.type==="tree"){const li=document.createElement("li");li.className="folder-entry";
+    li.innerHTML=`<div class="folder-entry"><svg class="folder-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg><span>${name}</span><span class="file-count-tag">${child.children.size}</span></div>`;
+    const ul=document.createElement("ul");ul.className="sub-list";renderNode(child,ul,ctx,path);li.appendChild(ul);
+    li.querySelector(".folder-entry").addEventListener("click",()=>{ul.classList.toggle("open");li.classList.toggle("folder-open");li.querySelector(".folder-arrow").classList.toggle("open");});
+    parent.appendChild(li);}
+  else{const li=document.createElement("li");li.className="file-entry";
+    li.innerHTML=`<a href="https://github.com/${ctx.owner}/${ctx.repo}/blob/${ctx.branch}/${path}" target="_blank">${name}</a>
+      <div class="button-group">
+        <a class="folder-open-button" href="https://github.com/${ctx.owner}/${ctx.repo}/blob/${ctx.branch}/${path}" target="_blank" title="View">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a class="folder-raw-button" href="https://raw.githubusercontent.com/${ctx.owner}/${ctx.repo}/${ctx.branch}/${path}" target="_blank" title="Raw">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></a>
+      </div>`; parent.appendChild(li);}}}
+function sortEntries([aName,a],[bName,b]){if(a.type!==b.type)return a.type==="tree"?-1:1;return aName.localeCompare(bName);}
 </script>
 </body>
 </html>
