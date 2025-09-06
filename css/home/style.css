@@ -50,19 +50,17 @@ body {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: url("../res/bg/DarkWave.png");
+    background-image: url("../../res/bg/DarkWave.png");
     background-size: cover;
     background-position: 50% 50%;
-    filter: blur(7px) brightness(1.7) grayscale(1.5) contrast(1.02);
+    filter: brightness(0.97) grayscale(1.5) contrast(1.02);
 }
 
 .bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(1200px 600px at 70% 10%, rgba(0, 0, 0, 0.2), transparent 60%),
-        linear-gradient(to bottom, rgba(5, 6, 8, 0.55), rgba(5, 6, 8, 0.85));
+    background: transparent;
     pointer-events: none;
 }
 
