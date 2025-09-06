@@ -110,13 +110,13 @@ function closeModal() {
 
 window.addEventListener('DOMContentLoaded', () => {
     const hashMap = {
-        '#arrest-report':           'http://www.JustKaarlo.com/Reports/Arrest-Report.html',
-        '#citation-report':         'http://www.JustKaarlo.com/Reports/Citation-Report.html',
-        '#coroner-report':          'http://www.JustKaarlo.com/Reports/Coroner-Report.html',
-        '#medical-report':          'http://www.JustKaarlo.com/Reports/Medical-Report.html',
-        '#fire-incident':           'http://www.JustKaarlo.com/Reports/Fire-Incident-Report.html',
-        '#tow-report':              'http://www.JustKaarlo.com/Reports/Towing-Report.html',
-        '#prison-transport':        'http://www.JustKaarlo.com/Reports/Prison-Transport.html'
+        '#arrest-report':           'https://www.justkaarlo.com/Reports/Arrest-Report.html',
+        '#citation-report':         'https://www.justkaarlo.com/Reports/Citation-Report.html',
+        '#coroner-report':          'https://www.justkaarlo.com/Reports/Coroner-Report.html',
+        '#medical-report':          'https://www.justkaarlo.com/Reports/Medical-Report.html',
+        '#fire-incident':           'https://www.justkaarlo.com/Reports/Fire-Incident-Report.html',
+        '#tow-report':              'https://www.justkaarlo.com/Reports/Towing-Report.html',
+        '#prison-transport':        'https://www.justkaarlo.com/Reports/Prison-Transport.html'
     };
 
     const url = hashMap[window.location.hash];
