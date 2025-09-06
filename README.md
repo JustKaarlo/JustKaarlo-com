@@ -1,12 +1,17 @@
-# JustKaarlo-com
-Personal website, Source code and content.
-
-https://justkaarlo.com  
-https://www.justkaarlo.com
+![](res/JustKaarloCard.png)
+> [!NOTE]
+> Custom Domians **[<kbd>justkaarlo.com<br></kbd>](https://justkaarlo.com)** and also **[<kbd>www.justkaarlo.com<br></kbd>](https://www.justkaarlo.com)**.
+> 
+<br>
 
 # ` INDEX `
+
+
 <kbd> <br> [**justkaarlo.github.io**](https://justkaarlo.github.io) <br> </kbd> <br>
 [<kbd> <br> /README.md <br> </kbd>](https://justkaarlo.github.io/README.md)<br>
+
+
+
 
 <!--
 > [!NOTE]
