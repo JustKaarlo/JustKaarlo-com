@@ -1,14 +1,7 @@
 ![](res/JustKaarloCard.png)
+
 > [!NOTE]
 > Custom Domians **[<kbd>justkaarlo.com<br></kbd>](https://justkaarlo.com)** and also **[<kbd>www.justkaarlo.com<br></kbd>](https://www.justkaarlo.com)**.
-> 
-<br>
-
-# ` INDEX `
-> **[`www.justkaarlo.com`](https://www.justkaarlo.com)**
-
-<kbd> <br> [**www.justkaarlo.com**](https://www.justkaarlo.com) <br> </kbd> <br>
-[<kbd> <br> /README.md <br> </kbd>](https://www.justkaarlo.com/README.md)<br>
 
 
 
