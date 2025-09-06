@@ -1,5 +1,4 @@
-const nav = document.querySelector('.nav-container'); // Changed from '.nav-frame'
-// Remove the sectionNav variable since it's now in the same container
+const nav = document.querySelector('.nav-container');
 
 // Navigation functionality
 (function () {
