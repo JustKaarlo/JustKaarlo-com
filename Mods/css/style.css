@@ -34,7 +34,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: url("https://justkaarlo.github.io/JustKaarlo-Google-Site/resources/MainBackground_1_5120x1440.png");
+    background-image: url("../../res/bg/DarkWave.png");
     background-size: cover;
     background-position: 50% 50%;
     filter: blur(7px) brightness(1.7) grayscale(1.5) contrast(1.02);
@@ -69,7 +69,7 @@ body {
     background-image:
         linear-gradient(var(--tw-overlay-1), var(--tw-overlay-1)),
         linear-gradient(var(--tw-overlay-2), var(--tw-overlay-2)),
-        url('https://justkaarlo.github.io/JustKaarlo-Google-Site/resources/TotalWar_Background.png');
+        url('../../res/bg/mods/total-war-bg.png');
 }
 
 #bg-er {
@@ -77,7 +77,7 @@ body {
     background-image:
         linear-gradient(var(--er-overlay-1), var(--er-overlay-1)),
         linear-gradient(var(--er-overlay-2), var(--er-overlay-2)),
-        url('https://justkaarlo.github.io/JustKaarlo-Google-Site/resources/EldenRing_Background.png');
+        url('../../res/bg/mods/elden-ring-bg.png');
 }
 
 #particles-js {
