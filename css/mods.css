@@ -34,7 +34,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: url("../../res/bg/DarkWave.png");
+    background-image: url("../res/bg/DarkWave.png");
     background-size: cover;
     background-position: 50% 50%;
     filter: blur(7px) brightness(1.7) grayscale(1.5) contrast(1.02);
@@ -69,7 +69,7 @@ body {
     background-image:
         linear-gradient(var(--tw-overlay-1), var(--tw-overlay-1)),
         linear-gradient(var(--tw-overlay-2), var(--tw-overlay-2)),
-        url('../../Mods/src/bg/total-war-bg.png');
+        url('../res/bg/total-war-bg.png');
 }
 
 #bg-er {
@@ -77,7 +77,7 @@ body {
     background-image:
         linear-gradient(var(--er-overlay-1), var(--er-overlay-1)),
         linear-gradient(var(--er-overlay-2), var(--er-overlay-2)),
-        url('../../Mods/src/bg/elden-ring-bg.png');
+        url('../res/bg/elden-ring-bg.png');
 }
 
 #particles-js {

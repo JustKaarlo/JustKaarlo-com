@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <title>Mods</title>
-  <link rel="icon" type="image/x-icon" href="../res/ico/favicon/favicon-1.ico">
+  <link rel="icon" type="image/x-icon" href="./res/ico/favicon/favicon-1.ico">
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="../css/scrollbar.css">
+  <link rel="stylesheet" href="./css/mods.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="JustKaarlo's - Mods">
   <meta property="og:description" content="Collection of mods.">
   <meta property="og:url" content="https://www.justkaarlo.com/Mods">
-  <meta property="og:image" content="../res/src/header-cards/card-justkaarlo.png">
+  <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
   <meta property="og:type" content="website">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -28,13 +28,13 @@
     <div class="nav-container">
         <header class="nav-frame glass">
         <nav class="nav-buttons">
-            <a href="https://www.justkaarlo.com" target="_self" class="nav-btn" aria-label="Home">
+            <a href="./home" target="_self" class="nav-btn" aria-label="Home">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
                 <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z"/>
             </svg>
             </a>
             <a class="nav-btn" id="SelectedNavBtn">Mods</a>
-            <a href="https://www.justkaarlo.com/Reports" target="_self" class="nav-btn">Reports</a>
+            <a href="./reports" target="_self" class="nav-btn">Reports</a>
         </nav>
         </header>
 
@@ -50,7 +50,7 @@
         <div class="content">
         <section id="tw-section" class="section-slide active">
             <img id="tw-customIcon" class="elden-custom-size"
-                src="..\Mods\src\total-war-logo.png"
+                src="./res/src/total-war-logo.png"
                 alt="Total War Icon" />
                 <div class="filelist-frame">
                     <ul id="tw-fileList" class="file-list">Loading...</ul>
@@ -67,7 +67,7 @@
 
         <section id="elden-section" class="section-slide">
             <img id="customIcon" class="elden-custom-size"
-                src="../Mods/src/elden-ring-logo.png"
+                src="./res/src/elden-ring-logo.png"
                 alt="Elden Ring Icon" />
                 <div class="filelist-frame">
                 <ul id="fileList" class="file-list">Loading...</ul>
@@ -92,7 +92,7 @@
     </div>
 
         <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script src="js/Mod.Fuctions.js"></script>
-        <script src="js/Mod.Custom.Structure.js"></script>
+        <script src="./js/Mods.Fuctions.js"></script>
+        <script src="./js/Mods.FileList.Settings.js"></script>
     </body>
 </html>

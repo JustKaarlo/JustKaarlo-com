@@ -20,19 +20,11 @@
 
 * {
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 html,
 body {
     height: 100%;
-    overflow-x: hidden;
-    overflow: hidden;
-    background: none;
-    justify-content: center;
-    align-items: center;
 }
 
 body {
@@ -58,19 +50,17 @@ body {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: url("../../res/bg/DarkWaveBlur.png");
+    background-image: url("../res/bg/DarkWaveBlur.png");
     background-size: cover;
     background-position: 50% 50%;
-    filter: brightness(1.7) grayscale(1.5) contrast(1.02);
+    filter: brightness(0.82);
 }
 
 .bg::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(1200px 600px at 70% 10%, rgba(0, 0, 0, 0.2), transparent 60%),
-        linear-gradient(to bottom, rgba(5, 6, 8, 0.55), rgba(5, 6, 8, 0.85));
+    background: transparent;
     pointer-events: none;
 }
 
@@ -114,7 +104,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto 64px;
-    padding: 0 16px;
+    height: 295px;
 }
 
 .logo-section {
@@ -141,17 +131,18 @@ body {
 
 .logo-card {
     --size: clamp(260px, 42vw, 520px);
-    width: var(--size);
-    height: calc(var(--size) * 0.6);
-    padding: 2px;
-    border-radius: 24px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5;
     width: 50%;
-    height: 50%;
+    height: 100%;
     background:
-        url('https://justkaarlo.github.io/JustKaarlo-Google-Site/resources/Header_2_Image.png') fixed no-repeat center/cover !important;
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-inner);
+        url('../res/src/header-cards/card-justkaarlo.png') fixed no-repeat center/cover !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-inner);
     transition: transform 200ms ease;
     transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
+    margin: 230px auto 0 auto;
+    text-align: center;
+    border-radius: 35px;
 }
 
 .logo-card:hover {
@@ -352,219 +343,13 @@ a.btn-glassy {
     cursor: pointer;
 }
 
-#brStyle {
-    height: 100px;
-    flex-direction: column;
-    gap: 20px;
-    justify-self: center;
-    justify-content: center;
-    justify-items: center;
-}
-
-#bgInterface {
-    font-size: 50px;
-    font-weight: 700;
-    font-size: 35px;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-    z-index: 2000 !important;
-}
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 850px;
-    background: transparent;
-    display: none;
-    z-index: 2001 !important;
-    transition: height 0.2s ease;
-    overflow: hidden;
-}
-
-.iframe-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.iframe-wrapper::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-    background: transparent;
-}
-
-.iframe-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + 17px);
-    height: 100%;
-    border: none;
-    background: transparent;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.close-btn {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    background: #f04747;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 5;
-}
-
-.share-container {
-    position: absolute;
-    top: 55px;
-    right: 610px;
-    z-index: 2;
-    display: flex;
-    align-items: left;
-}
-
-.share-btn {
-    --bg-glass: rgba(255, 255, 255, 0.05);
-    --border-glass: rgba(255, 255, 255, 0.12);
-    --text: #e1e2e7;
-    background: var(--bg-glass);
-    color: var(--text);
-    border: 1px solid var(--border-glass);
-    box-shadow: 0 1px 24px rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-    font-size: 16px;
-    padding: 8px 10px;
-    border-radius: 9px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 160ms ease, background 160ms ease;
-}
-
-.share-btn:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.share-icon {
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-}
-
-.share-popup {
-    --nav-bg: rgba(255, 255, 255, 0.03);
-    position: absolute;
-    top: 10px;
-    right: -265px;
-    width: 260px;
-    background: var(--nav-bg);
-    backdrop-filter: blur(14px) saturate(120%);
-    -webkit-backdrop-filter: blur(14px) saturate(120%);
-    color: #fff;
-    padding: 15px;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    z-index: 7;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
-
-.share-popup input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.share-popup button {
-    --bg-glass: rgba(255, 255, 255, 0.05);
-    --text: #e1e2e7;
-    background: var(--bg-glass);
-    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
-    border: none;
-    padding: 8px 16px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 8px;
-    width: fit-content;
-    min-width: 100px;
-    margin: 0 auto;
-    display: block;
-    transition: background 160ms ease, transform 120ms ease;
-}
-
-.share-popup button:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-1px);
-}
-
-.share-popup select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    background: #333;
-    appearance: none;
-    cursor: pointer;
-    color: #fff;
-    font-weight: bold;
-    font-weight: 500;
-}
-
-.nav-container {
-    position: relative;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 300px;
-    z-index: 999;
-    justify-self: center;
-}
-
 .nav-frame {
     --nav-bg: rgba(255, 255, 255, 0.03);
-    position: static;
+    position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 10px 28px;
+    padding: 10px 24px;
     border-radius: 20px;
     z-index: 999;
     background: var(--nav-bg);
@@ -572,16 +357,11 @@ a.btn-glassy {
     backdrop-filter: blur(12px) saturate(120%);
     -webkit-backdrop-filter: blur(12px) saturate(120%);
     box-shadow: var(--shadow-1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
 }
 
 .nav-buttons {
     display: flex;
     gap: 22px;
-    margin: 0;
 }
 
 .nav-btn {
@@ -590,22 +370,16 @@ a.btn-glassy {
     background: var(--bg-glass);
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
     color: var(--text);
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
     font-weight: 600;
     text-decoration: none;
-    padding: 8px 10px;
+    padding: 8px 16px;
     border-radius: var(--radius-sm);
     transition: background 160ms ease, transform 120ms ease;
-    width: fit-content;
 }
 
 .nav-btn:hover {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-1px);
-}
-
-.nav-share {
-    margin-left: 20px;
 }
 
 .nav-btn svg {
@@ -617,4 +391,174 @@ a.btn-glassy {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-1px);
     cursor: not-allowed;
+}
+
+/* Workshop Frame Styles */
+.workshop-frame {
+    --workshop-bg: rgba(255, 255, 255, 0.04);
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border-radius: 16px;
+    z-index: 998;
+    background: var(--workshop-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px) saturate(110%);
+    -webkit-backdrop-filter: blur(10px) saturate(110%);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    transition: all 200ms ease;
+    margin-top: 50px;
+}
+
+.workshop-frame:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.workshop-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.steam-avatar {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.steam-avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.steam-avatar-border {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 36px;
+    height: 36px;
+    background-image: url('https://shared.akamai.steamstatic.com/community_assets/images/items/1451190/c54be80ce1cf1f688875aa72d4f026f1e78b8f70.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(102, 192, 244, 0.2));
+}
+
+.workshop-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.workshop-title {
+    color: var(--text-1);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.workshop-subtitle {
+    color: var(--text-2);
+    font-size: 0.78rem;
+    font-weight: 500;
+    opacity: 0.85;
+}
+
+.workshop-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.workshop-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: 12px;
+}
+
+.workshop-btn {
+    background: rgba(102, 192, 244, 0.15);
+    border: 1px solid rgba(102, 192, 244, 0.3);
+    color: #66c0f4;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 150ms ease;
+    backdrop-filter: blur(8px);
+}
+
+.workshop-btn:hover {
+    background: rgba(102, 192, 244, 0.25);
+    border-color: rgba(102, 192, 244, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 192, 244, 0.2);
+}
+
+.profile-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-1);
+}
+
+.profile-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: var(--text-1);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .workshop-frame {
+        left: 10px;
+        right: 10px;
+        transform: none;
+        width: calc(100% - 20px);
+    }
+
+    .workshop-frame:hover {
+        transform: translateY(-2px);
+    }
+
+    .workshop-content {
+        gap: 12px;
+    }
+
+    .workshop-actions {
+        margin-left: 8px;
+    }
+
+    .workshop-btn {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .workshop-text {
+        flex: 1;
+    }
+
+    .workshop-title {
+        font-size: 0.85rem;
+    }
+
+    .workshop-subtitle {
+        font-size: 0.72rem;
+    }
+
+    .workshop-actions {
+        flex-direction: column;
+        gap: 4px;
+    }
 }
