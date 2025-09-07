@@ -157,9 +157,9 @@ copyLinkBtn.addEventListener('click', () => {
     }, 2000);
 });
 
-document.addEventListener('click', e => {
-    if (!sharePopup.contains(e.target) && e.target !== shareBtn) {
-        sharePopup.style.display = 'none';
-        sharePopup.classList.remove('open');
-    }
-});
+// document.addEventListener('click', e => {
+//     if (!sharePopup.contains(e.target) && e.target !== shareBtn) {
+//         sharePopup.style.display = 'none';
+//         sharePopup.classList.remove('open');
+//     }
+// });
