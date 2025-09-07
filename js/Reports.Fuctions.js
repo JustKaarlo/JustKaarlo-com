@@ -133,13 +133,24 @@ const copyLinkBtn = document.getElementById('copyLinkBtn');
 shareBtn.addEventListener('click', e => {
     e.stopPropagation();
     if (sharePopup.style.display === 'block') {
-        sharePopup.style.display = 'none';
-        sharePopup.classList.remove('open');
+        sharePopup.style.display = 'block';
+        sharePopup.classList.add('open');
     } else {
         sharePopup.style.display = 'block';
         sharePopup.classList.add('open');
     }
 });
+
+// shareBtn.addEventListener('click', e => {
+//     e.stopPropagation();
+//     if (sharePopup.style.display === 'block') {
+//         sharePopup.style.display = 'none';
+//         sharePopup.classList.remove('open');
+//     } else {
+//         sharePopup.style.display = 'block';
+//         sharePopup.classList.add('open');
+//     }
+// });
 
 copyLinkBtn.addEventListener('click', () => {
     const link = shareSelect.value;
