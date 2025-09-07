@@ -1,24 +1,61 @@
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=./home" />
-    <meta property="og:title" content="JustKaarlo's - Home">
-    <meta property="og:description" content="Personal hub for projects, tools, and creative experiments.">
-    <meta property="og:url" content="https://www.justkaarlo.com">
-    <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
-    <meta property="og:type" content="website">
-  </head>
-  <body>
-    <p>If you are not redirected, <a href="./home">click here</a>.</p>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      window.location.replace("Home.html");
-    </script>
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+  <title>JustKaarlo's</title>
+  <link rel="icon" type="image/x-icon" href="res/ico/favicon/favicon-1.ico">
+
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/scrollbar.css">
+
+  <meta property="og:title" content="JustKaarlo's - Home">
+  <meta property="og:description" content="Personal hub for projects, tools, and creative experiments.">
+  <meta property="og:url" content="https://www.justkaarlo.com">
+  <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
+  <meta property="og:type" content="website">
+</head>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" as="image" href="res/bg/DarkWave.png">
+  <link rel="preload" as="image" href="res/src/header-cards/card-justkaarlo.png">
+</head>
+
+<body>
+ <canvas id="particle-canvas"></canvas>
+  <div class="bg" aria-hidden="true"></div>
+    <header class="nav-frame glass">
+    <nav class="nav-buttons">
+        <a class="nav-btn" id="SelectedNavBtn" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
+            <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z"/>
+        </svg>
+        </a>
+        <a href="./mods" class="nav-btn">Mods</a>
+        <a href="./reports" target="_self" class="nav-btn">Reports</a>
+    </nav>
+    </header>
+    <div class="workshop-frame">
+        <div class="workshop-content">
+            <div class="steam-avatar">
+                <img src="https://avatars.akamai.steamstatic.com/04644b935d15512fed49011c77505dc81e18f068_full.jpg" alt="Steam Avatar" class="steam-avatar-image">
+                <div class="steam-avatar-border"></div>
+            </div>
+            <div class="workshop-text">
+                <span class="workshop-title">Steam Workshop</span>
+                <span class="workshop-subtitle">Game mods & creations</span>
+            </div>
+            <div class="workshop-actions">
+                <a href="https://steamcommunity.com/id/justkaarlo/myworkshopfiles/" target="_self" class="workshop-btn">Workshop</a>
+                <a href="https://steamcommunity.com/id/justkaarlo/" target="_self" class="workshop-btn profile-btn">Profile</a>
+            </div>
+        </div>
+    </div>
+        <main class="container">
+            <div class="logo-card">
+            <img src="res/src/header-cards/card-justkaarlo.png" alt="Logo Card Image" />
+            </div>
+        </main>
+        <script src="js/Home.Fuctions.js"></script>
+    </body>
 </html>

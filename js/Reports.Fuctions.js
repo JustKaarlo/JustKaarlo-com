@@ -135,22 +135,13 @@ shareBtn.addEventListener('click', e => {
     if (sharePopup.style.display === 'block') {
         sharePopup.style.display = 'block';
         sharePopup.classList.add('open');
+        // sharePopup.style.display = 'none';
+        // sharePopup.classList.remove('open');
     } else {
         sharePopup.style.display = 'block';
         sharePopup.classList.add('open');
     }
 });
-
-// shareBtn.addEventListener('click', e => {
-//     e.stopPropagation();
-//     if (sharePopup.style.display === 'block') {
-//         sharePopup.style.display = 'none';
-//         sharePopup.classList.remove('open');
-//     } else {
-//         sharePopup.style.display = 'block';
-//         sharePopup.classList.add('open');
-//     }
-// });
 
 copyLinkBtn.addEventListener('click', () => {
     const link = shareSelect.value;
@@ -168,9 +159,9 @@ copyLinkBtn.addEventListener('click', () => {
     }, 2000);
 });
 
-// document.addEventListener('click', e => {
-//     if (!sharePopup.contains(e.target) && e.target !== shareBtn) {
-//         sharePopup.style.display = 'none';
-//         sharePopup.classList.remove('open');
-//     }
-// });
+document.addEventListener('click', e => {
+    if (!sharePopup.contains(e.target) && e.target !== shareBtn) {
+        sharePopup.style.display = 'none';
+        sharePopup.classList.remove('open');
+    }
+});
