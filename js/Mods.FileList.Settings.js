@@ -56,12 +56,12 @@
             "Age of Arthur.exe":                    "../res/filelist/AgeOfArthur.ico",
         },
         customFolderIcons: {
-            "15r5NfzciWGfClpGvmT5ydfH4fDbScVAl":    "https://www.justkaarlo.com/Mods/src/TW/attila-logo.png",
-            "1IsBsstw8TYRZ4FP_cl0ydaVLWRRjVbam":    "https://www.justkaarlo.com/Mods/src/TW/empire-logo.png",
-            "1NiLKxsM1tZUbYjYoquZ2cYVMWh-zAprN":    "https://www.justkaarlo.com/Mods/src/TW/napoleon-logo.png",
-            "14p-1KeG4OB5uYIWqH8yRScpyXRj0IaEb":    "https://www.justkaarlo.com/Mods/src/TW/rome2-logo.png",
-            "1zYVOwQN--y78iTUnku67DyABh5maAfV_":    "https://www.justkaarlo.com/Mods/src/TW/shogun2-logo.png",
-            "1vizoQOE_gq9rK9LgrxeNgFoikw75AX2h":    "https://www.justkaarlo.com/Mods/src/TW/thrones-logo.png",
+            "15r5NfzciWGfClpGvmT5ydfH4fDbScVAl":    "../res/filelist/attila-logo.png",
+            "1IsBsstw8TYRZ4FP_cl0ydaVLWRRjVbam":    "../res/filelist/empire-logo.png",
+            "1NiLKxsM1tZUbYjYoquZ2cYVMWh-zAprN":    "../res/filelist/napoleon-logo.png",
+            "14p-1KeG4OB5uYIWqH8yRScpyXRj0IaEb":    "../res/filelist/rome2-logo.png",
+            "1zYVOwQN--y78iTUnku67DyABh5maAfV_":    "../res/filelist/shogun2-logo.png",
+            "1vizoQOE_gq9rK9LgrxeNgFoikw75AX2h":    "../res/filelist/thrones-logo.png",
 
             "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv":    "../res/filelist/MedievelKingdoms1212AD.ico",
             "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv":    "../res/filelist/AnchientEmpires.ico",

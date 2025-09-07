@@ -58,7 +58,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background-image: url("../../res/bg/DarkWaveBlur.png");
+    background-image: url("../css/res/bg/DarkWaveBlur.png");
     background-size: cover;
     background-position: 50% 50%;
     filter: brightness(1.7) grayscale(1.5) contrast(1.02);

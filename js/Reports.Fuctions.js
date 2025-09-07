@@ -110,13 +110,13 @@ function closeModal() {
 
 window.addEventListener('DOMContentLoaded', () => {
     const hashMap = {
-        '#arrest-report':           'https://www.justkaarlo.com/reports/Arrest-Report.html',
-        '#citation-report':         'https://www.justkaarlo.com/reports/Citation-Report.html',
-        '#coroner-report':          'https://www.justkaarlo.com/reports/Coroner-Report.html',
-        '#medical-report':          'https://www.justkaarlo.com/reports/Medical-Report.html',
-        '#fire-incident':           'https://www.justkaarlo.com/reports/Fire-Incident-Report.html',
-        '#tow-report':              'https://www.justkaarlo.com/reports/Towing-Report.html',
-        '#prison-transport':        'https://www.justkaarlo.com/reports/Prison-Transport.html'
+        '#arrest-report':           'https://www.justkaarlo.com/report/Arrest-Report.html',
+        '#citation-report':         'https://www.justkaarlo.com/report/Citation-Report.html',
+        '#coroner-report':          'https://www.justkaarlo.com/report/Coroner-Report.html',
+        '#medical-report':          'https://www.justkaarlo.com/report/Medical-Report.html',
+        '#fire-incident':           'https://www.justkaarlo.com/report/Fire-Incident-Report.html',
+        '#tow-report':              'https://www.justkaarlo.com/report/Towing-Report.html',
+        '#prison-transport':        'https://www.justkaarlo.com/report/Prison-Transport.html'
     };
 
     const url = hashMap[window.location.hash];
