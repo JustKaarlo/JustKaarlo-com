@@ -370,7 +370,7 @@ async function listFilesInFolder({
                 if (customLink) {
                     window.open(customLink, "_blank");
                 } else {
-                    window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
+                    window.open(`http://app.justkaarlo.com/download/${file.id}`, "_self");
                     // const dl = getDownloadUrl(file, apiKey);
                     // window.open(dl, "_blank");
                 }
@@ -445,8 +445,7 @@ async function listFilesInFolder({
             if (customLink) {
                 window.open(customLink, "_blank");
             } else {
-                window.open(`http://app.justkaarlo.com/download/${folder.id}`, "_blank");
-                // window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
             }
         };
 
