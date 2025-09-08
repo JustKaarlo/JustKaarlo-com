@@ -366,19 +366,15 @@ async function listFilesInFolder({
             downloadBtn.appendChild(btnIcon);
 
             downloadBtn.onclick = () => {
-                window.location.href = `/download.html?id=${file.id}`;
+                const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
+                if (customLink) {
+                    window.open(customLink, "_blank");
+                } else {
+                    window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
+                    // const dl = getDownloadUrl(file, apiKey);
+                    // window.open(dl, "_blank");
+                }
             };
-
-            // downloadBtn.onclick = () => {
-            //     const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
-            //     if (customLink) {
-            //         window.open(customLink, "_blank");
-            //     } else {
-            //         window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
-            //         // const dl = getDownloadUrl(file, apiKey);
-            //         // window.open(dl, "_blank");
-            //     }
-            // };
 
             fileEntry.appendChild(downloadBtn);
         }
