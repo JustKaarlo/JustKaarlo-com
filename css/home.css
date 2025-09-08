@@ -22,9 +22,15 @@
     box-sizing: border-box;
 }
 
+
+
 html,
 body {
     height: 100%;
+    width: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 body {
@@ -35,6 +41,10 @@ body {
     line-height: 1.4;
     overflow-x: hidden;
     overflow: hidden;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
 }
 
 #particle-canvas {
