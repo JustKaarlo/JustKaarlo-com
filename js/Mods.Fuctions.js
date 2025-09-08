@@ -366,7 +366,7 @@ async function listFilesInFolder({
             downloadBtn.appendChild(btnIcon);
 
             downloadBtn.onclick = () => {
-                window.location.href = `http://app.justkaarlo.com/download.html?id=${file.id}`;
+                window.location.href = `http://www.justkaarlo.com/download.html?id=${file.id}`;
             };
 
             // downloadBtn.onclick = () => {
