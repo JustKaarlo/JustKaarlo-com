@@ -370,8 +370,9 @@ async function listFilesInFolder({
                 if (customLink) {
                     window.open(customLink, "_blank");
                 } else {
-                    const dl = getDownloadUrl(file, apiKey);
-                    window.open(dl, "_blank");
+                    window.open(`https://gdrive-download.onrender.com/download/${file.id}`, "_blank");
+                    // const dl = getDownloadUrl(file, apiKey);
+                    // window.open(dl, "_blank");
                 }
             };
 
