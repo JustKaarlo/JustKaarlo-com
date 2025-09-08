@@ -423,17 +423,30 @@ async function listFilesInFolder({
                 const fallbackDiv = document.createElement("div");
                 fallbackDiv.style.marginTop = "20px";
                 fallbackDiv.style.fontSize = "0.95em";
-                fallbackDiv.style.color = "#bbb";
+                fallbackDiv.style.color = "#aaa";
                 fallbackDiv.style.display = "none";
+                fallbackDiv.style.textAlign = "center";
 
-                const fallbackText = document.createElement("span");
-                fallbackText.innerText = "Download is taking long. ";
+                const fallbackText = document.createElement("div");
+                fallbackText.innerText = "Download is taking longer than usual.";
+                fallbackText.style.marginBottom = "8px";
+
                 const fallbackLink = document.createElement("a");
                 fallbackLink.href = `https://drive.google.com/uc?id=${file.id}&export=download`;
                 fallbackLink.target = "_blank";
-                fallbackLink.style.color = "#4fa3ff";
-                fallbackLink.style.textDecoration = "underline";
-                fallbackLink.innerText = "Click here to use the default Google Drive link.";
+                fallbackLink.innerText = "Use the default Google Drive link";
+                fallbackLink.style.display = "inline-block";
+                fallbackLink.style.padding = "8px 16px";
+                fallbackLink.style.background = "#4fa3ff";
+                fallbackLink.style.color = "#fff";
+                fallbackLink.style.borderRadius = "6px";
+                fallbackLink.style.textDecoration = "none";
+                fallbackLink.style.fontWeight = "bold";
+                fallbackLink.style.transition = "background 0.2s ease";
+
+                fallbackLink.addEventListener("mouseenter", () => fallbackLink.style.background = "#3a8dd6");
+                fallbackLink.addEventListener("mouseleave", () => fallbackLink.style.background = "#4fa3ff");
+
                 fallbackDiv.appendChild(fallbackText);
                 fallbackDiv.appendChild(fallbackLink);
 
@@ -442,9 +455,8 @@ async function listFilesInFolder({
                 card.appendChild(text);
                 card.appendChild(fallbackDiv);
                 overlay.appendChild(card);
-                document.body.appendChild(overlay);
 
-                // Fade in overlay
+                document.body.appendChild(overlay);
                 requestAnimationFrame(() => overlay.style.opacity = "1");
 
                 // Function to remove overlay
@@ -456,31 +468,24 @@ async function listFilesInFolder({
                     clearTimeout(fallbackTimeout);
                 };
 
-                // Close on outside click
                 const outsideClickListener = (e) => {
                     if (!card.contains(e.target)) removeOverlay();
                 };
                 overlay.addEventListener("click", outsideClickListener);
-
-                // Close on Escape
+                
                 const escListener = (e) => {
                     if (e.key === "Escape") removeOverlay();
                 };
                 document.addEventListener("keydown", escListener);
 
                 // Trigger download
-                const url = `http://app.justkaarlo.com/download/${file.id}`;
-                const link = document.createElement("a");
-                link.href = url;
-                link.download = "";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+                const downloadUrl = `http://app.justkaarlo.com/download/${file.id}`;
+                window.open(downloadUrl, "_blank");
 
                 // Show fallback link after 30 seconds
                 const fallbackTimeout = setTimeout(() => {
                     fallbackDiv.style.display = "block";
-                }, 30000); // 30000 ms = 30 seconds
+                }, 30000);
             };
 
             // downloadBtn.onclick = () => {
