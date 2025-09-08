@@ -366,15 +366,93 @@ async function listFilesInFolder({
             downloadBtn.appendChild(btnIcon);
 
             downloadBtn.onclick = () => {
-                const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
-                if (customLink) {
-                    window.open(customLink, "_blank");
-                } else {
-                    window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
-                    // const dl = getDownloadUrl(file, apiKey);
-                    // window.open(dl, "_blank");
+                // Overlay container
+                const overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = 0;
+                overlay.style.left = 0;
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.background = "rgba(30, 30, 30, 0.95)";
+                overlay.style.display = "flex";
+                overlay.style.alignItems = "center";
+                overlay.style.justifyContent = "center";
+                overlay.style.zIndex = "9999";
+                overlay.style.opacity = "0";
+                overlay.style.transition = "opacity 0.3s ease";
+
+                // Inner card
+                const card = document.createElement("div");
+                card.style.background = "#1e1e1e";
+                card.style.padding = "30px 40px";
+                card.style.borderRadius = "12px";
+                card.style.boxShadow = "0 8px 20px rgba(0,0,0,0.6)";
+                card.style.textAlign = "center";
+                card.style.color = "#eee";
+                card.style.fontFamily = "Arial, sans-serif";
+
+                // Spinner
+                const spinner = document.createElement("div");
+                spinner.style.margin = "0 auto 20px auto";
+                spinner.style.width = "50px";
+                spinner.style.height = "50px";
+                spinner.style.border = "6px solid rgba(255,255,255,0.2)";
+                spinner.style.borderTop = "6px solid #fff";
+                spinner.style.borderRadius = "50%";
+                spinner.style.animation = "spin 1s linear infinite";
+
+                // Keyframes for spinner
+                const style = document.createElement("style");
+                style.textContent = `
+                @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
                 }
+                `;
+                document.head.appendChild(style);
+
+                // Text
+                const text = document.createElement("div");
+                text.innerText = "Preparing your download...";
+                text.style.fontSize = "1.2em";
+                text.style.letterSpacing = "0.5px";
+
+                // Build card
+                card.appendChild(spinner);
+                card.appendChild(text);
+                overlay.appendChild(card);
+                document.body.appendChild(overlay);
+
+                // Fade in overlay
+                requestAnimationFrame(() => {
+                    overlay.style.opacity = "1";
+                });
+
+                // Trigger download
+                const url = `http://app.justkaarlo.com/download/${file.id}`;
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = "";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                setTimeout(() => {
+                    overlay.style.opacity = "0";
+                    setTimeout(() => overlay.remove(), 300);
+                }, 15000);
             };
+
+            // downloadBtn.onclick = () => {
+            //     const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
+            //     if (customLink) {
+            //         window.open(customLink, "_blank");
+            //     } else {
+            //         window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
+            //         // const dl = getDownloadUrl(file, apiKey);
+            //         // window.open(dl, "_blank");
+            //     }
+            // };
 
             fileEntry.appendChild(downloadBtn);
         }
