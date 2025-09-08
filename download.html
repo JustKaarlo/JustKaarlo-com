@@ -59,12 +59,23 @@
   .fallback button:hover {
     background: #0097a7;
   }
+
+  .done {
+    display: none;
+  }
+  .done h2 {
+    color: #00e676;
+    margin-bottom: 10px;
+  }
+  .done p {
+    color: #ccc;
+  }
 </style>
 </head>
 <body>
-  <div class="loader">
-    <div class="spinner"></div>
-    <p>Preparing your download…</p>
+  <div class="loader" id="loaderBox">
+    <div class="spinner" id="spinner"></div>
+    <p id="statusText">Preparing your download…</p>
 
     <div class="fallback" id="fallbackBox">
       <p>This is taking longer than usual.<br>
@@ -73,26 +84,54 @@
     </div>
   </div>
 
+  <div class="done" id="doneBox">
+    <h2>✅ Download Started!</h2>
+    <p>You will be redirected back in <span id="countdown">5</span> seconds…</p>
+  </div>
+
   <script>
     const params = new URLSearchParams(window.location.search);
     const fileId = params.get("id");
     const driveLink = `https://drive.google.com/file/d/${fileId}/view?usp=sharing`;
+    const mainSite = "https://justkaarlo.com/mods"; // change if needed
 
     if (fileId) {
-      // Redirect to backend after short delay
+      // Try starting the download
       setTimeout(() => {
-        window.location.href = `http://app.justkaarlo.com/download/${fileId}`;
+        // Create hidden iframe to trigger the download
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = `http://app.justkaarlo.com/download/${fileId}`;
+        document.body.appendChild(iframe);
+
+        // Switch UI to "done"
+        document.getElementById("loaderBox").style.display = "none";
+        document.getElementById("doneBox").style.display = "block";
+
+        // Start countdown
+        let timeLeft = 5;
+        const countdownEl = document.getElementById("countdown");
+        const interval = setInterval(() => {
+          timeLeft--;
+          countdownEl.textContent = timeLeft;
+          if (timeLeft <= 0) {
+            clearInterval(interval);
+            window.location.href = mainSite;
+          }
+        }, 1000);
       }, 1500);
 
-      // Show fallback option after 30s
+      // Fallback option after 30s
       setTimeout(() => {
-        document.getElementById("fallbackBox").style.display = "block";
-        document.getElementById("fallbackBtn").onclick = () => {
-          window.location.href = driveLink;
-        };
+        if (document.getElementById("loaderBox").style.display !== "none") {
+          document.getElementById("fallbackBox").style.display = "block";
+          document.getElementById("fallbackBtn").onclick = () => {
+            window.location.href = driveLink;
+          };
+        }
       }, 30000);
     } else {
-      document.querySelector(".loader p").textContent = "No file ID provided.";
+      document.getElementById("statusText").textContent = "No file ID provided.";
     }
   </script>
 </body>
