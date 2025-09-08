@@ -366,100 +366,133 @@ async function listFilesInFolder({
             downloadBtn.appendChild(btnIcon);
 
             downloadBtn.onclick = () => {
-                // Overlay container
+                // --- Overlay ---
                 const overlay = document.createElement("div");
-                overlay.style.position = "fixed";
-                overlay.style.top = 0;
-                overlay.style.left = 0;
-                overlay.style.width = "100%";
-                overlay.style.height = "100%";
-                overlay.style.background = "rgba(30, 30, 30, 0.95)";
-                overlay.style.display = "flex";
-                overlay.style.alignItems = "center";
-                overlay.style.justifyContent = "center";
-                overlay.style.zIndex = "9999";
-                overlay.style.opacity = "0";
-                overlay.style.transition = "opacity 0.3s ease";
+                Object.assign(overlay.style, {
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    background: "rgba(30,30,30,0.95)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: 9999,
+                    opacity: "0",
+                    transition: "opacity 0.3s ease",
+                });
 
-                // Inner card
+                // --- Card ---
                 const card = document.createElement("div");
-                card.style.background = "#1e1e1e";
-                card.style.padding = "30px 40px";
-                card.style.borderRadius = "12px";
-                card.style.boxShadow = "0 8px 20px rgba(0,0,0,0.6)";
-                card.style.textAlign = "center";
-                card.style.color = "#eee";
-                card.style.fontFamily = "Arial, sans-serif";
-                card.style.cursor = "default";
-                card.style.maxWidth = "350px";
+                Object.assign(card.style, {
+                    background: "#1e1e1e",
+                    padding: "30px 40px",
+                    borderRadius: "12px",
+                    boxShadow: "0 8px 20px rgba(0,0,0,0.6)",
+                    textAlign: "center",
+                    color: "#eee",
+                    fontFamily: "Arial, sans-serif",
+                    cursor: "default",
+                    maxWidth: "360px",
+                });
 
-                // Spinner
+                // --- Spinner ---
                 const spinner = document.createElement("div");
-                spinner.style.margin = "0 auto 20px auto";
-                spinner.style.width = "50px";
-                spinner.style.height = "50px";
-                spinner.style.border = "6px solid rgba(255,255,255,0.2)";
-                spinner.style.borderTop = "6px solid #fff";
-                spinner.style.borderRadius = "50%";
-                spinner.style.animation = "spin 1s linear infinite";
+                Object.assign(spinner.style, {
+                    margin: "0 auto 20px auto",
+                    width: "50px",
+                    height: "50px",
+                    border: "6px solid rgba(255,255,255,0.2)",
+                    borderTop: "6px solid #4fa3ff",
+                    borderRadius: "50%",
+                    animation: "spin 1s linear infinite",
+                });
 
-                // Keyframes for spinner
                 const style = document.createElement("style");
                 style.textContent = `
-                @keyframes spin {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
                 `;
                 document.head.appendChild(style);
 
-                // Text
+                // --- Text ---
                 const text = document.createElement("div");
                 text.innerText = "Preparing your download...";
-                text.style.fontSize = "1.2em";
-                text.style.letterSpacing = "0.5px";
+                Object.assign(text.style, {
+                    fontSize: "1.2em",
+                    letterSpacing: "0.5px",
+                });
 
-                // Fallback link container (hidden initially)
+                // --- Fallback link (hidden initially) ---
                 const fallbackDiv = document.createElement("div");
-                fallbackDiv.style.marginTop = "20px";
-                fallbackDiv.style.fontSize = "0.95em";
-                fallbackDiv.style.color = "#aaa";
-                fallbackDiv.style.display = "none";
-                fallbackDiv.style.textAlign = "center";
+                Object.assign(fallbackDiv.style, {
+                    marginTop: "25px",
+                    display: "none",
+                    textAlign: "center",
+                });
 
                 const fallbackText = document.createElement("div");
-                fallbackText.innerText = "Download is taking longer than usual.";
-                fallbackText.style.marginBottom = "8px";
+                fallbackText.innerText = "Still waiting?";
+                Object.assign(fallbackText.style, {
+                    fontSize: "1.1em",
+                    fontWeight: "600",
+                    marginBottom: "10px",
+                    color: "#ddd",
+                    letterSpacing: "0.3px",
+                });
+
+                const fallbackSub = document.createElement("div");
+                fallbackSub.innerText = "You can try the default Google Drive link instead:";
+                Object.assign(fallbackSub.style, {
+                    fontSize: "0.9em",
+                    marginBottom: "12px",
+                    color: "#888",
+                });
 
                 const fallbackLink = document.createElement("a");
                 fallbackLink.href = `https://drive.google.com/uc?id=${file.id}&export=download`;
                 fallbackLink.target = "_blank";
-                fallbackLink.innerText = "Use the default Google Drive link";
-                fallbackLink.style.display = "inline-block";
-                fallbackLink.style.padding = "8px 16px";
-                fallbackLink.style.background = "#4fa3ff";
-                fallbackLink.style.color = "#fff";
-                fallbackLink.style.borderRadius = "6px";
-                fallbackLink.style.textDecoration = "none";
-                fallbackLink.style.fontWeight = "bold";
-                fallbackLink.style.transition = "background 0.2s ease";
+                fallbackLink.innerText = "Open Google Drive Link";
+                Object.assign(fallbackLink.style, {
+                    display: "inline-block",
+                    padding: "10px 20px",
+                    background: "linear-gradient(135deg, #4fa3ff, #357ae8)",
+                    color: "#fff",
+                    borderRadius: "8px",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                    fontSize: "0.95em",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                    transition: "all 0.2s ease",
+                });
 
-                fallbackLink.addEventListener("mouseenter", () => fallbackLink.style.background = "#3a8dd6");
-                fallbackLink.addEventListener("mouseleave", () => fallbackLink.style.background = "#4fa3ff");
+                fallbackLink.addEventListener("mouseenter", () => {
+                    fallbackLink.style.background = "linear-gradient(135deg, #3a8dd6, #2b65c7)";
+                    fallbackLink.style.boxShadow = "0 6px 16px rgba(0,0,0,0.5)";
+                });
+                fallbackLink.addEventListener("mouseleave", () => {
+                    fallbackLink.style.background = "linear-gradient(135deg, #4fa3ff, #357ae8)";
+                    fallbackLink.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
+                });
 
                 fallbackDiv.appendChild(fallbackText);
+                fallbackDiv.appendChild(fallbackSub);
                 fallbackDiv.appendChild(fallbackLink);
 
-                // Build card
+                // --- Assemble card ---
                 card.appendChild(spinner);
                 card.appendChild(text);
                 card.appendChild(fallbackDiv);
                 overlay.appendChild(card);
-
                 document.body.appendChild(overlay);
+
+                // Fade in overlay
                 requestAnimationFrame(() => overlay.style.opacity = "1");
 
-                // Function to remove overlay
+                // --- Close functionality ---
                 const removeOverlay = () => {
                     overlay.style.opacity = "0";
                     setTimeout(() => overlay.remove(), 300);
@@ -472,17 +505,17 @@ async function listFilesInFolder({
                     if (!card.contains(e.target)) removeOverlay();
                 };
                 overlay.addEventListener("click", outsideClickListener);
-                
+
                 const escListener = (e) => {
                     if (e.key === "Escape") removeOverlay();
                 };
                 document.addEventListener("keydown", escListener);
 
-                // Trigger download
+                // --- Trigger download ---
                 const downloadUrl = `http://app.justkaarlo.com/download/${file.id}`;
                 window.open(downloadUrl, "_blank");
 
-                // Show fallback link after 30 seconds
+                // --- Show fallback link after 30s ---
                 const fallbackTimeout = setTimeout(() => {
                     fallbackDiv.style.display = "block";
                 }, 30000);
