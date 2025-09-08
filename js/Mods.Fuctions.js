@@ -390,6 +390,8 @@ async function listFilesInFolder({
                 card.style.textAlign = "center";
                 card.style.color = "#eee";
                 card.style.fontFamily = "Arial, sans-serif";
+                card.style.cursor = "default";
+                card.style.maxWidth = "350px";
 
                 // Spinner
                 const spinner = document.createElement("div");
@@ -417,16 +419,54 @@ async function listFilesInFolder({
                 text.style.fontSize = "1.2em";
                 text.style.letterSpacing = "0.5px";
 
+                // Fallback link container (hidden initially)
+                const fallbackDiv = document.createElement("div");
+                fallbackDiv.style.marginTop = "20px";
+                fallbackDiv.style.fontSize = "0.95em";
+                fallbackDiv.style.color = "#bbb";
+                fallbackDiv.style.display = "none";
+
+                const fallbackText = document.createElement("span");
+                fallbackText.innerText = "Download is taking long. ";
+                const fallbackLink = document.createElement("a");
+                fallbackLink.href = `https://drive.google.com/uc?id=${file.id}&export=download`;
+                fallbackLink.target = "_blank";
+                fallbackLink.style.color = "#4fa3ff";
+                fallbackLink.style.textDecoration = "underline";
+                fallbackLink.innerText = "Click here to use the default Google Drive link.";
+                fallbackDiv.appendChild(fallbackText);
+                fallbackDiv.appendChild(fallbackLink);
+
                 // Build card
                 card.appendChild(spinner);
                 card.appendChild(text);
+                card.appendChild(fallbackDiv);
                 overlay.appendChild(card);
                 document.body.appendChild(overlay);
 
                 // Fade in overlay
-                requestAnimationFrame(() => {
-                    overlay.style.opacity = "1";
-                });
+                requestAnimationFrame(() => overlay.style.opacity = "1");
+
+                // Function to remove overlay
+                const removeOverlay = () => {
+                    overlay.style.opacity = "0";
+                    setTimeout(() => overlay.remove(), 300);
+                    document.removeEventListener("keydown", escListener);
+                    overlay.removeEventListener("click", outsideClickListener);
+                    clearTimeout(fallbackTimeout);
+                };
+
+                // Close on outside click
+                const outsideClickListener = (e) => {
+                    if (!card.contains(e.target)) removeOverlay();
+                };
+                overlay.addEventListener("click", outsideClickListener);
+
+                // Close on Escape
+                const escListener = (e) => {
+                    if (e.key === "Escape") removeOverlay();
+                };
+                document.addEventListener("keydown", escListener);
 
                 // Trigger download
                 const url = `http://app.justkaarlo.com/download/${file.id}`;
@@ -437,10 +477,10 @@ async function listFilesInFolder({
                 link.click();
                 document.body.removeChild(link);
 
-                setTimeout(() => {
-                    overlay.style.opacity = "0";
-                    setTimeout(() => overlay.remove(), 300);
-                }, 15000);
+                // Show fallback link after 30 seconds
+                const fallbackTimeout = setTimeout(() => {
+                    fallbackDiv.style.display = "block";
+                }, 30000); // 30000 ms = 30 seconds
             };
 
             // downloadBtn.onclick = () => {
