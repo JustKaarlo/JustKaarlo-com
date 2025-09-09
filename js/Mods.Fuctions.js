@@ -236,11 +236,16 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
-// Enhanced Download Manager Class with Real Download Detection
 class DownloadManager {
     constructor() {
         this.activeDownloads = new Map();
         this.toastContainer = this.createToastContainer();
+        this.serverBaseUrl = 'https://app.justkaarlo.com';
+    }
+
+    // Generate unique download ID
+    generateDownloadId() {
+        return 'dl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
 
     createToastContainer() {
@@ -353,7 +358,7 @@ class DownloadManager {
         return toast;
     }
 
-    updateToast(toast, message) {
+    updateToast(toast, message, type = null) {
         // Find the text node in the message container
         const messageContainer = toast.querySelector('div > div');
         if (messageContainer) {
@@ -361,6 +366,15 @@ class DownloadManager {
             if (textNode && textNode.nodeType === Node.TEXT_NODE) {
                 textNode.textContent = message;
             }
+        }
+
+        // Update toast color if type is provided
+        if (type) {
+            const newColor = type === 'loading' ? '#2196F3' :
+                type === 'success' ? '#4CAF50' :
+                    type === 'error' ? '#f44336' : '#FF9800';
+            toast.style.background = newColor;
+            toast.className = `download-toast toast-${type}`;
         }
     }
 
@@ -375,78 +389,109 @@ class DownloadManager {
         }
     }
 
-    // Main download method
-    download(fileId, filename, customLink = null) {
-        const url = customLink || `https://app.justkaarlo.com/download/${fileId}`;
-        return this.downloadViaIframe(url, filename);
+    // Poll server for download status
+    async pollDownloadStatus(downloadId, toast) {
+        const maxPollTime = 180000; // 3 minutes
+        const pollInterval = 2000; // 2 seconds
+        const startTime = Date.now();
+
+        const poll = async () => {
+            try {
+                const response = await fetch(`${this.serverBaseUrl}/download-status/${downloadId}`);
+                const statusData = await response.json();
+
+                console.log('Download status:', statusData);
+
+                switch (statusData.status) {
+                    case 'starting':
+                        this.updateToast(toast, `Initializing download: ${statusData.filename}`, 'loading');
+                        break;
+
+                    case 'preparing':
+                        this.updateToast(toast, `Preparing download: ${statusData.filename}`, 'loading');
+                        break;
+
+                    case 'downloading':
+                        const progressText = statusData.progress > 0 ?
+                            ` (${statusData.progress}%)` : '';
+                        this.updateToast(toast, `Downloading: ${statusData.filename}${progressText}`, 'loading');
+                        break;
+
+                    case 'completed':
+                        this.updateToast(toast, `Download completed: ${statusData.filename}`, 'success');
+                        setTimeout(() => this.removeToast(toast), 5000);
+                        return; // Stop polling
+
+                    case 'cancelled':
+                        this.updateToast(toast, `Download cancelled: ${statusData.filename}`, 'info');
+                        setTimeout(() => this.removeToast(toast), 4000);
+                        return; // Stop polling
+
+                    case 'error':
+                        this.updateToast(toast, `Download failed: ${statusData.message}`, 'error');
+                        setTimeout(() => this.removeToast(toast), 8000);
+                        return; // Stop polling
+
+                    case 'not_found':
+                        // Download ID not found, might be too early or expired
+                        if (Date.now() - startTime < 10000) {
+                            this.updateToast(toast, 'Connecting to server...', 'loading');
+                        } else {
+                            this.updateToast(toast, 'Server connection lost. Check downloads manually.', 'error');
+                            setTimeout(() => this.removeToast(toast), 6000);
+                            return;
+                        }
+                        break;
+                }
+
+                // Continue polling if not finished and within time limit
+                if (Date.now() - startTime < maxPollTime) {
+                    setTimeout(poll, pollInterval);
+                } else {
+                    // Timeout reached
+                    this.updateToast(toast, 'Status check timeout. Please verify your downloads.', 'error');
+                    setTimeout(() => this.removeToast(toast), 8000);
+                }
+
+            } catch (error) {
+                console.error('Error polling download status:', error);
+                this.updateToast(toast, 'Unable to check download status. Server may be asleep.', 'error');
+                setTimeout(() => this.removeToast(toast), 6000);
+            }
+        };
+
+        // Start polling after a short delay to allow server to register the download
+        setTimeout(poll, 1000);
     }
 
-    // Enhanced iframe download with simple, reliable detection
-    downloadViaIframe(url, filename) {
-        const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
-        
+    // Main download method with server status integration
+    download(fileId, filename, customLink = null) {
+        const downloadId = this.generateDownloadId();
+
+        // Create download URL with downloadId parameter
+        const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
+
+        return this.downloadWithStatusTracking(url, filename, downloadId);
+    }
+
+    // Enhanced download with server status tracking
+    downloadWithStatusTracking(url, filename, downloadId) {
+        const loadingToast = this.showToast(`Initiating download: ${filename}`, 'loading');
+
         // Add cancel button to the toast
-        this.addCancelButton(loadingToast);
-        
+        this.addCancelButton(loadingToast, downloadId);
+
         // Create iframe for download
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = url;
         document.body.appendChild(iframe);
 
-        let phaseTimeout;
-        let currentPhase = 0;
-        let hasUserInteracted = false;
-        let downloadProcessed = false;
-        
-        const phases = [
-            { time: 5000, message: `Starting server (Render may be sleeping, up to 2 minutes)...` },
-            { time: 30000, message: `Server warming up, please wait...` },
-            { time: 60000, message: `Still connecting... Server cold start detected.` },
-            { time: 90000, message: `Almost ready... Please be patient.` }
-        ];
-
-        // Simple detection: when window loses focus, dialog appeared
-        const handleWindowBlur = () => {
-            if (!hasUserInteracted && !downloadProcessed) {
-                hasUserInteracted = true;
-                clearTimeout(phaseTimeout);
-                this.updateToast(loadingToast, 'Download dialog opened. Choose your action...');
-                
-                // After dialog appears, wait 12 seconds then auto-dismiss
-                setTimeout(() => {
-                    if (!downloadProcessed) {
-                        downloadProcessed = true;
-                        cleanup();
-                        this.removeToast(loadingToast);
-                        this.showToast('Download dialog closed. Check your downloads if file was saved.', 'info', 6000);
-                    }
-                }, 12000);
-            }
-        };
-
-        // Add event listener
-        window.addEventListener('blur', handleWindowBlur, { once: true });
-
-        // Update message based on time elapsed (only before user interaction)
-        const updatePhase = () => {
-            if (currentPhase < phases.length && !hasUserInteracted && !downloadProcessed) {
-                this.updateToast(loadingToast, phases[currentPhase].message);
-                currentPhase++;
-                if (currentPhase < phases.length) {
-                    const nextDelay = phases[currentPhase].time - phases[currentPhase - 1].time;
-                    phaseTimeout = setTimeout(updatePhase, nextDelay);
-                }
-            }
-        };
-
-        // Start first phase after 5 seconds
-        phaseTimeout = setTimeout(updatePhase, phases[0].time);
+        // Start polling server for real download status
+        this.pollDownloadStatus(downloadId, loadingToast);
 
         // Cleanup function
         const cleanup = () => {
-            clearTimeout(phaseTimeout);
-            window.removeEventListener('blur', handleWindowBlur);
             try {
                 if (iframe.parentNode) {
                     document.body.removeChild(iframe);
@@ -456,26 +501,16 @@ class DownloadManager {
             }
         };
 
-        // Fallback timeout for when no dialog appears (server issues)
-        const finalTimeout = setTimeout(() => {
-            if (!downloadProcessed) {
-                downloadProcessed = true;
-                cleanup();
-                this.removeToast(loadingToast);
-                this.showToast('Download timeout. Server may be sleeping. Please try again.', 'error', 8000);
-            }
-        }, 120000); // 2 minutes
+        // Cleanup after reasonable time
+        setTimeout(cleanup, 30000);
 
         // Store reference for manual cancellation
         const downloadRef = {
+            downloadId: downloadId,
             cancel: () => {
-                if (!downloadProcessed) {
-                    downloadProcessed = true;
-                    clearTimeout(finalTimeout);
-                    cleanup();
-                    this.removeToast(loadingToast);
-                    this.showToast('Download cancelled', 'info', 3000);
-                }
+                cleanup();
+                this.removeToast(loadingToast);
+                this.showToast('Download cancelled by user', 'info', 3000);
             }
         };
 
@@ -486,7 +521,7 @@ class DownloadManager {
     }
 
     // Add cancel button to toast
-    addCancelButton(toast) {
+    addCancelButton(toast, downloadId) {
         const contentWrapper = toast.querySelector('div');
         const cancelBtn = document.createElement('button');
         cancelBtn.innerHTML = 'Cancel';
@@ -513,6 +548,19 @@ class DownloadManager {
         // Insert before the dismiss button
         const dismissBtn = contentWrapper.lastChild;
         contentWrapper.insertBefore(cancelBtn, dismissBtn);
+    }
+
+    // Method to check server health (optional)
+    async checkServerHealth() {
+        try {
+            const response = await fetch(`${this.serverBaseUrl}/health`);
+            const health = await response.json();
+            console.log('Server health:', health);
+            return health.status === 'healthy';
+        } catch (error) {
+            console.error('Server health check failed:', error);
+            return false;
+        }
     }
 }
 
@@ -678,7 +726,7 @@ async function listFilesInFolder({
             downloadBtn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
                 downloadManager.download(file.id, file.name, customLink);
             };
