@@ -1,4 +1,4 @@
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Jekyll with GitHub Pages
 
 on:
   push:
@@ -21,13 +21,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Inject API key into JS
+        run: | 
+          sed -i "s|__API_KEY__|${{ secrets.GOOGLEDRIVEAPIKEY }}|" ./js/Mods.FileList.Settings.js
+
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
