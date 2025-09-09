@@ -168,4 +168,4 @@
         showDownloadButtonAtRoot: true
     });
     attachDocPreview(erContainer);
-})();
+})()

@@ -1,7 +1,9 @@
+# FOLDERS
 .vscode/
+.backup/
+
+# FILES
 /desktop.ini
 /settings.json
 /justkaarlo.github.io.code-workspace.lnk
-
-/.github/workflows/Documentation.md
 /.github/workflows/Documentation.md

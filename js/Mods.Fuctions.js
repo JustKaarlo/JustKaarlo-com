@@ -236,6 +236,301 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
+// Enhanced Download Manager Class
+class DownloadManager {
+    constructor() {
+        this.activeDownloads = new Map();
+        this.toastContainer = this.createToastContainer();
+    }
+
+    createToastContainer() {
+        const container = document.createElement('div');
+        container.id = 'download-toast-container';
+        container.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            pointer-events: none;
+        `;
+        document.body.appendChild(container);
+        return container;
+    }
+
+    showToast(message, type = 'info', duration = 0) {
+        const toast = document.createElement('div');
+        toast.className = `download-toast toast-${type}`;
+        toast.style.cssText = `
+            background: ${type === 'loading' ? '#2196F3' : type === 'success' ? '#4CAF50' : '#FF9800'};
+            color: white;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            pointer-events: auto;
+            animation: slideIn 0.3s ease-out;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            max-width: 300px;
+            word-wrap: break-word;
+        `;
+
+        if (type === 'loading') {
+            const spinner = document.createElement('span');
+            spinner.style.cssText = `
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                border: 2px solid rgba(255,255,255,0.3);
+                border-top: 2px solid white;
+                border-radius: 50%;
+                margin-right: 8px;
+                animation: spin 1s linear infinite;
+            `;
+            toast.appendChild(spinner);
+        }
+
+        toast.appendChild(document.createTextNode(message));
+        this.toastContainer.appendChild(toast);
+
+        if (duration > 0) {
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.remove();
+                }
+            }, duration);
+        }
+
+        return toast;
+    }
+
+    updateToast(toast, message) {
+        const textNode = toast.lastChild;
+        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+            textNode.textContent = message;
+        }
+    }
+
+    removeToast(toast) {
+        if (toast && toast.parentNode) {
+            toast.style.animation = 'slideOut 0.3s ease-in forwards';
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.remove();
+                }
+            }, 300);
+        }
+    }
+
+    // Main download method with intelligent routing
+    async download(fileId, filename, customLink = null) {
+        const downloadId = Date.now().toString();
+        
+        try {
+            if (customLink) {
+                return this.downloadWithTracking(customLink, filename, downloadId);
+            }
+
+            // Check file size to determine best method
+            const fileInfo = await this.getFileInfo(fileId);
+            
+            if (!fileInfo) {
+                return this.downloadViaIframe(`http://app.justkaarlo.com/download/${fileId}`, filename);
+            }
+
+            // Route based on file size
+            if (fileInfo.size && fileInfo.size < 50_000_000) { // < 50MB
+                return this.blobDownload(fileId, filename);
+            } else {
+                return this.downloadWithTracking(`http://app.justkaarlo.com/download/${fileId}`, filename, downloadId);
+            }
+
+        } catch (error) {
+            console.error('Download failed:', error);
+            this.showToast('Download failed. Please try again.', 'error', 5000);
+        }
+    }
+
+    async getFileInfo(fileId) {
+        try {
+            const response = await fetch(`http://app.justkaarlo.com/file-info/${fileId}`);
+            if (response.ok) {
+                return await response.json();
+            }
+        } catch (error) {
+            console.log('File info not available, using fallback method');
+        }
+        return null;
+    }
+
+    // Cookie-based download tracking method
+    downloadWithTracking(url, filename, downloadId) {
+        const trackingUrl = `${url}?downloadID=${downloadId}`;
+        const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
+        
+        // Create enhanced iframe for download
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = trackingUrl;
+        document.body.appendChild(iframe);
+        
+        // Poll for download completion cookie
+        const cookiePattern = new RegExp(`downloadID=${downloadId}`, 'i');
+        let pollCount = 0;
+        const maxPolls = 180; // 90 seconds with 500ms intervals
+        
+        const pollInterval = setInterval(() => {
+            pollCount++;
+            
+            if (document.cookie.search(cookiePattern) >= 0) {
+                clearInterval(pollInterval);
+                this.updateToast(loadingToast, `Download started: ${filename}`);
+                setTimeout(() => {
+                    this.removeToast(loadingToast);
+                    document.body.removeChild(iframe);
+                }, 3000);
+                return;
+            }
+            
+            // Update progress message for long downloads
+            if (pollCount === 10) { // 5 seconds
+                this.updateToast(loadingToast, `Starting server (may take up to 60 seconds)...`);
+            } else if (pollCount === 60) { // 30 seconds
+                this.updateToast(loadingToast, `Server warming up, please wait...`);
+            } else if (pollCount >= maxPolls) {
+                clearInterval(pollInterval);
+                this.removeToast(loadingToast);
+                this.showToast('Download timed out. Server may be cold - please try again.', 'error', 8000);
+                if (iframe.parentNode) {
+                    document.body.removeChild(iframe);
+                }
+            }
+        }, 500);
+        
+        // Store download info for cleanup
+        this.activeDownloads.set(downloadId, {
+            iframe,
+            interval: pollInterval,
+            toast: loadingToast
+        });
+    }
+
+    // Blob download for smaller files
+    async blobDownload(fileId, filename) {
+        const loadingToast = this.showToast(`Downloading: ${filename}`, 'loading');
+        
+        try {
+            const response = await fetch(`http://app.justkaarlo.com/download/${fileId}`);
+            
+            if (!response.ok) {
+                throw new Error(`Download failed: ${response.status}`);
+            }
+
+            const contentLength = response.headers.get('content-length');
+            const total = parseInt(contentLength, 10);
+            let loaded = 0;
+
+            const reader = response.body.getReader();
+            const chunks = [];
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                chunks.push(value);
+                loaded += value.length;
+
+                if (total > 0) {
+                    const progress = Math.round((loaded / total) * 100);
+                    this.updateToast(loadingToast, `Downloading: ${filename} (${progress}%)`);
+                }
+            }
+
+            // Create download
+            const blob = new Blob(chunks);
+            const downloadUrl = URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = downloadUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // Cleanup
+            URL.revokeObjectURL(downloadUrl);
+            this.removeToast(loadingToast);
+            this.showToast(`Download completed: ${filename}`, 'success', 4000);
+
+        } catch (error) {
+            console.error('Blob download failed:', error);
+            this.removeToast(loadingToast);
+            
+            // Fallback to iframe method
+            this.showToast('Switching to alternative download method...', 'info', 3000);
+            setTimeout(() => {
+                this.downloadViaIframe(`http://app.justkaarlo.com/download/${fileId}`, filename);
+            }, 1000);
+        }
+    }
+
+    // Iframe download fallback
+    downloadViaIframe(url, filename) {
+        const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
+        
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = url;
+        document.body.appendChild(iframe);
+
+        // Enhanced cleanup with timeout
+        const cleanup = () => {
+            try {
+                if (iframe.parentNode) {
+                    document.body.removeChild(iframe);
+                }
+                this.removeToast(loadingToast);
+            } catch (e) {
+                console.log('Cleanup completed');
+            }
+        };
+
+        // Set generous timeout for cold starts
+        const timeoutId = setTimeout(() => {
+            cleanup();
+            this.showToast('Download may have started. Check your downloads folder.', 'info', 6000);
+        }, 90000); // 90 seconds
+
+        // Try to detect completion
+        iframe.onload = () => {
+            clearTimeout(timeoutId);
+            this.updateToast(loadingToast, `Download started: ${filename}`);
+            setTimeout(cleanup, 5000);
+        };
+    }
+}
+
+// Initialize global download manager
+const downloadManager = new DownloadManager();
+
+// Add CSS animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOut {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+`;
+document.head.appendChild(style);
+
 async function listFilesInFolder({
     folderId,
     container,
@@ -365,15 +660,12 @@ async function listFilesInFolder({
             btnIcon.appendChild(arrowPath);
             downloadBtn.appendChild(btnIcon);
 
-            downloadBtn.onclick = () => {
+            downloadBtn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
-                if (customLink) {
-                    window.open(customLink, "_blank");
-                } else {
-                    window.open(`http://app.justkaarlo.com/download/${file.id}`, "_blank");
-                    // const dl = getDownloadUrl(file, apiKey);
-                    // window.open(dl, "_blank");
-                }
+                downloadManager.download(file.id, file.name, customLink);
             };
 
             fileEntry.appendChild(downloadBtn);
