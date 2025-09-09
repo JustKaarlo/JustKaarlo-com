@@ -381,7 +381,7 @@ class DownloadManager {
         return this.downloadViaIframe(url, filename);
     }
 
-    // Enhanced iframe download with real download detection
+    // Enhanced iframe download with simple, reliable detection
     downloadViaIframe(url, filename) {
         const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
         
@@ -396,9 +396,8 @@ class DownloadManager {
 
         let phaseTimeout;
         let currentPhase = 0;
-        let windowFocusTimeout;
         let hasUserInteracted = false;
-        let downloadStarted = false;
+        let downloadProcessed = false;
         
         const phases = [
             { time: 5000, message: `Starting server (Render may be sleeping, up to 2 minutes)...` },
@@ -407,38 +406,31 @@ class DownloadManager {
             { time: 90000, message: `Almost ready... Please be patient.` }
         ];
 
-        // Detect window focus changes (download dialog interactions)
-        const handleWindowFocus = () => {
-            clearTimeout(windowFocusTimeout);
-            if (hasUserInteracted && !downloadStarted) {
-                // Window regained focus - user might have cancelled or download started
-                windowFocusTimeout = setTimeout(() => {
-                    // If we're still here after 3 seconds, user likely cancelled
-                    if (document.hasFocus() && !downloadStarted) {
-                        this.handleDownloadCancellation();
-                    }
-                }, 3000);
-            }
-        };
-
+        // Simple detection: when window loses focus, dialog appeared
         const handleWindowBlur = () => {
-            // Window lost focus - download dialog appeared
-            hasUserInteracted = true;
-            clearTimeout(windowFocusTimeout);
-            
-            // Update toast to show download dialog appeared
-            if (!downloadStarted) {
-                this.updateToast(loadingToast, 'Download dialog opened. Choose location and click Save...');
+            if (!hasUserInteracted && !downloadProcessed) {
+                hasUserInteracted = true;
+                clearTimeout(phaseTimeout);
+                this.updateToast(loadingToast, 'Download dialog opened. Choose your action...');
+                
+                // After dialog appears, wait 12 seconds then auto-dismiss
+                setTimeout(() => {
+                    if (!downloadProcessed) {
+                        downloadProcessed = true;
+                        cleanup();
+                        this.removeToast(loadingToast);
+                        this.showToast('Download dialog closed. Check your downloads if file was saved.', 'info', 6000);
+                    }
+                }, 12000);
             }
         };
 
-        // Add event listeners
-        window.addEventListener('focus', handleWindowFocus);
-        window.addEventListener('blur', handleWindowBlur);
+        // Add event listener
+        window.addEventListener('blur', handleWindowBlur, { once: true });
 
-        // Update message based on time elapsed
+        // Update message based on time elapsed (only before user interaction)
         const updatePhase = () => {
-            if (currentPhase < phases.length && !downloadStarted) {
+            if (currentPhase < phases.length && !hasUserInteracted && !downloadProcessed) {
                 this.updateToast(loadingToast, phases[currentPhase].message);
                 currentPhase++;
                 if (currentPhase < phases.length) {
@@ -454,8 +446,6 @@ class DownloadManager {
         // Cleanup function
         const cleanup = () => {
             clearTimeout(phaseTimeout);
-            clearTimeout(windowFocusTimeout);
-            window.removeEventListener('focus', handleWindowFocus);
             window.removeEventListener('blur', handleWindowBlur);
             try {
                 if (iframe.parentNode) {
@@ -466,78 +456,26 @@ class DownloadManager {
             }
         };
 
-        // Handle download cancellation
-        const handleDownloadCancellation = () => {
-            cleanup();
-            this.removeToast(loadingToast);
-            this.showToast('Download cancelled or failed to start', 'info', 4000);
-        };
-
-        // Check if download actually started by monitoring window activity
-        const checkDownloadProgress = () => {
-            if (hasUserInteracted && !downloadStarted) {
-                // User interacted but window is focused - download likely started
-                if (document.hasFocus()) {
-                    downloadStarted = true;
-                    clearTimeout(phaseTimeout);
-                    this.updateToast(loadingToast, `Download started: ${filename}`);
-                    setTimeout(() => {
-                        cleanup();
-                        this.removeToast(loadingToast);
-                        this.showToast(`Download in progress: ${filename}`, 'success', 4000);
-                    }, 2000);
-                }
-            }
-        };
-
-        // Monitor for download start after user interaction
-        const downloadMonitor = setInterval(() => {
-            if (hasUserInteracted && !downloadStarted) {
-                checkDownloadProgress();
-            } else if (downloadStarted) {
-                clearInterval(downloadMonitor);
-            }
-        }, 1000);
-
-        // Final timeout for real failures
+        // Fallback timeout for when no dialog appears (server issues)
         const finalTimeout = setTimeout(() => {
-            clearInterval(downloadMonitor);
-            if (!downloadStarted) {
+            if (!downloadProcessed) {
+                downloadProcessed = true;
                 cleanup();
                 this.removeToast(loadingToast);
                 this.showToast('Download timeout. Server may be sleeping. Please try again.', 'error', 8000);
             }
         }, 120000); // 2 minutes
 
-        // Fallback: iframe load (less reliable but backup)
-        iframe.onload = () => {
-            if (!hasUserInteracted) {
-                // Server responded quickly - show waiting for dialog
-                setTimeout(() => {
-                    if (!downloadStarted && !hasUserInteracted) {
-                        this.updateToast(loadingToast, 'Waiting for download dialog...');
-                    }
-                }, 2000);
-            }
-        };
-
-        // Handle iframe errors
-        iframe.onerror = () => {
-            clearInterval(downloadMonitor);
-            clearTimeout(finalTimeout);
-            cleanup();
-            this.removeToast(loadingToast);
-            this.showToast('Download failed. Server may be down.', 'error', 6000);
-        };
-
         // Store reference for manual cancellation
         const downloadRef = {
             cancel: () => {
-                clearInterval(downloadMonitor);
-                clearTimeout(finalTimeout);
-                cleanup();
-                this.removeToast(loadingToast);
-                this.showToast('Download cancelled', 'info', 3000);
+                if (!downloadProcessed) {
+                    downloadProcessed = true;
+                    clearTimeout(finalTimeout);
+                    cleanup();
+                    this.removeToast(loadingToast);
+                    this.showToast('Download cancelled', 'info', 3000);
+                }
             }
         };
 
