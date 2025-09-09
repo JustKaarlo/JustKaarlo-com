@@ -262,11 +262,15 @@ class DownloadManager {
         return container;
     }
 
-    showToast(message, type = 'info', duration = 0) {
+    showToast(message, type = 'info', duration = 3000) {
         const toast = document.createElement('div');
         toast.className = `download-toast toast-${type}`;
+        
+        const backgroundColor = type === 'success' ? '#4CAF50' : 
+                              type === 'error' ? '#f44336' : '#2196F3';
+        
         toast.style.cssText = `
-            background: ${type === 'loading' ? '#2196F3' : type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#FF9800'};
+            background: ${backgroundColor};
             color: white;
             padding: 12px 20px;
             margin-bottom: 10px;
@@ -278,72 +282,12 @@ class DownloadManager {
             font-size: 14px;
             max-width: 350px;
             word-wrap: break-word;
-            position: relative;
             cursor: pointer;
         `;
 
-        // Create content wrapper
-        const contentWrapper = document.createElement('div');
-        contentWrapper.style.cssText = `
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        `;
-
-        // Create message container
-        const messageContainer = document.createElement('div');
-        messageContainer.style.cssText = `
-            display: flex;
-            align-items: center;
-            flex: 1;
-        `;
-
-        if (type === 'loading') {
-            const spinner = document.createElement('span');
-            spinner.style.cssText = `
-                display: inline-block;
-                width: 14px;
-                height: 14px;
-                border: 2px solid rgba(255,255,255,0.3);
-                border-top: 2px solid white;
-                border-radius: 50%;
-                margin-right: 8px;
-                animation: spin 1s linear infinite;
-                vertical-align: middle;
-            `;
-            messageContainer.appendChild(spinner);
-        }
-
-        const messageText = document.createTextNode(message);
-        messageContainer.appendChild(messageText);
-
-        // Create dismiss button
-        const dismissBtn = document.createElement('span');
-        dismissBtn.innerHTML = '×';
-        dismissBtn.style.cssText = `
-            margin-left: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        `;
-        dismissBtn.onmouseover = () => dismissBtn.style.opacity = '1';
-        dismissBtn.onmouseout = () => dismissBtn.style.opacity = '0.7';
-        dismissBtn.onclick = (e) => {
-            e.stopPropagation();
-            this.removeToast(toast);
-        };
-
-        contentWrapper.appendChild(messageContainer);
-        contentWrapper.appendChild(dismissBtn);
-        toast.appendChild(contentWrapper);
-
-        // Make entire toast clickable to dismiss
-        toast.onclick = () => this.removeToast(toast);
-
-        // Add tooltip
+        toast.textContent = message;
         toast.title = 'Click to dismiss';
+        toast.onclick = () => this.removeToast(toast);
 
         this.toastContainer.appendChild(toast);
 
@@ -358,26 +302,6 @@ class DownloadManager {
         return toast;
     }
 
-    updateToast(toast, message, type = null) {
-        // Find the text node in the message container
-        const messageContainer = toast.querySelector('div > div');
-        if (messageContainer) {
-            const textNode = messageContainer.lastChild;
-            if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-                textNode.textContent = message;
-            }
-        }
-
-        // Update toast color if type is provided
-        if (type) {
-            const newColor = type === 'loading' ? '#2196F3' :
-                type === 'success' ? '#4CAF50' :
-                    type === 'error' ? '#f44336' : '#FF9800';
-            toast.style.background = newColor;
-            toast.className = `download-toast toast-${type}`;
-        }
-    }
-
     removeToast(toast) {
         if (toast && toast.parentNode) {
             toast.style.animation = 'slideOut 0.3s ease-in forwards';
@@ -389,11 +313,12 @@ class DownloadManager {
         }
     }
 
-    // Poll server for download status
-    async pollDownloadStatus(downloadId, toast) {
-        const maxPollTime = 180000; // 3 minutes
+    // Poll server for download status - simplified version
+    async pollDownloadStatus(downloadId) {
+        const maxPollTime = 30000; // 30 seconds
         const pollInterval = 2000; // 2 seconds
         const startTime = Date.now();
+        let downloadStarted = false;
 
         const poll = async () => {
             try {
@@ -403,42 +328,36 @@ class DownloadManager {
                 console.log('Download status:', statusData);
 
                 switch (statusData.status) {
-                    case 'starting':
-                        this.updateToast(toast, `Initializing download: ${statusData.filename}`, 'loading');
-                        break;
-
-                    case 'preparing':
-                        this.updateToast(toast, `Preparing download: ${statusData.filename}`, 'loading');
-                        break;
-
                     case 'downloading':
-                        const progressText = statusData.progress > 0 ?
-                            ` (${statusData.progress}%)` : '';
-                        this.updateToast(toast, `Downloading: ${statusData.filename}${progressText}`, 'loading');
+                        // Show "Download Started" only once
+                        if (!downloadStarted) {
+                            downloadStarted = true;
+                            this.showToast('Download Started', 'success', 3000);
+                            return; // Stop polling after showing download started
+                        }
                         break;
-
-                    case 'completed':
-                        this.updateToast(toast, `Download completed: ${statusData.filename}`, 'success');
-                        setTimeout(() => this.removeToast(toast), 5000);
-                        return; // Stop polling
 
                     case 'cancelled':
-                        this.updateToast(toast, `Download cancelled: ${statusData.filename}`, 'info');
-                        setTimeout(() => this.removeToast(toast), 4000);
+                        this.showToast('Download Cancelled', 'error', 3000);
                         return; // Stop polling
 
                     case 'error':
-                        this.updateToast(toast, `Download failed: ${statusData.message}`, 'error');
-                        setTimeout(() => this.removeToast(toast), 8000);
+                        this.showToast('Download Failed', 'error', 3000);
+                        return; // Stop polling
+
+                    case 'starting':
+                    case 'preparing':
+                        // Keep polling, don't show anything yet
+                        break;
+
+                    case 'completed':
+                        // Don't show completion message as requested
                         return; // Stop polling
 
                     case 'not_found':
-                        // Download ID not found, might be too early or expired
-                        if (Date.now() - startTime < 10000) {
-                            this.updateToast(toast, 'Connecting to server...', 'loading');
-                        } else {
-                            this.updateToast(toast, 'Server connection lost. Check downloads manually.', 'error');
-                            setTimeout(() => this.removeToast(toast), 6000);
+                        // Download ID not found, might be too early
+                        if (Date.now() - startTime > 10000) {
+                            // After 10 seconds, stop trying
                             return;
                         }
                         break;
@@ -447,16 +366,11 @@ class DownloadManager {
                 // Continue polling if not finished and within time limit
                 if (Date.now() - startTime < maxPollTime) {
                     setTimeout(poll, pollInterval);
-                } else {
-                    // Timeout reached
-                    this.updateToast(toast, 'Status check timeout. Please verify your downloads.', 'error');
-                    setTimeout(() => this.removeToast(toast), 8000);
                 }
 
             } catch (error) {
                 console.error('Error polling download status:', error);
-                this.updateToast(toast, 'Unable to check download status. Server may be asleep.', 'error');
-                setTimeout(() => this.removeToast(toast), 6000);
+                // Silently fail - no error notifications as requested
             }
         };
 
@@ -464,7 +378,7 @@ class DownloadManager {
         setTimeout(poll, 1000);
     }
 
-    // Main download method with server status integration
+    // Main download method
     download(fileId, filename, customLink = null) {
         const downloadId = this.generateDownloadId();
 
@@ -476,19 +390,14 @@ class DownloadManager {
 
     // Enhanced download with server status tracking
     downloadWithStatusTracking(url, filename, downloadId) {
-        const loadingToast = this.showToast(`Initiating download: ${filename}`, 'loading');
-
-        // Add cancel button to the toast
-        this.addCancelButton(loadingToast, downloadId);
-
         // Create iframe for download
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = url;
         document.body.appendChild(iframe);
 
-        // Start polling server for real download status
-        this.pollDownloadStatus(downloadId, loadingToast);
+        // Start polling server for download status
+        this.pollDownloadStatus(downloadId);
 
         // Cleanup function
         const cleanup = () => {
@@ -504,63 +413,11 @@ class DownloadManager {
         // Cleanup after reasonable time
         setTimeout(cleanup, 30000);
 
-        // Store reference for manual cancellation
-        const downloadRef = {
+        // Return reference for compatibility
+        return {
             downloadId: downloadId,
-            cancel: () => {
-                cleanup();
-                this.removeToast(loadingToast);
-                this.showToast('Download cancelled by user', 'info', 3000);
-            }
+            cancel: cleanup
         };
-
-        // Store reference for the cancel button
-        loadingToast.downloadRef = downloadRef;
-
-        return downloadRef;
-    }
-
-    // Add cancel button to toast
-    addCancelButton(toast, downloadId) {
-        const contentWrapper = toast.querySelector('div');
-        const cancelBtn = document.createElement('button');
-        cancelBtn.innerHTML = 'Cancel';
-        cancelBtn.style.cssText = `
-            margin-left: 15px;
-            padding: 4px 8px;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 3px;
-            color: white;
-            font-size: 12px;
-            cursor: pointer;
-            transition: background 0.2s;
-        `;
-        cancelBtn.onmouseover = () => cancelBtn.style.background = 'rgba(255,255,255,0.3)';
-        cancelBtn.onmouseout = () => cancelBtn.style.background = 'rgba(255,255,255,0.2)';
-        cancelBtn.onclick = (e) => {
-            e.stopPropagation();
-            if (toast.downloadRef) {
-                toast.downloadRef.cancel();
-            }
-        };
-
-        // Insert before the dismiss button
-        const dismissBtn = contentWrapper.lastChild;
-        contentWrapper.insertBefore(cancelBtn, dismissBtn);
-    }
-
-    // Method to check server health (optional)
-    async checkServerHealth() {
-        try {
-            const response = await fetch(`${this.serverBaseUrl}/health`);
-            const health = await response.json();
-            console.log('Server health:', health);
-            return health.status === 'healthy';
-        } catch (error) {
-            console.error('Server health check failed:', error);
-            return false;
-        }
     }
 }
 
@@ -577,10 +434,6 @@ style.textContent = `
     @keyframes slideOut {
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(100%); opacity: 0; }
-    }
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
     }
     
     .download-toast {
