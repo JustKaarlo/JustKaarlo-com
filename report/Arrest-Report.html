@@ -241,20 +241,6 @@
       <div class="header-title">⚠️ Submission Failed</div>
       <div class="header-subtitle">All Fields Are Required</div>
     </div>
-    <div id="pin-popup">
-      <div class="header-title">🔐 Webhook Required</div>
-      <div class="header-subtitle">Select or Enter Webhook</div>
-      <input id="webhook-url" list="webhook-history" placeholder="Enter Webhook URL" style="margin-top:10px" type="text" />
-      <datalist id="webhook-history"></datalist>
-      <div id="pin-error">Webhook URL Is Required</div>
-      <div style="margin-top: 15px;">
-        <button onclick="validateWebhook()" style="width: 80px; margin-right: 20px;">Confirm</button>
-        <button onclick="closePinPopup()"
-          style="width: 80px; margin-left: 20px; background: rgba(175,41,41,1.0);">Close</button>
-      </div>
-      <button class="clear-btn" onclick="clearWebhookData()"
-        style="margin-top:10px; padding: 6px 12px; font-size: 13px;">CLEAR DATA</button>
-    </div>
   </div>
 
   <script>
@@ -554,6 +540,7 @@
           formData.append("file", blob, "report.png");
 
           const threadQuery = data.thread ? `?thread_id=${data.thread}` : '';
+          const webhookUrl = '__WEBHOOK_URL__';
           const finalURL = `${data.webhook}${threadQuery}`;
 
           fetch(finalURL, {
