@@ -24,7 +24,7 @@ jobs:
 
       - name: Inject API key into JS
         run: | 
-          sed -i "s|__API_KEY__|${{ secrets.GOOGLEDRIVEAPIKEY }}|" ./js/Mods.FileList.Settings.js
+          sed -i "s|__API_KEY__|${{ secrets.GOOGLE_DRIVE_API }}|" ./js/Mods.FileList.Settings.js
 
 
       - name: Setup Pages
