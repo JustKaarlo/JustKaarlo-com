@@ -261,7 +261,7 @@ class DownloadManager {
         const toast = document.createElement('div');
         toast.className = `download-toast toast-${type}`;
         toast.style.cssText = `
-            background: ${type === 'loading' ? '#2196F3' : type === 'success' ? '#4CAF50' : '#FF9800'};
+            background: ${type === 'loading' ? '#2196F3' : type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#FF9800'};
             color: white;
             padding: 12px 20px;
             margin-bottom: 10px;
@@ -271,8 +271,9 @@ class DownloadManager {
             animation: slideIn 0.3s ease-out;
             font-family: Arial, sans-serif;
             font-size: 14px;
-            max-width: 300px;
+            max-width: 350px;
             word-wrap: break-word;
+            position: relative;
         `;
 
         if (type === 'loading') {
@@ -286,6 +287,7 @@ class DownloadManager {
                 border-radius: 50%;
                 margin-right: 8px;
                 animation: spin 1s linear infinite;
+                vertical-align: middle;
             `;
             toast.appendChild(spinner);
         }
@@ -296,7 +298,7 @@ class DownloadManager {
         if (duration > 0) {
             setTimeout(() => {
                 if (toast.parentNode) {
-                    toast.remove();
+                    this.removeToast(toast);
                 }
             }, duration);
         }
@@ -322,190 +324,94 @@ class DownloadManager {
         }
     }
 
-    // Main download method with intelligent routing
-    async download(fileId, filename, customLink = null) {
-        const downloadId = Date.now().toString();
-        
-        try {
-            if (customLink) {
-                return this.downloadWithTracking(customLink, filename, downloadId);
-            }
-
-            // Check file size to determine best method
-            const fileInfo = await this.getFileInfo(fileId);
-            
-            if (!fileInfo) {
-                return this.downloadViaIframe(`http://app.justkaarlo.com/download/${fileId}`, filename);
-            }
-
-            // Route based on file size
-            if (fileInfo.size && fileInfo.size < 50_000_000) { // < 50MB
-                return this.blobDownload(fileId, filename);
-            } else {
-                return this.downloadWithTracking(`http://app.justkaarlo.com/download/${fileId}`, filename, downloadId);
-            }
-
-        } catch (error) {
-            console.error('Download failed:', error);
-            this.showToast('Download failed. Please try again.', 'error', 5000);
-        }
+    // Main download method
+    download(fileId, filename, customLink = null) {
+        const url = customLink || `https://app.justkaarlo.com/download/${fileId}`;
+        return this.downloadViaIframe(url, filename);
     }
 
-    async getFileInfo(fileId) {
-        try {
-            const response = await fetch(`http://app.justkaarlo.com/file-info/${fileId}`);
-            if (response.ok) {
-                return await response.json();
-            }
-        } catch (error) {
-            console.log('File info not available, using fallback method');
-        }
-        return null;
-    }
-
-    // Cookie-based download tracking method
-    downloadWithTracking(url, filename, downloadId) {
-        const trackingUrl = `${url}?downloadID=${downloadId}`;
-        const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
-        
-        // Create enhanced iframe for download
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.src = trackingUrl;
-        document.body.appendChild(iframe);
-        
-        // Poll for download completion cookie
-        const cookiePattern = new RegExp(`downloadID=${downloadId}`, 'i');
-        let pollCount = 0;
-        const maxPolls = 180; // 90 seconds with 500ms intervals
-        
-        const pollInterval = setInterval(() => {
-            pollCount++;
-            
-            if (document.cookie.search(cookiePattern) >= 0) {
-                clearInterval(pollInterval);
-                this.updateToast(loadingToast, `Download started: ${filename}`);
-                setTimeout(() => {
-                    this.removeToast(loadingToast);
-                    document.body.removeChild(iframe);
-                }, 3000);
-                return;
-            }
-            
-            // Update progress message for long downloads
-            if (pollCount === 10) { // 5 seconds
-                this.updateToast(loadingToast, `Starting server (may take up to 60 seconds)...`);
-            } else if (pollCount === 60) { // 30 seconds
-                this.updateToast(loadingToast, `Server warming up, please wait...`);
-            } else if (pollCount >= maxPolls) {
-                clearInterval(pollInterval);
-                this.removeToast(loadingToast);
-                this.showToast('Download timed out. Server may be cold - please try again.', 'error', 8000);
-                if (iframe.parentNode) {
-                    document.body.removeChild(iframe);
-                }
-            }
-        }, 500);
-        
-        // Store download info for cleanup
-        this.activeDownloads.set(downloadId, {
-            iframe,
-            interval: pollInterval,
-            toast: loadingToast
-        });
-    }
-
-    // Blob download for smaller files
-    async blobDownload(fileId, filename) {
-        const loadingToast = this.showToast(`Downloading: ${filename}`, 'loading');
-        
-        try {
-            const response = await fetch(`http://app.justkaarlo.com/download/${fileId}`);
-            
-            if (!response.ok) {
-                throw new Error(`Download failed: ${response.status}`);
-            }
-
-            const contentLength = response.headers.get('content-length');
-            const total = parseInt(contentLength, 10);
-            let loaded = 0;
-
-            const reader = response.body.getReader();
-            const chunks = [];
-
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-
-                chunks.push(value);
-                loaded += value.length;
-
-                if (total > 0) {
-                    const progress = Math.round((loaded / total) * 100);
-                    this.updateToast(loadingToast, `Downloading: ${filename} (${progress}%)`);
-                }
-            }
-
-            // Create download
-            const blob = new Blob(chunks);
-            const downloadUrl = URL.createObjectURL(blob);
-
-            const a = document.createElement('a');
-            a.href = downloadUrl;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-
-            // Cleanup
-            URL.revokeObjectURL(downloadUrl);
-            this.removeToast(loadingToast);
-            this.showToast(`Download completed: ${filename}`, 'success', 4000);
-
-        } catch (error) {
-            console.error('Blob download failed:', error);
-            this.removeToast(loadingToast);
-            
-            // Fallback to iframe method
-            this.showToast('Switching to alternative download method...', 'info', 3000);
-            setTimeout(() => {
-                this.downloadViaIframe(`https://app.justkaarlo.com/download/${fileId}`, filename);
-            }, 1000);
-        }
-    }
-
-    // Iframe download fallback
+    // Enhanced iframe download with phased feedback
     downloadViaIframe(url, filename) {
         const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
         
+        // Create iframe for download
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = url;
         document.body.appendChild(iframe);
 
-        // Enhanced cleanup with timeout
+        let phaseTimeout;
+        let currentPhase = 0;
+        const phases = [
+            { time: 5000, message: `Starting server (may take up to 60 seconds)...` },
+            { time: 30000, message: `Server warming up, please wait...` },
+            { time: 60000, message: `Still connecting... Server cold start detected.` },
+            { time: 90000, message: `Almost ready... This is taking longer than usual.` }
+        ];
+
+        // Update message based on time elapsed
+        const updatePhase = () => {
+            if (currentPhase < phases.length) {
+                this.updateToast(loadingToast, phases[currentPhase].message);
+                currentPhase++;
+                if (currentPhase < phases.length) {
+                    const nextDelay = phases[currentPhase].time - phases[currentPhase - 1].time;
+                    phaseTimeout = setTimeout(updatePhase, nextDelay);
+                }
+            }
+        };
+
+        // Start first phase after 5 seconds
+        phaseTimeout = setTimeout(updatePhase, phases[0].time);
+
+        // Cleanup function
         const cleanup = () => {
+            clearTimeout(phaseTimeout);
             try {
                 if (iframe.parentNode) {
                     document.body.removeChild(iframe);
                 }
-                this.removeToast(loadingToast);
             } catch (e) {
                 console.log('Cleanup completed');
             }
         };
 
-        // Set generous timeout for cold starts
-        const timeoutId = setTimeout(() => {
+        // Final timeout - very generous for cold starts
+        const finalTimeout = setTimeout(() => {
             cleanup();
-            this.showToast('Download may have started. Check your downloads folder.', 'info', 6000);
-        }, 90000); // 90 seconds
+            this.removeToast(loadingToast);
+            this.showToast('Download timeout. The server may be experiencing heavy load. Please try again in a few minutes.', 'error', 8000);
+        }, 120000); // 2 minutes
 
-        // Try to detect completion
+        // Try to detect when download starts (best effort)
         iframe.onload = () => {
-            clearTimeout(timeoutId);
+            clearTimeout(finalTimeout);
+            clearTimeout(phaseTimeout);
             this.updateToast(loadingToast, `Download started: ${filename}`);
-            setTimeout(cleanup, 5000);
+            setTimeout(() => {
+                cleanup();
+                this.removeToast(loadingToast);
+                this.showToast(`Download should be starting: ${filename}`, 'success', 4000);
+            }, 3000);
+        };
+
+        // Handle iframe errors
+        iframe.onerror = () => {
+            clearTimeout(finalTimeout);
+            clearTimeout(phaseTimeout);
+            cleanup();
+            this.removeToast(loadingToast);
+            this.showToast('Download failed. Please check your connection and try again.', 'error', 6000);
+        };
+
+        // Store reference for potential cancellation
+        return {
+            cancel: () => {
+                clearTimeout(finalTimeout);
+                clearTimeout(phaseTimeout);
+                cleanup();
+                this.removeToast(loadingToast);
+            }
         };
     }
 }
@@ -527,6 +433,15 @@ style.textContent = `
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
+    }
+    
+    .download-toast {
+        transition: all 0.3s ease;
+    }
+    
+    .download-toast:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.4);
     }
 `;
 document.head.appendChild(style);
