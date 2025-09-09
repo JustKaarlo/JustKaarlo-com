@@ -236,7 +236,7 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
-// Enhanced Download Manager Class
+// Enhanced Download Manager Class with Real Download Detection
 class DownloadManager {
     constructor() {
         this.activeDownloads = new Map();
@@ -274,6 +274,23 @@ class DownloadManager {
             max-width: 350px;
             word-wrap: break-word;
             position: relative;
+            cursor: pointer;
+        `;
+
+        // Create content wrapper
+        const contentWrapper = document.createElement('div');
+        contentWrapper.style.cssText = `
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        `;
+
+        // Create message container
+        const messageContainer = document.createElement('div');
+        messageContainer.style.cssText = `
+            display: flex;
+            align-items: center;
+            flex: 1;
         `;
 
         if (type === 'loading') {
@@ -289,10 +306,40 @@ class DownloadManager {
                 animation: spin 1s linear infinite;
                 vertical-align: middle;
             `;
-            toast.appendChild(spinner);
+            messageContainer.appendChild(spinner);
         }
 
-        toast.appendChild(document.createTextNode(message));
+        const messageText = document.createTextNode(message);
+        messageContainer.appendChild(messageText);
+
+        // Create dismiss button
+        const dismissBtn = document.createElement('span');
+        dismissBtn.innerHTML = '×';
+        dismissBtn.style.cssText = `
+            margin-left: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        `;
+        dismissBtn.onmouseover = () => dismissBtn.style.opacity = '1';
+        dismissBtn.onmouseout = () => dismissBtn.style.opacity = '0.7';
+        dismissBtn.onclick = (e) => {
+            e.stopPropagation();
+            this.removeToast(toast);
+        };
+
+        contentWrapper.appendChild(messageContainer);
+        contentWrapper.appendChild(dismissBtn);
+        toast.appendChild(contentWrapper);
+
+        // Make entire toast clickable to dismiss
+        toast.onclick = () => this.removeToast(toast);
+
+        // Add tooltip
+        toast.title = 'Click to dismiss';
+
         this.toastContainer.appendChild(toast);
 
         if (duration > 0) {
@@ -307,9 +354,13 @@ class DownloadManager {
     }
 
     updateToast(toast, message) {
-        const textNode = toast.lastChild;
-        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-            textNode.textContent = message;
+        // Find the text node in the message container
+        const messageContainer = toast.querySelector('div > div');
+        if (messageContainer) {
+            const textNode = messageContainer.lastChild;
+            if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+                textNode.textContent = message;
+            }
         }
     }
 
@@ -330,9 +381,12 @@ class DownloadManager {
         return this.downloadViaIframe(url, filename);
     }
 
-    // Enhanced iframe download with phased feedback
+    // Enhanced iframe download with real download detection
     downloadViaIframe(url, filename) {
         const loadingToast = this.showToast(`Preparing download: ${filename}`, 'loading');
+        
+        // Add cancel button to the toast
+        this.addCancelButton(loadingToast);
         
         // Create iframe for download
         const iframe = document.createElement('iframe');
@@ -342,15 +396,49 @@ class DownloadManager {
 
         let phaseTimeout;
         let currentPhase = 0;
+        let windowFocusTimeout;
+        let hasUserInteracted = false;
+        let downloadStarted = false;
+        
         const phases = [
-            { time: 5000, message: `Starting server (may take up to 60 seconds)...` },
+            { time: 5000, message: `Starting server (Render may be sleeping, up to 2 minutes)...` },
             { time: 30000, message: `Server warming up, please wait...` },
-            { time: 60000, message: `Still connecting... Server cold start detected.` }
+            { time: 60000, message: `Still connecting... Server cold start detected.` },
+            { time: 90000, message: `Almost ready... Please be patient.` }
         ];
+
+        // Detect window focus changes (download dialog interactions)
+        const handleWindowFocus = () => {
+            clearTimeout(windowFocusTimeout);
+            if (hasUserInteracted && !downloadStarted) {
+                // Window regained focus - user might have cancelled or download started
+                windowFocusTimeout = setTimeout(() => {
+                    // If we're still here after 3 seconds, user likely cancelled
+                    if (document.hasFocus() && !downloadStarted) {
+                        this.handleDownloadCancellation();
+                    }
+                }, 3000);
+            }
+        };
+
+        const handleWindowBlur = () => {
+            // Window lost focus - download dialog appeared
+            hasUserInteracted = true;
+            clearTimeout(windowFocusTimeout);
+            
+            // Update toast to show download dialog appeared
+            if (!downloadStarted) {
+                this.updateToast(loadingToast, 'Download dialog opened. Choose location and click Save...');
+            }
+        };
+
+        // Add event listeners
+        window.addEventListener('focus', handleWindowFocus);
+        window.addEventListener('blur', handleWindowBlur);
 
         // Update message based on time elapsed
         const updatePhase = () => {
-            if (currentPhase < phases.length) {
+            if (currentPhase < phases.length && !downloadStarted) {
                 this.updateToast(loadingToast, phases[currentPhase].message);
                 currentPhase++;
                 if (currentPhase < phases.length) {
@@ -366,6 +454,9 @@ class DownloadManager {
         // Cleanup function
         const cleanup = () => {
             clearTimeout(phaseTimeout);
+            clearTimeout(windowFocusTimeout);
+            window.removeEventListener('focus', handleWindowFocus);
+            window.removeEventListener('blur', handleWindowBlur);
             try {
                 if (iframe.parentNode) {
                     document.body.removeChild(iframe);
@@ -375,60 +466,115 @@ class DownloadManager {
             }
         };
 
-        // More reasonable timeout - assume download started after 45 seconds
-        const assumeStartedTimeout = setTimeout(() => {
-            clearTimeout(phaseTimeout);
-            this.updateToast(loadingToast, `Download should be starting...`);
-            setTimeout(() => {
-                cleanup();
-                this.removeToast(loadingToast);
-                this.showToast(`Download started: ${filename}`, 'success', 5000);
-            }, 3000);
-        }, 45000); // 45 seconds
-
-        // Final timeout - for real failures
-        const finalTimeout = setTimeout(() => {
-            clearTimeout(assumeStartedTimeout);
-            clearTimeout(phaseTimeout);
+        // Handle download cancellation
+        const handleDownloadCancellation = () => {
             cleanup();
             this.removeToast(loadingToast);
-            this.showToast('Download timeout. The server may be experiencing heavy load. Please try again in a few minutes.', 'error', 8000);
-        }, 120000); // 2 minutes
+            this.showToast('Download cancelled or failed to start', 'info', 4000);
+        };
 
-        // Try to detect when download starts (best effort - may not work reliably)
-        iframe.onload = () => {
-            clearTimeout(finalTimeout);
-            clearTimeout(assumeStartedTimeout);
-            clearTimeout(phaseTimeout);
-            this.updateToast(loadingToast, `Download started: ${filename}`);
-            setTimeout(() => {
+        // Check if download actually started by monitoring window activity
+        const checkDownloadProgress = () => {
+            if (hasUserInteracted && !downloadStarted) {
+                // User interacted but window is focused - download likely started
+                if (document.hasFocus()) {
+                    downloadStarted = true;
+                    clearTimeout(phaseTimeout);
+                    this.updateToast(loadingToast, `Download started: ${filename}`);
+                    setTimeout(() => {
+                        cleanup();
+                        this.removeToast(loadingToast);
+                        this.showToast(`Download in progress: ${filename}`, 'success', 4000);
+                    }, 2000);
+                }
+            }
+        };
+
+        // Monitor for download start after user interaction
+        const downloadMonitor = setInterval(() => {
+            if (hasUserInteracted && !downloadStarted) {
+                checkDownloadProgress();
+            } else if (downloadStarted) {
+                clearInterval(downloadMonitor);
+            }
+        }, 1000);
+
+        // Final timeout for real failures
+        const finalTimeout = setTimeout(() => {
+            clearInterval(downloadMonitor);
+            if (!downloadStarted) {
                 cleanup();
                 this.removeToast(loadingToast);
-                this.showToast(`Download completed: ${filename}`, 'success', 4000);
-            }, 2000);
+                this.showToast('Download timeout. Server may be sleeping. Please try again.', 'error', 8000);
+            }
+        }, 120000); // 2 minutes
+
+        // Fallback: iframe load (less reliable but backup)
+        iframe.onload = () => {
+            if (!hasUserInteracted) {
+                // Server responded quickly - show waiting for dialog
+                setTimeout(() => {
+                    if (!downloadStarted && !hasUserInteracted) {
+                        this.updateToast(loadingToast, 'Waiting for download dialog...');
+                    }
+                }, 2000);
+            }
         };
 
         // Handle iframe errors
         iframe.onerror = () => {
+            clearInterval(downloadMonitor);
             clearTimeout(finalTimeout);
-            clearTimeout(assumeStartedTimeout);
-            clearTimeout(phaseTimeout);
             cleanup();
             this.removeToast(loadingToast);
-            this.showToast('Download failed. Please check your connection and try again.', 'error', 6000);
+            this.showToast('Download failed. Server may be down.', 'error', 6000);
         };
 
-        // Store reference for potential cancellation
-        return {
+        // Store reference for manual cancellation
+        const downloadRef = {
             cancel: () => {
+                clearInterval(downloadMonitor);
                 clearTimeout(finalTimeout);
-                clearTimeout(assumeStartedTimeout);
-                clearTimeout(phaseTimeout);
                 cleanup();
                 this.removeToast(loadingToast);
                 this.showToast('Download cancelled', 'info', 3000);
             }
         };
+
+        // Store reference for the cancel button
+        loadingToast.downloadRef = downloadRef;
+
+        return downloadRef;
+    }
+
+    // Add cancel button to toast
+    addCancelButton(toast) {
+        const contentWrapper = toast.querySelector('div');
+        const cancelBtn = document.createElement('button');
+        cancelBtn.innerHTML = 'Cancel';
+        cancelBtn.style.cssText = `
+            margin-left: 15px;
+            padding: 4px 8px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 3px;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        `;
+        cancelBtn.onmouseover = () => cancelBtn.style.background = 'rgba(255,255,255,0.3)';
+        cancelBtn.onmouseout = () => cancelBtn.style.background = 'rgba(255,255,255,0.2)';
+        cancelBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (toast.downloadRef) {
+                toast.downloadRef.cancel();
+            }
+        };
+
+        // Insert before the dismiss button
+        const dismissBtn = contentWrapper.lastChild;
+        contentWrapper.insertBefore(cancelBtn, dismissBtn);
     }
 }
 
