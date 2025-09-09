@@ -28,7 +28,7 @@ jobs:
 
       - name: Webhook URL
         run: | 
-          sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|" ./report/Arrest-Report.html
+          sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|" ./report/js/Arrest.Fuctions.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
