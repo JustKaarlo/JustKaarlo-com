@@ -1,10 +1,10 @@
 # FOLDERS
 .vscode/
-.backup/
+_deprecated/
+_internal/
 
 # FILES
 /desktop.ini
 /settings.json
 /justkaarlo.github.io.code-workspace.lnk
 /.github/workflows/Documentation.md
-/keys.txt
