@@ -236,6 +236,7 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
+// Simplified Download Manager Class with Basic Status Notifications
 class DownloadManager {
     constructor() {
         this.activeDownloads = new Map();
@@ -315,7 +316,7 @@ class DownloadManager {
 
     // Poll server for download status - simplified version
     async pollDownloadStatus(downloadId) {
-        const maxPollTime = 30000; // 30 seconds
+        const maxPollTime = 60000; // 60 seconds to allow time for cancellation detection
         const pollInterval = 2000; // 2 seconds
         const startTime = Date.now();
         let downloadStarted = false;
@@ -329,12 +330,12 @@ class DownloadManager {
 
                 switch (statusData.status) {
                     case 'downloading':
-                        // Show "Download Started" only once
+                        // Show "Download Started" only once, but continue polling for cancellation
                         if (!downloadStarted) {
                             downloadStarted = true;
                             this.showToast('Download Started', 'success', 3000);
-                            return; // Stop polling after showing download started
                         }
+                        // Don't return here - keep polling to detect cancellation
                         break;
 
                     case 'cancelled':
