@@ -469,7 +469,7 @@ class DownloadManager {
             // Fallback to iframe method
             this.showToast('Switching to alternative download method...', 'info', 3000);
             setTimeout(() => {
-                this.downloadViaIframe(`http://app.justkaarlo.com/download/${fileId}`, filename);
+                this.downloadViaIframe(`https://app.justkaarlo.com/download/${fileId}`, filename);
             }, 1000);
         }
     }
