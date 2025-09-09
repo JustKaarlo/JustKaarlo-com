@@ -345,8 +345,7 @@ class DownloadManager {
         const phases = [
             { time: 5000, message: `Starting server (may take up to 60 seconds)...` },
             { time: 30000, message: `Server warming up, please wait...` },
-            { time: 60000, message: `Still connecting... Server cold start detected.` },
-            { time: 90000, message: `Almost ready... This is taking longer than usual.` }
+            { time: 60000, message: `Still connecting... Server cold start detected.` }
         ];
 
         // Update message based on time elapsed
@@ -376,28 +375,43 @@ class DownloadManager {
             }
         };
 
-        // Final timeout - very generous for cold starts
+        // More reasonable timeout - assume download started after 45 seconds
+        const assumeStartedTimeout = setTimeout(() => {
+            clearTimeout(phaseTimeout);
+            this.updateToast(loadingToast, `Download should be starting...`);
+            setTimeout(() => {
+                cleanup();
+                this.removeToast(loadingToast);
+                this.showToast(`Download started: ${filename}`, 'success', 5000);
+            }, 3000);
+        }, 45000); // 45 seconds
+
+        // Final timeout - for real failures
         const finalTimeout = setTimeout(() => {
+            clearTimeout(assumeStartedTimeout);
+            clearTimeout(phaseTimeout);
             cleanup();
             this.removeToast(loadingToast);
             this.showToast('Download timeout. The server may be experiencing heavy load. Please try again in a few minutes.', 'error', 8000);
         }, 120000); // 2 minutes
 
-        // Try to detect when download starts (best effort)
+        // Try to detect when download starts (best effort - may not work reliably)
         iframe.onload = () => {
             clearTimeout(finalTimeout);
+            clearTimeout(assumeStartedTimeout);
             clearTimeout(phaseTimeout);
             this.updateToast(loadingToast, `Download started: ${filename}`);
             setTimeout(() => {
                 cleanup();
                 this.removeToast(loadingToast);
-                this.showToast(`Download should be starting: ${filename}`, 'success', 4000);
-            }, 3000);
+                this.showToast(`Download completed: ${filename}`, 'success', 4000);
+            }, 2000);
         };
 
         // Handle iframe errors
         iframe.onerror = () => {
             clearTimeout(finalTimeout);
+            clearTimeout(assumeStartedTimeout);
             clearTimeout(phaseTimeout);
             cleanup();
             this.removeToast(loadingToast);
@@ -408,9 +422,11 @@ class DownloadManager {
         return {
             cancel: () => {
                 clearTimeout(finalTimeout);
+                clearTimeout(assumeStartedTimeout);
                 clearTimeout(phaseTimeout);
                 cleanup();
                 this.removeToast(loadingToast);
+                this.showToast('Download cancelled', 'info', 3000);
             }
         };
     }
