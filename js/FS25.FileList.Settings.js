@@ -14,8 +14,7 @@
         },
         highlightFiles: [
             "FSM Full Modpack.rar",
-            "Part 1",
-            "Part 2",
+            "Download All.zip"
         ],
         colorizeFiles: [
             "FSM Full Modpack.rar"
@@ -50,9 +49,6 @@
         excludeDownloadFiles: [],
         customDownloadLinks: {
             "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1",
-            "1LJosoqsuFY60Agu0b6gfTNi6SHfSYysV": "https://www.justkaarlo.com/data/Part-1.zip", // PART 1
-            "12LAELEwKdXTeV_QVEZbPC8VeCXqTbdx0": "https://www.justkaarlo.com/data/Part-2.zip", // PART 2
-            "1vUmpslRRVH6rsM3KksjQDXVgY2Tf1Mhk": "https://www.justkaarlo.com/data/Part-3.zip", // PART 3
         },
         showDownloadButtonAtRoot: true
     });
