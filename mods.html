@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Mods</title>
-  <link rel="icon" type="image/x-icon" href="./res/ico/favicon/favicon-1.ico">
+    <meta charset="UTF-8" />
+    <title>Mods</title>
+    <link rel="icon" type="image/x-icon" href="./res/ico/favicon/favicon-1.ico">
 
-  <link rel="stylesheet" href="./css/mods.css">
+    <link rel="stylesheet" href="./css/mods.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="JustKaarlo's - Mods">
-  <meta property="og:description" content="Collection of mods.">
-  <meta property="og:url" content="https://www.justkaarlo.com/Mods">
-  <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
-  <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="JustKaarlo's - Mods">
+    <meta property="og:description" content="Collection of mods.">
+    <meta property="og:url" content="https://www.justkaarlo.com/Mods">
+    <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
+    <meta property="og:type" content="website">
 
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="bg-tw" class="bg-layer" aria-hidden="true"></div>
     <div id="bg-er" class="bg-layer" aria-hidden="true"></div>
+    <div id="bg-ex" class="bg-layer" aria-hidden="true"></div>
 
     <div id="particles-js"></div>
 
     <div class="nav-container">
         <header class="nav-frame glass">
-        <nav class="nav-buttons">
-            <a href="./home" target="_self" class="nav-btn" aria-label="Home">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
-                <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z"/>
-            </svg>
-            </a>
-            <a class="nav-btn" id="SelectedNavBtn">Mods</a>
-            <a href="./reports" target="_self" class="nav-btn">Reports</a>
-        </nav>
+            <nav class="nav-buttons">
+                <a href="./home" target="_self" class="nav-btn" aria-label="Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20"
+                        fill="currentColor">
+                        <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z" />
+                    </svg>
+                </a>
+                <a class="nav-btn" id="SelectedNavBtn">Mods</a>
+                <a href="./reports" target="_self" class="nav-btn">Reports</a>
+            </nav>
         </header>
 
         <header class="section-nav-frame glass">
-        <nav class="nav-buttons">
-            <a class="section-nav-btn active" data-section="tw-section">Total War</a>
-            <a class="section-nav-btn" data-section="elden-section">Elden Ring</a>
-        </nav>
+            <nav class="nav-buttons">
+                <a class="section-nav-btn active" data-section="tw-section">Total War</a>
+                <a class="section-nav-btn" data-section="elden-section">Elden Ring</a>
+                <a class="section-nav-btn" data-section="example-section">Examples</a>
+            </nav>
         </header>
     </div>
 
     <div class="sections-container">
         <div class="content">
-        <section id="tw-section" class="section-slide active">
-            <img id="tw-customIcon" class="elden-custom-size"
-                src="./res/src/total-war-logo.png"
-                alt="Total War Icon" />
+            <section id="tw-section" class="section-slide active">
+                <img id="tw-customIcon" class="elden-custom-size" src="./res/src/total-war-logo.png"
+                    alt="Total War Icon" />
                 <div class="filelist-frame">
                     <ul id="tw-fileList" class="file-list">Loading...</ul>
                 </div>
@@ -61,44 +65,68 @@
                         They are created and owned by third parties.
                     </div>
                 </div>
-        </section>
+            </section>
 
-        <section id="elden-section" class="section-slide">
-            <img id="customIcon" class="elden-custom-size"
-                src="./res/src/elden-ring-logo.png"
-                alt="Elden Ring Icon" />
+            <section id="elden-section" class="section-slide">
+                <img id="customIcon" class="elden-custom-size" src="./res/src/elden-ring-logo.png"
+                    alt="Elden Ring Icon" />
                 <div class="filelist-frame">
-                <ul id="fileList" class="file-list">Loading...</ul>
+                    <ul id="fileList" class="file-list">Loading...</ul>
                 </div>
 
                 <div class="outdated-tag">
                     <div class="outdated-tag-icon">
-                        <svg
-                        class="alert-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
-                    </svg>
-                </div>
+                        <svg class="alert-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
                     <div>OUT-DATED</div>
                 </div>
-            <div id="docModal">
-            <div>
-                <button id="closeModal">×</button>
-                <iframe id="docFrame" src=""></iframe>
-            </div>
-            </div>
+                <div id="docModal">
+                    <div>
+                        <button id="closeModal">×</button>
+                        <iframe id="docFrame" src=""></iframe>
+                    </div>
+                </div>
 
-            <div class="manager-disclaimer">
-            <div class="manager-disclaimer-icon-custom">!</div>
-            <div>
-                I haven't developed any of the content listed here.<br>
-                They are created and owned by third parties.
-            </div>
-            </div>
-        </section>
+                <div class="manager-disclaimer">
+                    <div class="manager-disclaimer-icon-custom">!</div>
+                    <div>
+                        I haven't developed any of the content listed here.<br>
+                        They are created and owned by third parties.
+                    </div>
+                </div>
+            </section>
+
+            <section id="example-section" class="section-slide">
+                <img id="ex-customIcon" class="example-custom-size"
+                    src="https://www.infinitefrontiers.org.uk/wp-content/uploads/2024/06/fs25-4c-compact.png" alt="FS25"
+                    style="margin-bottom: 15px;" />
+                <div class="filelist-frame">
+                    <ul id="ex-fileList" class="file-list">Loading...</ul>
+                </div>
+                <div class="manager-disclaimer">
+                    <div>
+                        I haven't developed any of the content listed here.<br>
+                        They are created and owned by third parties.
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-        <script src="./js/Mods.Fuctions.js"></script>
-        <script src="./js/Mods.FileList.Settings.js"></script>
-    </body>
+
+    <!-- Custom Tooltip Modal -->
+    <div id="customTooltip" class="custom-tooltip-modal">
+        <img id="tooltipImage" src="" alt="">
+        <div id="tooltipText"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./js/Mods.Fuctions.js"></script>
+    <script src="./js/Mods.FileList.Settings.js"></script>
+</body>
+
 </html>
