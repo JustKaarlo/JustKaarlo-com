@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mods</title>
+    <link rel="icon" type="image/x-icon" href="./res/ico/favicon/favicon-1.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="JustKaarlo's - Fs25">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://www.justkaarlo.com/Mods">
+    <meta property="og:image" content="https://4kwallpapers.com/images/wallpapers/farming-simulator-3840x2160-20864.jpg">
+    <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --tw-overlay-1: rgba(0, 0, 0, 0.3);
+            --tw-overlay-2: rgba(0, 0, 0, 0.3);
+            --er-overlay-1: rgba(160, 160, 160, 0.08);
+            --er-overlay-2: rgba(0, 0, 0, 0.3);
+
+            --text-main: #eeebebbe;
+            --text-strong: #ffffff;
+            --tile-bg: rgba(96, 95, 95, 0.05);
+            --tile-bg-hover: rgba(255, 255, 255, 0.055);
+            --tile-highlight: rgba(128, 128, 128, 0.09);
+            --badge-bg: rgba(120, 120, 120, 0.25);
+            --badge-text: rgba(170, 170, 170, 0.8);
+            --btn-bg: rgba(255, 255, 255, 0.05);
+            --btn-bg-hover: rgba(255, 255, 255, 0.12);
+            --arrow-color: #9b9b9bc9;
+        }
+
+        body {
+            position: relative;
+            font-family: 'Rubik', sans-serif;
+            color: #eee;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background-image: url("");
+            background-size: cover;
+            background-position: 50% 50%;
+            filter: blur(7px) brightness(1.7) grayscale(1.5) contrast(1.02);
+        }
+
+        .bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(1200px 600px at 70% 10%, rgba(0, 0, 0, 0.2), transparent 60%),
+                linear-gradient(to bottom, rgba(5, 6, 8, 0.55), rgba(5, 6, 8, 0.85));
+            pointer-events: none;
+        }
+
+        .bg-layer {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        #bg-tw {
+            opacity: 1;
+            background-image:
+                linear-gradient(var(--tw-overlay-1), var(--tw-overlay-1)),
+                linear-gradient(var(--tw-overlay-2), var(--tw-overlay-2)),
+                url('https://4kwallpapers.com/images/wallpapers/farming-simulator-5120x2880-20864.jpg');
+        }
+
+        #bg-er {
+            opacity: 0;
+            background-image:
+                linear-gradient(var(--er-overlay-1), var(--er-overlay-1)),
+                linear-gradient(var(--er-overlay-2), var(--er-overlay-2)),
+                url('');
+        }
+
+        #particles-js {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .sections-container {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            width: 200%;
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section-slide {
+            width: 50%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .content.show-elden {
+            transform: translateX(-50%);
+        }
+
+        #tw-section #tw-customIcon,
+        #elden-section #customIcon {
+            height: 30%;
+            width: auto;
+            margin-bottom: 15px;
+            user-select: none;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
+        }
+
+        .section {
+            max-width: 920px;
+            margin: 0 auto 44px auto;
+            padding: 0 10px;
+        }
+
+        .section h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--text-strong);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h1 img {
+            height: 27px;
+            vertical-align: middle;
+            margin-bottom: 4px;
+            margin-left: 15px;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .filelist-frame {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 16px;
+            backdrop-filter: blur(6px) brightness(0.5);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+            padding: 1px;
+            max-width: 880px;
+            margin: 0 auto 80px auto;
+            width: 700px;
+            min-height: 200px;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .file-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 15px 0px 15px;
+            padding-right: 10px;
+            overflow-y: auto;
+            scrollbar-width: none;
+            flex: 1;
+            min-height: 0;
+        }
+
+        .file-list::-webkit-scrollbar {
+            display: none;
+        }
+
+        .file-list li {
+            margin: 8px 0;
+            padding: 6px 12px;
+            background-color: rgba(96, 95, 95, 0.05);
+            border-radius: 6px;
+            transition:
+                transform 0.15s ease,
+                background-color 0.2s ease;
+            will-change: transform;
+            font-weight: 500;
+            font-size: 14px;
+            font-family: 'Poppins', monospace;
+            color: #eeebebbe;
+            cursor: pointer;
+            height: auto;
+            scrollbar-width: none;
+            overflow-y: auto;
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .file-list li.folder-open {
+            background-color: var(--tile-bg-hover);
+        }
+
+        .file-list li:hover:not(:has(.folder-open-button:hover)) {
+            background-color: var(--tile-bg-hover);
+        }
+
+        .file-list li.highlighted {
+            background: var(--tile-highlight);
+            color: var(--text-main);
+            transition: background 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+
+        .file-list li.highlighted:hover {
+            background: rgba(128, 128, 128, 0.12);
+            transition: transform 0.15s ease, background 0.1s ease-in;
+            will-change: transform;
+            border: none;
+            box-shadow: none;
+        }
+
+        .file-entry {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+
+        .file-entry a {
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-block;
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease, color 0.2s ease;
+            will-change: transform;
+        }
+
+        .file-entry a:hover {
+            color: rgba(253, 255, 255, 0.72);
+        }
+
+        .file-entry img,
+        .folder-entry img {
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .file-entry img:hover,
+        .folder-entry img:hover {
+            filter: brightness(1.2);
+            transform: scale(1.1);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            cursor: pointer;
+        }
+
+        li.folder-open .folder-entry img {
+            filter: brightness(1.3);
+            transform: scale(1.1);
+        }
+
+        .file-size-tag,
+        .file-count-tag {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            font-family: 'Poppins', monospace;
+            font-weight: 600;
+        }
+
+        .file-size-tag {
+            margin-left: auto;
+        }
+
+        .file-count-tag {
+            margin-left: 6px;
+        }
+
+        .folder-entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            color: var(--text-main);
+            position: relative;
+            scrollbar-width: none;
+        }
+
+        .folder-entry:hover {
+            color: rgba(253, 255, 255, 0.75);
+            cursor: pointer;
+        }
+
+        .folder-entry span.folder-name {
+            display: inline-block;
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease;
+            will-change: transform;
+        }
+
+        .folder-arrow {
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+            transition: transform 0.2s ease;
+            fill: var(--arrow-color);
+            flex-shrink: 0;
+        }
+
+        .folder-arrow.open {
+            transform: rotate(90deg);
+        }
+
+        .folder-open-button {
+            background: var(--btn-bg);
+            border: none;
+            padding: 6px;
+            margin-left: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.25s ease, transform 0.3s ease, opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: none;
+            position: relative;
+        }
+
+        .folder-open-button:hover {
+            background: var(--btn-bg-hover);
+            filter: brightness(1.2);
+            transform: translateX(0.5px) scale(1.1);
+        }
+
+        .folder-open-button svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .folder-open-button svg path:first-child {
+            fill: rgba(2, 161, 50, 0.8);
+            opacity: 0.7;
+        }
+
+        .folder-open-button svg path.arrow-part {
+            fill: rgba(2, 161, 50, 0.8);
+            opacity: 0.7;
+        }
+
+        .custom-tooltip {
+            opacity: 0;
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            transform: translateX(-50%);
+            background: rgba(50, 50, 50, 0.6);
+            color: #a1a1a179;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            font-weight: 700;
+            font-family: 'Poppins', monospace;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 9999;
+            width: auto;
+            height: auto;
+            scale: 65%;
+        }
+
+        .folder-open-button:hover .custom-tooltip {
+            opacity: 0;
+            pointer-events: auto;
+            transition-delay: 180ms;
+        }
+
+        .manager-disclaimer {
+            font-family: 'Rubik', sans-serif;
+            display: flex;
+            align-items: center;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding: 0.75rem 1rem;
+            background: rgba(173, 173, 173, 0.05);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            font-size: 12px;
+            line-height: 1.3;
+            color: #999;
+            gap: 0.75rem;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .manager-disclaimer-icon-custom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 2px solid rgba(120, 120, 120, 0.5);
+            border-radius: 50%;
+            color: rgba(140, 140, 140, 0.7);
+            font-weight: bold;
+            font-size: 18px;
+            opacity: 0.5;
+            filter: blur(0.3px);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        }
+
+        #docModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding-top: 35px;
+            overflow-y: auto;
+            /* margin-left: 1915px; */
+        }
+
+        /* #docModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 2920px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        background-size: cover;
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow-y: auto;
+        } */
+
+        /* body.modal-open {
+            overflow: hidden;
+            padding-right: 17px;
+        } */
+
+        body.modal-open {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        #docModal>div {
+            position: relative;
+            width: 90vw;
+            max-width: 1200px;
+            height: 85vh;
+            background: rgba(40, 40, 40, 0.95);
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-left: 1950px;
+        }
+
+        #closeModal {
+            position: absolute;
+            top: 8px;
+            right: 15px;
+            background: rgba(255, 51, 51, 0.8);
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 7px 10px;
+            border-radius: 8px;
+            z-index: 10000;
+            transition: background 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        #closeModal:hover {
+            background: rgba(255, 51, 51, 1);
+            transform: scale(1.05);
+        }
+
+        #docFrame {
+            flex: 1;
+            border: none;
+            border-radius: 8px;
+            margin: 10px;
+            margin-top: 50px;
+            background: white;
+        }
+
+        .elden-custom-size {
+            width: 500px !important;
+            height: auto !important;
+            margin-top: 30px;
+        }
+
+        .spacer {
+            height: 40px;
+        }
+
+        @media (max-width: 768px) {
+            #docModal>div {
+                width: 95vw;
+                height: 90vh;
+            }
+
+            #docModal {
+                padding: 10px;
+            }
+
+            #closeModal {
+                top: 10px;
+                right: 10px;
+                padding: 6px 10px;
+                font-size: 16px;
+            }
+        }
+
+        .nav-frame {
+            --nav-bg: rgb(54, 54, 54, 0.7);
+            --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            position: static;
+            /* Changed from fixed */
+            padding: 10px 24px;
+            border-radius: 20px;
+            z-index: 998;
+            background: var(--nav-bg);
+            border: 0px solid var(--glass-border);
+            backdrop-filter: blur(5px) saturate(120%);
+            -webkit-backdrop-filter: saturate(120%);
+            box-shadow: var(--shadow-1);
+            /* Remove individual positioning and transitions since container handles them */
+        }
+
+        .nav-frame.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-20px);
+        }
+
+        .section-nav-frame {
+            --nav-bg: rgb(54, 54, 54, 0.7);
+            --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            position: static;
+            /* Changed from fixed */
+            padding: 10px 24px;
+            border-radius: 20px;
+            z-index: 998;
+            background: var(--nav-bg);
+            border: 0px solid var(--glass-border);
+            backdrop-filter: blur(5px) saturate(120%);
+            -webkit-backdrop-filter: saturate(120%);
+            box-shadow: var(--shadow-1);
+            /* Remove individual positioning and transitions since container handles them */
+        }
+
+        .section-nav-frame.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .nav-btn,
+        .section-nav-btn {
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --text: #e1e2e7;
+            --radius-sm: 10px;
+            background: var(--bg-glass);
+            box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+            color: var(--text);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            transition: background 160ms ease, transform 120ms ease;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-btn:hover,
+        .section-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .nav-btn svg {
+            display: block;
+            margin: 0 auto;
+        }
+
+        #SelectedNavBtn,
+        .section-nav-btn.active {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+            cursor: not-allowed;
+        }
+
+        .section-nav-btn.active {
+            cursor: default;
+        }
+
+        body.modal-open .nav-frame,
+        body.modal-open .section-nav-frame {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .nav-container {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+            z-index: 999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-container.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-50%) translateY(-20px);
+        }
+
+        body.modal-open .nav-container {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .outdated-tag {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            align-items: center;
+            max-width: fit-content;
+            margin: 0 auto;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-right: 1rem;
+            padding-left: 0.5rem;
+            box-shadow: 0px 0px 5px -3px #111;
+            border: solid 1px rgba(144, 138, 115, 0.2);
+            background-color: rgba(144, 138, 115, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 900;
+            line-height: 1.3;
+            color: #999774;
+            gap: 0.75rem;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .outdated-tag svg {
+            fill: #ece8008d;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+
+
+
+        .popup {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 700;
+            margin: 10px;
+            box-shadow: 4px 4px 10px -10px rgba(0, 0, 0, 1);
+            width: max-content;
+            padding-right: 10px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            justify-content: space-around;
+            align-items: center;
+            display: flex;
+            border-radius: 4px;
+        }
+        .popup svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        }
+        .popup-icon svg {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        }
+        .close-icon {
+        margin-left: auto;
+        }
+        .close-svg {
+        cursor: pointer;
+        }
+        .close-path {
+        fill: grey;
+        }
+
+        .alert-popup {
+        background-color: rgba(129, 128, 118, 0.2);
+        border: solid 1px rgba(154, 141, 91, 0.35);
+        }
+        .alert-icon path {
+        fill: #facc1571;
+        }
+        .alert-message {
+        color: #877f6e;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-tw" class="bg-layer" aria-hidden="true"></div>
+
+    <div id="particles-js"></div>
+    <div class="sections-container">
+        <div class="content">
+            <section id="tw-section" class="section-slide active">
+                <img id="tw-customIcon" class="elden-custom-size"
+                    src="https://www.infinitefrontiers.org.uk/wp-content/uploads/2024/06/fs25-4c-compact.png"
+                    alt="Total War Icon" />
+                <div class="filelist-frame">
+                    <ul id="tw-fileList" class="file-list">Loading...</ul>
+                </div>
+
+                <div class="manager-disclaimer">
+                    <div>
+                        I haven't developed any of the content listed here.<br>
+                        They are created and owned by third parties.
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        const nav = document.querySelector('.nav-container');
+
+        // Navigation functionality
+        (function () {
+            const nav = document.querySelector('.nav-container');
+            let lastScrollTop = 0;
+            let scrollTimeout;
+
+            nav.classList.remove('hidden');
+
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (currentScroll < 200) {
+                    nav.classList.remove('hidden');
+                } else {
+                    nav.classList.add('hidden');
+                }
+
+                lastScrollTop = currentScroll;
+            }, { passive: true });
+
+            document.addEventListener('mousemove', (e) => {
+                if (e.clientY < 100) {
+                    nav.classList.remove('hidden');
+                } else if (window.pageYOffset > 200) {
+                    nav.classList.add('hidden');
+                }
+            }, { passive: true });
+        })();
+
+        // Section navigation functionality
+        (function () {
+            const sectionNavBtns = document.querySelectorAll('.section-nav-btn');
+            const content = document.querySelector('.content');
+            const twBg = document.getElementById('bg-tw');
+            const erBg = document.getElementById('bg-er');
+
+            sectionNavBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetSection = btn.getAttribute('data-section');
+
+                    // Remove active class from all buttons
+                    sectionNavBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Handle section transitions
+                    if (targetSection === 'elden-section') {
+                        content.classList.add('show-elden');
+                        erBg.style.opacity = '1';
+                        twBg.style.opacity = '0';
+                        initializeParticles(erColors);
+                    } else {
+                        content.classList.remove('show-elden');
+                        erBg.style.opacity = '0';
+                        twBg.style.opacity = '1';
+                        initializeParticles(twColors);
+                    }
+                });
+            });
+        })();
+
+        const twColors = ['#ffaa00', '#ff6a00', '#8a8a8a'];
+        const erColors = ['#9ab97d', '#6c8f5a', '#a1ffe1'];
+
+        function pauseParticles() {
+            if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
+                pJSDom[0].pJS.particles.move.enable = false;
+                pJSDom[0].pJS.fn.particlesRefresh();
+            }
+        }
+        function resumeParticles() {
+            if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
+                pJSDom[0].pJS.particles.move.enable = true;
+                pJSDom[0].pJS.fn.particlesRefresh();
+            }
+        }
+
+        function initializeParticles(colors) {
+            if (window.pJSDom && pJSDom[0]) {
+                pJSDom[0].pJS.particles.color.value = colors;
+                pJSDom[0].pJS.fn.particlesRefresh();
+            } else {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 90, density: { enable: true, value_area: 700 } },
+                        color: { value: colors },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.6, random: true, anim: { enable: true, speed: 1.2, opacity_min: 0.2, sync: false } },
+                        size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
+                        line_linked: { enable: false },
+                        move: { enable: true, speed: 0.35, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+                    retina_detect: true
+                });
+            }
+        }
+        initializeParticles(twColors);
+
+        function formatBytes(bytes) {
+            const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
+            if (bytes === 0) return "0 Bytes";
+            const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
+            return parseFloat((bytes / Math.pow(1024, i)).toFixed(1)) + " " + sizes[i];
+        }
+
+        function rgbToHsl(r, g, b) {
+            r /= 255; g /= 255; b /= 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+            if (max === min) { h = s = 0; }
+            else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+            return { h, s, l };
+        }
+        function hslToRgb(h, s, l) {
+            let r, g, b;
+            if (s === 0) { r = g = b = l; }
+            else {
+                const hue2rgb = (p, q, t) => {
+                    if (t < 0) t += 1;
+                    if (t > 1) t -= 1;
+                    if (t < 1 / 6) return p + (q - p) * 6 * t;
+                    if (t < 1 / 2) return q;
+                    if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+                    return p;
+                };
+                const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+                const p = 2 * l - q;
+                r = hue2rgb(p, q, h + 1 / 3);
+                g = hue2rgb(p, q, h);
+                b = hue2rgb(p, q, h - 1 / 3);
+            }
+            return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255) };
+        }
+        function adjustLightness({ r, g, b }, delta = 0.15) {
+            const { h, s, l } = rgbToHsl(r, g, b);
+            const nl = Math.max(0, Math.min(1, l + delta));
+            return hslToRgb(h, s, nl);
+        }
+        function rgbaStr({ r, g, b }, a) {
+            return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+
+        function getAverageColorFromImage(src) {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = "anonymous";
+                img.onload = () => {
+                    try {
+                        const canvas = document.createElement("canvas");
+                        const ctx = canvas.getContext("2d", { willReadFrequently: true });
+                        const w = 24, h = 24;
+                        canvas.width = w; canvas.height = h;
+                        ctx.drawImage(img, 0, 0, w, h);
+                        const { data } = ctx.getImageData(0, 0, w, h);
+                        let r = 0, g = 0, b = 0, count = 0;
+                        for (let i = 0; i < data.length; i += 8) {
+                            const a = data[i + 3];
+                            if (a < 64) continue;
+                            r += data[i];
+                            g += data[i + 1];
+                            b += data[i + 2];
+                            count++;
+                        }
+                        if (!count) return reject("no_pixels");
+                        resolve({ r: Math.round(r / count), g: Math.round(g / count), b: Math.round(b / count) });
+                    } catch (e) { reject(e); }
+                };
+                img.onerror = () => reject("load_error");
+                img.src = src;
+            });
+        }
+
+        function applyGradientToItemFromSrc(li, src, fallbackKey, folderGradientFallback = {}) {
+            getAverageColorFromImage(src).then(base => {
+                const light = adjustLightness(base, +0.18);
+                const dark = adjustLightness(base, -0.18);
+                li.style.backgroundImage = `linear-gradient(135deg, ${rgbaStr(light, 0.18)} 0%, ${rgbaStr(dark, 0.35)} 100%)`;
+                li.style.border = `1px solid ${rgbaStr(dark, 0.22)}`;
+                li.style.backdropFilter = 'blur(1px)';
+            }).catch(() => {
+                if (fallbackKey && folderGradientFallback[fallbackKey]) {
+                    li.style.backgroundImage = folderGradientFallback[fallbackKey];
+                    li.style.border = `1px solid rgba(255,255,255,0.06)`;
+                } else {
+                    li.style.backgroundImage = `linear-gradient(135deg, rgba(120,120,120,0.12), rgba(60,60,60,0.24))`;
+                    li.style.border = `1px solid rgba(255,255,255,0.05)`;
+                }
+            });
+        }
+
+        function isDriveDoc(mimeType) {
+            return mimeType && mimeType.startsWith('application/vnd.google-apps');
+        }
+
+        function getDownloadUrl(file, apiKey) {
+            if (file.webContentLink) return file.webContentLink;
+            return `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`;
+        }
+
+        function shouldShowDownloadButtonForFile({ file, folderId, path, includeList }) {
+            if (!includeList || includeList.length === 0) return false;
+            const keyByPath = path ? `${path}${file.name}` : file.name;
+            const keyById = `${folderId}/${file.name}`;
+
+            return includeList.includes(file.name)
+                || includeList.includes(file.id)
+                || includeList.includes(keyByPath)
+                || includeList.includes(keyById);
+        }
+
+        function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
+            if (!excludeList || excludeList.length === 0) return false;
+
+            const keyByPath = path ? `${path}${file.name}` : file.name;
+            const keyById = `${folderId}/${file.name}`;
+
+            return excludeList.includes(file.name)
+                || excludeList.includes(file.id)
+                || excludeList.includes(keyByPath)
+                || excludeList.includes(keyById);
+        }
+
+        // Simplified Download Manager Class with Basic Status Notifications
+        class DownloadManager {
+            constructor() {
+                this.activeDownloads = new Map();
+                this.toastContainer = this.createToastContainer();
+                this.serverBaseUrl = 'https://app.justkaarlo.com';
+            }
+
+            // Generate unique download ID
+            generateDownloadId() {
+                return 'dl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            createToastContainer() {
+                const container = document.createElement('div');
+                container.id = 'download-toast-container';
+                container.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        z-index: 10000;
+                        pointer-events: none;
+                    `;
+                document.body.appendChild(container);
+                return container;
+            }
+
+            showToast(message, type = 'info', duration = 3000) {
+                const toast = document.createElement('div');
+                toast.className = `download-toast toast-${type}`;
+
+                const backgroundColor = type === 'success' ? '#4CAF50' :
+                    type === 'error' ? '#f44336' : '#2196F3';
+
+                toast.style.cssText = `
+                        background: ${backgroundColor};
+                        color: white;
+                        padding: 12px 20px;
+                        margin-bottom: 10px;
+                        border-radius: 6px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                        pointer-events: auto;
+                        animation: slideIn 0.3s ease-out;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        max-width: 350px;
+                        word-wrap: break-word;
+                        cursor: pointer;
+                    `;
+
+                toast.textContent = message;
+                toast.title = 'Click to dismiss';
+                toast.onclick = () => this.removeToast(toast);
+
+                this.toastContainer.appendChild(toast);
+
+                if (duration > 0) {
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            this.removeToast(toast);
+                        }
+                    }, duration);
+                }
+
+                return toast;
+            }
+
+            removeToast(toast) {
+                if (toast && toast.parentNode) {
+                    toast.style.animation = 'slideOut 0.3s ease-in forwards';
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.remove();
+                        }
+                    }, 300);
+                }
+            }
+
+            // Poll server for download status - simplified version
+            async pollDownloadStatus(downloadId) {
+                const maxPollTime = 60000; // 60 seconds to allow time for cancellation detection
+                const pollInterval = 2000; // 2 seconds
+                const startTime = Date.now();
+                let downloadStarted = false;
+
+                const poll = async () => {
+                    try {
+                        const response = await fetch(`${this.serverBaseUrl}/download-status/${downloadId}`);
+                        const statusData = await response.json();
+
+                        console.log('Download status:', statusData);
+
+                        switch (statusData.status) {
+                            case 'downloading':
+                                // Show "Download Started" only once, but continue polling for cancellation
+                                if (!downloadStarted) {
+                                    downloadStarted = true;
+                                    this.showToast('Download Started', 'success', 3000);
+                                }
+                                // Don't return here - keep polling to detect cancellation
+                                break;
+
+                            case 'cancelled':
+                                this.showToast('Download Cancelled', 'error', 3000);
+                                return; // Stop polling
+
+                            case 'error':
+                                this.showToast('Download Failed', 'error', 3000);
+                                return; // Stop polling
+
+                            case 'starting':
+                            case 'preparing':
+                                // Keep polling, don't show anything yet
+                                break;
+
+                            case 'completed':
+                                // Don't show completion message as requested
+                                return; // Stop polling
+
+                            case 'not_found':
+                                // Download ID not found, might be too early
+                                if (Date.now() - startTime > 10000) {
+                                    // After 10 seconds, stop trying
+                                    return;
+                                }
+                                break;
+                        }
+
+                        // Continue polling if not finished and within time limit
+                        if (Date.now() - startTime < maxPollTime) {
+                            setTimeout(poll, pollInterval);
+                        }
+
+                    } catch (error) {
+                        console.error('Error polling download status:', error);
+                        // Silently fail - no error notifications as requested
+                    }
+                };
+
+                // Start polling after a short delay to allow server to register the download
+                setTimeout(poll, 1000);
+            }
+
+            // Main download method
+            download(fileId, filename, customLink = null) {
+                const downloadId = this.generateDownloadId();
+
+                // Create download URL with downloadId parameter
+                const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
+
+                return this.downloadWithStatusTracking(url, filename, downloadId);
+            }
+
+            // Enhanced download with server status tracking
+            downloadWithStatusTracking(url, filename, downloadId) {
+                // Create iframe for download
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = url;
+                document.body.appendChild(iframe);
+
+                // Start polling server for download status
+                this.pollDownloadStatus(downloadId);
+
+                // Cleanup function
+                const cleanup = () => {
+                    try {
+                        if (iframe.parentNode) {
+                            document.body.removeChild(iframe);
+                        }
+                    } catch (e) {
+                        console.log('Cleanup completed');
+                    }
+                };
+
+                // Cleanup after reasonable time
+                setTimeout(cleanup, 30000);
+
+                // Return reference for compatibility
+                return {
+                    downloadId: downloadId,
+                    cancel: cleanup
+                };
+            }
+        }
+
+        // Initialize global download manager
+        const downloadManager = new DownloadManager();
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+                
+                .download-toast {
+                    transition: all 0.3s ease;
+                }
+                
+                .download-toast:hover {
+                    transform: translateX(-5px);
+                    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+                }
+            `;
+        document.head.appendChild(style);
+
+        async function listFilesInFolder({
+            folderId,
+            container,
+            path = "",
+            apiKey,
+            customIcons = {},
+            customFolderIcons = {},
+            highlightFiles = [],
+            colorizeFiles = [],
+            folderGradientFallback = {},
+            showDownloadButtonAtRoot = true,
+            excludePartsFolders = [],
+            downloadButtonFiles = [],
+            excludeDownloadFiles = [],
+            customDownloadLinks = {}
+        }) {
+            container.innerHTML = "";
+
+            const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&key=${apiKey}&fields=files(id,name,mimeType,webViewLink,webContentLink,iconLink,size)`;
+            const res = await fetch(url);
+            const data = await res.json();
+
+            if (!data.files || data.files.length === 0) {
+                const li = document.createElement("li");
+                li.textContent = "No files found.";
+                container.appendChild(li);
+                return;
+            }
+
+            const files = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
+            const folders = data.files.filter(f => f.mimeType === "application/vnd.google-apps.folder");
+
+            files.sort((a, b) => {
+                const aTop = highlightFiles.includes(a.name);
+                const bTop = highlightFiles.includes(b.name);
+                if (aTop && !bTop) return -1;
+                if (bTop && !aTop) return 1;
+                return a.name.localeCompare(b.name, undefined, { numeric: true });
+            });
+            folders.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+
+            // Files
+            for (const file of files) {
+                const li = document.createElement("li");
+                if (highlightFiles.includes(file.name)) li.classList.add("highlighted");
+
+                const link = document.createElement("a");
+                link.href = file.webViewLink;
+                link.target = "_blank";
+
+                link.addEventListener('mousemove', (e) => {
+                    const rect = link.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const midX = rect.width / 2;
+                    const midY = rect.height / 2;
+                    const rotateX = ((y - midY) / midY) * 2;
+                    const rotateY = ((x - midX) / midX) * 2;
+                    link.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+                link.addEventListener('mouseleave', () => {
+                    link.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+
+                const icon = document.createElement("img");
+                const iconKey = `${folderId}/${file.name}`;
+                icon.src = customIcons[iconKey] || customIcons[file.name] || file.iconLink;
+                icon.alt = "";
+
+                if (colorizeFiles.includes(file.name)) {
+                    applyGradientToItemFromSrc(li, icon.src);
+                }
+
+                link.appendChild(icon);
+                link.appendChild(document.createTextNode(file.name));
+
+                const fileEntry = document.createElement("div");
+                fileEntry.className = "file-entry";
+                fileEntry.appendChild(link);
+
+                if (file.size) {
+                    const sizeTag = document.createElement("span");
+                    sizeTag.className = "file-size-tag";
+                    sizeTag.textContent = formatBytes(parseInt(file.size, 10));
+                    fileEntry.appendChild(sizeTag);
+                }
+
+                const includeButton = shouldShowDownloadButtonForFile({
+                    file,
+                    folderId,
+                    path,
+                    includeList: downloadButtonFiles
+                });
+
+                const excludeButton = isExcludedDownloadFile({
+                    file,
+                    folderId,
+                    path,
+                    excludeList: excludeDownloadFiles
+                });
+
+                if (!isDriveDoc(file.mimeType) && (includeButton || (!path && showDownloadButtonAtRoot)) && !excludeButton) {
+                    const downloadBtn = document.createElement("button");
+                    downloadBtn.className = "folder-open-button";
+
+                    const tooltip = document.createElement("span");
+                    tooltip.className = "custom-tooltip";
+                    tooltip.textContent = "Download";
+                    downloadBtn.appendChild(tooltip);
+
+                    const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                    btnIcon.setAttribute("width", "16");
+                    btnIcon.setAttribute("height", "16");
+                    btnIcon.setAttribute("viewBox", "0 0 24 24");
+                    btnIcon.setAttribute("fill", "none");
+
+                    const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                    trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
+                    trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
+
+                    const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                    arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
+                    arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
+                    arrowPath.setAttribute("class", "arrow-part");
+
+                    btnIcon.appendChild(trayPath);
+                    btnIcon.appendChild(arrowPath);
+                    downloadBtn.appendChild(btnIcon);
+
+                    downloadBtn.onclick = (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
+                        downloadManager.download(file.id, file.name, customLink);
+                    };
+
+                    fileEntry.appendChild(downloadBtn);
+                }
+
+                li.appendChild(fileEntry);
+                container.appendChild(li);
+            }
+
+            for (const folder of folders) {
+                const li = document.createElement("li");
+
+                const folderLink = document.createElement("div");
+                folderLink.className = "folder-entry";
+                folderLink.style.cursor = "pointer";
+
+                const leftWrapper = document.createElement("div");
+                leftWrapper.style.display = "flex";
+                leftWrapper.style.alignItems = "center";
+
+                const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                arrow.setAttribute("viewBox", "0 0 24 24");
+                arrow.setAttribute("class", "folder-arrow");
+                arrow.innerHTML = `<path d="M9 5l7 7-7 7"/>`;
+
+                const icon = document.createElement("img");
+                icon.crossOrigin = "anonymous";
+                const iconSrc = customFolderIcons[folder.id] || folder.iconLink;
+                icon.src = iconSrc;
+                icon.alt = "";
+
+                const nameSpan = document.createElement("span");
+                nameSpan.className = "folder-name";
+                nameSpan.textContent = folder.name;
+
+                const rightWrapper = document.createElement("div");
+                rightWrapper.style.display = "flex";
+                rightWrapper.style.alignItems = "center";
+                rightWrapper.style.gap = "1px";
+
+                const sizeTag = document.createElement("span");
+                sizeTag.className = "file-size-tag";
+                sizeTag.textContent = "...";
+
+                const excludeParts = excludePartsFolders.includes(folder.id) || excludePartsFolders.includes(folder.name);
+                let countTag = null;
+                if (!excludeParts) {
+                    countTag = document.createElement("span");
+                    countTag.className = "file-count-tag";
+                    countTag.textContent = "";
+                }
+
+                const folderBtn = document.createElement("button");
+                const folderExcluded =
+                    excludeDownloadFiles.includes(folder.id) ||
+                    excludeDownloadFiles.includes(folder.name);
+
+                if (!folderExcluded) {
+                    rightWrapper.appendChild(folderBtn);
+                }
+                folderBtn.className = "folder-open-button";
+                const tooltip = document.createElement("span");
+                tooltip.className = "custom-tooltip";
+                tooltip.textContent = "Download";
+                folderBtn.appendChild(tooltip);
+                folderBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
+                    if (customLink) {
+                        window.open(customLink, "_blank");
+                    } else {
+                        window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                    }
+                };
+
+                const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                btnIcon.setAttribute("width", "16");
+                btnIcon.setAttribute("height", "16");
+                btnIcon.setAttribute("viewBox", "0 0 24 24");
+                btnIcon.setAttribute("fill", "none");
+
+                const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
+                trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
+
+                const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
+                arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
+                arrowPath.setAttribute("class", "arrow-part");
+
+                btnIcon.appendChild(trayPath);
+                btnIcon.appendChild(arrowPath);
+                folderBtn.appendChild(btnIcon);
+
+                leftWrapper.appendChild(arrow);
+                leftWrapper.appendChild(icon);
+                leftWrapper.appendChild(nameSpan);
+
+                rightWrapper.appendChild(sizeTag);
+                if (countTag) rightWrapper.appendChild(countTag);
+                if (!excludeDownloadFiles.includes(folder.id) &&
+                    !excludeDownloadFiles.includes(folder.name)) {
+                    rightWrapper.appendChild(folderBtn);
+                }
+
+                folderLink.appendChild(leftWrapper);
+                folderLink.appendChild(rightWrapper);
+                li.appendChild(folderLink);
+
+                applyGradientToItemFromSrc(li, iconSrc, folder.id, folderGradientFallback);
+
+                const subList = document.createElement("ul");
+                subList.className = "file-list";
+                subList.style.marginLeft = "20px";
+                subList.style.height = "auto";
+                subList.style.maxHeight = "480px";
+                subList.style.display = "none";
+                li.appendChild(subList);
+
+                folderLink.addEventListener("click", async () => {
+                    if (subList.childElementCount === 0) {
+                        await listFilesInFolder({
+                            folderId: folder.id,
+                            container: subList,
+                            path: `${path}${folder.name}/`,
+                            apiKey,
+                            customIcons,
+                            customFolderIcons,
+                            highlightFiles,
+                            colorizeFiles,
+                            folderGradientFallback,
+                            showDownloadButtonAtRoot: false,
+                            excludePartsFolders,
+                            downloadButtonFiles,
+                            excludeDownloadFiles,
+                            customDownloadLinks
+                        });
+                    }
+                    const isOpen = subList.style.display === "block";
+                    subList.style.display = isOpen ? "none" : "block";
+                    arrow.classList.toggle("open", !isOpen);
+                    li.classList.toggle("folder-open", !isOpen);
+                });
+
+                nameSpan.addEventListener('mousemove', (e) => {
+                    const rect = nameSpan.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const midX = rect.width / 2;
+                    const midY = rect.height / 2;
+                    const rotateX = ((y - midY) / midY) * 2;
+                    const rotateY = ((x - midX) / midX) * 2;
+                    nameSpan.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+                nameSpan.addEventListener('mouseleave', () => {
+                    nameSpan.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+
+                fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(size,mimeType)&key=${apiKey}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.files) return;
+                        const fileItems = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
+                        const fileCount = fileItems.length;
+                        const totalSize = fileItems
+                            .filter(f => f.size)
+                            .reduce((sum, f) => sum + parseInt(f.size, 10), 0);
+
+                        sizeTag.textContent = formatBytes(totalSize);
+                        if (countTag) {
+                            countTag.textContent = `${fileCount} Part${fileCount !== 1 ? "s" : ""}`;
+                        }
+                    });
+
+                container.appendChild(li);
+            }
+        }
+
+        // Modal functionality
+        const modal = document.getElementById("docModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        function openModal(embedUrl) {
+            document.getElementById("docFrame").src = embedUrl;
+            modal.style.display = "flex";
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+            document.getElementById("docFrame").src = "";
+            document.body.classList.remove('modal-open');
+        }
+
+        function attachDocPreview(listElement) {
+            if (!listElement) return;
+            listElement.addEventListener("click", function (e) {
+                const target = e.target;
+                let link = target.tagName === "A" ? target : target.closest("a");
+                if (!link) return;
+
+                const url = link.href;
+                if (url.includes("docs.google.com/document")) {
+                    e.preventDefault();
+                    const fileIdMatch = url.match(/[-\w]{25,}/);
+                    const fileId = fileIdMatch ? fileIdMatch[0] : null;
+                    if (fileId) {
+                        const embedUrl = `https://docs.google.com/document/d/${fileId}/preview`;
+                        openModal(embedUrl);
+                    } else {
+                        alert("Could not determine Google Doc ID.");
+                    }
+                }
+            });
+        }
+
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && modal.style.display === "flex") {
+                closeModal();
+            }
+        });
+
+        (function initializeFileLists() {
+            const apiKey = "__API_KEY__";
+            const twRootFolderId = "1o2O8JyiYVPc6ukBqpwbFDp1Ki6iNeALT";
+            const twContainer = document.getElementById("tw-fileList");
+            listFilesInFolder({
+                folderId: twRootFolderId,
+                container: twContainer,
+                apiKey,
+                customIcons: {},
+                customFolderIcons: {
+                    "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp"
+                },
+                highlightFiles: [
+                    "FS Miner's"
+                ],
+                colorizeFiles: [],
+                excludePartsFolders: [],
+                folderGradientFallback: {},
+                downloadButtonFiles: [],
+                excludeDownloadFiles: [],
+                customDownloadLinks: {},
+                showDownloadButtonAtRoot: true
+            });
+            attachDocPreview(twContainer);
+        })()
+    </script>
+</body>
+</html>
