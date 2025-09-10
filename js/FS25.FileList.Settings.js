@@ -20,7 +20,15 @@
         ],
         excludePartsFolders: [],
         folderGradientFallback: {},
-        downloadButtonFiles: [],
+        downloadButtonFiles: [
+            "FS25_agriculturalSubsidy.zip",
+            "FS25_HeaderRackPack.zip",
+            "FS25_NoVehicleCameraCollision_KingMods.zip",
+            "FS25_paintAndTerraformAnywhere.zip",
+            "FS25_PalletsRack.zip",
+            "FS25_RM_Subsidy.zip",
+            "FS25_UniversalAutoload.zip"
+        ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
             "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1"
