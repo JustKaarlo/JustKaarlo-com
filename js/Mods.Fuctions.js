@@ -451,9 +451,9 @@ class DownloadManager {
         }
     }
 
-    // Wake up server with loading modal
+    // Wake up server with loading toast
     async wakeUpServer() {
-        const modal = this.showStartupModal();
+        const toast = this.showStartupToast();
         
         try {
             console.log('Checking server status...');
@@ -463,7 +463,7 @@ class DownloadManager {
             
             if (isReady) {
                 console.log('Server is already ready');
-                this.hideStartupModal();
+                this.hideStartupToast();
                 return true;
             }
 
@@ -481,20 +481,20 @@ class DownloadManager {
                 const ready = await this.checkServerReadiness();
                 if (ready) {
                     console.log('Server is now ready!');
-                    this.hideStartupModal();
+                    this.hideStartupToast();
                     return true;
                 }
             }
             
             // Server didn't start within expected time
             console.warn('Server startup timeout');
-            this.hideStartupModal();
+            this.hideStartupToast();
             this.showToast('Server is taking longer than expected to start. Please try again.', 'error', 5000);
             return false;
             
         } catch (error) {
             console.error('Error during server startup:', error);
-            this.hideStartupModal();
+            this.hideStartupToast();
             this.showToast('Unable to connect to download server. Please try again.', 'error', 5000);
             return false;
         }
