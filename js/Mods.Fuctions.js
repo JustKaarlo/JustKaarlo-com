@@ -569,14 +569,26 @@ class DownloadManager {
 
     // Background server check that shows loading toast if needed
     async checkServerInBackground() {
-        try {
-            const isReady = await this.checkServerReadiness();
+        // Always show loading toast initially if we haven't checked recently
+        const now = Date.now();
+        const shouldShowLoading = !this.serverReady || (now - this.lastServerCheck) > this.serverCheckInterval;
+        
+        if (shouldShowLoading) {
+            console.log('Showing startup toast as precaution...');
+            const toast = this.showStartupToast();
             
-            if (!isReady) {
-                console.log('Server needs startup, showing loading toast...');
-                const toast = this.showStartupToast();
+            try {
+                // Quick check first
+                const isReady = await this.checkServerReadiness();
                 
-                // Try to wake up server in background
+                if (isReady) {
+                    console.log('Server responded quickly, hiding toast');
+                    setTimeout(() => this.hideStartupToast(), 1000); // Hide after 1 second
+                    return;
+                }
+                
+                // Server not ready, wait longer
+                console.log('Server needs startup time...');
                 const maxAttempts = 6;
                 const retryDelay = 5000;
                 
@@ -593,10 +605,12 @@ class DownloadManager {
                 
                 // Hide toast after timeout
                 this.hideStartupToast();
+                
+            } catch (error) {
+                console.error('Server check failed:', error);
+                // Hide toast on error after a reasonable time
+                setTimeout(() => this.hideStartupToast(), 3000);
             }
-        } catch (error) {
-            console.error('Background server check failed:', error);
-            // Don't show error - just fail silently since download might still work
         }
     }
 
