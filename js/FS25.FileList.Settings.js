@@ -1,6 +1,6 @@
 (function initializeFileLists() {
-    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
-    const twRootFolderId = "1o2O8JyiYVPc6ukBqpwbFDp1Ki6iNeALT";
+    const apiKey = "__API_KEY__";
+    const twRootFolderId = "1ctBehAFICQA_yV5Tnw7f9rRtEZ73-zdN";
     const twContainer = document.getElementById("tw-fileList");
     listFilesInFolder({
         folderId: twRootFolderId,
