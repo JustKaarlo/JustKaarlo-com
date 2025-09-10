@@ -1,4 +1,5 @@
-const WEBHOOK_URL = "__WEBHOOK_URL__";
+// GitHub Pages Secret - Replace this with your actual webhook URL
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1393653107174408394/Xa0zlUDF77IJ31NwWmFtrNzC6DT8ttg2Fminq-YtPFDxpMLX9IZpROU3PGfPfKaNUKKR";
 const THREAD_ID = "1396775578396528731";
 
 function showAlert(message, title = '📢 Notice') {
@@ -84,7 +85,8 @@ function submitForm() {
         return;
     }
 
-    if (WEBHOOK_URL === "YOUR_DISCORD_WEBHOOK_URL_HERE" || !WEBHOOK_URL) {
+    // Check if webhook URL is configured
+    if (WEBHOOK_URL === "NOT_WEBHOOK_URL" || !WEBHOOK_URL) {
         showAlert("Webhook URL not configured. Please set up the GitHub Pages secret.", "⚠️ Configuration Error");
         return;
     }

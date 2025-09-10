@@ -210,8 +210,7 @@ function isDriveDoc(mimeType) {
 
 function getDownloadUrl(file, apiKey) {
     if (file.webContentLink) return file.webContentLink;
-    return `http://app.justkaarlo.com/${file.id}`;
-    // return `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`;
+    return `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`;
 }
 
 function shouldShowDownloadButtonForFile({ file, folderId, path, includeList }) {
