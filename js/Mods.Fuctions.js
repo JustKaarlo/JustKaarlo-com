@@ -556,25 +556,47 @@ class DownloadManager {
         setTimeout(poll, 1000);
     }
 
-    // Main download method with server startup check
-    async download(fileId, filename, customLink = null) {
+    // Main download method with optional server startup check
+    download(fileId, filename, customLink = null) {
+        const downloadId = this.generateDownloadId();
+        const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
+
+        // Do server check in background without blocking download
+        this.checkServerInBackground();
+
+        return this.downloadWithStatusTracking(url, filename, downloadId);
+    }
+
+    // Background server check that shows loading toast if needed
+    async checkServerInBackground() {
         try {
-            // Check if server is ready, wake it up if needed
-            const serverReady = await this.wakeUpServer();
+            const isReady = await this.checkServerReadiness();
             
-            if (!serverReady) {
-                console.warn('Proceeding with download despite server status uncertainty');
+            if (!isReady) {
+                console.log('Server needs startup, showing loading toast...');
+                const toast = this.showStartupToast();
+                
+                // Try to wake up server in background
+                const maxAttempts = 6;
+                const retryDelay = 5000;
+                
+                for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+                    await new Promise(resolve => setTimeout(resolve, retryDelay));
+                    
+                    const ready = await this.checkServerReadiness();
+                    if (ready) {
+                        console.log('Server is now ready!');
+                        this.hideStartupToast();
+                        return;
+                    }
+                }
+                
+                // Hide toast after timeout
+                this.hideStartupToast();
             }
-
-            const downloadId = this.generateDownloadId();
-            const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
-
-            return this.downloadWithStatusTracking(url, filename, downloadId);
-            
         } catch (error) {
-            console.error('Error in download method:', error);
-            this.showToast('Download failed to start. Please try again.', 'error', 5000);
-            return null;
+            console.error('Background server check failed:', error);
+            // Don't show error - just fail silently since download might still work
         }
     }
 
