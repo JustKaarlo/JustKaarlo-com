@@ -3,506 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <title>Prison Transport Report</title>
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <style>
-    * { font-family: 'Rubik', sans-serif; }
-    body {
-      background: transparent;
-      padding: 30px;
-      max-width: 750px;
-      margin: auto;
-      color: white;
-    }
-    .card {
-      background: #2C2F33;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      padding: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .header {
-      background: #56585B;
-      padding: 15px;
-      text-align: center;
-    }
-    .header-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      margin: 0;
-    }
-    .header-subtitle {
-      font-size: 15px;
-      color: #ccc;
-      margin-top: 4px;
-    }
-    .section-title {
-      font-weight: bold;
-      font-size: 16px;
-      background: #23272A;
-      text-align: center;
-      padding: 8px;
-      margin-top: 20px;
-      border-radius: 6px;
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 15px;
-    }
-    .field-group {
-      flex: 1;
-      min-width: 150px;
-      display: flex;
-      flex-direction: column;
-    }
-    .field-group label {
-      font-size: 13px;
-      margin-bottom: 4px;
-      color: #ccc;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    input[type="text"],
-    input[type="datetime-local"],
-    input[type="date"],
-    select {
-      padding: 6px 10px;
-      border: 1px solid #444;
-      border-radius: 6px;
-      font-size: 14px;
-      background: #23272A;
-      color: white;
-    }
-    .wide { width: 100%; }
-    .button-row {
-      display: flex;
-      gap: 10px;
-      margin: 15px;
-    }
-    button {
-      background-color: #3c78d8;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    button:hover { background-color: #5187dc; }
-    .clear-btn {
-      background-color: #4f545c;
-      color: #c0c0c0;
-    }
-    .clear-btn:hover {
-      background-color: #5d626a;
-    }
-    .submit-btn { flex: 1; }
-    textarea.autogrow {
-      width: 100%;
-      min-height: auto;
-      line-height: 1.4;
-      padding: 6px 10px;
-      border: 1px solid #444;
-      border-radius: 6px;
-      font-size: 14px;
-      background: #23272A;
-      color: white;
-      resize: none;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-    .suspect-container {
-      background: #23272A;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
-    .suspect-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .suspect-header .no-box {
-      font-size: 14px;
-      padding: 4px 10px;
-      background: #444;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .suspect-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .suspect-row .field-group {
-      flex: 1;
-      min-width: 140px;
-    }
-    #popup-overlay, #error-popup, #pin-popup {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #23272A;
-      color: white;
-      border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      z-index: 10;
-      max-width: 90%;
-      text-align: center;
-      display: none;
-    }
-    #pin-popup[style*="display: block"] {
-      display: flex !important;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    #popup-overlay .header-title { color: #7289da; font-size: 18px; font-weight: bold; }
-    #popup-overlay .header-subtitle,
-    #error-popup .header-subtitle,
-    #pin-popup .header-subtitle { font-size: 14px; color: #ccc; margin-top: 6px; }
-    #error-popup .header-title { color: #f04747; font-size: 18px; font-weight: bold; }
-    #pin-popup input {
-      width: 100%;
-      padding: 10px;
-      font-size: 18px;
-      text-align: center;
-      margin-top: 15px;
-      border-radius: 6px;
-      border: 1px solid #444;
-      background: #2C2F33;
-      color: white;
-    }
-    #pin-error {
-      color: #f04747;
-      font-size: 14px;
-      margin-top: 10px;
-      display: none;
-    }
-    .shake {
-      animation: shake 0.4s;
-    }
-    @keyframes shake {
-      0% { transform: translate(-50%, -50%) translateX(0); }
-      25% { transform: translate(-50%, -50%) translateX(-10px); }
-      50% { transform: translate(-50%, -50%) translateX(10px); }
-      75% { transform: translate(-50%, -50%) translateX(-10px); }
-      100% { transform: translate(-50%, -50%) translateX(0); }
-    }
-  </style>
-  <body>
-    <div class="card">
-      <div class="header">
-        <div class="header-title">DEPT. OF CORRECTIONS AND REHABILITATION</div>
-        <div class="header-subtitle">PRISON TRANSPORT REPORT</div>
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="header-title">DEPT. OF CORRECTIONS AND REHABILITATION</div>
+      <div class="header-subtitle">PRISON TRANSPORT REPORT</div>
+    </div>
+    <div class="row">
+      <div class="field-group">
+        <label>Date & Time</label>
+        <input type="datetime-local" id="datetime" required>
       </div>
-      <div class="row">
-        <div class="field-group">
-          <label>Date & Time</label>
-          <input type="datetime-local" id="datetime">
-        </div>
-        <div class="field-group">
-          <label>Prison Facility</label>
-          <input type="text" id="facility" value="Bolingbroke Pen." readonly>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field-group wide">
-          <label>Pickup Location</label>
-          <input type="text" id="pickup">
-        </div>
-      </div>
-      <div class="section-title">SUSPECT(S) INFORMATION</div>
-      <div id="suspectList"></div>
-      <div style="text-align:center; margin: 15px;">
-        <button onclick="addSuspect()">+ Add Suspect</button>
-      </div>
-      <div class="section-title">CUSTODY TRANSFER</div>
-      <div class="row">
-        <div class="field-group">
-          <label>Received By</label>
-          <input type="text" id="receiver">
-        </div>
-        <div class="field-group">
-          <label>Department</label>
-          <input type="text" id="department">
-        </div>
-      </div>
-      <div class="button-row">
-        <button class="clear-btn" onclick="resetForm()">Clear</button>
-        <button class="submit-btn" onclick="submitForm()">Submit</button>
-      </div>
-      
-      <div id="popup-overlay">
-        <div class="header-title">✅ Report Submitted</div>
-        <div class="header-subtitle">Your Report Has Been Logged</div>
-      </div>
-      <div id="error-popup">
-        <div class="header-title">⚠️ Submission Failed</div>
-        <div class="header-subtitle">All Fields Are Required</div>
-      </div>
-      <div id="pin-popup">
-        <div class="header-title">🔐 Webhook Required</div>
-        <div class="header-subtitle">Select or Enter Webhook</div>
-        <input id="webhook-url" list="webhook-history" placeholder="Enter Webhook URL" type="text"
-          style="margin-top:10px;" />
-        <datalist id="webhook-history"></datalist>
-        <div id="pin-error">Webhook URL Is Required</div>
-        <div style="margin-top: 15px;">
-          <button onclick="validateWebhook()" style="width: 80px; margin-right: 20px;">Confirm</button>
-          <button onclick="closePinPopup()"
-            style="width: 80px; margin-left: 20px; background: rgba(175,41,41,1.0);">Close</button>
-        </div>
-        <button class="clear-btn" onclick="clearWebhookData()"
-          style="margin-top:10px; padding: 6px 12px; font-size: 13px;">CLEAR DATA</button>
+      <div class="field-group">
+        <label>Prison Facility</label>
+        <input type="text" id="facility" value="Bolingbroke Pen." readonly>
       </div>
     </div>
-    <script>
-      const threadId = "1396779280968712272";
-      
-      function autoGrow(el) {
-        el.style.height = "auto";
-        el.style.height = el.scrollHeight + "px";
-      }
-
-      function closePinPopup() {
-        document.getElementById("pin-popup").style.display = "none";
-      }
-
-      function resetForm() {
-        document.querySelectorAll("input[type='text'], input[type='datetime-local'], input[type='date'], select").forEach(input => {
-          if (!input.hasAttribute("readonly")) input.value = "";
-        });
-        document.getElementById("suspectList").innerHTML = "";
-        addSuspect();
-      }
-
-      function showErrorPopup() {
-        const popup = document.getElementById("error-popup");
-        popup.style.display = "block";
-        setTimeout(() => (popup.style.display = "none"), 3000);
-      }
-
-      function showPopup() {
-        const popup = document.getElementById("popup-overlay");
-        popup.style.display = "block";
-        setTimeout(() => (popup.style.display = "none"), 3000);
-      }
-
-      function validateWebhook() {
-        const webhook = document.getElementById("webhook-url").value.trim();
-        if (!webhook) {
-          const err = document.getElementById("pin-error");
-          err.style.display = "block";
-          const popup = document.getElementById("pin-popup");
-          popup.classList.add("shake");
-          setTimeout(() => popup.classList.remove("shake"), 400);
-          return;
-        }
-
-        saveToHistory("webhookHistory", webhook);
-        populateDatalist("webhook-history", "webhookHistory");
-
-        document.getElementById("pin-popup").style.display = "none";
-        window.tempSubmissionData.webhook = webhook;
-        window.tempSubmissionData.thread = threadId;
-
-        processSubmission();
-      }
-
-      function submitForm() {
-        const datetime = document.getElementById("datetime").value.trim();
-        const pickup = document.getElementById("pickup").value.trim();
-        const receiver = document.getElementById("receiver").value.trim();
-        const department = document.getElementById("department").value.trim();
-
-        if (!datetime || !pickup || !receiver || !department) return showErrorPopup();
-
-        const suspectEls = document.querySelectorAll(".suspect-container");
-        const suspects = [];
-
-        for (const el of suspectEls) {
-          const name = el.querySelector("input[type='text']").value.trim();
-          const gender = el.querySelector("select").value.trim();
-          const dob = el.querySelector("input[type='date']").value.trim();
-          if (!name || !gender || !dob) return showErrorPopup();
-          suspects.push({ name, gender, dob });
-        }
-
-        window.tempSubmissionData = { datetime, pickup, receiver, department, suspects };
-        document.getElementById("pin-popup").style.display = "block";
-        document.getElementById("pin-error").style.display = "none";
-      }
-
-      function processSubmission() {
-        const data = window.tempSubmissionData;
-        const formattedDate = data.datetime.replace("T", " ");
-        const generatedID = randomID();
-
-        const datetimeInput = document.getElementById("datetime");
-        const datetimeClone = datetimeInput.cloneNode(true);
-        const datetimeSpan = document.createElement("div");
-        datetimeSpan.textContent = formattedDate;
-        datetimeSpan.style = datetimeInput.style.cssText;
-        datetimeInput.parentNode.replaceChild(datetimeSpan, datetimeInput);
-
-        const toHide = [
-          document.querySelector(".header"),
-          ...document.querySelectorAll("button"),
-          document.getElementById("webhook-url"),
-          ...document.querySelectorAll(".remove")
-        ];
-        toHide.forEach(el => (el.style.display = "none"));
-
-        html2canvas(document.querySelector(".card"), {
-          backgroundColor: null,
-          scale: 2
-        }).then(canvas => {
-          datetimeSpan.parentNode.replaceChild(datetimeClone, datetimeSpan);
-          toHide.forEach(el => (el.style.display = ""));
-
-          canvas.toBlob(blob => {
-            const suspectsField = data.suspects.map((s, i) =>
-              `#${i + 1} ${s.name} | ${s.gender} | ${s.dob}`
-            ).join("\n");
-
-            const embed = {
-              title: "PRISON TRANSPORT REPORT",
-              color: 4737096,
-              fields: [
-                { name: "> ID", value: `\`\`\`\n${generatedID}\n\`\`\``, inline: false },
-              ],
-              image: { url: "attachment://report.png" },
-              footer: { text: "Department of Correction" },
-              timestamp: new Date().toISOString()
-            };
-
-            const formData = new FormData();
-            formData.append("payload_json", JSON.stringify({ embeds: [embed] }));
-            formData.append("file", blob, "report.png");
-
-            const url = `${data.webhook}?thread_id=${data.thread}`;
-            fetch(url, { method: "POST", body: formData })
-              .then(() => {
-                showPopup();
-                resetForm();
-              })
-              .catch(() => alert("Failed to submit report."));
-          });
-        });
-      }
-
-      function randomID() {
-        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const numbers = "0123456789";
-        let id = "";
-        for (let i = 0; i < 3; i++) id += letters[Math.floor(Math.random() * letters.length)];
-        id += "-";
-        for (let i = 0; i < 3; i++) id += numbers[Math.floor(Math.random() * numbers.length)];
-        id += "-" + numbers[Math.floor(Math.random() * numbers.length)];
-        return id;
-      }
-
-      function saveToHistory(key, value) {
-        let history = JSON.parse(localStorage.getItem(key)) || [];
-        if (!history.includes(value)) {
-          history.push(value);
-          localStorage.setItem(key, JSON.stringify(history));
-        }
-      }
-
-      function populateDatalist(id, key) {
-        const datalist = document.getElementById(id);
-        datalist.innerHTML = "";
-        const history = JSON.parse(localStorage.getItem(key)) || [];
-        history.forEach(val => {
-          const option = document.createElement("option");
-          option.value = val;
-          datalist.appendChild(option);
-        });
-      }
-
-      function clearWebhookData() {
-        if (!confirm("This will delete all webhook data. Are you sure?")) return;
-        localStorage.removeItem("webhookPresets");
-        localStorage.removeItem("webhookHistory");
-        localStorage.removeItem("threadHistory");
-        localStorage.removeItem("threadNamedHistory");
-        document.getElementById("webhook-url").value = "";
-        populateDatalist("webhook-history", "webhookHistory");
-      }
-
-      function addSuspect() {
-        const container = document.getElementById("suspectList");
-        const suspectCard = document.createElement("div");
-        suspectCard.className = "suspect-container";
-        suspectCard.innerHTML = `
-          <div class="suspect-header">
-            <span class="no-box">Suspect</span>
-            <button class="delete-btn" onclick="removeSuspect(this)">🗑️</button>
-          </div>
-          <div class="suspect-row">
-            <div class="field-group">
-              <label>Name</label>
-              <input type="text">
-            </div>
-            <div class="field-group">
-              <label>Gender</label>
-              <select>
-                <option value="">Select</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label>Date of Birth</label>
-              <input type="date">
-            </div>
-          </div>`;
-        container.appendChild(suspectCard);
-        updateSuspectListNumbers();
-      }
-
-      function removeSuspect(btn) {
-        const card = btn.closest(".suspect-container");
-        if (card) card.remove();
-        updateSuspectListNumbers();
-      }
-
-      function updateSuspectListNumbers() {
-        const containers = document.querySelectorAll(".suspect-container");
-        containers.forEach((c, i) => {
-          const no = c.querySelector(".no-box");
-          const del = c.querySelector(".delete-btn");
-          no.textContent = `Suspect #${i + 1}`;
-          if (i === 0) {
-            del.disabled = true;
-            del.style.backgroundColor = "#3a3a3a";
-            del.style.cursor = "not-allowed";
-            del.title = "Cannot remove the first suspect";
-          } else {
-            del.disabled = false;
-            del.style.backgroundColor = "";
-            del.style.cursor = "pointer";
-            del.title = "";
-          }
-        });
-      }
-
-      window.onload = () => {
-        addSuspect();
-        populateDatalist("webhook-history", "webhookHistory");
-      };
-    </script>
-  </body>
+    <div class="row">
+      <div class="field-group wide">
+        <label>Pickup Location</label>
+        <input type="text" id="pickup" required>
+      </div>
+    </div>
+    <div class="section-title">SUSPECT(S) INFORMATION</div>
+    <div id="suspectList"></div>
+    <div style="text-align:center; margin: 15px;">
+      <button onclick="addSuspect()">+ Add Suspect</button>
+    </div>
+    <div class="section-title">CUSTODY TRANSFER</div>
+    <div class="row">
+      <div class="field-group">
+        <label>Received By</label>
+        <input type="text" id="receiver" required>
+      </div>
+      <div class="field-group">
+        <label>Department</label>
+        <input type="text" id="department" required>
+      </div>
+    </div>
+    <div class="button-row">
+      <button class="clear-btn" onclick="resetForm()">Clear</button>
+      <button class="submit-btn" onclick="submitForm()">Submit</button>
+    </div>
+    
+    <div id="popup-overlay">
+      <div class="header-title">Report Submitted</div>
+      <div class="header-subtitle">Your Report Has Been Logged</div>
+    </div>
+    <div id="error-popup">
+      <div class="header-title">Submission Failed</div>
+      <div class="header-subtitle">All Fields Are Required</div>
+    </div>
+  </div>
+  <script>
+    // Configuration for Prison Transport Report
+    window.ReportConfig = {
+      WEBHOOK_URL: "__WEBHOOK_URL__",
+      THREAD_ID: "1396779280968712272",
+      REPORT_TYPE: "PRISON TRANSPORT REPORT",
+      REPORT_FOOTER: "Department of Correction",
+      REPORT_COLOR: 4737096
+    };
+  </script>
+  <script src="js/script.js"></script>
+</body>
 </html>

@@ -1,601 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>Towingf Report</title>
-<link href="https://fonts.googleapis.com/css2?family=Rubik&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<style>
-        * {
-            font-family: 'Rubik', sans-serif;
-        }
-
-        body {
-            background: transparent;
-            padding: 30px;
-            max-width: 750px;
-            margin: auto;
-            color: white;
-        }
-
-        .card {
-            background: #2C2F33;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            padding: 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .header {
-            background: #56585B;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .header-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: white;
-            margin: 0;
-        }
-
-        .header-subtitle {
-            font-size: 15px;
-            font-style: bold;
-            color: #ccc;
-            margin-top: 4px;
-        }
-
-        .section-title {
-            font-weight: bold;
-            font-size: 16px;
-            background: #23272A;
-            text-align: center;
-            padding: 8px;
-            margin-top: 20px;
-            border-radius: 6px;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px;
-        }
-
-        .field-group {
-            flex: 1;
-            min-width: 150px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .field-group label {
-            font-size: 13px;
-            margin-bottom: 4px;
-            color: #ccc;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        input[type="text"],
-        input[type="datetime-local"],
-        select {
-            padding: 6px 10px;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 14px;
-            background: #23272A;
-            color: white;
-        }
-
-        .wide {
-            width: 100%;
-        }
-
-        button {
-            background-color: #3c78d8;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #5187dc;
-        }
-
-        .button-row {
-            display: flex;
-            gap: 10px;
-            margin: 15px;
-        }
-
-        .clear-btn {
-            background-color: #4f545c;
-            color: #c0c0c0;
-        }
-
-        .clear-btn:hover {
-            background-color: #5d626a;
-        }
-
-        .submit-btn {
-            flex: 1;
-        }
-
-        #popup-overlay,
-        #error-popup,
-        #pin-popup {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #23272A;
-            color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-            display: none;
-            z-index: 10;
-            max-width: 90%;
-            text-align: center;
-        }
-
-        #pin-popup[style*="display: block"] {
-            display: flex !important;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        #popup-overlay .header-title {
-            color: #7289da;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        #popup-overlay .header-subtitle,
-        #error-popup .header-subtitle,
-        #pin-popup .header-subtitle {
-            font-size: 14px;
-            color: #ccc;
-            margin-top: 6px;
-        }
-
-        #error-popup .header-title {
-            color: #f04747;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        #pin-popup input {
-            width: 100%;
-            padding: 10px;
-            font-size: 18px;
-            text-align: center;
-            margin-top: 15px;
-            border-radius: 6px;
-            border: 1px solid #444;
-            background: #2C2F33;
-            color: white;
-        }
-
-        #pin-error {
-            color: #f04747;
-            font-size: 14px;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .shake {
-            animation: shake 0.4s;
-        }
-
-        @keyframes shake {
-            0% {
-                transform: translate(-50%, -50%) translateX(0);
-            }
-
-            25% {
-                transform: translate(-50%, -50%) translateX(-10px);
-            }
-
-            50% {
-                transform: translate(-50%, -50%) translateX(10px);
-            }
-
-            75% {
-                transform: translate(-50%, -50%) translateX(-10px);
-            }
-
-            100% {
-                transform: translate(-50%, -50%) translateX(0);
-            }
-        }
-
-        textarea.autogrow {
-            width: 100%;
-            min-height: auto;
-            line-height: 1.4;
-            padding: 6px 10px;
-            border: 1px solid #444;
-            border-radius: 6px;
-            font-size: 14px;
-            background: #23272A;
-            color: white;
-            resize: none;
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Towing Report</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-<div class="card">
-<div class="header">
-<div class="header-title">DEPARTMENT OF TRANSPORTATION</div>
-<div class="header-subtitle">IMPOUNDMENT REPORT</div>
-</div>
-<div class="section-title">VEHICLE INFORMATION</div>
-<div class="row">
-<div class="field-group">
-<label>Registered Owner</label>
-<input id="owner" type="text"/>
-</div>
-<div class="field-group">
-<label>Make &amp; Model</label>
-<input id="makeModel" type="text"/>
-</div>
-</div>
-<div class="row">
-<div class="field-group">
-<label>Color</label>
-<input id="color" type="text"/>
-</div>
-<div class="field-group">
-<label>Tag No.</label>
-<input id="tag" type="text"/>
-</div>
-</div>
-<div class="row">
-<div class="field-group wide">
-<label>Condition of Vehicle</label>
-<select id="condition">
-<option value="">Select Condition</option>
-<option>ILLEGALLY MODIFIED</option>
-<option>ABANDONED</option>
-<option>NON-FUNCTIONAL</option>
-<option>SEVERE DAMAGED</option>
-<option>MODERATE DAMAGED</option>
-<option>MINOR DAMAGED</option>
-<option>FULLY-OPERATIONAL</option>
-</select>
-</div>
-</div>
-<div class="section-title">TOW DETAILS</div>
-<div class="row">
-<div class="field-group">
-<label>Time &amp; Date</label>
-<input id="datetime" type="datetime-local"/>
-</div>
-<div class="field-group">
-<label>Requested By</label>
-<select id="requestedBy">
-<option value="">Select</option>
-<option>LEO</option>
-<option>DISPATCH</option>
-<option>SELF-INITIATED</option>
-</select>
-</div>
-<div class="field-group">
-<label>Taken To</label>
-<select id="takenTo">
-<option value="">Select</option>
-<option>IMPOUND LOT</option>
-<option>POLICE IMPOUND</option>
-<option>JUNKYARD</option>
-<option>MECHANIC</option>
-</select>
-</div>
-</div>
-<div class="row">
-<div class="field-group">
-<label>Location</label>
-<textarea class="autogrow" id="location" rows="1"></textarea>
-</div>
-<div class="field-group">
-<label>Reason for Tow</label>
-<select id="reason">
-<option value="">Select Reason</option>
-<option>ILLEGALLY PARKED ABANDONED</option>
-<option>DRIVER ARRESTED</option>
-<option>UNREGISTERED OR EXPIRED TAGS</option>
-<option>INVOLVED IN A CRIME SCENE</option>
-<option>BLOCKING DRIVEWAY</option>
-<option>BLOCKING FIRE HYDRANT</option>
-<option>TRAFFIC ACCIDENT</option>
-<option>STOLEN VEHICLE RECOVERY</option>
-<option>REQUESTED BY OWNER</option>
-<option>LEO REQUEST</option>
-</select>
-</div>
-</div>
-<div class="button-row">
-<button class="clear-btn" onclick="resetForm()">Clear</button>
-<button class="submit-btn" onclick="submitForm()">Submit</button>
-</div>
-<div id="popup-overlay">
-<div class="header-title">✅ Report Submitted</div>
-<div class="header-subtitle">Your Report Has Been Logged</div>
-</div>
-<div id="error-popup">
-<div class="header-title">⚠️ Submission Failed</div>
-<div class="header-subtitle">All Fields Are Required</div>
-</div>
-<div id="pin-popup">
-<div class="header-title">🔐 Webhook Required</div>
-<div class="header-subtitle">Select or Create a Preset</div>
-<input id="webhook-url" list="webhook-history" placeholder="Enter Webhook URL" style="margin-top:10px" type="text"/>
-<datalist id="webhook-history"></datalist>
-<div id="pin-error">Webhook URL Is Required</div>
-<div style="margin-top: 15px;">
-<button onclick="validateWebhook()" style="width: 80px; margin-right: 20px;">Confirm</button>
-<button onclick="closePinPopup()" style="width: 80px; margin-left: 20px; background: rgba(175,41,41,1.0);">Close</button>
-</div>
-<div style="margin-top:10px;">
-</div>
-<button class="clear-btn" onclick="clearWebhookData()" style="margin-top:10px; padding: 6px 12px; font-size: 13px;">CLEAR DATA</button>
-</div>
-</div>
-<script>
-        function autoGrow(el) {
-            el.style.height = 'auto';
-            el.style.height = el.scrollHeight + 'px';
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const locField = document.getElementById("location");
-            autoGrow(locField);
-            locField.addEventListener("input", () => autoGrow(locField));
-        });
-        function randomID() {
-            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            const numbers = "0123456789";
-            let id = "";
-            for (let i = 0; i < 3; i++) id += letters[Math.floor(Math.random() * letters.length)];
-            id += "-";
-            for (let i = 0; i < 3; i++) id += numbers[Math.floor(Math.random() * numbers.length)];
-            id += "-" + numbers[Math.floor(Math.random() * numbers.length)];
-            return id;
-        }
-
-        function resetForm() {
-            document.querySelectorAll('input, select').forEach(el => el.value = '');
-            const loc = document.getElementById('location');
-            loc.value = '';
-            autoGrow(loc);
-        }
-
-        function closePinPopup() {
-            document.getElementById('pin-popup').style.display = 'none';
-        }
-
-        function showPopup() {
-            const popup = document.getElementById('popup-overlay');
-            popup.style.display = 'block';
-            setTimeout(() => popup.style.display = 'none', 3000);
-        }
-
-        function showErrorPopup() {
-            const popup = document.getElementById('error-popup');
-            popup.style.display = 'block';
-            setTimeout(() => popup.style.display = 'none', 3000);
-        }
-    function confirmClearFields() {
-        const confirmBox = document.createElement('div');
-        confirmBox.style = `
-        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-        background: #23272A; color: white; padding: 20px 25px; border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.6); z-index: 1000; text-align: center;
-        max-width: 90%;
-    `;
-        confirmBox.innerHTML = `
-        <div style="font-size: 15px; color: #ccc;">This will delete preset, webhook & threads data. Are you sure?</div>
-        <button id="confirm-clear-yes" style="margin-top: 15px; padding: 8px 16px;">YES</button>
-        <button id="confirm-clear-no" style="margin-top: 15px; padding: 8px 16px; margin-left: 10px;">NO</button>
-    `;
-
-        const card = document.querySelector('.card');
-        card.appendChild(confirmBox);
-
-        document.getElementById('confirm-clear-yes').onclick = () => {
-            try {
-                localStorage.removeItem("webhookPresets");
-                localStorage.removeItem("webhookHistory");
-                localStorage.removeItem("threadHistory");
-                localStorage.removeItem("threadNamedHistory");
-
-                const webhookInput = document.getElementById("webhook-url");
-                if (webhookInput) webhookInput.value = '';
-
-                const threadInput = document.getElementById("thread-id");
-                if (threadInput) threadInput.value = '';
-
-                populatePresetHistory();
-                populateDatalist('webhook-history', 'webhookHistory');
-            } catch (err) {
-                console.error("Error clearing data:", err);
-            } finally {
-                if (card.contains(confirmBox)) card.removeChild(confirmBox);
-            }
-        };
-
-        document.getElementById('confirm-clear-no').onclick = () => {
-            if (card.contains(confirmBox)) card.removeChild(confirmBox);
-        };
-    }
-
-        function submitForm() {
-            const fields = ['owner', 'makeModel', 'color', 'tag', 'condition', 'datetime', 'requestedBy', 'takenTo', 'location', 'reason'];
-            const data = {};
-            for (let id of fields) {
-                const val = document.getElementById(id).value.trim();
-                if (!val) return showErrorPopup();
-                data[id] = val;
-            }
-            window.tempSubmissionData = data;
-            document.getElementById('pin-popup').style.display = 'block';
-            document.getElementById('pin-error').style.display = 'none';
-            populateDatalist('webhook-history', 'webhookHistory');
-        }
-
-        function validateWebhook() {
-            const webhook = document.getElementById('webhook-url').value.trim();
-
-            const threadId = '1396779624335409232';
-
-            if (!webhook) {
-                const err = document.getElementById('pin-error');
-                err.style.display = 'block';
-                const popup = document.getElementById('pin-popup');
-                popup.classList.add('shake');
-                setTimeout(() => popup.classList.remove('shake'), 400);
-                return;
-            }
-
-            saveToHistory('webhookHistory', webhook);
-            populateDatalist('webhook-history', 'webhookHistory');
-
-            document.getElementById('pin-popup').style.display = 'none';
-            window.tempSubmissionData.webhook = webhook;
-            window.tempSubmissionData.thread = threadId;
-            processSubmission();
-        }
-
-        function processSubmission() {
-            const data = window.tempSubmissionData;
-            const generatedID = randomID();
-            const formattedDate = data.datetime.replace('T', ' ');
-
-            const input = document.getElementById('datetime');
-            const span = document.createElement('div');
-            span.textContent = formattedDate;
-            span.style = input.style.cssText;
-            input.parentNode.replaceChild(span, input);
-
-            const toHide = [
-                document.querySelector('.button-row'),
-                document.querySelector('.header')
-            ];
-            toHide.forEach(el => el && (el.style.display = 'none'));
-
-            html2canvas(document.querySelector(".card"), {
-                backgroundColor: null,
-                scale: 2
-            }).then(canvas => {
-                span.parentNode.replaceChild(input, span);
-                toHide.forEach(el => el && (el.style.display = ''));
-
-                canvas.toBlob(blob => {
-                    const embed = {
-                        title: "TOW REPORT",
-                        color: 4737096,
-                        fields: [
-                            { name: "> ID", value: `\`\`\`\n${generatedID}\n\`\`\``, inline: true },
-                            { name: "> REGISTERED OWNER", value: `\u0060\u0060\u0060\n${data.owner}\n\u0060\u0060\u0060`, inline: true },
-                        ],
-                        image: { url: "attachment://report.png" },
-                        footer: { text: "Department of Transportation" },
-                        timestamp: new Date().toISOString()
-                    };
-
-                    const formData = new FormData();
-                    formData.append("payload_json", JSON.stringify({ embeds: [embed] }));
-                    formData.append("file", blob, "report.png");
-
-                    const threadQuery = data.thread ? `?thread_id=${data.thread}` : '';
-                    const finalURL = `${data.webhook}${threadQuery}`;
-
-                    fetch(finalURL, {
-                        method: "POST",
-                        body: formData
-                    })
-                        .then(() => {
-                            showPopup();
-                            resetForm();
-                        }).catch(() => showErrorPopup());
-                });
-            });
-        }
-
-        function savePreset(name, webhook, threadId) {
-            if (!name || !webhook) return;
-            let presets = JSON.parse(localStorage.getItem("webhookPresets") || "[]");
-            const existing = presets.find(p => p.name === name);
-            if (existing) {
-                existing.webhook = webhook;
-                existing.thread = threadId;
-            } else {
-                presets.push({ name, webhook, thread: threadId });
-            }
-            localStorage.setItem("webhookPresets", JSON.stringify(presets));
-            populatePresetHistory();
-        }
-
-        function populatePresetHistory() {
-            const list = document.getElementById("preset-history");
-            list.innerHTML = "";
-            const presets = JSON.parse(localStorage.getItem("webhookPresets") || "[]");
-            presets.forEach(p => {
-                const option = document.createElement("option");
-                option.value = p.name;
-                list.appendChild(option);
-            });
-        }
-
-        function saveToHistory(key, value) {
-            let history = JSON.parse(localStorage.getItem(key)) || [];
-            if (!history.includes(value)) {
-                history.push(value);
-                localStorage.setItem(key, JSON.stringify(history));
-            }
-        }
-
-        function removeFromHistory(key, value) {
-            let history = JSON.parse(localStorage.getItem(key)) || [];
-            history = history.filter(item => item !== value);
-            localStorage.setItem(key, JSON.stringify(history));
-        }
-
-        function removeFromNamedThreadHistory(threadId) {
-            let history = JSON.parse(localStorage.getItem('threadNamedHistory')) || [];
-            history = history.filter(item => item.id !== threadId);
-            localStorage.setItem('threadNamedHistory', JSON.stringify(history));
-        }
-
-        function populateDatalist(id, key) {
-            const datalist = document.getElementById(id);
-            datalist.innerHTML = '';
-            const history = JSON.parse(localStorage.getItem(key)) || [];
-            history.forEach(item => {
-                const option = document.createElement('option');
-                option.value = item;
-                datalist.appendChild(option);
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            populatePresetHistory();
-            populateDatalist('webhook-history', 'webhookHistory');
-        });
-        function clearWebhookData() {
-            confirmClearFields();
-        }
-    </script>
+  <div class="card">
+    <div class="header">
+      <div class="header-title">DEPARTMENT OF TRANSPORTATION</div>
+      <div class="header-subtitle">IMPOUNDMENT REPORT</div>
+    </div>
+    <div class="section-title">VEHICLE INFORMATION</div>
+    <div class="row">
+      <div class="field-group">
+        <label>Registered Owner</label>
+        <input id="owner" type="text" required>
+      </div>
+      <div class="field-group">
+        <label>Make & Model</label>
+        <input id="makeModel" type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-group">
+        <label>Color</label>
+        <input id="color" type="text" required>
+      </div>
+      <div class="field-group">
+        <label>Tag No.</label>
+        <input id="tag" type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-group wide">
+        <label>Condition of Vehicle</label>
+        <select id="condition" required>
+          <option value="">Select Condition</option>
+          <option>ILLEGALLY MODIFIED</option>
+          <option>ABANDONED</option>
+          <option>NON-FUNCTIONAL</option>
+          <option>SEVERE DAMAGED</option>
+          <option>MODERATE DAMAGED</option>
+          <option>MINOR DAMAGED</option>
+          <option>FULLY-OPERATIONAL</option>
+        </select>
+      </div>
+    </div>
+    <div class="section-title">TOW DETAILS</div>
+    <div class="row">
+      <div class="field-group">
+        <label>Time & Date</label>
+        <input id="datetime" type="datetime-local" required>
+      </div>
+      <div class="field-group">
+        <label>Requested By</label>
+        <select id="requestedBy" required>
+          <option value="">Select</option>
+          <option>LEO</option>
+          <option>DISPATCH</option>
+          <option>SELF-INITIATED</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Taken To</label>
+        <select id="takenTo" required>
+          <option value="">Select</option>
+          <option>IMPOUND LOT</option>
+          <option>POLICE IMPOUND</option>
+          <option>JUNKYARD</option>
+          <option>MECHANIC</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field-group">
+        <label>Location</label>
+        <textarea class="autogrow" id="location" rows="1" required></textarea>
+      </div>
+      <div class="field-group">
+        <label>Reason for Tow</label>
+        <select id="reason" required>
+          <option value="">Select Reason</option>
+          <option>ILLEGALLY PARKED ABANDONED</option>
+          <option>DRIVER ARRESTED</option>
+          <option>UNREGISTERED OR EXPIRED TAGS</option>
+          <option>INVOLVED IN A CRIME SCENE</option>
+          <option>BLOCKING DRIVEWAY</option>
+          <option>BLOCKING FIRE HYDRANT</option>
+          <option>TRAFFIC ACCIDENT</option>
+          <option>STOLEN VEHICLE RECOVERY</option>
+          <option>REQUESTED BY OWNER</option>
+          <option>LEO REQUEST</option>
+        </select>
+      </div>
+    </div>
+    <div class="button-row">
+      <button class="clear-btn" onclick="resetForm()">Clear</button>
+      <button class="submit-btn" onclick="submitForm()">Submit</button>
+    </div>
+    <div id="popup-overlay">
+      <div class="header-title">Report Submitted</div>
+      <div class="header-subtitle">Your Report Has Been Logged</div>
+    </div>
+    <div id="error-popup">
+      <div class="header-title">Submission Failed</div>
+      <div class="header-subtitle">All Fields Are Required</div>
+    </div>
+  </div>
+  <script>
+    // Configuration for Towing Report
+    window.ReportConfig = {
+      WEBHOOK_URL: "__WEBHOOK_URL__",
+      THREAD_ID: "1396779624335409232",
+      REPORT_TYPE: "TOW REPORT",
+      REPORT_FOOTER: "Department of Transportation",
+      REPORT_COLOR: 4737096
+    };
+  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
