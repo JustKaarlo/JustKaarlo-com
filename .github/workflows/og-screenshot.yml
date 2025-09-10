@@ -1,0 +1,35 @@
+name: Generate Preview
+
+on:
+  push:
+    branches: ["Home"]
+
+permissions:
+  contents: write
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Generate preview screenshot
+        run: node screenshot.js
+
+      - name: Commit updated screenshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/og-image.png
+          git commit -m "Update OG screenshot" || echo "No changes"
+          git push
