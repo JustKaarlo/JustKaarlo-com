@@ -1,3 +1,4 @@
+// GitHub Pages Secret - Replace this with your actual webhook URL
 const WEBHOOK_URL = "__WEBHOOK_URL__";
 const THREAD_ID = "1396775578396528731";
 
@@ -85,7 +86,7 @@ function submitForm() {
     }
 
     // Check if webhook URL is configured
-    if (WEBHOOK_URL === "__WEBHOOK_URL__" || !WEBHOOK_URL) {
+    if (WEBHOOK_URL === "YOUR_DISCORD_WEBHOOK_URL_HERE" || !WEBHOOK_URL) {
         showAlert("Webhook URL not configured. Please set up the GitHub Pages secret.", "⚠️ Configuration Error");
         return;
     }
