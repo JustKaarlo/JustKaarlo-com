@@ -168,7 +168,7 @@ function submitForm() {
   const config = getConfig();
   
   // Check if webhook URL is configured
-  if (config.WEBHOOK_URL === "__WEBHOOK_URL__" || !config.WEBHOOK_URL) {
+  if (config.WEBHOOK_URL === "NOT_WEBHOOK_URL" || !config.WEBHOOK_URL) {
     showAlert("Webhook URL not configured. Please set up the webhook.", "⚠️ Configuration Error");
     return;
   }
