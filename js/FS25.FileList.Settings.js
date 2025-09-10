@@ -17,7 +17,8 @@
             "Download All.zip"
         ],
         colorizeFiles: [
-            "FSM Full Modpack.rar"
+            "FSM Full Modpack.rar",
+            "Download All.zip"
         ],
         excludePartsFolders: [],
         folderGradientFallback: {},
