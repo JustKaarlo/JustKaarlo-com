@@ -229,7 +229,7 @@ function processSubmission() {
         title: config.REPORT_TYPE,
         color: config.REPORT_COLOR,
         fields: [
-          { name: "> ID", value: `\`\`\`\n${generatedID}\n\`\`\``, inline: false }
+            { name: "> ID", value: `\`\`\`\n${generatedID}\n\`\`\``, inline: true }
         ],
         image: { url: "attachment://report.png" },
         footer: { text: config.REPORT_FOOTER },
