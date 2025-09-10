@@ -22,12 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Google Drive API
+      - name: Secrets
         run: | 
           sed -i "s|__API_KEY__|${{ secrets.GOOGLE_DRIVE_API }}|" ./js/Mods.FileList.Settings.js
-
-      - name: Webhook URL
-        run: | 
           sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|" ./report/js/Arrest.Functions.js
           sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|" ./report/js/Citation.Functions.js
 
