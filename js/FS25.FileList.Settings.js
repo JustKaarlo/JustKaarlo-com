@@ -13,7 +13,9 @@
             "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp"
         },
         highlightFiles: [
-            "FSM Full Modpack.rar"
+            "FSM Full Modpack.rar",
+            "Part 1",
+            "Part 2",
         ],
         colorizeFiles: [
             "FSM Full Modpack.rar"
@@ -47,7 +49,10 @@
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
-            "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1"
+            "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1",
+            "1LJosoqsuFY60Agu0b6gfTNi6SHfSYysV": "http://app.justkaarlo.com/download/12Rw9riJFYJ-Hi_mDYD__i4GjPEVGdpEe", // PART 1
+            "12LAELEwKdXTeV_QVEZbPC8VeCXqTbdx0": "http://app.justkaarlo.com/download/1s_UFuWi01ObokibWdFT7Xefmwa98Rppu", // PART 2
+            "1vUmpslRRVH6rsM3KksjQDXVgY2Tf1Mhk": "http://app.justkaarlo.com/download/195EvjPk_rANKEWoOtnieq4I506D_q20A", // PART 3
         },
         showDownloadButtonAtRoot: true
     });
