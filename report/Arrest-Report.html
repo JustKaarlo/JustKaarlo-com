@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Arrest Report</title>
-  <link rel="stylesheet" href="css/Arrest.css">
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
@@ -16,13 +16,13 @@
     <div class="row">
       <div class="field-group wide">
         <label>Location</label>
-        <textarea id="location" class="autogrow" rows="1"></textarea>
+        <textarea id="location" class="autogrow" rows="1" required></textarea>
       </div>
-      <div class="field-group"><label>Time & Date</label><input type="datetime-local" id="datetime"></div>
+      <div class="field-group"><label>Time & Date</label><input type="datetime-local" id="datetime" required></div>
     </div>
     <div class="row">
-      <div class="field-group"><label>Defendant</label><input type="text" id="defendant"></div>
-      <div class="field-group"><label>Arresting Officer</label><input type="text" id="officer"></div>
+      <div class="field-group"><label>Defendant</label><input type="text" id="defendant" required></div>
+      <div class="field-group"><label>Arresting Officer</label><input type="text" id="officer" required></div>
     </div>
     <div class="section-title">CRIMINAL OFFENSE(S)</div>
     <div class="row">
@@ -45,6 +45,16 @@
       <div class="header-subtitle">All Fields Are Required</div>
     </div>
   </div>
-  <script src="js/Arrest.Functions.js"></script>
+  <script>
+    // Configuration for Arrest Report
+    window.ReportConfig = {
+      WEBHOOK_URL: "__WEBHOOK_URL__",
+      THREAD_ID: "1396775578396528731",
+      REPORT_TYPE: "ARREST REPORT",
+      REPORT_FOOTER: "Department of Justice",
+      REPORT_COLOR: 4737096
+    };
+  </script>
+  <script src="js/script.js"></script>
 </body>
 </html>
