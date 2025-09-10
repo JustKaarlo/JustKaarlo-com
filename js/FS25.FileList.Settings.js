@@ -22,7 +22,9 @@
         folderGradientFallback: {},
         downloadButtonFiles: [],
         excludeDownloadFiles: [],
-        customDownloadLinks: {},
+        customDownloadLinks: {
+            "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1"
+        },
         showDownloadButtonAtRoot: true
     });
     attachDocPreview(twContainer);
