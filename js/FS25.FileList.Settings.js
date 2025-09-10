@@ -50,5 +50,5 @@
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH"
         },
         showDownloadButtonAtRoot: true
-    });https://drive.google.com/file/d/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH/view?usp=drive_link
+    });
 })()
