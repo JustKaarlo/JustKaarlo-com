@@ -1,5 +1,4 @@
-// GitHub Pages Secret - Replace this with your actual webhook URL
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1393653107174408394/Xa0zlUDF77IJ31NwWmFtrNzC6DT8ttg2Fminq-YtPFDxpMLX9IZpROU3PGfPfKaNUKKR";
+const WEBHOOK_URL = "__WEBHOOK_URL__";
 const THREAD_ID = "1396775578396528731";
 
 function showAlert(message, title = '📢 Notice') {
