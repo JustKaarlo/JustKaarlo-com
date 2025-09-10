@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Report</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">
+      <div class="main">EMERGENCY MEDICAL RESPONSE</div>
+      <div class="sub">MEDICAL REPORT</div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label>Time & Date</label>
+        <input type="datetime-local" id="datetime" required>
+      </div>
+      <div class="field-group wide">
+        <label>Location of Incident</label>
+        <textarea id="location" class="autogrow" rows="1" required></textarea>
+      </div>
+    </div>
+
+    <div class="section-title">PATIENT INFORMATION</div>
+    <div class="row">
+      <div class="field-group">
+        <label>Name</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="field-group">
+        <label>Gender</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Date of Birth</label>
+        <input type="date" id="dob" required>
+      </div>
+    </div>
+
+    <div class="section-title">ASSESSMENT</div>
+    <div class="row">
+      <div class="field-group wide">
+        <label>Primary Injury/Condition</label>
+        <textarea id="primary" required></textarea>
+      </div>
+      <div class="field-group wide">
+        <label>Visible Injuries</label>
+        <textarea id="injuries" required></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field-group">
+        <label>Pulse</label>
+        <select id="pulse" required>
+          <option value="">Select</option>
+          <option>NONE</option>
+          <option>VERY WEAK</option>
+          <option>WEAK STABLE</option>
+          <option>NORMAL</option>
+          <option>HIGH</option>
+          <option>VERY HIGH</option>
+          <option>DANGEROUSLY HIGH</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Respiration</label>
+        <select id="respiration" required>
+          <option value="">Select</option>
+          <option>NONE</option>
+          <option>VERY LIGHT</option>
+          <option>LIGHT</option>
+          <option>MODERATE</option>
+          <option>VIGOROUS</option>
+          <option>VERY HARD</option>
+          <option>MAX EFFORT</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Blood Pressure</label>
+        <select id="bp" required>
+          <option value="">Select</option>
+          <option>NONE</option>
+          <option>NORMAL</option>
+          <option>ELEVATED</option>
+          <option>STAGE-1</option>
+          <option>STAGE-2</option>
+          <option>HYPERTENSIVE CRISIS</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section-title">LEVEL OF CONSCIOUSNESS</div>
+    <div class="checkbox-group" id="consciousness">
+      <label><input type="checkbox" value="Alert"> Alert</label>
+      <label><input type="checkbox" value="Voice"> Voice</label>
+      <label><input type="checkbox" value="Pain"> Pain</label>
+      <label><input type="checkbox" value="Unresponsive"> Unresponsive</label>
+    </div>
+
+    <div class="section-title">TREATMENT PROVIDED</div>
+    <div class="checkbox-group" id="treatment">
+      <label><input type="checkbox" value="Basic First Aid"> Basic First Aid</label>
+      <label><input type="checkbox" value="Tourniquet Applied"> Tourniquet Applied</label>
+      <label><input type="checkbox" value="Wound Dressing / Bandaging"> Wound Dressing / Bandaging</label>
+      <label><input type="checkbox" value="Transport to Hospital"> Transport to Hospital</label>
+      <label><input type="checkbox" value="Pain Relief Administered"> Pain Relief Administered</label>
+      <label><input type="checkbox" value="CPR"> CPR</label>
+    </div>
+
+    <div class="row">
+      <div class="field-group wide">
+        <label>Transported To</label>
+        <select id="hospital" required>
+          <option value="">Select</option>
+          <option>CENTRAL LOS SANTOS MEDICAL CENTER</option>
+          <option>MOUNT ZONAH MEDICAL CENTER</option>
+          <option>PILLBOX HILL MEDICAL CENTER</option>
+          <option>ST. FIACRE HOSPITAL</option>
+          <option>ECLIPSE MEDICAL TOWER</option>
+          <option>PORTOLA TRINITY MEDICAL CENTER</option>
+          <option>THE BAY CARE CENTER</option>
+          <option>SANDY SHORES MEDICAL CENTER</option>
+        </select>
+      </div>
+      <div class="field-group wide">
+        <label>Condition During Transport</label>
+        <select id="condition" required>
+          <option value="">Select</option>
+          <option>STABLE</option>
+          <option>CRITICAL</option>
+          <option>DETERIORATING</option>
+          <option>IMPROVED</option>
+          <option>DECEASED</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="clear-btn" onclick="resetForm()">Clear</button>
+      <button class="submit-btn" onclick="submitForm()">Submit</button>
+    </div>
+    <div id="popup-overlay">
+      <div class="header-title">Report Submitted</div>
+      <div class="header-subtitle">Your Report Has Been Logged</div>
+    </div>
+    <div id="error-popup">
+      <div class="header-title">Submission Failed</div>
+      <div class="header-subtitle">All Fields Are Required</div>
+    </div>
+  </div>
+  <script>
+    window.ReportConfig = {
+      WEBHOOK_URL: "__WEBHOOK_URL__",
+      THREAD_ID: "1396778617568104469",
+      REPORT_TYPE: "MEDICAL REPORT",
+      REPORT_FOOTER: "Emergency Medical Services",
+      REPORT_COLOR: 4737096
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
