@@ -236,12 +236,15 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
-// Simplified Download Manager Class with Basic Status Notifications
+// Enhanced Download Manager Class with Server Startup Detection
 class DownloadManager {
     constructor() {
         this.activeDownloads = new Map();
         this.toastContainer = this.createToastContainer();
         this.serverBaseUrl = 'https://app.justkaarlo.com';
+        this.serverReady = false;
+        this.lastServerCheck = 0;
+        this.serverCheckInterval = 5 * 60 * 1000; // Check server readiness every 5 minutes
     }
 
     // Generate unique download ID
@@ -261,6 +264,104 @@ class DownloadManager {
         `;
         document.body.appendChild(container);
         return container;
+    }
+
+    // Create server startup loading modal
+    createStartupModal() {
+        const modal = document.createElement('div');
+        modal.id = 'server-startup-modal';
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+
+        const content = document.createElement('div');
+        content.style.cssText = `
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: 20px;
+        `;
+
+        const spinner = document.createElement('div');
+        spinner.style.cssText = `
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px auto;
+        `;
+
+        const title = document.createElement('h3');
+        title.textContent = 'Starting Server...';
+        title.style.cssText = `
+            margin: 0 0 10px 0;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        `;
+
+        const message = document.createElement('p');
+        message.textContent = 'The download server is starting up. This may take a few moments.';
+        message.style.cssText = `
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.4;
+        `;
+
+        content.appendChild(spinner);
+        content.appendChild(title);
+        content.appendChild(message);
+        modal.appendChild(content);
+
+        return modal;
+    }
+
+    showStartupModal() {
+        // Remove existing modal if any
+        this.hideStartupModal();
+        
+        const modal = this.createStartupModal();
+        document.body.appendChild(modal);
+        
+        // Fade in
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        
+        return modal;
+    }
+
+    hideStartupModal() {
+        const modal = document.getElementById('server-startup-modal');
+        if (modal) {
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.remove();
+                }
+            }, 300);
+        }
     }
 
     showToast(message, type = 'info', duration = 3000) {
@@ -314,9 +415,94 @@ class DownloadManager {
         }
     }
 
-    // Poll server for download status - simplified version
+    // Check if server is ready and wake it up if needed
+    async checkServerReadiness() {
+        const now = Date.now();
+        
+        // If we checked recently and server was ready, assume it's still ready
+        if (this.serverReady && (now - this.lastServerCheck) < this.serverCheckInterval) {
+            return true;
+        }
+
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+            const response = await fetch(`${this.serverBaseUrl}/health`, {
+                signal: controller.signal,
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+            });
+
+            clearTimeout(timeoutId);
+
+            if (response.ok) {
+                this.serverReady = true;
+                this.lastServerCheck = now;
+                return true;
+            } else {
+                throw new Error(`Health check failed: ${response.status}`);
+            }
+        } catch (error) {
+            console.warn('Server health check failed:', error.message);
+            this.serverReady = false;
+            return false;
+        }
+    }
+
+    // Wake up server with loading modal
+    async wakeUpServer() {
+        const modal = this.showStartupModal();
+        
+        try {
+            console.log('Checking server status...');
+            
+            // First, try a quick health check
+            const isReady = await this.checkServerReadiness();
+            
+            if (isReady) {
+                console.log('Server is already ready');
+                this.hideStartupModal();
+                return true;
+            }
+
+            console.log('Server needs to start up, waiting...');
+            
+            // Server needs to start up, wait longer
+            const maxAttempts = 6; // Try for up to 30 seconds
+            const retryDelay = 5000; // 5 seconds between attempts
+            
+            for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+                console.log(`Startup attempt ${attempt}/${maxAttempts}`);
+                
+                await new Promise(resolve => setTimeout(resolve, retryDelay));
+                
+                const ready = await this.checkServerReadiness();
+                if (ready) {
+                    console.log('Server is now ready!');
+                    this.hideStartupModal();
+                    return true;
+                }
+            }
+            
+            // Server didn't start within expected time
+            console.warn('Server startup timeout');
+            this.hideStartupModal();
+            this.showToast('Server is taking longer than expected to start. Please try again.', 'error', 5000);
+            return false;
+            
+        } catch (error) {
+            console.error('Error during server startup:', error);
+            this.hideStartupModal();
+            this.showToast('Unable to connect to download server. Please try again.', 'error', 5000);
+            return false;
+        }
+    }
+
+    // Poll server for download status
     async pollDownloadStatus(downloadId) {
-        const maxPollTime = 60000; // 60 seconds to allow time for cancellation detection
+        const maxPollTime = 60000; // 60 seconds
         const pollInterval = 2000; // 2 seconds
         const startTime = Date.now();
         let downloadStarted = false;
@@ -330,77 +516,77 @@ class DownloadManager {
 
                 switch (statusData.status) {
                     case 'downloading':
-                        // Show "Download Started" only once, but continue polling for cancellation
                         if (!downloadStarted) {
                             downloadStarted = true;
                             this.showToast('Download Started', 'success', 3000);
                         }
-                        // Don't return here - keep polling to detect cancellation
                         break;
 
                     case 'cancelled':
                         this.showToast('Download Cancelled', 'error', 3000);
-                        return; // Stop polling
+                        return;
 
                     case 'error':
                         this.showToast('Download Failed', 'error', 3000);
-                        return; // Stop polling
+                        return;
 
                     case 'starting':
                     case 'preparing':
-                        // Keep polling, don't show anything yet
                         break;
 
                     case 'completed':
-                        // Don't show completion message as requested
-                        return; // Stop polling
+                        return;
 
                     case 'not_found':
-                        // Download ID not found, might be too early
                         if (Date.now() - startTime > 10000) {
-                            // After 10 seconds, stop trying
                             return;
                         }
                         break;
                 }
 
-                // Continue polling if not finished and within time limit
                 if (Date.now() - startTime < maxPollTime) {
                     setTimeout(poll, pollInterval);
                 }
 
             } catch (error) {
                 console.error('Error polling download status:', error);
-                // Silently fail - no error notifications as requested
             }
         };
 
-        // Start polling after a short delay to allow server to register the download
         setTimeout(poll, 1000);
     }
 
-    // Main download method
-    download(fileId, filename, customLink = null) {
-        const downloadId = this.generateDownloadId();
+    // Main download method with server startup check
+    async download(fileId, filename, customLink = null) {
+        try {
+            // Check if server is ready, wake it up if needed
+            const serverReady = await this.wakeUpServer();
+            
+            if (!serverReady) {
+                console.warn('Proceeding with download despite server status uncertainty');
+            }
 
-        // Create download URL with downloadId parameter
-        const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
+            const downloadId = this.generateDownloadId();
+            const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
 
-        return this.downloadWithStatusTracking(url, filename, downloadId);
+            return this.downloadWithStatusTracking(url, filename, downloadId);
+            
+        } catch (error) {
+            console.error('Error in download method:', error);
+            this.showToast('Download failed to start. Please try again.', 'error', 5000);
+            return null;
+        }
     }
 
     // Enhanced download with server status tracking
     downloadWithStatusTracking(url, filename, downloadId) {
-        // Create iframe for download
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = url;
         document.body.appendChild(iframe);
 
-        // Start polling server for download status
         this.pollDownloadStatus(downloadId);
 
-        // Cleanup function
         const cleanup = () => {
             try {
                 if (iframe.parentNode) {
@@ -411,10 +597,8 @@ class DownloadManager {
             }
         };
 
-        // Cleanup after reasonable time
         setTimeout(cleanup, 30000);
 
-        // Return reference for compatibility
         return {
             downloadId: downloadId,
             cancel: cleanup
@@ -435,6 +619,10 @@ style.textContent = `
     @keyframes slideOut {
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(100%); opacity: 0; }
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
     
     .download-toast {
