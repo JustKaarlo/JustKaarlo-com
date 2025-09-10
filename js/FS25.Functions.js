@@ -686,7 +686,7 @@ async function listFilesInFolder({
 
                 sizeTag.textContent = formatBytes(totalSize);
                 if (countTag) {
-                    countTag.textContent = `${fileCount} Part${fileCount !== 1 ? "s" : ""}`;
+                    countTag.textContent = `${fileCount} File${fileCount !== 1 ? "s" : ""}`;
                 }
             });
 

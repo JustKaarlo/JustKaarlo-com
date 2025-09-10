@@ -16,10 +16,7 @@
         highlightFiles: [
             "Download All.zip"
         ],
-        colorizeFiles: [
-            "FSM Full Modpack.rar",
-            "FSM Updated.zip"
-        ],
+        colorizeFiles: [],
         excludePartsFolders: [],
         folderGradientFallback: {},
         downloadButtonFiles: [
@@ -45,12 +42,15 @@
             "FS25_ContractServiceProvider.zip",
             "FS25_fillTypeExtender.zip",
             "FS25_GreenhouseAutomaticWatering.zip",
-            "FS25_NoRestrictedFences.zip"
+            "FS25_NoRestrictedFences.zip",
+            "FS25_allTheGroundTextures.zip",
+            "FS25_ProductionControl.zip",
+            "FS25_ProductionStorageControl.zip",
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
-            "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "http://app.justkaarlo.com/download/1kaFnzCG_2SHqHgP6JLwmyjYmjlCJKdw1",
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH"
         },
         showDownloadButtonAtRoot: true
-    });
+    });https://drive.google.com/file/d/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH/view?usp=drive_link
 })()
