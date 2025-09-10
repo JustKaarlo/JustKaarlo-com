@@ -27,5 +27,4 @@
         },
         showDownloadButtonAtRoot: true
     });
-    attachDocPreview(twContainer);
 })()
