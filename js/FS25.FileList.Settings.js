@@ -13,7 +13,9 @@
         customFolderIcons: {
             "1HDkymUsO_xIZe7fnhzO_-WI7iSoGk25m": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp"
         },
-        highlightFiles: [],
+        highlightFiles: [
+            "Download All.zip"
+        ],
         colorizeFiles: [
             "FSM Full Modpack.rar",
             "FSM Updated.zip"
