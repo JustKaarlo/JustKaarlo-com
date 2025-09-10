@@ -26,7 +26,7 @@
             "Nova Attila Part 1.exe":               "../res/filelist/NovaAttila.ico",
             "Nova Attila Part 2.exe":               "../res/filelist/NovaAttila.ico",
 
-            "Empire Total War II v4.5.rar":         "../res/filelist/EmpireII.ico",
+            "Empire Total War II.rar":              "../res/filelist/EmpireII.ico",
             "Empire 2 Generals Part 1.exe":         "../res/filelist/Empire2General.ico",
             "Empire 2 Generals Part 2.exe":         "../res/filelist/Empire2General.ico",
             "Empire 2 Generals Part 3.exe":         "../res/filelist/Empire2General.ico",
@@ -100,7 +100,7 @@
             "Total War Skyrim.exe",
             "Northern Kingdoms Remastered.exe",
 
-            "Empire Total War II v4.5.rar",
+            "Empire Total War II.rar",
 
             "ACW2 The American Civil War.exe",
             "Field Command Napoleon.exe",
