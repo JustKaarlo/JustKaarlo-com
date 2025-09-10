@@ -1,7 +1,5 @@
 (function initializeFileLists() {
     const apiKey = "__API_KEY__";
-    
-    // Total War File List Configuration
     const twRootFolderId = "10v2qU6Q01tZkyc7EuqGjz_YF_JA-AAiG";
     const twContainer = document.getElementById("tw-fileList");
     listFilesInFolder({
@@ -27,14 +25,17 @@
             "The Dawnless Days Part 3.exe":         "../res/filelist/TheDawnlessDays.ico",
             "Nova Attila Part 1.exe":               "../res/filelist/NovaAttila.ico",
             "Nova Attila Part 2.exe":               "../res/filelist/NovaAttila.ico",
+
             "Empire Total War II v4.5.rar":         "../res/filelist/EmpireII.ico",
             "Empire 2 Generals Part 1.exe":         "../res/filelist/Empire2General.ico",
             "Empire 2 Generals Part 2.exe":         "../res/filelist/Empire2General.ico",
             "Empire 2 Generals Part 3.exe":         "../res/filelist/Empire2General.ico",
+
             "ACW2 The American Civil War.exe":      "../res/filelist/ACW2.ico",
             "Field Command Napoleon.exe":           "../res/filelist/FieldCommand.ico",
             "Grand Battle Mod.exe":                 "../res/filelist/GrandBattle.ico",
             "Napoleonic Total War III.exe":         "../res/filelist/NapoleonicTotalWar3.ico",
+
             "War of the Gods.exe":                  "../res/filelist/WarofTheGods.ico",
             "Radious Total War.exe":                "../res/filelist/RadiousTotalWar.ico",
             "Medieval 1100AD.exe":                  "../res/filelist/Medieval1100AD.ico",
@@ -42,6 +43,7 @@
             "Rome II Extra Modifications.exe":      "../res/filelist/TotalWarRome2Extras.ico",
             "Para Bellum Part 1.exe":               "../res/filelist/ParaBellum.ico",
             "Para Bellum Part 2.exe":               "../res/filelist/ParaBellum.ico",
+
             "Last Alliance.exe":                    "../res/filelist/LastAlliance.ico",
             "Pike & Shot II.exe":                   "../res/filelist/PikeAndShotII.ico",
             "Rise of Empires.exe":                  "../res/filelist/RiseOfEmpires.ico",
@@ -49,6 +51,7 @@
             "Dragon Empire Part 2.exe":             "../res/filelist/DragonEmpire.ico",
             "Carlist Wars.exe":                     "../res/filelist/TotalFotS.ico",
             "Scramble of the Far East.exe":         "../res/filelist/TotalFotS.ico",
+
             "Thrones Extra Modifications.exe":      "../res/filelist/TotalWarThronesExtras.ico",
             "Age of Arthur.exe":                    "../res/filelist/AgeOfArthur.ico",
         },
@@ -59,6 +62,7 @@
             "14p-1KeG4OB5uYIWqH8yRScpyXRj0IaEb":    "../res/filelist/rome2-logo.png",
             "1zYVOwQN--y78iTUnku67DyABh5maAfV_":    "../res/filelist/shogun2-logo.png",
             "1vizoQOE_gq9rK9LgrxeNgFoikw75AX2h":    "../res/filelist/thrones-logo.png",
+
             "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv":    "../res/filelist/MedievelKingdoms1212AD.ico",
             "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv":    "../res/filelist/AnchientEmpires.ico",
             "1iNfu1THAgULCd3pGUVsQCNlnTHKx-JQY":    "../res/filelist/TheDawnlessDays.ico",
@@ -66,6 +70,7 @@
             "1NHAPD9Si2PM058Vkam_80h-okIFs31S3":    "../res/filelist/NovaAttila.ico",
             "1h__AJylt5ZhfY_iN8d-lGqg-KuReRTdj":    "../res/filelist/Empire2General.ico",
             "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF":    "../res/filelist/ParaBellum.ico",
+            "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU":    "../res/filelist/DragonEmpire.ico",
             "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU":    "../res/filelist/DragonEmpire.ico",
             "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX":    "../res/filelist/TotalFotS.ico",
         },
@@ -94,29 +99,40 @@
             "Seven Kingdoms.exe",
             "Total War Skyrim.exe",
             "Northern Kingdoms Remastered.exe",
+
             "Empire Total War II v4.5.rar",
+
             "ACW2 The American Civil War.exe",
             "Field Command Napoleon.exe",
             "Grand Battle Mod.exe",
             "Napoleonic Total War III.exe",
+
             "Rome II Extra Modifications.exe",
             "Divide et Impera.exe",
             "Medieval 1100AD.exe",
             "Radious Total War.exe",
             "War of the Gods.exe",
+
             "Last Alliance.exe",
             "Pike & Shot II.exe",
             "Rise of Empires.exe",
             "Carlist Wars.exe",
             "Scramble of the Far East.exe",
+
             "Thrones Extra Modifications.exe",
             "Age of Arthur.exe",
         ],
         excludeDownloadFiles: [
-            // Add IDs or names of files/folders that shouldn't have download buttons
+            "15r5NfzciWGfClpGvmT5ydfH4fDbScVAl",
+            "1IsBsstw8TYRZ4FP_cl0ydaVLWRRjVbam",
+            "1NiLKxsM1tZUbYjYoquZ2cYVMWh-zAprN",
+            "14p-1KeG4OB5uYIWqH8yRScpyXRj0IaEb",
+            "1zYVOwQN--y78iTUnku67DyABh5maAfV_",
+            "1vizoQOE_gq9rK9LgrxeNgFoikw75AX2h",
+            "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX"
         ],
         customDownloadLinks: {
-            "1oWuvjH4ksbg5ZFiwcUXGY3yHqdXx0WyQ": "https://app.justkaarlo.com/download/1oWuvjH4ksbg5ZFiwcUXGY3yHqdXx0WyQ",
+            "1oWuvjH4ksbg5ZFiwcUXGY3yHqdXx0WyQ": "http://app.justkaarlo.com/download/1oWuvjH4ksbg5ZFiwcUXGY3yHqdXx0WyQ",
             "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF": "https://www.justkaarlo.com/packages/ParaBellum-Package.exe",
             "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU": "https://www.justkaarlo.com/packages/DragonEmpire-Package.exe",
             "1h__AJylt5ZhfY_iN8d-lGqg-KuReRTdj": "https://www.justkaarlo.com/packages/Empire2General-Package.exe",
@@ -125,31 +141,10 @@
             "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": "https://www.justkaarlo.com/packages/MK1212AD-Package.exe",
             "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/packages/AncientEmpires-Package.exe"
         },
-        showDownloadButtonAtRoot: true,
-        
-        // NEW FEATURES:
-        showDriveButton: [
-            // Add file/folder names or IDs that should show the Google Drive button
-            // Example: "Seven Kingdoms.exe", "1ElTsIpzKxZHZoMm9rxDfv6-dZoPLPosV"
-        ],
-        customTooltips: {
-            // Add custom tooltips with image and description
-            // Example:
-            // "Seven Kingdoms.exe": {
-            //     image: "../res/tooltips/seven-kingdoms-preview.jpg",
-            //     description: "A total conversion mod that brings the world of Westeros to Total War. Features all major houses and locations from Game of Thrones."
-            // },
-            // "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": {
-            //     image: "../res/tooltips/mk1212-preview.jpg",
-            //     description: "Medieval Kingdoms 1212 AD - Experience medieval warfare at its peak with historically accurate units and battles."
-            // }
-        },
-        hiddenItems: [
-            // Add file/folder names or IDs that should be hidden
-            // Example: "debug.log", "temp_folder_id"
-        ]
+        showDownloadButtonAtRoot: true
     });
     attachDocPreview(twContainer);
+
     const erRootFolderId = "1QAOW3qPeIHWinvsQmECyfccTZjavI7mA";
     const erContainer = document.getElementById("fileList");
     listFilesInFolder({
@@ -171,48 +166,7 @@
         downloadButtonFiles: [],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
-        showDownloadButtonAtRoot: true,
-        showDriveButton: [],
-        customTooltips: {
-            // Example:
-            // "Convergence (2.2.3).zip": {
-            //     image: "../res/tooltips/convergence-preview.jpg",
-            //     description: "A comprehensive overhaul mod that adds new spells, rebalances combat, and introduces new mechanics."
-            // }
-        },
-        hiddenItems: []
+        showDownloadButtonAtRoot: true
     });
     attachDocPreview(erContainer);
-    const exRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
-    const exContainer = document.getElementById("ex-fileList");
-    if (exContainer && exRootFolderId !== "NO_FOLDER") {
-        listFilesInFolder({
-            folderId: exRootFolderId,
-            container: exContainer,
-            apiKey,
-            customIcons: {
-                // Add custom icons for example files
-            },
-            customFolderIcons: {
-                // Add custom folder icons
-            },
-            highlightFiles: [],
-            colorizeFiles: [],
-            excludePartsFolders: [],
-            folderGradientFallback: {},
-            downloadButtonFiles: [],
-            excludeDownloadFiles: [],
-            customDownloadLinks: {},
-            showDownloadButtonAtRoot: true,
-            showDriveButton: [],
-            customTooltips: {
-                // Add tooltips for example files
-            },
-            hiddenItems: []
-        });
-        attachDocPreview(exContainer);
-    } else if (exContainer) {
-        // Show placeholder if no folder ID is set
-        exContainer.innerHTML = "<li>Please configure the Example section with a valid folder ID</li>";
-    }
 })()

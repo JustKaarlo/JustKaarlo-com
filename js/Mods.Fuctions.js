@@ -37,7 +37,6 @@ const nav = document.querySelector('.nav-container');
     const content = document.querySelector('.content');
     const twBg = document.getElementById('bg-tw');
     const erBg = document.getElementById('bg-er');
-    const exBg = document.getElementById('bg-ex');
 
     sectionNavBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -52,21 +51,13 @@ const nav = document.querySelector('.nav-container');
 
             // Handle section transitions
             if (targetSection === 'elden-section') {
-                content.style.transform = 'translateX(-33.33%)';
+                content.classList.add('show-elden');
                 erBg.style.opacity = '1';
                 twBg.style.opacity = '0';
-                if (exBg) exBg.style.opacity = '0';
                 initializeParticles(erColors);
-            } else if (targetSection === 'example-section') {
-                content.style.transform = 'translateX(-66.66%)';
-                if (exBg) exBg.style.opacity = '1';
-                erBg.style.opacity = '0';
-                twBg.style.opacity = '0';
-                initializeParticles(exColors);
             } else {
-                content.style.transform = 'translateX(0)';
+                content.classList.remove('show-elden');
                 erBg.style.opacity = '0';
-                if (exBg) exBg.style.opacity = '0';
                 twBg.style.opacity = '1';
                 initializeParticles(twColors);
             }
@@ -76,7 +67,6 @@ const nav = document.querySelector('.nav-container');
 
 const twColors = ['#ffaa00', '#ff6a00', '#8a8a8a'];
 const erColors = ['#9ab97d', '#6c8f5a', '#a1ffe1'];
-const exColors = ['#4a90e2', '#6bb6ff', '#a0c4ff'];
 
 function pauseParticles() {
     if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
@@ -223,58 +213,6 @@ function getDownloadUrl(file, apiKey) {
     return `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`;
 }
 
-// Custom Tooltip System
-class TooltipManager {
-    constructor() {
-        this.tooltip = document.getElementById('customTooltip');
-        this.tooltipImage = document.getElementById('tooltipImage');
-        this.tooltipText = document.getElementById('tooltipText');
-        this.hideTimeout = null;
-    }
-
-    show(data, element) {
-        if (!data || !element) return;
-        
-        clearTimeout(this.hideTimeout);
-        
-        // Set content
-        if (data.image) {
-            this.tooltipImage.src = data.image;
-            this.tooltipImage.style.display = 'block';
-        } else {
-            this.tooltipImage.style.display = 'none';
-        }
-        
-        this.tooltipText.innerHTML = data.description || '';
-        
-        // Position tooltip
-        const rect = element.getBoundingClientRect();
-        const tooltipWidth = 300; // Approximate width
-        const viewportWidth = window.innerWidth;
-        
-        let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
-        let top = rect.bottom + 10;
-        
-        // Adjust if tooltip goes off screen
-        if (left < 10) left = 10;
-        if (left + tooltipWidth > viewportWidth - 10) {
-            left = viewportWidth - tooltipWidth - 10;
-        }
-        
-        this.tooltip.style.left = left + 'px';
-        this.tooltip.style.top = top + 'px';
-        this.tooltip.classList.add('visible');
-    }
-
-    hide() {
-        this.hideTimeout = setTimeout(() => {
-            this.tooltip.classList.remove('visible');
-        }, 100);
-    }
-}
-
-const tooltipManager = new TooltipManager();
-
 function shouldShowDownloadButtonForFile({ file, folderId, path, includeList }) {
     if (!includeList || includeList.length === 0) return false;
     const keyByPath = path ? `${path}${file.name}` : file.name;
@@ -298,12 +236,6 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
-// Check if file/folder should be hidden
-function shouldHideItem(item, hiddenItems = []) {
-    if (!hiddenItems || hiddenItems.length === 0) return false;
-    return hiddenItems.includes(item.name) || hiddenItems.includes(item.id);
-}
-
 // Simplified Download Manager Class with Basic Status Notifications
 class DownloadManager {
     constructor() {
@@ -312,6 +244,7 @@ class DownloadManager {
         this.serverBaseUrl = 'https://app.justkaarlo.com';
     }
 
+    // Generate unique download ID
     generateDownloadId() {
         return 'dl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
@@ -381,9 +314,10 @@ class DownloadManager {
         }
     }
 
+    // Poll server for download status - simplified version
     async pollDownloadStatus(downloadId) {
-        const maxPollTime = 60000;
-        const pollInterval = 2000;
+        const maxPollTime = 60000; // 60 seconds to allow time for cancellation detection
+        const pollInterval = 2000; // 2 seconds
         const startTime = Date.now();
         let downloadStarted = false;
 
@@ -396,60 +330,77 @@ class DownloadManager {
 
                 switch (statusData.status) {
                     case 'downloading':
+                        // Show "Download Started" only once, but continue polling for cancellation
                         if (!downloadStarted) {
                             downloadStarted = true;
                             this.showToast('Download Started', 'success', 3000);
                         }
+                        // Don't return here - keep polling to detect cancellation
                         break;
 
                     case 'cancelled':
                         this.showToast('Download Cancelled', 'error', 3000);
-                        return;
+                        return; // Stop polling
 
                     case 'error':
                         this.showToast('Download Failed', 'error', 3000);
-                        return;
+                        return; // Stop polling
 
                     case 'starting':
                     case 'preparing':
+                        // Keep polling, don't show anything yet
                         break;
 
                     case 'completed':
-                        return;
+                        // Don't show completion message as requested
+                        return; // Stop polling
 
                     case 'not_found':
+                        // Download ID not found, might be too early
                         if (Date.now() - startTime > 10000) {
+                            // After 10 seconds, stop trying
                             return;
                         }
                         break;
                 }
 
+                // Continue polling if not finished and within time limit
                 if (Date.now() - startTime < maxPollTime) {
                     setTimeout(poll, pollInterval);
                 }
 
             } catch (error) {
                 console.error('Error polling download status:', error);
+                // Silently fail - no error notifications as requested
             }
         };
 
+        // Start polling after a short delay to allow server to register the download
         setTimeout(poll, 1000);
     }
 
+    // Main download method
     download(fileId, filename, customLink = null) {
         const downloadId = this.generateDownloadId();
+
+        // Create download URL with downloadId parameter
         const url = customLink || `${this.serverBaseUrl}/download/${fileId}?downloadId=${downloadId}`;
+
         return this.downloadWithStatusTracking(url, filename, downloadId);
     }
 
+    // Enhanced download with server status tracking
     downloadWithStatusTracking(url, filename, downloadId) {
+        // Create iframe for download
         const iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = url;
         document.body.appendChild(iframe);
 
+        // Start polling server for download status
         this.pollDownloadStatus(downloadId);
 
+        // Cleanup function
         const cleanup = () => {
             try {
                 if (iframe.parentNode) {
@@ -460,8 +411,10 @@ class DownloadManager {
             }
         };
 
+        // Cleanup after reasonable time
         setTimeout(cleanup, 30000);
 
+        // Return reference for compatibility
         return {
             downloadId: downloadId,
             cancel: cleanup
@@ -469,6 +422,7 @@ class DownloadManager {
     }
 }
 
+// Initialize global download manager
 const downloadManager = new DownloadManager();
 
 // Add CSS animations
@@ -508,10 +462,7 @@ async function listFilesInFolder({
     excludePartsFolders = [],
     downloadButtonFiles = [],
     excludeDownloadFiles = [],
-    customDownloadLinks = {},
-    showDriveButton = [], // New: list of files/folders to show Drive button
-    customTooltips = {}, // New: custom tooltips
-    hiddenItems = [] // New: items to hide
+    customDownloadLinks = {}
 }) {
     container.innerHTML = "";
 
@@ -526,45 +477,26 @@ async function listFilesInFolder({
         return;
     }
 
-    // Filter out hidden items
-    const visibleFiles = data.files.filter(f => 
-        f.mimeType !== "application/vnd.google-apps.folder" && 
-        !shouldHideItem(f, hiddenItems)
-    );
-    const visibleFolders = data.files.filter(f => 
-        f.mimeType === "application/vnd.google-apps.folder" && 
-        !shouldHideItem(f, hiddenItems)
-    );
+    const files = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
+    const folders = data.files.filter(f => f.mimeType === "application/vnd.google-apps.folder");
 
-    visibleFiles.sort((a, b) => {
+    files.sort((a, b) => {
         const aTop = highlightFiles.includes(a.name);
         const bTop = highlightFiles.includes(b.name);
         if (aTop && !bTop) return -1;
         if (bTop && !aTop) return 1;
         return a.name.localeCompare(b.name, undefined, { numeric: true });
     });
-    visibleFolders.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+    folders.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
 
     // Files
-    for (const file of visibleFiles) {
+    for (const file of files) {
         const li = document.createElement("li");
         if (highlightFiles.includes(file.name)) li.classList.add("highlighted");
 
-        // Check for custom tooltip
-        const tooltipData = customTooltips[file.id] || customTooltips[file.name];
-        if (tooltipData) {
-            li.addEventListener('mouseenter', () => tooltipManager.show(tooltipData, li));
-            li.addEventListener('mouseleave', () => tooltipManager.hide());
-        }
-
         const link = document.createElement("a");
-        link.href = "#"; // Changed to prevent navigation
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            // Trigger download instead of opening Drive
-            const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
-            downloadManager.download(file.id, file.name, customLink);
-        });
+        link.href = file.webViewLink;
+        link.target = "_blank";
 
         link.addEventListener('mousemove', (e) => {
             const rect = link.getBoundingClientRect();
@@ -617,7 +549,6 @@ async function listFilesInFolder({
             excludeList: excludeDownloadFiles
         });
 
-        // Download button
         if (!isDriveDoc(file.mimeType) && (includeButton || (!path && showDownloadButtonAtRoot)) && !excludeButton) {
             const downloadBtn = document.createElement("button");
             downloadBtn.className = "folder-open-button";
@@ -649,6 +580,7 @@ async function listFilesInFolder({
             downloadBtn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+
                 const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
                 downloadManager.download(file.id, file.name, customLink);
             };
@@ -656,52 +588,12 @@ async function listFilesInFolder({
             fileEntry.appendChild(downloadBtn);
         }
 
-        // Google Drive button (new)
-        if (showDriveButton.includes(file.name) || showDriveButton.includes(file.id)) {
-            const driveBtn = document.createElement("button");
-            driveBtn.className = "drive-button";
-
-            const tooltip = document.createElement("span");
-            tooltip.className = "custom-tooltip";
-            tooltip.textContent = "Open in Drive";
-            driveBtn.appendChild(tooltip);
-
-            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            btnIcon.setAttribute("width", "16");
-            btnIcon.setAttribute("height", "16");
-            btnIcon.setAttribute("viewBox", "0 0 24 24");
-            btnIcon.setAttribute("fill", "none");
-
-            const linkPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            linkPath.setAttribute("d", "M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z");
-            linkPath.setAttribute("fill", "rgba(180, 180, 180, 0.5)");
-
-            btnIcon.appendChild(linkPath);
-            driveBtn.appendChild(btnIcon);
-
-            driveBtn.onclick = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                window.open(file.webViewLink, "_blank");
-            };
-
-            fileEntry.appendChild(driveBtn);
-        }
-
         li.appendChild(fileEntry);
         container.appendChild(li);
     }
 
-    // Folders
-    for (const folder of visibleFolders) {
+    for (const folder of folders) {
         const li = document.createElement("li");
-
-        // Check for custom tooltip
-        const tooltipData = customTooltips[folder.id] || customTooltips[folder.name];
-        if (tooltipData) {
-            li.addEventListener('mouseenter', () => tooltipManager.show(tooltipData, li));
-            li.addEventListener('mouseleave', () => tooltipManager.hide());
-        }
 
         const folderLink = document.createElement("div");
         folderLink.className = "folder-entry";
@@ -743,83 +635,47 @@ async function listFilesInFolder({
             countTag.textContent = "";
         }
 
-        // Download button for folder
-        const folderExcluded = excludeDownloadFiles.includes(folder.id) || excludeDownloadFiles.includes(folder.name);
-        
+        const folderBtn = document.createElement("button");
+        const folderExcluded =
+            excludeDownloadFiles.includes(folder.id) ||
+            excludeDownloadFiles.includes(folder.name);
+
         if (!folderExcluded) {
-            const folderBtn = document.createElement("button");
-            folderBtn.className = "folder-open-button";
-            
-            const tooltip = document.createElement("span");
-            tooltip.className = "custom-tooltip";
-            tooltip.textContent = "Download";
-            folderBtn.appendChild(tooltip);
-            
-            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            btnIcon.setAttribute("width", "16");
-            btnIcon.setAttribute("height", "16");
-            btnIcon.setAttribute("viewBox", "0 0 24 24");
-            btnIcon.setAttribute("fill", "none");
-
-            const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
-            trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
-
-            const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
-            arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
-            arrowPath.setAttribute("class", "arrow-part");
-
-            btnIcon.appendChild(trayPath);
-            btnIcon.appendChild(arrowPath);
-            folderBtn.appendChild(btnIcon);
-
-            folderBtn.onclick = (e) => {
-                e.stopPropagation();
-                const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
-                if (customLink) {
-                    // Use download manager for custom links
-                    downloadManager.download(folder.id, folder.name, customLink);
-                } else {
-                    // Open Drive folder for non-custom links
-                    window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
-                }
-            };
-
             rightWrapper.appendChild(folderBtn);
         }
-
-        // Google Drive button for folder (new)
-        if (showDriveButton.includes(folder.name) || showDriveButton.includes(folder.id)) {
-            const driveBtn = document.createElement("button");
-            driveBtn.className = "drive-button";
-
-            const tooltip = document.createElement("span");
-            tooltip.className = "custom-tooltip";
-            tooltip.textContent = "Open in Drive";
-            driveBtn.appendChild(tooltip);
-
-            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            btnIcon.setAttribute("width", "16");
-            btnIcon.setAttribute("height", "16");
-            btnIcon.setAttribute("viewBox", "0 0 24 24");
-            btnIcon.setAttribute("fill", "none");
-
-            const linkPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            linkPath.setAttribute("d", "M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z");
-            linkPath.setAttribute("fill", "rgba(180, 180, 180, 0.5)");
-
-            btnIcon.appendChild(linkPath);
-            driveBtn.appendChild(btnIcon);
-
-            driveBtn.onclick = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
+        folderBtn.className = "folder-open-button";
+        const tooltip = document.createElement("span");
+        tooltip.className = "custom-tooltip";
+        tooltip.textContent = "Download";
+        folderBtn.appendChild(tooltip);
+        folderBtn.onclick = (e) => {
+            e.stopPropagation();
+            const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
+            if (customLink) {
+                window.open(customLink, "_blank");
+            } else {
                 window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
-            };
+            }
+        };
 
-            rightWrapper.appendChild(driveBtn);
-        }
+        const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        btnIcon.setAttribute("width", "16");
+        btnIcon.setAttribute("height", "16");
+        btnIcon.setAttribute("viewBox", "0 0 24 24");
+        btnIcon.setAttribute("fill", "none");
+
+        const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
+        trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
+
+        const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
+        arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
+        arrowPath.setAttribute("class", "arrow-part");
+
+        btnIcon.appendChild(trayPath);
+        btnIcon.appendChild(arrowPath);
+        folderBtn.appendChild(btnIcon);
 
         leftWrapper.appendChild(arrow);
         leftWrapper.appendChild(icon);
@@ -827,6 +683,10 @@ async function listFilesInFolder({
 
         rightWrapper.appendChild(sizeTag);
         if (countTag) rightWrapper.appendChild(countTag);
+        if (!excludeDownloadFiles.includes(folder.id) &&
+            !excludeDownloadFiles.includes(folder.name)) {
+            rightWrapper.appendChild(folderBtn);
+        }
 
         folderLink.appendChild(leftWrapper);
         folderLink.appendChild(rightWrapper);
@@ -858,10 +718,7 @@ async function listFilesInFolder({
                     excludePartsFolders,
                     downloadButtonFiles,
                     excludeDownloadFiles,
-                    customDownloadLinks,
-                    showDriveButton,
-                    customTooltips,
-                    hiddenItems
+                    customDownloadLinks
                 });
             }
             const isOpen = subList.style.display === "block";
