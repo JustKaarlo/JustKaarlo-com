@@ -16,7 +16,9 @@
             "FSM Full Modpack.rar": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
             "FSM Updated.zip": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
         },
-        customFolderIcons: {},
+        customFolderIcons: {
+            "Download All Files.zip": "https://cdn-icons-png.flaticon.com/512/2096/2096910.png"
+        },
         highlightFiles: [
             "Download All Files.zip"
         ],
@@ -60,7 +62,7 @@
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
-            "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR": "http://app.justkaarlo.com/download/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH"
+            "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
         },
         showDownloadButtonAtRoot: true
     });
