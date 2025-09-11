@@ -24,7 +24,8 @@ jobs:
 
       - name: Secrets
         run: | 
-          find ./ -type f -path "./js/*" -exec sed -i "s|__API_KEY__|${{ secrets.GOOGLE_DRIVE_API }}|g" {} +
+          find ./ -type f -path "./mods/js/*" -exec sed -i "s|__API_KEY__|${{ secrets.GOOGLE_DRIVE_API }}|g" {} +
+          find ./ -type f -path "./mods/*" -exec sed -i "s|__API_KEY__|${{ secrets.GOOGLE_DRIVE_API }}|g" {} +
           find ./ -type f -path "./report/js/*" -exec sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|g" {} +
           find ./ -type f -path "./report/*" -exec sed -i "s|__WEBHOOK_URL__|${{ secrets.WEBHOOK_URL }}|g" {} +
 
