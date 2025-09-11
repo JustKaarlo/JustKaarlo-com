@@ -13,17 +13,17 @@
         container: fsContainer,
         apiKey,
         customIcons: {
-            "FSM Full Modpack.rar": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
+            "FSM Full Modpack.zip": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
             "FSM Updated.zip": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
         },
-        customFolderIcons: {
-            "Download All Files.zip": "https://cdn-icons-png.flaticon.com/512/2096/2096910.png"
-        },
-        highlightFiles: [
-            "Download All Files.zip"
+        customFolderIcons: {},
+        highlightFiles: [],
+        colorizeFiles: [
+            "FSM Full Modpack.zip"
         ],
-        colorizeFiles: [],
-        excludePartsFolders: [],
+        excludePartsFolders: [
+            "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
+        ],
         folderGradientFallback: {},
         downloadButtonFiles: [
             "FS25_agriculturalSubsidy.zip",
@@ -85,8 +85,7 @@
             "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
         ],
         customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc",
-            "Download All Files.zip": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
         },
         showDownloadButtonAtRoot: true
     });
