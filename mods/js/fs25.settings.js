@@ -60,9 +60,24 @@
             "FS25_TailLiftPack.zip",
             "FS25PlaceAnywheremaster.zip",
             "FS25_ObjectBaleStorage.zip",
-            "FS22_RealGPSMod.zip"
+            "FS22_RealGPSMod.zip",
+            "FS25_OldUS_Shed.zip",
+            "FS25_TowingChain.zip",
+            "farmMarket.zip",
+            "FS25_Containers_Pack.zip",
+            "FS25_CustomProductions.zip",
+            "FS25_LogisticsCenter.zip",
+            "Lipinki.zip",
+            "Schwesing Bahnhof.zip",
+            "Szpakowo.zip",
+            "Polesine.zip",
+            "Cybuchowo.zip",
+            "Mecklenburg Lake District.zip",
         ],
-        excludeDownloadFiles: [],
+        excludeDownloadFiles: [
+            "Maps",
+            "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
+        ],
         customDownloadLinks: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc",
             "Download All Files.zip": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
