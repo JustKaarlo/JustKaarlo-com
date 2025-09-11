@@ -18,7 +18,7 @@
         },
         customFolderIcons: {},
         highlightFiles: [
-            "Download All.zip"
+            "Download All Files.zip"
         ],
         colorizeFiles: [],
         excludePartsFolders: [],
