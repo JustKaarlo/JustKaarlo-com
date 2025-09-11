@@ -13,7 +13,7 @@
         container: erContainer,
         apiKey,
         customIcons: {
-            "Convergence (2.2.3).zip": "../res/filelist/Convergence.ico"
+            "Convergence (2.2.3).zip": "https://www.justkaarlo.com/res/filelist/Convergence.ico"
         },
         customFolderIcons: {},
         highlightFiles: [
