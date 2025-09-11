@@ -50,11 +50,17 @@
             "FS25_allTheGroundTextures.zip",
             "FS25_ProductionControl.zip",
             "FS25_ProductionStorageControl.zip",
-            "FS22_RealGPSMod.zip"
+            "FS22_RealGPSMod.zip",
+"            FS25_RoadKit.zip",
+"            FS25_sellEverything.zip",
+"            FS25_semiLowloader3A.zip",
+"            FS25_sheds_WS11.zip",
+"            FS25_TailLiftPack.zip",
+"            FS25PlaceAnywheremaster.zip",
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH"
+            "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR": "http://app.justkaarlo.com/download/1_K0oQCe33VqiOqtik10W9ZpLVqpcINYH"
         },
         showDownloadButtonAtRoot: true
     });
