@@ -59,10 +59,13 @@
             "FS25_sheds_WS11.zip",
             "FS25_TailLiftPack.zip",
             "FS25PlaceAnywheremaster.zip",
+            "FS25_ObjectBaleStorage.zip",
+            "FS22_RealGPSMod.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc",
+            "Download All Files.zip": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
         },
         showDownloadButtonAtRoot: true
     });
