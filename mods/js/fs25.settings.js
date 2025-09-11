@@ -73,6 +73,12 @@
             "Polesine.zip",
             "Cybuchowo.zip",
             "Mecklenburg Lake District.zip",
+            "Cybuchowo.zip",
+            "Lipinki.zip",
+            "Mecklenburg Lake District.zip",
+            "Polesine.zip",
+            "Schwesing Bahnhof.zip",
+            "Szpakowo.zip",
         ],
         excludeDownloadFiles: [
             "Maps",
