@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
     
@@ -50,6 +50,7 @@
             "FS25_allTheGroundTextures.zip",
             "FS25_ProductionControl.zip",
             "FS25_ProductionStorageControl.zip",
+            "FS22_RealGPSMod.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {
