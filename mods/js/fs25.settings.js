@@ -79,7 +79,7 @@
             "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
         ],
         customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1DWNgZf_VXrg6mvEOpBQjX9FbMaKHFlCc"
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1sjyj8_WWXagKWs6x7SF1cGHCAI6d0tlq"
         },
         showDownloadButtonAtRoot: true
     });
