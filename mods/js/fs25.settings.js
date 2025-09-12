@@ -73,6 +73,7 @@
             "FS25_Polesine.zip",
             "FS25_SchwesingBahnhof.zip",
             "FS25_Szpakowo.zip",
+            "FS25_realGPS.zip"
         ],
         excludeDownloadFiles: [
             "Maps",
