@@ -109,9 +109,7 @@
             "Maps",
             "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
         ],
-        customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1ET6TFJVaEuGgyDXWw65tS2ELw1zGKtFu"
-        },
+        customDownloadLinks: {},
         showDownloadButtonAtRoot: true
     });
 
