@@ -73,7 +73,13 @@
             "FS25_Polesine.zip",
             "FS25_SchwesingBahnhof.zip",
             "FS25_Szpakowo.zip",
-            "FS25_realGPS.zip"
+            "FS25_realGPS.zip",
+            "Mechlenburg Lagke District.jpg",
+            "Polesine.jpg",
+            "Schwesing Bahnhof.jpg",
+            "Szpakowo.jpg",
+            "Cybuchowo.jpg",
+            "Lipinki.jpg"
         ],
         excludeDownloadFiles: [
             "Maps",
