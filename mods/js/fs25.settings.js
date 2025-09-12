@@ -79,14 +79,38 @@
             "Schwesing Bahnhof.jpg",
             "Szpakowo.jpg",
             "Cybuchowo.jpg",
-            "Lipinki.jpg"
+            "Lipinki.jpg",
+            "FS25_adjustWorkingSpeed.zip",
+            "FS25_BetterProductions.zip",
+            "FS25_BuyableGPS.zip",
+            "FS25_electricChargeStation.zip",
+            "FS25_Excavator_Extension.zip",
+            "FS25_gameplay_Real_Vehicle_Breakdowns.zip",
+            "FS25_GarageMenu.zip",
+            "FS25_ImprovedProductionDistribution.zip",
+            "FS25_Kshop.zip",
+            "FS25_paintableFoliagesExtended.zip",
+            "FS25_ProductionControl.zip",
+            "FS25_productionsLimitIncreaser120.zip",
+            "FS25_ProductionStorageControl.zip",
+            "FS25_realDirtColor.zip",
+            "FS25_realGPS.zip",
+            "FS25_RealisticWeather.zip",
+            "FS25_rememberPositions.zip",
+            "FS25_sellEverything.zip",
+            "FS25_TipAnywhere.zip",
+            "FS25_TransferOwnership.zip",
+            "FS25_UnrestrictedPlacement.zip",
+            "FS25_Waterpumpingstation_crossplay.zip",
+            "RMM25_Transfer_Tank.zip",
+            "FS25_AdjustableMirrors.zip"
         ],
         excludeDownloadFiles: [
             "Maps",
             "1SD8hCSKgeJ4O6tlpFOzxl1qvRRl_YfF2"
         ],
         customDownloadLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1sjyj8_WWXagKWs6x7SF1cGHCAI6d0tlq"
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "http://app.justkaarlo.com/download/1ET6TFJVaEuGgyDXWw65tS2ELw1zGKtFu"
         },
         showDownloadButtonAtRoot: true
     });
