@@ -91,7 +91,8 @@
             "FS25_TipAnywhere.zip",
             "FS25_TransferOwnership.zip",
             "FS25_UnrestrictedPlacement.zip",
-            "FS25_AdjustableMirrors.zip"
+            "FS25_AdjustableMirrors.zip",
+            "FS25_HirePurchasing.zip"
         ],
         excludeDownloadFiles: [
             "Maps",
