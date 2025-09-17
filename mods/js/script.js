@@ -193,6 +193,162 @@ function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
         || excludeList.includes(keyById);
 }
 
+function getCustomWebsiteLink({ file, folderId, path, customWebsiteLinks }) {
+    if (!customWebsiteLinks) return null;
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    return customWebsiteLinks[file.name] 
+        || customWebsiteLinks[file.id] 
+        || customWebsiteLinks[keyByPath] 
+        || customWebsiteLinks[keyById];
+}
+
+function getTooltipData({ file, folderId, path, tooltipData }) {
+    if (!tooltipData) return null;
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    return tooltipData[file.name] 
+        || tooltipData[file.id] 
+        || tooltipData[keyByPath] 
+        || tooltipData[keyById];
+}
+
+// Enhanced Tooltip System
+function createEnhancedTooltip(data) {
+    const tooltip = document.createElement('div');
+    tooltip.className = 'enhanced-tooltip';
+    
+    if (data.image || data.images) {
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'tooltip-image-container';
+        
+        const images = data.images || [data.image];
+        
+        if (images.length === 1) {
+            // Single image
+            const img = document.createElement('img');
+            img.src = images[0];
+            img.alt = '';
+            img.className = 'tooltip-image';
+            imageContainer.appendChild(img);
+        } else {
+            // Multiple images - create slideshow
+            images.forEach((imageSrc, index) => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = '';
+                img.className = `tooltip-image ${index === 0 ? 'active' : ''}`;
+                imageContainer.appendChild(img);
+            });
+            
+            // Add navigation dots
+            if (images.length > 1) {
+                const dotsContainer = document.createElement('div');
+                dotsContainer.className = 'tooltip-dots';
+                
+                images.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = `tooltip-dot ${index === 0 ? 'active' : ''}`;
+                    dotsContainer.appendChild(dot);
+                });
+                
+                imageContainer.appendChild(dotsContainer);
+                
+                // Auto-advance slideshow
+                let currentImageIndex = 0;
+                const slideInterval = setInterval(() => {
+                    const currentImg = imageContainer.querySelector('.tooltip-image.active');
+                    const currentDot = imageContainer.querySelector('.tooltip-dot.active');
+                    
+                    if (currentImg && currentDot) {
+                        currentImg.classList.remove('active');
+                        currentDot.classList.remove('active');
+                        
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        
+                        const nextImg = imageContainer.children[currentImageIndex];
+                        const nextDot = dotsContainer.children[currentImageIndex];
+                        
+                        nextImg.classList.add('active');
+                        nextDot.classList.add('active');
+                    }
+                }, 2500); // Change image every 2.5 seconds
+                
+                // Store interval to clear it later
+                tooltip.slideInterval = slideInterval;
+            }
+        }
+        
+        tooltip.appendChild(imageContainer);
+    }
+    
+    if (data.description) {
+        const desc = document.createElement('div');
+        desc.className = 'tooltip-description';
+        desc.textContent = data.description;
+        tooltip.appendChild(desc);
+    }
+    
+    return tooltip;
+}
+
+function showEnhancedTooltip(element, tooltipData) {
+    hideEnhancedTooltip(); // Hide any existing tooltips
+    
+    const tooltip = createEnhancedTooltip(tooltipData);
+    tooltip.id = 'active-enhanced-tooltip';
+    document.body.appendChild(tooltip);
+    
+    const updatePosition = (e) => {
+        const rect = element.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+        
+        let left = e.clientX + 10;
+        let top = e.clientY + 10;
+        
+        // Adjust position to keep tooltip in viewport
+        if (left + tooltipRect.width > window.innerWidth) {
+            left = e.clientX - tooltipRect.width - 10;
+        }
+        if (top + tooltipRect.height > window.innerHeight) {
+            top = e.clientY - tooltipRect.height - 10;
+        }
+        
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+    };
+    
+    element.addEventListener('mousemove', updatePosition);
+    element.addEventListener('mouseleave', hideEnhancedTooltip);
+    
+    updatePosition({ clientX: element.getBoundingClientRect().left, clientY: element.getBoundingClientRect().top });
+    
+    setTimeout(() => {
+        tooltip.classList.add('visible');
+    }, 100);
+}
+
+function hideEnhancedTooltip() {
+    const existingTooltip = document.getElementById('active-enhanced-tooltip');
+    if (existingTooltip) {
+        // Clear slideshow interval if it exists
+        if (existingTooltip.slideInterval) {
+            clearInterval(existingTooltip.slideInterval);
+        }
+        
+        existingTooltip.classList.remove('visible');
+        setTimeout(() => {
+            if (existingTooltip.parentNode) {
+                existingTooltip.remove();
+            }
+        }, 200);
+    }
+}
+
 // Download Manager Class
 class DownloadManager {
     constructor() {
@@ -376,7 +532,9 @@ async function listFilesInFolder({
     excludePartsFolders = [],
     downloadButtonFiles = [],
     excludeDownloadFiles = [],
-    customDownloadLinks = {}
+    customDownloadLinks = {},
+    customWebsiteLinks = {},
+    tooltipData = {}
 }) {
     container.innerHTML = "";
 
@@ -412,18 +570,30 @@ async function listFilesInFolder({
         link.href = file.webViewLink;
         link.target = "_blank";
 
+        // Add enhanced tooltip functionality
+        const fileTooltipData = getTooltipData({ file, folderId, path, tooltipData });
+        if (fileTooltipData) {
+            link.addEventListener('mouseenter', (e) => {
+                showEnhancedTooltip(link, fileTooltipData);
+            });
+        }
+
         link.addEventListener('mousemove', (e) => {
-            const rect = link.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const midX = rect.width / 2;
-            const midY = rect.height / 2;
-            const rotateX = ((y - midY) / midY) * 2;
-            const rotateY = ((x - midX) / midX) * 2;
-            link.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            if (!fileTooltipData) { // Only apply transform if no tooltip
+                const rect = link.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const midX = rect.width / 2;
+                const midY = rect.height / 2;
+                const rotateX = ((y - midY) / midY) * 2;
+                const rotateY = ((x - midX) / midX) * 2;
+                link.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            }
         });
         link.addEventListener('mouseleave', () => {
-            link.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+            if (!fileTooltipData) {
+                link.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+            }
         });
 
         const icon = document.createElement("img");
@@ -449,6 +619,10 @@ async function listFilesInFolder({
             fileEntry.appendChild(sizeTag);
         }
 
+        // Button container for multiple buttons
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "button-container";
+
         const includeButton = shouldShowDownloadButtonForFile({
             file,
             folderId,
@@ -463,6 +637,7 @@ async function listFilesInFolder({
             excludeList: excludeDownloadFiles
         });
 
+        // Download button
         if (!isDriveDoc(file.mimeType) && (includeButton || (!path && showDownloadButtonAtRoot)) && !excludeButton) {
             const downloadBtn = document.createElement("button");
             downloadBtn.className = "folder-open-button";
@@ -499,7 +674,49 @@ async function listFilesInFolder({
                 downloadManager.download(file.id, file.name, customLink);
             };
 
-            fileEntry.appendChild(downloadBtn);
+            buttonContainer.appendChild(downloadBtn);
+        }
+
+        // Custom website button
+        const customWebsiteLink = getCustomWebsiteLink({ file, folderId, path, customWebsiteLinks });
+        if (customWebsiteLink) {
+            const websiteBtn = document.createElement("button");
+            websiteBtn.className = "folder-open-button website-button";
+
+            const tooltip = document.createElement("span");
+            tooltip.className = "custom-tooltip";
+            tooltip.textContent = "Visit Website";
+            websiteBtn.appendChild(tooltip);
+
+            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            btnIcon.setAttribute("width", "16");
+            btnIcon.setAttribute("height", "16");
+            btnIcon.setAttribute("viewBox", "0 0 24 24");
+            btnIcon.setAttribute("fill", "none");
+
+            // External link icon - cleaner design
+            const linkPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            linkPath.setAttribute("d", "M7 17L17 7M17 7H7M17 7V17");
+            linkPath.setAttribute("stroke", "rgba(160, 160, 160, 0.7)");
+            linkPath.setAttribute("stroke-width", "2");
+            linkPath.setAttribute("stroke-linecap", "round");
+            linkPath.setAttribute("stroke-linejoin", "round");
+            linkPath.setAttribute("fill", "none");
+
+            btnIcon.appendChild(linkPath);
+            websiteBtn.appendChild(btnIcon);
+
+            websiteBtn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(customWebsiteLink, "_blank");
+            };
+
+            buttonContainer.appendChild(websiteBtn);
+        }
+
+        if (buttonContainer.children.length > 0) {
+            fileEntry.appendChild(buttonContainer);
         }
 
         li.appendChild(fileEntry);
@@ -533,6 +750,14 @@ async function listFilesInFolder({
         nameSpan.className = "folder-name";
         nameSpan.textContent = folder.name;
 
+        // Add enhanced tooltip functionality for folders
+        const folderTooltipData = getTooltipData({ file: folder, folderId, path, tooltipData });
+        if (folderTooltipData) {
+            nameSpan.addEventListener('mouseenter', (e) => {
+                showEnhancedTooltip(nameSpan, folderTooltipData);
+            });
+        }
+
         const rightWrapper = document.createElement("div");
         rightWrapper.style.display = "flex";
         rightWrapper.style.alignItems = "center";
@@ -550,47 +775,91 @@ async function listFilesInFolder({
             countTag.textContent = "";
         }
 
-        const folderBtn = document.createElement("button");
-        const folderExcluded =
-            excludeDownloadFiles.includes(folder.id) ||
-            excludeDownloadFiles.includes(folder.name);
+        // Button container for folder buttons
+        const folderButtonContainer = document.createElement("div");
+        folderButtonContainer.className = "button-container";
 
+        const folderExcluded = excludeDownloadFiles.includes(folder.id) || excludeDownloadFiles.includes(folder.name);
+
+        // Folder download button
         if (!folderExcluded) {
-            rightWrapper.appendChild(folderBtn);
+            const folderBtn = document.createElement("button");
+            folderBtn.className = "folder-open-button";
+            
+            const tooltip = document.createElement("span");
+            tooltip.className = "custom-tooltip";
+            tooltip.textContent = "Download";
+            folderBtn.appendChild(tooltip);
+            
+            folderBtn.onclick = (e) => {
+                e.stopPropagation();
+                const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
+                if (customLink) {
+                    window.open(customLink, "_blank");
+                } else {
+                    window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                }
+            };
+
+            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            btnIcon.setAttribute("width", "16");
+            btnIcon.setAttribute("height", "16");
+            btnIcon.setAttribute("viewBox", "0 0 24 24");
+            btnIcon.setAttribute("fill", "none");
+
+            const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
+            trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
+
+            const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
+            arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
+            arrowPath.setAttribute("class", "arrow-part");
+
+            btnIcon.appendChild(trayPath);
+            btnIcon.appendChild(arrowPath);
+            folderBtn.appendChild(btnIcon);
+
+            folderButtonContainer.appendChild(folderBtn);
         }
-        folderBtn.className = "folder-open-button";
-        const tooltip = document.createElement("span");
-        tooltip.className = "custom-tooltip";
-        tooltip.textContent = "Download";
-        folderBtn.appendChild(tooltip);
-        folderBtn.onclick = (e) => {
-            e.stopPropagation();
-            const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
-            if (customLink) {
-                window.open(customLink, "_blank");
-            } else {
-                window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
-            }
-        };
 
-        const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        btnIcon.setAttribute("width", "16");
-        btnIcon.setAttribute("height", "16");
-        btnIcon.setAttribute("viewBox", "0 0 24 24");
-        btnIcon.setAttribute("fill", "none");
+        // Custom website button for folders
+        const folderCustomWebsiteLink = getCustomWebsiteLink({ file: folder, folderId, path, customWebsiteLinks });
+        if (folderCustomWebsiteLink) {
+            const websiteBtn = document.createElement("button");
+            websiteBtn.className = "folder-open-button website-button";
 
-        const trayPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        trayPath.setAttribute("d", "M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z");
-        trayPath.setAttribute("fill", "rgba(255, 255, 255, 0.15)");
+            const tooltip = document.createElement("span");
+            tooltip.className = "custom-tooltip";
+            tooltip.textContent = "Visit Website";
+            websiteBtn.appendChild(tooltip);
 
-        const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        arrowPath.setAttribute("d", "M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z");
-        arrowPath.setAttribute("fill", "rgba(255, 255, 255, 0.35)");
-        arrowPath.setAttribute("class", "arrow-part");
+            const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            btnIcon.setAttribute("width", "16");
+            btnIcon.setAttribute("height", "16");
+            btnIcon.setAttribute("viewBox", "0 0 24 24");
+            btnIcon.setAttribute("fill", "none");
 
-        btnIcon.appendChild(trayPath);
-        btnIcon.appendChild(arrowPath);
-        folderBtn.appendChild(btnIcon);
+            // External link icon - cleaner design
+            const linkPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            linkPath.setAttribute("d", "M7 17L17 7M17 7H7M17 7V17");
+            linkPath.setAttribute("stroke", "rgba(160, 160, 160, 0.7)");
+            linkPath.setAttribute("stroke-width", "2");
+            linkPath.setAttribute("stroke-linecap", "round");
+            linkPath.setAttribute("stroke-linejoin", "round");
+            linkPath.setAttribute("fill", "none");
+
+            btnIcon.appendChild(linkPath);
+            websiteBtn.appendChild(btnIcon);
+
+            websiteBtn.onclick = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(folderCustomWebsiteLink, "_blank");
+            };
+
+            folderButtonContainer.appendChild(websiteBtn);
+        }
 
         leftWrapper.appendChild(arrow);
         leftWrapper.appendChild(icon);
@@ -598,9 +867,8 @@ async function listFilesInFolder({
 
         rightWrapper.appendChild(sizeTag);
         if (countTag) rightWrapper.appendChild(countTag);
-        if (!excludeDownloadFiles.includes(folder.id) &&
-            !excludeDownloadFiles.includes(folder.name)) {
-            rightWrapper.appendChild(folderBtn);
+        if (folderButtonContainer.children.length > 0) {
+            rightWrapper.appendChild(folderButtonContainer);
         }
 
         folderLink.appendChild(leftWrapper);
@@ -633,7 +901,9 @@ async function listFilesInFolder({
                     excludePartsFolders,
                     downloadButtonFiles,
                     excludeDownloadFiles,
-                    customDownloadLinks
+                    customDownloadLinks,
+                    customWebsiteLinks,
+                    tooltipData
                 });
             }
             const isOpen = subList.style.display === "block";
@@ -643,17 +913,21 @@ async function listFilesInFolder({
         });
 
         nameSpan.addEventListener('mousemove', (e) => {
-            const rect = nameSpan.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const midX = rect.width / 2;
-            const midY = rect.height / 2;
-            const rotateX = ((y - midY) / midY) * 2;
-            const rotateY = ((x - midX) / midX) * 2;
-            nameSpan.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            if (!folderTooltipData) { // Only apply transform if no tooltip
+                const rect = nameSpan.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const midX = rect.width / 2;
+                const midY = rect.height / 2;
+                const rotateX = ((y - midY) / midY) * 2;
+                const rotateY = ((x - midX) / midX) * 2;
+                nameSpan.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            }
         });
         nameSpan.addEventListener('mouseleave', () => {
-            nameSpan.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+            if (!folderTooltipData) {
+                nameSpan.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
+            }
         });
 
         fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(size,mimeType)&key=${apiKey}`)

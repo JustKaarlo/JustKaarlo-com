@@ -145,6 +145,8 @@
             "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": "https://www.justkaarlo.com/data/packages/MK1212AD-Package.exe",
             "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/data/packages/AncientEmpires-Package.exe"
         },
+        customWebsiteLinks: {},
+        tooltipData: {},
         showDownloadButtonAtRoot: true
     });
 

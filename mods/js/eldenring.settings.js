@@ -27,6 +27,10 @@
         downloadButtonFiles: [],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
+        customWebsiteLinks: {
+            "Convergence (2.2.3).zip": "https://www.convergencemod.com/",
+        },
+        tooltipData: {},
         showDownloadButtonAtRoot: true
     });
 
