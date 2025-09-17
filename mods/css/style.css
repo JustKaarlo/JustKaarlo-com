@@ -196,8 +196,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow-y: auto;
-    scrollbar-width: none;
+    overflow: visible;
+    position: relative;
 }
 
 .file-entry a {
