@@ -33,7 +33,6 @@
             "FS25_FarmlandOverview.zip",
             "FS25_unloadPotatoSeeders.zip",
             "FS25_SmallPotatoFactory.zip",
-            "FS25_extendedSugarBeetAndPotatoHarvesters.zip",
             "FS25_Ropa_BFE.zip",
             "FS25_TerrainHeightAdjuster.zip",
         ],
@@ -50,7 +49,6 @@
             "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
             "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
             "FS25_SmallPotatoFactory.zip": "https://www.kingmods.net/en/fs25/mods/61520/small-potato-factory",
-            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": "https://www.kingmods.net/en/fs25/mods/65113/extended-sugar-beet-and-potato-harvesters",
             "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/66532/ropa-tiger-6s-big-field-edition",
             "FS25_TerrainHeightAdjuster.zip": "https://www.kingmods.net/en/fs25/mods/64784/terrain-height-adjuster",
         },
@@ -113,15 +111,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-DbPkv.jpg",
                 ],
                 description: ""
-            },
-            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-nPPoJ.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-adOVX.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-JIEuH.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-6mH1m.jpg",
-                ],
-                description: "This mod make it possibile that the sugar beet and potato harvesters now can harvest all earth fruits."
             },
             "FS25_Ropa_BFE.zip": {
                 images: [
