@@ -19,6 +19,8 @@
             "FS25_TestDrive.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_FarmlandOverview.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_unloadPotatoSeeders.zip": "https://www.justkaarlo.com/res/src/fs.ico",
+            "FS25_SmallPotatoFactory.zip": "https://www.justkaarlo.com/res/src/fs.ico",
+            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": "https://www.justkaarlo.com/res/src/fs.ico",
         },
         customFolderIcons: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
@@ -38,7 +40,9 @@
             "FS25_transportBoxes.zip",
             "FS25_TestDrive.zip",
             "FS25_FarmlandOverview.zip",
-            "FS25_unloadPotatoSeeders.zip"
+            "FS25_unloadPotatoSeeders.zip",
+            "FS25_SmallPotatoFactory.zip",
+            "FS25_extendedSugarBeetAndPotatoHarvesters.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
@@ -52,6 +56,8 @@
             "FS25_TestDrive.zip": "https://www.kingmods.net/en/fs25/mods/68946/test-drive",
             "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
             "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
+            "FS25_SmallPotatoFactory.zip": "https://www.kingmods.net/en/fs25/mods/61520/small-potato-factory",
+            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": "https://www.kingmods.net/en/fs25/mods/65113/extended-sugar-beet-and-potato-harvesters",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -104,6 +110,23 @@
             "FS25_unloadPotatoSeeders.zip": {
                 images: [],
                 description: "This mod allows you to unload potatos from potato seeders."
+            },
+            "FS25_SmallPotatoFactory.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-fP6LM.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-ElvEW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-DbPkv.jpg",
+                ],
+                description: ""
+            },
+            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-nPPoJ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-adOVX.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-JIEuH.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/extended-sugar-beet-and-potato-harvesters-fs25-6mH1m.jpg",
+                ],
+                description: "This mod make it possibile that the sugar beet and potato harvesters now can harvest all earth fruits."
             },
         },
         showDownloadButtonAtRoot: true
