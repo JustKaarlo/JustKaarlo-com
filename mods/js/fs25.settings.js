@@ -25,28 +25,13 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs"
         ],
         folderGradientFallback: {},
-        downloadButtonFiles: [
-            "FS25_rootCropStorage.zip",
-            "FS25_EnhancedAnimalSystem.zip",
-            "FS25_TestDrive.zip",
-            "FS25_FarmlandOverview.zip",
-            "FS25_unloadPotatoSeeders.zip",
-            "FS25_SmallPotatoFactory.zip",
-            "FS25_TerrainHeightAdjuster.zip",
-        ],
+        downloadButtonFiles: [],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
         customWebsiteLinks: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
-            "FS25_rootCropStorage.zip": "https://www.kingmods.net/en/fs25/mods/59999/root-crop-storage",
-            "FS25_EnhancedAnimalSystem.zip": "https://www.kingmods.net/en/fs25/mods/70701/enhanced-animal-system",
-            "FS25_TestDrive.zip": "https://www.kingmods.net/en/fs25/mods/68946/test-drive",
-            "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
-            "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
-            "FS25_SmallPotatoFactory.zip": "https://www.kingmods.net/en/fs25/mods/61520/small-potato-factory",
-            "FS25_TerrainHeightAdjuster.zip": "https://www.kingmods.net/en/fs25/mods/64784/terrain-height-adjuster",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -59,49 +44,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-sz9hQ.jpg"
                 ],
                 description: "This building is for storage of Potatoes, Beets, Carrots, Parsnips and Beetroots. This building functions like a Silo or Hayloft, but for root crops."
-            },
-            "FS25_EnhancedAnimalSystem.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-XutyK.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-Y3kkp.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-z7YH2.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-TEV0m.jpg",
-                ],
-                description: "This mod adjusts the animal system and expands it."
-            },
-            "FS25_FarmlandOverview.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-DS98r.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-j2UoW.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-usZMh.jpg",
-                ],
-                description: "Quickly get an overview of all farmlands and fields. Your own fields are displayed first."
-            },
-            "FS25_TestDrive.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-hmFtH.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-bDlQy.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-eLfWS.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-KUAIJ.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-q5xp0.jpg",
-                ],
-                description: "This mod lets you test drive a vehicle free of charge for a very limited length of time."
-            },
-            "FS25_unloadPotatoSeeders.zip": {
-                images: [],
-                description: "This mod allows you to unload potatos from potato seeders."
-            },
-            "FS25_SmallPotatoFactory.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-fP6LM.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-ElvEW.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-DbPkv.jpg",
-                ],
-                description: ""
-            },
-            "FS25_TerrainHeightAdjuster.zip": {
-                images: [],
-                description: "PLEASE OPEN THE LINK AND READ THE DESCRIPTION"
             },
         },
         showDownloadButtonAtRoot: true
