@@ -12,17 +12,7 @@
         folderId: fsRootFolderId,
         container: fsContainer,
         apiKey,
-        customIcons: {
-            "FS25_rootCropStorage.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_EnhancedAnimalSystem.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_transportBoxes.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_TestDrive.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_FarmlandOverview.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_unloadPotatoSeeders.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_SmallPotatoFactory.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_extendedSugarBeetAndPotatoHarvesters.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-            "FS25_Ropa_BFE.zip": "https://www.justkaarlo.com/res/src/fs.ico",
-        },
+        customIcons: {},
         customFolderIcons: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
@@ -45,6 +35,7 @@
             "FS25_SmallPotatoFactory.zip",
             "FS25_extendedSugarBeetAndPotatoHarvesters.zip",
             "FS25_Ropa_BFE.zip",
+            "FS25_TerrainHeightAdjuster.zip",
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
@@ -61,6 +52,7 @@
             "FS25_SmallPotatoFactory.zip": "https://www.kingmods.net/en/fs25/mods/61520/small-potato-factory",
             "FS25_extendedSugarBeetAndPotatoHarvesters.zip": "https://www.kingmods.net/en/fs25/mods/65113/extended-sugar-beet-and-potato-harvesters",
             "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/66532/ropa-tiger-6s-big-field-edition",
+            "FS25_TerrainHeightAdjuster.zip": "https://www.kingmods.net/en/fs25/mods/64784/terrain-height-adjuster",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -140,6 +132,10 @@
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-KkhW6.jpg",
                 ],
                 description: "Tired of slow work and small fuel tanks? The ROPA Tiger6S Big Field Edition with the new BFE head lets you harvest any vegetable. Choose your hopper size, engine, and enjoy the largest fuel tank for fast, efficient field work."
+            },
+            "FS25_TerrainHeightAdjuster.zip": {
+                images: [],
+                description: "PLEASE OPEN THE LINK AND READ THE DESCRIPTION"
             },
         },
         showDownloadButtonAtRoot: true
