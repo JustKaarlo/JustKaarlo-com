@@ -17,6 +17,7 @@
             "FS25_EnhancedAnimalSystem.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_transportBoxes.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_TestDrive.zip": "https://www.justkaarlo.com/res/src/fs.ico",
+            "FS25_FarmlandOverview.zip": "https://www.justkaarlo.com/res/src/fs.ico",
         },
         customFolderIcons: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
@@ -34,7 +35,8 @@
             "FS25_rootCropStorage.zip",
             "FS25_EnhancedAnimalSystem.zip",
             "FS25_transportBoxes.zip",
-            "FS25_TestDrive.zip"
+            "FS25_TestDrive.zip",
+            "FS25_FarmlandOverview.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
@@ -46,6 +48,7 @@
             "FS25_EnhancedAnimalSystem.zip": "https://www.kingmods.net/en/fs25/mods/70701/enhanced-animal-system",
             "FS25_transportBoxes.zip": "https://www.kingmods.net/en/fs25/mods/70732/transport-boxes-for-vegetables",
             "FS25_TestDrive.zip": "https://www.kingmods.net/en/fs25/mods/68946/test-drive",
+            "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
