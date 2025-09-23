@@ -31,6 +31,7 @@
         downloadButtonFiles: [
             "FS25_rootCropStorage.zip",
             "FS25_EnhancedAnimalSystem.zip",
+            "FS25_transportBoxes.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
@@ -38,18 +39,19 @@
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
-            "FS25_rootCropStorage.zip": "https://www.farming-simulator.com/mod.php?mod_id=303719&title=fs2025",
+            "FS25_rootCropStorage.zip": "https://www.kingmods.net/en/fs25/mods/59999/root-crop-storage",
             "FS25_EnhancedAnimalSystem.zip": "https://www.kingmods.net/en/fs25/mods/70701/enhanced-animal-system",
+            "FS25_transportBoxes.zip": "https://www.kingmods.net/en/fs25/mods/70732/transport-boxes-for-vegetables",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
                 images: [
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot0.jpg",
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot1.jpg",
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot2.jpg",
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot3.jpg",
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot4.jpg",
-                    "https://www.justkaarlo.com/res/fs25-screenshot/screenshot5.jpg"
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-xag1c.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-SlsuP.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-fU882.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-C9NTN.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-n7vKG.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-sz9hQ.jpg"
                 ],
                 description: "This building is for storage of Potatoes, Beets, Carrots, Parsnips and Beetroots. This building functions like a Silo or Hayloft, but for root crops."
             },
@@ -61,6 +63,15 @@
                     "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-TEV0m.jpg",
                 ],
                 description: "This mod adjusts the animal system and expands it."
+            },
+            "FS25_transportBoxes.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-MQdQj.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-CTDf5.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-0Ke9A.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-pVqlr.jpg",
+                ],
+                description: "Transport Boxes in Full Metal Model or with Wooden Planks. Essential helpers to store your vegetables at your Farm."
             },
         },
         showDownloadButtonAtRoot: true
