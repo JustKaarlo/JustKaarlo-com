@@ -33,7 +33,6 @@
             "FS25_FarmlandOverview.zip",
             "FS25_unloadPotatoSeeders.zip",
             "FS25_SmallPotatoFactory.zip",
-            "FS25_Ropa_BFE.zip",
             "FS25_TerrainHeightAdjuster.zip",
         ],
         excludeDownloadFiles: [],
@@ -49,7 +48,6 @@
             "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
             "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
             "FS25_SmallPotatoFactory.zip": "https://www.kingmods.net/en/fs25/mods/61520/small-potato-factory",
-            "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/66532/ropa-tiger-6s-big-field-edition",
             "FS25_TerrainHeightAdjuster.zip": "https://www.kingmods.net/en/fs25/mods/64784/terrain-height-adjuster",
         },
         tooltipData: {
@@ -111,16 +109,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/small-potato-factory-fs25-DbPkv.jpg",
                 ],
                 description: ""
-            },
-            "FS25_Ropa_BFE.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-kWPCt.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-M1hXJ.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-IolD0.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-UDkws.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-KkhW6.jpg",
-                ],
-                description: "Tired of slow work and small fuel tanks? The ROPA Tiger6S Big Field Edition with the new BFE head lets you harvest any vegetable. Choose your hopper size, engine, and enjoy the largest fuel tank for fast, efficient field work."
             },
             "FS25_TerrainHeightAdjuster.zip": {
                 images: [],
