@@ -24,13 +24,16 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs"
         ],
         folderGradientFallback: {},
-        downloadButtonFiles: [],
+        downloadButtonFiles: [
+            "FS25_TowingChain.zip"
+        ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
         customWebsiteLinks: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
+            "FS25_TowingChain.zip": "https://www.kingmods.net/en/fs25/mods/66050/towing-chain-with-hook",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -40,9 +43,20 @@
                     "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-fU882.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-C9NTN.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-n7vKG.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-sz9hQ.jpg"
+                    "https://www.kingmods.net/uploads/fs25/mods/root-crop-storage-fs25-sz9hQ.jpg",
                 ],
                 description: "This building is for storage of Potatoes, Beets, Carrots, Parsnips and Beetroots. This building functions like a Silo or Hayloft, but for root crops."
+            },
+            "FS25_TowingChain.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-K3nei.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-u8A25.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-eIH1Q.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-Xwo1N.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-PHh1I.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-3EQpM.jpg",
+                ],
+                description: "With this mod you can tow vehicles by towing chain. You can also mount a towing hook to vehicles that have no attacher and then attach the towing chain to this hook."
             },
         },
         showDownloadButtonAtRoot: true
