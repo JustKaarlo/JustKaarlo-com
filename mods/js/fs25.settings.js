@@ -18,6 +18,7 @@
             "FS25_transportBoxes.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_TestDrive.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_FarmlandOverview.zip": "https://www.justkaarlo.com/res/src/fs.ico",
+            "FS25_unloadPotatoSeeders.zip": "https://www.justkaarlo.com/res/src/fs.ico",
         },
         customFolderIcons: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
@@ -36,7 +37,8 @@
             "FS25_EnhancedAnimalSystem.zip",
             "FS25_transportBoxes.zip",
             "FS25_TestDrive.zip",
-            "FS25_FarmlandOverview.zip"
+            "FS25_FarmlandOverview.zip",
+            "FS25_unloadPotatoSeeders.zip"
         ],
         excludeDownloadFiles: [],
         customDownloadLinks: {},
@@ -49,6 +51,7 @@
             "FS25_transportBoxes.zip": "https://www.kingmods.net/en/fs25/mods/70732/transport-boxes-for-vegetables",
             "FS25_TestDrive.zip": "https://www.kingmods.net/en/fs25/mods/68946/test-drive",
             "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
+            "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -97,6 +100,10 @@
                     "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-q5xp0.jpg",
                 ],
                 description: "This mod lets you test drive a vehicle free of charge for a very limited length of time."
+            },
+            "FS25_unloadPotatoSeeders.zip": {
+                images: [],
+                description: "This mod allows you to unload potatos from potato seeders."
             },
         },
         showDownloadButtonAtRoot: true
