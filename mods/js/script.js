@@ -217,7 +217,11 @@ function getTooltipData({ file, folderId, path, tooltipData }) {
         || tooltipData[keyById];
 }
 
-// Enhanced Tooltip System
+// Enhanced Tooltip System - Fixed Version
+let currentTooltipElement = null;
+let tooltipShowTimeout = null;
+let tooltipHideTimeout = null;
+
 function createEnhancedTooltip(data) {
     const tooltip = document.createElement('div');
     tooltip.className = 'enhanced-tooltip';
@@ -296,56 +300,120 @@ function createEnhancedTooltip(data) {
     return tooltip;
 }
 
-function showEnhancedTooltip(element, tooltipData) {
-    hideEnhancedTooltip(); // Hide any existing tooltips
+function hideEnhancedTooltip(immediate = false) {
+    // Clear any pending show timeout
+    if (tooltipShowTimeout) {
+        clearTimeout(tooltipShowTimeout);
+        tooltipShowTimeout = null;
+    }
     
-    const tooltip = createEnhancedTooltip(tooltipData);
-    tooltip.id = 'active-enhanced-tooltip';
-    document.body.appendChild(tooltip);
+    // Clear any pending hide timeout
+    if (tooltipHideTimeout) {
+        clearTimeout(tooltipHideTimeout);
+        tooltipHideTimeout = null;
+    }
     
-    const updatePosition = (e) => {
-        const rect = element.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
-        
-        let left = e.clientX + 10;
-        let top = e.clientY + 10;
-        
-        // Adjust position to keep tooltip in viewport
-        if (left + tooltipRect.width > window.innerWidth) {
-            left = e.clientX - tooltipRect.width - 10;
-        }
-        if (top + tooltipRect.height > window.innerHeight) {
-            top = e.clientY - tooltipRect.height - 10;
-        }
-        
-        tooltip.style.left = `${left}px`;
-        tooltip.style.top = `${top}px`;
-    };
-    
-    element.addEventListener('mousemove', updatePosition);
-    element.addEventListener('mouseleave', hideEnhancedTooltip);
-    
-    updatePosition({ clientX: element.getBoundingClientRect().left, clientY: element.getBoundingClientRect().top });
-    
-    setTimeout(() => {
-        tooltip.classList.add('visible');
-    }, 100);
-}
-
-function hideEnhancedTooltip() {
     const existingTooltip = document.getElementById('active-enhanced-tooltip');
     if (existingTooltip) {
         // Clear slideshow interval if it exists
         if (existingTooltip.slideInterval) {
             clearInterval(existingTooltip.slideInterval);
+            existingTooltip.slideInterval = null;
         }
         
-        existingTooltip.classList.remove('visible');
-        setTimeout(() => {
-            if (existingTooltip.parentNode) {
-                existingTooltip.remove();
+        if (immediate) {
+            // Remove immediately without animation
+            existingTooltip.remove();
+        } else {
+            // Animate out
+            existingTooltip.classList.remove('visible');
+            tooltipHideTimeout = setTimeout(() => {
+                if (existingTooltip.parentNode) {
+                    existingTooltip.remove();
+                }
+                tooltipHideTimeout = null;
+            }, 200);
+        }
+    }
+    
+    currentTooltipElement = null;
+}
+
+function showEnhancedTooltip(element, tooltipData) {
+    // If this is the same element, don't do anything
+    if (currentTooltipElement === element) {
+        return;
+    }
+    
+    // Immediately hide any existing tooltip
+    hideEnhancedTooltip(true);
+    
+    // Clear any pending timeouts
+    if (tooltipShowTimeout) {
+        clearTimeout(tooltipShowTimeout);
+    }
+    
+    // Set current element
+    currentTooltipElement = element;
+    
+    // Debounce the tooltip showing
+    tooltipShowTimeout = setTimeout(() => {
+        // Double-check that we're still supposed to show this tooltip
+        if (currentTooltipElement !== element) {
+            return;
+        }
+        
+        const tooltip = createEnhancedTooltip(tooltipData);
+        tooltip.id = 'active-enhanced-tooltip';
+        document.body.appendChild(tooltip);
+        
+        const updatePosition = (e) => {
+            if (!tooltip.parentNode) return; // Tooltip was removed
+            
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            
+            let left = e.clientX + 10;
+            let top = e.clientY + 10;
+            
+            // Adjust position to keep tooltip in viewport
+            if (left + tooltipRect.width > window.innerWidth) {
+                left = e.clientX - tooltipRect.width - 10;
             }
-        }, 200);
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = e.clientY - tooltipRect.height - 10;
+            }
+            
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${top}px`;
+        };
+        
+        // Position the tooltip
+        const rect = element.getBoundingClientRect();
+        updatePosition({ 
+            clientX: rect.left + rect.width / 2, 
+            clientY: rect.top + rect.height / 2 
+        });
+        
+        // Show tooltip with animation
+        setTimeout(() => {
+            if (tooltip.parentNode) {
+                tooltip.classList.add('visible');
+            }
+        }, 50);
+        
+        tooltipShowTimeout = null;
+    }, 150); // 150ms delay before showing
+}
+
+function handleTooltipMouseEnter(element, tooltipData) {
+    showEnhancedTooltip(element, tooltipData);
+}
+
+function handleTooltipMouseLeave(element) {
+    // Only hide if we're leaving the element that triggered the current tooltip
+    if (currentTooltipElement === element) {
+        hideEnhancedTooltip();
     }
 }
 
@@ -570,16 +638,18 @@ async function listFilesInFolder({
         link.href = file.webViewLink;
         link.target = "_blank";
 
-        // Add enhanced tooltip functionality
+        // Add enhanced tooltip functionality with fixed event handling
         const fileTooltipData = getTooltipData({ file, folderId, path, tooltipData });
         if (fileTooltipData) {
-            link.addEventListener('mouseenter', (e) => {
-                showEnhancedTooltip(link, fileTooltipData);
+            link.addEventListener('mouseenter', () => {
+                handleTooltipMouseEnter(link, fileTooltipData);
             });
-        }
-
-        link.addEventListener('mousemove', (e) => {
-            if (!fileTooltipData) { // Only apply transform if no tooltip
+            link.addEventListener('mouseleave', () => {
+                handleTooltipMouseLeave(link);
+            });
+        } else {
+            // Only apply transform if no tooltip
+            link.addEventListener('mousemove', (e) => {
                 const rect = link.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
@@ -588,13 +658,11 @@ async function listFilesInFolder({
                 const rotateX = ((y - midY) / midY) * 2;
                 const rotateY = ((x - midX) / midX) * 2;
                 link.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            }
-        });
-        link.addEventListener('mouseleave', () => {
-            if (!fileTooltipData) {
+            });
+            link.addEventListener('mouseleave', () => {
                 link.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
-            }
-        });
+            });
+        }
 
         const icon = document.createElement("img");
         const iconKey = `${folderId}/${file.name}`;
@@ -750,11 +818,29 @@ async function listFilesInFolder({
         nameSpan.className = "folder-name";
         nameSpan.textContent = folder.name;
 
-        // Add enhanced tooltip functionality for folders
+        // Add enhanced tooltip functionality for folders with fixed event handling
         const folderTooltipData = getTooltipData({ file: folder, folderId, path, tooltipData });
         if (folderTooltipData) {
-            nameSpan.addEventListener('mouseenter', (e) => {
-                showEnhancedTooltip(nameSpan, folderTooltipData);
+            nameSpan.addEventListener('mouseenter', () => {
+                handleTooltipMouseEnter(nameSpan, folderTooltipData);
+            });
+            nameSpan.addEventListener('mouseleave', () => {
+                handleTooltipMouseLeave(nameSpan);
+            });
+        } else {
+            // Only apply transform if no tooltip
+            nameSpan.addEventListener('mousemove', (e) => {
+                const rect = nameSpan.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const midX = rect.width / 2;
+                const midY = rect.height / 2;
+                const rotateX = ((y - midY) / midY) * 2;
+                const rotateY = ((x - midX) / midX) * 2;
+                nameSpan.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            nameSpan.addEventListener('mouseleave', () => {
+                nameSpan.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
             });
         }
 
@@ -910,24 +996,6 @@ async function listFilesInFolder({
             subList.style.display = isOpen ? "none" : "block";
             arrow.classList.toggle("open", !isOpen);
             li.classList.toggle("folder-open", !isOpen);
-        });
-
-        nameSpan.addEventListener('mousemove', (e) => {
-            if (!folderTooltipData) { // Only apply transform if no tooltip
-                const rect = nameSpan.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const midX = rect.width / 2;
-                const midY = rect.height / 2;
-                const rotateX = ((y - midY) / midY) * 2;
-                const rotateY = ((x - midX) / midX) * 2;
-                nameSpan.style.transform = `translateX(1.5px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            }
-        });
-        nameSpan.addEventListener('mouseleave', () => {
-            if (!folderTooltipData) {
-                nameSpan.style.transform = 'translateX(0px) rotateX(0deg) rotateY(0deg) scale(1)';
-            }
         });
 
         fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(size,mimeType)&key=${apiKey}`)

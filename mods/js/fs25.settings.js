@@ -21,19 +21,24 @@
         colorizeFiles: [],
         excludePartsFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
-            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs"
+            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
         ],
         folderGradientFallback: {},
         downloadButtonFiles: [
-            "FS25_TowingChain.zip"
+            "FS25_TowingChain.zip",
+            "FS25_dice.zip"
         ],
-        excludeDownloadFiles: [],
+        excludeDownloadFiles: [
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
+            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
+        ],
         customDownloadLinks: {},
         customWebsiteLinks: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "FS25_TowingChain.zip": "https://www.kingmods.net/en/fs25/mods/66050/towing-chain-with-hook",
+            "FS25_dice.zip": "https://www.kingmods.net/en/fs25/mods/70469/dice-extra-slot-machine",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -57,6 +62,15 @@
                     "https://www.kingmods.net/uploads/fs25/mods/towing-chain-with-hook-fs25-3EQpM.jpg",
                 ],
                 description: "With this mod you can tow vehicles by towing chain. You can also mount a towing hook to vehicles that have no attacher and then attach the towing chain to this hook."
+            },
+            "FS25_dice.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/dice-extra-slot-machine-fs25-LeKyR.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dice-extra-slot-machine-fs25-ho87s.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dice-extra-slot-machine-fs25-dGnL5.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dice-extra-slot-machine-fs25-h9OUL.jpg",
+                ],
+                description: "This is a reality-based slot machine, you have to put money in it, there is 50 euros worth of money and 13 euros worth of money, you choose how much you put in."
             },
         },
         showDownloadButtonAtRoot: true
