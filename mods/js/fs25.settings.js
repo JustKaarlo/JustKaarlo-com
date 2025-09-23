@@ -15,6 +15,7 @@
         customIcons: {
             "FS25_rootCropStorage.zip": "https://www.justkaarlo.com/res/src/fs.ico",
             "FS25_EnhancedAnimalSystem.zip": "https://www.justkaarlo.com/res/src/fs.ico",
+            "FS25_transportBoxes.zip": "https://www.justkaarlo.com/res/src/fs.ico",
         },
         customFolderIcons: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://cdn.buymeacoffee.com/uploads/membership_level/2024/06/x3t3ecJIeddW9EwyTs8ZbPV3KsmZTicsiIbWq4l8.png@800w_0e.webp",
