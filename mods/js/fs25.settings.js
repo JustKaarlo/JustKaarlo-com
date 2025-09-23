@@ -80,6 +80,24 @@
                 ],
                 description: "Transport Boxes in Full Metal Model or with Wooden Planks. Essential helpers to store your vegetables at your Farm."
             },
+            "FS25_FarmlandOverview.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-DS98r.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-j2UoW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/farmland-overview-fs25-usZMh.jpg",
+                ],
+                description: "Quickly get an overview of all farmlands and fields. Your own fields are displayed first."
+            },
+            "FS25_TestDrive.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-hmFtH.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-bDlQy.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-eLfWS.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-KUAIJ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/test-drive-fs25-q5xp0.jpg",
+                ],
+                description: "This mod lets you test drive a vehicle free of charge for a very limited length of time."
+            },
         },
         showDownloadButtonAtRoot: true
     });
