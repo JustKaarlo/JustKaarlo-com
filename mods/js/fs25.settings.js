@@ -28,7 +28,6 @@
         downloadButtonFiles: [
             "FS25_rootCropStorage.zip",
             "FS25_EnhancedAnimalSystem.zip",
-            "FS25_transportBoxes.zip",
             "FS25_TestDrive.zip",
             "FS25_FarmlandOverview.zip",
             "FS25_unloadPotatoSeeders.zip",
@@ -43,7 +42,6 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "FS25_rootCropStorage.zip": "https://www.kingmods.net/en/fs25/mods/59999/root-crop-storage",
             "FS25_EnhancedAnimalSystem.zip": "https://www.kingmods.net/en/fs25/mods/70701/enhanced-animal-system",
-            "FS25_transportBoxes.zip": "https://www.kingmods.net/en/fs25/mods/70732/transport-boxes-for-vegetables",
             "FS25_TestDrive.zip": "https://www.kingmods.net/en/fs25/mods/68946/test-drive",
             "FS25_FarmlandOverview.zip": "https://www.kingmods.net/en/fs25/mods/64699/farmland-overview",
             "FS25_unloadPotatoSeeders.zip": "https://www.kingmods.net/en/fs25/mods/68942/unload-potato-seeders",
@@ -70,15 +68,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/enhanced-animal-system-fs25-TEV0m.jpg",
                 ],
                 description: "This mod adjusts the animal system and expands it."
-            },
-            "FS25_transportBoxes.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-MQdQj.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-CTDf5.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-0Ke9A.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/transport-boxes-for-vegetables-fs25-pVqlr.jpg",
-                ],
-                description: "Transport Boxes in Full Metal Model or with Wooden Planks. Essential helpers to store your vegetables at your Farm."
             },
             "FS25_FarmlandOverview.zip": {
                 images: [
