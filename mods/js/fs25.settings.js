@@ -43,6 +43,9 @@
             "FS25_Scorpio710.zip": "https://www.kingmods.net/en/fs25/mods/59104/elho-scorpio-710-stone-picker",
             "FS25_DeutzS9_AgrarTec.zip": "https://www.kingmods.net/en/fs25/mods/59330/deutz-fahr-sieries-9-agrar-tec",
             "FS25_JohnDeereGator6x4.zip": "https://www.kingmods.net/en/fs25/mods/70597/john-deere-gator-th-6x4",
+            "FS25_SWIFTER_SM_18000_By_TaZ_Modding.zip": "https://www.kingmods.net/en/fs25/mods/69635/bednar-swifter-sm18000",
+            "FS25_JohnDeere_Ripper2100.zip": "https://www.kingmods.net/en/fs25/mods/69950/john-deere-2100-ripper",
+            "FS25_CaseEcoloTil2500.zip": "https://www.kingmods.net/en/fs25/mods/69710/case-ecolo-til-2500",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -129,6 +132,27 @@
                 ],
                 description: ""
             },
+            "FS25_SWIFTER_SM_18000_By_TaZ_Modding.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/bednar-swifter-sm18000-fs25-bixCY.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/bednar-swifter-sm18000-fs25-0XOcC.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JohnDeere_Ripper2100.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-2100-ripper-fs25-kUznv.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-2100-ripper-fs25-DdbNa.jpg",
+                ],
+                description: ""
+            },
+            "FS25_CaseEcoloTil2500.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/case-ecolo-til-2500-fs25-LOHAk.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/case-ecolo-til-2500-fs25-GtOp7.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -140,6 +164,9 @@
             "FS25_Scorpio710.zip": "ELHO Scorpio 710 Stone Picker",
             "FS25_DeutzS9_AgrarTec.zip": "Deutz-Fahr Sieries 9 - Agrar-Tec",
             "FS25_JohnDeereGator6x4.zip": "John Deere Gator TH 6x4",
+            "FS25_SWIFTER_SM_18000_By_TaZ_Modding.zip": "Bednar Swifter SM18000",
+            "FS25_JohnDeere_Ripper2100.zip": "John Deere 2100 Ripper",
+            "FS25_CaseEcoloTil2500.zip": "Case Ecolo-Til 2500",
         },
         customTags: {
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
@@ -157,3 +184,7 @@
     });
     attachDocPreview(fsContainer);
 })()
+
+"C:\Users\miogr\Downloads\ "FS25_SWIFTER_SM_18000_By_TaZ_Modding.zip"
+"C:\Users\miogr\Downloads\ "FS25_JohnDeere_Ripper2100.zip"
+"C:\Users\miogr\Downloads\ "FS25_CaseEcoloTil2500.zip"
