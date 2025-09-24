@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
     
@@ -184,7 +184,3 @@
     });
     attachDocPreview(fsContainer);
 })()
-
-"C:\Users\miogr\Downloads\ "FS25_SWIFTER_SM_18000_By_TaZ_Modding.zip"
-"C:\Users\miogr\Downloads\ "FS25_JohnDeere_Ripper2100.zip"
-"C:\Users\miogr\Downloads\ "FS25_CaseEcoloTil2500.zip"
