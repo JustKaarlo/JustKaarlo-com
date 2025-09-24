@@ -253,6 +253,34 @@ li.folder-open .folder-entry img {
     margin-left: 6px;
 }
 
+/* Custom Tag Styles */
+.custom-tag {
+    background: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    font-family: 'Poppins', monospace;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease;
+}
+
+.custom-tag:hover {
+    transform: scale(1.05);
+}
+
+/* Container for tags to ensure proper spacing */
+.tags-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
 .folder-entry {
     display: flex;
     justify-content: space-between;
@@ -729,6 +757,15 @@ body.modal-open .nav-container {
     .enhanced-tooltip {
         max-width: 250px;
         min-width: 180px;
+    }
+
+    .tags-container {
+        gap: 4px;
+    }
+
+    .custom-tag {
+        font-size: 11px;
+        padding: 1px 6px;
     }
 }
 

@@ -147,7 +147,12 @@
         },
         customWebsiteLinks: {},
         tooltipData: {},
-        showDownloadButtonAtRoot: true
+        showDownloadButtonAtRoot: true,
+        customDisplayNames: {},
+        customTags: {},
+        hideAllSizeTags: false,
+        hideSizeTagFiles: [],
+        hideSizeTagFolders: [],
     });
 
     attachDocPreview(twContainer);

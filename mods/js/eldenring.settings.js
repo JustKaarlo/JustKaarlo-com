@@ -31,7 +31,14 @@
             "Convergence (2.2.3).zip": "https://www.convergencemod.com/",
         },
         tooltipData: {},
-        showDownloadButtonAtRoot: true
+        showDownloadButtonAtRoot: true,
+        customDisplayNames: {},
+        customTags: {},
+        customDisplayNames: {},
+        customTags: {},
+        hideAllSizeTags: false,
+        hideSizeTagFiles: [],
+        hideSizeTagFolders: [],
     });
 
     attachDocPreview(erContainer);

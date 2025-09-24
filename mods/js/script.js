@@ -217,6 +217,75 @@ function getTooltipData({ file, folderId, path, tooltipData }) {
         || tooltipData[keyById];
 }
 
+function getCustomDisplayName({ file, folderId, path, customDisplayNames }) {
+    if (!customDisplayNames) return file.name;
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    return customDisplayNames[file.name] 
+        || customDisplayNames[file.id] 
+        || customDisplayNames[keyByPath] 
+        || customDisplayNames[keyById]
+        || file.name;
+}
+
+function getCustomTags({ file, folderId, path, customTags }) {
+    if (!customTags) return [];
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    const tags = customTags[file.name] 
+        || customTags[file.id] 
+        || customTags[keyByPath] 
+        || customTags[keyById];
+    
+    // Ensure tags is always an array
+    if (!tags) return [];
+    return Array.isArray(tags) ? tags : [tags];
+}
+
+function shouldHideSizeTag({ file, folderId, path, hideSizeTagFiles }) {
+    if (!hideSizeTagFiles || hideSizeTagFiles.length === 0) return false;
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    return hideSizeTagFiles.includes(file.name)
+        || hideSizeTagFiles.includes(file.id)
+        || hideSizeTagFiles.includes(keyByPath)
+        || hideSizeTagFiles.includes(keyById);
+}
+
+function createCustomTag(tagConfig) {
+    const tag = document.createElement("span");
+    tag.className = "custom-tag";
+    tag.textContent = tagConfig.text || tagConfig;
+    
+    if (tagConfig.color) {
+        // Convert hex to rgba with transparency
+        const hex = tagConfig.color.replace('#', '');
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+        
+        // Use custom background opacity or default to 0.35
+        const bgOpacity = tagConfig.opacity !== undefined ? tagConfig.opacity : 0.35;
+        tag.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${bgOpacity})`;
+        
+        // Determine base text color based on original color brightness
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        const baseTextColor = brightness > 155 ? '0, 0, 0' : '255, 255, 255';
+        
+        // Use custom text opacity or default to 1.0 (fully opaque)
+        const textOpacity = tagConfig.textOpacity !== undefined ? tagConfig.textOpacity : 1.0;
+        tag.style.color = `rgba(${baseTextColor}, ${textOpacity})`;
+    }
+    
+    return tag;
+}
+
 // Enhanced Tooltip System - Fixed Version
 let currentTooltipElement = null;
 let tooltipShowTimeout = null;
@@ -586,24 +655,31 @@ class DownloadManager {
 const downloadManager = new DownloadManager();
 
 // Main file listing function
-async function listFilesInFolder({
-    folderId,
-    container,
-    path = "",
-    apiKey,
-    customIcons = {},
-    customFolderIcons = {},
-    highlightFiles = [],
-    colorizeFiles = [],
-    folderGradientFallback = {},
-    showDownloadButtonAtRoot = true,
-    excludePartsFolders = [],
-    downloadButtonFiles = [],
-    excludeDownloadFiles = [],
-    customDownloadLinks = {},
-    customWebsiteLinks = {},
-    tooltipData = {}
-}) {
+async function listFilesInFolder(options) {
+    const {
+        folderId,
+        container,
+        path = "",
+        apiKey,
+        customIcons = {},
+        customFolderIcons = {},
+        highlightFiles = [],
+        colorizeFiles = [],
+        folderGradientFallback = {},
+        showDownloadButtonAtRoot = true,
+        excludePartsFolders = [],
+        downloadButtonFiles = [],
+        excludeDownloadFiles = [],
+        customDownloadLinks = {},
+        customWebsiteLinks = {},
+        tooltipData = {},
+        customDisplayNames = {},
+        customTags = {},
+        hideSizeTagFiles = [],
+        hideSizeTagFolders = [],
+        hideAllSizeTags = false
+    } = options;
+
     container.innerHTML = "";
 
     const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&key=${apiKey}&fields=files(id,name,mimeType,webViewLink,webContentLink,iconLink,size)`;
@@ -674,17 +750,34 @@ async function listFilesInFolder({
         }
 
         link.appendChild(icon);
-        link.appendChild(document.createTextNode(file.name));
+        
+        // Use custom display name if available
+        const displayName = getCustomDisplayName({ file, folderId, path, customDisplayNames });
+        link.appendChild(document.createTextNode(displayName));
 
         const fileEntry = document.createElement("div");
         fileEntry.className = "file-entry";
         fileEntry.appendChild(link);
 
-        if (file.size) {
+        // Tags and size container
+        const tagsContainer = document.createElement("div");
+        tagsContainer.className = "tags-container";
+        tagsContainer.style.cssText = "display: flex; align-items: center; gap: 6px; margin-left: auto;";
+
+        // Add custom tags
+        const fileTags = getCustomTags({ file, folderId, path, customTags });
+        fileTags.forEach(tagConfig => {
+            const customTag = createCustomTag(tagConfig);
+            tagsContainer.appendChild(customTag);
+        });
+
+        // Add size tag (unless hidden)
+        const shouldHideSize = hideAllSizeTags || shouldHideSizeTag({ file, folderId, path, hideSizeTagFiles });
+        if (file.size && !shouldHideSize) {
             const sizeTag = document.createElement("span");
             sizeTag.className = "file-size-tag";
             sizeTag.textContent = formatBytes(parseInt(file.size, 10));
-            fileEntry.appendChild(sizeTag);
+            tagsContainer.appendChild(sizeTag);
         }
 
         // Button container for multiple buttons
@@ -783,6 +876,10 @@ async function listFilesInFolder({
             buttonContainer.appendChild(websiteBtn);
         }
 
+        if (tagsContainer.children.length > 0) {
+            fileEntry.appendChild(tagsContainer);
+        }
+
         if (buttonContainer.children.length > 0) {
             fileEntry.appendChild(buttonContainer);
         }
@@ -816,7 +913,10 @@ async function listFilesInFolder({
 
         const nameSpan = document.createElement("span");
         nameSpan.className = "folder-name";
-        nameSpan.textContent = folder.name;
+        
+        // Use custom display name for folders too
+        const folderDisplayName = getCustomDisplayName({ file: folder, folderId, path, customDisplayNames });
+        nameSpan.textContent = folderDisplayName;
 
         // Add enhanced tooltip functionality for folders with fixed event handling
         const folderTooltipData = getTooltipData({ file: folder, folderId, path, tooltipData });
@@ -847,11 +947,34 @@ async function listFilesInFolder({
         const rightWrapper = document.createElement("div");
         rightWrapper.style.display = "flex";
         rightWrapper.style.alignItems = "center";
-        rightWrapper.style.gap = "1px";
+        rightWrapper.style.gap = "6px";
+
+        // Folder tags and info container
+        const folderTagsContainer = document.createElement("div");
+        folderTagsContainer.style.cssText = "display: flex; align-items: center; gap: 6px;";
+
+        // Add custom tags for folders
+        const folderTags = getCustomTags({ file: folder, folderId, path, customTags });
+        folderTags.forEach(tagConfig => {
+            const customTag = createCustomTag(tagConfig);
+            folderTagsContainer.appendChild(customTag);
+        });
 
         const sizeTag = document.createElement("span");
         sizeTag.className = "file-size-tag";
         sizeTag.textContent = "...";
+        
+        // Check if we should hide size tag for this folder
+        const shouldHideFolderSize = hideAllSizeTags || shouldHideSizeTag({ 
+            file: folder, 
+            folderId, 
+            path, 
+            hideSizeTagFiles: hideSizeTagFolders 
+        });
+        
+        if (!shouldHideFolderSize) {
+            folderTagsContainer.appendChild(sizeTag);
+        }
 
         const excludeParts = excludePartsFolders.includes(folder.id) || excludePartsFolders.includes(folder.name);
         let countTag = null;
@@ -859,6 +982,7 @@ async function listFilesInFolder({
             countTag = document.createElement("span");
             countTag.className = "file-count-tag";
             countTag.textContent = "";
+            folderTagsContainer.appendChild(countTag);
         }
 
         // Button container for folder buttons
@@ -951,8 +1075,7 @@ async function listFilesInFolder({
         leftWrapper.appendChild(icon);
         leftWrapper.appendChild(nameSpan);
 
-        rightWrapper.appendChild(sizeTag);
-        if (countTag) rightWrapper.appendChild(countTag);
+        rightWrapper.appendChild(folderTagsContainer);
         if (folderButtonContainer.children.length > 0) {
             rightWrapper.appendChild(folderButtonContainer);
         }
@@ -989,7 +1112,12 @@ async function listFilesInFolder({
                     excludeDownloadFiles,
                     customDownloadLinks,
                     customWebsiteLinks,
-                    tooltipData
+                    tooltipData,
+                    customDisplayNames,
+                    customTags,
+                    hideSizeTagFiles,
+                    hideSizeTagFolders,
+                    hideAllSizeTags
                 });
             }
             const isOpen = subList.style.display === "block";
@@ -1008,7 +1136,18 @@ async function listFilesInFolder({
                     .filter(f => f.size)
                     .reduce((sum, f) => sum + parseInt(f.size, 10), 0);
 
-                sizeTag.textContent = formatBytes(totalSize);
+                // Only update size if size tag isn't hidden
+                const shouldHideFolderSize = hideAllSizeTags || shouldHideSizeTag({ 
+                    file: folder, 
+                    folderId, 
+                    path, 
+                    hideSizeTagFiles: hideSizeTagFolders 
+                });
+                
+                if (!shouldHideFolderSize) {
+                    sizeTag.textContent = formatBytes(totalSize);
+                }
+                
                 if (countTag) {
                     const currentPath = window.location.pathname;
                     if (currentPath.includes('fs25')) {

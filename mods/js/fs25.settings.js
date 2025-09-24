@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
     
@@ -30,6 +30,8 @@
             "FS25_Piccin_MODBT11.zip",
             "FS25_n0tLizardNeoPack.zip",
             "FS25_Bednar_Terraland.zip",
+            "FS25_Scorpio710.zip",
+            "FS25_DeutzS9_AgrarTec.zip",
         ],
         excludeDownloadFiles: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -45,6 +47,8 @@
             "FS25_Piccin_MODBT11.zip": "https://www.kingmods.net/en/fs25/mods/69804/piccin-advanced-mod-bt-11",
             "FS25_n0tLizardNeoPack.zip": "https://www.kingmods.net/en/fs25/mods/65192/lizard-neo-pack",
             "FS25_Bednar_Terraland.zip": "https://www.kingmods.net/en/fs25/mods/68816/bednar-terraland",
+            "FS25_Scorpio710.zip": "https://www.kingmods.net/en/fs25/mods/59104/elho-scorpio-710-stone-picker",
+            "FS25_DeutzS9_AgrarTec.zip": "https://www.kingmods.net/en/fs25/mods/59330/deutz-fahr-sieries-9-agrar-tec",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -107,9 +111,46 @@
                 ],
                 description: ""
             },
+            "FS25_Scorpio710.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/elho-scorpio-710-stone-picker-fs25-5MQKw.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/elho-scorpio-710-stone-picker-fs25-Yi4vR.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/elho-scorpio-710-stone-picker-fs25-aNcvI.jpg",
+                ],
+                description: ""
+            },
+            "FS25_DeutzS9_AgrarTec.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/deutz-fahr-sieries-9-agrar-tec-fs25-q07oC.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/deutz-fahr-sieries-9-agrar-tec-fs25-TRxll.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/deutz-fahr-sieries-9-agrar-tec-fs25-KESX6.jpg",
+                ],
+                description: ""
+            },
         },
-        showDownloadButtonAtRoot: true
+        showDownloadButtonAtRoot: true,
+        customDisplayNames: {
+            "FS25_Bednar_Terraland.zip": "Bednar Terraland",
+            "FS25_dice.zip": "Dice Extra Slot machine",
+            "FS25_n0tLizardNeoPack.zip": "Lizard Neo Pack",
+            "FS25_Piccin_MODBT11.zip": "Piccin Advanced Mod BT 11",
+            "FS25_TowingChain.zip": "Towing Chain With Hook",
+            "FS25_Scorpio710.zip": "ELHO Scorpio 710 Stone Picker",
+            "FS25_DeutzS9_AgrarTec.zip": "Deutz-Fahr Sieries 9 - Agrar-Tec",
+        },
+        customTags: {
+            // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
+            //     { text: "Bright", color: "#FF0000", opacity: 0.8, textOpacity: 1.0 },
+            //     { text: "Subtle", color: "#00FF00", opacity: 0.3, textOpacity: 0.6 },
+            //     { text: "Ghost", color: "#0000FF", opacity: 0.2, textOpacity: 0.4 }
+            // ]
+        },
+        hideAllSizeTags: false,
+        hideSizeTagFiles: [],
+        hideSizeTagFolders: [
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
+            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
+        ],
     });
-
     attachDocPreview(fsContainer);
 })()
