@@ -24,6 +24,7 @@
         ],
         excludePartsFolders: [],
         folderGradientFallback: {},
+        showDownloadButtonForAllFiles: false,
         downloadButtonFiles: [],
         excludeDownloadFiles: [],
         customDownloadLinks: {},

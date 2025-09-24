@@ -99,34 +99,8 @@
             "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX"
         ],
         folderGradientFallback: {},
-        downloadButtonFiles: [
-            "Attila Extra Modifications.exe",
-            "Seven Kingdoms.exe",
-            "Total War Skyrim.exe",
-            "Northern Kingdoms Remastered.exe",
-
-            "Empire Total War II.rar",
-
-            "ACW2 The American Civil War.exe",
-            "Field Command Napoleon.exe",
-            "Grand Battle Mod.exe",
-            "Napoleonic Total War III.exe",
-
-            "Rome II Extra Modifications.exe",
-            "Divide et Impera.exe",
-            "Medieval 1100AD.exe",
-            "Radious Total War.exe",
-            "War of the Gods.exe",
-
-            "Last Alliance.exe",
-            "Pike & Shot II.exe",
-            "Rise of Empires.exe",
-            "Carlist Wars.exe",
-            "Scramble of the Far East.exe",
-
-            "Thrones Extra Modifications.exe",
-            "Age of Arthur.exe",
-        ],
+        showDownloadButtonForAllFiles: true,
+        downloadButtonFiles: [],
         excludeDownloadFiles: [
             "15r5NfzciWGfClpGvmT5ydfH4fDbScVAl",
             "1IsBsstw8TYRZ4FP_cl0ydaVLWRRjVbam",
