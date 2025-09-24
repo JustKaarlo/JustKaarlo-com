@@ -170,15 +170,35 @@ function getDownloadUrl(file, apiKey) {
     return `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${apiKey}`;
 }
 
-function shouldShowDownloadButtonForFile({ file, folderId, path, includeList }) {
-    if (!includeList || includeList.length === 0) return false;
+function shouldShowDownloadButtonForFile({ file, folderId, path, downloadButtonFiles, showDownloadButtonForAllFiles, showDownloadButtonAtRoot }) {
     const keyByPath = path ? `${path}${file.name}` : file.name;
     const keyById = `${folderId}/${file.name}`;
-
-    return includeList.includes(file.name)
-        || includeList.includes(file.id)
-        || includeList.includes(keyByPath)
-        || includeList.includes(keyById);
+    
+    const isInList = downloadButtonFiles && (
+        downloadButtonFiles.includes(file.name) ||
+        downloadButtonFiles.includes(file.id) ||
+        downloadButtonFiles.includes(keyByPath) ||
+        downloadButtonFiles.includes(keyById)
+    );
+    
+    // If we have a global setting for all files
+    if (showDownloadButtonForAllFiles !== undefined) {
+        if (showDownloadButtonForAllFiles) {
+            // Show for all files EXCEPT those in the list (exclusion mode)
+            return !isInList;
+        } else {
+            // Show ONLY for files in the list (inclusion mode)
+            return isInList;
+        }
+    }
+    
+    // Legacy behavior: show at root level unless specified otherwise
+    if (!path && showDownloadButtonAtRoot) {
+        return !isInList; // At root, show all except excluded
+    }
+    
+    // For subfolders, only show if specifically included
+    return isInList;
 }
 
 function isExcludedDownloadFile({ file, folderId, path, excludeList }) {
@@ -667,6 +687,7 @@ async function listFilesInFolder(options) {
         colorizeFiles = [],
         folderGradientFallback = {},
         showDownloadButtonAtRoot = true,
+        showDownloadButtonForAllFiles = undefined,
         excludePartsFolders = [],
         downloadButtonFiles = [],
         excludeDownloadFiles = [],
@@ -788,7 +809,9 @@ async function listFilesInFolder(options) {
             file,
             folderId,
             path,
-            includeList: downloadButtonFiles
+            downloadButtonFiles,
+            showDownloadButtonForAllFiles,
+            showDownloadButtonAtRoot
         });
 
         const excludeButton = isExcludedDownloadFile({
@@ -1107,6 +1130,7 @@ async function listFilesInFolder(options) {
                     colorizeFiles,
                     folderGradientFallback,
                     showDownloadButtonAtRoot: false,
+                    showDownloadButtonForAllFiles,
                     excludePartsFolders,
                     downloadButtonFiles,
                     excludeDownloadFiles,

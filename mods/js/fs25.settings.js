@@ -24,15 +24,8 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
         ],
         folderGradientFallback: {},
-        downloadButtonFiles: [
-            "FS25_TowingChain.zip",
-            "FS25_dice.zip",
-            "FS25_Piccin_MODBT11.zip",
-            "FS25_n0tLizardNeoPack.zip",
-            "FS25_Bednar_Terraland.zip",
-            "FS25_Scorpio710.zip",
-            "FS25_DeutzS9_AgrarTec.zip",
-        ],
+        showDownloadButtonForAllFiles: true,
+        downloadButtonFiles: [],
         excludeDownloadFiles: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
@@ -49,6 +42,7 @@
             "FS25_Bednar_Terraland.zip": "https://www.kingmods.net/en/fs25/mods/68816/bednar-terraland",
             "FS25_Scorpio710.zip": "https://www.kingmods.net/en/fs25/mods/59104/elho-scorpio-710-stone-picker",
             "FS25_DeutzS9_AgrarTec.zip": "https://www.kingmods.net/en/fs25/mods/59330/deutz-fahr-sieries-9-agrar-tec",
+            "FS25_JohnDeereGator6x4.zip": "https://www.kingmods.net/en/fs25/mods/70597/john-deere-gator-th-6x4",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -127,6 +121,14 @@
                 ],
                 description: ""
             },
+            "FS25_JohnDeereGator6x4.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-gator-th-6x4-fs25-DCBsK.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-gator-th-6x4-fs25-WXysT.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-gator-th-6x4-fs25-ORl13.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -137,6 +139,7 @@
             "FS25_TowingChain.zip": "Towing Chain With Hook",
             "FS25_Scorpio710.zip": "ELHO Scorpio 710 Stone Picker",
             "FS25_DeutzS9_AgrarTec.zip": "Deutz-Fahr Sieries 9 - Agrar-Tec",
+            "FS25_JohnDeereGator6x4.zip": "John Deere Gator TH 6x4",
         },
         customTags: {
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
