@@ -270,6 +270,20 @@
                 ],
                 description: ""
             },
+            "FS25_JactoByConnect_Pack.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/jacto-by-connect-pack-fs25-7N8Ip.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JactoPack.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/jacto-pack-fs25-uhMky.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/jacto-pack-fs25-20hky.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/jacto-pack-fs25-iUNcm.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -300,6 +314,8 @@
             "FS25_Hirschfeld_Oxbow_Ernter_by_BadBoy.zip": "Oxbo vegetable harvesters",
             "FS25_HomeMade_Lizard2.zip": "HomeMade Lizard Fork 2",
             "FS25_John_Deere_CS770.zip": "John Deere CS 770",
+            "FS25_JactoByConnect_Pack.zip": "Jacto By Connect Pack",
+            "FS25_JactoPack.zip": "Jacto Pack (Recommended)",
         },
         customTags: {
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
