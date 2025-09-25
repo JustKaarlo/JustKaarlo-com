@@ -133,7 +133,8 @@
             },
             "FS25_TransactionLog.zip": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/transaction-log-fs25-JuVNK.jpg"
+                    "https://www.kingmods.net/uploads/fs25/mods/transaction-log-fs25-JuVNK.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/transaction-log-fs25-JuVNK.jpg",
                 ],
                 description: ""
             },
@@ -204,7 +205,8 @@
             },
             "FS25_Yurg_Custom_Pack.zip": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/yurgs-custom-pack-fs25-kAs1i.jpg"
+                    "https://www.kingmods.net/uploads/fs25/mods/yurgs-custom-pack-fs25-kAs1i.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/yurgs-custom-pack-fs25-kAs1i.jpg",
                 ],
                 description: ""
             },
@@ -272,6 +274,7 @@
             },
             "FS25_JactoByConnect_Pack.zip": {
                 images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/jacto-by-connect-pack-fs25-7N8Ip.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/jacto-by-connect-pack-fs25-7N8Ip.jpg",
                 ],
                 description: ""
