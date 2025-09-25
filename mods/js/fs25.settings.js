@@ -37,13 +37,8 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "FS25_TowingChain.zip": "https://www.kingmods.net/en/fs25/mods/66050/towing-chain-with-hook",
             "FS25_dice.zip": "https://www.kingmods.net/en/fs25/mods/70469/dice-extra-slot-machine",
-            "FS25_Piccin_MODBT11.zip": "https://www.kingmods.net/en/fs25/mods/69804/piccin-advanced-mod-bt-11",
-            "FS25_n0tLizardNeoPack.zip": "https://www.kingmods.net/en/fs25/mods/65192/lizard-neo-pack",
-            "FS25_Bednar_Terraland.zip": "https://www.kingmods.net/en/fs25/mods/68816/bednar-terraland",
-            "FS25_DeutzS9_AgrarTec.zip": "https://www.kingmods.net/en/fs25/mods/59330/deutz-fahr-sieries-9-agrar-tec",
-            "FS25_JohnDeereGator6x4.zip": "https://www.kingmods.net/en/fs25/mods/70597/john-deere-gator-th-6x4",
-            "FS25_JohnDeere_Ripper2100.zip": "https://www.kingmods.net/en/fs25/mods/69950/john-deere-2100-ripper",
-            "FS25_CaseEcoloTil2500.zip": "https://www.kingmods.net/en/fs25/mods/69710/case-ecolo-til-2500",
+            "FS25_TransactionLog.zip": "https://www.kingmods.net/en/fs25/mods/69362/transaction-log",
+            "FS25_TaskList.zip": "https://www.kingmods.net/en/fs25/mods/66090/task-list",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -136,6 +131,145 @@
                 ],
                 description: ""
             },
+            "FS25_TransactionLog.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/transaction-log-fs25-JuVNK.jpg"
+                ],
+                description: ""
+            },
+            "FS25_TaskList.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/task-list-fs25-2v94x.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/task-list-fs25-ls7KR.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/task-list-fs25-TQemW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/task-list-fs25-YNdVr.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JD_8R_Series2022_SpezialEdition.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-2022-special-edition-fs25-3LpDH.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-2022-special-edition-fs25-t3wDc.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-2022-special-edition-fs25-Duv05.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JohnDeere_8030.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8530-edit-fs25-SsF79.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JohnDeere8R_WG.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-wirtgen-group-edition-fs25-NVSns.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-wirtgen-group-edition-fs25-Tfa3e.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8r-series-wirtgen-group-edition-fs25-If0Rt.jpg",
+                ],
+                description: ""
+            },
+            "FS25_JohnDeere_8RX.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8rx-special-fs25-MG86y.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8rx-special-fs25-43P2a.jpg",
+                ],
+                description: ""
+            },
+            "FS25_FS19RewrittenPack_A_G.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-a-g-fs25-UAEXA.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-a-g-fs25-sXsuE.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-a-g-fs25-WISv7.jpg",
+                ],
+                description: ""
+            },
+            "FS25_FS22RewrittenPack_A_C.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/vehicles-and-tools-pack-a-c-fs25-H9RCV.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vehicles-and-tools-pack-a-c-fs25-VYJbr.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vehicles-and-tools-pack-a-c-fs25-Wmazx.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vehicles-and-tools-pack-a-c-fs25-rSs6v.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vehicles-and-tools-pack-a-c-fs25-lUXZ0.jpg",
+                ],
+                description: ""
+            },
+            "FS25_FS19RewrittenPack_H_K.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-h-k-fs25-1u65V.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-h-k-fs25-mbFi9.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-h-k-fs25-i1BZA.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fs19-vehicles-and-tools-h-k-fs25-T6xPk.jpg",
+                ],
+                description: ""
+            },
+            "FS25_Yurg_Custom_Pack.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/yurgs-custom-pack-fs25-kAs1i.jpg"
+                ],
+                description: ""
+            },
+            "FS25_Grimme_KS754.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/grimme-ks754-fs25-lJAJJ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/grimme-ks754-fs25-3uKGf.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/grimme-ks754-fs25-nogiK.jpg",
+                ],
+                description: ""
+            },
+            "FS25_harvestgiant.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/lizard-harvestgiant-fs25-ogaGh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/lizard-harvestgiant-fs25-EfrQP.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/lizard-harvestgiant-fs25-TmTR7.jpg",
+                ],
+                description: ""
+            },
+            "FS25_ROPA_Multifruit.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-6s-900-ps1000000-l-multifruchte-fs25-KC7K1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-6s-900-ps1000000-l-multifruchte-fs25-N5A5Y.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-6s-900-ps1000000-l-multifruchte-fs25-uOQR7.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-6s-900-ps1000000-l-multifruchte-fs25-HppQA.jpg",
+                ],
+                description: ""
+            },
+            "tiger6S.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-fs25-kYtSa.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-fs25-M5oRf.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-fs25-TCc3Y.jpg",
+                ],
+                description: ""
+            },
+            "FS25_Hirschfeld_Dewulf_ZKIVSE_by_HIP_Marco.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/dewulf-4-row-harvester-fs25-utHjT.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dewulf-4-row-harvester-fs25-tGTcG.jpg",
+                ],
+                description: ""
+            },
+            "FS25_Hirschfeld_Oxbow_Ernter_by_BadBoy.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/oxbo-vegetable-harvesters-fs25-y1gk5.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/oxbo-vegetable-harvesters-fs25-mxbkQ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/oxbo-vegetable-harvesters-fs25-VxsoL.jpg",
+                ],
+                description: ""
+            },
+            "FS25_HomeMade_Lizard2.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/homemade-lizard-fork-2-fs25-UWCli.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/homemade-lizard-fork-2-fs25-56pnw.jpg",
+                ],
+                description: ""
+            },
+            "FS25_John_Deere_CS770.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-cs-770-fs25-54fFE.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-cs-770-fs25-VIZpJ.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -148,41 +282,26 @@
             "FS25_JohnDeereGator6x4.zip": "John Deere Gator TH 6x4",
             "FS25_JohnDeere_Ripper2100.zip": "John Deere 2100 Ripper",
             "FS25_CaseEcoloTil2500.zip": "Case Ecolo-Til 2500",
+            "FS25_TransactionLog.zip": "Transaction Log",
+            "FS25_TaskList.zip": "Task List",
+            "FS25_JD_8R_Series2022_SpezialEdition.zip": "John Deere 8R Series 2022 Special Edition",
+            "FS25_JohnDeere_8030.zip": "John Deere 8530 Edit",
+            "FS25_JohnDeere8R_WG.zip": "John Deere 8R Series Wirtgen Group Edition",
+            "FS25_JohnDeere_8RX.zip": "John Deere 8RX Special",
+            "FS25_FS19RewrittenPack_A_G": "FS19 Vehicles and Tools (A-G)",
+            "FS25_FS19RewrittenPack_H_K.zip": "FS19 Vehicles and Tools (H-K)",
+            "FS25_FS22RewrittenPack_A_C.zip": "FS22 Vehicles and Tools Pack (A-C)",
+            "FS25_Yurg_Custom_Pack.zip": "Yurg's Custom Pack",
+            "FS25_Grimme_KS754.zip": "Grimme KS754",
+            "FS25_harvestgiant.zip": "LIZARD Harvest GIANT",
+            "FS25_ROPA_Multifruit.zip": "Ropa 6S (900 PS/1.000.000 l) Multifrüchte",
+            "tiger6S.zip": "Ropa Tiger 6S",
+            "FS25_Hirschfeld_Dewulf_ZKIVSE_by_HIP_Marco.zip": "Dewulf 4-Row Harvester",
+            "FS25_Hirschfeld_Oxbow_Ernter_by_BadBoy.zip": "Oxbo vegetable harvesters",
+            "FS25_HomeMade_Lizard2.zip": "HomeMade Lizard Fork 2",
+            "FS25_John_Deere_CS770.zip": "John Deere CS 770",
         },
         customTags: {
-            "FS25_Bednar_Terraland.zip": [ 
-                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
-             ],
-            "FS25_CaseEcoloTil2500.zip": [
-                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-            "FS25_JohnDeere_Ripper2100.zip": [
-                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-            "FS25_n0tLizardNeoPack.zip": [
-                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-            "FS25_Piccin_MODBT11.zip": [
-                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-
-
-            "FS25_DeutzS9_AgrarTec.zip": [
-                { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_JohnDeereGator6x4.zip": [
-                { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-
-
-            "FS25_TowingChain.zip": [
-                { text: "Utilities", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-
-
-            "FS25_dice.zip": [
-                { text: "Other", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 }
-            ],
-            
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
             //     { text: "Bright", color: "#FF0000", opacity: 0.8, textOpacity: 1.0 },
             //     { text: "Subtle", color: "#00FF00", opacity: 0.3, textOpacity: 0.6 },
