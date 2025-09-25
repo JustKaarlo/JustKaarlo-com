@@ -39,6 +39,7 @@
             "FS25_dice.zip": "https://www.kingmods.net/en/fs25/mods/70469/dice-extra-slot-machine",
             "FS25_TransactionLog.zip": "https://www.kingmods.net/en/fs25/mods/69362/transaction-log",
             "FS25_TaskList.zip": "https://www.kingmods.net/en/fs25/mods/66090/task-list",
+            "FS25_QuickSelector.zip": "https://www.kingmods.net/en/fs25/mods/66783/quick-selector",
         },
         tooltipData: {
             "FS25_rootCropStorage.zip": {
@@ -287,6 +288,14 @@
                 ],
                 description: ""
             },
+            "FS25_QuickSelector.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/quick-selector-fs25-g7Br8.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/quick-selector-fs25-aZ3wI.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/quick-selector-fs25-AvKPZ.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -319,6 +328,7 @@
             "FS25_John_Deere_CS770.zip": "John Deere CS 770",
             "FS25_JactoByConnect_Pack.zip": "Jacto By Connect Pack",
             "FS25_JactoPack.zip": "Jacto Pack (Recommended)",
+            "FS25_QuickSelector.zip": "Quick Selector",
         },
         customTags: {
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
