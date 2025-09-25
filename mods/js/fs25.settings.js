@@ -159,6 +159,7 @@
             "FS25_JohnDeere_8030.zip": {
                 images: [
                     "https://www.kingmods.net/uploads/fs25/mods/john-deere-8530-edit-fs25-SsF79.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/john-deere-8530-edit-fs25-SsF79.jpg",
                 ],
                 description: ""
             },
