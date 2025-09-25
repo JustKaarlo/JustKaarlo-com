@@ -150,18 +150,38 @@
             "FS25_CaseEcoloTil2500.zip": "Case Ecolo-Til 2500",
         },
         customTags: {
-            "FS25_Bednar_Terraland.zip": [ { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_CaseEcoloTil2500.zip": [ { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_JohnDeere_Ripper2100.zip": [ { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_n0tLizardNeoPack.zip": [ { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_Piccin_MODBT11.zip": [ { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 } ],
+            "FS25_Bednar_Terraland.zip": [ 
+                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
+             ],
+            "FS25_CaseEcoloTil2500.zip": [
+                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
+            ],
+            "FS25_JohnDeere_Ripper2100.zip": [
+                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
+            ],
+            "FS25_n0tLizardNeoPack.zip": [
+                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
+            ],
+            "FS25_Piccin_MODBT11.zip": [
+                { text: "Equipment", color: "#539b0bff", opacity: 0.2, textOpacity: 0.65 }
+            ],
 
-            "FS25_DeutzS9_AgrarTec.zip": [ { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 } ],
-            "FS25_JohnDeereGator6x4.zip": [ { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 } ],
 
-            "FS25_TowingChain.zip": [ { text: "Utilities", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 } ],
+            "FS25_DeutzS9_AgrarTec.zip": [
+                { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 } ],
+            "FS25_JohnDeereGator6x4.zip": [
+                { text: "Vehicle", color: "#57a20cff", opacity: 0.2, textOpacity: 0.65 }
+            ],
 
-            "FS25_dice.zip": [ { text: "Other", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 } ],
+
+            "FS25_TowingChain.zip": [
+                { text: "Utilities", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 }
+            ],
+
+
+            "FS25_dice.zip": [
+                { text: "Other", color: "#7d9664ff", opacity: 0.2, textOpacity: 0.65 }
+            ],
             
             // "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": [
             //     { text: "Bright", color: "#FF0000", opacity: 0.8, textOpacity: 1.0 },

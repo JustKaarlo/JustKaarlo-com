@@ -853,8 +853,9 @@ async function listFilesInFolder(options) {
             downloadBtn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                const downloadUrl = getDownloadUrl(file, apiKey);
-                window.open(downloadUrl, "_blank");
+
+                const customLink = customDownloadLinks[file.id] || customDownloadLinks[file.name];
+                downloadManager.download(file.id, file.name, customLink);
             };
 
             buttonContainer.appendChild(downloadBtn);
@@ -1025,7 +1026,12 @@ async function listFilesInFolder(options) {
             
             folderBtn.onclick = (e) => {
                 e.stopPropagation();
-                window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                const customLink = customDownloadLinks[folder.id] || customDownloadLinks[folder.name];
+                if (customLink) {
+                    window.open(customLink, "_blank");
+                } else {
+                    window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                }
             };
 
             const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
