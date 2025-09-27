@@ -30,20 +30,29 @@
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
         ],
-        customDownloadLinks: {},
+        customDownloadLinks: {
+            "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
+        },
         customWebsiteLinks: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
         },
         tooltipData: {
-            // "FILE/FOLDER NAME/ID": {
-            //     images: [],
-            //     description: ""
-            // },
+            "FS25_Ropa_BFE.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-QcA33.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-FHqX0.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-2R0Uy.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-wZmoj.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
-        customDisplayNames: {},
+        customDisplayNames: {
+            "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
+        },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
             //     { text: "Bright", color: "#FF0000", opacity: 0.8, textOpacity: 1.0 },
