@@ -30,13 +30,12 @@
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
         ],
-        customDownloadLinks: {
-            "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
-        },
+        customDownloadLinks: {},
         customWebsiteLinks: {
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
+            "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
