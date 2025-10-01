@@ -1,38 +1,54 @@
-// Guide Configuration
+// Main guides page configuration
 const guides = [
+    {
+        title: 'Farming Simulator 2025',
+        subtitle: 'Guides & Tutorials',
+        icon: 'https://www.justkaarlo.com/res/ico/favicon/fs25-favicon-2.ico',
+        link: 'https://www.justkaarlo.com/guides/fs25.html',
+        imagePreview: false
+    },
+];
+
+const fsGuides = [
     {
         title: 'Sow & Harvest Potatoes',
         subtitle: 'With Precision Farming',
         icon: 'https://www.justkaarlo.com/res/src/guides/potato.png',
         image: 'https://www.justkaarlo.com/res/src/guides/Fs25-Potatoes-Guide.png',
-        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301'
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
+        imagePreview: true
     },
 ];
 
-// Function to generate guide buttons dynamically
-function generateGuideButtons() {
-    const container = document.getElementById('guidesGrid');
-    if (!container) return;
+// Example structure for future guide pages (uncomment when needed)
+/*
+const eldenRingGuides = [
+    {
+        title: 'Margit Boss Fight',
+        subtitle: 'Strategy Guide',
+        icon: 'https://example.com/margit-icon.png',
+        image: 'https://example.com/margit-guide.png',
+        link: 'https://example.com/margit-external',
+        imagePreview: true
+    },
+    {
+        title: 'Wiki Resources',
+        subtitle: 'External Links',
+        icon: 'https://example.com/wiki-icon.png',
+        link: 'https://eldenring.wiki.fextralife.com',
+        imagePreview: false
+    }
+];
+*/
+
+// Configuration object for easy management
+const GuideConfigs = {
+    main: guides,
+    fs25: fsGuides,
+    // eldenRing: eldenRingGuides,
     
-    container.innerHTML = ''; // Clear existing content
-    
-    guides.forEach((guide, index) => {
-        const button = document.createElement('button');
-        button.className = 'guide-button';
-        button.setAttribute('data-index', index);
-        
-        button.innerHTML = `
-            <img class="guide-icon" src="${guide.icon}" alt="">
-            <div class="guide-text">
-                <span class="guide-title">${guide.title}</span>
-                <span class="guide-subtitle">${guide.subtitle}</span>
-            </div>
-        `;
-        
-        button.addEventListener('click', () => openGuide(index));
-        container.appendChild(button);
-    });
-    
-    // Re-apply 3D tilt effect to newly created buttons
-    apply3DTiltEffect();
-}
+    // Helper method to get guides by page name
+    getGuides(pageName) {
+        return this[pageName] || [];
+    }
+};

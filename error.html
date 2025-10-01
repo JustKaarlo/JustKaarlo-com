@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error Page</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #f0f0f0;
+    }
+
+    .error-container {
+      backdrop-filter: blur(12px);
+      background: rgba(40, 40, 40, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .error-code {
+      font-size: 5rem;
+      font-weight: bold;
+      color: #ff4c4c;
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #dcdcdc;
+    }
+
+    .btn {
+      --bg-glass: rgba(255, 255, 255, 0.05);
+      --border-glass: rgba(255, 255, 255, 0.12);
+      --text: #e1e2e7;
+      background: var(--bg-glass);
+      color: var(--text);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn svg {
+        display: block;
+        margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <div class="error-message">Page not found.</div>
+      <a class="btn" aria-label="Home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 1 20 20" fill="currentColor">
+            <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z"/>
+        </svg>
+        Home
+      </a>
+  </div>
+</body>
+</html>

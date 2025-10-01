@@ -50,7 +50,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     z-index: 0;
     pointer-events: none;
     background-image:
-        linear-gradient(var(--fs-overlay-1), var(--fs-overlay-1)),
         linear-gradient(var(--fs-overlay-2), var(--fs-overlay-2)),
         url('https://www.justkaarlo.com/res/bg/DarkWaveBlur.png');
 }

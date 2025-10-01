@@ -15,10 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-
-    </style>
 </head>
 <body>
     <div id="bg-fs"></div>
@@ -28,18 +24,22 @@
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass">
             <nav class="nav-buttons">
-                <a href="./home" target="_self" class="nav-btn" aria-label="Home">
+                <a href="../home" target="_self" class="nav-btn" aria-label="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
                         <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z" />
                     </svg>
+                    <div class="nav-tooltip">Go Home</div>
+                </a>
+                <a href="../guides" target="_self" class="nav-btn" aria-label="Mods">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
+                        fill="currentColor">
+                        <path
+                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                        </path>
+                    </svg>
+                    <div class="nav-tooltip">Go Back</div>
                 </a>
                 <br>
-                <!-- <a href="./elden-ring" target="_self" class="nav-btn" aria-label="Elden Ring">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-1 0 25 25" fill="currentColor">
-                        <image height="25" width="25" href="https://www.justkaarlo.com/res/ico/elden-ring-logo.svg" />
-                    </svg>
-                    <div class="nav-tooltip">Go to Elden Ring</div>
-                </a> -->
                 <a id="SelectedNavBtn" class="nav-btn" aria-label="Farming Simulator 25">
                     <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-1 0 25 25" fill="currentColor">
                         <image height="25" width="25" href="https://www.justkaarlo.com/res/ico/fs25-logo.svg" />
@@ -56,8 +56,8 @@
             alt="FS Icon"/>
         
         <div class="guides-container">
-            <div class="guides-grid" id="guidesGrid">
-                <!-- Guide buttons will be dynamically generated here by settings.js -->
+            <div class="guides-grid" id="fsGuidesGrid">
+                <!-- Guide buttons will be dynamically generated here -->
             </div>
         </div>
     </div>
@@ -88,5 +88,24 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="settings.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialize particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 40, density: { enable: true, value_area: 700 } },
+                color: { value: ['#ffaa00', '#ff6a00', '#8a8a8a'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
+                size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+            retina_detect: true
+        });
+        
+        // Initialize FS25 guides
+        initializeGuidePage('fsGuidesGrid', fsGuides);
+    </script>
 </body>
 </html>
