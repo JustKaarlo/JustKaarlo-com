@@ -39,6 +39,7 @@
             "FS25_8450Windrower.zip": "https://www.kingmods.net/en/fs25/mods/69499/8450-windrower-pack",
             "FS25_claasSmallBalePack.zip": "https://fs25.net/claas-small-bale-pack-v1-0/",
             "FS25_DolbiJaviyu.zip": "https://fs25.net/dolbi-javiyu-pack-v1-0/",
+            "FS25_balersRound.zip": "https://fs25.net/kuhn-vb-3190-v1-0/",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
@@ -76,6 +77,14 @@
                 ],
                 description: ""
             },
+            "FS25_balersRound.zip": {
+                images: [
+                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.0.webp",
+                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.02.webp",
+                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.03.webp",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -83,6 +92,7 @@
             "FS25_8450Windrower.zip": "8450 Windrower Pack",
             "FS25_claasSmallBalePack.zip": "Claas - Small Bale Pack V1.0",
             "FS25_DolbiJaviyu.zip": "Dolbi Javiyu Pack V1.0",
+            "FS25_balersRound.zip": "Kuhn VB 3190 V1.0",
         },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
