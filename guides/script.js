@@ -16,8 +16,8 @@ const GuideSystem = {
             // Show modal with image preview
             this.showModal(guide);
         } else if (guide.link) {
-            // Open link directly
-            window.open(guide.link, '_blank');
+            // Open link in the same window
+            window.location.href = guide.link;
         }
     },
     
