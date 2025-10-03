@@ -72,7 +72,7 @@ const GuideSystem = {
             const button = document.createElement('button');
             button.className = 'guide-button';
             button.setAttribute('data-index', index);
-            
+
             button.innerHTML = `
                 <img class="guide-icon" src="${guide.icon}" alt="">
                 <div class="guide-text">
@@ -80,8 +80,12 @@ const GuideSystem = {
                     <span class="guide-subtitle">${guide.subtitle}</span>
                 </div>
             `;
-            
-            button.addEventListener('click', () => this.openGuide(index));
+
+            // redirect in same window
+            button.addEventListener('click', () => {
+                window.location.href = guide.link;   // must exist in guide object
+            });
+
             container.appendChild(button);
         });
         
