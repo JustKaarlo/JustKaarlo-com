@@ -40,6 +40,7 @@
             "FS25_claasSmallBalePack.zip": "https://fs25.net/claas-small-bale-pack-v1-0/",
             "FS25_DolbiJaviyu.zip": "https://fs25.net/dolbi-javiyu-pack-v1-0/",
             "FS25_balersRound.zip": "https://fs25.net/kuhn-vb-3190-v1-0/",
+            "FS25_Balers_Pack_Whit_Windrower.zip": "https://www.kingmods.net/en/fs25/mods/61837/pack-of-balers-with-windrower",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
@@ -85,6 +86,16 @@
                 ],
                 description: ""
             },
+            "FS25_Balers_Pack_Whit_Windrower.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-7Ut83.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-SBi4l.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-1n8yk.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-hWm4W.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-A133u.jpg",
+                ],
+                description: ""
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -93,6 +104,7 @@
             "FS25_claasSmallBalePack.zip": "Claas - Small Bale Pack V1.0",
             "FS25_DolbiJaviyu.zip": "Dolbi Javiyu Pack V1.0",
             "FS25_balersRound.zip": "Kuhn VB 3190 V1.0",
+            "FS25_Balers_Pack_Whit_Windrower.zip": "Pack Of Balers With Windrower",
         },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
