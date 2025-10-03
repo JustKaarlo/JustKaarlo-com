@@ -59,7 +59,7 @@
                 ],
                 description: ""
             },
-            "FS25_8450Windrower.zip": {
+            "FS25_claasSmallBalePack.zip": {
                 images: [
                     "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.02.png",
                     "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.04.png",
