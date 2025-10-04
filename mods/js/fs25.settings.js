@@ -36,9 +36,6 @@
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
-            "FS25_claasSmallBalePack.zip": "https://fs25.net/claas-small-bale-pack-v1-0/",
-            "FS25_DolbiJaviyu.zip": "https://fs25.net/dolbi-javiyu-pack-v1-0/",
-            "FS25_balersRound.zip": "https://fs25.net/kuhn-vb-3190-v1-0/",
             "FS25_Balers_Pack_Whit_Windrower.zip": "https://www.kingmods.net/en/fs25/mods/61837/pack-of-balers-with-windrower",
         },
         tooltipData: {
@@ -48,32 +45,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-FHqX0.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-2R0Uy.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-wZmoj.jpg",
-                ],
-                description: ""
-            },
-            "FS25_claasSmallBalePack.zip": {
-                images: [
-                    "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.02.png",
-                    "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.04.png",
-                    "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.0.png",
-                ],
-                description: ""
-            },
-            "FS25_DolbiJaviyu.zip": {
-                images: [
-                    "https://files.fs25.net/mods/2025/09/Dolbi-Javiyu-Pack.jpg",
-                    "https://files.fs25.net/mods/2025/09/Dolbi-Javiyu-Pack2.jpg",
-                    "https://files.fs25.net/mods/2025/05/Claas-Small-Bale-Pack-1.0.png",
-                    "https://files.fs25.net/mods/2025/09/Dolbi-Javiyu-Pack3.jpg",
-                    "https://files.fs25.net/mods/2025/09/Dolbi-Javiyu-Pack4.jpg",
-                ],
-                description: ""
-            },
-            "FS25_balersRound.zip": {
-                images: [
-                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.0.webp",
-                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.02.webp",
-                    "https://files.fs25.net/mods/2025/05/Kuhn-VB-3190-v1.03.webp",
                 ],
                 description: ""
             },
@@ -91,9 +62,6 @@
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
             "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
-            "FS25_claasSmallBalePack.zip": "Claas - Small Bale Pack V1.0",
-            "FS25_DolbiJaviyu.zip": "Dolbi Javiyu Pack V1.0",
-            "FS25_balersRound.zip": "Kuhn VB 3190 V1.0",
             "FS25_Balers_Pack_Whit_Windrower.zip": "Pack Of Balers With Windrower",
         },
         customTags: {
