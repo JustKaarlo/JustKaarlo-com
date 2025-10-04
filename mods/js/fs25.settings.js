@@ -36,7 +36,6 @@
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
-            "FS25_8450Windrower.zip": "https://www.kingmods.net/en/fs25/mods/69499/8450-windrower-pack",
             "FS25_claasSmallBalePack.zip": "https://fs25.net/claas-small-bale-pack-v1-0/",
             "FS25_DolbiJaviyu.zip": "https://fs25.net/dolbi-javiyu-pack-v1-0/",
             "FS25_balersRound.zip": "https://fs25.net/kuhn-vb-3190-v1-0/",
@@ -49,14 +48,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-FHqX0.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-2R0Uy.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-wZmoj.jpg",
-                ],
-                description: ""
-            },
-            "FS25_8450Windrower.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/8450-windrower-pack-fs25-8VAb6.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/8450-windrower-pack-fs25-FJ0NZ.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/8450-windrower-pack-fs25-lhbwi.jpg",
                 ],
                 description: ""
             },
@@ -100,7 +91,6 @@
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
             "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
-            "FS25_8450Windrower.zip": "8450 Windrower Pack",
             "FS25_claasSmallBalePack.zip": "Claas - Small Bale Pack V1.0",
             "FS25_DolbiJaviyu.zip": "Dolbi Javiyu Pack V1.0",
             "FS25_balersRound.zip": "Kuhn VB 3190 V1.0",
