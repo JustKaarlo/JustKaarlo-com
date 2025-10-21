@@ -32,6 +32,7 @@
             "Back Roads County.zip": Fs25NorthAmericanMaps,
             "Lenkovtsy.zip": Fs25EuropeanMaps,
             "NF Marsch.zip": Fs25EuropeanMaps,
+            "Am Nord-Ostsee-Kanal.zip": Fs25EuropeanMaps,
         },
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
@@ -59,6 +60,7 @@
             "Back Roads County.zip",
             "Lenkovtsy.zip",
             "NF Marsch.zip",
+            "Am Nord-Ostsee-Kanal.zip",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -77,6 +79,7 @@
             "Back Roads County.zip": "https://www.kingmods.net/en/fs25/mods/69427/back-roads-county-4x",
             "Lenkovtsy.zip": "https://www.kingmods.net/en/fs25/mods/63925/lenkovtsy-4x",
             "NF Marsch.zip": "https://www.kingmods.net/en/fs25/mods/62246/nf-marsch-4x",
+            "Am Nord-Ostsee-Kanal.zip": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
@@ -156,7 +159,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/nf-marsch-4x-fs25-LB19G.jpg",
                 ]
             },
-
+            "Am Nord-Ostsee-Kanal.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/am-nord-ostsee-kanal-4x-fs25-nZ2J3.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/am-nord-ostsee-kanal-4x-fs25-zUwWq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/am-nord-ostsee-kanal-4x-fs25-zJu45.jpg",
+                ]
+            },
 
 
             // "": {
@@ -181,6 +190,7 @@
             "Back Roads County.zip": "Back Roads County",
             "Lenkovtsy.zip": "Lenkovtsy",
             "NF Marsch.zip": "NF Marsch",
+            "Am Nord-Ostsee-Kanal.zip": "Am Nord-Ostsee-Kanal",
         },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
@@ -222,6 +232,10 @@
                 Fs25EuropeTag,
                 Fs254xMaps,
             ],
+            "Am Nord-Ostsee-Kanal.zip": [
+                Fs25EuropeTag,
+                Fs254xMaps,
+            ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
@@ -234,6 +248,7 @@
             "Back Roads County.zip",
             "Lenkovtsy.zip",
             "NF Marsch.zip",
+            "Am Nord-Ostsee-Kanal.zip",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
