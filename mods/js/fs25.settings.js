@@ -29,6 +29,9 @@
             "Freche Dachskarte 4X.zip": Fs25EuropeanMaps,
             "Saxlingham.zip": Fs25EuropeanMaps,
             "Judith Plains, Montana.zip": Fs25EuropeanMaps,
+            "Back Roads County.zip": Fs25NorthAmericanMaps,
+            "Lenkovtsy.zip": Fs25EuropeanMaps,
+            "NF Marsch.zip": Fs25EuropeanMaps,
         },
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
@@ -53,6 +56,9 @@
             "Freche Dachskarte 4X.zip",
             "Saxlingham.zip",
             "Judith Plains, Montana.zip",
+            "Back Roads County.zip",
+            "Lenkovtsy.zip",
+            "NF Marsch.zip",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -68,6 +74,9 @@
             "Freche Dachskarte 4X.zip": "https://www.kingmods.net/en/fs25/mods/60427/freche-dachskarte-4x",
             "Saxlingham.zip": "https://www.kingmods.net/en/fs25/mods/69094/saxlingham",
             "Judith Plains, Montana.zip": "https://www.kingmods.net/en/fs25/mods/67169/judith-plains-montana-4x",
+            "Back Roads County.zip": "https://www.kingmods.net/en/fs25/mods/69427/back-roads-county-4x",
+            "Lenkovtsy.zip": "https://www.kingmods.net/en/fs25/mods/63925/lenkovtsy-4x",
+            "NF Marsch.zip": "https://www.kingmods.net/en/fs25/mods/62246/nf-marsch-4x",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
@@ -126,6 +135,28 @@
                     "https://www.kingmods.net/uploads/fs25/mods/judith-plains-montana-4x-fs25-iXzsx.jpg",
                 ]
             },
+            "Back Roads County.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/back-roads-county-4x-fs25-FnifC.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/back-roads-county-4x-fs25-JgFNr.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/back-roads-county-4x-fs25-Yp20w.jpg",
+                ]
+            },
+            "Lenkovtsy.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/lenkovtsy-4x-fs25-lcheK.jpg",
+                    "https://farmingsimulator22mods.com/wp-content/uploads/2025/04/lenkivtsi-map-4x-v1-0-0-3-fs25-9.jpg",
+                    "https://mods.club/uploads/image/2025/01/small-town-usa-v1-0-0.webp",
+                ]
+            },
+            "NF Marsch.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/nf-marsch-4x-fs25-GfdKk.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/nf-marsch-4x-fs25-mMLjE.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/nf-marsch-4x-fs25-LB19G.jpg",
+                ]
+            },
+
 
 
             // "": {
@@ -147,6 +178,9 @@
             "Freche Dachskarte 4X.zip": "Freche Dachskarte",
             "Saxlingham.zip": "Saxlingham",
             "Judith Plains, Montana.zip": "Judith Plains, Montana",
+            "Back Roads County.zip": "Back Roads County",
+            "Lenkovtsy.zip": "Lenkovtsy",
+            "NF Marsch.zip": "NF Marsch",
         },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
@@ -176,6 +210,18 @@
                 Fs25EuropeTag,
                 Fs252xMaps,
             ],
+            "Back Roads County.zip": [
+                Fs25NorthAmericanTag,
+                Fs254xMaps,
+            ],
+            "Lenkovtsy.zip": [
+                Fs25EuropeTag,
+                Fs254xMaps,
+            ],
+            "NF Marsch.zip": [
+                Fs25EuropeTag,
+                Fs254xMaps,
+            ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
@@ -185,6 +231,9 @@
             "Freche Dachskarte 4X.zip",
             "Saxlingham.zip",
             "Judith Plains, Montana.zip",
+            "Back Roads County.zip",
+            "Lenkovtsy.zip",
+            "NF Marsch.zip",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
