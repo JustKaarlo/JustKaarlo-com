@@ -28,6 +28,7 @@
             "Schwesing Bahnhof.zip": Fs25EuropeanMaps,
             "Freche Dachskarte 4X.zip": Fs25EuropeanMaps,
             "Saxlingham.zip": Fs25EuropeanMaps,
+            "Judith Plains, Montana.zip": Fs25EuropeanMaps,
         },
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
@@ -51,6 +52,7 @@
             "Schwesing Bahnhof.zip",
             "Freche Dachskarte 4X.zip",
             "Saxlingham.zip",
+            "Judith Plains, Montana.zip",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -65,6 +67,7 @@
             "Schwesing Bahnhof.zip": "https://www.kingmods.net/en/fs25/mods/62944/schwesing-bahnhof",
             "Freche Dachskarte 4X.zip": "https://www.kingmods.net/en/fs25/mods/60427/freche-dachskarte-4x",
             "Saxlingham.zip": "https://www.kingmods.net/en/fs25/mods/69094/saxlingham",
+            "Judith Plains, Montana.zip": "https://www.kingmods.net/en/fs25/mods/67169/judith-plains-montana-4x",
         },
         tooltipData: {
             "FS25_Ropa_BFE.zip": {
@@ -116,6 +119,14 @@
                     "https://www.kingmods.net/uploads/fs25/mods/saxlingham-fs25-j8Jj2.jpg",
                 ]
             },
+            "Judith Plains, Montana.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/judith-plains-montana-4x-fs25-GDQxi.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/judith-plains-montana-4x-fs25-OtVTO.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/judith-plains-montana-4x-fs25-iXzsx.jpg",
+                ]
+            },
+
 
             // "": {
             //     images: [
@@ -135,6 +146,7 @@
             "Schwesing Bahnhof.zip": "Schwesing Bahnhof",
             "Freche Dachskarte 4X.zip": "Freche Dachskarte",
             "Saxlingham.zip": "Saxlingham",
+            "Judith Plains, Montana.zip": "Judith Plains, Montana",
         },
         customTags: {
             // "FILE/FOLDER NAME/ID": [
@@ -159,7 +171,11 @@
             "Saxlingham.zip": [
                 Fs25EuropeTag,
                 Fs252xMaps,
-            ]
+            ],
+            "Judith Plains, Montana.zip": [
+                Fs25EuropeTag,
+                Fs252xMaps,
+            ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
@@ -168,6 +184,7 @@
             "Schwesing Bahnhof.zip",
             "Freche Dachskarte 4X.zip",
             "Saxlingham.zip",
+            "Judith Plains, Montana.zip",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
