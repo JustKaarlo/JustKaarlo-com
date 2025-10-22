@@ -180,6 +180,7 @@
         customDisplayNames: {
             "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
             "FS25_Balers_Pack_Whit_Windrower.zip": "Pack Of Balers With Windrower",
+            "OlssonsMods.zip": "Olssons Mods",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
