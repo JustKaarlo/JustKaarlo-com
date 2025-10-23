@@ -30,6 +30,7 @@
             "FS25_AdvancedDamageSystem.zip": Fs25SdieFxIcon,
             "FS25_Vehicle_Years.zip": Fs25SdieFxIcon,
             "FS25_VehicleSpeedSync.zip": Fs25SdieFxIcon,
+            "FS25_ConstructionUtilities.zip": Fs25SdieFxIcon,
 
             "OlssonsMods.zip": Fs25SdieFxIcon,
             "MissingMods.zip": Fs25SdieFxIcon,
@@ -85,6 +86,7 @@
             "FS25_AdvancedDamageSystem.zip": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
             "FS25_Vehicle_Years.zip": "https://www.kingmods.net/en/fs25/mods/62107/vehicle-years",
             "FS25_VehicleSpeedSync.zip": "https://www.kingmods.net/en/fs25/mods/61898/vehicle-speed-sync",
+            "FS25_ConstructionUtilities.zip": "https://www.kingmods.net/en/fs25/mods/71060/construction-utilities",
 
             // MAPS
             "Huron County 16X.zip": "https://www.kingmods.net/en/fs25/mods/63643/huron-county-16x",
@@ -180,6 +182,7 @@
             "FS25_AdvancedDamageSystem.zip": "Advanced Damage System",
             "FS25_Vehicle_Years.zip": "Vehicle Years",
             "FS25_VehicleSpeedSync.zip": "Vehicle Speed Sync",
+            "FS25_ConstructionUtilities.zip": "Construction Utilities",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
@@ -249,6 +252,7 @@
             "FS25_AdvancedDamageSystem.zip",
             "FS25_Vehicle_Years.zip",
             "FS25_VehicleSpeedSync.zip",
+            "FS25_ConstructionUtilities.zip", 
 
             // MAPS
             "Huron County 16X.zip",
