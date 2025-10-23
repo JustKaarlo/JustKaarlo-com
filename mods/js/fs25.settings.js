@@ -14,6 +14,7 @@
     const Fs252xMaps = { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
     const Fs254xMaps = { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
     const Fs2516xMaps = { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
+    const Fs25SdieFxIcon = "../res/src/fs25-side-fx.png";
 
     
     if (!fsContainer) {
@@ -26,6 +27,13 @@
         container: fsContainer,
         apiKey,
         customIcons: {
+            "FS25_AdvancedDamageSystem.zip": Fs25SdieFxIcon,
+            "FS25_Vehicle_Years.zip": Fs25SdieFxIcon,
+            "FS25_VehicleSpeedSync.zip": Fs25SdieFxIcon,
+
+            "OlssonsMods.zip": Fs25SdieFxIcon,
+            "MissingMods.zip": Fs25SdieFxIcon,
+
             // MAPS
             "Huron County 16X.zip": Fs25NorthAmericanMaps,
             "Schwesing Bahnhof.zip": Fs25EuropeanMaps,
@@ -70,13 +78,13 @@
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
-            "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
 
-            "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
-            "FS25_Balers_Pack_Whit_Windrower.zip": "https://www.kingmods.net/en/fs25/mods/61837/pack-of-balers-with-windrower",
+            "FS25_AdvancedDamageSystem.zip": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
+            "FS25_Vehicle_Years.zip": "https://www.kingmods.net/en/fs25/mods/62107/vehicle-years",
+            "FS25_VehicleSpeedSync.zip": "https://www.kingmods.net/en/fs25/mods/61898/vehicle-speed-sync",
 
             // MAPS
             "Huron County 16X.zip": "https://www.kingmods.net/en/fs25/mods/63643/huron-county-16x",
@@ -90,26 +98,6 @@
             "Am Nord-Ostsee-Kanal.zip": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
         },
         tooltipData: {
-            "FS25_Ropa_BFE.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-QcA33.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-FHqX0.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-2R0Uy.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/ropa-tiger-6s-big-field-edition-fs25-wZmoj.jpg",
-                ],
-                description: ""
-            },
-            "FS25_Balers_Pack_Whit_Windrower.zip": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-7Ut83.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-SBi4l.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-1n8yk.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-hWm4W.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/pack-of-balers-with-windrower-fs25-A133u.jpg",
-                ],
-                description: ""
-            },
-
             // MAPS
             "Huron County 16X.zip": {
                 images: [
@@ -186,11 +174,12 @@
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
-            "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
-            "FS25_Balers_Pack_Whit_Windrower.zip": "Pack Of Balers With Windrower",
-
             "OlssonsMods.zip": "Olssons Mods",
             "MissingMods.zip": "Olssons Missing Mods",
+
+            "FS25_AdvancedDamageSystem.zip": "Advanced Damage System",
+            "FS25_Vehicle_Years.zip": "Vehicle Years",
+            "FS25_VehicleSpeedSync.zip": "Vehicle Speed Sync",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
@@ -257,6 +246,10 @@
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
+            "FS25_AdvancedDamageSystem.zip",
+            "FS25_Vehicle_Years.zip",
+            "FS25_VehicleSpeedSync.zip",
+
             // MAPS
             "Huron County 16X.zip",
             "Schwesing Bahnhof.zip",
@@ -271,6 +264,7 @@
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
+            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
         ],
     });
     attachDocPreview(fsContainer);
