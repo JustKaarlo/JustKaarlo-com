@@ -249,11 +249,6 @@
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
-            "FS25_AdvancedDamageSystem.zip",
-            "FS25_Vehicle_Years.zip",
-            "FS25_VehicleSpeedSync.zip",
-            "FS25_ConstructionUtilities.zip", 
-
             // MAPS
             "Huron County 16X.zip",
             "Schwesing Bahnhof.zip",
