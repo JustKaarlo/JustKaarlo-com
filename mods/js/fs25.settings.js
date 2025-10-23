@@ -4,6 +4,9 @@
     const fsContainer = document.getElementById("fs-fileList");
 
     // CUSTOM CONSTANTS
+    const Fs25OthersCategory = "../res/src/fs25-others.png";
+    const Fs25MapsCategory = "../res/src/fs25-maps.png";
+    // const Fs25TexturesCategory = "../res/src/fs25-textures.png";
     const Fs25NorthAmericanMaps = "../res/src/fs25-north-american-maps.png";
     const Fs25EuropeanMaps = "../res/src/fs25-european-maps.png";
     const Fs25NorthAmericanTag = { text: "North America", color: "#6c7d00ff", opacity: 0.5, textOpacity: 0.5 };
@@ -36,13 +39,15 @@
         },
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
-            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "../res/src/fs25-maps.png",
+            "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": Fs25MapsCategory,
+            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": Fs25OthersCategory,
         },
         highlightFiles: [],
         colorizeFiles: [],
         excludePartsFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
+            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
         ],
         folderGradientFallback: {},
         showDownloadButtonForAllFiles: true,
@@ -50,6 +55,7 @@
         excludeDownloadFiles: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
+            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
 
             // MAPS
             "Huron County 16X.zip",
@@ -67,6 +73,8 @@
             "1NQJdjAjXB8c5We33KuXdPltBGM6qQgpT": "https://www.kingmods.net/en/profile/fs-miner",
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
+            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
+
             "FS25_Ropa_BFE.zip": "https://www.kingmods.net/en/fs25/mods/62298/ropa-tiger-6s-big-field-edition",
             "FS25_Balers_Pack_Whit_Windrower.zip": "https://www.kingmods.net/en/fs25/mods/61837/pack-of-balers-with-windrower",
 
@@ -180,7 +188,9 @@
         customDisplayNames: {
             "FS25_Ropa_BFE.zip": "Ropa Tiger 6S Big Field Edition",
             "FS25_Balers_Pack_Whit_Windrower.zip": "Pack Of Balers With Windrower",
+
             "OlssonsMods.zip": "Olssons Mods",
+            "MissingMods.zip": "Olssons Missing Mods",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
@@ -199,6 +209,13 @@
             //     { text: "Subtle", color: "#00FF00", opacity: 0.3, textOpacity: 0.6 },
             //     { text: "Ghost", color: "#0000FF", opacity: 0.2, textOpacity: 0.4 }
             // ]
+            "OlssonsMods.zip": [
+                { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
+            ],
+            "MissingMods.zip": [
+                { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
+            ],
+
 
             // MAPS
             "Huron County 16X.zip": [
