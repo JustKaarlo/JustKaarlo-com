@@ -1,21 +1,28 @@
-(function initializeEldenRingFileList() {
+(function initializeFS25FileList() {
     const apiKey = "__API_KEY__";
-    const erRootFolderId = "117HPqPWmd6uglc6HaJAHuHP8e4VbFRkl";
-    const erContainer = document.getElementById("fileList");
-    
-    if (!erContainer) {
-        console.error("Elden Ring file list container not found");
+    const fsRootFolderId = "117HPqPWmd6uglc6HaJAHuHP8e4VbFRkl";
+    const fsContainer = document.getElementById("fileList");
+    // CUSTOM CONSTANTS
+
+    if (!fsContainer) {
+        console.error("file list container not found");
         return;
     }
 
     listFilesInFolder({
-        folderId: erRootFolderId,
-        container: erContainer,
+        folderId: fsRootFolderId,
+        container: fsContainer,
         apiKey,
-        customIcons: {
-            "Convergence (2.2.3).zip": "https://www.justkaarlo.com/res/filelist/Convergence.ico"
+        iconDefinitions: {
+            "ConvergenceIcon": "https://www.justkaarlo.com/res/filelist/Convergence.ico",
         },
-        customFolderIcons: {},
+        iconAssignments: {
+            "ConvergenceIcon": [
+                "Convergence (2.2.3).zip"
+            ],
+        },
+        folderIconDefinitions: {},
+        folderIconAssignments: {},
         highlightFiles: [
             "Convergence (2.2.3).zip"
         ],
@@ -33,14 +40,25 @@
         },
         tooltipData: {},
         showDownloadButtonAtRoot: true,
-        customDisplayNames: {},
-        customTags: {},
-        customDisplayNames: {},
-        customTags: {},
+        customDisplayNames: {
+            "Convergence (2.2.3).zip": "Convergence (2.2.3)",
+        },
+        tagDefinitions: {},
+        tagAssignments: {},
         hideAllSizeTags: false,
-        hideSizeTagFiles: [],
+        hideSizeTagFiles: [
+            "Convergence Classes Summaries",
+            "Kaarlo's Class Rating",
+            "Path & Weapons",
+            "Scaling Values",
+            "Weapon Scaling & Catalyst Affinity Scaling",
+            "Weapon Upgrades Explained",
+            "What Custom Armor Replaces",
+            "What Custom Weapons Replaces",
+        ],
         hideSizeTagFolders: [],
+        customFiles: [],
+        customFolders: [],
     });
-
-    attachDocPreview(erContainer);
+    attachDocPreview(fsContainer);
 })()

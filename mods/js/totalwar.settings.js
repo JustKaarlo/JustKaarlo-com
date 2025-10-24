@@ -1,17 +1,20 @@
-(function initializeTotalWarFileList() {
-    const apiKey = "__API_KEY__";
-    const twRootFolderId = "184OONp6ZUL5_oMTuGuqgyx2qNE9-D2UT";
-    const twContainer = document.getElementById("tw-fileList");
-    
-    if (!twContainer) {
-        console.error("Total War file list container not found");
+(function initializeFS25FileList() {
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
+    const fsRootFolderId = "184OONp6ZUL5_oMTuGuqgyx2qNE9-D2UT";
+    const fsContainer = document.getElementById("tw-fileList");
+    // CUSTOM CONSTANTS
+
+    if (!fsContainer) {
+        console.error("file list container not found");
         return;
     }
 
     listFilesInFolder({
-        folderId: twRootFolderId,
-        container: twContainer,
+        folderId: fsRootFolderId,
+        container: fsContainer,
         apiKey,
+        iconDefinitions: {},
+        iconAssignments: {},
         customIcons: {
             "Seven Kingdoms.exe":                   "../res/filelist/SevenKingdoms.ico",
             "Total War Skyrim.exe":                 "../res/filelist/TotalWarSkyrim.ico",
@@ -61,6 +64,8 @@
             "Thrones Extra Modifications.exe":      "../res/filelist/TotalWarThronesExtras.ico",
             "Age of Arthur.exe":                    "../res/filelist/AgeOfArthur.ico",
         },
+        folderIconDefinitions: {},
+        folderIconAssignments: {},
         customFolderIcons: {
             "15r5NfzciWGfClpGvmT5ydfH4fDbScVAl":    "../res/filelist/attila-logo.png",
             "1IsBsstw8TYRZ4FP_cl0ydaVLWRRjVbam":    "../res/filelist/empire-logo.png",
@@ -123,11 +128,13 @@
         tooltipData: {},
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
-        customTags: {},
+        tagDefinitions: {},
+        tagAssignments: {},
         hideAllSizeTags: false,
         hideSizeTagFiles: [],
         hideSizeTagFolders: [],
+        customFiles: [],
+        customFolders: [],
     });
-
-    attachDocPreview(twContainer);
+    attachDocPreview(fsContainer);
 })()

@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
 
@@ -18,10 +18,8 @@
     const Fs254xMaps = { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
     const Fs2516xMaps = { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
 
-
-    
     if (!fsContainer) {
-        console.error("FS25 file list container not found");
+        console.error("file list container not found");
         return;
     }
 
@@ -29,6 +27,8 @@
         folderId: fsRootFolderId,
         container: fsContainer,
         apiKey,
+        iconDefinitions: {},
+        iconAssignments: {},
         customIcons: {
             // MODS
             "FS25_AdvancedDamageSystem.zip": Fs25SdieFxIcon,
@@ -54,6 +54,8 @@
             "NF Marsch.zip": Fs25SdieFxIcon,
             "Am Nord-Ostsee-Kanal.zip": Fs25SdieFxIcon,
         },
+        folderIconDefinitions: {},
+        folderIconAssignments: {},
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": Fs25MapsCategory,
@@ -178,14 +180,6 @@
                     "https://www.kingmods.net/uploads/fs25/mods/am-nord-ostsee-kanal-4x-fs25-zJu45.jpg",
                 ]
             },
-
-            // "": {
-            //     images: [
-            //         "",
-            //         "",
-            //         "",
-            //     ]
-            // },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -213,13 +207,9 @@
             "NF Marsch.zip": "NF Marsch",
             "Am Nord-Ostsee-Kanal.zip": "Am Nord-Ostsee-Kanal",
         },
+        tagDefinitions: {},
+        tagAssignments: {},
         customTags: {
-            // "FILE/FOLDER NAME/ID": [
-            //     { text: "Bright", color: "#FF0000", opacity: 0.8, textOpacity: 1.0 },
-            //     { text: "Subtle", color: "#00FF00", opacity: 0.3, textOpacity: 0.6 },
-            //     { text: "Ghost", color: "#0000FF", opacity: 0.2, textOpacity: 0.4 }
-            // ]
-
             // OTHERS
             "OlssonsMods.zip": [
                 { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
@@ -285,9 +275,8 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
         ],
+        customFiles: [],
+        customFolders: [],
     });
     attachDocPreview(fsContainer);
 })()
-
-FS25_8450Windrower.zip
-FS25_claasSmallBalePack.zip
