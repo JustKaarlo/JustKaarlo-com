@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
+    const apiKey = "__API_KEY__";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
 
@@ -35,6 +35,7 @@
             "FS25_VehicleSpeedSync.zip": Fs25SdieFxIcon,
             "FS25_ConstructionUtilities.zip": Fs25SdieFxIcon,
             "FS25_GoToVacation.zip": Fs25SdieFxIcon,
+            "FS25_FollowMe.zip": Fs25SdieFxIcon,
 
             "OlssonsMods.zip": Fs25SdieFxIcon,
             "MissingMods.zip": Fs25SdieFxIcon,
@@ -92,6 +93,7 @@
             "FS25_VehicleSpeedSync.zip": "https://www.farming-simulator.com/mod.php?mod_id=307815&title=fs2025",
             "FS25_ConstructionUtilities.zip": "https://www.farming-simulator.com/mod.php?mod_id=336818&title=fs2025",
             "FS25_GoToVacation.zip": "https://www.farming-simulator.com/mod.php?mod_id=312770&title=fs2025",
+            "FS25_FollowMe.zip": "https://www.farming-simulator.com/mod.php?mod_id=312054&title=fs2025",
 
             // MAPS
             "Huron County 16X.zip": "https://www.kingmods.net/en/fs25/mods/63643/huron-county-16x",
@@ -170,7 +172,6 @@
                 ]
             },
 
-
             // "": {
             //     images: [
             //         "",
@@ -189,6 +190,7 @@
             "FS25_VehicleSpeedSync.zip": "Vehicle Speed Sync",
             "FS25_ConstructionUtilities.zip": "Construction Utilities",
             "FS25_GoToVacation.zip": "Go To Vacations",
+            "FS25_FollowMe.zip": "Follow Me",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
