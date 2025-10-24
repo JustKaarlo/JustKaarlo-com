@@ -30,13 +30,16 @@
         container: fsContainer,
         apiKey,
         customIcons: {
+            // MODS
             "FS25_AdvancedDamageSystem.zip": Fs25SdieFxIcon,
             "FS25_Vehicle_Years.zip": Fs25SdieFxIcon,
             "FS25_VehicleSpeedSync.zip": Fs25SdieFxIcon,
             "FS25_ConstructionUtilities.zip": Fs25SdieFxIcon,
             "FS25_GoToVacation.zip": Fs25SdieFxIcon,
             "FS25_FollowMe.zip": Fs25SdieFxIcon,
+            "FS25_BulkFill.zip": Fs25SdieFxIcon,
 
+            // OTHERS
             "OlssonsMods.zip": Fs25SdieFxIcon,
             "MissingMods.zip": Fs25SdieFxIcon,
 
@@ -67,6 +70,7 @@
         showDownloadButtonForAllFiles: true,
         downloadButtonFiles: [],
         excludeDownloadFiles: [
+            // FOLDERS
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
@@ -84,16 +88,19 @@
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
+            // FOLDERS
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
 
+            // MODS
             "FS25_AdvancedDamageSystem.zip": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/tag/v0.8.4.6",
             "FS25_Vehicle_Years.zip": "https://www.farming-simulator.com/mod.php?mod_id=308890&title=fs2025",
             "FS25_VehicleSpeedSync.zip": "https://www.farming-simulator.com/mod.php?mod_id=307815&title=fs2025",
             "FS25_ConstructionUtilities.zip": "https://www.farming-simulator.com/mod.php?mod_id=336818&title=fs2025",
             "FS25_GoToVacation.zip": "https://www.farming-simulator.com/mod.php?mod_id=312770&title=fs2025",
             "FS25_FollowMe.zip": "https://www.farming-simulator.com/mod.php?mod_id=312054&title=fs2025",
+            "FS25_BulkFill.zip": "https://www.farming-simulator.com/mod.php?mod_id=310096&title=fs2025",
 
             // MAPS
             "Huron County 16X.zip": "https://www.kingmods.net/en/fs25/mods/63643/huron-county-16x",
@@ -182,15 +189,18 @@
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
+            // OTHERS
             "OlssonsMods.zip": "Olssons Mods",
             "MissingMods.zip": "Olssons Missing Mods",
 
+            // MODS
             "FS25_AdvancedDamageSystem.zip": "Advanced Damage System",
             "FS25_Vehicle_Years.zip": "Vehicle Years",
             "FS25_VehicleSpeedSync.zip": "Vehicle Speed Sync",
             "FS25_ConstructionUtilities.zip": "Construction Utilities",
             "FS25_GoToVacation.zip": "Go To Vacations",
             "FS25_FollowMe.zip": "Follow Me",
+            "FS25_BulkFill.zip": "Bulk Fill",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",
@@ -209,6 +219,8 @@
             //     { text: "Subtle", color: "#00FF00", opacity: 0.3, textOpacity: 0.6 },
             //     { text: "Ghost", color: "#0000FF", opacity: 0.2, textOpacity: 0.4 }
             // ]
+
+            // OTHERS
             "OlssonsMods.zip": [
                 { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
             ],
