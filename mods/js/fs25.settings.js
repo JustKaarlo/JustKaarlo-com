@@ -1,12 +1,15 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
 
     // CUSTOM CONSTANTS
+    const Fs25SdieFxIcon = "../res/src/fs25-side-fx.png";
+
     const Fs25OthersCategory = "../res/src/fs25-others.png";
     const Fs25MapsCategory = "../res/src/fs25-maps.png";
-    // const Fs25TexturesCategory = "../res/src/fs25-textures.png";
+    const Fs25TexturesCategory = "../res/src/fs25-textures.png";
+
     const Fs25NorthAmericanMaps = "../res/src/fs25-north-american-maps.png";
     const Fs25EuropeanMaps = "../res/src/fs25-european-maps.png";
     const Fs25NorthAmericanTag = { text: "North America", color: "#6c7d00ff", opacity: 0.5, textOpacity: 0.5 };
@@ -14,7 +17,7 @@
     const Fs252xMaps = { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
     const Fs254xMaps = { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
     const Fs2516xMaps = { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 };
-    const Fs25SdieFxIcon = "../res/src/fs25-side-fx.png";
+
 
     
     if (!fsContainer) {
@@ -31,20 +34,21 @@
             "FS25_Vehicle_Years.zip": Fs25SdieFxIcon,
             "FS25_VehicleSpeedSync.zip": Fs25SdieFxIcon,
             "FS25_ConstructionUtilities.zip": Fs25SdieFxIcon,
+            "FS25_GoToVacation.zip": Fs25SdieFxIcon,
 
             "OlssonsMods.zip": Fs25SdieFxIcon,
             "MissingMods.zip": Fs25SdieFxIcon,
 
             // MAPS
-            "Huron County 16X.zip": Fs25NorthAmericanMaps,
-            "Schwesing Bahnhof.zip": Fs25EuropeanMaps,
-            "Freche Dachskarte 4X.zip": Fs25EuropeanMaps,
-            "Saxlingham.zip": Fs25EuropeanMaps,
-            "Judith Plains, Montana.zip": Fs25EuropeanMaps,
-            "Back Roads County.zip": Fs25NorthAmericanMaps,
-            "Lenkovtsy.zip": Fs25EuropeanMaps,
-            "NF Marsch.zip": Fs25EuropeanMaps,
-            "Am Nord-Ostsee-Kanal.zip": Fs25EuropeanMaps,
+            "Huron County 16X.zip": Fs25SdieFxIcon,
+            "Schwesing Bahnhof.zip": Fs25SdieFxIcon,
+            "Freche Dachskarte 4X.zip": Fs25SdieFxIcon,
+            "Saxlingham.zip": Fs25SdieFxIcon,
+            "Judith Plains, Montana.zip": Fs25SdieFxIcon,
+            "Back Roads County.zip": Fs25SdieFxIcon,
+            "Lenkovtsy.zip": Fs25SdieFxIcon,
+            "NF Marsch.zip": Fs25SdieFxIcon,
+            "Am Nord-Ostsee-Kanal.zip": Fs25SdieFxIcon,
         },
         customFolderIcons: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
@@ -83,10 +87,11 @@
             "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs": "https://www.kingmods.net/en/fs25/categories/maps",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
 
-            "FS25_AdvancedDamageSystem.zip": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
-            "FS25_Vehicle_Years.zip": "https://www.kingmods.net/en/fs25/mods/62107/vehicle-years",
-            "FS25_VehicleSpeedSync.zip": "https://www.kingmods.net/en/fs25/mods/61898/vehicle-speed-sync",
-            "FS25_ConstructionUtilities.zip": "https://www.kingmods.net/en/fs25/mods/71060/construction-utilities",
+            "FS25_AdvancedDamageSystem.zip": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/tag/v0.8.4.6",
+            "FS25_Vehicle_Years.zip": "https://www.farming-simulator.com/mod.php?mod_id=308890&title=fs2025",
+            "FS25_VehicleSpeedSync.zip": "https://www.farming-simulator.com/mod.php?mod_id=307815&title=fs2025",
+            "FS25_ConstructionUtilities.zip": "https://www.farming-simulator.com/mod.php?mod_id=336818&title=fs2025",
+            "FS25_GoToVacation.zip": "https://www.farming-simulator.com/mod.php?mod_id=312770&title=fs2025",
 
             // MAPS
             "Huron County 16X.zip": "https://www.kingmods.net/en/fs25/mods/63643/huron-county-16x",
@@ -183,6 +188,7 @@
             "FS25_Vehicle_Years.zip": "Vehicle Years",
             "FS25_VehicleSpeedSync.zip": "Vehicle Speed Sync",
             "FS25_ConstructionUtilities.zip": "Construction Utilities",
+            "FS25_GoToVacation.zip": "Go To Vacations",
 
             // MAPS
             "Huron County 16X.zip": "Huron County",

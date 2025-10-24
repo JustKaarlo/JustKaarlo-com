@@ -225,6 +225,18 @@ function getCustomWebsiteLink({ file, folderId, path, customWebsiteLinks }) {
         || customWebsiteLinks[keyById];
 }
 
+function getCustomDownloadLink({ file, folderId, path, customDownloadLinks }) {
+    if (!customDownloadLinks) return null;
+    
+    const keyByPath = path ? `${path}${file.name}` : file.name;
+    const keyById = `${folderId}/${file.name}`;
+    
+    return customDownloadLinks[file.name] 
+        || customDownloadLinks[file.id] 
+        || customDownloadLinks[keyByPath] 
+        || customDownloadLinks[keyById];
+}
+
 function getTooltipData({ file, folderId, path, tooltipData }) {
     if (!tooltipData) return null;
     
@@ -250,20 +262,82 @@ function getCustomDisplayName({ file, folderId, path, customDisplayNames }) {
         || file.name;
 }
 
-function getCustomTags({ file, folderId, path, customTags }) {
-    if (!customTags) return [];
+function getCustomTags({ file, folderId, path, customTags, tagDefinitions, tagAssignments }) {
+    let tags = [];
     
-    const keyByPath = path ? `${path}${file.name}` : file.name;
-    const keyById = `${folderId}/${file.name}`;
+    // Legacy method: direct customTags object
+    if (customTags) {
+        const keyByPath = path ? `${path}${file.name}` : file.name;
+        const keyById = `${folderId}/${file.name}`;
+        
+        const legacyTags = customTags[file.name] 
+            || customTags[file.id] 
+            || customTags[keyByPath] 
+            || customTags[keyById];
+        
+        if (legacyTags) {
+            tags = Array.isArray(legacyTags) ? [...legacyTags] : [legacyTags];
+        }
+    }
     
-    const tags = customTags[file.name] 
-        || customTags[file.id] 
-        || customTags[keyByPath] 
-        || customTags[keyById];
+    // New method: tagDefinitions + tagAssignments
+    if (tagDefinitions && tagAssignments) {
+        const keyByPath = path ? `${path}${file.name}` : file.name;
+        const keyById = `${folderId}/${file.name}`;
+        
+        // For each tag definition
+        for (const [tagName, tagConfig] of Object.entries(tagAssignments)) {
+            // Check if this file is assigned this tag
+            if (tagConfig.includes(file.name) || 
+                tagConfig.includes(file.id) || 
+                tagConfig.includes(keyByPath) || 
+                tagConfig.includes(keyById)) {
+                
+                // Get the tag definition
+                const definition = tagDefinitions[tagName];
+                if (definition) {
+                    tags.push(definition);
+                }
+            }
+        }
+    }
     
-    // Ensure tags is always an array
-    if (!tags) return [];
-    return Array.isArray(tags) ? tags : [tags];
+    return tags;
+}
+
+function getCustomIcon({ file, folderId, path, customIcons, iconDefinitions, iconAssignments }) {
+    // Legacy method: direct customIcons object
+    if (customIcons) {
+        const keyByPath = path ? `${path}${file.name}` : file.name;
+        const keyById = `${folderId}/${file.name}`;
+        
+        const legacyIcon = customIcons[keyById] || customIcons[file.name] || customIcons[file.id];
+        if (legacyIcon) return legacyIcon;
+    }
+    
+    // New method: iconDefinitions + iconAssignments
+    if (iconDefinitions && iconAssignments) {
+        const keyByPath = path ? `${path}${file.name}` : file.name;
+        const keyById = `${folderId}/${file.name}`;
+        
+        // For each icon definition
+        for (const [iconName, iconPath] of Object.entries(iconAssignments)) {
+            // Check if this file is assigned this icon
+            if (iconPath.includes(file.name) || 
+                iconPath.includes(file.id) || 
+                iconPath.includes(keyByPath) || 
+                iconPath.includes(keyById)) {
+                
+                // Get the icon definition
+                const definition = iconDefinitions[iconName];
+                if (definition) {
+                    return definition;
+                }
+            }
+        }
+    }
+    
+    return null;
 }
 
 function shouldHideSizeTag({ file, folderId, path, hideSizeTagFiles }) {
@@ -382,7 +456,7 @@ function createEnhancedTooltip(data) {
     if (data.description) {
         const desc = document.createElement('div');
         desc.className = 'tooltip-description';
-        desc.textContent = data.description;
+        desc.innerHTML = data.description;
         tooltip.appendChild(desc);
     }
     
@@ -683,6 +757,10 @@ async function listFilesInFolder(options) {
         apiKey,
         customIcons = {},
         customFolderIcons = {},
+        iconDefinitions = {},
+        iconAssignments = {},
+        folderIconDefinitions = {},
+        folderIconAssignments = {},
         highlightFiles = [],
         colorizeFiles = [],
         folderGradientFallback = {},
@@ -696,26 +774,53 @@ async function listFilesInFolder(options) {
         tooltipData = {},
         customDisplayNames = {},
         customTags = {},
+        tagDefinitions = {},
+        tagAssignments = {},
         hideSizeTagFiles = [],
         hideSizeTagFolders = [],
-        hideAllSizeTags = false
+        hideAllSizeTags = false,
+        customFiles = [],
+        customFolders = []
     } = options;
 
     container.innerHTML = "";
 
+    // Fetch real Google Drive files
     const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+trashed=false&key=${apiKey}&fields=files(id,name,mimeType,webViewLink,webContentLink,iconLink,size)`;
     const res = await fetch(url);
     const data = await res.json();
 
-    if (!data.files || data.files.length === 0) {
+    let driveFiles = [];
+    let driveFolders = [];
+
+    if (data.files && data.files.length > 0) {
+        driveFiles = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
+        driveFolders = data.files.filter(f => f.mimeType === "application/vnd.google-apps.folder");
+    }
+
+    // Filter custom items for current path/folder
+    const currentCustomFiles = customFiles.filter(cf => {
+        if (cf.parentId) return cf.parentId === folderId;
+        if (cf.parentPath !== undefined) return cf.parentPath === path;
+        return path === ""; // Show at root if no parent specified
+    });
+
+    const currentCustomFolders = customFolders.filter(cf => {
+        if (cf.parentId) return cf.parentId === folderId;
+        if (cf.parentPath !== undefined) return cf.parentPath === path;
+        return path === ""; // Show at root if no parent specified
+    });
+
+    // Merge real and custom items
+    const files = [...driveFiles, ...currentCustomFiles];
+    const folders = [...driveFolders, ...currentCustomFolders];
+
+    if (files.length === 0 && folders.length === 0) {
         const li = document.createElement("li");
         li.textContent = "No files found.";
         container.appendChild(li);
         return;
     }
-
-    const files = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
-    const folders = data.files.filter(f => f.mimeType === "application/vnd.google-apps.folder");
 
     files.sort((a, b) => {
         const aTop = highlightFiles.includes(a.name);
@@ -728,11 +833,21 @@ async function listFilesInFolder(options) {
 
     // Files
     for (const file of files) {
+        const isCustomFile = !file.webViewLink; // Custom files won't have Google Drive links
+        
         const li = document.createElement("li");
-        if (highlightFiles.includes(file.name)) li.classList.add("highlighted");
+        if (highlightFiles.includes(file.name) || highlightFiles.includes(file.id)) li.classList.add("highlighted");
 
         const link = document.createElement("a");
-        link.href = file.webViewLink;
+        // For custom files, use custom link or website link if available
+        if (isCustomFile) {
+            link.href = file.webViewLink || file.url || getCustomWebsiteLink({ file, folderId, path, customWebsiteLinks }) || "#";
+            if (link.href === "#") {
+                link.onclick = (e) => e.preventDefault();
+            }
+        } else {
+            link.href = file.webViewLink;
+        }
         link.target = "_blank";
 
         // Add enhanced tooltip functionality with fixed event handling
@@ -762,11 +877,17 @@ async function listFilesInFolder(options) {
         }
 
         const icon = document.createElement("img");
-        const iconKey = `${folderId}/${file.name}`;
-        icon.src = customIcons[iconKey] || customIcons[file.name] || file.iconLink;
+        // Use custom icon, or file's icon, or default based on type
+        const defaultIcon = file.mimeType && file.mimeType.includes('folder') ? 
+            'https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.folder' :
+            'https://drive-thirdparty.googleusercontent.com/16/type/application/octet-stream';
+        
+        // Get custom icon using both old and new methods
+        const customIcon = getCustomIcon({ file, folderId, path, customIcons, iconDefinitions, iconAssignments });
+        icon.src = customIcon || file.icon || file.iconLink || defaultIcon;
         icon.alt = "";
 
-        if (colorizeFiles.includes(file.name)) {
+        if (colorizeFiles.includes(file.name) || colorizeFiles.includes(file.id)) {
             applyGradientToItemFromSrc(li, icon.src);
         }
 
@@ -786,7 +907,7 @@ async function listFilesInFolder(options) {
         tagsContainer.style.cssText = "display: flex; align-items: center; gap: 6px; margin-left: auto;";
 
         // Add custom tags
-        const fileTags = getCustomTags({ file, folderId, path, customTags });
+        const fileTags = getCustomTags({ file, folderId, path, customTags, tagDefinitions, tagAssignments });
         fileTags.forEach(tagConfig => {
             const customTag = createCustomTag(tagConfig);
             tagsContainer.appendChild(customTag);
@@ -853,7 +974,9 @@ async function listFilesInFolder(options) {
             downloadBtn.onclick = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                const downloadUrl = getDownloadUrl(file, apiKey);
+                // Check for custom download link first (for both custom and regular files)
+                const customLink = getCustomDownloadLink({ file, folderId, path, customDownloadLinks });
+                const downloadUrl = customLink || file.downloadUrl || getDownloadUrl(file, apiKey);
                 window.open(downloadUrl, "_blank");
             };
 
@@ -929,7 +1052,17 @@ async function listFilesInFolder(options) {
 
         const icon = document.createElement("img");
         icon.crossOrigin = "anonymous";
-        const iconSrc = customFolderIcons[folder.id] || folder.iconLink;
+        // Get custom folder icon using both old and new methods
+        const customFolderIcon = getCustomIcon({ 
+            file: folder, 
+            folderId, 
+            path, 
+            customIcons: customFolderIcons, 
+            iconDefinitions: folderIconDefinitions, 
+            iconAssignments: folderIconAssignments 
+        });
+        const iconSrc = customFolderIcon || folder.icon || folder.iconLink || 
+            'https://drive-thirdparty.googleusercontent.com/16/type/application/vnd.google-apps.folder';
         icon.src = iconSrc;
         icon.alt = "";
 
@@ -976,7 +1109,7 @@ async function listFilesInFolder(options) {
         folderTagsContainer.style.cssText = "display: flex; align-items: center; gap: 6px;";
 
         // Add custom tags for folders
-        const folderTags = getCustomTags({ file: folder, folderId, path, customTags });
+        const folderTags = getCustomTags({ file: folder, folderId, path, customTags, tagDefinitions, tagAssignments });
         folderTags.forEach(tagConfig => {
             const customTag = createCustomTag(tagConfig);
             folderTagsContainer.appendChild(customTag);
@@ -1025,7 +1158,16 @@ async function listFilesInFolder(options) {
             
             folderBtn.onclick = (e) => {
                 e.stopPropagation();
-                window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                const isCustomFolder = !folder.webViewLink;
+                // Check for custom download link for folders
+                const customLink = getCustomDownloadLink({ file: folder, folderId, path, customDownloadLinks });
+                if (customLink) {
+                    window.open(customLink, "_blank");
+                } else if (isCustomFolder && folder.url) {
+                    window.open(folder.url, "_blank");
+                } else if (!isCustomFolder && folder.id) {
+                    window.open(`https://drive.google.com/drive/folders/${folder.id}`, "_blank");
+                }
             };
 
             const btnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -1120,6 +1262,10 @@ async function listFilesInFolder(options) {
                     apiKey,
                     customIcons,
                     customFolderIcons,
+                    iconDefinitions,
+                    iconAssignments,
+                    folderIconDefinitions,
+                    folderIconAssignments,
                     highlightFiles,
                     colorizeFiles,
                     folderGradientFallback,
@@ -1133,9 +1279,13 @@ async function listFilesInFolder(options) {
                     tooltipData,
                     customDisplayNames,
                     customTags,
+                    tagDefinitions,
+                    tagAssignments,
                     hideSizeTagFiles,
                     hideSizeTagFolders,
-                    hideAllSizeTags
+                    hideAllSizeTags,
+                    customFiles,
+                    customFolders
                 });
             }
             const isOpen = subList.style.display === "block";
@@ -1144,17 +1294,75 @@ async function listFilesInFolder(options) {
             li.classList.toggle("folder-open", !isOpen);
         });
 
-        fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(size,mimeType)&key=${apiKey}`)
-            .then(res => res.json())
-            .then(data => {
-                if (!data.files) return;
-                const fileItems = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
-                const fileCount = fileItems.length;
-                const totalSize = fileItems
+        // Only fetch size from Google Drive API if this is a real Drive folder
+        const isCustomFolder = !folder.webViewLink; // Custom folders won't have Google Drive links
+        if (!isCustomFolder && folder.id) {
+            fetch(`https://www.googleapis.com/drive/v3/files?q='${folder.id}'+in+parents+and+trashed=false&fields=files(size,mimeType)&key=${apiKey}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.files) return;
+                    const fileItems = data.files.filter(f => f.mimeType !== "application/vnd.google-apps.folder");
+                    const fileCount = fileItems.length;
+                    const totalSize = fileItems
+                        .filter(f => f.size)
+                        .reduce((sum, f) => sum + parseInt(f.size, 10), 0);
+
+                    // Only update size if size tag isn't hidden
+                    const shouldHideFolderSize = hideAllSizeTags || shouldHideSizeTag({ 
+                        file: folder, 
+                        folderId, 
+                        path, 
+                        hideSizeTagFiles: hideSizeTagFolders 
+                    });
+                    
+                    if (!shouldHideFolderSize) {
+                        sizeTag.textContent = formatBytes(totalSize);
+                    }
+                    
+                    if (countTag) {
+                        const currentPath = window.location.pathname;
+                        if (currentPath.includes('fs25')) {
+                            countTag.textContent = `${fileCount} File${fileCount !== 1 ? "s" : ""}`;
+                        } else {
+                            countTag.textContent = `${fileCount} Part${fileCount !== 1 ? "s" : ""}`;
+                        }
+                    }
+                });
+        } else if (isCustomFolder) {
+            // For custom folders, calculate size from custom files if available
+            const customChildren = customFiles.filter(cf => 
+                (cf.parentId && cf.parentId === folder.id) || 
+                (cf.parentPath && cf.parentPath === `${path}${folder.name}/`)
+            );
+            
+            if (customChildren.length > 0) {
+                const totalSize = customChildren
                     .filter(f => f.size)
                     .reduce((sum, f) => sum + parseInt(f.size, 10), 0);
-
-                // Only update size if size tag isn't hidden
+                
+                const shouldHideFolderSize = hideAllSizeTags || shouldHideSizeTag({ 
+                    file: folder, 
+                    folderId, 
+                    path, 
+                    hideSizeTagFiles: hideSizeTagFolders 
+                });
+                
+                if (!shouldHideFolderSize && totalSize > 0) {
+                    sizeTag.textContent = formatBytes(totalSize);
+                } else if (!shouldHideFolderSize) {
+                    sizeTag.textContent = folder.size ? formatBytes(parseInt(folder.size, 10)) : "...";
+                }
+                
+                if (countTag) {
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('fs25')) {
+                        countTag.textContent = `${customChildren.length} File${customChildren.length !== 1 ? "s" : ""}`;
+                    } else {
+                        countTag.textContent = `${customChildren.length} Part${customChildren.length !== 1 ? "s" : ""}`;
+                    }
+                }
+            } else {
+                // No children, just show folder's own size if provided
                 const shouldHideFolderSize = hideAllSizeTags || shouldHideSizeTag({ 
                     file: folder, 
                     folderId, 
@@ -1163,18 +1371,14 @@ async function listFilesInFolder(options) {
                 });
                 
                 if (!shouldHideFolderSize) {
-                    sizeTag.textContent = formatBytes(totalSize);
+                    sizeTag.textContent = folder.size ? formatBytes(parseInt(folder.size, 10)) : "...";
                 }
                 
                 if (countTag) {
-                    const currentPath = window.location.pathname;
-                    if (currentPath.includes('fs25')) {
-                        countTag.textContent = `${fileCount} File${fileCount !== 1 ? "s" : ""}`;
-                    } else {
-                        countTag.textContent = `${fileCount} Part${fileCount !== 1 ? "s" : ""}`;
-                    }
+                    countTag.textContent = "";
                 }
-            });
+            }
+        }
 
         container.appendChild(li);
     }
