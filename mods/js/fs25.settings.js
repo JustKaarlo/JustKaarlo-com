@@ -53,6 +53,7 @@
             "Lenkovtsy.zip": Fs25SdieFxIcon,
             "NF Marsch.zip": Fs25SdieFxIcon,
             "Am Nord-Ostsee-Kanal.zip": Fs25SdieFxIcon,
+            "La Plaine.zip": Fs25SdieFxIcon,
         },
         folderIconDefinitions: {},
         folderIconAssignments: {},
@@ -87,6 +88,7 @@
             "Lenkovtsy.zip",
             "NF Marsch.zip",
             "Am Nord-Ostsee-Kanal.zip",
+            "La Plaine.zip",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -114,6 +116,7 @@
             "Lenkovtsy.zip": "https://www.kingmods.net/en/fs25/mods/63925/lenkovtsy-4x",
             "NF Marsch.zip": "https://www.kingmods.net/en/fs25/mods/62246/nf-marsch-4x",
             "Am Nord-Ostsee-Kanal.zip": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
+            "La Plaine.zip": "https://www.kingmods.net/en/fs25/mods/70264/la-plaine",
         },
         tooltipData: {
             // MAPS
@@ -180,6 +183,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/am-nord-ostsee-kanal-4x-fs25-zJu45.jpg",
                 ]
             },
+            "La Plaine.zip": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/la-plaine-fs25-9wCnh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-plaine-fs25-V4CN4.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-plaine-fs25-4fccq.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -206,6 +216,7 @@
             "Lenkovtsy.zip": "Lenkovtsy",
             "NF Marsch.zip": "NF Marsch",
             "Am Nord-Ostsee-Kanal.zip": "Am Nord-Ostsee-Kanal",
+            "La Plaine.zip": "La Plaine"
         },
         tagDefinitions: {},
         tagAssignments: {},
@@ -256,6 +267,10 @@
                 Fs25EuropeTag,
                 Fs254xMaps,
             ],
+            "La Plaine.zip": [
+                Fs25EuropeTag,
+                Fs254xMaps,
+            ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
@@ -269,6 +284,7 @@
             "Lenkovtsy.zip",
             "NF Marsch.zip",
             "Am Nord-Ostsee-Kanal.zip",
+            "La Plaine.zip",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
