@@ -15,6 +15,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .guides-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 0;
+            box-shadow: 0;
+        }
+
+        .guides-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-blend-mode: saturation;
+            background:
+                -webkit-linear-gradient(120deg, rgba(155, 189, 21, 0.15) 0%, rgba(155, 189, 21, 0.2) 100%),
+                url("https://www.justkaarlo.com/res/bg/bgBasicGrid.png") top 50% left 50% / cover no-repeat;
+            filter: blur(1px) opacity(85%);
+            z-index: 0;
+            border: 1px solid rgba(61, 61, 61, 0.57);
+            box-shadow: 0 1px 24px rgba(0, 0, 0, 0.6);
+        }
+
+        .guides-container > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .guide-button {
+            position: relative;
+            overflow: hidden;
+            background-blend-mode: saturation;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: all 0.2s ease;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+    </style>
 </head>
 <body>
     <div id="bg-fs"></div>

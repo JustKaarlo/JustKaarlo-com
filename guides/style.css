@@ -49,9 +49,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-attachment: fixed;
     z-index: 0;
     pointer-events: none;
+    filter: grayscale(100%);
     background-image:
         linear-gradient(var(--fs-overlay-2), var(--fs-overlay-2)),
-        url('https://www.justkaarlo.com/res/bg/DarkWaveBlur.png');
+        url('file:///D:/Misc/Github/justkaarlo.github.io/res/bg/bgBlueRaw.png');
 }
 
 #bg-fs {
@@ -226,11 +227,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background: rgba(54, 54, 54, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 16px;
-    /* backdrop-filter: blur(6px) brightness(0.5); */
-    backdrop-filter: brightness(0.6);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
     padding: 20px;
-    max-width: 880px;
+    max-width: 900px;
     width: 100%;
     min-height: 200px;
     max-height: 600px;
@@ -245,7 +244,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .guides-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 12px;
 }
 
 .guide-button {
@@ -300,7 +299,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .guide-button:hover .guide-icon {
-    filter: brightness(1.2);
+    filter: brightness(1.07);
     transform: scale(1.1);
 }
 
