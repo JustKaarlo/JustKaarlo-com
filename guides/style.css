@@ -1198,7 +1198,7 @@ body.modal-open .nav-container {
     display: inline-block;
     padding: 12px 24px;
     margin: 10px 5px;
-    background: #9bbd15;
+    background: rgb(176, 212, 25, 0.7);
     color: #ffffff;
     text-decoration: none;
     border: none;
@@ -1208,20 +1208,21 @@ body.modal-open .nav-container {
     font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(155, 189, 21, 0.3);
+    box-shadow: 0 3px 6px rgba(155, 189, 21, 0.4);
 }
 
 .guide-description .btn-action:hover,
 .guide-description .action-button:hover {
-    background: #b0d419;
+    background: rgb(176, 212, 25, 0.75);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(155, 189, 21, 0.4);
+    box-shadow: 0 4px 9px rgba(155, 189, 21, 0.4);
+    color: #ffffff;
 }
 
 .guide-description .btn-action:active,
 .guide-description .action-button:active {
     transform: translateY(0px);
-    box-shadow: 0 2px 8px rgba(155, 189, 21, 0.3);
+    box-shadow: 0 4px 9px rgba(155, 189, 21, 0.4);
 }
 
 /* Gradient version of action button */
