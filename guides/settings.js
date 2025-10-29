@@ -211,7 +211,7 @@ const fsGuides = [
 
             <h3>Rice or Long Grain Rice?</h3>
             <p>There are two different types of rice in Farming Simulator: Rice and long grain rice. They need different water levels, harvesting machines, and seeds, of course. In this tutorial, we focus on rice. If you want to learn about long grain rice - check the separate tutorial.</p>
-            <a href="https://www.justkaarlo.com/guides/fs25#long-grain-rice" class="btn-action">Rice</a>
+            <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#long-grain-rice'; setTimeout(() => location.reload(), 500);">Long Grain Rice</button>
             <br>
             <hr>
             <div class="box box-green">
@@ -233,7 +233,7 @@ const fsGuides = [
             <h3>Rice or Long Grain Rice?</h3>
             <p>Rice is not necessarily rice. There are two different types of rice: Long grain rice and rice. They need different water levels, harvesting machines, and seeds, of course.</p>
             <p>In this tutorial, we will focus on long grain rice. If you want to learn about the other type of rice - check the separate tutorial.</p>
-            <a href="https://www.justkaarlo.com/guides/fs25#rice" class="btn-action">Long Grain Rice</a>
+            <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Rice</button>
             <br>
             <hr>
             <div class="box box-green">
