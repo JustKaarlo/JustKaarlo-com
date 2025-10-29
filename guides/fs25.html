@@ -147,6 +147,12 @@
     <script src="settings.js"></script>
     <script src="script.js"></script>
     <script>
+        function closeGuide() {
+            GuideSystem.closeModal();
+            const url = window.location.href.split('#')[0];
+            history.replaceState(null, '', url);
+        }
+
         // Initialize particles
         particlesJS('particles-js', {
             particles: {
@@ -164,6 +170,8 @@
         
         // Initialize FS25 guides
         initializeGuidePage('fsGuidesGrid', fsGuides);
+
+
     </script>
 </body>
 </html>
