@@ -18,7 +18,7 @@ const fsGuides = [
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6895c3a14d855.jpg" alt="Banner">
-            <em><b>With Precision Farming</b></em>
+                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h2>What You Need To Know About Potatoes</h2>
@@ -51,13 +51,13 @@ const fsGuides = [
     },
     {
         title: 'Cotton',
-        subtitle: 'Sow & Harvest, Precision Farming',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/cotton.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=306',
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_620fafcda0cb3.jpg" alt="Banner">
-            <em><b>With Precision Farming</b></em>
+                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h2>What You Need For Cotton</h2>
@@ -194,6 +194,47 @@ const fsGuides = [
                 </li>
             </ol>
             
+        `,
+    },
+    {
+        title: 'Rice',
+        subtitle: 'Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/rice.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=557',
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_673315a0f2359.jpg" alt="Banner">
+                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
+            <hr>
+
+            <h3>Rice or Long Grain Rice?</h3>
+            <p>There are two different types of rice in Farming Simulator: Rice and long grain rice. They need different water levels, harvesting machines, and seeds, of course. In this tutorial, we focus on rice. If you want to learn about long grain rice - check the separate tutorial.</p>
+            <blockquote>
+                <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=556">Long Grain Rice</a>
+            </blockquote>
+            <br>
+            <p>Work In Progress</p>
+        `,
+    },
+    {
+        title: 'Long Grain Rice',
+        subtitle: 'Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/long-grain-rice.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=556',
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6731df7448fe3.jpg" alt="Banner">
+                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
+            <hr>
+
+            <h3>Rice or Long Grain Rice?</h3>
+            <p>Rice is not necessarily rice. There are two different types of rice: Long grain rice and rice. They need different water levels, harvesting machines, and seeds, of course.</p>
+            <p>In this tutorial, we will focus on long grain rice. If you want to learn about the other type of rice - check the separate tutorial.</p>
+            <blockquote>
+                <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=557">Rice</a>
+            </blockquote>
+            <br>
+            <p>Work In Progress</p>
         `,
     },
 ];
