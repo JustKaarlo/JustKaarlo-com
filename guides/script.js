@@ -63,6 +63,8 @@ const GuideSystem = {
         const guideImage = document.getElementById('guideImage');
         const guideDescription = document.getElementById('guideDescription');
         const guideLink = document.getElementById('guideLink');
+        const tocButton = document.getElementById('tocButton');
+        const tocPanel = document.getElementById('tocPanel');
 
         modalTitle.textContent = guide.title;
         
@@ -73,6 +75,17 @@ const GuideSystem = {
 
         // Initialize dropdowns after content is loaded
         this.initializeDropdowns();
+
+        // Handle TOC button visibility and generation
+        if (guide.showTOC === true) {
+            tocButton.style.display = 'inline-flex';
+            this.generateTOC();
+        } else {
+            tocButton.style.display = 'none';
+            if (tocPanel) {
+                tocPanel.classList.remove('show');
+            }
+        }
 
         // Show or hide the external link button
         if (guide.link && guideLink) {
@@ -90,7 +103,13 @@ const GuideSystem = {
     // Close the modal
     closeModal() {
         const modal = document.getElementById('guideModal');
+        const tocPanel = document.getElementById('tocPanel');
+        
         modal.classList.remove('show');
+        if (tocPanel) {
+            tocPanel.classList.remove('show');
+        }
+        
         document.body.style.overflow = 'auto';
         document.body.classList.remove('modal-open');
 
@@ -98,8 +117,10 @@ const GuideSystem = {
         setTimeout(() => {
             const guideImage = document.getElementById('guideImage');
             const guideDescription = document.getElementById('guideDescription');
+            const tocContent = document.getElementById('tocContent');
             if (guideImage) guideImage.src = '';
             if (guideDescription) guideDescription.innerHTML = '';
+            if (tocContent) tocContent.innerHTML = '';
         }, 300);
     },
     
@@ -171,6 +192,67 @@ const GuideSystem = {
                 });
             }
         });
+    },
+    
+    // Generate table of contents from headers
+    generateTOC() {
+        const guideDescription = document.getElementById('guideDescription');
+        const tocContent = document.getElementById('tocContent');
+        
+        if (!guideDescription || !tocContent) return;
+        
+        // Find all headers (h1, h2, h3)
+        const headers = guideDescription.querySelectorAll('h1, h2, h3');
+        
+        if (headers.length === 0) {
+            tocContent.innerHTML = '<p style="color: #999; padding: 10px;">No sections found</p>';
+            return;
+        }
+        
+        // Clear existing TOC
+        tocContent.innerHTML = '';
+        
+        // Generate TOC items
+        headers.forEach((header, index) => {
+            // Add ID to header for scrolling
+            const headerId = `toc-section-${index}`;
+            header.id = headerId;
+            
+            // Create TOC item
+            const tocItem = document.createElement('a');
+            tocItem.href = `#${headerId}`;
+            tocItem.className = `toc-item toc-${header.tagName.toLowerCase()}`;
+            tocItem.textContent = header.textContent;
+            
+            // Scroll to section on click
+            tocItem.addEventListener('click', (e) => {
+                e.preventDefault();
+                const guideDescription = document.getElementById('guideDescription');
+                const targetElement = document.getElementById(headerId);
+                
+                if (targetElement && guideDescription) {
+                    // Calculate position relative to the description container
+                    const targetRect = targetElement.getBoundingClientRect();
+                    const containerRect = guideDescription.getBoundingClientRect();
+                    const scrollOffset = targetRect.top - containerRect.top + guideDescription.scrollTop - 20;
+                    
+                    guideDescription.scrollTo({
+                        top: scrollOffset,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Optional: close TOC panel after clicking on mobile
+                    if (window.innerWidth <= 768) {
+                        const tocPanel = document.getElementById('tocPanel');
+                        if (tocPanel) {
+                            tocPanel.classList.remove('show');
+                        }
+                    }
+                }
+            });
+            
+            tocContent.appendChild(tocItem);
+        });
     }
 };
 
@@ -218,6 +300,13 @@ function closeGuide() {
     GuideSystem.closeModal();
 }
 
+function toggleTOC() {
+    const tocPanel = document.getElementById('tocPanel');
+    if (tocPanel) {
+        tocPanel.classList.toggle('show');
+    }
+}
+
 // Modal event listeners
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize navigation
@@ -246,5 +335,25 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeGuidePage(containerId, guidesArray) {
     document.addEventListener('DOMContentLoaded', () => {
         GuideSystem.generateButtons(containerId, guidesArray);
+        
+        // Check for deep link hash on page load
+        const hash = window.location.hash.substring(1); // Remove the # symbol
+        if (hash) {
+            // Find guide by matching the hash with guide title (converted to URL-friendly format)
+            const guideIndex = guidesArray.findIndex(guide => {
+                const guideSlug = guide.title.toLowerCase()
+                    .replace(/[^\w\s-]/g, '') // Remove special characters
+                    .replace(/\s+/g, '-') // Replace spaces with hyphens
+                    .replace(/--+/g, '-'); // Replace multiple hyphens with single
+                return guideSlug === hash;
+            });
+            
+            if (guideIndex !== -1) {
+                // Small delay to ensure DOM is fully loaded
+                setTimeout(() => {
+                    GuideSystem.openGuide(guideIndex);
+                }, 100);
+            }
+        }
     });
 }

@@ -2,6 +2,7 @@
 .vscode/
 _deprecated/
 _internal/
+guides/test/
 
 # FILES
 /desktop.ini
@@ -11,3 +12,4 @@ _internal/
 /mods/Description Formatting Guide
 /mods/Settings Formatting Template
 /guides/Formatting
+/guides/Guide

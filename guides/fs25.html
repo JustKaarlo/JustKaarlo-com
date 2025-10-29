@@ -62,6 +62,11 @@
             <div class="modal-header">
                 <span class="modal-title" id="modalTitle">Guide Title</span>
                 <div class="modal-header-actions">
+                    <button id="tocButton" class="toc-button" style="display: none;" onclick="toggleTOC()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/>
+                        </svg>
+                    </button>
                     <a id="guideLink" href="#" target="_blank" class="guide-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="rgba(160, 160, 160, 0.7)" stroke-width="2" stroke-linecap="round"
@@ -69,6 +74,17 @@
                         </svg>
                     </a>
                     <button class="close-button" onclick="closeGuide()">×</button>
+                </div>
+            </div>
+            
+            <!-- Table of Contents Panel -->
+            <div id="tocPanel" class="toc-panel">
+                <div class="toc-header">
+                    <span class="toc-title">Table of Contents</span>
+                    <button class="toc-close" onclick="toggleTOC()">×</button>
+                </div>
+                <div id="tocContent" class="toc-content">
+                    <!-- TOC will be generated here -->
                 </div>
             </div>
             <div class="modal-body">

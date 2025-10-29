@@ -16,6 +16,7 @@ const fsGuides = [
         contentType: 'description',
         // image: 'https://www.justkaarlo.com/res/src/guides/Fs25-Potatoes-Guide.png',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
+        showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6895c3a14d855.jpg" alt="Banner">
                  <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
@@ -55,6 +56,7 @@ const fsGuides = [
         icon: 'https://www.justkaarlo.com/res/src/guides/cotton.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=306',
+        showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_620fafcda0cb3.jpg" alt="Banner">
                  <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
@@ -209,11 +211,12 @@ const fsGuides = [
 
             <h3>Rice or Long Grain Rice?</h3>
             <p>There are two different types of rice in Farming Simulator: Rice and long grain rice. They need different water levels, harvesting machines, and seeds, of course. In this tutorial, we focus on rice. If you want to learn about long grain rice - check the separate tutorial.</p>
-            <blockquote>
-                <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=556">Long Grain Rice</a>
-            </blockquote>
+            <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#long-grain-rice'">Long Grain Rice</button>
             <br>
-            <p>Work In Progress</p>
+            <hr>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
         `,
     },
     {
@@ -230,11 +233,12 @@ const fsGuides = [
             <h3>Rice or Long Grain Rice?</h3>
             <p>Rice is not necessarily rice. There are two different types of rice: Long grain rice and rice. They need different water levels, harvesting machines, and seeds, of course.</p>
             <p>In this tutorial, we will focus on long grain rice. If you want to learn about the other type of rice - check the separate tutorial.</p>
-            <blockquote>
-                <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=557">Rice</a>
-            </blockquote>
+            <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'">Rice</button>
             <br>
-            <p>Work In Progress</p>
+            <hr>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
         `,
     },
 ];
