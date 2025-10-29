@@ -12,24 +12,67 @@ const GuideSystem = {
         const guide = this.currentGuides[guideIndex];
         if (!guide) return;
 
-        if (guide.imagePreview === true && guide.image) {
+        // Handle different content types
+        if (guide.contentType === 'image' && guide.image) {
             // Show modal with image preview
-            this.showModal(guide);
+            this.showImageModal(guide);
+        } else if (guide.contentType === 'description' && guide.description) {
+            // Show modal with formatted description
+            this.showDescriptionModal(guide);
+        } else if (guide.contentType === 'link' && guide.link) {
+            // Open link directly
+            window.location.href = guide.link;
         } else if (guide.link) {
-            // Open link in the same window
+            // Fallback: if no contentType specified but link exists
             window.location.href = guide.link;
         }
     },
     
     // Show modal with guide image
-    showModal(guide) {
+    showImageModal(guide) {
         const modal = document.getElementById('guideModal');
         const modalTitle = document.getElementById('modalTitle');
         const guideImage = document.getElementById('guideImage');
+        const guideDescription = document.getElementById('guideDescription');
         const guideLink = document.getElementById('guideLink');
 
         modalTitle.textContent = guide.title;
+        
+        // Show image, hide description
         guideImage.src = guide.image;
+        guideImage.style.display = 'block';
+        guideDescription.style.display = 'none';
+
+        // Show or hide the external link button
+        if (guide.link && guideLink) {
+            guideLink.href = guide.link;
+            guideLink.style.display = 'inline-flex';
+        } else if (guideLink) {
+            guideLink.style.display = 'none';
+        }
+
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        document.body.classList.add('modal-open');
+    },
+    
+    // Show modal with formatted description
+    showDescriptionModal(guide) {
+        const modal = document.getElementById('guideModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const guideImage = document.getElementById('guideImage');
+        const guideDescription = document.getElementById('guideDescription');
+        const guideLink = document.getElementById('guideLink');
+
+        modalTitle.textContent = guide.title;
+        
+        // Show description, hide image
+        guideDescription.innerHTML = guide.description;
+        guideDescription.style.display = 'block';
+        guideImage.style.display = 'none';
+
+        // Initialize dropdowns after content is loaded
+        this.initializeDropdowns();
 
         // Show or hide the external link button
         if (guide.link && guideLink) {
@@ -51,10 +94,12 @@ const GuideSystem = {
         document.body.style.overflow = 'auto';
         document.body.classList.remove('modal-open');
 
-        // Clear image after animation
+        // Clear content after animation
         setTimeout(() => {
             const guideImage = document.getElementById('guideImage');
+            const guideDescription = document.getElementById('guideDescription');
             if (guideImage) guideImage.src = '';
+            if (guideDescription) guideDescription.innerHTML = '';
         }, 300);
     },
     
@@ -105,6 +150,26 @@ const GuideSystem = {
             button.addEventListener('mouseleave', () => {
                 button.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
             });
+        });
+    },
+    
+    // Initialize dropdown functionality
+    initializeDropdowns() {
+        const dropdowns = document.querySelectorAll('.guide-description .dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const header = dropdown.querySelector('.dropdown-header');
+            
+            if (header) {
+                // Remove any existing click listeners
+                const newHeader = header.cloneNode(true);
+                header.parentNode.replaceChild(newHeader, header);
+                
+                // Add click listener
+                newHeader.addEventListener('click', () => {
+                    dropdown.classList.toggle('active');
+                });
+            }
         });
     }
 };

@@ -368,6 +368,7 @@ body.modal-open .nav-container {
 
 .guide-modal::-webkit-scrollbar,
 .modal-body::-webkit-scrollbar,
+.guide-description::-webkit-scrollbar,
 .modal-content::-webkit-scrollbar {
     display: none;
     width: 0;
@@ -417,10 +418,28 @@ body.modal-open .nav-container {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-grow: 1;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
+    user-select: none;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+    display: none;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .guide-image {
@@ -433,6 +452,331 @@ body.modal-open .nav-container {
     margin: 20px;
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Guide Description Formatting Styles */
+.guide-description {
+    max-width: 900px;
+    width: 100%;
+    padding: 30px 40px;
+    color: #e8e8e8;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.7;
+    overflow-y: auto;
+    display: none;
+}
+
+.guide-description h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description h2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #f5f5f5;
+    margin: 30px 0 15px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #eeeeee;
+    margin: 25px 0 12px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin: 20px 0 10px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description h5 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #d8d8d8;
+    margin: 18px 0 8px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description h6 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #d0d0d0;
+    margin: 15px 0 8px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description p {
+    margin: 0 0 16px 0;
+    font-size: 1em;
+    color: #d8d8d8;
+}
+
+.guide-description strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.guide-description em {
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+.guide-description ul {
+    margin: 15px 0;
+    padding-left: 30px;
+    list-style-type: disc;
+}
+
+.guide-description ol {
+    margin: 15px 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: custom-counter;
+}
+
+.guide-description ol > li {
+    margin: 12px 0;
+    padding-left: 50px;
+    position: relative;
+    color: #d8d8d8;
+    line-height: 1.6;
+}
+
+.guide-description ol > li::before {
+    content: counter(custom-counter);
+    counter-increment: custom-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #5a6721 0%, #9bbd15 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff;
+    box-shadow: 0 1px 4px rgba(44, 44, 44, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description li {
+    margin: 8px 0;
+    color: #d8d8d8;
+    line-height: 1.6;
+}
+
+.guide-description ul ul,
+.guide-description ol ul {
+    list-style-type: circle;
+    margin: 5px 0;
+    padding-left: 30px;
+}
+
+.guide-description ul ol,
+.guide-description ol ol {
+    margin: 5px 0;
+    padding-left: 0;
+}
+
+.guide-description ol ol > li::before {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+    background: linear-gradient(135deg, #8a8a8a 0%, #a0a0a0 100%);
+}
+
+.guide-description hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 0), 
+        rgba(255, 255, 255, 0.3), 
+        rgba(255, 255, 255, 0));
+    margin: 30px 0;
+}
+
+.guide-description img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.guide-description blockquote {
+    margin: 20px 0;
+    padding: 15px 20px;
+    background: rgb(155, 189, 21, 0.05);
+    border-left: 4px solid rgba(155, 189, 21, 0.6);
+    border-radius: 4px;
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+.guide-description code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #ffaa00;
+}
+
+.guide-description pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.guide-description pre code {
+    background: none;
+    padding: 0;
+    color: #e8e8e8;
+}
+
+.guide-description a {
+    color: #81c332;
+    text-decoration: none;
+    /* border-bottom: 1px solid rgba(130, 195, 50, 0.664); */
+    transition: all 0.2s ease;
+}
+
+.guide-description a:hover {
+    color: #82c332be;
+    /* border-bottom-color: #82c332a9; */
+}
+
+.guide-description table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.guide-description th {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.guide-description td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #d8d8d8;
+}
+
+.guide-description tr:last-child td {
+    border-bottom: none;
+}
+
+/* Enhanced table styles for merged cells */
+.guide-description th[colspan],
+.guide-description td[colspan] {
+    text-align: center;
+}
+
+.guide-description th[rowspan],
+.guide-description td[rowspan] {
+    vertical-align: middle;
+}
+
+.guide-description tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease;
+}
+
+/* Dropdown/Collapsible Styles */
+.guide-description .dropdown {
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.guide-description .dropdown-header {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease;
+    user-select: none;
+}
+
+.guide-description .dropdown-header:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.guide-description .dropdown-header-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.guide-description .dropdown-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.guide-description .dropdown-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: #9bbd15;
+}
+
+.guide-description .dropdown.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.guide-description .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
+}
+
+.guide-description .dropdown.active .dropdown-content {
+    max-height: 2000px;
+    padding: 20px;
+}
+
+/* First element spacing adjustment */
+.guide-description > *:first-child {
+    margin-top: 0;
+}
+
+/* Last element spacing adjustment */
+.guide-description > *:last-child {
+    margin-bottom: 0;
 }
 
 .disclaimer {
@@ -477,6 +821,22 @@ body.modal-open .nav-container {
 
     .guides-container {
         padding: 15px;
+    }
+    
+    .guide-description {
+        padding: 20px 25px;
+    }
+    
+    .guide-description h1 {
+        font-size: 1.8em;
+    }
+    
+    .guide-description h2 {
+        font-size: 1.5em;
+    }
+    
+    .guide-description h3 {
+        font-size: 1.3em;
     }
 }
 
