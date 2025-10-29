@@ -3,7 +3,7 @@ const guides = [
         title: 'Farming Simulator 2025',
         subtitle: 'Guides & Tutorials',
         icon: 'https://www.justkaarlo.com/res/ico/favicon/fs25-favicon-2.ico',
-        link: 'https://www.justkaarlo.com/guides/fs25.html',
+        link: 'https://www.justkaarlo.com/guides/fs25',
         contentType: 'link'
     },
 ];
