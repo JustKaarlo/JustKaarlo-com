@@ -203,8 +203,8 @@
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "collection": { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 },
-            "wip": { text: "WIP", color: "#a9c303ff", opacity: 0.5, textOpacity: 0.45 },
         },
         tagAssignments: {
             "2x-map": [
