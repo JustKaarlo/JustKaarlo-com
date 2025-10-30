@@ -26,7 +26,7 @@
                 "MissingMods.zip",
 
                 // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12",
+                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13",
             ],
 
         },
@@ -61,7 +61,7 @@
             "fs25-maps",
 
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -87,6 +87,7 @@
             "map-10": "https://www.kingmods.net/en/fs25/mods/69094/saxlingham",
             "map-11": "https://www.kingmods.net/en/fs25/mods/62944/schwesing-bahnhof",
             "map-12": "https://www.kingmods.net/en/fs25/mods/70646/nietwerder-4x-multifruit",
+            "map-13": "https://www.kingmods.net/en/fs25/mods/69994/wernolau-farm",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -174,6 +175,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/nietwerder-4x-multifruit-fs25-JLlvc.jpg",
                 ]
             },
+            "map-13": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/wernolau-farm-fs25-4P9qt.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/wernolau-farm-fs25-c4eiq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/wernolau-farm-fs25-HrQVx.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -194,7 +202,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13"
             ],
             "16x-map": [
                 "map-5",
@@ -209,7 +217,7 @@
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13"
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -288,6 +296,12 @@
             {
                 id: "map-12",
                 name: "Nietwerder",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-13",
+                name: "Wernolau Farm",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
