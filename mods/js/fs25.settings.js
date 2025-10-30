@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
 
@@ -212,6 +212,7 @@
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
             "collection": { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 },
         },
         tagAssignments: {
@@ -230,7 +231,10 @@
             ],
             "wip": [
                 "map-14",
-            ]
+            ],
+            "outdated": [
+                "map-7",
+            ],
         },
         customTags: {
         },
