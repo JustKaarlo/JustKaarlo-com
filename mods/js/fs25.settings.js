@@ -26,7 +26,7 @@
                 "MissingMods.zip",
 
                 // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13",
+                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14",
             ],
 
         },
@@ -61,7 +61,7 @@
             "fs25-maps",
 
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -88,6 +88,7 @@
             "map-11": "https://www.kingmods.net/en/fs25/mods/62944/schwesing-bahnhof",
             "map-12": "https://www.kingmods.net/en/fs25/mods/70646/nietwerder-4x-multifruit",
             "map-13": "https://www.kingmods.net/en/fs25/mods/69994/wernolau-farm",
+            "map-14": "https://www.kingmods.net/en/fs25/work-in-progress/1624/sivita",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -182,6 +183,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/wernolau-farm-fs25-HrQVx.jpg",
                 ]
             },
+            "map-14": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/sivita-fs25-E9hlz.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/sivita-fs25-gdSwY.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/sivita-fs25-byo4E.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -196,13 +204,14 @@
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "collection": { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 },
+            "wip": { text: "WIP", color: "#a9c303ff", opacity: 0.5, textOpacity: 0.45 },
         },
         tagAssignments: {
             "2x-map": [
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13"
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14"
             ],
             "16x-map": [
                 "map-5",
@@ -211,13 +220,16 @@
                 "OlssonsMods.zip",
                 "MissingMods.zip",
             ],
+            "wip": [
+                "map-14",
+            ]
         },
         customTags: {
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13"
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14"
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -302,6 +314,12 @@
             {
                 id: "map-13",
                 name: "Wernolau Farm",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-14",
+                name: "Sivita",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
