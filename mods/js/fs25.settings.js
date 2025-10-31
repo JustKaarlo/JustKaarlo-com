@@ -22,8 +22,6 @@
                 // MODS
 
                 // OTHERS
-                "OlssonsMods.zip",
-                "MissingMods.zip",
 
                 // CUSTOM FILES
                 "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15",
@@ -202,8 +200,6 @@
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
             // OTHERS
-            "OlssonsMods.zip": "Olssons Mods",
-            "MissingMods.zip": "Olssons Missing Mods",
 
             // MODS
         },
@@ -214,7 +210,6 @@
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
             "top": { text: "⭐", color: "#e4af00", opacity: 0.6, textOpacity: 1 },
-            "collection": { text: "Collection", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 },
         },
         tagAssignments: {
             "2x-map": [
@@ -225,10 +220,6 @@
             ],
             "16x-map": [
                 "map-5",
-            ],
-            "collection": [
-                "OlssonsMods.zip",
-                "MissingMods.zip",
             ],
             "wip": [
                 "map-14",
