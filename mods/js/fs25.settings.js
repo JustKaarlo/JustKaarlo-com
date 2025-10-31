@@ -24,7 +24,7 @@
                 // OTHERS
 
                 // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15",
+                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
             ],
 
         },
@@ -59,7 +59,7 @@
             "fs25-maps",
 
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -88,6 +88,8 @@
             "map-13": "https://www.kingmods.net/en/fs25/mods/69994/wernolau-farm",
             "map-14": "https://www.kingmods.net/en/fs25/work-in-progress/1624/sivita",
             "map-15": "https://www.kingmods.net/en/fs25/mods/68888/polesine",
+            "maps-16": "https://www.kingmods.net/en/fs25/mods/65766/vojvodina-gornje-podunavlje",
+            "maps-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -196,6 +198,20 @@
                     "https://www.kingmods.net/uploads/fs25/mods/polesine-fs25-oGrAs.jpg",
                 ]
             },
+            "map-16": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/vojvodina-gornje-podunavlje-fs25-p4S3W.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vojvodina-gornje-podunavlje-fs25-2Mg1z.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vojvodina-gornje-podunavlje-fs25-rLLYr.jpg",
+                ]
+            },
+            "map-17": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/rettenbach-plus-fs25-EQWfH.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rettenbach-plus-fs25-Wn7vh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rettenbach-plus-fs25-eezp3.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -216,7 +232,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
             ],
             "16x-map": [
                 "map-5",
@@ -234,7 +250,7 @@
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -331,6 +347,18 @@
             {
                 id: "map-15",
                 name: "Polesine",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-16",
+                name: "Vojvodina-Gornje Podunavlje",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-17",
+                name: "Rettenbach Plus",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
