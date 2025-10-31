@@ -24,7 +24,7 @@
                 // OTHERS
 
                 // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
+                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "map-17",
             ],
 
         },
@@ -59,7 +59,7 @@
             "fs25-maps",
 
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "map-17",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -89,7 +89,7 @@
             "map-14": "https://www.kingmods.net/en/fs25/work-in-progress/1624/sivita",
             "map-15": "https://www.kingmods.net/en/fs25/mods/68888/polesine",
             "maps-16": "https://www.kingmods.net/en/fs25/mods/65766/vojvodina-gornje-podunavlje",
-            "maps-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
+            "map-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -232,7 +232,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "maps-16", "map-17",
             ],
             "16x-map": [
                 "map-5",
@@ -250,7 +250,7 @@
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "maps-17",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "maps-16", "map-17",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
