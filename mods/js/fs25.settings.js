@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "1EqzEAoB3zUuDiAfA81DNmqQh97mH8ISR";
     const fsContainer = document.getElementById("fs-fileList");
 
@@ -225,7 +225,10 @@
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
-            "top": { text: "⭐", color: "#e4af00", opacity: 0.6, textOpacity: 1 },
+            "top1": { text: "⭐", color: "#e4af00", opacity: 0.6, textOpacity: 1 },
+            "top2": { text: "⭐", color: "#965f00", opacity: 0.6, textOpacity: 0.45 },
+            "top3": { text: "⭐", color: "#899A17", opacity: 0.6, textOpacity: 0.45 },
+            "top4": { text: "⭐", color: "#8f8f8f", opacity: 0.6, textOpacity: 0.45 },
         },
         tagAssignments: {
             "2x-map": [
@@ -241,9 +244,18 @@
                 "map-14",
             ],
             "outdated": [],
-            "top": [
-                "map-6"
-            ]
+            "top1": [
+                "map-6",
+            ],
+            "top2": [
+                "map-1",
+            ],
+            "top3": [
+                "map-17",
+            ],
+            "top4": [
+                "map-7", "map-15","map-16", "map-13",
+            ],
         },
         customTags: {
         },
