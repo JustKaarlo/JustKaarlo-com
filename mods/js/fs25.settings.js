@@ -24,7 +24,7 @@
                 // OTHERS
 
                 // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17",
+                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18",
             ],
 
         },
@@ -59,7 +59,7 @@
             "fs25-maps",
 
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18",
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
@@ -90,6 +90,7 @@
             "map-15": "https://www.kingmods.net/en/fs25/mods/68888/polesine",
             "map-16": "https://www.kingmods.net/en/fs25/mods/65766/vojvodina-gornje-podunavlje",
             "map-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
+            "map-18": "https://www.kingmods.net/en/fs25/mods/71702/des-cagouilles-dans-lgarouil",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -212,6 +213,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/rettenbach-plus-fs25-eezp3.jpg",
                 ]
             },
+            "map-18": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/des-cagouilles-dans-lgarouil-fs25-3DVz1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/des-cagouilles-dans-lgarouil-fs25-yhrCh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/des-cagouilles-dans-lgarouil-fs25-W5emw.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
@@ -235,7 +243,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18",
             ],
             "16x-map": [
                 "map-5",
@@ -262,7 +270,7 @@
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17",
+            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18",
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -371,6 +379,12 @@
             {
                 id: "map-17",
                 name: "Rettenbach Plus",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-18",
+                name: "Des Cagouilles Dans L'Garouil",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
