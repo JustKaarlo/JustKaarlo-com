@@ -6,6 +6,8 @@
     // CUSTOM CONSTANTS
     const numMapsArray = Array.from({ length: 50 }, (_, i) => `map-${i + 1}`);
 
+    const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
+
     if (!fsContainer) {
         console.error("file list container not found");
         return;
@@ -76,7 +78,14 @@
             "map-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
             "map-18": "https://www.kingmods.net/en/fs25/mods/71702/des-cagouilles-dans-lgarouil",
             "map-19": "https://www.kingmods.net/en/fs25/mods/60554/garbindel",
-            "map-20": "https://www.kingmods.net/en/fs25/mods/65584/rancho-fundo"
+            "map-20": "https://www.kingmods.net/en/fs25/mods/65584/rancho-fundo",
+            "map-21": "https://www.kingmods.net/en/fs25/mods/63901/sickinger-hohe-rheinland-pfalz",
+            "map-22": "https://www.kingmods.net/en/fs25/mods/62939/feliz",
+            "map-23": "https://www.kingmods.net/en/fs25/mods/63497/silverrun-forest",
+            "map-24": "https://www.kingmods.net/en/fs25/mods/67047/agroforests",
+            "nap-25": "https://www.kingmods.net/en/fs25/mods/67330/maypole-farm",
+            "map-26": "https://www.kingmods.net/en/fs25/mods/67069/alpenvorland",
+            "": "",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -220,6 +229,49 @@
                     "https://www.kingmods.net/uploads/fs25/mods/rancho-fundo-fs25-7iRcg.jpg",
                 ]
             },
+            "map-21": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/sickinger-hohe-rheinland-pfalz-fs25-GKTtP.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/sickinger-hohe-rheinland-pfalz-fs25-JvEo1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/sickinger-hohe-rheinland-pfalz-fs25-lMkQY.jpg",
+                ]
+            },
+            "map-22": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/feliz-fs25-wEmKE.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/feliz-fs25-yEnhx.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/feliz-fs25-QLro8.jpg",
+                ]
+            },
+            "map-23": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-fs25-lglt1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-fs25-Dxs6B.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-fs25-aYqbn.jpg",
+                ]
+            },
+            "map-24": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/agroforests-fs25-OenRB.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/agroforests-fs25-l76yR.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/agroforests-fs25-ajwEa.jpg",
+                ],
+                description: "Map based on <b>Silverrun Forest</b>. This massive expansion adds a sprawling forests, packed with production chains and points of interest that develop based on log deliveries."
+            },
+            "map-25": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/maypole-farm-fs25-Ke8y8.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/maypole-farm-fs25-H736m.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/maypole-farm-fs25-03siP.jpg",
+                ],
+            },
+            "map-26": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/alpenvorland-fs25-B6s5I.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/alpenvorland-fs25-yQXjK.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/alpenvorland-fs25-0nPat.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -230,17 +282,17 @@
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
-            "top1": { text: "⭐", color: "#e4af00", opacity: 0.6, textOpacity: 1 },
-            "top2": { text: "⭐", color: "#965f00", opacity: 0.6, textOpacity: 0.45 },
-            "top3": { text: "⭐", color: "#899A17", opacity: 0.6, textOpacity: 0.45 },
-            "top4": { text: "⭐", color: "#8f8f8f", opacity: 0.6, textOpacity: 0.45 },
+            "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75 },
+            "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
+            "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
+            "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
         },
         tagAssignments: {
             "2x-map": [
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26",
             ],
             "16x-map": [
                 "map-5",
@@ -251,7 +303,7 @@
             ],
             "outdated": [],
             "top1": [
-                "map-6",
+                "map-6", "map-11",
             ],
             "top2": [
                 "map-1",
@@ -260,7 +312,7 @@
                 "map-17",
             ],
             "top4": [
-                "map-7", "map-15","map-16", "map-13",
+                "map-7", "map-15","map-16", "map-13", "map-14", "map-21",
             ],
         },
         customTags: {
@@ -394,6 +446,42 @@
             {
                 id: "map-20",
                 name: "Rancho Fundo",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-21",
+                name: "Sickinger-Höhe Rheinland-Pfalz",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-22",
+                name: "Feliz",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-23",
+                name: "Silverrun Forest",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-24",
+                name: "AgroForests",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-25",
+                name: "Maypole Farm",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-26",
+                name: "Alpenvorland",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },

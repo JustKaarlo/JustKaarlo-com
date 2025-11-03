@@ -352,34 +352,86 @@ function shouldHideSizeTag({ file, folderId, path, hideSizeTagFiles }) {
         || hideSizeTagFiles.includes(keyById);
 }
 
+// function createCustomTag(tagConfig) {
+//     const tag = document.createElement("span");
+//     tag.className = "custom-tag";
+//     tag.textContent = tagConfig.text || tagConfig;
+    
+//     if (tagConfig.color) {
+//         // Convert hex to rgba with transparency
+//         const hex = tagConfig.color.replace('#', '');
+//         const r = parseInt(hex.substr(0, 2), 16);
+//         const g = parseInt(hex.substr(2, 2), 16);
+//         const b = parseInt(hex.substr(4, 2), 16);
+        
+//         // Use custom background opacity or default to 0.35
+//         const bgOpacity = tagConfig.opacity !== undefined ? tagConfig.opacity : 0.35;
+//         tag.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${bgOpacity})`;
+        
+//         // Determine base text color based on original color brightness
+//         const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+//         const baseTextColor = brightness > 155 ? '0, 0, 0' : '255, 255, 255';
+        
+//         // Use custom text opacity or default to 1.0 (fully opaque)
+//         const textOpacity = tagConfig.textOpacity !== undefined ? tagConfig.textOpacity : 1.0;
+//         tag.style.color = `rgba(${baseTextColor}, ${textOpacity})`;
+//     }
+    
+//     return tag;
+// }
+
 function createCustomTag(tagConfig) {
     const tag = document.createElement("span");
     tag.className = "custom-tag";
-    tag.textContent = tagConfig.text || tagConfig;
-    
-    if (tagConfig.color) {
-        // Convert hex to rgba with transparency
-        const hex = tagConfig.color.replace('#', '');
+
+    const raw = tagConfig && tagConfig.text && String(tagConfig.text).trim();
+    const textOpacity = tagConfig.textOpacity !== undefined ? Number(tagConfig.textOpacity) : 1.0;
+    const textColor = tagConfig.textColor || null;
+
+    if (raw && raw.startsWith("<svg")) {
+        try {
+            const doc = new DOMParser().parseFromString(raw, "image/svg+xml");
+            const svg = doc.documentElement;
+            if (svg.nodeName === "parsererror") throw new Error("SVG parse error");
+
+            svg.setAttribute("fill", "currentColor");
+            svg.setAttribute("width", "1.35em");
+            svg.setAttribute("height", "1.35em");
+            svg.style.display = "inline-block";
+            svg.style.verticalAlign = "middle";
+            svg.removeAttribute("class");
+            svg.setAttribute("aria-hidden", "false");
+            svg.setAttribute("focusable", "false");
+
+            tag.appendChild(svg);
+        } catch {
+            tag.textContent = raw;
+        }
+    } else {
+        tag.textContent = raw || (typeof tagConfig === "string" ? tagConfig : "");
+    }
+
+    if (tagConfig && tagConfig.color) {
+        const hex = String(tagConfig.color).replace("#", "");
         const r = parseInt(hex.substr(0, 2), 16);
         const g = parseInt(hex.substr(2, 2), 16);
         const b = parseInt(hex.substr(4, 2), 16);
-        
-        // Use custom background opacity or default to 0.35
-        const bgOpacity = tagConfig.opacity !== undefined ? tagConfig.opacity : 0.35;
+
+        const bgOpacity = tagConfig.opacity !== undefined ? Number(tagConfig.opacity) : 0.35;
         tag.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${bgOpacity})`;
-        
-        // Determine base text color based on original color brightness
+
         const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-        const baseTextColor = brightness > 155 ? '0, 0, 0' : '255, 255, 255';
-        
-        // Use custom text opacity or default to 1.0 (fully opaque)
-        const textOpacity = tagConfig.textOpacity !== undefined ? tagConfig.textOpacity : 1.0;
-        tag.style.color = `rgba(${baseTextColor}, ${textOpacity})`;
+        const baseTextColor = brightness > 155 ? "0, 0, 0" : "255, 255, 255";
+        const finalColor = textColor ? textColor : `rgb(${baseTextColor})`;
+        tag.style.color = finalColor;
+        tag.style.opacity = textOpacity;
+    } else if (textColor) {
+        tag.style.color = textColor;
+        tag.style.opacity = textOpacity;
     }
-    
+
     return tag;
 }
-
 // Enhanced Tooltip System - Fixed Version
 let currentTooltipElement = null;
 let tooltipShowTimeout = null;
