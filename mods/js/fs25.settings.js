@@ -83,9 +83,15 @@
             "map-22": "https://www.kingmods.net/en/fs25/mods/62939/feliz",
             "map-23": "https://www.kingmods.net/en/fs25/mods/63497/silverrun-forest",
             "map-24": "https://www.kingmods.net/en/fs25/mods/67047/agroforests",
-            "nap-25": "https://www.kingmods.net/en/fs25/mods/67330/maypole-farm",
+            "map-25": "https://www.kingmods.net/en/fs25/mods/67330/maypole-farm",
             "map-26": "https://www.kingmods.net/en/fs25/mods/67069/alpenvorland",
             "map-27": "https://www.kingmods.net/en/fs25/mods/66584/suvalkija-lowlands",
+            "map-28": "https://www.kingmods.net/en/fs25/mods/63457/the-memory",
+            "map-29": "https://www.kingmods.net/en/fs25/mods/68882/north-march-reloaded",
+            "map-30": "https://www.kingmods.net/en/fs25/mods/71384/chadlington",
+            "map-31": "https://www.kingmods.net/en/fs25/mods/69044/krampus-valley-2025",
+            "map-32": "https://www.kingmods.net/en/fs25/mods/66648/forest-valley",
+            "map-33": "https://www.kingmods.net/en/fs25/mods/66126/les-terres-campagnardes",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -279,6 +285,48 @@
                     "https://www.kingmods.net/uploads/fs25/mods/suvalkija-lowlands-fs25-hlqfn.jpg",
                 ],
             },
+            "map-28": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/the-memory-fs25-aNjjO.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-memory-fs25-kpayq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-memory-fs25-qmPUs.jpg",
+                ],
+            },
+            "map-29": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/north-march-reloaded-fs25-QRSOm.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/north-march-reloaded-fs25-0F9y3.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/north-march-reloaded-fs25-KAWrR.jpg",
+                ],
+            },
+            "map-30": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/chadlington-fs25-My0j7.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/chadlington-fs25-Uk76y.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/chadlington-fs25-eLycA.jpg",
+                ],
+            },
+            "map-31": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/krampus-valley-2025-fs25-bwCKP.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/krampus-valley-2025-fs25-QqvTx.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/krampus-valley-2025-fs25-7D8eZ.jpg",
+                ],
+            },
+            "map-32": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/forest-valley-fs25-pfTXC.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/forest-valley-fs25-YNkUb.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/forest-valley-fs25-brKXR.jpg",
+                ],
+            },
+            "map-33": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/les-terres-campagnardes-fs25-JrGAu.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/les-terres-campagnardes-fs25-JyOoJ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/les-terres-campagnardes-fs25-weo7l.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -299,7 +347,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33",
             ],
             "16x-map": [
                 "map-5",
@@ -495,6 +543,42 @@
             {
                 id: "map-27",
                 name: "Suvalkija lowlands",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-28",
+                name: "The Memory",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-29",
+                name: "North March Reloaded",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-30",
+                name: "Chadlington",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-31",
+                name: "Krampus Valley 2025",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-32",
+                name: "Forest Valley",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-33",
+                name: "Les Terres Campagnardes",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
