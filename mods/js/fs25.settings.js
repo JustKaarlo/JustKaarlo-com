@@ -85,7 +85,7 @@
             "map-24": "https://www.kingmods.net/en/fs25/mods/67047/agroforests",
             "nap-25": "https://www.kingmods.net/en/fs25/mods/67330/maypole-farm",
             "map-26": "https://www.kingmods.net/en/fs25/mods/67069/alpenvorland",
-            "": "",
+            "map-27": "https://www.kingmods.net/en/fs25/mods/66584/suvalkija-lowlands",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -272,6 +272,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/alpenvorland-fs25-0nPat.jpg",
                 ],
             },
+            "map-27": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/suvalkija-lowlands-fs25-XvDqj.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/suvalkija-lowlands-fs25-5T46e.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/suvalkija-lowlands-fs25-hlqfn.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -292,7 +299,7 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27",
             ],
             "16x-map": [
                 "map-5",
@@ -482,6 +489,12 @@
             {
                 id: "map-26",
                 name: "Alpenvorland",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-27",
+                name: "Suvalkija lowlands",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
