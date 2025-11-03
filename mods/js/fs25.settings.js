@@ -70,13 +70,13 @@
             "map-11": "https://www.kingmods.net/en/fs25/mods/62944/schwesing-bahnhof",
             "map-12": "https://www.kingmods.net/en/fs25/mods/70646/nietwerder-4x-multifruit",
             "map-13": "https://www.kingmods.net/en/fs25/mods/69994/wernolau-farm",
-            "map-14": "https://www.kingmods.net/en/fs25/work-in-progress/1624/sivita",
+            "map-14": "https://www.kingmods.net/en/fs25/mods/68707/sivita",
             "map-15": "https://www.kingmods.net/en/fs25/mods/68888/polesine",
             "map-16": "https://www.kingmods.net/en/fs25/mods/65766/vojvodina-gornje-podunavlje",
             "map-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
             "map-18": "https://www.kingmods.net/en/fs25/mods/71702/des-cagouilles-dans-lgarouil",
             "map-19": "https://www.kingmods.net/en/fs25/mods/60554/garbindel",
-            "map-20": "https://www.kingmods.net/en/fs25/mods/68707/sivita"
+            "map-20": "https://www.kingmods.net/en/fs25/mods/65584/rancho-fundo"
         },
         tooltipData: {
             // CUSTOM FILES
