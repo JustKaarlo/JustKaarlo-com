@@ -4,6 +4,7 @@
     const fsContainer = document.getElementById("fs-fileList");
 
     // CUSTOM CONSTANTS
+    const numMapsArray = Array.from({ length: 50 }, (_, i) => `map-${i + 1}`);
 
     if (!fsContainer) {
         console.error("file list container not found");
@@ -19,14 +20,8 @@
         },
         iconAssignments: {
             "ItemFxIcon": [
-                // MODS
-
-                // OTHERS
-
-                // CUSTOM FILES
-                "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19",
+                ...numMapsArray,
             ],
-
         },
         customIcons: {},
         folderIconDefinitions: {
@@ -51,28 +46,17 @@
         showDownloadButtonForAllFiles: true,
         downloadButtonFiles: [],
         excludeDownloadFiles: [
-            // FOLDERS
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
-
-            // CUSTOM FOLDERS
             "fs25-maps",
-
-            // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19",
+            ...numMapsArray,
         ],
         customDownloadLinks: {},
         customWebsiteLinks: {
-            // FOLDERS
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
-
-            // MODS
-
-            // CUSTOM FOLDERS
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
 
-            // CUSTOM FILES
             "map-1": "https://www.kingmods.net/en/fs25/mods/71475/map-1-20-4x",
             "map-2": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
             "map-3": "https://www.kingmods.net/en/fs25/mods/69427/back-roads-county-4x",
@@ -92,6 +76,7 @@
             "map-17": "https://www.kingmods.net/en/fs25/mods/64100/rettenbach-plus",
             "map-18": "https://www.kingmods.net/en/fs25/mods/71702/des-cagouilles-dans-lgarouil",
             "map-19": "https://www.kingmods.net/en/fs25/mods/60554/garbindel",
+            "map-20": "https://www.kingmods.net/en/fs25/mods/68707/sivita"
         },
         tooltipData: {
             // CUSTOM FILES
@@ -228,18 +213,22 @@
                     "https://www.kingmods.net/uploads/fs25/mods/garbindel-fs25-Q7QME.jpg",
                 ]
             },
+            "map-20": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/rancho-fundo-fs25-4RphV.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rancho-fundo-fs25-XP12c.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rancho-fundo-fs25-7iRcg.jpg",
+                ]
+            },
         },
         showDownloadButtonAtRoot: true,
-        customDisplayNames: {
-            // OTHERS
-
-            // MODS
-        },
+        customDisplayNames: {},
         tagDefinitions: {
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "wip": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
             "top1": { text: "⭐", color: "#e4af00", opacity: 0.6, textOpacity: 1 },
             "top2": { text: "⭐", color: "#965f00", opacity: 0.6, textOpacity: 0.45 },
@@ -251,12 +240,13 @@
                 "map-10",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20",
             ],
             "16x-map": [
                 "map-5",
             ],
-            "wip": [
+            "wip": [],
+            "beta": [
                 "map-14",
             ],
             "outdated": [],
@@ -277,8 +267,7 @@
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
-            // CUSTOM FILES
-            "map-1", "map-2", "map-3", "map-4", "map-5", "map-6", "map-7", "map-8", "map-9", "map-10", "map-11", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19",
+            ...numMapsArray,
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
@@ -399,6 +388,12 @@
             {
                 id: "map-19",
                 name: "Garbindel",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-20",
+                name: "Rancho Fundo",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
