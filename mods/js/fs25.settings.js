@@ -92,6 +92,7 @@
             "map-31": "https://www.kingmods.net/en/fs25/mods/69044/krampus-valley-2025",
             "map-32": "https://www.kingmods.net/en/fs25/mods/66648/forest-valley",
             "map-33": "https://www.kingmods.net/en/fs25/mods/66126/les-terres-campagnardes",
+            "map-34": "https://www.kingmods.net/en/fs25/mods/62708/pallegney",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -327,6 +328,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/les-terres-campagnardes-fs25-weo7l.jpg",
                 ],
             },
+            "map-34": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/pallegney-fs25-7SXEO.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pallegney-fs25-lnvTS.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pallegney-fs25-70iGf.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -344,7 +352,7 @@
         },
         tagAssignments: {
             "2x-map": [
-                "map-10",
+                "map-10", "map-34",
             ],
             "4x-map": [
                 "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33",
@@ -579,6 +587,12 @@
             {
                 id: "map-33",
                 name: "Les Terres Campagnardes",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-34",
+                name: "Pallegney",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
