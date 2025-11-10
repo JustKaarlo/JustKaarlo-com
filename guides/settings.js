@@ -204,6 +204,7 @@ const fsGuides = [
         icon: 'https://www.justkaarlo.com/res/src/guides/rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=557',
+        showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_673315a0f2359.jpg" alt="Banner">
                  <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
@@ -214,6 +215,86 @@ const fsGuides = [
             <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#long-grain-rice'; setTimeout(() => location.reload(), 500);">Long Grain Rice</button>
             <br>
             <hr>
+            <h2>What You Need For Rice</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_67331c7374600.jpg" alt="Growth">
+            Rice needs to grow in water inside a rice paddy - a field deepened to allow for water retention You can’t grow it on a basic field and therefore need special equipment.
+            <hr>
+            <ul>
+                <li><b>You need an open space</b> to build your rice paddy. Find it in the building menu of the shop. We tell you later how to set it up properly.  </li>
+                <li><b>You need a tractor</b> to attach the following tools and operate them. </li>
+                <li><b>You need a cultivator</b> to prepare the ground for your next harvest. </li>
+                <li><b>You need a special planter</b> to plant the rice. This planter also has capacity for fertilizer. </li>
+                <li><b>You need a special rice harvester</b> to harvest your plants.</li>
+                <li><b>You need a fertilizer spread</b> to apply lime on your field.</li>
+                <li><b>And you need a trailer</b> to transport and sell the harvested rice.</li>
+            </ul>
+            <hr>
+            <h2>Equipment Selection - Recommendation</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_67331d93cf1d9.jpg" alt="Equipment">
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th><b>Type</b></th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>Challenger MT635</td>
+                        </tr>
+                        <tr>
+                            <td><b>Cultivator</b></td>
+                            <td>John Deere 980</td>
+                        </tr>
+                        <tr>
+                            <td><b>Planter</b></td>
+                            <td>Iseki PRJ8D</td>
+                        </tr>
+                        <tr>
+                            <td><b>Harvester</b></td>
+                            <td>Iseki HJ6130</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fertilizer Spreader</b></td>
+                            <td>Bredal K105</td>
+                        </tr>
+                        <tr>
+                            <td><b>Trailer</b></td>
+                            <td>Farmtech EDK 650</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <h3>Let's Go To Work!</h3>
+            Got everything you need? Then let's start on your assignment and cultivate some rice! Note that you can only grow rice between the beginning of April and the end of May if seasonal growth is enabled. Rice is ready to harvest from the start of August until the end of September.
+            <hr>
+            <ol>
+                <li><b>Placing A Rice Paddy</b><br>
+                Open the build mode, open the second menu item and select the cultivation segment. Here you find olive and grape vines as well as rice paddies. Choose the rice field, and you are ready to set it up on your land. Here's how:
+                    <ul>
+                        <li>Start placing the first corner of the paddy with the assigned button. </li>
+                        <li>You can create any shape of rice paddy you want. </li>
+                        <li>Be aware, that your water pump will be on the first side you create. </li>
+                        <li>When you are done with your with creating your field, press the respective button to end the creative mode. </li>
+                        <blockquote>
+                            <strong>Tip:</strong> If you are done with rice and want to use the paddy for another crop, just enter the demolition mode while you are in building mode.
+                        </blockquote>
+                        <blockquote>
+                            <strong>Tip:</strong> After selling the field, the height difference will stay. Use the ground sculpting mode to level the soil.
+                        </blockquote>
+                    </ul>
+                </li>
+            </ol>
+            <br>
             <div class="box box-green">
                 <div class="box-only-title">Work In Progress</div>
             </div>
