@@ -14,12 +14,10 @@ const fsGuides = [
         subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/potato.png',
         contentType: 'description',
-        // image: 'https://www.justkaarlo.com/res/src/guides/Fs25-Potatoes-Guide.png',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6895c3a14d855.jpg" alt="Banner">
-                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h2>What You Need To Know About Potatoes</h2>
@@ -59,7 +57,6 @@ const fsGuides = [
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_620fafcda0cb3.jpg" alt="Banner">
-                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h2>What You Need For Cotton</h2>
@@ -199,15 +196,78 @@ const fsGuides = [
         `,
     },
     {
-        title: 'Rice',
+        title: 'Onions',
         subtitle: 'Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/onion.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=648',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a9727b4.jpg" alt="Banner">
+            <hr>
+            <h2>What You Need To Know About Onions</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a96e3d0.jpg" alt="Growth">
+            <ul>
+                <li>If you want to sell your onions, pack them with the onion topper Holaras AS 25 for more profit. You find this placable machine in the building menu of the shop.</li>
+                <li>You can process them into products. More info below!</li>
+                <li>Plant them from March to April.</li>
+                <li>From August to September, onions are ready to harvest.</li>
+            </ul>
+            <hr>
+            <h2>What You Need For Onions</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a96aa8d.jpg" alt="Equipment">
+            We'll cover the necessary equipment in this chapter - feel free to skip ahead to the growing guide if that's what you're looking for.
+            <ul>
+                <li><b>You need a tractor with front loader attachment</b> to operate tools and transport resources.</li>
+                <li><b>You need a pallet fork</b> to transport your resources.</li>
+                <li><b>You need a cultivator</b> to prepare your field for planting.</li>
+                <li><b>You need a special planter and seeds.</b></li>
+                <li><b>You need a fertilizer spreader, fertilizer, and lime.</b> These things are optional, as they are only needed to increase your harvest.</li>
+                <li><b>You need a weeder</b> to prevent weed from growing and spoiling your harvest.</li>
+                <li><b>You need a special onion harvester</b> to cut off foliage and dig out the onions.</li>
+                <li><b>You need an onion windrower</b> to collect and clean your harvest.</li>
+                <li><b>You need another special harvester</b> to pick up your harvested onions.</li>
+                <li>You need a trailer<b></b> to transport your harvest.</li>
+            </ul>
+            <blockquote>
+                <h4><strong>Optional</strong></h4>
+                <ul>
+                    <li><b>You need an onion topper</b> if you want to sell your onions with more profit.</li>
+                </ul>
+            </blockquote>
+            <hr>
+            <h2>Step By Step: How To Grow Onions</h2>
+            These steps guide you through the process of growing and harvesting onions:
+            <ol>
+                <li><b>Applying lime:</b> Fill lime into your fertilizer spreader and cover your field.</li>
+                <li><b>Cultivate your field:</b> Prepare your field and work the lime into the ground.</li>
+                <li><b>Planting onions:</b> Fill your planter with seeds and plant one row after another.</li>
+                <li><b>Fertilizing:</b> Unload the rest of your lime and replace it with fertilizer. Maximize the yield of your crops by fertilizing twice during two distinct growth phases of your onions.</li>
+                <li><b>Weeding:</b> Weeds will grow pop up soon. Get rid of weeds as soon as possible. They mess with your yield and get tougher to clear out the longer you wait. Use a weeder. Later, you'll need a hoe or a sprayer to deal with them.</li>
+                <li><b>Harvest:</b> Connect your harvester to the front of your tractor. This machine will cut down the foliage and dig out the onions. Use the windrower on the back of your tractor to clean the onions and place them in a nice line. </li>
+                <li><b>Picking up the onions:</b> Switch to your other harvester and pick up all your onions.</li>
+                <li><b>Selling or processing onions:</b> Time for you to decide: What do you want to do with your harvested onions? You can sell them, process them into fried onions, salt, or soup.</li>
+            </ol>
+            <hr>
+            <h2>Processing Onions: Products</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a958f44.jpg" alt="Processing">
+            Bring your onions to the vegetable processing plant to produce various products:
+            <ul>
+                <li>With oil and onions, you get fried onions</li>
+                <li>With just onions, you produce onion salt and soup</li>
+            </ul>
+            <hr>
+        `,
+    },
+    {
+        title: 'Rice',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=557',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_673315a0f2359.jpg" alt="Banner">
-                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h3>Rice or Long Grain Rice?</h3>
@@ -302,13 +362,12 @@ const fsGuides = [
     },
     {
         title: 'Long Grain Rice',
-        subtitle: 'Sow & Harvest',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/long-grain-rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=556',
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6731df7448fe3.jpg" alt="Banner">
-                 <em>With <a href="https://www.farming-simulator.com/mod.php?mod_id=318936&title=fs2025">Precision Farming</a></em>
             <hr>
 
             <h3>Rice or Long Grain Rice?</h3>
@@ -316,6 +375,37 @@ const fsGuides = [
             <p>In this tutorial, we will focus on long grain rice. If you want to learn about the other type of rice - check the separate tutorial.</p>
             <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Rice</button>
             <br>
+            <hr>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    {
+        title: 'Aquaculture',
+        subtitle: '<b>Work In Progress</b><br>Breed & Manage',
+        icon: 'https://www.justkaarlo.com/res/src/guides/trout.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=654',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_690b02093f4d7.jpg" alt="Banner">
+            <p>This tutorial is about aquaculture. We will show you how to breed and sell trout and salmon.</p>
+            <hr>
+            <h2>What You Should Know About Breeding</h2>
+            <p>Fish farming works like regular animal breeding, so we have a few tips for you in advance:</p>
+            <ul>
+                <li>You breed the fish yourself. You don't buy them like cattle, for example.</li>
+                <li>You breed young fish in a young fish breeding.</li>
+                <li>Adult fish are bred in a fish lake on your property or in large offshore aquaculture facilities in large open waters.
+                    <ul>
+                        <li>Salmon are bred in offshore aquacultures.</li>
+                        <li>Trouts are raised in offshore aquacultures and fish lakes</li>
+                    </ul>
+                </li>
+                <li>Offshore aquaculture facilities are usually only accessible by boat.</li>
+                <li>Instructions for using cargo vessels can be found below.</li>
+            </ul>
             <hr>
             <div class="box box-green">
                 <div class="box-only-title">Work In Progress</div>

@@ -93,6 +93,8 @@
             "map-32": "https://www.kingmods.net/en/fs25/mods/66648/forest-valley",
             "map-33": "https://www.kingmods.net/en/fs25/mods/66126/les-terres-campagnardes",
             "map-34": "https://www.kingmods.net/en/fs25/mods/62708/pallegney",
+            "map-35": "https://www.kingmods.net/en/fs25/mods/70517/la-map-du-vexin",
+            "map-36": "https://www.kingmods.net/en/fs25/mods/68622/la-riviere",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -335,10 +337,25 @@
                     "https://www.kingmods.net/uploads/fs25/mods/pallegney-fs25-70iGf.jpg",
                 ],
             },
+            "map-35": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/la-map-du-vexin-fs25-Ivhs1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-map-du-vexin-fs25-cRy3o.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-map-du-vexin-fs25-sIQ7x.jpg",
+                ],
+            },
+            "map-36": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/la-riviere-fs25-kQreU.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-riviere-fs25-ECnl5.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/la-riviere-fs25-wFPek.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
         tagDefinitions: {
+            "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
@@ -351,9 +368,10 @@
             "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
         },
         tagAssignments: {
-            "2x-map": [
-                "map-10", "map-34",
+            "1x-map": [
+                "map-10", "map-34", "map-35", "map-36",
             ],
+            "2x-map": [],
             "4x-map": [
                 "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33",
             ],
@@ -593,6 +611,18 @@
             {
                 id: "map-34",
                 name: "Pallegney",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-35",
+                name: "La Map Du Vexin",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-36",
+                name: "La Rivière",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
