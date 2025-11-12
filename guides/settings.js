@@ -382,10 +382,11 @@ const fsGuides = [
     },
     { // Long Grain Rice
         title: 'Long Grain Rice',
-        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/long-grain-rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=556',
+        showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6731df7448fe3.jpg" alt="Banner">
             <hr>
