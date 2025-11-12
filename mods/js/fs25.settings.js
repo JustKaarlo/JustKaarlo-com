@@ -95,6 +95,7 @@
             "map-34": "https://www.kingmods.net/en/fs25/mods/62708/pallegney",
             "map-35": "https://www.kingmods.net/en/fs25/mods/70517/la-map-du-vexin",
             "map-36": "https://www.kingmods.net/en/fs25/mods/68622/la-riviere",
+            "map-37": "https://www.kingmods.net/en/fs25/mods/70997/silverrun-forest-multifruit-edition",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -351,6 +352,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/la-riviere-fs25-wFPek.jpg",
                 ],
             },
+            "map-37": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-multifruit-edition-fs25-RTzor.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-multifruit-edition-fs25-TbJ98.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-multifruit-edition-fs25-6t1uv.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -369,7 +377,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36",
+                "map-10", "map-34", "map-35", "map-36", "map-37",
             ],
             "2x-map": [],
             "4x-map": [
@@ -623,6 +631,12 @@
             {
                 id: "map-36",
                 name: "La Rivière",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-37",
+                name: "Silverrun Forest Multifruit Edition",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
