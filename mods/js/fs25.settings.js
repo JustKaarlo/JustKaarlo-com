@@ -23,6 +23,7 @@
         iconAssignments: {
             "ItemFxIcon": [
                 ...numMapsArray,
+                "ZZZ_FS25_FilltypesTP_for_all.zip",
             ],
         },
         customIcons: {},
@@ -97,6 +98,7 @@
             "map-36": "https://www.kingmods.net/en/fs25/mods/68622/la-riviere",
             "map-37": "https://www.kingmods.net/en/fs25/mods/70997/silverrun-forest-multifruit-edition",
             "map-38": "https://www.kingmods.net/en/fs25/mods/72028/pgr-bruzda",
+            "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -367,16 +369,21 @@
                     "https://www.kingmods.net/uploads/fs25/mods/pgr-bruzda-fs25-sRAO4.jpg",
                 ],
             },
+            "ZZZ_FS25_FilltypesTP_for_all.zip": {
+                description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
+            },
         },
         showDownloadButtonAtRoot: true,
-        customDisplayNames: {},
+        customDisplayNames: {
+            "ZZZ_FS25_FilltypesTP_for_all.zip": "FilltypesTP For All",
+        },
         tagDefinitions: {
             "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "wip": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
             "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75 },
             "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
@@ -413,6 +420,9 @@
             ],
         },
         customTags: {
+        "ZZZ_FS25_FilltypesTP_for_all.zip": [
+                { text: "v9.0.0.0", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
+            ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
