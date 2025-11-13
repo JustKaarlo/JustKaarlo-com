@@ -31,12 +31,10 @@ const fsGuides = [
             </ul>
             <hr>
 
-            <h2>What You Need For Potatoes</h2>
+            <h3>Equipment Selection</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_6895c3a148a80.jpg" alt="Equipment">
-            <h3>Step by Step: How To Plant Potatoes</h3>
+            <h3>How To Plant Potatoes</h3>
             <p>With this step-by-step guide, your harvest of potatoes is safe:</p>
-            <hr>
-            
             <ol>
                 <li><b>Applying Lime:</b> Fill lime into your fertilizer spreader and cover your field.</li>
                 <li><b>Plow Your Field:</b> Switch to your subsoiler and prepare your field for planting.</li>
@@ -82,7 +80,7 @@ const fsGuides = [
                 <li><b>You also need a cotton trailer</b> to pick up, transport and sell the harvested cotton. In the shop, you find it in the “cotton technology” category of the tool tab.</li>
             </ul>
             <hr>
-            <h2>Equipment Selection - Recommendation</h2>
+            <h3>Equipment Selection</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_62208bfe2b1cb.jpg" alt="Equipment">
             <div class="dropdown">
                 <div class="dropdown-header">
@@ -131,7 +129,7 @@ const fsGuides = [
                 </div>
             </div>
             <br>
-            <h3>Let's Go To Work!</h3>
+            <h3>How To Plant Cotton</h3>
             <hr>
             <ol>
                 <li><b>Cultivating The Field</b>
@@ -214,7 +212,7 @@ const fsGuides = [
                 <li>From August to September, onions are ready to harvest.</li>
             </ul>
             <hr>
-            <h2>What You Need For Onions</h2>
+            <h3>Equipment Selection</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a96aa8d.jpg" alt="Equipment">
             We'll cover the necessary equipment in this chapter - feel free to skip ahead to the growing guide if that's what you're looking for.
             <ul>
@@ -236,7 +234,7 @@ const fsGuides = [
                 </ul>
             </blockquote>
             <hr>
-            <h2>Step By Step: How To Grow Onions</h2>
+            <h3>How To Grow Onions</h3>
             These steps guide you through the process of growing and harvesting onions:
             <ol>
                 <li><b>Applying lime:</b> Fill lime into your fertilizer spreader and cover your field.</li>
@@ -249,7 +247,7 @@ const fsGuides = [
                 <li><b>Selling or processing onions:</b> Time for you to decide: What do you want to do with your harvested onions? You can sell them, process them into fried onions, salt, or soup.</li>
             </ol>
             <hr>
-            <h2>Processing Onions: Products</h2>
+            <h3>Processing Onions: Products</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_68f200a958f44.jpg" alt="Processing">
             Bring your onions to the vegetable processing plant to produce various products:
             <ul>
@@ -270,12 +268,12 @@ const fsGuides = [
             <img src="https://www.farming-simulator.com/cms/uploads/news_673315a0f2359.jpg" alt="Banner">
             <hr>
 
-            <h3>Rice or Long Grain Rice?</h3>
+            <h1>Rice or Long Grain Rice?</h1>
             <p>There are two different types of rice in Farming Simulator: Rice and long grain rice. They need different water levels, harvesting machines, and seeds, of course. In this tutorial, we focus on rice. If you want to learn about long grain rice - check the separate tutorial.</p>
             <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#long-grain-rice'; setTimeout(() => location.reload(), 500);">Long Grain Rice</button>
             <br>
             <hr>
-            <h2>What You Need For Rice</h2>
+            <h3>What You Need For Rice</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_67331c7374600.jpg" alt="Growth">
             Rice needs to grow in water inside a rice paddy - a field deepened to allow for water retention You can’t grow it on a basic field and therefore need special equipment.
             <ul>
@@ -288,7 +286,7 @@ const fsGuides = [
                 <li><b>And you need a trailer</b> to transport and sell the harvested rice.</li>
             </ul>
             <hr>
-            <h2>Equipment Selection - Recommendation</h2>
+            <h3>Equipment Selection</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_67331d93cf1d9.jpg" alt="Equipment">
             <div class="dropdown">
                 <div class="dropdown-header">
@@ -333,7 +331,7 @@ const fsGuides = [
                 </div>
             </div>
             <hr>
-            <h3>Let's Go To Work!</h3>
+            <h3>How To Grow Rice</h3>
             Got everything you need? Then let's start on your assignment and cultivate some rice! Note that you can only grow rice between the beginning of April and the end of May if seasonal growth is enabled. Rice is ready to harvest from the start of August until the end of September.
             <ol>
                 <li><b><h4>Placing A Rice Paddy</h4></b>
@@ -391,7 +389,7 @@ const fsGuides = [
             <img src="https://www.farming-simulator.com/cms/uploads/news_6731df7448fe3.jpg" alt="Banner">
             <hr>
 
-            <h3>Rice or Long Grain Rice?</h3>
+            <h1>Rice or Long Grain Rice?</h1>
             <p>Rice is not necessarily rice. There are two different types of rice: Long grain rice and rice. They need different water levels, harvesting machines, and seeds, of course.</p>
             <p>In this tutorial, we will focus on long grain rice. If you want to learn about the other type of rice - check the separate tutorial.</p>
             <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Rice</button>
@@ -410,7 +408,7 @@ const fsGuides = [
                 <li><b>And you need a trailer</b> to transport and sell the harvested long grain rice.</li>
             </ul>
             <hr>
-            <h2>Equipment Selection - Recommendation</h2>
+            <h3>Equipment Selection</h3>
             <img src="https://www.farming-simulator.com/cms/uploads/news_6731e21166cbe.jpg" alt="Equipment">
             <div class="dropdown">
                 <div class="dropdown-header">
@@ -459,7 +457,7 @@ const fsGuides = [
                 </div>
             </div>
             <hr>
-            <h3>Let's Go To Work!</h3>
+            <h3>How To Grow Long Grain Rice</h3>
             Got everything you need? Then let's start on your assignment and cultivate some long grain rice! Note that you can only grow this crop in April and harvested in September if seasonal growth is enabled.
             <ol>
                 </li>
