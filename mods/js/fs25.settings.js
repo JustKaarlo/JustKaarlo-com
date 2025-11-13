@@ -96,6 +96,7 @@
             "map-35": "https://www.kingmods.net/en/fs25/mods/70517/la-map-du-vexin",
             "map-36": "https://www.kingmods.net/en/fs25/mods/68622/la-riviere",
             "map-37": "https://www.kingmods.net/en/fs25/mods/70997/silverrun-forest-multifruit-edition",
+            "map-38": "https://www.kingmods.net/en/fs25/mods/72028/pgr-bruzda",
         },
         tooltipData: {
             // CUSTOM FILES
@@ -359,6 +360,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/silverrun-forest-multifruit-edition-fs25-6t1uv.jpg",
                 ],
             },
+            "map-38": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs22/mods/pgr-bruzda-fs22-1-2.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pgr-bruzda-fs25-riPcp.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/pgr-bruzda-fs25-sRAO4.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -377,7 +385,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38",
             ],
             "2x-map": [],
             "4x-map": [
@@ -637,6 +645,12 @@
             {
                 id: "map-37",
                 name: "Silverrun Forest Multifruit Edition",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-38",
+                name: "PGR Bruzda",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
