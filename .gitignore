@@ -2,6 +2,7 @@
 .vscode/
 _deprecated/
 _internal/
+_archived/
 guides/test/
 
 # FILES
