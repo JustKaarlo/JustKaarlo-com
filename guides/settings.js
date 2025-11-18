@@ -607,6 +607,120 @@ const fsGuides = [
             <hr>
         `,
     },
+    { // Wheat
+        title: 'Wheat',
+        subtitle: 'Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/wheat.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=619',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_682ef36e409ce.jpg" alt="Banner">
+            <hr>
+            <h2>What Is Special About Wheat?</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_682ef36e3f205.jpg" alt="Growth">
+            <ul>
+                <li>Wheat is one of the easiest crops to start with</li>
+                <li>You can feed wheat to your pigs and chicken</li>
+                <li>While harvesting wheat, you can also produce straw</li>
+                <li>Straw can be used for TMR and barns to produce manure</li>
+                <li>You can use your harvester for other types of grain</li>
+                <li>Wheat is planted from September until October</li>
+                <li>It's harvested during July and August </li>
+            </ul>
+            <hr>
+            <h3>What You Need for Wheat</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_682ef36e3c2d2.jpg" alt="Equipment">
+            <p>If you already have the necessary machinery, you can skip this part. A lot of the equipment you need for wheat, is needed at the beginning anyway and can be used for other crops as well.</p>
+            <ul>
+                <li><b>You need a tractor</b> with a front loader attachment, to attach various tools.</li>
+                <li><b>You need a bale spike and a pallet fork</b> to transport resources.</li>
+                <li><b>You need a cultivator</b> to prepare the field for your crops.</li>
+                <li><b>You need a seeder and seeds.</b> In the 'seeding' category of the shop, you find seeders and seeds.</li>
+                <li><b>You need a fertilizer spreader, fertilizer, and lime</b> to increase the yield. For beginners, artificial fertilizers are the best choice. Keep in mind: not all spreaders can spread lime!</li>
+                <li><b>You need a weeder</b> to get rid of the weeds that will soon pop up. Otherwise, the yield will be reduced.</li>
+                <li><b>You need a harvester</b> with a grain header to harvest your crops.</li>
+                <li><b>You need a trailer</b> to transport and sell the harvested wheat.</li>
+                <li><b>You need another trailer</b> to transport the header of your cultivator. There are special trailers to use for.</li>
+            </ul>
+            <hr>
+            <h3>How To Grow Wheat</h3>
+            <p>Just follow this step by step and you are good to go:</p>
+            <ol>
+                <li><b>Applying lime:</b> Use your fertilizer spreader and cover your field in lime</li>
+                <li><b>Cultivate your field:</b> Switch to your cultivator and work your field</li>
+                <li><b>Sow the wheat:</b> Fill your seeder and seed away</li>
+                <li><b>Fertilizing:</b> Apply it on your field. If you want to get a fertilization rate of 100 %, you need to apply fertilizer on your field after another stage of growth of your plants.</li>
+                <li><b>Weeding:</b> You will find weed between your crops. You should get rid of it as soon as they pop up. The longer they grow, the harder they are to terminate. In the first stage, you can still use the weeder to remove weeds. After that, you need a hoe or field sprayer.</li>
+                <li><b>Harvesting wheat:</b> When it's time, get your harvester. As streets are often narrow and crowded, we recommend transporting the header on a trailer. If you want to collect straw afterward, you need to activate the straw swath before harvesting.</li>
+                <li><b>Selling and using wheat:</b> Your harvest can be transported in your trailer. You have a few shops to sell to. You can also use wheat to feed your animals. Or transport your wheat to a mill and produce some nice flour. This can also be produced into baked goods at a bakery. The choice is up to you!</li>
+            </ol>
+        `,
+    },
+    { // Soybeans (WIP)
+        title: 'Soybeans',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/soybeans.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=633',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68949ead4c362.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Corn (WIP)
+        title: 'Corn/Maize',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/corn.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=304',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6890b1f02f979.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Sunflowers (WIP)
+        title: 'Sunflowers',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/sunflower.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=303',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_620facb583c44.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Sugarcane (WIP)
+        title: 'Sugarcane',
+        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/src/guides/sugarcane.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=307',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6228a750a115e.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
 ];
 
 const GuideConfigs = {
