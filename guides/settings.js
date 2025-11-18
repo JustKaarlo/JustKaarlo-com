@@ -228,7 +228,7 @@ const fsGuides = [
                 <li>You need a trailer<b></b> to transport your harvest.</li>
             </ul>
             <blockquote>
-                <h4><strong>Optional</strong></h4>
+                <strong>Optional:</strong>
                 <ul>
                     <li><b>You need an onion topper</b> if you want to sell your onions with more profit.</li>
                 </ul>
@@ -517,7 +517,7 @@ const fsGuides = [
     },
     { // Aquaculture
         title: 'Aquaculture',
-        subtitle: '<b>Work In Progress</b><br>Breed & Manage',
+        subtitle: 'Breed & Manage',
         icon: 'https://www.justkaarlo.com/res/src/guides/trout.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=654',
@@ -541,9 +541,70 @@ const fsGuides = [
                 <li>Instructions for using cargo vessels can be found below.</li>
             </ul>
             <hr>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <h3>What You Need For Pisciculture</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d9631c.jpg" alt="Equipment">
+            <p>Here you will find all the necessary vehicles and machinery. For instructions, skip this chapter:</p>
+            <ul>
+                <li><b>You need a forklift</b> to load and unload trailers with resources.</li>
+                <li><b>You need a truck</b> to transport your fish and feed with a trailer.</li>
+                <li><b>You need a trailer</b> to transport the fish and feed. </li>
+                <li><b>You need fish feed</b> for your animals.</li>
+                <li><b>You need a plot of land</b> to place a young fish breeding and fish lake.</li>
+                <li><b>You need a young fish breeding</b> to breed fish. </li>
+                <li><b>You need a fish lake</b> to breed trouts.</li>
+                    <b>Or</b>
+                <li><b>You need an offshore aquaculture</b> to breed trouts and salmon</li>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                    <li><b>You need a cargo vessel</b> to transport resources to the offshore aquaculture and back again. </li>
+                    <li><b>You need a fish food factory</b> if you want to mix feed for your fishes yourself.</li>
+                </ul>
+            </blockquote>
+            <hr>
+            <h3>How To Mix Fish Food</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d99edd.jpg" alt="Food">
+            <p>We will guide you step by step through the production of fish feed:</p>
+            <ul>
+                <li><b>Purchase the building:</b> Either buy the production facility in Kinlaig or place a factory on one of your plots of land.</li>
+                <li><b>Deliver the materials:</b> To produce fish feed, you need flour, soybeans, and oil. It doesn't matter whether you use olive, canola, rice, or sunflower oil.</li>
+                <li><b>Activate production:</b> Open the production chain menu and activate the production of the respective feed.</li>
+                <li><b>Feed your fish:</b> The factory will soon start producing the first feed. Load it onto a truck and take it to your young fish breeding, fish lake, or offshore aquaculture facility.</li>
+            </ul>
+            <hr>
+            <h3>How To Breed Fish</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d92c23.jpg" alt="Breed">
+            <p>Follow these steps to breed fish:</p>
+            <ol>
+                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of trouts in the product chain menu.</li>
+                <li>Fish lake:<b></b> Bring young trout to a fish lake. Deliver fish food here as well. Activate breeding here in the product chain menu.</li>
+                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
+                <li><b>Sale:</b>  Choose a point of sale and deliver the fish there.</li>
+            </ol>
+            <h4><b>        Or</b></h4>
+            <ol>
+                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of salmons in the product chain menu.</li>
+                <li><b>Cargo vessel:</b> Load the ship with enough young salmon and feed. Then sail to the offshore aquaculture facility and unload the respective resources.</li>
+                <li><b>Offshore aquaculture:</b> Activate breeding for the respective fish species you want in the product chain menu. </li>
+                <li><b>Cargo ship:</b> Then reload the cargo ship at the offshore aquaculture loading bay with the grown fish. Now you can transport them ashore.</li>
+                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
+                <li><b>Sale:</b> Choose a point of sale and deliver the fish there.</li>
+            </ol>
+            <hr>
+            <h3>How To Use The Crane Of The Cargo Vessel</h3>
+            <ol>
+                <li><b>Purchase:</b> Cargo vessels are not available from the usual vehicle dealer. There is a special boat store at the harbor.</li>
+                <li><b>Boarding:</b> Jump onto the vessel or switch using your vehicle rotation to board and use the boat.</li>
+                <li><b>Drive:</b> Drive the cargo vessel to the pier at the harbor and lower the loading ramp.</li>
+                <li><b>Loading:</b> Use a forklift to maneuver the pallets from the trailer onto the ship. It is best to place them in the designated loading areas.</li>
+                <li><b>Securing the load:</b> Then tighten the safety straps to prevent your valuable cargo from sinking into the sea. The forklift truck remains on the shore.</li>
+                <li><b>Drive to your destination:</b> Drive the cargo vessel to your desired destination. Once you arrive, start with unloading your goods. </li>
+                <li><b>Extend the crane:</b> Extend the crane. Then switch from the driver's cab to the crane at the touch of a button, or stand next to the crane to hop in.</li>
+                <li><b>Lift objects with the crane:</b> Maneuver the crane over the respective pallet. When the grab arm is correctly positioned, green safety straps will appear. Now you can connect the crane to the object. Then move the crane to the desired location.</li>
+                <li><b>Dropping objects:</b> Have you got the pallet where you want it? Then simply press the corresponding button to drop it, and you're done!</li>
+            </ol>
+            <hr>
         `,
     },
 ];

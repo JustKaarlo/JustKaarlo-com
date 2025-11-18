@@ -54,7 +54,9 @@
             "fs25-maps",
             ...numMapsArray,
         ],
-        customDownloadLinks: {},
+        customDownloadLinks: {
+            "ZZZ_FS25_FilltypesTP_for_all.zip": "https://raw.githubusercontent.com/JustKaarlo/justkaarlo.github.io/refs/heads/Home/data/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
+        },
         customWebsiteLinks: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
@@ -429,7 +431,7 @@
             ],
         },
         customTags: {
-        "ZZZ_FS25_FilltypesTP_for_all.zip": [
+            "ZZZ_FS25_FilltypesTP_for_all.zip": [
                 { text: "v9.0.0.0", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
             ],
         },
