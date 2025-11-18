@@ -98,6 +98,8 @@
             "map-36": "https://www.kingmods.net/en/fs25/mods/68622/la-riviere",
             "map-37": "https://www.kingmods.net/en/fs25/mods/70997/silverrun-forest-multifruit-edition",
             "map-38": "https://www.kingmods.net/en/fs25/mods/72028/pgr-bruzda",
+            "map-39": "https://www.kingmods.net/en/fs25/mods/70020/landkreis-niedersachsen",
+
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
         tooltipData: {
@@ -369,6 +371,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/pgr-bruzda-fs25-sRAO4.jpg",
                 ],
             },
+            "map-39": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/landkreis-niedersachsen-fs25-PAgv7.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/landkreis-niedersachsen-fs25-XTRER.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/landkreis-niedersachsen-fs25-lj8OB.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -378,9 +387,11 @@
             "ZZZ_FS25_FilltypesTP_for_all.zip": "FilltypesTP For All",
         },
         tagDefinitions: {
+            // MAPS TAGS
             "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
@@ -396,15 +407,13 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-23", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39",
             ],
             "16x-map": [
                 "map-5",
             ],
             "wip": [],
-            "beta": [
-                "map-14",
-            ],
+            "beta": [],
             "outdated": [],
             "top1": [
                 "map-6", "map-11",
@@ -661,6 +670,12 @@
             {
                 id: "map-38",
                 name: "PGR Bruzda",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-39",
+                name: "Landkreis Niedersachsen",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
