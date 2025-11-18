@@ -721,6 +721,86 @@ const fsGuides = [
             </div>
         `,
     },
+    { // Sheep (WIP)
+        title: 'Sheep',
+        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/src/guides/sheep.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=337',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf3bbd57d.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Chicken (WIP)
+        title: 'Chicken',
+        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/src/guides/chicken.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=338',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf5f74cda.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Cows (WIP)
+        title: 'Cows',
+        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/src/guides/cow.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=336',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf270db0a.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Pigs (WIP)
+        title: 'Pigs',
+        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/src/guides/pig.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=340',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cfb5a1d3c.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    { // Horses (WIP)
+        title: 'Horses',
+        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/src/guides/horse.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=339',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf8351d87.jpg" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-green">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
 ];
 
 const GuideConfigs = {
