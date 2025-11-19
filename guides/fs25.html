@@ -22,9 +22,13 @@
             border-radius: 16px;
             border: 0;
             box-shadow: 0;
+            border: 0px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+            background: rgba(63, 63, 63, 0.25);
+            backdrop-filter: brightness(0.75) blur(3px);
         }
 
-        .guides-container::before {
+        /* .guides-container::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -36,7 +40,7 @@
             z-index: 0;
             border: 1px solid rgba(61, 61, 61, 0.57);
             box-shadow: 0 1px 24px rgba(0, 0, 0, 0.6);
-        }
+        } */
 
         .guides-container > * {
             position: relative;

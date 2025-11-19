@@ -17,18 +17,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         .guides-container {
+            --nav-bg: rgb(54, 54, 54, 0.7);
+            --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.18);
             position: relative;
             overflow: hidden;
             border-radius: 16px;
-            border: 0;
-            box-shadow: 0;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            background-blend-mode: color-burn;
+            background: rgba(63, 63, 63, 0.25);
+            border: 0px solid var(--glass-border);
+            box-shadow: var(--shadow-1);
+            backdrop-filter: brightness(0.37) !important;
         }
 
-        .guides-container::before {
+        /* .guides-container::before {
             content: "";
             position: absolute;
             inset: 0;
@@ -37,7 +41,7 @@
             border: 1px solid rgba(255, 255, 255, 0.09);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
             border-radius: 16px;
-        }
+        } */
 
         .guides-container > * {
             position: relative;
@@ -48,10 +52,16 @@
             position: relative;
             overflow: hidden;
             background-blend-mode: saturation;
-            border: 2px solid rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.02);
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
             transition: all 0.3s ease;
+            background: rgba(63, 63, 63, 0.15) !important;
+            backdrop-filter: brightness(0.25) !important;
+        }
+
+        .guide-button:hover {
+            border: 2px solid rgba(255, 255, 255, 0.03) !important;
         }
 
         .guides-grid {

@@ -52,7 +52,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     filter: grayscale(100%);
     background-image:
         linear-gradient(var(--fs-overlay-2), var(--fs-overlay-2)),
-        url('https://www.justkaarlo.com/res/bg/bgBlueRaw.png');
+        url('https://www.justkaarlo.com/res/bg/DarkWaveBlur.png');
 }
 
 #bg-fs {
