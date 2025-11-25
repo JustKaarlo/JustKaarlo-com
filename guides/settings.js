@@ -657,9 +657,9 @@ const fsGuides = [
             </ol>
         `,
     },
-    { // Soybeans (WIP)
+    { // Soybeans
         title: 'Soybeans',
-        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/soybeans.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=633',
@@ -667,15 +667,45 @@ const fsGuides = [
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_68949ead4c362.jpg" alt="Banner">
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <h2>What You Need To Know About Soybeans</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68949ead4a140.jpg" alt="Growth">
+            <ul>
+                <li>Feed you soybeans to your pigs</li>
+                <li>Soybeans can be planted from April until May</li>
+                <li>They are read for harvest from the start of October until the end of November</li>
+            </ul>
+            <hr>
+            <h3>What You Need For Soybeans</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_68949ead48516.jpg" alt="Equipment">
+            <p>This chapter dives into equipment requirements; you can jump ahead if you're mainly here for the soybean cultivation process.</p>
+            <ul>
+                <li><b>You need a tractor with front loader attachment</b> to operate tools and transport resources.</li>
+                <li><b>You need a pallet fork</b> to transport your resources.</li>
+                <li><b>You need a cultivator</b> to prepare your field for planting.</li>
+                <li><b>You need a planter and seeds.</b></li>
+                <li><b>You need a fertilizer spreader, fertilizer, and lime.</b> These things are optional, as they are only needed to increase your harvest.</li>
+                <li><b>You need a weeder</b> to prevent weed from growing and spoiling your harvest.</li>
+                <li><b>You need a combine harvester</b> with a fitting grain header to harvest your canola.</li>
+                <li><b>You need a trailer</b> to transport your harvest.</li>
+                <li><b>You need a special trailer</b> to transport your grain header.</li>
+            </ul>
+            <hr>
+            <h3>How To Grow Soybeans</h3>
+            <p>With this step-by-step guide, your harvest of soybeans is safe:</p>
+            <ol>
+                <li><b>Applying Lime:</b> Fill lime into your fertilizer spreader and cover your field.</li>
+                <li><b>Cultivate your field:</b> Switch to your cultivator and prepare your field for planting.</li>
+                <li><b>Plant your soybeans:</b> Prepare your planter and commence planting soybeans.</li>
+                <li><b>Fertilizing:</b> Maximize your crop yield by fertilizing twice during two distinct growth phases of your plants.</li>
+                <li><b>Weeding:</b> Get rid of weeds as soon as they show up. They mess with your yield and get tougher to kill the longer you wait. Early on, a weeder works just fine. Later, you'll need a hoe or sprayer to deal with them.</li>
+                <li><b>Harvest:</b> The fun part starts now: take a seat in your combine harvester and start harvesting soybeans. As streets are often narrow and crowded, we recommend transporting the header on a trailer.</li>
+                <li><b>Selling or keeping soybeans:</b> With your trailer full of soybeans, you need to decide: Sell it at a selling point, or feed it to your pigs? The choice is yours to make.</li>
+            </ol>
         `,
     },
-    { // Corn (WIP)
+    { // Corn
         title: 'Corn/Maize',
-        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/corn.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=304',
@@ -683,10 +713,47 @@ const fsGuides = [
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6890b1f02f979.jpg" alt="Banner">
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <h2>What Is Special About Corn</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6890ac8724f11.jpg" alt="Growth">
+            <ul>
+                <li>Corn is usually used in American English</li>
+                <li>Maize is often used in the United Kingdom</li>
+                <li>Feed corn to your pigs</li>
+                <li>You need some maize to produce cereals at the cereal factory</li>
+                <li>Corn can be chopped into chaff</li>
+                <li>Place your chaff in a bunker silo to produce silage. Silage is use as a part of TMR, the optimal feed for cows and water buffaloes</li>
+                <li>Plant your maize from April until May</li>
+                <li>If you are interested in chaff, harvest your corn from August until September</li>
+                <li>Maize is ready for harvest from the start of October until the end of November</li>
+            </ul>
+            <hr>
+            <h3>What You Need For Corn</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6890ac872075a.jpg" alt="Equipment">
+            <p>Already have the necessary equipment? Just move along and keep scrolling. Otherwise, you are at the right place!</p>
+            <ul>
+                <li><b>You need a tractor with a front loader attachment</b> to handle the necessary machinery and tools.</li>
+                <li><b>You need a pallet fork</b> to transport resources like fertilizer and seeds.</li>
+                <li><b>You need a plow</b> to prepare your field for planting, and after you have grown maize.</li>
+                <li><b>You need a planter and seeds.</b></li>
+                <li><b>You need a fertilizer spreader, fertilizer, and lime.</b> Apply fertilizer and lime to improve your yield. For beginners, artificial fertilizers are the best choice. Keep in mind: not all spreaders can spread lime!</li>
+                <li><b>You need a weeder</b> to keep the yield quite high.</li>
+                <li><b>You need a combine harvester</b> with a <b>corn header</b> to harvest maize.</li>
+                <li><b>You need a forage harvester</b> with a <b>forage header</b> to produce chaff.</li>
+                <li><b>You need a trailer</b> to transport and sell maize.</li>
+                <li><b>You need another trailer</b> to transport your corn or forage header.</li>
+            </ul>
+            <hr>
+            <h3>How To Grow Corn</h3>
+            <p>Just follow this simple 7, and you will successfully harvest your maize in no time:</p>
+            <ol>
+                <li><b>Applying lime:</b> Use your fertilizer spreader and cover your field in lime.</li>
+                <li><b>Plow your field:</b> Switch to your plow and work your field.</li>
+                <li><b>Plant your corn:</b> Fill your planter and start planting.</li>
+                <li><b>Fertilizing:</b> Fertilizing will improve the yield of your harvest. If you want to get a fertilization rate of 100%, you need to apply fertilizer on your field after another stage of growth of your plants.</li>
+                <li><b>Weeding:</b> Soon, weed will grow between your crops. Take care of those plants as soon as you can. The longer they grow, the harder they are to terminate. In the first stage, you can still use the weeder to remove weeds. After that, you need a hoe or field sprayer.</li>
+                <li><b>Harvesting corn:</b> What do you want to have? If you want plain maize, use the combine harvester. If chaff is what you are looking for, use the forage harvester. As streets are often narrow and crowded, we recommend transporting the header on a trailer.</li>
+                <li><b>Selling and using corn:</b> Depending on your style of harvesting, you either have maize or chaff. If you have corn, why don't you sell it at a selling point, feed your pigs, or use it with other ingredients to produce some delicious cereal. Chaff can be fermented into silage. Your harvest, your choice!</li>
+            </ol>
         `,
     },
     { // Sunflowers (WIP)
@@ -721,36 +788,204 @@ const fsGuides = [
             </div>
         `,
     },
-    { // Sheep (WIP)
+    { // Sheep
         title: 'Sheep',
-        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        subtitle: 'Breed & Care',
         icon: 'https://www.justkaarlo.com/res/src/guides/sheep.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=337',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf3bbd57d.jpg" alt="Banner">
+            <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on Sheep. We'll show you how to feed, take care and sell those woolly companions. Let's start!</p>
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
+            <h2>Sheep husbandry: housing & feeding</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_62580a58beedb.jpg" alt="Overview">
+            <p>In Farming Simulator, there are four breeds of sheep: Landrace of Bentheim, Steinschaf, Swiss Black-Brown Mountain, and Black Welsh Mountain. The only difference is their appearance. Choose which sheep look the most fluffy for you.</p>
+            <h3>Housing options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_62580a58cb9ed.jpg" alt="Housing">
+            <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=323" class="btn-action btn-small">Click here to learn more about icons.</a>
+            <p>There are multiple options for how you can accommodate your sheep: pastures, barns and large barns. While a sheep pasture requires you to provide feed and water and houses only a few sheep, the barns only require you to provide feed and have enough space for breeding. In all three types of housing, wool is produced. We recommend a barn instead of the pasture.</p>
+            <h3>Feeding options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_62580a58d09af.jpg" alt="Feeding">
+            <p>Sheep are very easy to care for. You can feed them grass or hay. Which one you choose, doesn't really matter. You can get them to 100% productivity (meaning wool production) with both. If you mow your fields yourself, it's of course easier to feed fresh grass without turning it into hay. Alternatively, you can buy bales of hay at the dealership.</p>
+            <p><strong class="text-green-100">How to get water:</strong> If you keep the sheep in a simple pasture, which requires you to provide water, you need to deliver it with a tank trailer. You get water by either filling it from a water tank that you can buy in the "container" tab of the construction menu, or you just reverse the tanker trailer attached to your tractor into water - a river or lake, for example. Water from a lake or river is free, tapping a tank container is not.</p>
+            <hr>
+            <h2>What you need for keeping sheep</h2>
+            <ul>
+                <li><b>You need a tractor with a front loader attachment and a bale spike</b> to deliver food and wool. To be able to use the front loader on the tractor, you must first purchase the necessary attachment from the dealer. To do this, drive the tractor to the dealer, park the machine in the vehicle options field and select the appropriate attachment.</li>
+                <li><b>You need a barn.</b> Here you can choose between three versions in the construction menu, depending on your account balance. You can choose between the sheep pasture, the sheep barn and the large sheep barn in the "Sheep" tab. They differ in size and feeding options. While you have to provide feed and water for the sheep pasture, you only need to provide food with a barn.</li>
+                <blockquote>
+                    <strong>Tip:</strong> Go with a barn. You save money for additional equipment.
+                </blockquote>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                <li><b>You can use an animal trailer</b> to transport the animals between the cattle dealer and the barn if you buy or sell them. You don't have to, though. You only need a trailer if you want to transfer sheep from one barn to another barn.</li>
+                <blockquote>
+                    <strong>Tip:</strong>
+                    <ul>
+                        <li>You do not have to buy a trailer. It only costs a tiny fee to buy or sell them directly at the barn. Only go ahead if you want the full cattle farmer role-play experience.</li>
+                        <li>Look for the sheep icon at the dealership when shopping for a trailer in the "animal transport" section. It indicates that sheep can be transported with this trailer.</li>
+                    </ul>
+                </blockquote>
+                <li><b>You will need a truck or a dolly</b> if you have bought the large transporter. A dolly serves as a link between the tractor and the trailer and saves you money. Small trailers don't require a truck or dolly - a tractor alone is enough.</li>
+                <blockquote>
+                    <strong>Tip:</strong>
+                    <ul>
+                        <li>When shopping for an animal trailer, if "combinations" is displayed, click it to see, if a truck or dolly is required to use it.</li>
+                    </ul>
+                </blockquote>
+                <li><b>You need a tank,</b> for refilling the watering place in the sheep pasture if you haven't built a barn.</li>
+                </ul>
+            </blockquote>
+            <h2>Equipment Selection</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6258178fc6ce3.jpg" alt="Equipment">
+            <p>We chose the following equipment. We built a barn, so the tank to provide water becomes obsolete - you only need it if you built a pasture. To start, we buy bales of hay at the dealership to feed the sheep. You can, of course, mow fields of grass yourself, collect it with a loading wagon, or use a baler instead of a loader wagon to produce bales. Whatever you decide, deliver grass, or bales to the barn and unload it in the designated area.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th><b>Type</b></th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>John Deere 7810</td>
+                        </tr>
+                        <tr>
+                            <td><b>Front Loader Attacher</b></td>
+                            <td>Hauer  XB190</td>
+                        </tr>
+                        <tr>
+                            <td><b>Bale Spike</b></td>
+                            <td>albutt</td>
+                        </tr>
+                        <tr>
+                            <td><b>Pallet Fork</b></td>
+                            <td>albutt</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="text-green-100">Optional</strong> <b>Tank</b></td>
+                            <td>abi1600 to provide water</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+            <hr>
+            <h2>Let's go to work!</h2>
+            <ol>
+                <li><b>Buying the animals</b><br>
+                    <p>Choose between Landrace of Bentheim, Steinschaf, Swiss Black-Brown Mountain and Black Welsh Mountain Sheep. They only differ from each other visually. When you buy sheep at the barn, you can have them delivered for a small fee. Alternatively, if you have bought a trailer, you can drive it to the animal dealership and buy them on-site to transport them yourself.</p>
+                    <blockquote>
+                        <strong>Tip:</strong> Don't fill the barn to the limit. This will save you money, and you will also get new sheep through breeding.
+                    </blockquote>
+                    <p>You also have the choice between very young sheep or animals that are already eight months old. The difference is, the older animals are already mature and can give birth to offspring.</p>
+                </li>
+                <li><b>Feeding</b><br>
+                    <p>It does not matter whether you feed them freshly cut grass or hay. You feed it to the animals, either loose or in the form of bales. You can see if you have fed them correctly by looking at the health info point. It increases over time, and if it does, the sheep will start to produce wool and are able to reproduce.</p>
+                </li>
+                <li><b>Selling Animals and Products</b><br>
+                    <p>You can either sell the animals themselves, if you focus on breeding them, and sell their wool. You can sell the wool to the spinning mill or the Farmer's Market. You need your front loader attacher and the pallet fork. If you have a truck, you can deliver multiple pallets at once.</p>
+                    <p>At the spinning mill, wool can also be processed into cloth, which you then take to a tailor's shop, if you own it. The tailor will produce clothes, which can be sold for a much higher profit. </p>
+                </li>
+            </ol>
+            <hr>
+            <h2>Breeding Sheep</h2>
+            <p>Whether sheep reproduce depends on three factors: Their age, the space available in the barn and the health of the animals. Starting at the age of eight months, the animals become mature and can produce offspring. However, this is only possible if there is room for more sheep in the barn, and their health must always be at 100%. You can achieve this by feeding the animals regularly to keep them well-fed.</p>
         `,
     },
-    { // Chicken (WIP)
+    { // Chicken
         title: 'Chicken',
-        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        subtitle: 'Breed & Care',
         icon: 'https://www.justkaarlo.com/res/src/guides/chicken.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=338',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf5f74cda.jpg" alt="Banner">
+            <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on chickens. We'll show you how to buy and care for these feathered creatures and how to make money with them. Chicken are pretty easy to care for, so they are a good choice if you just get into animal husbandry.</p>
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
+            <h2>Chicken husbandry: housing & feeding</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623d79394b2ab.jpg" alt="Overview">
+            <p>There are two types of chicken: The standard chicken and the rooster. Get a rooster if you want to breed the chicken. Before we tell you in detail, what tools and equipment you need, let's take a look at the very basics for chicken husbandry: feed and shelter. There are multiple options for how you can accommodate and feed your chicken.</p>
+            <h3>Housing options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623d793957942.jpg" alt="Housing">
+            <p>There are two options: a pasture and a coop. You have to provide feed for all housing options and get eggs in return. The only real difference is the size, as the pasture can only fit 30 chicken. If you want to breed them and focus on a larger operation involving egg production, you should go for the coop.</p>
+            <h3>Feeding options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623d9997b0ed5.jpg" alt="Feeding">
+            <p>You have four options: You can either feed the chicken with wheat, barley and sorghum you harvested from your fields, or you can buy chicken feed from the dealership directly, found in the "Bigbag" section - it's basically just wheat. It might be easier to start out with chicken by using the ready-to-go feed from the dealer, and then align your farming operations accordingly, if you're not growing wheat, barley or sorghum yet.</p>
+            <hr>
+            <h2>What you need for Chicken</h2>
+            <p>Let's take a look at everything necessary to care for and keep chickens. You don't need much, except for a barn and tools to transport the eggs produced by your chickens.</p>
+            <ul>
+                <li><b>You will need a tractor with a front loader attacher and a pallet fork</b> to care for the animals. Use the pallet fork to transport the fodder to the barn and eggs to your truck or directly to the point of sale.</li>
+                <li><b>You will need a barn.</b> You can choose between two versions in the construction menu, depending on your account balance and the amount of chicken you want to have. Under the "Chicken" tab you can choose between the chicken pasture and the chicken coop. They only differ in size.</li>
+                <li><b>To make transport easier,</b> you may want to own a pickup truck you can load the pallets of eggs onto. You can, of course, deliver them with the tractor and pallet fork to the point of sale, too - one pallet at a time.</li>
+            </ul>
+            <hr>
+            <h2>Equipment Selection</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623d8d70707d9.jpg" alt="Equipment">
+            <p>We chose the following equipment. In order to use the front loader on the tractor, you must first purchase the necessary attachment configuration at the dealership. To do this, drive the tractor to the dealership, park the machine in the vehicle options field and select the appropriate attachment on the configuration screen.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th><b>Type</b></th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>John Deere 7810</td>
+                        </tr>
+                        <tr>
+                            <td><b>Front Loader Attacher</b></td>
+                            <td>Hauer XB190</td>
+                        </tr>
+                        <tr>
+                            <td><b>Pallet Fork</b></td>
+                            <td>albutt</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+            <hr>
+            <h2>Let's go to work!</h2>
+            <p>Got everything you need? Then let's get to work! Whether you start with the pasture or the coop depends on how many chickens you want to keep and if you want to breed them or not.</p>
+            <ol>
+                <li><b>Buying the animal</b>
+                    <p>Unlike the other animals, you can't transport chickens yourself. You buy them from the livestock trader or directly at the barn. If you want to breed them, you will need a rooster.</p>
+                    <blockquote>
+                        <strong>Tip:</strong> Don't fill the barn to the limit. This will save you money, and you will also receive new chickens through breeding. You can then sell them on the animal screen.
+                    </blockquote>
+                </li>
+                <li><b>Feeding</b>
+                    <p>Chickens need wheat, sorghum or barley. You can either grow the crops yourself and feed them to the chickens, or buy a big bag of wheat at the dealership. You find the wheat in the "BigBag" category and need to transport it to the coop. You do not need to provide chickens with water.</p>
+                </li>
+                <li><b>Keeping chickens</b>
+                    <p>Whether chickens reproduce depends on three factors: Their age, the space available and their health. From the age of six months onwards, chickens are mature and can give birth to offspring. However, this is only possible if there is still room for more chickens in the barn. In addition, the health of the animals must always be 100%. You can achieve this by feeding the animals regularly.</p>
+                </li>
+                <li><b>Selling the animals and products</b>
+                    <p>You also have a choice with the chickens: either you sell the animals themselves or their eggs. You can sell the eggs to the bakery, the restaurant or the farmers market. If you have the other ingredients required, you can give the order to produce cake at the bakery if you own the shop. Cake can be sold for even more money.</p>
+                </li>
+            </ol>
         `,
     },
     { // Cows (WIP)

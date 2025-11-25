@@ -1039,6 +1039,14 @@ body.modal-open .nav-container {
     color: #55ff55 !important;
 }
 
+.text-green-100 {
+    color: #adc800 !important;
+}
+
+.text-green-200 {
+    color: #7d9000 !important;
+}
+
 .text-blue {
     color: #5599ff !important;
 }
