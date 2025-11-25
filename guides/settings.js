@@ -1068,10 +1068,21 @@ const mcGuides = [
     // },
     { // Hypixel Minions
         title: 'Minions',
-        subtitle: 'Wiki',
+        subtitle: 'Hypixel',
         icon: 'https://wiki.hypixel.net/images/4/40/SkyBlock_items_cobblestone_generator_1.png',
         contentType: 'link',
         link: 'https://wiki.hypixel.net/Minions',
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            position: 'right'
+        },
+    },
+    { // Hypixel Interactive Maps
+        title: 'Interactive Maps',
+        subtitle: 'Hypixel',
+        icon: 'https://static.wikia.nocookie.net/hypixel-skyblock/images/9/92/Compass.png',
+        contentType: 'link',
+        link: 'https://hypixel-skyblock.fandom.com/wiki/Special:AllMaps',
         badge: { 
             icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
             position: 'right'
