@@ -134,17 +134,57 @@ const GuideSystem = {
         
         container.innerHTML = '';
         
-        guidesArray.forEach((guide, index) => {
+        guidesArray.forEach((item, index) => {
+            // Handle section headers
+            if (item.type === 'section') {
+                const section = document.createElement('div');
+                section.className = 'guide-section';
+                section.innerHTML = `
+                    <h3 class="section-title">${item.title}</h3>
+                    ${item.subtitle ? `<p class="section-subtitle">${item.subtitle}</p>` : ''}
+                `;
+                container.appendChild(section);
+                return;
+            }
+            
+            // Handle guide buttons
             const button = document.createElement('button');
             button.className = 'guide-button';
             button.setAttribute('data-index', index);
             
+            // Build badge HTML if exists
+            let badgeHTML = '';
+            if (item.badge) {
+                const badgePosition = item.badge.position || 'right';
+                const badgeClass = badgePosition === 'icon-tag' ? 'guide-badge-icon-tag' : 'guide-badge-right';
+                
+                // Check if badge icon is a URL or emoji/text
+                const isImageBadge = item.badge.icon.startsWith('http://') || 
+                                    item.badge.icon.startsWith('https://') || 
+                                    item.badge.icon.startsWith('/');
+                
+                const badgeContent = isImageBadge 
+                    ? `<img src="${item.badge.icon}" alt="${item.badge.tooltip || ''}">` 
+                    : item.badge.icon;
+                
+                badgeHTML = `
+                    <div class="${badgeClass}">
+                        ${badgeContent}
+                        ${item.badge.tooltip ? `<span class="badge-tooltip">${item.badge.tooltip}</span>` : ''}
+                    </div>
+                `;
+            }
+            
             button.innerHTML = `
-                <img class="guide-icon" src="${guide.icon}" alt="">
-                <div class="guide-text">
-                    <span class="guide-title">${guide.title}</span>
-                    <span class="guide-subtitle">${guide.subtitle}</span>
+                <div class="guide-icon-wrapper">
+                    <img class="guide-icon" src="${item.icon}" alt="">
+                    ${item.badge && item.badge.position === 'icon-tag' ? badgeHTML : ''}
                 </div>
+                <div class="guide-text">
+                    <span class="guide-title">${item.title}</span>
+                    <span class="guide-subtitle">${item.subtitle}</span>
+                </div>
+                ${item.badge && item.badge.position !== 'icon-tag' ? badgeHTML : ''}
             `;
             
             button.addEventListener('click', () => this.openGuide(index));

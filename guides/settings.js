@@ -6,6 +6,13 @@ const guides = [
         link: 'https://www.justkaarlo.com/guides/fs25',
         contentType: 'link'
     },
+    {
+        title: 'Minecraft',
+        subtitle: 'Guides & Resources',
+        icon: 'https://www.justkaarlo.com/res/ico/favicon/minecraft-favicon-1.ico',
+        link: 'https://www.justkaarlo.com/guides/minecraft',
+        contentType: 'link'
+    },
 ];
 
 const fsGuides = [
@@ -1038,9 +1045,44 @@ const fsGuides = [
     },
 ];
 
+const mcGuides = [
+    { // Hypixel Minions
+        title: 'Minions ',
+        subtitle: '<b>Hypixel Wiki</b>',
+        icon: 'https://wiki.hypixel.net/images/4/40/SkyBlock_items_cobblestone_generator_1.png',
+        contentType: 'description',
+        link: 'https://wiki.hypixel.net/Minions',
+        showTOC: false,
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            position: 'right' 
+        },
+        description: `
+            <img src="https://www.justkaarlo.com/res/src/guides/img/hypixel-minions-banner.png" alt="Banner">
+            <hr>
+            <br>
+            <div class="box box-hypixel-1">
+                <div class="box-only-title">Work In Progress</div>
+            </div>
+        `,
+    },
+    {
+        title: 'Minions',
+        subtitle: '<b>Hypixel Wiki</b>',
+        icon: 'https://wiki.hypixel.net/images/4/40/SkyBlock_items_cobblestone_generator_1.png',
+        contentType: 'link',
+        link: 'https://wiki.hypixel.net/Minions',
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            position: 'right' 
+        },
+    },
+]
+
 const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
+    minecraft: mcGuides,
     // eldenRing: eldenRingGuides,
 
     getGuides(pageName) {

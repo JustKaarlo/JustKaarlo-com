@@ -30,6 +30,11 @@
             border: 0px solid var(--glass-border);
             box-shadow: var(--shadow-1);
             backdrop-filter: brightness(0.37) !important;
+            max-width: 900px !important;
+            max-height: fit-content !important;
+            width: fit-content !important;
+            min-height: fit-content !important;
+            min-width: none !important;
         }
 
         /* .guides-container::before {
@@ -65,10 +70,9 @@
         }
 
         .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            display: flex;
             gap: 12px;
-            width: fit-content;
+            margin: 0 auto;
         }
     </style>
     </style>
