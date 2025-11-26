@@ -1354,3 +1354,43 @@ body.modal-open .nav-container {
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(155, 189, 21, 0.3);
 }
+
+.guide-description a.link-slime-color {
+    color: #6aa84f;
+}
+
+.guide-description a.link-slime-color:hover {
+    color: #7bc35c;
+}
+
+.guide-description a.link-snow-color {
+    color: #ffffff;
+}
+
+.guide-description a.link-snow-color:hover {
+    color: #b9e8ea;
+}
+
+.guide-description a.link-magma-color {
+    color: #eaa92e;
+}
+
+.guide-description a.link-magma-color:hover {
+    color: #ba480a;
+}
+
+.guide-description a.link-clay-color {
+    color: #7a8bb0;
+}
+
+.guide-description a.link-clay-color:hover {
+    color: #8cb2c9;
+}
+
+.guide-description a.link-revenant-color {
+    color: #9c7264;
+}
+
+.guide-description a.link-revenant-color:hover {
+    color: #744646;
+}

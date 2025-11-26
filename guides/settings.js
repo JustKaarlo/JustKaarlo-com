@@ -1291,6 +1291,58 @@ const mcGuides = [
             </div>
         `,
     },
+    { // Hypixel Top Minions
+        title: 'Top Minions',
+        subtitle: 'Hypixel',
+        icon: 'https://www.justkaarlo.com/res/src/guides/top-minions.png',
+        contentType: 'description',
+        link: 'https://hypixel.net/threads/2025-5-best-money-making-minions-with-layout-and-setups-also-if-you-have-a-small-budget.5834830/',
+        showTOC: false,
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            position: 'right'
+        },
+        description: `
+            <h2>Best Money-Making Minions</h2>
+            <ol>
+                <li>
+                    <div class="box">
+                        <div class="box-title"><a class="link-slime-color" href="https://wiki.hypixel.net/Slime_Minion">Slime</a></div>
+                        Better if you log on every 1-3 days<br>
+                        <em><strong class="text-gray">takes 42 days to get money back</strong></em>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <div class="box-title"><a class="link-snow-color" href="https://wiki.hypixel.net/Snow_Minion">Snow</a></div>
+                        Can be challenging to get but good<br>
+                        <em><strong class="text-gray">only bc you get your money back in abt 4 days</strong></em>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <div class="box-title"><a class="link-magma-color" href="https://wiki.hypixel.net/Magma_Cube_Minion">Magma</a></div>
+                        Good, but you will have a high electrical bill<br>
+                        <em><strong class="text-gray">You have to be online to make it good and takes 21 days to get money back</strong></em>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <div class="box-title"><a class="link-clay-color" href="https://wiki.hypixel.net/Clay_Minion">Clay</a></div>
+                        This is good if you are going to be offline a while and you don't have a high purse<br>
+                        <em><strong class="text-gray">Takes 9 days to get money back</strong></em>
+                    </div>
+                </li>
+                <li>
+                    <div class="box">
+                        <div class="box-title"><a class="link-revenant-color" href="https://wiki.hypixel.net/Revenant_Minion">Revenant</a></div>
+                        Good but will take a long time to get money back <em><strong class="text-gray">375 DAYS</strong></em>
+                    </div>
+                </li>
+            </ol>
+            <br>
+        `,
+    },
 ]
 
 const GuideConfigs = {
