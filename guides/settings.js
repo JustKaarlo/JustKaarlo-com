@@ -1224,7 +1224,7 @@ const mcGuides = [
     { // Hypixel Minions
         title: 'Minions',
         subtitle: 'Hypixel',
-        icon: 'https://wiki.hypixel.net/images/4/40/SkyBlock_items_cobblestone_generator_1.png',
+        icon: 'https://www.justkaarlo.com/res/src/guides/minions.png',
         contentType: 'link',
         link: 'https://wiki.hypixel.net/Minions',
         badge: { 
@@ -1246,7 +1246,7 @@ const mcGuides = [
     { // Hypixel Fly on Island
         title: 'Fly on Island',
         subtitle: 'Hypixel',
-        icon: 'https://wiki.hypixel.net/images/e/ec/SkyBlock_items_magic_mushroom_soup.png',
+        icon: 'https://www.justkaarlo.com/res/src/guides/fly-on-island.png',
         contentType: 'description',
         link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
         showTOC: true,
