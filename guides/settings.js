@@ -763,9 +763,9 @@ const fsGuides = [
             </ol>
         `,
     },
-    { // Sunflowers (WIP)
+    { // Sunflowers
         title: 'Sunflowers',
-        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/sunflower.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=303',
@@ -773,15 +773,108 @@ const fsGuides = [
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_620facb583c44.jpg" alt="Banner">
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <h2>What's Special About Sunflowers?</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6220905c337ef.jpg" alt="Growth">
+            <ul>
+                <li>You can harvest sunflowers with header for sunflowers or with the corn header</li>
+                <li>Sunflowers can be fed to pigs or turned into oil at the oil refinery</li>
+            </ul>
+            <hr>
+            <h3>What You Need For Sunflowers</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6220905c273b1.jpg" alt="Equipment">
+            <p>Let's take a look at everything you need to plant and harvest sunflowers. Please note, you need special equipment.</p>
+            <ul>
+                <li><b>You need a cultivator</b> to loosen the soil and prepare the field.</li>
+                <li><b>You need a planter</b> and a Bigbag of crop seeds.
+                    <blockquote>
+                        <ul>
+                            <li>
+                                <strong>Tip:</strong> Some cultivators have an in-built seeder and/or fertilizer spreader. That allows you to carry out multiple tasks in one go!
+                            </li>
+                        </ul>
+                    </blockquote>
+                </li>
+                <li><b>You need a fertilizer spreader, fertilizer and lime.</b> Without, the income from your harvested crops will be lower. For beginners, <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=292">artificial fertilizers</a> are the best choice. You find both lime and fertilizer in the BigBag section of the shop. A fertilizer spreader is found in the fertilizing technology category.
+                    <blockquote>
+                        <ul>
+                            <li>
+                                <strong>Tip:</strong> If your field needs lime, it will be shown in the right corner box if you’re standing on the field and on the map in the menu.
+                            </li>
+                        </ul>
+                    </blockquote>
+                </li>
+                <li><b>You need a weeder</b> to get rid of the weeds that will soon pop up. Otherwise, the income from your crops will be reduced when you sell it.</li>
+                <li><b>You need a harvester with a special Header</b> to harvest your crops. For sunflowers, you need a special header attached to your harvester. You find it in the header section of the shop indicated by the sunflower icon.</li>
+                <li><b>You also need a trailer</b> to transport and sell the sunflowers.</li>
+            </ul>
+            <blockquote>
+                <strong>Tip:</strong> You can rent machines like the harvester. It's especially cost-efficient if you're playing with seasonal growth on higher difficulty and don't need it too often.
+            </blockquote>
+            <hr>
+            <h3>How To Grow Sunflowers</h3>
+            <p>Got everything you need? Then let's start on your assignment and plant some crops. Note, that you can only plant sunflowers between the beginning of March and the end of April if seasonal growth is enabled.</p>
+            <ol>
+                <li>
+                    <b>Cultivating the field</b>
+                    <p>For grains, it's usually enough to cultivate instead of plowing. Unless the game tells you to plow the field, we'll use a cultivator. Get to the field, lower the cultivator into the ground and start cultivating.</p>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=294">More about plowing and cultivating</a>
+                </li>
+                <li>
+                    <b>Planting sunflowers</b>
+                    <p>Get the planter of your choice attached to your tractor and head over to the field. Position yourself at one corner of the field, lower the planter and turn it on. Now, plant away! But, don't forget to choose the sunflower, first - as a bigbag of seed contains seeds for all crops. You have to tell your planter/seeder what you want to plant.</p>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>Do yourself a favor and don't speed up the time while doing this, or the crops may grow unevenly later</li>
+                            <li>Beehives in proximity to the field increase the yield of sunflowers!</li>
+                        </ul>
+                    </blockquote>
+                    <blockquote>
+                        <strong>Optional:</strong> After you're done with planting, you can also use a soil roller to condense the soil and increase the yield by additional 2,5%. You don't have to, though. If small stones are left on the field, they get pushed back into the soil, so they don't damage your harvester, later. Big stones have to be picked up by a stone collector, though.
+                    </blockquote>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=317">More about seeding & planting</a><br>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=295">More about soil rollers</a><br>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=318">More about field stones</a>
+                </li>
+                <li>
+                    <b>Apply fertilizer and lime</b>
+                    <p>Fertilizer will improve the yield. Click on the bigbag category and buy the Solid Fertilizer Bigbag. Then, hook up your spreader to your tractor, position it right next to the BigBag and click the button to refill.</p>
+                    <p>Back on the field, you turn it on and cover the whole field in fertilizer. It should now be fertilized to 50%, look at the right corner box while standing on the field. It's okay if there are some tiny spots still not covered.</p>
+                    <p>Does the field tell you it also needs lime? Then head back to the shop, buy lime and repeat the same procedure. If you have fertilizer left, you can unload it first at your farm.</p>
+                    <blockquote>
+                        <strong>Tip:</strong> Repeat the fertilizing process after the first stage of growth to increase the fertilization to 100%. The yield will be even higher.
+                    </blockquote>
+                </li>
+                <li>
+                    <b>Getting rid of weeds</b>
+                    <p>Soon, the first weeds spawn on the field. Take your weeder to get rid of it before the crops grow past the first stage. In the first stage, you can still use the weeder to remove weeds. After that, you'd need a field sprayer, but let's try to avoid that in favor of our finances.</p>
+                    <blockquote>
+                        <strong>Tip:</strong> You can speed up a bit until the weeds start to grow.
+                    </blockquote>
+                    <p>If you play with crop destruction, use a tractor with narrow tires, otherwise a lot of plants get destroyed. Got rid of it? Good, now we wait again, until the crops are fully grown.</p>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=293">More about weed control</a>
+                </li>
+                <li>
+                    <b>Harvest the sunflowers</b>
+                    <p>With seasonal growth enabled, sunflowers have to be harvested between October and November. Take your harvester and attach the special header used for sunflowers. On the field, lower the header, start the engine and proceed to harvest.</p>
+                </li>
+                <li>
+                    <b>Selling the sunflowers</b>
+                    <p>We sell the sunflowers right away as soon as the trailer is filled up. Look for the best selling point on the prices screen and unload the trailer in the designated area.</p>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>Sunflowers can be stored in a silo. If you want to sell it later, you have to unload it into a silo or leave it in trailers for the time being.</li>
+                            <li>If you deliver the sunflowers to the oil refinery, they can be processed into oil - sell it for even more money.</li>
+                        </ul>
+                    </blockquote>
+                </li>
+            </ol>
         `,
     },
-    { // Sugarcane (WIP)
+    { // Sugarcane
         title: 'Sugarcane',
-        subtitle: '<b>Work In Progress</b><br>Sow & Harvest',
+        subtitle: 'Sow & Harvest',
         icon: 'https://www.justkaarlo.com/res/src/guides/sugarcane.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=307',
@@ -789,10 +882,92 @@ const fsGuides = [
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6228a750a115e.jpg" alt="Banner">
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <h2>What's Special About Sugarcane?</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229c26495fed.jpg" alt="Growth">
+            <ul>
+                <li>Sugarcane grows back!</li>
+                <li>High yield, but low selling-price</li>
+                <li>You can fill your planter with harvested sugarcane</li>
+                <li>No plowing or cultivating required (except periodic plowing)</li>
+                <li>Narrow working width of harvesting machinery</li>
+                <li>Can be sold or processed into sugar at the sugar mill</li>
+            </ul>
+            <hr>
+            <h3>What You Need For Sugarcane</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229c264a0435.jpg" alt="Equipment">
+            <ul>
+                <li><b>This is a special case!</b> For sugarcane, you don't need to prepare the field. No initial plowing or cultivating necessary. Only after the third harvest, you need to plow to avoid a yield penalty. The field info box will tell you when it's time.</li>
+                <li><b>You need a tractor + weight attachments.</b> You require weights in addition to various tools, so the front wheels of your tractor don't lose traction because of the heavy machinery attached in the back. They counter the weight of tools. More info in the equipment section.</li>
+                <li>
+                    <b>You need a planter</b> and a sugarcane pallet. In the "Sugarcane technology" category of the shop, you find suitable planters. The pallets are found in the “objects” tab of the shop.
+                    <blockquote>
+                        <strong>Tip:</strong> Sugarcane grows back. You don't need to plant again after harvest, unless you plow. You can fill the planter with sugarcane from the previous harvest!
+                    </blockquote>
+                </li>
+                <li>
+                    <b>You need a fertilizer spreader, fertilizer and lime.</b> Without, the income from your harvested crops will be lower. For beginners, artificial fertilizers are the best choice. You find both lime and fertilizer in the bigbag section of the shop. A fertilizer spreader is found in the fertilizing technology category.
+                    <blockquote>
+                        <strong>Tip:</strong> If your field requires lime, it will be shown in the right corner box if you're standing on the field and on the map in the menu.
+                    </blockquote>
+                </li>
+                <li><b>You need a weeder</b> to get rid of the weeds that will soon pop up. Otherwise, the income from your crops will be reduced when you sell it.</li>
+                <li><b>You need a cane harvester.</b> Two choices: Either a self-propelled harvester OR (and this is the cheaper option) a harvester to attach to your tractor.</li>
+                <li><b>You also need a trailer</b> to transport and sell the sugarcane. In the shop, you find specialized trailers in the “sugarcane technology” category of the tool tab to attach to the cane harvester. If you have two tractors, you can attach any normal trailer to the second tractor and let the helper drive the harvester.</li>
+            </ul>
+            <p><strong class="text-green-100">* Weight attachments recommended:</strong> Click on "combinations" on the shop page of a tool to display corresponding weights to attach to your tractor. You may use one weight module for multiple tools (see our recommendation) - small weight discrepancies are not critical.</p>
+            <hr>
+            <h3>How To Grow Sugarcane</h3>
+            <p>Got everything you need? Then let's start on your assignment and plant some crops. Note, that you can only plant sugarcane between the beginning of March and the end of April if seasonal growth is enabled.</p>
+            <ol>
+                <li>
+                    <b>Planting sugarcane</b>
+                    <p>Get the planter attached to your tractor and fill it with seeds by positioning it next to a pallet of sugarcane. Head over to the field. Position yourself at one corner of the field, lower the planter and turn it on. Now, plant away!</p>
+                    <blockquote>
+                        <strong>Tip:</strong> Do yourself a favor and don't speed up the time while planting, or the crops will grow unevenly.
+                    </blockquote>
+                    <blockquote>
+                        <strong>Optional:</strong> After you're done with planting, you can also use a soil roller to condense the soil and increase the yield by additional 2,5%. You don't have to, though. If small stones are left on the field, they get pushed back into the soil, so they don't damage your harvester, later.
+                    </blockquote>
+                    <ul>
+                        <li><a href="https://www.farming-simulator.com/newsArticle.php?&news_id=317">More about seeding & planting</a></li>
+                        <li><a href="https://www.farming-simulator.com/newsArticle.php?&news_id=295">More about soil rollers</a></li>
+                        <li><a href="https://www.farming-simulator.com/newsArticle.php?&news_id=318">More about field stones</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <b>Apply fertilizer and lime</b>
+                    <p>Fertilizer will improve the yield. Click on the "vehicle" category and buy the Solid Fertilizer from the "consumables" sub category. Then, hook up your spreader to your tractor, position it right next to the BigBag and click the button to refill.</p>
+                    <p>Back on the field, you turn it on and cover the whole field in fertilizer. It should now be fertilized to 50%, look at the right corner box while standing on the field. It's okay if there are some tiny spots still not covered.</p>
+                    <p>Does the field tell you it also needs lime? Then head back to the shop, buy lime and repeat the same procedure. If you have fertilizer left, you can unload it first at your farm.</p>
+                    <blockquote>
+                        <strong>Tip:</strong> Repeat the process after planting to increase the fertilization to 100%. The yield will be even higher.
+                    </blockquote>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=292">More about fertilizing</a>
+                </li>
+                <li>
+                    <b>Getting rid of weeds</b>
+                    <p>Soon, the first weeds spawn on the field. Take your weeder to get rid of it before the crops grow past the first stage. In the first stage, you can still use the weeder to remove weeds. After that, you'd need a field sprayer, but let's try to avoid that in favor of our finances. If you play with crop destruction, use a tractor with narrow tires, otherwise a lot of plants get destroyed. Got rid of it? Good, now we wait again, until the crops are fully grown.</p>
+                    <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=293">More about weed control</a>
+                </li>
+                <li>
+                    <b>Harvest the sugarcane</b>
+                    <p>With seasonal growth enabled, sugarcane has to be harvested between October and November.  Now, we take our machines and go to the field of fully grown sugarcane. This is what you need to do when you use the recommended machines:</p>
+                    <ol>
+                        <li>Attach the harvester to the tractor</li>
+                        <li>Attach the trailer to the harvester</li>
+                        <li>Open the cover of the trailer</li>
+                        <li>Unfold the harvester</li>
+                        <li>Move out the pipe of the harvester</li>
+                        <li>Turn on the harvester</li>
+                        <li>Start harvesting the field</li>
+                    </ol>
+                    <p>When you harvest the sugarcane now, it will automatically fill the trailer via the pipe that's positioned directly over the trailer. When it's full, you need to store or sell it.  If you want to sell it later, you have to unload it on the ground or leave it in trailers for the time being.</p>
+                </li>
+                <li>
+                    <b>Selling the sugarcane</b>
+                    <p>Look for the best-selling point on the prices screen and unload the trailer in the designated area. You might want to look at the price fluctuations, too. You might make more money, if you sell it later. Sugarcane can't be stored in a silo, though.</p>
+                </li>
+            </ol>
         `,
     },
     { // Sheep
@@ -1046,26 +1221,6 @@ const fsGuides = [
 ];
 
 const mcGuides = [
-    // { // Hypixel Minions
-    //     title: 'Minions ',
-    //     subtitle: 'Wiki',
-    //     icon: 'https://wiki.hypixel.net/images/4/40/SkyBlock_items_cobblestone_generator_1.png',
-    //     contentType: 'description',
-    //     link: 'https://wiki.hypixel.net/Minions',
-    //     showTOC: false,
-    //     badge: { 
-    //         icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
-    //         position: 'right' 
-    //     },
-    //     description: `
-    //         <img src="https://www.justkaarlo.com/res/src/guides/img/hypixel-minions-banner.png" alt="Banner">
-    //         <hr>
-    //         <br>
-    //         <div class="box box-hypixel-1">
-    //             <div class="box-only-title">Work In Progress</div>
-    //         </div>
-    //     `,
-    // },
     { // Hypixel Minions
         title: 'Minions',
         subtitle: 'Hypixel',
