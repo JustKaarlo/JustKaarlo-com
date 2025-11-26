@@ -640,6 +640,12 @@ body.modal-open .nav-container {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
+.guide-description img.align-left {
+    max-width: 40%;
+    left: -30% !important;
+    position: relative;
+}
+
 .guide-description blockquote {
     margin: 20px 0;
     padding: 15px 20px;
@@ -1254,6 +1260,35 @@ body.modal-open .nav-container {
 .guide-description .action-button:active {
     transform: translateY(0px);
     box-shadow: 0 4px 9px rgba(155, 189, 21, 0.4);
+}
+
+.guide-description .btn-action-hypixel {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    background: rgba(143, 83, 42, 0.7);
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(120, 61, 34, 0.4);
+}
+
+.guide-description .btn-action-hypixel:hover {
+    background: rgba(163, 93, 46, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 9px rgba(120, 61, 34, 0.7);
+    color: #ffffff;
+}
+
+.guide-description .btn-action-hypixel:active {
+    transform: translateY(0px);
+    box-shadow: 0 4px 9px rgba(143, 83, 42, 0.2);
 }
 
 /* Gradient version of action button */

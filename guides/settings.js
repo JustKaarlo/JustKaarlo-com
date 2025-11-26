@@ -1088,6 +1088,54 @@ const mcGuides = [
             position: 'right'
         },
     },
+    { // Hypixel Fly on Island
+        title: 'Fly on Island',
+        subtitle: 'Hypixel',
+        icon: 'https://wiki.hypixel.net/images/e/ec/SkyBlock_items_magic_mushroom_soup.png',
+        contentType: 'description',
+        link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
+        showTOC: true,
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            position: 'right'
+        },
+        description: `
+            <h2>How to Fly on Your Own Island!</h2>
+            <a href="https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/" class="btn-action-hypixel btn-small">How to Fly on Your Own Island!</a> <a href="https://wiki.hypixel.net/Magical_Mushroom_Soup" class="btn-action-hypixel btn-small">Magical Mushroom Soup</a>
+            <hr>
+            <p>Under the Farming recipes in your Skyblock menu you can craft a special <strong class="text-green">Magical Mushroom Soup</strong>, this soup will grant you two minuets of fly at a time.</p>
+            <div class="box box-hypixel-1">
+                Remember if you leave your island the Magical Mushroom Soup effect will clear
+            </div>
+            <p>Link to forum thread where we give this <strong class="text-green">Magical Mushroom Soup</strong> a try.</p>
+            <hr>
+            <ol>
+                <li>
+                    <img class="align-left" src="https://hypixel.net/attachments/magical-mushroom-soup-jpg.1637561/" alt="steps">
+                </li>
+                <li>
+                    <p>To gain access to this recipe you will need to be <strong class="text-green">level[4]</strong> in your Mushroom collection,</p>
+                    <img class="align-left" src="https://hypixel.net/attachments/mushroom-collection-jpg.1637560/" alt="steps">
+                </li>
+                <li>
+                    <p>To achieve this start farming till you reach the <strong class="text-green">Mushroom Desert</strong> farming realm, continue and chop mushrooms to level up.</p>
+                    <img class="align-left" src="https://hypixel.net/attachments/mushroom-desert-jpg.1637593/" alt="steps">
+                </li>
+            </ol>
+            <hr>
+            <p>Once you level up and gain access to craft this recipe you will need:</p>
+            <div class="box box-hypixel-1">
+                <ul>
+                    <li><strong class="text-gray">[1x]</strong> <b>Red Mushroom</b> - optioned in the Mushroom Desert</li>
+                    <li><strong class="text-gray">[1x]</strong> <b>Brown Mushroom</b> - optioned in the Mushroom Desert</li>
+                    <li><strong class="text-gray">[1x]</strong> <b>Redstone</b> - optioned in the Deep Caverns <span class="text-gray">Pigmen's Den</span></li>
+                    <li><strong class="text-gray">[1x]</strong> <b>Glowstone</b> - optioned in the Blaze Realm</li>
+                    <li><strong class="text-gray">[1x]</strong> <b>Bowl</b> - craft with wood</li>
+                    <img class="align-left" src="https://hypixel.net/attachments/magical-mushroom-soup-recipe-jpg.1637611/" alt="recipe">
+                </ul>
+            </div>
+        `,
+    },
 ]
 
 const GuideConfigs = {
