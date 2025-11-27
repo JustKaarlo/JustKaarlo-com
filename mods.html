@@ -2,90 +2,196 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Total War - JustKaarlo</title>
-    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/total-war-logo.svg">
-    
+    <title>JustKaarlo - Mods</title>
+    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/mods-favicon.ico">
+
+    <link rel="stylesheet" href="guides/style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.justkaarlo.com/totalwar">
-    <meta property="og:title" content="JustKaarlo's - Total War">
-    <meta property="og:description" content="JustKaarlo's Shared Mods | Total War">
-    <meta property="og:image" content="https://www.justkaarlo.com/res/src/header-cards/card-justkaarlo.png">
+    <meta property="og:title" content="JustKaarlo's - Mods">
+    <meta property="og:description" content="Shared mods for different games.">
     
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="mods/css/style.css">
+    <style>
+        .guides-container {
+            --nav-bg: rgb(54, 54, 54, 0.7);
+            --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background: rgba(63, 63, 63, 0.25);
+            border: 0px solid var(--glass-border);
+            box-shadow: var(--shadow-1);
+            backdrop-filter: brightness(0.37) !important;
+            max-width: 900px !important;
+            max-height: fit-content !important;
+            width: fit-content !important;
+            min-height: fit-content !important;
+            min-width: none !important;
+            bottom: 150px !important;
+        }
+        .guides-container > * {
+            position: relative;
+            z-index: 1;
+        }
+        .guide-button {
+            position: relative;
+            overflow: hidden;
+            background-blend-mode: saturation;
+            border: 2px solid rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            background: rgba(63, 63, 63, 0.15) !important;
+            backdrop-filter: brightness(0.25) !important;
+        }
+        .guide-button:hover {
+            border: 2px solid rgba(255, 255, 255, 0.03) !important;
+        }
+        .guides-grid {
+            display: flex;
+            gap: 12px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto 0;
+            position: relative;
+            height: auto;
+            bottom: 100px;
+        }
+        .logo-card {
+            --size: clamp(260px, 42vw, 520px);
+            padding-top: 0.5px;
+            padding-bottom: 0.5;
+            width: 50%;
+            height: 100%;
+            background:
+                url('../res/src/header-cards/header-mods.svg') fixed no-repeat center/cover !important;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transition: transform 200ms ease;
+            transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
+            margin: 230px auto 0 auto;
+            text-align: center;
+            border-radius: 35px;
+        }
+        .logo-card:hover {
+            transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
+            box-shadow: 0 18px 56px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        }
+        .logo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            user-select: none;
+        }
+    </style>
 </head>
 <body>
-    <div id="bg-tw" class="bg-layer" aria-hidden="true"></div>
+    <div id="bg"></div>
     <div id="particles-js"></div>
     
+    <!-- Navigation -->
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass">
             <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20"
-                        fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
                         <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z" />
                     </svg>
-                    <div class="nav-tooltip">Go to Home</div>
-                </a>
-                <br>
-                <a  id="SelectedNavBtn" class="nav-btn" aria-label="Mods">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-1 0 25 25"
-                    fill="currentColor">
-                        <image height="25" width="25" href="https://www.justkaarlo.com/res/ico/total-war-logo.svg" />
-                    </svg>
-                    <div class="nav-tooltip">Total War</div>
-                </a>
-                <a href="mods/elden-ring" target="_self" class="nav-btn" aria-label="Mods">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-1 0 25 25"
-                    fill="currentColor">
-                        <image height="25" width="25" href="https://www.justkaarlo.com/res/ico/elden-ring-logo.svg" />
-                    </svg>
-                    <div class="nav-tooltip">Go to Elden Ring</div>
-                </a>
-                <a href="mods/fs25" target="_self" class="nav-btn" aria-label="Mods">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-1 0 25 25"
-                    fill="currentColor">
-                        <image height="25" width="25" href="https://www.justkaarlo.com/res/ico/fs25-logo.svg" />
-                    </svg>
-                    <div class="nav-tooltip">Go to Farming Simulator 25</div>
+                    <div class="nav-tooltip">Home</div>
                 </a>
             </nav>
         </header>
     </div>
-
-    <div class="sections-container">
-        <div class="content">
-            <section id="tw-section" class="section-slide active">
-                <img id="tw-customIcon" class="game-icon"
-                    src="https://www.justkaarlo.com/res/src/total-war-logo.png"
-                    alt="Total War Icon" style="margin-top: 40px; margin-bottom: 30px;"/>
-                <div class="filelist-frame">
-                    <ul id="tw-fileList" class="file-list">Loading...</ul>
-                </div>
-                <div class="manager-disclaimer">
-                    <div class="manager-disclaimer-icon-custom">!</div>
-                    <div>
-                        I haven't developed any of the content listed here.<br>
-                        They are created and owned by third parties.
-                    </div>
-                </div>
-            </section>
+    <main class="container">
+        <div class="logo-card">
+        <img src="../res/src/header-cards/header-mods.svg" alt="Header" />
+        </div>
+    </main>
+    <div class="content">
+        <!-- <img class="game-icon"
+            src="card.svg"
+            alt="Guide Card"/> -->
+        
+        <div class="guides-container">
+            <div class="guides-grid" id="modsGrid">
+                <!-- Guide buttons will be dynamically generated here -->
+            </div>
         </div>
     </div>
 
-    <div id="docModal">
-        <div>
-            <button id="closeModal">×</button>
-            <iframe id="docFrame" src=""></iframe>
+    <!-- Guide Modal (for future use with imagePreview) -->
+    <div id="guideModal" class="guide-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title" id="modalTitle">Guide Title</span>
+                <div class="modal-header-actions">
+                    <a id="guideLink" href="#" target="_self" class="guide-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-40 -65 512 550"
+                            fill="currentColor">
+                            <path
+                                d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                            </path>
+                        </svg>
+                    </a>
+                    <button class="close-button" onclick="closeGuide()">×</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <img id="guideImage" class="guide-image" src="" alt="Guide">
+            </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="mods/js/script.js"></script>
-    <script src="mods/js/totalwar.settings.js"></script>
+    <script src="guides/settings.js"></script>
+    <script src="guides/script.js"></script>
+    
+    <script>
+        const logoCard = document.querySelector('.logo-card');
+        logoCard.addEventListener('mousemove', (e) => {
+            const rect = logoCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = -(y - centerY) / 150;
+            const rotateY = (x - centerX) / 150;
+
+            logoCard.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.98)`;
+        });
+        logoCard.addEventListener('mouseleave', () => {
+            logoCard.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+
+        // Initialize particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 15, density: { enable: true, value_area: 700 } },
+                color: { value: ['#4c4c4c', '#494949', '#8a8a8a'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.2, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
+                size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
+                line_linked: { enable: false },
+                move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+            retina_detect: true
+        });
+        
+        // Initialize main guides page
+        initializeGuidePage('modsGrid', mods);
+    </script>
 </body>
 </html>
