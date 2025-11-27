@@ -101,6 +101,7 @@
             "map-37": "https://www.kingmods.net/en/fs25/mods/70997/silverrun-forest-multifruit-edition",
             "map-38": "https://www.kingmods.net/en/fs25/mods/72028/pgr-bruzda",
             "map-39": "https://www.kingmods.net/en/fs25/mods/70020/landkreis-niedersachsen",
+            "map-40": "https://www.kingmods.net/en/fs25/mods/65504/rhonplateu",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -380,6 +381,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/landkreis-niedersachsen-fs25-lj8OB.jpg",
                 ],
             },
+            "map-40": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/rhonplateu-fs25-6TPiO.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rhonplateu-fs25-pgwkS.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/rhonplateu-fs25-Ghb9u.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -405,7 +413,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40",
             ],
             "2x-map": [],
             "4x-map": [
@@ -678,6 +686,12 @@
             {
                 id: "map-39",
                 name: "Landkreis Niedersachsen",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-40",
+                name: "Rhönplateu",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
