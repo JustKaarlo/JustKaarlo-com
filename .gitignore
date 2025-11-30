@@ -1,8 +1,8 @@
 # FOLDERS
 .vscode/
-_deprecated/
-_internal/
-_archived/
+.deprecated/
+.internal/
+.archived/
 guides/test/
 
 # FILES
