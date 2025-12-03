@@ -102,6 +102,7 @@
             "map-38": "https://www.kingmods.net/en/fs25/mods/72028/pgr-bruzda",
             "map-39": "https://www.kingmods.net/en/fs25/mods/70020/landkreis-niedersachsen",
             "map-40": "https://www.kingmods.net/en/fs25/mods/65504/rhonplateu",
+            "map-41": "https://www.kingmods.net/en/fs25/mods/72393/geistal",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -388,6 +389,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/rhonplateu-fs25-Ghb9u.jpg",
                 ],
             },
+            "map-41": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/geistal-fs25-iWk2C.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/geistal-fs25-X5kaq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/geistal-fs25-URqse.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -417,7 +425,7 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41",
             ],
             "16x-map": [
                 "map-5",
@@ -692,6 +700,12 @@
             {
                 id: "map-40",
                 name: "Rhönplateu",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-41",
+                name: "Geistal",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
