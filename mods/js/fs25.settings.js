@@ -103,6 +103,9 @@
             "map-39": "https://www.kingmods.net/en/fs25/mods/70020/landkreis-niedersachsen",
             "map-40": "https://www.kingmods.net/en/fs25/mods/65504/rhonplateu",
             "map-41": "https://www.kingmods.net/en/fs25/mods/72393/geistal",
+            "map-42": "https://www.kingmods.net/en/fs25/mods/72634/monteriggioni",
+            "map-43": "https://www.kingmods.net/en/fs25/mods/71764/ausseerland-4x",
+            "map-44": "https://www.kingmods.net/en/fs25/mods/72330/ardennaise",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -396,6 +399,27 @@
                     "https://www.kingmods.net/uploads/fs25/mods/geistal-fs25-URqse.jpg",
                 ],
             },
+            "map-42": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/monteriggioni-fs25-ddJsQ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/monteriggioni-fs25-GRWwp.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/monteriggioni-fs25-VISaC.jpg",
+                ],
+            },
+            "map-43": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/ausseerland-4x-fs25-lINrj.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ausseerland-4x-fs25-EEuFI.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ausseerland-4x-fs25-rnv59.jpg",
+                ],
+            },
+            "map-44": {
+                images: [
+                    "https://www.justkaarlo.com/res/src/fs25-maps/map-44.png",
+                    "https://www.kingmods.net/uploads/fs25/mods/ardennaise-fs25-FDczY.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/ardennaise-fs25-DVc7Z.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -421,7 +445,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44"
             ],
             "2x-map": [],
             "4x-map": [
@@ -706,6 +730,24 @@
             {
                 id: "map-41",
                 name: "Geistal",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-42",
+                name: "Monteriggioni",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-43",
+                name: "Ausseerland",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-44",
+                name: "Ardennaise",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
