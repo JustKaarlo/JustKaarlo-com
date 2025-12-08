@@ -116,13 +116,13 @@
             "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX"
         ],
         customDownloadLinks: {
-            "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF": "https://www.justkaarlo.com/data/packages/ParaBellum-Package.exe",
-            "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU": "https://www.justkaarlo.com/data/packages/DragonEmpire-Package.exe",
-            "1h__AJylt5ZhfY_iN8d-lGqg-KuReRTdj": "https://www.justkaarlo.com/data/packages/Empire2General-Package.exe",
-            "1iNfu1THAgULCd3pGUVsQCNlnTHKx-JQY": "https://www.justkaarlo.com/data/packages/DawnlessDays-Package.exe",
-            "1NHAPD9Si2PM058Vkam_80h-okIFs31S3": "https://www.justkaarlo.com/data/packages/NovaAttila-Package.exe",
-            "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": "https://www.justkaarlo.com/data/packages/MK1212AD-Package.exe",
-            "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/data/packages/AncientEmpires-Package.exe"
+            "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF": "https://www.justkaarlo.com/download/total-war/package/ParaBellum-Package.exe",
+            "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU": "https://www.justkaarlo.com/download/total-war/package/DragonEmpire-Package.exe",
+            "1h__AJylt5ZhfY_iN8d-lGqg-KuReRTdj": "https://www.justkaarlo.com/download/total-war/package/Empire2General-Package.exe",
+            "1iNfu1THAgULCd3pGUVsQCNlnTHKx-JQY": "https://www.justkaarlo.com/download/total-war/package/DawnlessDays-Package.exe",
+            "1NHAPD9Si2PM058Vkam_80h-okIFs31S3": "https://www.justkaarlo.com/download/total-war/package/NovaAttila-Package.exe",
+            "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": "https://www.justkaarlo.com/download/total-war/package/MK1212AD-Package.exe",
+            "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/download/total-war/package/AncientEmpires-Package.exe"
         },
         customWebsiteLinks: {},
         tooltipData: {},

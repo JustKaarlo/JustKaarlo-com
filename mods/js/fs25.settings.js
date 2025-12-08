@@ -51,7 +51,7 @@
             ...numOthersArray,
         ],
         customDownloadLinks: {
-            "mod-1": "https://raw.githubusercontent.com/JustKaarlo/justkaarlo.github.io/refs/heads/Home/data/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
+            "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
