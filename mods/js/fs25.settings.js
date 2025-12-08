@@ -6,7 +6,8 @@
     // CUSTOM CONSTANTS
     const numMapsArray = Array.from({ length: 50 }, (_, i) => `map-${i + 1}`);
     const numTexturesArray = Array.from({ length: 50 }, (_, i) => `texture-${i + 1}`);
-    const numOthersArray = Array.from({ length: 50 }, (_, i) => `others-${i + 1}`);
+    const numOthersArray = Array.from({ length: 50 }, (_, i) => `other-${i + 1}`);
+    const numModsArray = Array.from({ length: 50 }, (_, i) => `mod-${i + 1}`);
 
     const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
 
@@ -26,15 +27,14 @@
             "ItemFxIcon": [
                 ...numMapsArray,
                 ...numTexturesArray,
-                "ZZZ_FS25_FilltypesTP_for_all.zip",
+                ...numOthersArray,
+                ...numModsArray,
             ],
         },
         customIcons: {},
         folderIconDefinitions: {},
         folderIconAssignments: {},
-        customFolderIcons: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.justkaarlo.com/res/src/fs25-mods-2.png",
-        },
+        customFolderIcons: {},
         highlightFiles: [],
         colorizeFiles: [],
         excludePartsFolders: [],
@@ -42,22 +42,24 @@
         showDownloadButtonForAllFiles: true,
         downloadButtonFiles: [],
         excludeDownloadFiles: [
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
             "fs25-maps",
             "fs25-textures",
             "fs25-others",
+            "fs25-mods",
             ...numMapsArray,
             ...numTexturesArray,
+            ...numOthersArray,
         ],
         customDownloadLinks: {
-            "ZZZ_FS25_FilltypesTP_for_all.zip": "https://raw.githubusercontent.com/JustKaarlo/justkaarlo.github.io/refs/heads/Home/data/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
+            "mod-1": "https://raw.githubusercontent.com/JustKaarlo/justkaarlo.github.io/refs/heads/Home/data/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
         },
         customWebsiteLinks: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
             "fs25-textures": "https://www.kingmods.net/en/fs25/categories/miscellaneous/textures",
             "fs25-others": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
+            "fs25-mods": "https://www.kingmods.net/en/fs25/new-mods",
 
+            // MAPS
             "map-1": "https://www.kingmods.net/en/fs25/mods/71475/map-1-20-4x",
             "map-2": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
             "map-3": "https://www.kingmods.net/en/fs25/mods/69427/back-roads-county-4x",
@@ -109,10 +111,11 @@
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
             "texture-2": "https://www.kingmods.net/en/fs25/mods/72607/realistic-canola-growth-cycle-in-europe",
 
-            "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
+            // MODS
+            "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
         tooltipData: {
-            // CUSTOM FILES
+            // MAPS
             "map-1": {
                 images: [
                     "https://www.kingmods.net/uploads/fs25/mods/thuringen-20-4x-fs25-hJdoz.jpg",
@@ -455,40 +458,37 @@
                     "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-9tF2W.jpg",
                 ],
             },
-            "ZZZ_FS25_FilltypesTP_for_all.zip": {
+
+            // MODS
+            "mod-1": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
         },
         showDownloadButtonAtRoot: true,
-        customDisplayNames: {
-            "ZZZ_FS25_FilltypesTP_for_all.zip": "FilltypesTP For All",
-        },
+        customDisplayNames: {},
         tagDefinitions: {
+            // GENERAL TAGS
+            "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75 },
+            "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
+            "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
+            "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
+
+            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
+
             // MAPS TAGS
             "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
-            "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75 },
-            "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
-            "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
-            "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
+
+            // MODS TAGS
+           "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
         },
         tagAssignments: {
-            "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46",
-            ],
-            "2x-map": [],
-            "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41",
-            ],
-            "16x-map": [
-                "map-5",
-            ],
+            // GENERAL
             "wip": [],
             "beta": [],
             "outdated": [],
@@ -504,25 +504,44 @@
             "top4": [
                 "map-7", "map-15","map-16", "map-13", "map-14", "map-21",
             ],
+
+            // MAPS
+            "1x-map": [
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46",
+            ],
+            "2x-map": [],
+            "4x-map": [
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41",
+            ],
+            "16x-map": [
+                "map-5",
+            ],
+
+            // MODS
+            "misc": [
+                "mod-1",
+            ],
         },
         customTags: {
-            "ZZZ_FS25_FilltypesTP_for_all.zip": [
+            "mod-1": [
                 { text: "v9.0.0.0", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
             ],
         },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             ...numMapsArray,
+            ...numTexturesArray,
+            ...numOthersArray,
+            ...numModsArray,
         ],
         hideSizeTagFolders: [
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
-
-            // CUSTOM FOLDERS
             "fs25-maps",
             "fs25-textures",
             "fs25-others",
+            "fs25-mods",
         ],
         customFiles: [
+            // MAPS
             {
                 id: "map-1",
                 name: "Thüringen",
@@ -814,6 +833,16 @@
                 mimeType: "application/zip",
                 parentId: "fs25-textures"
             },
+
+            // MODS
+            {
+                id: "mod-1",
+                name: "FilltypesTP For All",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+
+            // OTHERS
         ],
         customFolders: [
             {
@@ -833,7 +862,13 @@
                 name: "Others",
                 mimeType: "application/vnd.google-apps.folder",
                 icon: "https://www.justkaarlo.com/res/src/fs25-others.png",
-            }
+            },
+            {
+                id: "fs25-mods",
+                name: "Mods",
+                mimeType: "application/vnd.google-apps.folder",
+                icon: "https://www.justkaarlo.com/res/src/fs25-mods-2.png",
+            },
         ],
     });
     attachDocPreview(fsContainer);
