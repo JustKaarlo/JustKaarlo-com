@@ -5,6 +5,8 @@
 
     // CUSTOM CONSTANTS
     const numMapsArray = Array.from({ length: 50 }, (_, i) => `map-${i + 1}`);
+    const numTexturesArray = Array.from({ length: 50 }, (_, i) => `texture-${i + 1}`);
+    const numOthersArray = Array.from({ length: 50 }, (_, i) => `others-${i + 1}`);
 
     const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
 
@@ -23,6 +25,7 @@
         iconAssignments: {
             "ItemFxIcon": [
                 ...numMapsArray,
+                ...numTexturesArray,
                 "ZZZ_FS25_FilltypesTP_for_all.zip",
             ],
         },
@@ -44,6 +47,7 @@
             "fs25-textures",
             "fs25-others",
             ...numMapsArray,
+            ...numTexturesArray,
         ],
         customDownloadLinks: {
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://raw.githubusercontent.com/JustKaarlo/justkaarlo.github.io/refs/heads/Home/data/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
@@ -100,6 +104,10 @@
             "map-44": "https://www.kingmods.net/en/fs25/mods/72330/ardennaise",
             "map-45": "https://www.kingmods.net/en/fs25/mods/65197/oberschwaben",
             "map-46": "https://farmingsimulator25mods.com/terre-dauvergne-ma7-edition-v1-0/",
+
+            // TEXTURES
+            "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
+            "texture-2": "https://www.kingmods.net/en/fs25/mods/72607/realistic-canola-growth-cycle-in-europe",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -426,6 +434,25 @@
                     "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-2.jpg",
                     "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-4.jpg",
                     "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-1.jpg",
+                ],
+            },
+
+            // TEXTURES
+            "texture-1": {
+                description: "<ul><li>Realistic growth cycle for wheat and barley (spring + winter varieties).</li><li>Spring and autumn sowing.</li><li>High-quality, realistic crop textures.</li><li>Redesigned plant heights and visual stage variations.</li><li>Stubble crushing / trampling effect.</li><li>Growth system aligned with real European crop production.</li></ul>",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-3iOsr.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-FwNN1.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-LdVLz.jpg",
+                ],
+            },
+            "texture-2": {
+                description: "<ul><li>New post-flowering stage.</li><li>Realistic growth schedule.</li><li>New high-resolution textures.</li><li>Destructible stubble.</li><li>Natural seasonal transitions.</li></ul>",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-scpAe.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-yN51W.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-Sjvv9.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-9tF2W.jpg",
                 ],
             },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
@@ -771,6 +798,21 @@
                 name: "Terre d'Auvergne",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
+            },
+
+
+            // TEXTURES
+            {
+                id: "texture-1",
+                name: "Realistic Wheat & Barley, Europe Growth Cycle",
+                mimeType: "application/zip",
+                parentId: "fs25-textures"
+            },
+            {
+                id: "texture-2",
+                name: "Realistic Canola, Europe Growth Cycle",
+                mimeType: "application/zip",
+                parentId: "fs25-textures"
             },
         ],
         customFolders: [

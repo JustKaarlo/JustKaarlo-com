@@ -1408,7 +1408,7 @@ async function listFilesInFolder(options) {
                 if (countTag) {
                     const currentPath = window.location.pathname;
                     if (currentPath.includes('fs25')) {
-                        countTag.textContent = `${customChildren.length} File${customChildren.length !== 1 ? "s" : ""}`;
+                        countTag.textContent = `${customChildren.length} Mod${customChildren.length !== 1 ? "s" : ""}`;
                     } else {
                         countTag.textContent = `${customChildren.length} Part${customChildren.length !== 1 ? "s" : ""}`;
                     }
