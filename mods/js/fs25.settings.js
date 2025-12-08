@@ -106,6 +106,7 @@
             "map-42": "https://www.kingmods.net/en/fs25/mods/72634/monteriggioni",
             "map-43": "https://www.kingmods.net/en/fs25/mods/71764/ausseerland-4x",
             "map-44": "https://www.kingmods.net/en/fs25/mods/72330/ardennaise",
+            "map-45": "https://www.kingmods.net/en/fs25/mods/65197/oberschwaben",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -420,6 +421,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/ardennaise-fs25-DVc7Z.jpg",
                 ],
             },
+            "map-45": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/oberschwaben-fs25-KIt4B.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/oberschwaben-fs25-FkQal.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/oberschwaben-fs25-e7Gcz.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -445,7 +453,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44"
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45",
             ],
             "2x-map": [],
             "4x-map": [
@@ -748,6 +756,12 @@
             {
                 id: "map-44",
                 name: "Ardennaise",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-45",
+                name: "Oberschwaben",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
