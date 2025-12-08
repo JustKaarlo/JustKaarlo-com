@@ -107,6 +107,7 @@
             "map-43": "https://www.kingmods.net/en/fs25/mods/71764/ausseerland-4x",
             "map-44": "https://www.kingmods.net/en/fs25/mods/72330/ardennaise",
             "map-45": "https://www.kingmods.net/en/fs25/mods/65197/oberschwaben",
+            "map-46": "https://farmingsimulator25mods.com/terre-dauvergne-ma7-edition-v1-0/",
 
             "ZZZ_FS25_FilltypesTP_for_all.zip": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
         },
@@ -428,6 +429,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/oberschwaben-fs25-e7Gcz.jpg",
                 ],
             },
+            "map-46": {
+                images: [
+                    "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-2.jpg",
+                    "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-4.jpg",
+                    "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-1.jpg",
+                ],
+            },
             "ZZZ_FS25_FilltypesTP_for_all.zip": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
@@ -453,7 +461,7 @@
         },
         tagAssignments: {
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46",
             ],
             "2x-map": [],
             "4x-map": [
@@ -762,6 +770,12 @@
             {
                 id: "map-45",
                 name: "Oberschwaben",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-46",
+                name: "Terre d'Auvergne",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
