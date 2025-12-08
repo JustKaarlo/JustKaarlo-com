@@ -18,7 +18,7 @@
         container: fsContainer,
         apiKey,
         iconDefinitions: {
-            "ItemFxIcon": "../res/src/fs25-side-fx.png",
+            "ItemFxIcon": "https://www.justkaarlo.com/res/src/fs25-side-fx.png",
         },
         iconAssignments: {
             "ItemFxIcon": [
@@ -27,20 +27,10 @@
             ],
         },
         customIcons: {},
-        folderIconDefinitions: {
-            "OthersCategory": "../res/src/fs25-others.png",
-            "MapsCategory": "../res/src/fs25-maps.png",
-            "TexturesCategory": "../res/src/fs25-textures.png",
-        },
-        folderIconAssignments: {
-            "OthersCategory": [
-                "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
-            ],
-            "MapsCategory": [],
-            "TexturesCategory": [],
-        },
+        folderIconDefinitions: {},
+        folderIconAssignments: {},
         customFolderIcons: {
-            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "../res/src/fs25-logo-small.png",
+            "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.justkaarlo.com/res/src/fs25-mods-2.png",
         },
         highlightFiles: [],
         colorizeFiles: [],
@@ -50,8 +40,9 @@
         downloadButtonFiles: [],
         excludeDownloadFiles: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
-            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
             "fs25-maps",
+            "fs25-textures",
+            "fs25-others",
             ...numMapsArray,
         ],
         customDownloadLinks: {
@@ -59,8 +50,9 @@
         },
         customWebsiteLinks: {
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ": "https://www.kingmods.net/en/fs25/new-mods",
-            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
+            "fs25-textures": "https://www.kingmods.net/en/fs25/categories/miscellaneous/textures",
+            "fs25-others": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
 
             "map-1": "https://www.kingmods.net/en/fs25/mods/71475/map-1-20-4x",
             "map-2": "https://www.kingmods.net/en/fs25/mods/71098/am-nord-ostsee-kanal-4x",
@@ -497,10 +489,11 @@
         ],
         hideSizeTagFolders: [
             "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ",
-            "1Vtso3y0kFlJt8hi1ZlTFhtFolDVTxNj_",
 
             // CUSTOM FOLDERS
             "fs25-maps",
+            "fs25-textures",
+            "fs25-others",
         ],
         customFiles: [
             {
@@ -785,7 +778,19 @@
                 id: "fs25-maps",
                 name: "Maps",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "../res/src/fs25-maps.png",
+                icon: "https://www.justkaarlo.com/res/src/fs25-maps.png",
+            },
+            {
+                id: "fs25-textures",
+                name: "Textures",
+                mimeType: "application/vnd.google-apps.folder",
+                icon: "https://www.justkaarlo.com/res/src/fs25-textures.png",
+            },
+            {
+                id: "fs25-others",
+                name: "Others",
+                mimeType: "application/vnd.google-apps.folder",
+                icon: "https://www.justkaarlo.com/res/src/fs25-others.png",
             }
         ],
     });
