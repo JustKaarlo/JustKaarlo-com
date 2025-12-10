@@ -924,7 +924,7 @@
                 id: "fs25-wip",
                 name: "Work In Progress",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "../res/mods/fs25/ico/fs25-wip-1.png",
+                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-wip-1.png",
             },
         ],
     });
