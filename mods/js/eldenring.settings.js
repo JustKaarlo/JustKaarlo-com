@@ -14,7 +14,7 @@
         container: fsContainer,
         apiKey,
         iconDefinitions: {
-            "ConvergenceIcon": "https://www.justkaarlo.com/res/filelist/Convergence.ico",
+            "ConvergenceIcon": "https://www.justkaarlo.com/res/mods/elden-ring/ico/Convergence.ico",
         },
         iconAssignments: {
             "ConvergenceIcon": [

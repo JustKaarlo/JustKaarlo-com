@@ -43,7 +43,7 @@ const fsGuides = [
     { // Potatoes
         title: 'Potatoes',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/potato.png',
+        icon: 'https://www.justkaarlo.com/res/guides/potato.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
         showTOC: true,
@@ -80,7 +80,7 @@ const fsGuides = [
     { // Cotton
         title: 'Cotton',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/cotton.png',
+        icon: 'https://www.justkaarlo.com/res/guides/cotton.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=306',
         showTOC: true,
@@ -227,7 +227,7 @@ const fsGuides = [
     { // Onions
         title: 'Onions',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/onion.png',
+        icon: 'https://www.justkaarlo.com/res/guides/onion.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=648',
         showTOC: true,
@@ -291,7 +291,7 @@ const fsGuides = [
     { // Rice
         title: 'Rice',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/rice.png',
+        icon: 'https://www.justkaarlo.com/res/guides/rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=557',
         showTOC: true,
@@ -412,7 +412,7 @@ const fsGuides = [
     { // Long Grain Rice
         title: 'Long Grain Rice',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/long-grain-rice.png',
+        icon: 'https://www.justkaarlo.com/res/guides/long-grain-rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=556',
         showTOC: true,
@@ -549,7 +549,7 @@ const fsGuides = [
     { // Aquaculture
         title: 'Aquaculture',
         subtitle: 'Breed & Manage',
-        icon: 'https://www.justkaarlo.com/res/src/guides/trout.png',
+        icon: 'https://www.justkaarlo.com/res/guides/trout.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=654',
         showTOC: true,
@@ -641,7 +641,7 @@ const fsGuides = [
     { // Wheat
         title: 'Wheat',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/wheat.png',
+        icon: 'https://www.justkaarlo.com/res/guides/wheat.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=619',
         showTOC: true,
@@ -691,7 +691,7 @@ const fsGuides = [
     { // Soybeans
         title: 'Soybeans',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/soybeans.png',
+        icon: 'https://www.justkaarlo.com/res/guides/soybeans.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=633',
         showTOC: true,
@@ -737,7 +737,7 @@ const fsGuides = [
     { // Corn
         title: 'Corn/Maize',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/corn.png',
+        icon: 'https://www.justkaarlo.com/res/guides/corn.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=304',
         showTOC: true,
@@ -790,7 +790,7 @@ const fsGuides = [
     { // Sunflowers
         title: 'Sunflowers',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/sunflower.png',
+        icon: 'https://www.justkaarlo.com/res/guides/sunflower.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=303',
         showTOC: true,
@@ -899,7 +899,7 @@ const fsGuides = [
     { // Sugarcane
         title: 'Sugarcane',
         subtitle: 'Sow & Harvest',
-        icon: 'https://www.justkaarlo.com/res/src/guides/sugarcane.png',
+        icon: 'https://www.justkaarlo.com/res/guides/sugarcane.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=307',
         showTOC: true,
@@ -997,7 +997,7 @@ const fsGuides = [
     { // Sheep
         title: 'Sheep',
         subtitle: 'Breed & Care',
-        icon: 'https://www.justkaarlo.com/res/src/guides/sheep.png',
+        icon: 'https://www.justkaarlo.com/res/guides/sheep.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=337',
         showTOC: true,
@@ -1113,7 +1113,7 @@ const fsGuides = [
     { // Chicken
         title: 'Chicken',
         subtitle: 'Breed & Care',
-        icon: 'https://www.justkaarlo.com/res/src/guides/chicken.png',
+        icon: 'https://www.justkaarlo.com/res/guides/chicken.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=338',
         showTOC: true,
@@ -1197,7 +1197,7 @@ const fsGuides = [
     { // Cows (WIP)
         title: 'Cows',
         subtitle: '<b>Work In Progress</b><br>Breed & Care',
-        icon: 'https://www.justkaarlo.com/res/src/guides/cow.png',
+        icon: 'https://www.justkaarlo.com/res/guides/cow.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=336',
         showTOC: true,
@@ -1213,7 +1213,7 @@ const fsGuides = [
     { // Pigs (WIP)
         title: 'Pigs',
         subtitle: '<b>Work In Progress</b><br>Breed & Care',
-        icon: 'https://www.justkaarlo.com/res/src/guides/pig.png',
+        icon: 'https://www.justkaarlo.com/res/guides/pig.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=340',
         showTOC: true,
@@ -1229,7 +1229,7 @@ const fsGuides = [
     { // Horses (WIP)
         title: 'Horses',
         subtitle: '<b>Work In Progress</b><br>Breed & Care',
-        icon: 'https://www.justkaarlo.com/res/src/guides/horse.png',
+        icon: 'https://www.justkaarlo.com/res/guides/horse.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=339',
         showTOC: true,
@@ -1248,11 +1248,11 @@ const mcGuides = [
     { // Hypixel Minions
         title: 'Minions',
         subtitle: 'Hypixel',
-        icon: 'https://www.justkaarlo.com/res/src/guides/minions.png',
+        icon: 'https://www.justkaarlo.com/res/guides/minions.png',
         contentType: 'link',
         link: 'https://wiki.hypixel.net/Minions',
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
             position: 'right'
         },
     },
@@ -1263,19 +1263,19 @@ const mcGuides = [
         contentType: 'link',
         link: 'https://hypixel-skyblock.fandom.com/wiki/Special:AllMaps',
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
             position: 'right'
         },
     },
     { // Hypixel Fly on Island
         title: 'Fly on Island',
         subtitle: 'Hypixel',
-        icon: 'https://www.justkaarlo.com/res/src/guides/fly-on-island.png',
+        icon: 'https://www.justkaarlo.com/res/guides/fly-on-island.png',
         contentType: 'description',
         link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
         showTOC: true,
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
             position: 'right'
         },
         description: `
@@ -1318,12 +1318,12 @@ const mcGuides = [
     { // Hypixel Top Minions
         title: 'Top Minions',
         subtitle: 'Hypixel',
-        icon: 'https://www.justkaarlo.com/res/src/guides/top-minions.png',
+        icon: 'https://www.justkaarlo.com/res/guides/top-minions.png',
         contentType: 'description',
         link: 'https://hypixel.net/threads/2025-5-best-money-making-minions-with-layout-and-setups-also-if-you-have-a-small-budget.5834830/',
         showTOC: false,
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/src/guides/badge/hypixel-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
             position: 'right'
         },
         description: `

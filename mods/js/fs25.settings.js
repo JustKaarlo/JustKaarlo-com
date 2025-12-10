@@ -8,6 +8,7 @@
     const numTexturesArray = Array.from({ length: 50 }, (_, i) => `texture-${i + 1}`);
     const numOthersArray = Array.from({ length: 50 }, (_, i) => `other-${i + 1}`);
     const numModsArray = Array.from({ length: 50 }, (_, i) => `mod-${i + 1}`);
+    const numWIPArray = Array.from({ length: 50 }, (_, i) => `wip-${i + 1}`);
 
     const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
 
@@ -21,7 +22,7 @@
         container: fsContainer,
         apiKey,
         iconDefinitions: {
-            "ItemFxIcon": "https://www.justkaarlo.com/res/src/fs25-side-fx.png",
+            "ItemFxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-side-fx.png",
         },
         iconAssignments: {
             "ItemFxIcon": [
@@ -29,6 +30,7 @@
                 ...numTexturesArray,
                 ...numOthersArray,
                 ...numModsArray,
+                ...numWIPArray,
             ],
         },
         customIcons: {},
@@ -46,9 +48,11 @@
             "fs25-textures",
             "fs25-others",
             "fs25-mods",
+            "fs25-wip",
             ...numMapsArray,
             ...numTexturesArray,
             ...numOthersArray,
+            ...numWIPArray,
         ],
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
@@ -58,6 +62,7 @@
             "fs25-textures": "https://www.kingmods.net/en/fs25/categories/miscellaneous/textures",
             "fs25-others": "https://www.kingmods.net/en/fs25/categories/miscellaneous/other-mods",
             "fs25-mods": "https://www.kingmods.net/en/fs25/new-mods",
+            "fs25-wip": "https://www.kingmods.net/en/fs25/work-in-progress",
 
             // MAPS
             "map-1": "https://www.kingmods.net/en/fs25/mods/71475/map-1-20-4x",
@@ -113,6 +118,9 @@
 
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
+
+            // WORK IN PROGRESS
+            "wip-2": "https://www.facebook.com/p/Irish_Conor-100086038052153/",
         },
         tooltipData: {
             // MAPS
@@ -420,7 +428,7 @@
             },
             "map-44": {
                 images: [
-                    "https://www.justkaarlo.com/res/src/fs25-maps/map-44.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map-44-1.png",
                     "https://www.kingmods.net/uploads/fs25/mods/ardennaise-fs25-FDczY.jpg",
                     "https://www.kingmods.net/uploads/fs25/mods/ardennaise-fs25-DVc7Z.jpg",
                 ],
@@ -463,6 +471,22 @@
             "mod-1": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
+
+            // WORK IN PROGRESS
+            "wip-1": {
+                description: "This is a 4x map which brings Riverview, Maypole, Ebony Island and Glenleathann all into one map with as few changes as possible to any of the maps.",
+                images: [
+                    "https://www.justkaarlo.com/res/mods/fs25/img/wip-1-1.jpg",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/wip-1-2.jpg",
+                ],
+            },
+            "wip-2": {
+                description: "A fictional Irish map based in the West of Ireland",
+                images: [
+                    "https://www.kingmods.net/uploads/fs22/mods/ballyspring-2-fs22-5-2.jpg",
+                    "https://www.kingmods.net/uploads/fs22/mods/ballyspring-2-fs22-5-3.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -473,7 +497,6 @@
             "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
             "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
 
-            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
 
@@ -485,11 +508,16 @@
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
 
             // MODS TAGS
-           "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+            "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+            "map": { text: "Map", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+            "script": { text: "Script", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+
+           // WORK IN PROGRESS
+            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+
         },
         tagAssignments: {
             // GENERAL
-            "wip": [],
             "beta": [],
             "outdated": [],
             "top1": [
@@ -521,6 +549,13 @@
             "misc": [
                 "mod-1",
             ],
+
+            // WORK IN PROGRESS
+            "wip": [],
+            "map": [
+                "wip-1", "wip-2",
+            ],
+            "script": [],
         },
         customTags: {
             "mod-1": [
@@ -533,12 +568,14 @@
             ...numTexturesArray,
             ...numOthersArray,
             ...numModsArray,
+            ...numWIPArray,
         ],
         hideSizeTagFolders: [
             "fs25-maps",
             "fs25-textures",
             "fs25-others",
             "fs25-mods",
+            "fs25-wip",
         ],
         customFiles: [
             // MAPS
@@ -843,31 +880,51 @@
             },
 
             // OTHERS
+
+            // WORK IN PROGRESS
+            {
+                id: "wip-1",
+                name: "Combined Counties",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-2",
+                name: "BallySpring 25",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
         ],
         customFolders: [
             {
                 id: "fs25-maps",
                 name: "Maps",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/src/fs25-maps.png",
+                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-maps.png",
             },
             {
                 id: "fs25-textures",
                 name: "Textures",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/src/fs25-textures.png",
+                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-textures.png",
             },
             {
                 id: "fs25-others",
                 name: "Others",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/src/fs25-others.png",
+                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-others.png",
             },
             {
                 id: "fs25-mods",
                 name: "Mods",
                 mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/src/fs25-mods-2.png",
+                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-mods-2.png",
+            },
+            {
+                id: "fs25-wip",
+                name: "Work In Progress",
+                mimeType: "application/vnd.google-apps.folder",
+                icon: "../res/mods/fs25/ico/fs25-wip-1.png",
             },
         ],
     });
