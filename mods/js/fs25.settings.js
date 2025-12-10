@@ -4,11 +4,11 @@
     const fsContainer = document.getElementById("fs-fileList");
 
     // CUSTOM CONSTANTS
-    const numMapsArray = Array.from({ length: 50 }, (_, i) => `map-${i + 1}`);
-    const numTexturesArray = Array.from({ length: 50 }, (_, i) => `texture-${i + 1}`);
-    const numOthersArray = Array.from({ length: 50 }, (_, i) => `other-${i + 1}`);
-    const numModsArray = Array.from({ length: 50 }, (_, i) => `mod-${i + 1}`);
-    const numWIPArray = Array.from({ length: 50 }, (_, i) => `wip-${i + 1}`);
+    const numMapsArray = Array.from({ length: 100 }, (_, i) => `map-${i + 1}`);
+    const numTexturesArray = Array.from({ length: 100 }, (_, i) => `texture-${i + 1}`);
+    const numOthersArray = Array.from({ length: 100 }, (_, i) => `other-${i + 1}`);
+    const numModsArray = Array.from({ length: 100 }, (_, i) => `mod-${i + 1}`);
+    const numWIPArray = Array.from({ length: 100 }, (_, i) => `wip-${i + 1}`);
 
     const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
 
@@ -111,6 +111,7 @@
             "map-44": "https://www.kingmods.net/en/fs25/mods/72330/ardennaise",
             "map-45": "https://www.kingmods.net/en/fs25/mods/65197/oberschwaben",
             "map-46": "https://farmingsimulator25mods.com/terre-dauvergne-ma7-edition-v1-0/",
+            "map-47": "https://www.kingmods.net/en/fs25/mods/68875/mountain-hill-2025",
 
             // TEXTURES
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
@@ -447,6 +448,13 @@
                     "https://farmingsimulator25mods.com/wp-content/uploads/2025/06/terre-d-auvergne-28ma7-edition-29-v1.0-1.jpg",
                 ],
             },
+            "map-47": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/mountain-hill-2025-fs25-uEChZ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/mountain-hill-2025-fs25-0ExGp.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/mountain-hill-2025-fs25-kSEUh.jpg",
+                ],
+            },
 
             // TEXTURES
             "texture-1": {
@@ -539,7 +547,7 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47",
             ],
             "16x-map": [
                 "map-5",
@@ -852,6 +860,12 @@
             {
                 id: "map-46",
                 name: "Terre d'Auvergne",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-47",
+                name: "Mountain Hill 2025",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
