@@ -113,6 +113,7 @@
             "map-46": "https://farmingsimulator25mods.com/terre-dauvergne-ma7-edition-v1-0/",
             "map-47": "https://www.kingmods.net/en/fs25/mods/68875/mountain-hill-2025",
             "map-48": "https://www.kingmods.net/en/fs25/mods/72875/rennebu-25",
+            "map-49": "https://www.kingmods.net/en/fs25/mods/72979/fields-of-tyrone",
 
             // TEXTURES
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
@@ -463,6 +464,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/rennebu-25-fs25-aLmxE.jpg",
                 ],
             },
+            "map-49": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/fields-of-tyrone-fs25-RkHWZ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fields-of-tyrone-fs25-DtN5W.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/fields-of-tyrone-fs25-QYvhz.jpg",
+                ],
+            },
 
             // TEXTURES
             "texture-1": {
@@ -530,7 +538,6 @@
 
            // WORK IN PROGRESS
             "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-
         },
         tagAssignments: {
             // GENERAL
@@ -555,7 +562,7 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49",
             ],
             "16x-map": [
                 "map-5",
@@ -880,6 +887,12 @@
             {
                 id: "map-48",
                 name: "Rennebu 25",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-49",
+                name: "Fields Of Tyrone",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
