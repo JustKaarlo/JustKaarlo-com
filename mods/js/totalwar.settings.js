@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "184OONp6ZUL5_oMTuGuqgyx2qNE9-D2UT";
     const fsContainer = document.getElementById("tw-fileList");
     // CUSTOM CONSTANTS
@@ -52,6 +52,8 @@
             "Rome II Extra Modifications.exe":      "../res/mods/total-war/ico/TotalWarRome2Extras.ico",
             "Para Bellum Part 1.exe":               "../res/mods/total-war/ico/ParaBellum.ico",
             "Para Bellum Part 2.exe":               "../res/mods/total-war/ico/ParaBellum.ico",
+            "Legendary Empires HD Part 1.exe":      "../res/mods/total-war/ico/LegendaryEmpiresHD.ico",
+            "Legendary Empires HD Part 2.exe":      "../res/mods/total-war/ico/LegendaryEmpiresHD.ico",
 
             "Last Alliance.exe":                    "../res/mods/total-war/ico/LastAlliance.ico",
             "Pike & Shot II.exe":                   "../res/mods/total-war/ico/PikeAndShotII.ico",
@@ -83,6 +85,7 @@
             "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF":    "../res/mods/total-war/ico/ParaBellum.ico",
             "1MsU5Q9-uQ23a0anq3ZsH4RdZ-0CkiAiU":    "../res/mods/total-war/ico/DragonEmpire.ico",
             "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX":    "../res/mods/total-war/ico/TotalFotS.ico",
+            "12X13ZZgUZ2R1YaPWDrHKkl3iGXSGl6kw":    "../res/mods/total-war/ico/LegendaryEmpiresHD.ico",
         },
         highlightFiles: [
             "Attila Extra Modifications.exe",
@@ -113,7 +116,7 @@
             "14p-1KeG4OB5uYIWqH8yRScpyXRj0IaEb",
             "1zYVOwQN--y78iTUnku67DyABh5maAfV_",
             "1vizoQOE_gq9rK9LgrxeNgFoikw75AX2h",
-            "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX"
+            "1QkAve8DnUDfCRi3EBpFqqXHddXtiTfmX",
         ],
         customDownloadLinks: {
             "1P9wPHHxDGGt3tUrEyukiYBf-_YIMJayF": "https://www.justkaarlo.com/download/total-war/package/ParaBellum-Package.exe",
@@ -122,7 +125,8 @@
             "1iNfu1THAgULCd3pGUVsQCNlnTHKx-JQY": "https://www.justkaarlo.com/download/total-war/package/DawnlessDays-Package.exe",
             "1NHAPD9Si2PM058Vkam_80h-okIFs31S3": "https://www.justkaarlo.com/download/total-war/package/NovaAttila-Package.exe",
             "1aKdtU4523e-51o_hm7-QeHFVxIFJvzlv": "https://www.justkaarlo.com/download/total-war/package/MK1212AD-Package.exe",
-            "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/download/total-war/package/AncientEmpires-Package.exe"
+            "1Y44ajJaNdEea5QLvUnQr3nLnmLxBHZSv": "https://www.justkaarlo.com/download/total-war/package/AncientEmpires-Package.exe",
+            "12X13ZZgUZ2R1YaPWDrHKkl3iGXSGl6kw": "https://www.justkaarlo.com/download/total-war/package/LegendaryEmpiresHD-Package.exe",
         },
         customWebsiteLinks: {},
         tooltipData: {},
