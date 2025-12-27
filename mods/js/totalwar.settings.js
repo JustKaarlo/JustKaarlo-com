@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
+    const apiKey = "__API_KEY__";
     const fsRootFolderId = "184OONp6ZUL5_oMTuGuqgyx2qNE9-D2UT";
     const fsContainer = document.getElementById("tw-fileList");
     // CUSTOM CONSTANTS
