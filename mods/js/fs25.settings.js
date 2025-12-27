@@ -114,6 +114,7 @@
             "map-47": "https://www.kingmods.net/en/fs25/mods/68875/mountain-hill-2025",
             "map-48": "https://www.kingmods.net/en/fs25/mods/72875/rennebu-25",
             "map-49": "https://www.kingmods.net/en/fs25/mods/72979/fields-of-tyrone",
+            "map-50": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
 
             // TEXTURES
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
@@ -471,6 +472,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/fields-of-tyrone-fs25-QYvhz.jpg",
                 ],
             },
+            "map-50": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-2dJFW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-9rb4E.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-jSPTg.jpg",
+                ],
+            },
 
             // TEXTURES
             "texture-1": {
@@ -547,7 +555,7 @@
                 "map-6", "map-11",
             ],
             "top2": [
-                "map-1",
+                "map-1", "map-50",
             ],
             "top3": [
                 "map-17",
@@ -558,7 +566,7 @@
 
             // MAPS
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50",
             ],
             "2x-map": [],
             "4x-map": [
@@ -893,6 +901,12 @@
             {
                 id: "map-49",
                 name: "Fields Of Tyrone",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-50",
+                name: "The Pichonnière Valley",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
