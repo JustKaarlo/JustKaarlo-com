@@ -115,6 +115,8 @@
             "map-48": "https://www.kingmods.net/en/fs25/mods/72875/rennebu-25",
             "map-49": "https://www.kingmods.net/en/fs25/mods/72979/fields-of-tyrone",
             "map-50": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
+            "map-51": "https://www.kingmods.net/en/fs25/mods/73061/dunareni-x4",
+            "map-52": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
 
             // TEXTURES
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
@@ -479,6 +481,20 @@
                     "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-jSPTg.jpg",
                 ],
             },
+            "map-51": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/dunareni-x4-fs25-GK76B.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dunareni-x4-fs25-KhF65.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/dunareni-x4-fs25-lbu82.jpg",
+                ],
+            },
+            "map-52": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-2dJFW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-jSPTg.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-9rb4E.jpg",
+                ],
+            },
 
             // TEXTURES
             "texture-1": {
@@ -555,7 +571,7 @@
                 "map-6", "map-11",
             ],
             "top2": [
-                "map-1", "map-50",
+                "map-1", "map-50", "map-52",
             ],
             "top3": [
                 "map-17",
@@ -570,7 +586,7 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-52",
             ],
             "16x-map": [
                 "map-5",
@@ -906,6 +922,18 @@
             },
             {
                 id: "map-50",
+                name: "The Pichonnière Valley",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-51",
+                name: "Dunăreni",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-52",
                 name: "The Pichonnière Valley",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
