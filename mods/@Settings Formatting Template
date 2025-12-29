@@ -1,0 +1,153 @@
+## Settings Formatting Template
+
+```js
+(function initializeFS25FileList() {
+    const apiKey = "API_KEY";
+    const fsRootFolderId = "FOLDER-ID-GOES-HERE";
+    const fsContainer = document.getElementById("fileList");
+    // CUSTOM CONSTANTS
+    const ConstantIconExample = "/../res/src/fs25-side-fx.png";
+    const ConstantTagExample = { text: "North America", color: "#6c7d00ff", opacity: 0.5, textOpacity: 0.5 };
+
+    if (!fsContainer) {
+
+        console.error("file list container not found");
+
+        return;
+
+    }
+
+    listFilesInFolder({
+        folderId: fsRootFolderId,
+        container: fsContainer,
+        apiKey,
+        iconDefinitions: {
+            "FileExampleDefinition1": "/../res/src/fs25-side-fx.png",
+            "FileExampleDefinition2": ConstantIconExample,
+        },
+        iconAssignments: {
+            "FileExampleDefinition1": [
+                "FILENAME"
+            ],
+        },
+        // OLD METHOD (still works for backward compatibility - but commented out since we're using new method above)
+        // customIcons: {
+        //     "ExampleFile1": "/../res/src/fs25-side-fx.png",
+        //     "ExampleFile2": ConstantIconExample,
+        // },
+        folderIconDefinitions: {
+            "FolderExampleDefinition1": "/../res/src/fs25-logo-small.png",
+            "FolderExampleDefinition2": ConstantIconExample,
+        },
+        folderIconAssignments: {
+            "FolderExampleDefinition1": [
+                "FOLDER-ID"
+            ],
+        },
+        // OLD METHOD (commented out - still works)
+        // customFolderIcons: {
+        //     "ExampleFolderID1": "/../res/src/fs25-side-fx.png",
+        //     "ExampleFolderID2": ConstantIconExample,
+        // },
+        highlightFiles: [],
+        colorizeFiles: [],
+        excludePartsFolders: [
+            // FOLDER ID GOES HERE
+        ],
+        folderGradientFallback: {},
+        showDownloadButtonForAllFiles: true,
+        downloadButtonFiles: [],
+        excludeDownloadFiles: [
+            // FOLDER ID & FILE NAME GOES HERE
+        ],
+        customDownloadLinks: {
+            // "FILENAME/FOLDER-ID": "URL",
+        },
+        customWebsiteLinks: {
+            // "FILENAME/FOLDER-ID": "URL",
+        },
+        tooltipData: {
+            "FILENAME": {
+                description: "DESCRIPTION GOES HERE",
+                images: [
+                    "URL GOES HERE or PATH",
+                ]
+            },
+        },
+        showDownloadButtonAtRoot: true,
+        customDisplayNames: {
+            // "FILENAME/FOLDER-ID": "DISPLAY NAME",
+        },
+        tagDefinitions: {
+            "TagDefinitionsExample1": { text: "TAG TEXT", color: "#6c7d00ff", opacity: 0.5, textOpacity: 0.5 };,
+            "TagDefinitionsExample2": ConstantTagExample,
+        },
+        tagAssignments: {
+            "TagDefinitionsExample1": [
+                // FOLDER ID and/or FILENAME
+            ],
+            "TagDefiitionsExample2": [
+                // FOLDER ID and/or FILENAME
+            ],
+        },
+        // OLD METHOD (still works for backward compatibility - but commented out since we're using new method above)
+        // customTags: {
+        //     "FILENAME": [
+        //         { text: "TEXT", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
+        //     ],
+        //     "FILENAME": [
+        //         ConstantTagExample,
+        //     ],
+        // },
+        hideAllSizeTags: false,
+        hideSizeTagFiles: [
+            // FILENAME
+        ],
+        hideSizeTagFolders: [
+            // FOLDER ID
+        ],
+        // CUSTOM FILES - Files that don't exist in Google Drive but should be displayed
+        customFiles: [
+            // Example custom file at root level
+            // {
+            //     id: "custom-file-1",                    // Unique ID for the file
+            //     name: "FS25_CustomMod.zip",            // Display name
+            //     mimeType: "application/zip",            // MIME type
+            //     size: "52428800",                       // Size in bytes (50 MB)
+            //     icon: "../res/src/custom-icon.png",    // Custom icon URL
+            //     downloadUrl: "https://example.com/mod.zip", // Download link
+            //     url: "https://example.com/mod",         // Alternative link
+            //     // parentId: "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ", // Optional: parent folder ID
+            //     // parentPath: "", // Optional: parent folder path (e.g., "" for root, "Maps/" for Maps folder)
+            // },
+
+            // Example custom file in a specific folder
+            // {
+            //     id: "custom-file-2",
+            //     name: "FS25_NewMap.zip",
+            //     mimeType: "application/zip",
+            //     size: "104857600", // 100 MB
+            //     icon: Fs25EuropeanMaps,
+            //     downloadUrl: "https://example.com/newmap.zip",
+            //     parentId: "1POXftu49rQW6coDWMVnpaQbLu7PrWEXs", // Place in Maps folder
+            // },
+        ],
+
+        // CUSTOM FOLDERS - Folders that don't exist in Google Drive but should be displayed
+        customFolders: [
+            // Example custom folder at root level
+            // {
+            //     id: "custom-folder-1",                  // Unique ID for the folder
+            //     name: "Custom Category",                // Display name
+            //     mimeType: "application/vnd.google-apps.folder",
+            //     icon: "../res/src/custom-folder-icon.png", // Custom icon URL
+            //     url: "https://example.com/category",    // Optional: link when clicking download
+            //     size: "314572800",                       // Optional: total size in bytes (300 MB)
+            //     // parentId: "1L8VdtjPgoVkN-LQeejAnvixvwfH0RsmQ", // Optional: parent folder ID
+            //     // parentPath: "", // Optional: parent folder path
+            // },
+        ],
+    });
+    attachDocPreview(fsContainer);
+})()
+```
