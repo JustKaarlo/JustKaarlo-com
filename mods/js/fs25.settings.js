@@ -540,20 +540,20 @@
         customDisplayNames: {},
         tagDefinitions: {
             // GENERAL TAGS
-            "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75 },
-            "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
-            "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65 },
-            "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7 },
+            "top1": { text: TopFx, color: "#e4af00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.75, priority: 1 },
+            "top2": { text: TopFx, color: "#965f00", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65, priority: 2 },
+            "top3": { text: TopFx, color: "#899A17", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.65, priority: 3 },
+            "top4": { text: TopFx, color: "#8f8f8f", opacity: 0.6, textColor: "#c8c8c8ff", textOpacity: 0.7, priority: 4 },
 
             "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
 
             // MAPS TAGS
-            "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
-            "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 5 },
+            "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 6 },
+            "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 7 },
+            "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 8 },
+            "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 9 },
 
             // MODS TAGS
             "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },

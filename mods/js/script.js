@@ -305,6 +305,22 @@ function getCustomTags({ file, folderId, path, customTags, tagDefinitions, tagAs
     return tags;
 }
 
+function getPriorityFromTags({ file, folderId, path, customTags, tagDefinitions, tagAssignments }) {
+    const tags = getCustomTags({ file, folderId, path, customTags, tagDefinitions, tagAssignments });
+    
+    // Find the lowest priority number (highest priority)
+    let lowestPriority = Infinity;
+    
+    for (const tag of tags) {
+        if (tag && typeof tag.priority === 'number') {
+            lowestPriority = Math.min(lowestPriority, tag.priority);
+        }
+    }
+    
+    // Return Infinity if no priority found (will be sorted last)
+    return lowestPriority === Infinity ? Infinity : lowestPriority;
+}
+
 function getCustomIcon({ file, folderId, path, customIcons, iconDefinitions, iconAssignments }) {
     // Legacy method: direct customIcons object
     if (customIcons) {
@@ -875,13 +891,66 @@ async function listFilesInFolder(options) {
     }
 
     files.sort((a, b) => {
+        // First, check for priority tags
+        const aPriority = getPriorityFromTags({ 
+            file: a, 
+            folderId, 
+            path, 
+            customTags, 
+            tagDefinitions, 
+            tagAssignments 
+        });
+        const bPriority = getPriorityFromTags({ 
+            file: b, 
+            folderId, 
+            path, 
+            customTags, 
+            tagDefinitions, 
+            tagAssignments 
+        });
+        
+        // Sort by priority first (lower number = higher priority)
+        if (aPriority !== bPriority) {
+            return aPriority - bPriority;
+        }
+        
+        // Then check for highlightFiles
         const aTop = highlightFiles.includes(a.name);
         const bTop = highlightFiles.includes(b.name);
         if (aTop && !bTop) return -1;
         if (bTop && !aTop) return 1;
+        
+        // Finally sort alphabetically
         return a.name.localeCompare(b.name, undefined, { numeric: true });
     });
-    folders.sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+    
+    folders.sort((a, b) => {
+        // First, check for priority tags
+        const aPriority = getPriorityFromTags({ 
+            file: a, 
+            folderId, 
+            path, 
+            customTags, 
+            tagDefinitions, 
+            tagAssignments 
+        });
+        const bPriority = getPriorityFromTags({ 
+            file: b, 
+            folderId, 
+            path, 
+            customTags, 
+            tagDefinitions, 
+            tagAssignments 
+        });
+        
+        // Sort by priority first (lower number = higher priority)
+        if (aPriority !== bPriority) {
+            return aPriority - bPriority;
+        }
+        
+        // Then sort alphabetically
+        return a.name.localeCompare(b.name, undefined, { numeric: true });
+    });
 
     // Files
     for (const file of files) {
