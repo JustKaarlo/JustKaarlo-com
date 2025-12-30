@@ -54,6 +54,7 @@
             "Para Bellum Part 2.exe":               "../res/mods/total-war/ico/ParaBellum.ico",
             "Legendary Empires HD Part 1.exe":      "../res/mods/total-war/ico/LegendaryEmpiresHD.ico",
             "Legendary Empires HD Part 2.exe":      "../res/mods/total-war/ico/LegendaryEmpiresHD.ico",
+            "Total War New World.exe":              "../res/mods/total-war/ico/TotalWarNewWorld.ico",
 
             "Last Alliance.exe":                    "../res/mods/total-war/ico/LastAlliance.ico",
             "Pike & Shot II.exe":                   "../res/mods/total-war/ico/PikeAndShotII.ico",
