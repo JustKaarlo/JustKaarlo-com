@@ -117,6 +117,7 @@
             "map-50": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
             "map-51": "https://www.kingmods.net/en/fs25/mods/73061/dunareni-x4",
             "map-52": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
+            "map-53": "https://www.kingmods.net/en/fs25/mods/73553/osweiler",
 
             // TEXTURES
             "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
@@ -495,6 +496,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/the-pichonniere-valley-fs25-9rb4E.jpg",
                 ],
             },
+            "map-53": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/osweiler-fs25-GqeHg.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/osweiler-fs25-ANdSM.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/osweiler-fs25-FC61L.jpg",
+                ],
+            },
 
             // TEXTURES
             "texture-1": {
@@ -554,6 +562,7 @@
             "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 7 },
             "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 8 },
             "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 9 },
+            "multifruit": { text: "Multifruit", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
 
             // MODS TAGS
             "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
@@ -586,10 +595,13 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-52",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-52", "map-53",
             ],
             "16x-map": [
                 "map-5",
+            ],
+            "multifruit": [
+                "map-11", "map-37", "map-12",
             ],
 
             // MODS
@@ -935,6 +947,12 @@
             {
                 id: "map-52",
                 name: "The Pichonnière Valley",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-53",
+                name: "Osweiler",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
