@@ -557,12 +557,12 @@
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
 
             // MAPS TAGS
-            "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 5 },
-            "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 6 },
-            "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 7 },
-            "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 8 },
-            "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 9 },
-            "multifruit": { text: "Multifruit", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+            "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 96 },
+            "2x-map": { text: "2x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 97 },
+            "4x-map": { text: "4x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 98 },
+            "8x-map": { text: "8x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 99 },
+            "16x-map": { text: "16x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 100 },
+            "multifruit": { text: "Multifruit", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 5 },
 
             // MODS TAGS
             "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
