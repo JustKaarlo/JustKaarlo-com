@@ -1,10 +1,6 @@
 # FOLDERS
 .vscode/
-.deprecated/
 .internal/
-.archived/
-.experimental/
-guides/test/
 
 # FILES
 /desktop.ini
