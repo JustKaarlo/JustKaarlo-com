@@ -3,7 +3,7 @@
 .deprecated/
 .internal/
 .archived/
-.@experimental/
+.experimental/
 guides/test/
 
 # FILES
