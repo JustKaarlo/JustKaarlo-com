@@ -44,6 +44,7 @@
             "Field Command Napoleon.exe":           "../res/mods/total-war/ico/FieldCommand.ico",
             "Grand Battle Mod.exe":                 "../res/mods/total-war/ico/GrandBattle.ico",
             "Napoleonic Total War III.exe":         "../res/mods/total-war/ico/NapoleonicTotalWar3.ico",
+            "The Great War.exe":                    "../res/mods/total-war/ico/TheGreatWar.ico",
 
             "War of the Gods.exe":                  "../res/mods/total-war/ico/WarofTheGods.ico",
             "Radious Total War.exe":                "../res/mods/total-war/ico/RadiousTotalWar.ico",
