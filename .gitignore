@@ -1,7 +1,7 @@
 # FOLDERS
 .vscode/
 .internal/
-/download/total-war/package/
+download/
 
 # FILES
 /desktop.ini
@@ -12,6 +12,3 @@
 /mods/Settings Formatting Template
 /guides/Formatting
 /guides/Guide
-
-# TEMPORARY HIDDEN
-download/total-war/package
