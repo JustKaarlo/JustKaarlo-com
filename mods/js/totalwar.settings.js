@@ -19,6 +19,8 @@
             "Seven Kingdoms.exe":                   "../res/mods/total-war/ico/SevenKingdoms.ico",
             "Total War Skyrim.exe":                 "../res/mods/total-war/ico/TotalWarSkyrim.ico",
             "Northern Kingdoms Remastered.exe":     "../res/mods/total-war/ico/NorthernKingdomsRemastered.ico",
+            "Ice & Fire War of Westeros.exe":       "../res/mods/total-war/ico/Ice&Fire.ico",
+            "Eldirath Total War.exe":               "../res/mods/total-war/ico/EldirathTotalWar.ico",
             "Attila Extra Modifications.exe":       "../res/mods/total-war/ico/TotalWarAttilaExtras.ico",
             "Medieval Kingdoms 1212AD Part 1.exe":  "../res/mods/total-war/ico/MedievelKingdoms1212AD.ico",
             "Medieval Kingdoms 1212AD Part 2.exe":  "../res/mods/total-war/ico/MedievelKingdoms1212AD.ico",
