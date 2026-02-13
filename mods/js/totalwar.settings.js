@@ -1,5 +1,5 @@
 (function initializeFS25FileList() {
-    const apiKey = "__API_KEY__";
+    const apiKey = "AIzaSyDqtsRN35V1JnmfIY9hTsn_Ej4aSipsK4M";
     const fsRootFolderId = "184OONp6ZUL5_oMTuGuqgyx2qNE9-D2UT";
     const fsContainer = document.getElementById("tw-fileList");
     // CUSTOM CONSTANTS
@@ -131,7 +131,11 @@
             "12X13ZZgUZ2R1YaPWDrHKkl3iGXSGl6kw": "https://www.justkaarlo.com/download/total-war/package/LegendaryEmpiresHD-Package.exe",
         },
         customWebsiteLinks: {},
-        tooltipData: {},
+        tooltipData: {
+            "Attila Extra Modifications.exe": {
+                description: "<b>Includes</b><br><code><b>Blood & Gore DLC Better Performance</b></code><br><code><b>Custom Battle Crash Fix</b></code><br><code><b>Massive Battles Better Perfomance</b></code><br><code><b>Additional Units Pack</b></code><br><code><b>Age of Vikings</b></code><br><code><b>TDD Remove Unit Cap v0.8.5</b></code><br><code><b>TDD Remove Unit Cap v0.9.0</b></code><br><code><b>Olympian Battle Camera</b></code><br><code><b>Attila Ultimate Animations</b></code>"
+            },
+        },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
         tagDefinitions: {},
