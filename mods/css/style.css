@@ -602,7 +602,7 @@ body.modal-open {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(98, 98, 98, 0.761);
 }
 
 #closeModal {
