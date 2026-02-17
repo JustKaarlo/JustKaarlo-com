@@ -37,6 +37,7 @@
             "Nova Attila Part 2.exe":               "../res/mods/total-war/ico/NovaAttila.ico",
             "Eldirath Total War Part 1.exe":        "../res/mods/total-war/ico/EldirathTotalWar.ico",
             "Eldirath Total War Part 2.exe":        "../res/mods/total-war/ico/EldirathTotalWar.ico",
+            "Medieval Warfare.rar":                 "../res/mods/total-war/ico/MedievalWarfare.ico",
 
             "Empire Total War II.rar":              "../res/mods/total-war/ico/EmpireII.ico",
             "Empire 2 Generals Part 1.exe":         "../res/mods/total-war/ico/Empire2General.ico",
