@@ -138,7 +138,7 @@
         customWebsiteLinks: {},
         tooltipData: {
             "Attila Extra Modifications.exe": {
-                description: "<b>Includes</b><br><code><b>Blood & Gore DLC Better Performance</b></code><br><code><b>Custom Battle Crash Fix</b></code><br><code><b>Massive Battles Better Perfomance</b></code><br><code><b>Additional Units Pack</b></code><br><code><b>Age of Vikings</b></code><br><code><b>TDD Remove Unit Cap v0.8.5</b></code><br><code><b>TDD Remove Unit Cap v0.9.0</b></code><br><code><b>Olympian Battle Camera</b></code><br><code><b>Attila Ultimate Animations</b></code>"
+                description: "<b>Includes</b><br><code><b>Blood & Gore DLC Better Performance</b></code><br><code><b>Custom Battle Crash Fix</b></code><br><code><b>Massive Battles Better Perfomance</b></code><br><code><b>Additional Units Pack</b></code><br><code><b>Age of Vikings</b></code><br><code><b>TDD Remove Unit Caps</b></code><br><code><b>I&F Remove Unit Caps</b></code><br><code><b>Olympian Battle Camera</b></code><br><code><b>Attila Ultimate Animations</b></code>"
             },
             "Rome II Extra Modifications.exe": {
                 description: "<b>Includes</b><br><code><b>Ados Trojan Units</b></code><br><code><b>Crassus Roman Reskin</b></code><br><code><b>Nordos 3D Units Cards</b></code><br><code><b>Nordos Faction Unlocker</b></code><br><code><b>Nordos Units Compilation</b></code><br><code><b>Simple Greek Reskin</b></code><br><code><b>Simple Roman Reskin</b></code><br><code><b>Unit Icons Pack</b></code><br><code><b>Units Super Pack</b></code>"
