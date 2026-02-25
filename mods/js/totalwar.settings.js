@@ -84,7 +84,7 @@
 
             "Medieval Kingdoms 1212AD":             "../res/mods/total-war/ico/MedievelKingdoms1212AD.ico",
             "Ancient Empires":                      "../res/mods/total-war/ico/AnchientEmpires.ico",
-            "The Dawnless Days5":                   "../res/mods/total-war/ico/TheDawnlessDays.ico",
+            "The Dawnless Days":                   "../res/mods/total-war/ico/TheDawnlessDays.ico",
             "Nova Attila":                          "../res/mods/total-war/ico/NovaAttila.ico",
             "Empire 2 Generals":                    "../res/mods/total-war/ico/Empire2General.ico",
             "Para Bellum":                          "../res/mods/total-war/ico/ParaBellum.ico",
