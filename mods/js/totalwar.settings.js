@@ -84,8 +84,7 @@
 
             "Medieval Kingdoms 1212AD":             "../res/mods/total-war/ico/MedievelKingdoms1212AD.ico",
             "Ancient Empires":                      "../res/mods/total-war/ico/AnchientEmpires.ico",
-            "The Dawnless Days v0.8.5":             "../res/mods/total-war/ico/TheDawnlessDays.ico",
-            "1ElTsIpzKxZHZoMm9rxDfv6-dZoPLPosV":    "../res/mods/total-war/ico/SevenKingdoms.ico",
+            "The Dawnless Days5":                   "../res/mods/total-war/ico/TheDawnlessDays.ico",
             "Nova Attila":                          "../res/mods/total-war/ico/NovaAttila.ico",
             "Empire 2 Generals":                    "../res/mods/total-war/ico/Empire2General.ico",
             "Para Bellum":                          "../res/mods/total-war/ico/ParaBellum.ico",
@@ -127,7 +126,7 @@
             "Eldirath Total War",
             "Medieval Kingdoms 1212AD",
             "Nova Attila",
-            "The Dawnless Days v0.8.5",
+            "The Dawnless Days",
             "Empire 2 Generals",
             "Legendary Empires HD",
             "Para Bellum",
