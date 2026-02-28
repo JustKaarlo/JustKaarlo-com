@@ -127,7 +127,12 @@
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
 
             // WORK IN PROGRESS
-            "wip-2": "https://www.facebook.com/p/Irish_Conor-100086038052153/",
+            "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1893/schwesing-bahnhof-umbau",
+            "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
+            "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
+            "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
+            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1915/seasonal-crop-stress",
+            "wip-8": "https://www.kingmods.net/en/fs25/work-in-progress/1906/invoices",
         },
         tooltipData: {
             // MAPS
@@ -530,17 +535,56 @@
 
             // WORK IN PROGRESS
             "wip-1": {
-                description: "This is a 4x map which brings Riverview, Maypole, Ebony Island and Glenleathann all into one map with as few changes as possible to any of the maps.",
                 images: [
                     "https://www.justkaarlo.com/res/mods/fs25/img/wip-1-1.jpg",
                     "https://www.justkaarlo.com/res/mods/fs25/img/wip-1-2.jpg",
                 ],
             },
             "wip-2": {
-                description: "A fictional Irish map based in the West of Ireland",
                 images: [
                     "https://www.kingmods.net/uploads/fs22/mods/ballyspring-2-fs22-5-2.jpg",
                     "https://www.kingmods.net/uploads/fs22/mods/ballyspring-2-fs22-5-3.jpg",
+                ],
+            },
+            "wip-3": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/schwesing-bahnhof-umbau-fs25-cd0iI.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/schwesing-bahnhof-umbau-fs25-SU4Ty.jpg",
+                ],
+            },
+            "wip-4": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/rental-station-fs25-MLXkb.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/rental-station-fs25-kg8JV.jpg",
+                ],
+            },
+            "wip-5": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-TNyKN.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-GnkSJ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-wXD2v.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-cAtzd.jpg",
+                ],
+            },
+            "wip-6": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-ZhTsP.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-x6UNq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-8UoTk.jpg",
+                ],
+            },
+            "wip-7": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/seasonal-crop-stress-fs25-VLTYQ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/seasonal-crop-stress-fs25-q4zuM.jpg",
+                ],
+            },
+            "wip-8": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-2ZWjg.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-40kmq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-hQSdI.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-GvRoW.jpg",
                 ],
             },
         },
@@ -565,12 +609,13 @@
             "multifruit": { text: "Multifruit", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 5 },
 
             // MODS TAGS
-            "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
-            "map": { text: "Map", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
-            "script": { text: "Script", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6 },
+            "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 98 },
+            "map": { text: "Map", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 97 },
+            "script": { text: "Script", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 96 },
 
            // WORK IN PROGRESS
-            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
+            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 95 },
+            "wanted": { text: "Wanted", color: "#858f43", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 99 },
         },
         tagAssignments: {
             // GENERAL
@@ -610,11 +655,18 @@
             ],
 
             // WORK IN PROGRESS
-            "wip": [],
-            "map": [
+            "wip": [
+                "wip-3", "wip-4", "wip-5", "wip-6", "wip-7", "wip-8",
+            ],
+            "wanted": [
                 "wip-1", "wip-2",
             ],
-            "script": [],
+            "map": [
+                "wip-1", "wip-2", "wip-3",
+            ],
+            "script": [
+                "wip-4", "wip-5", "wip-6", "wip-7", "wip-8",
+            ],
         },
         customTags: {
             "mod-1": [
@@ -995,6 +1047,42 @@
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
+            {
+                id: "wip-3",
+                name: "Schwesing Bahnhof Umbau",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-4",
+                name: "Rental Station",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-5",
+                name: "Production Extension",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-6",
+                name: "Advanced Employee Manager",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-7",
+                name: "Seasonal Crop Stress",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-8",
+                name: "Invoices",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
         ],
         customFolders: [
             {
@@ -1026,7 +1114,7 @@
                 name: "Work In Progress",
                 mimeType: "application/vnd.google-apps.folder",
                 icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-wip-2.png",
-            },
+            }
         ],
     });
     attachDocPreview(fsContainer);
