@@ -1196,18 +1196,184 @@ const fsGuides = [
     },
     { // Cows (WIP)
         title: 'Cows',
-        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        subtitle: 'Breed & Care',
         icon: 'https://www.justkaarlo.com/res/guides/cow.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=336',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf270db0a.jpg" alt="Banner">
+            <blockquote>
+                <strong>Tip:</strong> Cows are the most complex type of animal to care for in Farming Simulator. At the very beginning of animal husbandry, you might want to start with chicken or sheep.
+            </blockquote>
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
+            <h2>Breeds, Housing & Feeding</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623c858656b26.jpg" alt="overview">
+            <p>In Farming Simulator, there are cows that do produce milk and cows that don't. Brown-Swiss and Holstein breeds are dairy cows. Angus and Limousin breeds do not and are only used for breeding. You sell them for a profit.</p>
+            <p>Before we tell you in detail what tools and equipment you need, let's take a look at the very basics for cow husbandry: feed and shelter. There are multiple options for how you can accommodate and feed your cattle. It depends on your financial situation and general farming operation.</p>
+            <h3>Housing options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623c3d1aca5ec.jpg" alt="housing">
+            <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=323" class="btn-action btn-small">Click here to learn more about icons.</a>
+            <p>There are three options: pastures, barns and barns including a feeding robot. While a cow pasture requires you to provide feed and water, the barns only require you to provide feed.</p>
+            <p>The cow pasture only produces milk, barns can produce manure and slurry, too. A barn with feeding robot allows you to deliver only the ingredients for the feed - without the robot, you would have to mix the ingredients yourself with a mixer wagon. More on feeding below.</p>
+            <h3>Feeding options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623c663783ecf.jpg" alt="feeding">
+            <p>You have three options: For the cows to be fully (100%) productive and give as much milk as they can, you have to feed them Total Mixed Ration (TMR) - consisting of straw, hay, silage and mineral feed. You can buy all the ingredients at the dealership. </p>
+            <p>If you don't have all the ingredients (or the time), you can feed them with grass or hay. By feeding hay, they will still be 80% productive. By feeding them only grass, their productivity drops to 40%.</p>
+            <p>Does your farm rely heavily on milk production, especially in winter, you should always prepare enough quality food for them to be as productive as they can be.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title"><span class="text-green-100">How To Get Water</span></span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <p>If you keep the cows in a simple pasture, which requires you to provide water, you need to deliver it with a tank trailer. You get water by either filling it from a water tank that you can buy in the "container" tab of the construction menu, or you just reverse the tanker trailer attached to your tractor into water - a river or lake, for example. Water from a lake or river is free, tapping a tank container is not.</p>
+                </div>
             </div>
+            <hr>
+            <h2>What you need for cows</h2>
+            <ul>
+                <li><b>You need a tractor with a front loader attachment and a bale spike</b> to deliver bales to the barn. You need those to feed the cattle.</li>
+                <li><b>You need a barn.</b> You can choose between four versions in the building menu. In the "Cows" tab, you decide between the cow pasture, the cow barn, the large cow barn and the cow barn with a feeding robot. They differ in size and feeding options.</li>
+                <blockquote>
+                    <strong>Tip:</strong> We recommend the barn with the feeding robot. You can take out a loan.
+                </blockquote>
+                <li><b>You need a manure heap.</b> If you have laid straw in the barn, the cows will produce manure - and that must be stored. Place the heap near the stable. You find it in the building menu in the "Buildings" tab under the "Silo" tabs.</li>
+                <li><b>You need a liquid manure tank.</b> Cows produce slurry, too. It's collected in the liquid manure tank. You can find this in the building menu under "Silo Extensions".</li>
+                <li><b>You need a manure spreader/tank</b> to either spread the manure on your fields or transport it to the point of sale.</li>
+                <li><b>You need a slurry spreader/tank</b> to either spread the slurry on your fields or transport it to the place of sale.</li>
+                <li><b>You may need a forage mixing wagon</b> in case you buy a barn without a feeding robot to mix the TMR to feed the cattle.</li>
+                <li><b>You need a tank</b> for transporting the milk. You can also use it tank to fill up the drinking trough in the cow pasture with water if you don't own a barn.</li>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                    <li><b>You can use an animal trailer</b> to transport the animals between the cattle dealer and the barn if you buy or sell them. You don't have to, though. You only need a trailer if you want to transfer cows from one barn to another barn.</li>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>You do not have to buy a trailer. It only costs a tiny fee to buy or sell them directly at the barn. Only go ahead if you want the full cattle farmer role-play experience.</li>
+                            <li>Look for the cow icon at the dealership when shopping for a trailer in the "animal transport" section. It indicates that cows can be transported with this trailer.</li>
+                        </ul>
+                    </blockquote>
+                        <li><b>You will need a truck or a dolly</b> if you have bought the large transporter. A dolly serves as a link between the tractor and the trailer and saves you money. Small trailers don't require a truck or dolly - a tractor alone is enough.</li>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>When shopping for an animal trailer, if "combinations" is displayed, click it to see, if a truck or dolly is required to use it.</li>
+                        </ul>
+                    </blockquote>
+                </ul>
+            </blockquote>
+            <hr>
+            <h2>Equipment Selection</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_623c82fd7b25a.jpg" alt="equipment">
+            <p>We chose the following equipment. We recommend starting with the cow barn, including a feeding robot. It's the most expensive barn, but you save the purchase costs for a mixer wagon as well as barrel - and therefore don't need to fill up the drinking trough. We buy the cows directly and have them delivered.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>John Deere 7810<br>
+                                <blockquote>
+                                    <strong>+</strong> Front-loader attachment and bale spike.
+                                </blockquote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Barn</b></td>
+                            <td>Hörmann Cow Barn with feeding robot
+                                <blockquote>
+                                    <strong>Alternative</strong> Forage Mixing Wagon: Kuhn RA 142
+                                </blockquote>
+                                <blockquote>
+                                    <strong>Optional</strong> Liquid Manure Tank Extension
+                                </blockquote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Manure Spreader</b></td>
+                            <td>Farmtech Variofex 750</td>
+                        </tr>
+                        <tr>
+                            <td><b>Slurry Tank</b></td>
+                            <td>Farmtech Sucercis 800</td>
+                        </tr>
+                        <tr>
+                            <td><b>Tank</b></td>
+                            <td>Lizard MKS 8</td>
+                        </tr>
+                        <tr>
+                            <td><b>Manure Heap</b></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <blockquote>
+                        <strong>Tip</strong> Barns have a liquid manure tank built in. Depending on how many cows you have and how much liquid manure they produce, you can buy a liquid manure tank in the "silo extension" tab of the construction menu to store even more. Place it near the barn.
+                    </blockquote>
+                </div>
+            </div>
+            <hr>
+            <h2>Let's go to work!</h2>
+            <ol>
+                <li><b>Buying Animals</b><br>
+                    <p>You have to make a choice between Brown-Swiss and Holstein (milk) dairy cows or the Angus and Limousin breeds (breeding). You can also choose between very young cows, 12-month-old cattle or animals that are already 18 months old. The difference is that from 18 months onwards, the animals can give birth to offspring. You can find more details on this under "Breeding cattle." </p>
+                    <blockquote>
+                        <strong>Tip</strong> Don't fill the barn to the limit. This will save you money, and you will also get new cows through breeding. You can then either sell them or keep them and use them to fill a new stable.
+                    </blockquote>
+                    <p>When you buy cattle at the barn, you can have them delivered for a small fee. Alternatively, if you have bought a trailer, you can drive it to the cattle dealership and buy cattle on-site to transport them yourself.</p>
+                </li>
+                <li><b>Feeding & Producing TMR</b><br>
+                    <p>If you built the pasture, you will have to provide water by delivering it to the pasture with a tank. You don't have to do this if you built a barn. To feed them, you should provide Total Mixed Ration (TMR) to gain 100% productivity. On the animal screen in the menu, you can track what your animals currently need./p>
+                    <ul>
+                        <li><b>Get the ingredients</b> straw, hay, silage and mineral feed. You can harvest grass, and turn it into hay yourself, if your farm has fields of grass and the required machines. It's easier to buy all the ingredients at the dealership. You can buy bales of straw, hay and silage under "objects" > "bales". Mineral feed is available in the "pallets" section. </li>
+                        <li><b>Do you have a barn with a feeding robot?</b> Then, you only need to deliver the ingredients to the barn (straw, hay, silage and mixed feed). The robot will automatically mix the feed and feed the animals regularly if all ingredients are in stock. </li>
+                        <li><b>Do you use a mixer wagon instead of a robot?</b> Then, you have to prepare the feed in a forage mixer and deliver it to the barn. In the forage mixer you have to add straw, hay, silage and mineral feed in the right proportions. The mixer will show you the correct mixing ratio when sitting in the tractor with the wagon attached. </li>
+                    </ul>
+                    <img src="https://www.farming-simulator.com/cms/uploads/news_6250132241eea.jpg" alt="Kuhn RA 142">
+                    <strong class="text-green-100">How to produce TMR (with the Kuhn RA 142)</strong>
+                    <p>You need to load the bales/pallets into the wagon. Grab them with a front loader and bale spike and dip them into the machine - you can see the wagon getting filled with the ingredient in liters. The machine then mixes everything into fodder. Deliver it to the barn! That's the approximate ratio to aim for with the Kuhn RA 142:</p>
+                    <ul>
+                        <li>4,000 liters of hay</li>
+                        <li>4,000 liters of silage</li>
+                        <li>450 liters of mineral feed</li>
+                        <li>fill with straw until full</li>
+                    </ul>
+                    <img src="https://www.farming-simulator.com/cms/uploads/news_625013837ac20.jpg" alt="unloading">
+                </li>
+                <li><b>Provide Them With Straw To Produce Manure</b><br>
+                    <p>In order for cows to produce manure, they need straw. You fill it in at the respective point of the barn. However, the cow pasture is an exception. This is only used for cattle breeding and does not produce manure. If you have a cow shed, however, the manure will end up in the previously placed manure heap.</p>
+                </li>
+                <li><b>Selling Animals And Products - Or Using Them</b><br>
+                    <p>With cattle, you have multiple options: selling the animals themselves, the milk or even the manure. Milk can also be be processed into cheese, chocolate or other products by selling it to a production plant.</p>
+                    <blockquote>
+                        <strong>Tip</strong> You might want to pay the cheese factory, chocolatier or the bakery a visit. If you provide them with all the necessary ingredients for products like chocolate, including the milk, you can make even more money compared to just selling the milk.
+                    </blockquote>
+                    <p>Selling the cattle is only worthwhile if you have bought the respective breeds, though. Manure and slurry can either be used to fertilize your fields to increase the yield of your crops, or you can sell it to the biogas plant. You might want to save money on fertilizer by using manure and slurry.</p>
+                    <ul>
+                        <li><a href="https://www.farming-simulator.com/newsArticle.php?&news_id=292">Find out more about fertilizing fields</a></li>
+                    </ul>
+                </li>
+            </ol>
+            <hr>
+            <h2>Breeding Cattle</h2>
+            <p>Whether cows reproduce depends on three factors: Their age, the space available and the health of the animals. From the age of 18 month onwards, cows are mature and can give birth to offspring. But this is only possible if there is room for more cows in the barn, of course. Also, their health has to be at 100%. You can achieve this by feeding the animals regularly.</p>
         `,
     },
     { // Pigs (WIP)
