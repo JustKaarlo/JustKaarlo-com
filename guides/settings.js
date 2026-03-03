@@ -13,6 +13,13 @@ const guides = [
         link: 'https://www.justkaarlo.com/guides/minecraft',
         contentType: 'link'
     },
+    {
+        title: 'ArmA3',
+        subtitle: 'Guides & Resources',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/arma3.png',
+        link: 'https://www.justkaarlo.com/guides/arma3',
+        contentType: 'link'
+    },
 ];
 
 const mods = [
@@ -1601,11 +1608,33 @@ const mcHypixelGuides = [
     },
 ]
 
+const arma3Guides = [
+    { // Antistasi Wiki
+        title: 'Antistasi Community',
+        subtitle: 'Wiki Documentation',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-wiki.png',
+        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/',
+        contentType: 'link',
+    },
+    { // Antistasi Ultimate Github
+        title: 'Antistasi Ultimate',
+        subtitle: 'Github',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
+        link: 'https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate',
+        contentType: 'link',
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/guides/badge/github-badge.png',
+            position: 'right'
+        }
+    },
+]
+
 const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
     minecraft: mcGuides,
     hypixel: mcHypixelGuides,
+    arma3: arma3Guides,
     mods: mods,
     // eldenRing: eldenRingGuides,
 
