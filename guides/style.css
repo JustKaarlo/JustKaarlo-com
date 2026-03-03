@@ -89,7 +89,25 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
         linear-gradient(rgba(144, 87, 137, 0.2), rgba(55, 88, 43, 0.45)), 
         url('https://i.redd.it/hey-i-just-realised-that-minecraft-dropped-wallpapers-for-v0-af632nce2dud1.jpg?width=3840&format=pjpg&auto=webp&s=102770acfd3d1534ba97f09cfcaab822e6485b9e');
-        /* url('https://www.justkaarlo.com/res/bg/minecraft-pink-bg.jpg'); */
+}
+
+#bg-hypixel {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    pointer-events: none;
+    background-blend-mode: darken;
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
+        linear-gradient(rgba(45, 61, 91, 0.3), rgba(54, 26, 25, 0.45)),
+        url('../res/guides/bg/hypixel-bg.png');
 }
 
 #particles-js {
@@ -1104,6 +1122,45 @@ body.modal-open .nav-container {
     color: #666666 !important;
 }
 
+.text-coal {
+    color: #373737 !important;
+}
+
+.text-iron {
+    color: #EBEBEB !important;
+}
+
+.text-gold {
+    color: #FFB302 !important;
+}
+
+.text-redstone {
+    color: #B41314 !important;
+}
+
+.text-lapis {
+    color: #1948AD !important;
+}
+
+.text-diamond {
+    color: #54D6AC !important;
+}
+
+.text-emerald {
+    color: #179A62 !important;
+}
+
+.text-copper {
+    color: #FEAA7A !important;
+}
+
+.text-quartz {
+    color: #ece9e2 !important;
+}
+.text-netherite {
+    color: #3d2a26 !important;
+}
+
 /* Quote Styles */
 .guide-description .quote {
     margin: 20px 0;
@@ -1178,6 +1235,16 @@ body.modal-open .nav-container {
 .guide-description .box-hypixel-1 {
     border-color: rgba(120, 61, 34, 0.4);
     background: rgba(143, 83, 42, 0.2);
+}
+
+.guide-description .box-overworld { 
+    border-color: rgba(78, 120, 54, 0.6);
+    background: rgba(69, 102, 50, 0.1);
+}
+
+.guide-description .box-nether { 
+    border-color: rgba(180, 40, 0, 0.4);
+    background: rgba(45, 5, 5, 0.1);
 }
 
 .guide-description .box-title {

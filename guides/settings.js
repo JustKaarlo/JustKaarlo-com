@@ -1194,7 +1194,7 @@ const fsGuides = [
             </ol>
         `,
     },
-    { // Cows (WIP)
+    { // Cows
         title: 'Cows',
         subtitle: 'Breed & Care',
         icon: 'https://www.justkaarlo.com/res/guides/cow.png',
@@ -1411,27 +1411,101 @@ const fsGuides = [
 ];
 
 const mcGuides = [
-    { // Hypixel Minions
-        title: 'Minions',
-        subtitle: 'Hypixel',
-        icon: 'https://www.justkaarlo.com/res/guides/minions.png',
+    { // Hypixel
+        title: 'Hypixel',
+        subtitle: 'Guides',
+        icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
+        link: 'https://www.justkaarlo.com/guides/minecraft/hypixel',
         contentType: 'link',
-        link: 'https://wiki.hypixel.net/Minions',
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/minecraft-badge.png',
             position: 'right'
         },
     },
+    { // Mining Depths
+        title: 'Mining Depths',
+        subtitle: 'Minecraft',
+        icon: 'https://www.justkaarlo.com/res/guides/iron-ingot.png',
+        link: 'https://minecraft.fandom.com/wiki/Ore',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/35/Caves_%26_Cliffs_Ores.png/revision/latest/scale-to-width-down/1000?cb=20210415134055" alt="Banner">
+            <h2>Distribution</h2>
+            <h3>Overworld</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th class="text-coal">Coal</th>
+                    <th class="text-copper">Copper</th>
+                    <th class="text-lapis">Lapis</th>
+                    <th class="text-iron">Iron</th>
+                    <th class="text-gold">Gold</th>
+                    <th class="text-redstone">Redstone</th>
+                    <th class="text-diamond">Diamond</th>
+                    <th class="text-emerald">Emerald</th>
+                </tr>
+                <tr>
+                    <th>Range</th>
+                    <td><code>0 To 320</code></td>
+                    <td><code>-16 To 112</code></td>
+                    <td><code>-64 To 64</code></td>
+                    <td><code>-64 To 320</code></td>
+                    <td><code>-64 To 32</code></td>
+                    <td><code>-64 To 16</code></td>
+                    <td><code>-64 To 16</code></td>
+                    <td><code>-16 To 320</code></td>
+                </tr>
+                <tr>
+                    <th>Found</th>
+                    <td><code>44,95 & 136</code></td>
+                    <td><code>48</code></td>
+                    <td><code>-1</code></td>
+                    <td><code>15 & 232</code></td>
+                    <td><code>-16</code></td>
+                    <td><code>-59</code></td>
+                    <td><code>-59</code></td>
+                    <td><code>236</code></td>
+                </tr>
+            </table>
+            <h3>Nether</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th class="text-quartz">Nether Quartz</th>
+                    <th class="text-gold">Nether Gold</th>
+                    <th class="text-netherite">Ancient Debris</th>
+                </tr>
+                <tr>
+                    <th>Most Found</th>
+                    <td><code>10-114</code></td>
+                    <td><code>15</code></td>
+                    <td><code>13-17</code></td>
+                </tr>
+                <tr>
+                    <th>Commonly Up To</th>
+                    <td><code>120</code></td>
+                    <td><code>95</code></td>
+                    <td><code>23</code></td>
+                </tr>
+                <tr>
+                    <th>Rare On</th>
+                    <td><code>123-125</code></td>
+                    <td><code>96-116</code></td>
+                    <td><code>22-119</code></td>
+                </tr>
+            </table>
+        `,
+    },
+]
+
+const mcHypixelGuides = [
     { // Hypixel Interactive Maps
         title: 'Interactive Maps',
         subtitle: 'Hypixel',
         icon: 'https://static.wikia.nocookie.net/hypixel-skyblock/images/9/92/Compass.png',
         contentType: 'link',
         link: 'https://hypixel-skyblock.fandom.com/wiki/Special:AllMaps',
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
-            position: 'right'
-        },
     },
     { // Hypixel Fly on Island
         title: 'Fly on Island',
@@ -1440,10 +1514,6 @@ const mcGuides = [
         contentType: 'description',
         link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
         showTOC: true,
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
-            position: 'right'
-        },
         description: `
             <h2>How to Fly on Your Own Island!</h2>
             <a href="https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/" class="btn-action-hypixel btn-small">How to Fly on Your Own Island!</a> <a href="https://wiki.hypixel.net/Magical_Mushroom_Soup" class="btn-action-hypixel btn-small">Magical Mushroom Soup</a>
@@ -1488,10 +1558,6 @@ const mcGuides = [
         contentType: 'description',
         link: 'https://hypixel.net/threads/2025-5-best-money-making-minions-with-layout-and-setups-also-if-you-have-a-small-budget.5834830/',
         showTOC: false,
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
-            position: 'right'
-        },
         description: `
             <h2>Best Money-Making Minions</h2>
             <ol>
@@ -1539,6 +1605,7 @@ const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
     minecraft: mcGuides,
+    hypixel: mcHypixelGuides,
     mods: mods,
     // eldenRing: eldenRingGuides,
 
