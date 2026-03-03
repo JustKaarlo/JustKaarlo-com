@@ -423,7 +423,7 @@ a.btn-glassy {
     background-color: rgba(0, 0, 0, 0.9);
     background-image: 
         linear-gradient(rgba(33, 33, 33, 0.7), rgba(22, 22, 22, 0.7)),
-        url("https://shared.akamai.steamstatic.com/community_assets/images/items/1232580/5622d051810d18d3dbf991bed356836cd6c3c3d6.jpg");
+        url("../res/bg/steam-profile.png");
     background-size: 110%;
     background-position: 50% 15%;
     background-repeat: no-repeat;
@@ -524,7 +524,7 @@ a.btn-glassy {
     backdrop-filter: blur(8px);
 } */
 
-.workshop-btn {
+/* .workshop-btn {
     background: rgba(46, 46, 46, 0.4);
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
     color: #dcdedf;
@@ -534,6 +534,69 @@ a.btn-glassy {
     border-radius: 12px;
     transition: all 150ms ease;
     filter: contrast(1.35);
+} */
+
+.workshop-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(46, 46, 46, 0.4);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+    color: #dcdedf;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 150ms ease;
+    filter: contrast(1.35);
+}
+.btn-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.card-tooltip {
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+    transform: translateX(-50%);
+    background: rgba(52, 52, 52, 0.34);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    border: 0px solid var(--glass-border);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    box-shadow: var(--shadow-1);
+}
+.card-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(40, 40, 40, 0.95);
+}
+.has-tooltip:hover .card-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+    transition-delay: 0.5s;
 }
 
 /* .workshop-btn:hover {
