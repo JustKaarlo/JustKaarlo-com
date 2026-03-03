@@ -118,10 +118,12 @@
             "map-51": "https://www.kingmods.net/en/fs25/mods/73061/dunareni-x4",
             "map-52": "https://www.kingmods.net/en/fs25/mods/73020/the-pichonniere-valley",
             "map-53": "https://www.kingmods.net/en/fs25/mods/73553/osweiler",
+            "map-54": "https://www.kingmods.net/en/fs25/mods/75318/vast-country",
+            "map-55": "https://www.kingmods.net/en/fs25/mods/75320/countryside-fields",
+            "map-56": "https://www.kingmods.net/en/fs25/mods/74397/the-peasant-valley",
+            "map-57": "https://www.kingmods.net/en/fs25/mods/65291/starowies",
 
             // TEXTURES
-            "texture-1": "https://www.kingmods.net/en/fs25/mods/72666/realistic-wheat-barley-europe-growth-cycle",
-            "texture-2": "https://www.kingmods.net/en/fs25/mods/72607/realistic-canola-growth-cycle-in-europe",
 
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
@@ -508,23 +510,36 @@
                     "https://www.kingmods.net/uploads/fs25/mods/osweiler-fs25-FC61L.jpg",
                 ],
             },
-
-            // TEXTURES
-            "texture-1": {
-                description: "<ul><li>Realistic growth cycle for wheat and barley (spring + winter varieties).</li><li>Spring and autumn sowing.</li><li>High-quality, realistic crop textures.</li><li>Redesigned plant heights and visual stage variations.</li><li>Stubble crushing / trampling effect.</li><li>Growth system aligned with real European crop production.</li></ul>",
+            "map-54": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-3iOsr.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-FwNN1.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-wheat-barley-europe-growth-cycle-fs25-LdVLz.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vast-country-fs25-v3Wfp.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vast-country-fs25-vaG3C.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/vast-country-fs25-GmUbC.jpg",
                 ],
             },
-            "texture-2": {
-                description: "<ul><li>New post-flowering stage.</li><li>Realistic growth schedule.</li><li>New high-resolution textures.</li><li>Destructible stubble.</li><li>Natural seasonal transitions.</li></ul>",
+            "map-55": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-scpAe.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-yN51W.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-Sjvv9.jpg",
-                    "https://www.kingmods.net/uploads/fs25/mods/realistic-canola-growth-cycle-in-europe-fs25-9tF2W.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/countryside-fields-fs25-dJHXU.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/countryside-fields-fs25-lFM42.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/countryside-fields-fs25-KkiGu.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/countryside-fields-fs25-aDrCM.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/countryside-fields-fs25-p9j1Y.jpg",
+                ],
+            },
+            "map-56": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/the-peasant-valley-fs25-QXPXg.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-peasant-valley-fs25-vlQrL.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-peasant-valley-fs25-2etY2.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/the-peasant-valley-fs25-39M3M.jpg",
+                ],
+            },
+            "map-57": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/starowies-fs25-RzjRt.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/starowies-fs25-cS4qq.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/starowies-fs25-xDeQW.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/starowies-fs25-GBwuJ.jpg",
                 ],
             },
 
@@ -631,16 +646,16 @@
                 "map-17",
             ],
             "top4": [
-                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48",
+                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54",
             ],
 
             // MAPS
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56",
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-52", "map-53",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-52", "map-53", "map-54", "map-57",
             ],
             "16x-map": [
                 "map-5",
@@ -1008,21 +1023,33 @@
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
+            {
+                id: "map-54",
+                name: "Vast Country",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-55",
+                name: "Countryside Fields",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-56",
+                name: "The Peasant Valley",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-57",
+                name: "Starowies",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
 
 
             // TEXTURES
-            {
-                id: "texture-1",
-                name: "Realistic Wheat & Barley, Europe Growth Cycle",
-                mimeType: "application/zip",
-                parentId: "fs25-textures"
-            },
-            {
-                id: "texture-2",
-                name: "Realistic Canola, Europe Growth Cycle",
-                mimeType: "application/zip",
-                parentId: "fs25-textures"
-            },
 
             // MODS
             {
@@ -1091,18 +1118,18 @@
                 mimeType: "application/vnd.google-apps.folder",
                 icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-maps.png",
             },
-            {
-                id: "fs25-textures",
-                name: "Textures",
-                mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-textures.png",
-            },
-            {
-                id: "fs25-others",
-                name: "Others",
-                mimeType: "application/vnd.google-apps.folder",
-                icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-others.png",
-            },
+            // {
+            //     id: "fs25-textures",
+            //     name: "Textures",
+            //     mimeType: "application/vnd.google-apps.folder",
+            //     icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-textures.png",
+            // },
+            // {
+            //     id: "fs25-others",
+            //     name: "Others",
+            //     mimeType: "application/vnd.google-apps.folder",
+            //     icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-others.png",
+            // },
             {
                 id: "fs25-mods",
                 name: "Mods",
