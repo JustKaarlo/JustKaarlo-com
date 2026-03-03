@@ -1616,6 +1616,13 @@ const arma3Guides = [
         link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/',
         contentType: 'link',
     },
+    { // Antistasi Ultimate Website
+        title: 'Antistasi Ultimate',
+        subtitle: 'Official Website',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
+        link: 'https://antistasiultimate.com/',
+        contentType: 'link',
+    },
     { // Antistasi Ultimate Github
         title: 'Antistasi Ultimate',
         subtitle: 'Github',
