@@ -23,13 +23,13 @@ const guides = [
 ];
 
 const mods = [
-    {
-        title: 'Total War',
-        subtitle: 'Shared Mods',
-        icon: 'https://www.justkaarlo.com/res/ico/total-war-logo.svg',
-        link: 'https://www.justkaarlo.com/mods/total-war',
-        contentType: 'link'
-    },
+    // {
+    //     title: 'Total War',
+    //     subtitle: 'Shared Mods',
+    //     icon: 'https://www.justkaarlo.com/res/ico/total-war-logo.svg',
+    //     link: 'https://www.justkaarlo.com/mods/total-war',
+    //     contentType: 'link'
+    // },
     {
         title: 'Elden Ring',
         subtitle: 'Shared Mods',
