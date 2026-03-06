@@ -2,6 +2,7 @@
 .vscode/
 .internal/
 download/total-war/package/
+res/mods/total-war
 
 # FILES
 /desktop.ini
