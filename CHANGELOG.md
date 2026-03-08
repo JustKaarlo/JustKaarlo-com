@@ -6,8 +6,13 @@
 
 ## 2026-03-08
 
+### 📝 Documentation
+
+- update CHANGELOG.md and README.md (`6baea17`)
+
 ### 🔧 Chores
 
+- delete app-gitbook-com.zip (`62045b6`)
 - test (`abda3bc`)
 - delete documentation.ico (`f3fe9c2`)
 
@@ -488,5 +493,3 @@
 - update fs25.settings.js (`58f4f86`)
 - update fs25.settings.js (`9af27b4`)
 - update 1 file and delete 6 files (`2aed1a5`)
-- update fs25.settings.js (`0a9d293`)
-- update fs25.settings.js (`572fb0f`)
