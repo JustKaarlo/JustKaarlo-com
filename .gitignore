@@ -3,6 +3,7 @@
 .internal/
 download/total-war/package/
 res/mods/total-war
+docs
 
 # FILES
 /desktop.ini
