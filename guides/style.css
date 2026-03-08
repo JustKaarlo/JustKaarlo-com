@@ -520,7 +520,7 @@ body.modal-open .nav-container {
     padding: 30px 40px;
     color: #e8e8e8;
     font-family: 'Rubik', sans-serif;
-    line-height: 1.7;
+    /* line-height: 1.7; */
     overflow-y: auto;
     display: none;
 }
@@ -714,6 +714,19 @@ body.modal-open .nav-container {
     background: none;
     padding: 0;
     color: #e8e8e8;
+}
+
+div.sqf-wrapper {
+    margin: 22px 0;
+    border-radius: 8px;
+    overflow: visible;
+    box-shadow: none;
+    background: transparent;
+    position: relative;
+}
+pre.sqf-code {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .guide-description a {
@@ -1051,7 +1064,10 @@ body.modal-open .nav-container {
 }
 
 .toc-item {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     padding: 10px 15px;
     margin: 5px 0;
     color: #d8d8d8;
@@ -1060,13 +1076,63 @@ body.modal-open .nav-container {
     transition: all 0.2s ease;
     font-family: 'Rubik', sans-serif;
     border-left: 3px solid transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toc-item-label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Copy-link button on each TOC item */
+.toc-link-btn {
+    flex-shrink: 0;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 4px 5px;
+    cursor: pointer;
+    color: rgba(180,180,200,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease, visibility 0.15s ease, background 0.15s ease-in, color 0.15s ease;
+    line-height: 1;
+}
+
+.toc-item:hover .toc-link-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toc-link-btn:hover {
+    background: rgba(34, 34, 34, 0.7);
+    transform: translateX(-0.6px) scale(1.1);
+    transition: all 0.15s ease-in;
+}
+
+.toc-link-btn.copied {
+    background: rgba(28, 87, 55, 0.92);
+    border-color: rgba(40,200,100,0.35);
+    color: #4ade80;
+    transform: scale(1.2);
+    transition: all 0.4s ease-in;
+}
+
+.toc-item svg {
+    flex-shrink: 0;
 }
 
 .toc-item:hover {
     background: rgba(255, 255, 255, 0.05);
-    border-left-color: #9bbd15;
     color: #ffffff;
-    transform: translateX(5px);
+    transform: translateX(1px);
 }
 
 .toc-item.toc-h1 {
@@ -1109,6 +1175,28 @@ body.modal-open .nav-container {
     padding-left: 75px;
     color: #aaaaaa;
 }
+
+/* Custom data-toc entries — sit at root level, styled distinctly */
+.toc-item.toc-custom {
+    font-size: 13px;
+    font-weight: 400;
+    color: #b0b0b0;
+    padding-left: 18px;
+    border-left-color: rgba(255,255,255,0.08);
+    font-style: italic;
+    margin-left: 8px;
+}
+
+.toc-item.toc-custom:hover {
+    border-left-color: rgba(255,255,255,0.1);
+    color: #e0e0e0;
+}
+
+/* Anchor marker on elements with data-toc (optional visual indicator) */
+[data-toc] {
+    scroll-margin-top: 20px;
+}
+
 
 .text-orange {
     color: #ffaa00 !important;
@@ -1534,3 +1622,99 @@ body.modal-open .nav-container {
     top: 2px;
     color: #e1e2e7 !important;
 }
+/* ============================================================
+   SQF CODE BLOCK SYSTEM
+   ============================================================ */
+
+.sqf-wrapper {
+    margin: 22px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.3),
+        0 8px 24px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(255,255,255,0.06);
+    background: #1e1f29;
+    position: relative;
+}
+
+.sqf-code {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    margin: 0;
+    background: transparent;
+    color: #cdd6f4;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    border: none;
+    outline: none;
+    tab-size: 4;
+    user-select: text;
+}
+
+/* Copy button — appears on hover */
+.sqf-copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(4px);
+    transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.48s ease, background 0.15s ease;
+    background: rgba(34, 34, 34, 0.7);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 7px;
+    padding: 5px 9px;
+    cursor: pointer;
+    color: rgba(200, 200, 230, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 10;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sqf-wrapper:hover .sqf-copy-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sqf-copy-btn:hover {
+    background: rgba(34, 34, 34, 0.7);
+    transform: translateX(-0.6px);
+}
+
+.sqf-copy-btn.copied {
+    background: rgba(28, 87, 55, 0.92);
+    border-color: rgba(40,200,100,0.35);
+    color: #4ade80;
+}
+
+.sqf-copy-btn svg {
+    flex-shrink: 0;
+}
+
+/* ── SQF Syntax Token Colors ── */
+.sqf-kw       { color: #bd93f9; }
+.sqf-kw-ctrl  { color: #ff79c6; font-weight:600; }
+.sqf-cmd      { color: #8be9fd; }
+.sqf-fn       { color: #50fa7b; }
+.sqf-var-loc  { color: #9cdcfe; }
+.sqf-var-glob { color: #4ec9b0; }
+.sqf-str      { color: #f1fa8c; }
+.sqf-num      { color: #bd93f9; opacity:0.85; }
+.sqf-comment  { color: #6272a4; font-style:italic; }
+.sqf-op       { color: #ff79c6; }
+.sqf-bracket  { color: #ffb86c; }
+.sqf-bool     { color: #ff5555; font-weight:600; }
+.sqf-macro    { color: #ffb86c; font-style:italic; }

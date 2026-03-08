@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         .guides-container {
             position: relative;
@@ -67,19 +68,19 @@
         }
 
         .guide-description .btn-action {
-            background: rgba(255, 215, 0, 0.6);
+            background: rgba(34, 34, 34, 0.6);
             color: #ffffff;
-            box-shadow: 0 3px 6px rgba(205, 173, 0, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         .guide-description .btn-action:hover {
-            background: rgba(255, 215, 0, 0.65);
+            background: rgba(48, 48, 48, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 4px 9px rgba(205, 173, 0, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             color: #ffffff;
         }
         .guide-description .btn-action:active {
             transform: translateY(0px);
-            box-shadow: 0 4px 9px rgba(205, 173, 0, 0.4);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .guide-description code {
@@ -101,12 +102,19 @@
             font-style: italic !important;
         }
 
-        .toc-item:hover {
-            border-left-color: rgba(186, 189, 21, 1);
+        .toc-item {
+            border-left-color: rgba(255,255,255,0.08);
         }
-
+        .toc-item:hover {
+            border-left-color: rgba(255,255,255,0.08);
+        }
         span.text-gray#small {
             font-size: 13px !important;
+            cursor: auto !important;
+            user-select: text !important;
+        }
+        span#small {
+            line-height: 1 !important;
         }
     </style>
 </head>
@@ -219,8 +227,6 @@
         
         // Initialize FS25 guides
         initializeGuidePage('arma3GuidesGrid', arma3Guides);
-
-
     </script>
 </body>
 </html>

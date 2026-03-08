@@ -1622,6 +1622,10 @@ const arma3Guides = [
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
         link: 'https://antistasiultimate.com/',
         contentType: 'link',
+        badge: { 
+            icon: 'https://www.justkaarlo.com/res/guides/badge/antistasi-ultimate-badge-2.png',
+            position: 'right'
+        },
     },
     { // Antistasi Ultimate Commands
         title: 'Console Commands',
@@ -1640,12 +1644,57 @@ const arma3Guides = [
             <div class="box box-danger">
                 Following is an unsorted collection of debug console commands that usually are not or should not be used by admins and players on live servers.
             </div>
-            <h5>Reference(s)</h5>
-                <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Antistasi Ultimate Github</button>
-                <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Official Antistasi Dev Guide</button>
+            <span data-toc="Preferance(s)"></span>
+            <button class="btn-action" onclick="window.location.href='https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html'; setTimeout(() => location.reload(), 500);">Antistasi Ultimate Github</button>
+            <button class="btn-action" onclick="window.location.href='https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developer-Documentation'; setTimeout(() => location.reload(), 500);">Official Antistasi Dev Guide</button>
             <hr>
+
+            <span data-toc="Nearest Marker"></span><div class="box">
+                <code>Nearest Marker</code>  <span class="text-gray" id="small">Run as local. Prints nearest marker in a hint on screen.</span>
+                <pre class="sqf-block">["Nearest Marker", format ["%1",([markersX, player] call BIS_fnc_nearestPosition)]] call A3A_fnc_customHint;</pre>
+            </div>
+
+            <span data-toc="Display Markernames(s)"></span><div class="box">
+                <code>Display Markernames</code>  <span class="text-gray" id="small">Run as Local. Changes all markernames to their variable names.</span>
+<pre class="sqf-block">
+{
+    _mrk = format ["Dum%1", _x];
+    _mrk setMarkerTextLocal _x;
+} forEach (outposts + seaports + airportsX + resourcesX + factories);
+</pre>
+</div>
+
+            <span data-toc="Start An Attack"></span>
+            <code>Start An Attack</code>
             <div class="box">
-                <code>Nearest Marker</code>  <span class="text-gray" id="small">Run as local. Prints nearest marker in a hint on screen.</span><br>
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <strong>< v2.5.5</strong>
+                        <div class="dropdown-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <span class="text-gray" id="small">Run as server. Will start the process of selecting a target for an attack and attacking it for the given side (side can be Invaders or Occupants). This might result in the other side counterattack and take something or four smaller attacks instead of one big attack mission.</span>
+                        <pre class="sqf-block">[side] spawn A3A_fnc_rebelAttack;</pre>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <strong>> v3.0.0</strong>
+                        <div class="dropdown-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <span class="text-gray" id="small">Run as server. Will start the process of selecting a target for an attack and attacking it for the given side (side can be Invaders or Occupants). Possible attacks include major (waved) attacks, HQ attacks (if the rebel HQ has been detected), punishments and supply convoys.</span>
+                        <pre class="sqf-block">[side] spawn A3A_fnc_chooseAttack;</pre>
+                    </div>
+                </div>
             </div>
         `,
     },
