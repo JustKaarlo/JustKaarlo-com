@@ -27,7 +27,7 @@
             background: rgba(63, 63, 63, 0.25);
             backdrop-filter: brightness(0.75) blur(3px);
             max-width: 1100px !important;
-            min-width: 600px !important;
+            min-width: 900px !important;
             width: fit-content !important;
         }
 
@@ -62,8 +62,51 @@
 
         .guides-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 12px;
+        }
+
+        .guide-description .btn-action {
+            background: rgba(255, 215, 0, 0.6);
+            color: #ffffff;
+            box-shadow: 0 3px 6px rgba(205, 173, 0, 0.4);
+        }
+        .guide-description .btn-action:hover {
+            background: rgba(255, 215, 0, 0.65);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 9px rgba(205, 173, 0, 0.4);
+            color: #ffffff;
+        }
+        .guide-description .btn-action:active {
+            transform: translateY(0px);
+            box-shadow: 0 4px 9px rgba(205, 173, 0, 0.4);
+        }
+
+        .guide-description code {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            color: #dfdfdf;
+            font-weight: 600;
+        }
+
+        .guide-description h6 {
+            font-size: 14px;
+            font-weight: normal;
+            color: #d0d0d0;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            font-style: italic !important;
+        }
+
+        .toc-item:hover {
+            border-left-color: rgba(186, 189, 21, 1);
+        }
+
+        span.text-gray#small {
+            font-size: 13px !important;
         }
     </style>
 </head>

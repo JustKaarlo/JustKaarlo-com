@@ -103,27 +103,29 @@
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass">
             <nav class="nav-buttons">
+                <a class="title-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
+                        <image height="21" width="21" href="res\ico\favicon\mods.ico" />
+                    </svg>
+                    Mods
+                </a>
+            </nav>
+        </header>
+        <header class="nav-frame glass">
+            <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="1 0 20 20" fill="currentColor">
-                        <path d="M12 3l8 8h-3v8h-10v-8h-3l8-8z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
+                        <image height="21" width="21" href="res\ico\favicon\home.ico" />
                     </svg>
                     <div class="nav-tooltip">Home</div>
                 </a>
             </nav>
         </header>
     </div>
-    <main class="container">
-        <div class="logo-card">
-        <img src="../res/src/header-cards/header-mods.svg" alt="Header" />
-        </div>
-    </main>
+
     <div class="content">
-        <!-- <img class="game-icon"
-            src="card.svg"
-            alt="Guide Card"/> -->
-        
-        <div class="guides-container">
-            <div class="guides-grid" id="modsGrid">
+        <div class="guides-container" style="margin-top: 170px;">
+            <div class="guides-grid" id="modsLayout">
                 <!-- Guide buttons will be dynamically generated here -->
             </div>
         </div>
@@ -133,7 +135,7 @@
     <div id="guideModal" class="guide-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="modal-title" id="modalTitle">Guide Title</span>
+                <span class="modal-title" id="modalTitle">Mods</span>
                 <div class="modal-header-actions">
                     <a id="guideLink" href="#" target="_self" class="guide-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-40 -65 512 550"
@@ -157,25 +159,12 @@
     <script src="guides/script.js"></script>
     
     <script>
-        const logoCard = document.querySelector('.logo-card');
-        logoCard.addEventListener('mousemove', (e) => {
-            const rect = logoCard.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+        function closeGuide() {
+            GuideSystem.closeModal();
+            const url = window.location.href.split('#')[0];
+            history.replaceState(null, '', url);
+        }
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = -(y - centerY) / 150;
-            const rotateY = (x - centerX) / 150;
-
-            logoCard.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(0.98)`;
-        });
-        logoCard.addEventListener('mouseleave', () => {
-            logoCard.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-
-        // Initialize particles
         particlesJS('particles-js', {
             particles: {
                 number: { value: 15, density: { enable: true, value_area: 700 } },
@@ -191,7 +180,7 @@
         });
         
         // Initialize main guides page
-        initializeGuidePage('modsGrid', mods);
+        initializeGuidePage('modsLayout', mods);
     </script>
 </body>
 </html>

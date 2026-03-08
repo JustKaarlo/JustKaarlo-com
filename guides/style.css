@@ -1089,6 +1089,27 @@ body.modal-open .nav-container {
     color: #aaaaaa;
 }
 
+.toc-item.toc-h4 {
+    font-size: 12px;
+    font-weight: 300;
+    padding-left: 50px;
+    color: #aaaaaa;
+}
+
+.toc-item.toc-h5 {
+    font-size: 11px;
+    font-weight: 200;
+    padding-left: 65px;
+    color: #aaaaaa;
+}
+
+.toc-item.toc-h6 {
+    font-size: 10px;
+    font-weight: 100;
+    padding-left: 75px;
+    color: #aaaaaa;
+}
+
 .text-orange {
     color: #ffaa00 !important;
 }
@@ -1315,6 +1336,14 @@ body.modal-open .nav-container {
     box-shadow: 0 4px 12px rgba(170, 85, 255, 0.1);
 }
 
+.guide-description .frame-antistasi {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 12px;
+    border: 3px solid rgba(22, 22, 22, 0.2);
+    background: rgba(88, 83, 1, 0.1)
+}
+
 /* Action Buttons for Guide Descriptions */
 .guide-description .btn-action,
 .guide-description .action-button {
@@ -1479,4 +1508,29 @@ body.modal-open .nav-container {
 
 .guide-description a.link-revenant-color:hover {
     color: #744646;
+}
+
+.title-btn {
+    color: #e1e2e7;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0px 2px;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+    border: none;
+    position: relative;
+    font-size: 21px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 1px;
+    cursor: default;
+}
+.title-btn:hover {
+    transform: translateY(-1px);
+}
+.title-btn svg {
+    position: relative;
+    margin-top: 7px;
+    top: 2px;
+    color: #e1e2e7 !important;
 }

@@ -1617,22 +1617,37 @@ const arma3Guides = [
         contentType: 'link',
     },
     { // Antistasi Ultimate Website
-        title: 'Antistasi Ultimate',
-        subtitle: 'Official Website',
+        title: 'Official Website',
+        subtitle: 'Antistasi Ultimate',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
         link: 'https://antistasiultimate.com/',
         contentType: 'link',
     },
-    { // Antistasi Ultimate Github
-        title: 'Antistasi Ultimate',
-        subtitle: 'Github',
+    { // Antistasi Ultimate Commands
+        title: 'Console Commands',
+        subtitle: 'Antistasi Ultimate ',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
-        link: 'https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate',
-        contentType: 'link',
+        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
+        contentType: 'description',
         badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/github-badge.png',
+            icon: 'https://www.justkaarlo.com/res/guides/badge/antistasi-ultimate-badge-2.png',
             position: 'right'
-        }
+        },
+        showTOC: true,
+        description: `
+            <img src="https://antistasiultimate.com/images/SiteLogo1.png" alt="Description">
+            <h2>Debug Console Commands for Admin</h2>
+            <div class="box box-danger">
+                Following is an unsorted collection of debug console commands that usually are not or should not be used by admins and players on live servers.
+            </div>
+            <h5>Reference(s)</h5>
+                <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Antistasi Ultimate Github</button>
+                <button class="btn-action" onclick="window.location.href='https://www.justkaarlo.com/guides/fs25#rice'; setTimeout(() => location.reload(), 500);">Official Antistasi Dev Guide</button>
+            <hr>
+            <div class="box">
+                <code>Nearest Marker</code>  <span class="text-gray" id="small">Run as local. Prints nearest marker in a hint on screen.</span><br>
+            </div>
+        `,
     },
 ]
 

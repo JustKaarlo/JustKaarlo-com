@@ -242,7 +242,7 @@ const GuideSystem = {
         if (!guideDescription || !tocContent) return;
         
         // Find all headers (h1, h2, h3)
-        const headers = guideDescription.querySelectorAll('h1, h2, h3');
+        const headers = guideDescription.querySelectorAll('h1, h2, h3', 'h4', 'h5', 'h6');
         
         if (headers.length === 0) {
             tocContent.innerHTML = '<p style="color: #999; padding: 10px;">No sections found</p>';
