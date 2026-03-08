@@ -1,12 +1,10 @@
-// ============================================================
 //  DocSystem — Article/Modal Engine
 //  Drop-in replacement for the old GuideSystem / script.js
 //  Rename summary:
-//    GuideSystem       → DocSystem
-//    guide / guides    → article / articles
-//    initializeGuidePage → initDocPage
-//    generateButtons   → renderArticleGrid
-// ============================================================
+//    GuideSystem           → DocSystem
+//    guide / guides        → article / articles
+//    initializeGuidePage   → initDocPage
+//    generateButtons       → renderArticleGrid
 
 const DocSystem = {
     currentArticles: [],
