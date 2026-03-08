@@ -13,6 +13,10 @@
 
 ### 📦 Other Changes
 
+- Merge branch 'Home' of https://github.com/JustKaarlo/justkaarlo.github.io into Home (`312ad12`)
+- update 3 files and delete 2 files (`19568e5`)
+- Add LICENSE file (`4f6d75e`)
+- Create LICENSE (`1797dc4`)
 - update doc-system.js (`566f225`)
 - concept (`4e1d53e`)
 - update guides.html and mods.html (`4f7168b`)
@@ -486,17 +490,3 @@
 - update 1 file and delete 6 files (`2aed1a5`)
 - update fs25.settings.js (`0a9d293`)
 - update fs25.settings.js (`572fb0f`)
-
-## 2025-09-17
-
-### 📦 Other Changes
-
-- update fs25.settings.js (`d598840`)
-- update 8 files (Custom Tooltip & Custom Links) (`8caaf4a`)
-- update 6 files (`576f0f1`)
-
-## 2025-09-15
-
-### 📦 Other Changes
-
-- update fs25.settings.js (`e8a4e78`)
