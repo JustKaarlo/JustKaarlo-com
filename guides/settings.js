@@ -1128,7 +1128,7 @@ const fsGuides = [
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf5f74cda.jpg" alt="Banner">
             <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on chickens. We'll show you how to buy and care for these feathered creatures and how to make money with them. Chicken are pretty easy to care for, so they are a good choice if you just get into animal husbandry.</p>
             <hr>
-            <h2>Chicken husbandry: housing & feeding</h2>
+            <h2>Housing & Feeding</h2>
             <img src="https://www.farming-simulator.com/cms/uploads/news_623d79394b2ab.jpg" alt="Overview">
             <p>There are two types of chicken: The standard chicken and the rooster. Get a rooster if you want to breed the chicken. Before we tell you in detail, what tools and equipment you need, let's take a look at the very basics for chicken husbandry: feed and shelter. There are multiple options for how you can accommodate and feed your chicken.</p>
             <h3>Housing options</h3>
@@ -1383,20 +1383,154 @@ const fsGuides = [
             <p>Whether cows reproduce depends on three factors: Their age, the space available and the health of the animals. From the age of 18 month onwards, cows are mature and can give birth to offspring. But this is only possible if there is room for more cows in the barn, of course. Also, their health has to be at 100%. You can achieve this by feeding the animals regularly.</p>
         `,
     },
-    { // Pigs (WIP)
+    { // Pigs
         title: 'Pigs',
-        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        subtitle: 'Breed & Care',
         icon: 'https://www.justkaarlo.com/res/guides/pig.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=340',
         showTOC: true,
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cfb5a1d3c.jpg" alt="Banner">
+            <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on Pigs. We'll show you how to feed, take care and profit from them. Let's start!</p>
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
+            <h2>Breeds, Housing & Feeding</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_624ff66e80bb2.jpg" alt="Overview">
+            <p>When it comes to providing food for pigs, they are the most time-consuming animal, because you need to feed them a variety of crops you need to grow yourself. As an alternative, you can buy pig food - which is of course more expensive in the long run. We recommend buying the food at the beginning.</p>
+            <p>In Farming Simulator, there are different breeds of pigs: German Landrace, Bentheim Black Pied, and Berkshire. There's no real difference, except for their visual appearance.</p>
+            <p>Before we tell you in detail what tools and equipment you need, let's take a look at the very basics: feed and shelter. There are multiple options for how you can accommodate and feed your pigs.</p>
+            <h3>Housing Options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_624ff66e8c069.jpg" alt="Housing">
+            <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=323" class="btn-action btn-small">Click here to learn more about icons.</a>
+            <p>There are three options for housing: A pig pasture, a standard pigsty, and a large pigsty. If you keep the animals in a pigsty, you don't have to provide water since the water supply is already built in. Also, a pasture will not produce slurry and manure. Apart from that, they only differ in size and the number of pigs they can accommodate.</p>
+            <h3>Feeding Options</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6250429395e0c.jpg" alt="Feeding">
+            <p>To maintain the health of your pigs, and therefore their ability to reproduce (which they should, so you can regularly sell them for a profit), you need to provide them with the right mix of feed. You just unload the pig food or each crop at the unloading area of the pigsty. You don't need to use a mixing wagon - which is required for cows.</p>
+            <ul>
+                <li><b>Base</b> either corn and/or sorghum</li>
+                <li><b>Grains</b> either wheat and/or barley</li>
+                <li><b>Protein</b> Either soybeans, canola, and/or sunflowers</li>
+                <li><b>Root Crops</b> Either potatoes and/or sugar beet</li>
+            </ul>
+            <p>You can either grow the crops yourself and feed portions of the harvest to your pigs, or you buy a bigbag of pig food at the dealership. For the self-sufficient solution which saves you money in the long run, you will have to run your farming operation accordingly.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title"><span class="text-green-100">How To Get Water</span></span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <p>If you keep the pigs in a simple pasture, which requires you to provide water, you need to deliver it with a tank trailer. You get water by either filling it from a water tank that you can buy in the "container" tab of the construction menu, or you just reverse the tanker trailer attached to your tractor into water - a river or lake, for example. Water from a lake or river is free, tapping a tank container is not.</p>
+                </div>
             </div>
+            <hr>
+            <h2>What You Need For Pigs</h2>
+            <ul>
+                <li><b>You need a tractor</b> with front loader attacher as well as a pallet fork and a bale spike to transport feed and straw for your pigs. To be able to use the front loader on the tractor, you must first purchase the necessary attachment from the dealer. To do this, drive the tractor to the dealer, park the machine in the vehicle options field and select the appropriate attachment. Use the pallet fork to transport the fodder to the barn.</li>
+                <li><b>You need a pigsty.</b> Here you can choose between three versions in the construction menu, depending on your account balance. You can choose between the pig pasture, the pigsty and the large pigsty in the "Pig" tab. They differ in size and feeding options. While you have to provide feed and water for the pig pasture, you only need feed for the pigsty.</li>
+                <blockquote>
+                    <strong>Tip:</strong> If you want to produce manure, you have to buy a pigsty. We recommend a pigsty.
+                </blockquote>
+                <li><b>You need a manure heap.</b> Once you have lined the pigsty with straw, the pigs produce manure, which you then have to store. For this you need the manure heap. You can find it in the construction menu in the tab "Buildings"  under "Silo" or "Silo Extensions".</li>
+                <li><b>You need a manure spreader.</b> You can either spread the manure on your fields with it or drive it to the point of sale.</li>
+                <li><b>You need a trailer</b> to transport harvested crops to the pigsty if you don't buy ready-to-go pig food from the dealership and transport it with a pallet fork.</li>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                    <li><b>You need a tank,</b> for refilling the water tank in the pasture, if you don't own a pigsty.</li>
+                    <li><b>You can use an animal trailer</b> to transport the animals between the cattle dealer and the barn if you buy or sell them. You don't have to, though. You only need a trailer if you want to transfer pigs from one barn to another barn. </li>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>You do not have to buy a trailer. It only costs a tiny fee to buy or sell them directly at the barn. Only go ahead if you want the full role-play experience. </li>
+                            <li>Look for the pig icon at the dealership when shopping for a trailer in the "animal transport" section. It indicates that pigs can be transported with this trailer.</li>
+                        </ul>
+                    </blockquote>
+                    <li><b>You will need a truck or a dolly</b> if you have bought the large animal transporter. A dolly serves as a link between the tractor and the trailer and saves you money. Small trailers don't require a truck or dolly - a tractor alone is enough.</li>
+                    <blockquote>
+                        <strong>Tip:</strong> When shopping for an animal trailer, if "combinations" is displayed, click it to see, if a truck or dolly is required to use it.
+                    </blockquote>
+                </ul>
+            </blockquote>
+            <hr>
+            <h2>Equipment Selection</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_625031aa40eae.jpg" alt="equipment">
+            <p>We chose the following equipment.  We recommend starting with the pigsty. You spend a bit more, but you save the cost of a tank and the step of filling up the watering trough.</p>
+            <p>You might need more equipment if you decide to grow and harvest the required food ingredients yourself. Check the tutorials for <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=298">sowing & harvesting grains</a>, <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=304">corn</a>, <a href="303">sunflowers</a>, <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=302">suger beet</a>, and <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=301">potatoes</a> to check the requirements for each crop.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>John Deere 7810<br>
+                                <blockquote>
+                                    <strong>+</strong> front-loader attachment + bale spike & pallet fork
+                                </blockquote>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Housing</b></td>
+                            <td>Pigsty</td>
+                        </tr>
+                        <tr>
+                            <td><b>Manure Spreader</b></td>
+                            <td>Farmtech Variofex 750</td>
+                        </tr>
+                        <tr>
+                            <td><b>Slurry Tank</b></td>
+                            <td>Farmtech Sucercis 800</td>
+                        </tr>
+                        <tr>
+                            <td><b>Manure Heap</b></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <h2>Let's Go To Work!</h2>
+            <ol>
+                <li><b>Buying The Pigs</b>
+                    <p>Buy the pigs directly at the barn, and have them delivered for a small fee. Alternatively, if you have bought a trailer, you can drive it to the animal dealer and buy the pigs on-site to transport them yourself.</p>
+                    <blockquote>
+                        <strong>Tip</strong> Don't fill the pigsty to the limit. This way you save money and gain new pigs through reproduction. You can sell those or keep them in other pigsty.
+                    </blockquote>
+                </li>
+                <li><b>Feeding</b>
+                    <p>If you built the pasture, you will have to provide water by delivering it to the pasture with a tank. You don't have to do this if you built a pigsty.</p>
+                    <p>You have two options for feeding the pigs. Either you buy the premade feed from the dealership or you bring all the required ingredients listed above to the pigsty. For beginners, we recommend the premade feed from the shop. This saves you having to farm the different components of the feed. The cultivation of maize, sunflowers, potatoes and sugar beet also requires special and expensive equipment. </p>
+                    <blockquote>
+                        <strong>Tip</strong> Start with premade pig food and grow your farming operation over time to grow all the crops yourself.
+                    </blockquote>
+                    <p>If you want to feed your pigs with your harvest, variety is guaranteed. The optimum feed mix is 50% maize or sorghum, 25% wheat or barley, 20% soya beans, rape or sunflowers and 5% potatoes or sugar beet. Unlike cows, you don't need a mixer wagon. You simply unload the necessary fodder at the barn, and it mixes the fodder in the right combination automatically.</p>
+                </li>
+                <li><b>Line The Barn With Straw</b>
+                    <p>Pigs need straw to produce manure. Unload it at the respective delivery point of the barn. Buy bales of straw at the dealership and deliver it to the barn with the bale spike attached to your tractor. Of course, it's possible to produce straw yourself.</p>
+                    <p>This does not apply to the pig pasture, because it is only used for livestock breeding and does not produce manure. If you have a pigsty, however, the manure will end up in the manure heap. You can either sell slurry and manure, or use it to fertilize your fields.</p>
+                </li>
+                <li><b>Selling The Animals And Products</b>
+                    <p>Pigs are most profitable if they reproduce. Sell a few if the pigsty reaches its limit and let them reproduce. You can also sell the manure and slurry. You can sell the pigs directly at the barn by opening the animal overview screen.</p>
+                </li>
+            </ol>
+            <hr>
+            <h2>Breeding Pigs</h2>
+            <p>Whether pigs reproduce depends on three factors: The age, the space and the health of the animals. From the 6th month, the animals are mature and can give birth to offspring. However, this is only possible if there is room for more pigs in the barn and the health of the animals is always at 100%. You can achieve this by feeding the animals regularly.</p>
         `,
     },
     { // Horses (WIP)
