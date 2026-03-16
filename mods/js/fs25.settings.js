@@ -56,6 +56,7 @@
         ],
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
+            "mod-2": "https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?file_id=5",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -127,14 +128,13 @@
 
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
+            "mod-2": "https://www.kingmods.net/en/fs25/mods/62079/real-vehicle-breakdowns",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1893/schwesing-bahnhof-umbau",
             "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
             "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
             "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
-            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1915/seasonal-crop-stress",
-            "wip-8": "https://www.kingmods.net/en/fs25/work-in-progress/1906/invoices",
         },
         tooltipData: {
             // MAPS
@@ -547,6 +547,9 @@
             "mod-1": {
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
+            "mod-2": {
+                description: "This mod is under development, which means bugs, unexpected behavior, unfinished features, and occasional surprises may occur. I take no responsibility for corrupted savegames, missing vehicles, or heartbroken farmers.",
+            },
 
             // WORK IN PROGRESS
             "wip-1": {
@@ -586,20 +589,6 @@
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-ZhTsP.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-x6UNq.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-8UoTk.jpg",
-                ],
-            },
-            "wip-7": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/wips/seasonal-crop-stress-fs25-VLTYQ.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/seasonal-crop-stress-fs25-q4zuM.jpg",
-                ],
-            },
-            "wip-8": {
-                images: [
-                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-2ZWjg.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-40kmq.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-hQSdI.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/invoices-fs25-GvRoW.jpg",
                 ],
             },
         },
@@ -666,12 +655,12 @@
 
             // MODS
             "misc": [
-                "mod-1",
+                "mod-1", "mod-2",
             ],
 
             // WORK IN PROGRESS
             "wip": [
-                "wip-3", "wip-4", "wip-5", "wip-6", "wip-7", "wip-8",
+                "wip-3", "wip-4", "wip-5", "wip-6"
             ],
             "wanted": [
                 "wip-1", "wip-2",
@@ -680,12 +669,15 @@
                 "wip-1", "wip-2", "wip-3",
             ],
             "script": [
-                "wip-4", "wip-5", "wip-6", "wip-7", "wip-8",
+                "wip-4", "wip-5", "wip-6", "mod-2",
             ],
         },
         customTags: {
             "mod-1": [
                 { text: "v9.0.0.0", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
+            ],
+            "mod-2": [
+                { text: "Latest", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
             ],
         },
         hideAllSizeTags: false,
@@ -1058,6 +1050,12 @@
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },
+            {
+                id: "mod-2",
+                name: "Real Vehicle Breakdowns",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
 
             // OTHERS
 
@@ -1095,18 +1093,6 @@
             {
                 id: "wip-6",
                 name: "Advanced Employee Manager",
-                mimeType: "application/zip",
-                parentId: "fs25-wip"
-            },
-            {
-                id: "wip-7",
-                name: "Seasonal Crop Stress",
-                mimeType: "application/zip",
-                parentId: "fs25-wip"
-            },
-            {
-                id: "wip-8",
-                name: "Invoices",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
