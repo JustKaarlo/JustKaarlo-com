@@ -135,6 +135,7 @@
             "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
             "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
             "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
+            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1947/market-dynamics",
         },
         tooltipData: {
             // MAPS
@@ -591,6 +592,9 @@
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-8UoTk.jpg",
                 ],
             },
+            "wip-7": {
+                description: "<b>Real-world inspired dynamic crop pricing for Farming Simulator 25.</b><br>Prices no longer stay static. Droughts, bumper harvests, and crises move markets. Track live prices, react to events, and lock in harvests with futures like a real trader."
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -660,7 +664,7 @@
 
             // WORK IN PROGRESS
             "wip": [
-                "wip-3", "wip-4", "wip-5", "wip-6"
+                "wip-3", "wip-4", "wip-5", "wip-6", "wip-7",
             ],
             "wanted": [
                 "wip-1", "wip-2",
@@ -669,7 +673,7 @@
                 "wip-1", "wip-2", "wip-3",
             ],
             "script": [
-                "wip-4", "wip-5", "wip-6", "mod-2",
+                "wip-4", "wip-5", "wip-6", "mod-2", "wip-7",
             ],
         },
         customTags: {
@@ -1093,6 +1097,12 @@
             {
                 id: "wip-6",
                 name: "Advanced Employee Manager",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-7",
+                name: "Market Dynamics",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
