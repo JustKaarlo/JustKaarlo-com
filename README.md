@@ -1,6 +1,6 @@
 # justkaarlo.github.io
 
-![version](https://img.shields.io/badge/version-1.2.1-blue) ![license](https://img.shields.io/badge/license-MIT-green) ![language](https://img.shields.io/badge/language-JavaScript-orange)
+![license](https://img.shields.io/badge/license-MIT-green) ![language](https://img.shields.io/badge/language-JavaScript-orange)
 
 ## License
 
