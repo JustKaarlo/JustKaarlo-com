@@ -1543,10 +1543,7 @@ const fsGuides = [
         description: `
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf8351d87.jpg" alt="Banner">
             <hr>
-            <br>
-            <div class="box box-green">
-                <div class="box-only-title">Work In Progress</div>
-            </div>
+            <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on horses. We'll show you how to buy and care for your stately four-legged friends, and how to earn money with them. Let's start!</p>
         `,
     },
 ];
