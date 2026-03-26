@@ -132,7 +132,7 @@
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
             "mod-2": "https://www.kingmods.net/en/fs25/mods/62079/real-vehicle-breakdowns",
             "mod-3": "https://www.kingmods.net/en/fs25/mods/73932/realistic-harvesting",
-            "mod-4": "",
+            "mod-4": "https://www.kingmods.net/en/fs25/mods/76130/market-dynamics",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1893/schwesing-bahnhof-umbau",
@@ -676,7 +676,7 @@
                 "mod-1",
             ],
             "latest": [
-                "mod-2", "mod-3", "map-4",
+                "mod-2", "mod-3", "mod-4",
             ],
 
             // WORK IN PROGRESS
@@ -690,7 +690,7 @@
                 "wip-1", "wip-2", "wip-3",
             ],
             "script": [
-                "wip-4", "wip-5", "wip-6", "mod-2", "mod-3", "map-4",
+                "wip-4", "wip-5", "wip-6", "mod-2", "mod-3", "mod-4",
             ],
         },
         customTags: {
