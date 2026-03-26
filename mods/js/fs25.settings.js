@@ -57,6 +57,8 @@
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
             "mod-2": "https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?file_id=5",
+            "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting/releases/latest/download/FS25_RealisticHarvesting.zip",
+            "mod-4": "https://smdl8.5a7ade8d78df76bddb33a5f57aa7d05e.r2.cloudflarestorage.com/uploads/08688/5lm5nqpod0je?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=940ee8ab3012e97c77e8f56dfb9acb8f%2F20260326%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260326T012932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22FS25_MarketDynamics.zip%22&X-Amz-Signature=f5f252f780537b71499e188b20bb4b1a32e00a7ee3d0d6c4e3f9c96490f64cd8",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -129,6 +131,8 @@
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
             "mod-2": "https://www.kingmods.net/en/fs25/mods/62079/real-vehicle-breakdowns",
+            "mod-3": "https://www.kingmods.net/en/fs25/mods/73932/realistic-harvesting",
+            "mod-4": "",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1893/schwesing-bahnhof-umbau",
@@ -557,6 +561,12 @@
             "mod-2": {
                 description: "This mod is under development, which means bugs, unexpected behavior, unfinished features, and occasional surprises may occur. I take no responsibility for corrupted savegames, missing vehicles, or heartbroken farmers.",
             },
+            "mod-3": {
+                description: "This mod overhauls harvesting in Farming Simulator 25. Combines can no longer run at full speed in dense crops without impact, as speed and efficiency now depend on thresher load and machine calibration.",
+            },
+            "mod-4": {
+                description: "Real-world inspired dynamic crop pricing for Farming Simulator 25. Prices fluctuate daily and intraday based on world events, supply, demand, and seasonal drift. This is the first public release covering all core systems.",
+            },
 
             // WORK IN PROGRESS
             "wip-1": {
@@ -610,6 +620,7 @@
 
             "beta": { text: "BETA", color: "#7d9000", opacity: 0.5, textOpacity: 0.45 },
             "outdated": { text: "Outdated", color: "#5e5f5eff", opacity: 0.2, textOpacity: 0.35 },
+            "latest": { text: "Latest", color: "#95ac00", opacity: 0.5, textOpacity: 0.45, priority: 99 },
 
             // MAPS TAGS
             "1x-map": { text: "1x", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 96 },
@@ -662,7 +673,10 @@
 
             // MODS
             "misc": [
-                "mod-1", "mod-2",
+                "mod-1",
+            ],
+            "latest": [
+                "mod-2", "mod-3", "map-4",
             ],
 
             // WORK IN PROGRESS
@@ -676,15 +690,12 @@
                 "wip-1", "wip-2", "wip-3",
             ],
             "script": [
-                "wip-4", "wip-5", "wip-6", "mod-2",
+                "wip-4", "wip-5", "wip-6", "mod-2", "mod-3", "map-4",
             ],
         },
         customTags: {
             "mod-1": [
                 { text: "v9.0.0.0", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
-            ],
-            "mod-2": [
-                { text: "Latest", color: "#95ac00", opacity: 0.5, textOpacity: 0.45 }
             ],
         },
         hideAllSizeTags: false,
@@ -1066,6 +1077,18 @@
             {
                 id: "mod-2",
                 name: "Real Vehicle Breakdowns",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+            {
+                id: "mod-3",
+                name: "Realistic Harvesting",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+            {
+                id: "mod-4",
+                name: "Market Dynamics",
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },
