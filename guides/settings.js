@@ -1776,8 +1776,8 @@ const arma3Guides = [
                 Following is an unsorted collection of debug console commands that usually are not or should not be used by admins and players on live servers.
             </div>
             <span data-toc="Preferance(s)"></span>
-            <button class="btn-action" onclick="window.location.href='https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html'; setTimeout(() => location.reload(), 500);">Antistasi Ultimate Github</button>
-            <button class="btn-action" onclick="window.location.href='https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developer-Documentation'; setTimeout(() => location.reload(), 500);">Official Antistasi Dev Guide</button>
+            <button class="btn-action" onclick="window.open('https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developer-Documentation', '_blank');">Antistasi Ultimate Github</button>
+            <button class="btn-action" onclick="window.open('https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev_guide_index.html', '_blank');">Official Antistasi Dev Guide</button>
             <hr>
 
             <span data-toc="Nearest Marker"></span><div class="box">
@@ -1794,39 +1794,18 @@ const arma3Guides = [
 } forEach (outposts + seaports + airportsX + resourcesX + factories);
 </pre>
 </div>
+            <span data-toc="Start An Attack"></span><div class="box">
+                <code>Start An Attack</code> <span class="text-gray" id="small">Run as server. Will start the process of selecting a target for an attack and attacking it for the given side (side can be Invaders or Occupants). This might result in the other side counterattack and take something or four smaller attacks instead of one big attack mission.</span>
+<pre class="sqf-block"><pre class="sqf-block">[side] spawn A3A_fnc_rebelAttack;</pre>
+</div>
+            <span data-toc="Resources & Money"></span><div class="box">
+                <code>Resources & Money</code> <span class="text-gray" id="small">Both run as local. First adds a certain amount to your personal money, Second adds HR and Money to the faction. Replace PM, HR, Money with the value you want to add. Negative numbers will subtract.</span>
+<pre class="sqf-block">[PM] call A3A_fnc_resourcesPlayer;</pre>
 
-            <span data-toc="Start An Attack"></span>
-            <code>Start An Attack</code>
-            <div class="box">
-                <div class="dropdown">
-                    <div class="dropdown-header">
-                        <strong>< v2.5.5</strong>
-                        <div class="dropdown-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7 10l5 5 5-5z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <span class="text-gray" id="small">Run as server. Will start the process of selecting a target for an attack and attacking it for the given side (side can be Invaders or Occupants). This might result in the other side counterattack and take something or four smaller attacks instead of one big attack mission.</span>
-                        <pre class="sqf-block">[side] spawn A3A_fnc_rebelAttack;</pre>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <div class="dropdown-header">
-                        <strong>> v3.0.0</strong>
-                        <div class="dropdown-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7 10l5 5 5-5z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <span class="text-gray" id="small">Run as server. Will start the process of selecting a target for an attack and attacking it for the given side (side can be Invaders or Occupants). Possible attacks include major (waved) attacks, HQ attacks (if the rebel HQ has been detected), punishments and supply convoys.</span>
-                        <pre class="sqf-block">[side] spawn A3A_fnc_chooseAttack;</pre>
-                    </div>
-                </div>
-            </div>
+<pre class="sqf-block"><pre class="sqf-block">
+// [HR,Money]
+[0,0] remoteExec ["A3A_fnc_resourcesFIA",2];</pre>
+</div>
         `,
     },
 ]
