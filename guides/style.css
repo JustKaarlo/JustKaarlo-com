@@ -1526,6 +1526,34 @@ pre.sqf-code {
     box-shadow: 0 2px 8px rgba(155, 189, 21, 0.3);
 }
 
+.guide-description .btn-gradient.arma3 {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px 5px;
+    background: linear-gradient(135deg, #333333 0%, #333333 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 3px rgba(83, 83, 83, 0.3);
+}
+
+.guide-description .btn-gradient.arma3:hover {
+    background: linear-gradient(135deg, #333333 0%, #414141 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 3px rgba(83, 83, 83, 0.4);
+}
+
+.guide-description .btn-gradient.arma3:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 3px rgba(83, 83, 83, 0.4);
+}
+
 /* Button size variations */
 .guide-description .btn-small {
     padding: 8px 16px;

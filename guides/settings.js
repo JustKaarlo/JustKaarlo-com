@@ -1764,10 +1764,6 @@ const arma3Guides = [
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
         link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
         contentType: 'description',
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/antistasi-ultimate-badge-2.png',
-            position: 'right'
-        },
         showTOC: true,
         description: `
             <img src="https://antistasiultimate.com/images/SiteLogo1.png" alt="Description">
@@ -1776,8 +1772,8 @@ const arma3Guides = [
                 Following is an unsorted collection of debug console commands that usually are not or should not be used by admins and players on live servers.
             </div>
             <span data-toc="Preferance(s)"></span>
-            <button class="btn-action" onclick="window.open('https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developer-Documentation', '_blank');">Antistasi Ultimate Github</button>
-            <button class="btn-action" onclick="window.open('https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev_guide_index.html', '_blank');">Official Antistasi Dev Guide</button>
+            <button class="btn-action" onclick="window.open('https://antistasiultimate.com/Useful-Information/', '_blank');">Antistasi Ultimate Dev Docs</button>
+            <button class="btn-action" onclick="window.open('https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev_guide_index.html', '_blank');">Official Antistasi Dev Docs</button>
             <hr>
 
             <span data-toc="Nearest Marker"></span><div class="box">
@@ -1806,6 +1802,87 @@ const arma3Guides = [
 // [HR,Money]
 [0,0] remoteExec ["A3A_fnc_resourcesFIA",2];</pre>
 </div>
+        `,
+    },
+    { // Antistasi Ultimate Commands
+        title: 'Arms Dealer',
+        subtitle: 'Vehicle Unlock Requirements',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
+        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <img src="https://antistasiultimate.com/images/SiteLogo1.png" alt="Description">
+            <h2>Vehicle Unlock Requirements</h2>
+            <div class="box">
+                If the map you are playing on has less than the required amount, this will be defaulted to ALL. So if you require 5 factories but the map only has 3, taking all 3 will count.
+            </div>
+            <span data-toc="Preferance(s)"></span>
+            <button class="btn-action" onclick="window.open('https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Arms-Dealer', '_blank');">Antistasi Ultimate Arms Dealer</button>
+            <br>
+            <h2>Requirements</h2>
+            <table>
+                <tr>
+                    <td>AA</td>
+                    <td>At least two factories; additionally one milbase or two seaports</td>
+                </tr>
+                <tr>
+                    <td>APC</td>
+                    <td>At least two factories; additionally one milbase or two seaports</td>
+                </tr>
+                <tr>
+                    <td>Unarmed Cars</td>
+                    <td>Need one resource and one factory</td>
+                </tr>
+                <tr>
+                    <td>Armed Cars</td>
+                    <td>Need one resource and two factories</td>
+                </tr>
+                <tr>
+                    <td>Artillery</td>
+                    <td>Needs three resources and three factories</td>
+                </tr>
+                <tr>
+                    <td>Boats</td>
+                    <td>Need one seaport</td>
+                </tr>
+                <tr>
+                    <td>Helicopters</td>
+                    <td>At least two factories; additionally an airport or a milbase</td>
+                </tr>
+                <tr>
+                    <td>Planes</td>
+                    <td>Need an airport and three factories</td>
+                </tr>
+                <tr>
+                    <td>Statics (AA)</td>
+                    <td>War level 3 or above and a factory</td>
+                </tr>
+                <tr>
+                    <td>Statics (AT)</td>
+                    <td>Needs one factory</td>
+                </tr>
+                <tr>
+                    <td>Statics (MG)</td>
+                    <td>Needs one factory</td>
+                </tr>
+                <tr>
+                    <td>Statics (Mortar)</td>
+                    <td>War level 3 or above and two factories</td>
+                </tr>
+                <tr>
+                    <td>Tanks</td>
+                    <td>Need a milbase and three factories</td>
+                </tr>
+                <tr>
+                    <td>UAV</td>
+                    <td>Needs an airport and a factory</td>
+                </tr>
+            </table>
+            <h2>Supported Vehicle Mods for Trader</h2>
+            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/workshop/filedetails/?id=2012417505', '_blank');">Flying Legends</button>
+            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=2710902874', '_blank');">Secret Weapons Reloaded</button>
+            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=2012371414', '_blank');">Naval Legends</button>
         `,
     },
 ]
