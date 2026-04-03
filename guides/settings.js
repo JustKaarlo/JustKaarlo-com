@@ -1808,7 +1808,7 @@ const arma3Guides = [
         title: 'Arms Dealer',
         subtitle: 'Vehicle Unlock Requirements',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
-        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
+        link: 'https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Arms-Dealer',
         contentType: 'description',
         showTOC: true,
         description: `
@@ -1817,8 +1817,6 @@ const arma3Guides = [
             <div class="box">
                 If the map you are playing on has less than the required amount, this will be defaulted to ALL. So if you require 5 factories but the map only has 3, taking all 3 will count.
             </div>
-            <span data-toc="Preferance(s)"></span>
-            <button class="btn-action" onclick="window.open('https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Arms-Dealer', '_blank');">Antistasi Ultimate Arms Dealer</button>
             <br>
             <h2>Requirements</h2>
             <table>
