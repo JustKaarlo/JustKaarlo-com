@@ -131,10 +131,10 @@
             "mod-2": "https://www.kingmods.net/en/fs25/mods/62079/real-vehicle-breakdowns",
 
             // WORK IN PROGRESS
-            "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1893/schwesing-bahnhof-umbau",
-            "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
-            "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
-            "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
+            "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
+            "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
+            "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
+            "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1978/crop-diseases",
         },
         tooltipData: {
             // MAPS
@@ -573,17 +573,11 @@
             },
             "wip-3": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/wips/schwesing-bahnhof-umbau-fs25-cd0iI.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/schwesing-bahnhof-umbau-fs25-SU4Ty.jpg",
-                ],
-            },
-            "wip-4": {
-                images: [
                     "https://www.kingmods.net/uploads/fs25/wips/rental-station-fs25-MLXkb.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/rental-station-fs25-kg8JV.jpg",
                 ],
             },
-            "wip-5": {
+            "wip-4": {
                 images: [
                     "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-TNyKN.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-GnkSJ.jpg",
@@ -591,11 +585,18 @@
                     "https://www.kingmods.net/uploads/fs25/wips/production-extension-fs25-cAtzd.jpg",
                 ],
             },
-            "wip-6": {
+            "wip-5": {
                 images: [
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-ZhTsP.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-x6UNq.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/advanced-employee-manager-fs25-8UoTk.jpg",
+                ],
+            },
+            "wip-6": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/crop-diseases-fs25-0ZoGe.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/crop-diseases-fs25-R8Zu3.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/crop-diseases-fs25-YEcag.jpg",
                 ],
             },
         },
@@ -677,10 +678,10 @@
                 "wip-1", "wip-2",
             ],
             "map": [
-                "wip-1", "wip-2", "wip-3",
+                "wip-1", "wip-2",
             ],
             "script": [
-                "wip-4", "wip-5", "wip-6", "mod-2",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6",
             ],
         },
         customTags: {
@@ -1088,25 +1089,25 @@
             },
             {
                 id: "wip-3",
-                name: "Schwesing Bahnhof Umbau",
-                mimeType: "application/zip",
-                parentId: "fs25-wip"
-            },
-            {
-                id: "wip-4",
                 name: "Rental Station",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
             {
-                id: "wip-5",
+                id: "wip-4",
                 name: "Production Extension",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
             {
-                id: "wip-6",
+                id: "wip-5",
                 name: "Advanced Employee Manager",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-6",
+                name: "Crop Diseases",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
