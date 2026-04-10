@@ -56,7 +56,7 @@
         ],
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
-            "mod-2": "https://farmsim.bltfm.hu/infusions/bltfmhu_downloads_center/downloads.php?file_id=5",
+            "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -128,7 +128,7 @@
 
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
-            "mod-2": "https://www.kingmods.net/en/fs25/mods/62079/real-vehicle-breakdowns",
+            "mod-2": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
@@ -555,7 +555,15 @@
                 description: "FilltypesTP for all maps allow any player have all filltypes in any map without need editing files from the map.",
             },
             "mod-2": {
-                description: "This mod is under development, which means bugs, unexpected behavior, unfinished features, and occasional surprises may occur. I take no responsibility for corrupted savegames, missing vehicles, or heartbroken farmers.",
+                description: "Advanced Damage System is a mod that completely reworks the standard vehicle damage and maintenance system.",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-lF0Yh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-73bZb.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-sFsHo.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-6IDEh.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-WA1fw.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-zYKS8.jpg",
+                ],
             },
 
             // WORK IN PROGRESS
@@ -1067,7 +1075,7 @@
             },
             {
                 id: "mod-2",
-                name: "Real Vehicle Breakdowns",
+                name: "Advanced Damage System",
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },
