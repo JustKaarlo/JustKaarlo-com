@@ -11,6 +11,7 @@
     const numWIPArray = Array.from({ length: 100 }, (_, i) => `wip-${i + 1}`);
 
     const TopFx = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path d="M238.7,73.5A15.9,15.9,0,0,0,222,71.2L171.4,93.7,142,40.7a16.1,16.1,0,0,0-28,0l-29.4,53L34,71.2A16,16,0,0,0,11.9,89.5L37.3,197.8a15.9,15.9,0,0,0,7.4,10.1,16.2,16.2,0,0,0,8.3,2.3,15.2,15.2,0,0,0,4.2-.6,265.5,265.5,0,0,1,141.5,0,16.5,16.5,0,0,0,12.5-1.7,15.6,15.6,0,0,0,7.4-10.1L244.1,89.5A16,16,0,0,0,238.7,73.5Z"/></svg>`;
+    const ArchivedFx = `<svg xmlns:xlink="http://www.w3.org/1999/xlink" class="inline-block size-32 text-secondary mr-15 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27zm-8.89 11.92L6.5 12H10v-2h4v2h3.5l-5.15 5.15c-.19.19-.51.19-.7 0zM5.12 5l.81-1h12l.94 1H5.12z" fill-opacity="0.63" fill="#F5F5F5"></path></svg>`;
 
     if (!fsContainer) {
         console.error("file list container not found");
@@ -135,6 +136,8 @@
             "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
             "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
             "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1978/crop-diseases",
+            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1976/oil-maintenance",
+            "wip-8": "https://www.kingmods.net/en/fs25/work-in-progress/1970/skill-tree",
         },
         tooltipData: {
             // MAPS
@@ -607,6 +610,20 @@
                     "https://www.kingmods.net/uploads/fs25/wips/crop-diseases-fs25-YEcag.jpg",
                 ],
             },
+            "wip-7": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-mPnQf.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-g8XqA.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-p6RCW.jpg",
+                ],
+            },
+            "wip-8": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-lhdhX.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-GAyqH.jpg",
+                    "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-ziKcO.jpg",
+                ],
+            },
         },
         showDownloadButtonAtRoot: true,
         customDisplayNames: {},
@@ -631,12 +648,11 @@
 
             // MODS TAGS
             "misc": { text: "Misc", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 98 },
-            "map": { text: "Map", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 97 },
+            "map": { text: "Map", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 99 },
             "script": { text: "Script", color: "#888888", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 96 },
 
            // WORK IN PROGRESS
-            "wip": { text: "WIP", color: "#7d9000", opacity: 0.5, textOpacity: 0.45, priority: 95 },
-            "wanted": { text: "Wanted", color: "#858f43", opacity: 0.5, textColor: "#c1c1c1", textOpacity: 0.6, priority: 99 },
+            "archived": { text: ArchivedFx, color: "#000000", opacity: 0.15, textColor: "#e2e2e2", textOpacity: 0.6, priority: 97 },
         },
         tagAssignments: {
             // GENERAL
@@ -679,17 +695,14 @@
             ],
 
             // WORK IN PROGRESS
-            "wip": [
-                "wip-3", "wip-4", "wip-5", "wip-6",
-            ],
-            "wanted": [
-                "wip-1", "wip-2",
+            "archived": [
+                "wip-7",
             ],
             "map": [
                 "wip-1", "wip-2",
             ],
             "script": [
-                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8",
             ],
         },
         customTags: {
@@ -1116,6 +1129,18 @@
             {
                 id: "wip-6",
                 name: "Crop Diseases",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-7",
+                name: "Oil Maintenance",
+                mimeType: "application/zip",
+                parentId: "fs25-wip"
+            },
+            {
+                id: "wip-8",
+                name: "Skill Tree",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
             },
