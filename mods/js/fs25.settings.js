@@ -58,7 +58,7 @@
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
             "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
-            "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting.zip/releases/latest/download/FS25_RealisticHarvesting.zip",
+            "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting/releases/latest/download/FS25_RealisticHarvesting.zip",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
