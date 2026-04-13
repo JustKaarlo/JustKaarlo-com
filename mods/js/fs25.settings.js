@@ -58,6 +58,7 @@
         customDownloadLinks: {
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
             "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
+            "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting.zip/releases/latest/download/FS25_RealisticHarvesting.zip",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -130,6 +131,7 @@
             // MODS
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
             "mod-2": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
+            "mod-3": "https://www.kingmods.net/en/fs25/mods/73932/realistic-harvesting",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
@@ -568,6 +570,15 @@
                     "https://www.kingmods.net/uploads/fs25/mods/advanced-damage-system-fs25-zYKS8.jpg",
                 ],
             },
+            "mod-3": {
+                description: "This mod completely overhauls the harvesting mechanics! Your combine will no longer be able to unrealistically harvest at full speed in dense crops without consequences.",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-harvesting-fs25-EF3LF.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-harvesting-fs25-aa6sA.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-harvesting-fs25-5l2oT.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/realistic-harvesting-fs25-AVvzS.jpg",
+                ],
+            },
 
             // WORK IN PROGRESS
             "wip-1": {
@@ -691,7 +702,7 @@
                 "mod-1",
             ],
             "latest": [
-                "mod-2",
+                "mod-2", "mod-3",
             ],
 
             // WORK IN PROGRESS
@@ -702,7 +713,7 @@
                 "wip-1", "wip-2",
             ],
             "script": [
-                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3",
             ],
         },
         customTags: {
@@ -1089,6 +1100,12 @@
             {
                 id: "mod-2",
                 name: "Advanced Damage System",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+            {
+                id: "mod-3",
+                name: "Realistic Harvesting",
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },
