@@ -82,8 +82,9 @@ const GuideSystem = {
         guideDescription.style.display = 'block';
         guideImage.style.display = 'none';
 
-        // Initialize dropdowns after content is loaded
+        // Initialize dropdowns and tabs after content is loaded
         this.initializeDropdowns();
+        this.initializeTabs(guideDescription);
 
         // Process SQF code blocks
         SQFHighlighter.processAll(guideDescription);
@@ -136,18 +137,115 @@ const GuideSystem = {
         }, 300);
     },
     
-    // Generate guide buttons dynamically
+    // Build a flat array of all guide entries (excludes section/category meta items).
+    // Categories are traversed recursively so nested guides are included.
+    _flattenGuides(arr) {
+        const flat = [];
+        arr.forEach(item => {
+            if (item.type === 'section') return;
+            if (item.type === 'category') {
+                if (Array.isArray(item.guides)) this._flattenGuides(item.guides).forEach(g => flat.push(g));
+                return;
+            }
+            flat.push(item);
+        });
+        return flat;
+    },
+
+    // Create a single guide button element.
+    // `index` must correspond to the flat guides array stored in this.currentGuides.
+    createGuideButton(item, index) {
+        const button = document.createElement('button');
+        button.className = 'guide-button';
+        button.setAttribute('data-index', index);
+
+        // Build badge HTML if defined
+        let badgeHTML = '';
+        if (item.badge) {
+            const badgePosition = item.badge.position || 'right';
+            const badgeClass = badgePosition === 'icon-tag' ? 'guide-badge-icon-tag' : 'guide-badge-right';
+
+            const isImageBadge = item.badge.icon.startsWith('http://') ||
+                                  item.badge.icon.startsWith('https://') ||
+                                  item.badge.icon.startsWith('/');
+
+            const badgeContent = isImageBadge
+                ? `<img src="${item.badge.icon}" alt="${item.badge.tooltip || ''}">`
+                : item.badge.icon;
+
+            badgeHTML = `
+                <div class="${badgeClass}">
+                    ${badgeContent}
+                    ${item.badge.tooltip ? `<span class="badge-tooltip">${item.badge.tooltip}</span>` : ''}
+                </div>
+            `;
+        }
+
+        button.innerHTML = `
+            <div class="guide-icon-wrapper">
+                <img class="guide-icon" src="${item.icon}" alt="">
+                ${item.badge && item.badge.position === 'icon-tag' ? badgeHTML : ''}
+            </div>
+            <div class="guide-text">
+                <span class="guide-title">${item.title}</span>
+                <span class="guide-subtitle">${item.subtitle || ''}</span>
+            </div>
+            ${item.badge && item.badge.position !== 'icon-tag' ? badgeHTML : ''}
+        `;
+
+        button.addEventListener('click', () => this.openGuide(index));
+        return button;
+    },
+
+    // Create a collapsible category element containing its guide buttons.
+    // `flatGuides` is the master flat array so indexOf gives the correct openGuide index.
+    createCategoryElement(category, flatGuides) {
+        const open = category.collapsed !== true; // default: expanded
+        const catEl = document.createElement('div');
+        catEl.className = `guide-category${open ? ' open' : ''}`;
+
+        // Header row
+        const headerEl = document.createElement('div');
+        headerEl.className = 'guide-category-header';
+        headerEl.innerHTML = `
+            <span class="guide-category-arrow">▶</span>
+            ${category.icon ? `<span class="guide-category-icon">${category.icon}</span>` : ''}
+            <span class="guide-category-title">${category.title}</span>
+            ${category.subtitle ? `<span class="guide-category-subtitle-text">${category.subtitle}</span>` : ''}
+            <span class="guide-category-count">${(category.guides || []).length}</span>
+        `;
+        headerEl.addEventListener('click', () => catEl.classList.toggle('open'));
+
+        // Content grid
+        const contentEl = document.createElement('div');
+        contentEl.className = 'guide-category-content';
+        (category.guides || []).forEach(guide => {
+            const idx = flatGuides.indexOf(guide);
+            contentEl.appendChild(this.createGuideButton(guide, idx));
+        });
+
+        catEl.appendChild(headerEl);
+        catEl.appendChild(contentEl);
+        return catEl;
+    },
+
+    // Generate guide buttons dynamically.
+    // Supports three item types in the source array:
+    //   { type: 'section', title, subtitle }        — visual divider label
+    //   { type: 'category', title, icon, subtitle,   — collapsible category
+    //     collapsed: bool, guides: [...] }
+    //   { title, subtitle, icon, contentType, ... }  — regular guide button
     generateButtons(containerId, guidesArray) {
         const container = document.getElementById(containerId);
         if (!container) return;
-        
-        // Initialize with the provided guides array
-        this.init(guidesArray);
-        
+
+        // Build flat list for index-based openGuide() lookup
+        const flatGuides = this._flattenGuides(guidesArray);
+        this.init(flatGuides);
+
         container.innerHTML = '';
-        
-        guidesArray.forEach((item, index) => {
-            // Handle section headers
+
+        guidesArray.forEach(item => {
             if (item.type === 'section') {
                 const section = document.createElement('div');
                 section.className = 'guide-section';
@@ -158,51 +256,17 @@ const GuideSystem = {
                 container.appendChild(section);
                 return;
             }
-            
-            // Handle guide buttons
-            const button = document.createElement('button');
-            button.className = 'guide-button';
-            button.setAttribute('data-index', index);
-            
-            // Build badge HTML if exists
-            let badgeHTML = '';
-            if (item.badge) {
-                const badgePosition = item.badge.position || 'right';
-                const badgeClass = badgePosition === 'icon-tag' ? 'guide-badge-icon-tag' : 'guide-badge-right';
-                
-                // Check if badge icon is a URL or emoji/text
-                const isImageBadge = item.badge.icon.startsWith('http://') || 
-                                    item.badge.icon.startsWith('https://') || 
-                                    item.badge.icon.startsWith('/');
-                
-                const badgeContent = isImageBadge 
-                    ? `<img src="${item.badge.icon}" alt="${item.badge.tooltip || ''}">` 
-                    : item.badge.icon;
-                
-                badgeHTML = `
-                    <div class="${badgeClass}">
-                        ${badgeContent}
-                        ${item.badge.tooltip ? `<span class="badge-tooltip">${item.badge.tooltip}</span>` : ''}
-                    </div>
-                `;
+
+            if (item.type === 'category') {
+                container.appendChild(this.createCategoryElement(item, flatGuides));
+                return;
             }
-            
-            button.innerHTML = `
-                <div class="guide-icon-wrapper">
-                    <img class="guide-icon" src="${item.icon}" alt="">
-                    ${item.badge && item.badge.position === 'icon-tag' ? badgeHTML : ''}
-                </div>
-                <div class="guide-text">
-                    <span class="guide-title">${item.title}</span>
-                    <span class="guide-subtitle">${item.subtitle}</span>
-                </div>
-                ${item.badge && item.badge.position !== 'icon-tag' ? badgeHTML : ''}
-            `;
-            
-            button.addEventListener('click', () => this.openGuide(index));
-            container.appendChild(button);
+
+            // Regular guide button
+            const idx = flatGuides.indexOf(item);
+            container.appendChild(this.createGuideButton(item, idx));
         });
-        
+
         this.apply3DTiltEffect();
     },
     
@@ -226,6 +290,34 @@ const GuideSystem = {
         });
     },
     
+    // ── Tab component initializer ──────────────────────────────
+    // Auto-called after description modal opens.
+    // Finds every <div class="tabs" data-tabs> and wires up click events.
+    initializeTabs(container) {
+        const tabGroups = container.querySelectorAll('.tabs[data-tabs]');
+        tabGroups.forEach(group => {
+            // Clone buttons to clear any stale listeners
+            const oldBtns = group.querySelectorAll('.tab-btn');
+            oldBtns.forEach(btn => {
+                const newBtn = btn.cloneNode(true);
+                btn.parentNode.replaceChild(newBtn, btn);
+            });
+
+            group.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    group.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    group.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+                    btn.classList.add('active');
+                    const targetId = btn.getAttribute('data-tab');
+                    if (targetId) {
+                        const pane = group.querySelector(`#${targetId}`);
+                        if (pane) pane.classList.add('active');
+                    }
+                });
+            });
+        });
+    },
+
     // Initialize dropdown functionality
     initializeDropdowns() {
         const dropdowns = document.querySelectorAll('.guide-description .dropdown');
@@ -717,7 +809,9 @@ function initializeGuidePage(containerId, guidesArray) {
         const guideSlug = separatorIdx !== -1 ? hash.substring(0, separatorIdx) : hash;
         const sectionSlug = separatorIdx !== -1 ? hash.substring(separatorIdx + 2) : null;
 
-        const guideIndex = guidesArray.findIndex(guide =>
+        // Use the flat guide list for deep-link slug matching
+        const flatForHash = GuideSystem._flattenGuides(guidesArray);
+        const guideIndex = flatForHash.findIndex(guide =>
             GuideSystem.titleToSlug(guide.title) === guideSlug
         );
 

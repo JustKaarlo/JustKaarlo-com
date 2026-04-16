@@ -17,6 +17,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         .guides-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            border: 0;
+            box-shadow: 0;
+            border: 0px solid rgba(255, 255, 255, 0.18);
+            backdrop-filter: brightness(0.47) blur(1px);
+            max-width: 550px;
+            background: rgba(63, 63, 63, 0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+            top: -150px;
+        }
+        /* .guides-container {
             --nav-bg: rgb(54, 54, 54, 0.7);
             --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
             --glass-border: rgba(255, 255, 255, 0.18);
@@ -36,7 +49,7 @@
             min-height: fit-content !important;
             min-width: none !important;
             bottom: 150px !important;
-        }
+        } */
         .guides-container > * {
             position: relative;
             z-index: 1;
@@ -48,19 +61,22 @@
             border: 2px solid rgba(255, 255, 255, 0.02);
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-            background: rgba(63, 63, 63, 0.15) !important;
-            backdrop-filter: brightness(0.25) !important;
-        }
-        .guide-button:hover {
-            border: 2px solid rgba(255, 255, 255, 0.03) !important;
+            transition: all 0.2s ease;
+            background: rgba(27, 27, 27, 0.35);
         }
         .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        /* .guides-grid {
             display: flex;
             gap: 12px;
             margin: 0 auto;
+        } */
+        .guide-button:hover {
+            border: 2px solid rgba(255, 255, 255, 0.03) !important;
         }
-
         .container {
             max-width: 1000px;
             margin: 0 auto 0;
@@ -93,7 +109,6 @@
             object-fit: cover;
             user-select: none;
         }
-
         .title-btn {
             margin-top: 2.4px !important;
             font-size: 25px !important;

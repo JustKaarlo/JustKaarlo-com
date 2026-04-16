@@ -1,21 +1,21 @@
 const guides = [
-    {
+    { // Farming Simulator 25
         title: 'Farming Simulator 25',
-        subtitle: 'Guides & Tutorials',
+        subtitle: 'Tutorials',
         icon: 'https://www.justkaarlo.com/res/ico/favicon/fs25-favicon-2.ico',
         link: 'https://www.justkaarlo.com/guides/fs25',
         contentType: 'link'
     },
-    {
+    { // Minecraft
         title: 'Minecraft',
-        subtitle: 'Guides & Resources',
+        subtitle: 'Resources',
         icon: 'https://www.justkaarlo.com/res/ico/favicon/minecraft-favicon-1.ico',
         link: 'https://www.justkaarlo.com/guides/minecraft',
         contentType: 'link'
     },
-    {
+    { // ArmA3
         title: 'ArmA3',
-        subtitle: 'Guides & Resources',
+        subtitle: 'Resources',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/arma3.png',
         link: 'https://www.justkaarlo.com/guides/arma3',
         contentType: 'link'
@@ -47,9 +47,106 @@ const mods = [
 ];
 
 const fsGuides = [
+    { // Aquaculture
+        title: 'Aquaculture',
+        subtitle: 'Breed & Manage',
+        icon: 'https://www.justkaarlo.com/res/guides/trout.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=654',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_690b02093f4d7.jpg" alt="Banner">
+            <p>This tutorial is about aquaculture. We will show you how to breed and sell trout and salmon.</p>
+            <hr>
+            <h2>What You Should Know About Breeding</h2>
+            <p>Fish farming works like regular animal breeding, so we have a few tips for you in advance:</p>
+            <ul>
+                <li>You breed the fish yourself. You don't buy them like cattle, for example.</li>
+                <li>You breed young fish in a young fish breeding.</li>
+                <li>Adult fish are bred in a fish lake on your property or in large offshore aquaculture facilities in large open waters.
+                    <ul>
+                        <li>Salmon are bred in offshore aquacultures.</li>
+                        <li>Trouts are raised in offshore aquacultures and fish lakes</li>
+                    </ul>
+                </li>
+                <li>Offshore aquaculture facilities are usually only accessible by boat.</li>
+                <li>Instructions for using cargo vessels can be found below.</li>
+            </ul>
+            <hr>
+            <h3>What You Need For Pisciculture</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d9631c.jpg" alt="Equipment">
+            <p>Here you will find all the necessary vehicles and machinery. For instructions, skip this chapter:</p>
+            <ul>
+                <li><b>You need a forklift</b> to load and unload trailers with resources.</li>
+                <li><b>You need a truck</b> to transport your fish and feed with a trailer.</li>
+                <li><b>You need a trailer</b> to transport the fish and feed. </li>
+                <li><b>You need fish feed</b> for your animals.</li>
+                <li><b>You need a plot of land</b> to place a young fish breeding and fish lake.</li>
+                <li><b>You need a young fish breeding</b> to breed fish. </li>
+                <li><b>You need a fish lake</b> to breed trouts.</li>
+                    <b>Or</b>
+                <li><b>You need an offshore aquaculture</b> to breed trouts and salmon</li>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                    <li><b>You need a cargo vessel</b> to transport resources to the offshore aquaculture and back again. </li>
+                    <li><b>You need a fish food factory</b> if you want to mix feed for your fishes yourself.</li>
+                </ul>
+            </blockquote>
+            <hr>
+            <h3>How To Mix Fish Food</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d99edd.jpg" alt="Food">
+            <p>We will guide you step by step through the production of fish feed:</p>
+            <ul>
+                <li><b>Purchase the building:</b> Either buy the production facility in Kinlaig or place a factory on one of your plots of land.</li>
+                <li><b>Deliver the materials:</b> To produce fish feed, you need flour, soybeans, and oil. It doesn't matter whether you use olive, canola, rice, or sunflower oil.</li>
+                <li><b>Activate production:</b> Open the production chain menu and activate the production of the respective feed.</li>
+                <li><b>Feed your fish:</b> The factory will soon start producing the first feed. Load it onto a truck and take it to your young fish breeding, fish lake, or offshore aquaculture facility.</li>
+            </ul>
+            <hr>
+            <h3>How To Breed Fish</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d92c23.jpg" alt="Breed">
+            <p>Follow these steps to breed fish:</p>
+            <ol>
+                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of trouts in the product chain menu.</li>
+                <li>Fish lake:<b></b> Bring young trout to a fish lake. Deliver fish food here as well. Activate breeding here in the product chain menu.</li>
+                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
+                <li><b>Sale:</b>  Choose a point of sale and deliver the fish there.</li>
+            </ol>
+            <h4><b>        Or</b></h4>
+            <ol>
+                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of salmons in the product chain menu.</li>
+                <li><b>Cargo vessel:</b> Load the ship with enough young salmon and feed. Then sail to the offshore aquaculture facility and unload the respective resources.</li>
+                <li><b>Offshore aquaculture:</b> Activate breeding for the respective fish species you want in the product chain menu. </li>
+                <li><b>Cargo ship:</b> Then reload the cargo ship at the offshore aquaculture loading bay with the grown fish. Now you can transport them ashore.</li>
+                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
+                <li><b>Sale:</b> Choose a point of sale and deliver the fish there.</li>
+            </ol>
+            <hr>
+            <h3>How To Use The Crane Of The Cargo Vessel</h3>
+            <ol>
+                <li><b>Purchase:</b> Cargo vessels are not available from the usual vehicle dealer. There is a special boat store at the harbor.</li>
+                <li><b>Boarding:</b> Jump onto the vessel or switch using your vehicle rotation to board and use the boat.</li>
+                <li><b>Drive:</b> Drive the cargo vessel to the pier at the harbor and lower the loading ramp.</li>
+                <li><b>Loading:</b> Use a forklift to maneuver the pallets from the trailer onto the ship. It is best to place them in the designated loading areas.</li>
+                <li><b>Securing the load:</b> Then tighten the safety straps to prevent your valuable cargo from sinking into the sea. The forklift truck remains on the shore.</li>
+                <li><b>Drive to your destination:</b> Drive the cargo vessel to your desired destination. Once you arrive, start with unloading your goods. </li>
+                <li><b>Extend the crane:</b> Extend the crane. Then switch from the driver's cab to the crane at the touch of a button, or stand next to the crane to hop in.</li>
+                <li><b>Lift objects with the crane:</b> Maneuver the crane over the respective pallet. When the grab arm is correctly positioned, green safety straps will appear. Now you can connect the crane to the object. Then move the crane to the desired location.</li>
+                <li><b>Dropping objects:</b> Have you got the pallet where you want it? Then simply press the corresponding button to drop it, and you're done!</li>
+            </ol>
+            <hr>
+        `,
+    },
+    { // CROPS
+        type: 'section',
+        title: 'CROPS',
+        subtitle: '━━━━━━━'
+    },
     { // Potatoes
         title: 'Potatoes',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/potato.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=301',
@@ -86,7 +183,7 @@ const fsGuides = [
     },
     { // Cotton
         title: 'Cotton',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/cotton.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=306',
@@ -233,7 +330,7 @@ const fsGuides = [
     },
     { // Onions
         title: 'Onions',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/onion.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=648',
@@ -297,7 +394,7 @@ const fsGuides = [
     },
     { // Rice
         title: 'Rice',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=557',
@@ -418,7 +515,7 @@ const fsGuides = [
     },
     { // Long Grain Rice
         title: 'Long Grain Rice',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/long-grain-rice.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=556',
@@ -553,101 +650,9 @@ const fsGuides = [
             </ol>
         `,
     },
-    { // Aquaculture
-        title: 'Aquaculture',
-        subtitle: 'Breed & Manage',
-        icon: 'https://www.justkaarlo.com/res/guides/trout.png',
-        contentType: 'description',
-        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=654',
-        showTOC: true,
-        description: `
-            <img src="https://www.farming-simulator.com/cms/uploads/news_690b02093f4d7.jpg" alt="Banner">
-            <p>This tutorial is about aquaculture. We will show you how to breed and sell trout and salmon.</p>
-            <hr>
-            <h2>What You Should Know About Breeding</h2>
-            <p>Fish farming works like regular animal breeding, so we have a few tips for you in advance:</p>
-            <ul>
-                <li>You breed the fish yourself. You don't buy them like cattle, for example.</li>
-                <li>You breed young fish in a young fish breeding.</li>
-                <li>Adult fish are bred in a fish lake on your property or in large offshore aquaculture facilities in large open waters.
-                    <ul>
-                        <li>Salmon are bred in offshore aquacultures.</li>
-                        <li>Trouts are raised in offshore aquacultures and fish lakes</li>
-                    </ul>
-                </li>
-                <li>Offshore aquaculture facilities are usually only accessible by boat.</li>
-                <li>Instructions for using cargo vessels can be found below.</li>
-            </ul>
-            <hr>
-            <h3>What You Need For Pisciculture</h3>
-            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d9631c.jpg" alt="Equipment">
-            <p>Here you will find all the necessary vehicles and machinery. For instructions, skip this chapter:</p>
-            <ul>
-                <li><b>You need a forklift</b> to load and unload trailers with resources.</li>
-                <li><b>You need a truck</b> to transport your fish and feed with a trailer.</li>
-                <li><b>You need a trailer</b> to transport the fish and feed. </li>
-                <li><b>You need fish feed</b> for your animals.</li>
-                <li><b>You need a plot of land</b> to place a young fish breeding and fish lake.</li>
-                <li><b>You need a young fish breeding</b> to breed fish. </li>
-                <li><b>You need a fish lake</b> to breed trouts.</li>
-                    <b>Or</b>
-                <li><b>You need an offshore aquaculture</b> to breed trouts and salmon</li>
-            </ul>
-            <blockquote>
-                <strong>Optional:</strong>
-                <ul>
-                    <li><b>You need a cargo vessel</b> to transport resources to the offshore aquaculture and back again. </li>
-                    <li><b>You need a fish food factory</b> if you want to mix feed for your fishes yourself.</li>
-                </ul>
-            </blockquote>
-            <hr>
-            <h3>How To Mix Fish Food</h3>
-            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d99edd.jpg" alt="Food">
-            <p>We will guide you step by step through the production of fish feed:</p>
-            <ul>
-                <li><b>Purchase the building:</b> Either buy the production facility in Kinlaig or place a factory on one of your plots of land.</li>
-                <li><b>Deliver the materials:</b> To produce fish feed, you need flour, soybeans, and oil. It doesn't matter whether you use olive, canola, rice, or sunflower oil.</li>
-                <li><b>Activate production:</b> Open the production chain menu and activate the production of the respective feed.</li>
-                <li><b>Feed your fish:</b> The factory will soon start producing the first feed. Load it onto a truck and take it to your young fish breeding, fish lake, or offshore aquaculture facility.</li>
-            </ul>
-            <hr>
-            <h3>How To Breed Fish</h3>
-            <img src="https://www.farming-simulator.com/cms/uploads/news_6909d62d92c23.jpg" alt="Breed">
-            <p>Follow these steps to breed fish:</p>
-            <ol>
-                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of trouts in the product chain menu.</li>
-                <li>Fish lake:<b></b> Bring young trout to a fish lake. Deliver fish food here as well. Activate breeding here in the product chain menu.</li>
-                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
-                <li><b>Sale:</b>  Choose a point of sale and deliver the fish there.</li>
-            </ol>
-            <h4><b>        Or</b></h4>
-            <ol>
-                <li><b>Young fish breeding:</b> Place the young fish breeding and deliver fish food. Then activate the breeding of salmons in the product chain menu.</li>
-                <li><b>Cargo vessel:</b> Load the ship with enough young salmon and feed. Then sail to the offshore aquaculture facility and unload the respective resources.</li>
-                <li><b>Offshore aquaculture:</b> Activate breeding for the respective fish species you want in the product chain menu. </li>
-                <li><b>Cargo ship:</b> Then reload the cargo ship at the offshore aquaculture loading bay with the grown fish. Now you can transport them ashore.</li>
-                <li><b>Loading:</b> Load the trailer of your truck to transport your fish to a point of sale.</li>
-                <li><b>Sale:</b> Choose a point of sale and deliver the fish there.</li>
-            </ol>
-            <hr>
-            <h3>How To Use The Crane Of The Cargo Vessel</h3>
-            <ol>
-                <li><b>Purchase:</b> Cargo vessels are not available from the usual vehicle dealer. There is a special boat store at the harbor.</li>
-                <li><b>Boarding:</b> Jump onto the vessel or switch using your vehicle rotation to board and use the boat.</li>
-                <li><b>Drive:</b> Drive the cargo vessel to the pier at the harbor and lower the loading ramp.</li>
-                <li><b>Loading:</b> Use a forklift to maneuver the pallets from the trailer onto the ship. It is best to place them in the designated loading areas.</li>
-                <li><b>Securing the load:</b> Then tighten the safety straps to prevent your valuable cargo from sinking into the sea. The forklift truck remains on the shore.</li>
-                <li><b>Drive to your destination:</b> Drive the cargo vessel to your desired destination. Once you arrive, start with unloading your goods. </li>
-                <li><b>Extend the crane:</b> Extend the crane. Then switch from the driver's cab to the crane at the touch of a button, or stand next to the crane to hop in.</li>
-                <li><b>Lift objects with the crane:</b> Maneuver the crane over the respective pallet. When the grab arm is correctly positioned, green safety straps will appear. Now you can connect the crane to the object. Then move the crane to the desired location.</li>
-                <li><b>Dropping objects:</b> Have you got the pallet where you want it? Then simply press the corresponding button to drop it, and you're done!</li>
-            </ol>
-            <hr>
-        `,
-    },
     { // Wheat
         title: 'Wheat',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/wheat.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=619',
@@ -697,7 +702,7 @@ const fsGuides = [
     },
     { // Soybeans
         title: 'Soybeans',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/soybeans.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=633',
@@ -743,7 +748,7 @@ const fsGuides = [
     },
     { // Corn
         title: 'Corn/Maize',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/corn.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=304',
@@ -796,7 +801,7 @@ const fsGuides = [
     },
     { // Sunflowers
         title: 'Sunflowers',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/sunflower.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=303',
@@ -905,7 +910,7 @@ const fsGuides = [
     },
     { // Sugarcane
         title: 'Sugarcane',
-        subtitle: 'Sow & Harvest',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/sugarcane.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=307',
@@ -1001,9 +1006,14 @@ const fsGuides = [
             </ol>
         `,
     },
+    { // ANIMALS
+        type: 'section',
+        title: 'ANIMALS',
+        subtitle: 'Breed & Care'
+    },
     { // Sheep
         title: 'Sheep',
-        subtitle: 'Breed & Care',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/sheep.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=337',
@@ -1119,7 +1129,7 @@ const fsGuides = [
     },
     { // Chicken
         title: 'Chicken',
-        subtitle: 'Breed & Care',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/chicken.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=338',
@@ -1203,7 +1213,7 @@ const fsGuides = [
     },
     { // Cows
         title: 'Cows',
-        subtitle: 'Breed & Care',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/cow.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=336',
@@ -1385,7 +1395,7 @@ const fsGuides = [
     },
     { // Pigs
         title: 'Pigs',
-        subtitle: 'Breed & Care',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/pig.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=340',
@@ -1533,9 +1543,9 @@ const fsGuides = [
             <p>Whether pigs reproduce depends on three factors: The age, the space and the health of the animals. From the 6th month, the animals are mature and can give birth to offspring. However, this is only possible if there is room for more pigs in the barn and the health of the animals is always at 100%. You can achieve this by feeding the animals regularly.</p>
         `,
     },
-    { // Horses (WIP)
+    { // Horses
         title: 'Horses',
-        subtitle: '<b>Work In Progress</b><br>Breed & Care',
+        subtitle: '━━',
         icon: 'https://www.justkaarlo.com/res/guides/horse.png',
         contentType: 'description',
         link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=339',
@@ -1544,25 +1554,127 @@ const fsGuides = [
             <img src="https://www.farming-simulator.com/cms/uploads/news_6229cf8351d87.jpg" alt="Banner">
             <hr>
             <p>Welcome to your next "Animal 101" lesson of the Farming Simulator Academy! Today, we're focusing on horses. We'll show you how to buy and care for your stately four-legged friends, and how to earn money with them. Let's start!</p>
+            <h2>Breeds, Housing & Feeding</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_625ff49fc642a.jpg" alt="Overview">
+            <p>You can choose between multiple breeds: gray, pinto, palomino, chestnut, bay, black, seal brown and dun. The difference is purely visual.</p>
+            <h3>Housing</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_65116feef0b49.jpg" alt="Housing">
+            <p>There are multiple options for how you can accommodate your horses: pastures, barns and large barns. While a horse pasture requires you to provide feed and water and houses only a few horses, the barns only require you to provide feed and have enough space for breeding. We recommend a barn instead of the pasture.</p>
+            <a href="https://www.farming-simulator.com/newsArticle.php?&news_id=323" class="btn-action btn-small">Click here to learn more about icons.</a>
+            <h3>Feeding</h3>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_65116fef050d6.jpg" alt="Feeding">
+            <p>To feed your horses, there are multiple options. To gain 100% productivity (affecting health, reproduction and overall value), you are required to feed them a base ingredient (either oat, sorghum, or the oat bigbag) and hay as a food supplement. If you just feed them one of the base ingredients, they are only 60% productive. If you feed them only hay, their productivity decreases to 40%.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title"><span class="text-green-100">How To Get Water</span></span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <p>If you keep the horses in a simple pasture, which requires you to provide water, you need to deliver it with a tank trailer. You get water by either filling it from a water tank that you can buy in the "container" tab of the construction menu, or you just revert the tanker trailer attached to your tractor into water - a river or lake, for example. Water from a lake or river is free, tapping a tank container is not.</p>
+                </div>
+            </div>
+            <hr>
+            <h2>What You Need For Horses</h2>
+            <ul>
+                <li><b>You will need a tractor plus front loader attachments</b> to transport straw and the food to feed your horses. </li>
+                <li><b>You will need a barn and straw</b> to provide shelter and keep them cozy.</li>
+            </ul>
+            <blockquote>
+                <strong>Optional:</strong>
+                <ul>
+                    <li><b>You need a tank</b> to fill up the drinking trough if you bought the horse pasture instead of a barn.</li>
+                    <li><b>You may use a trailer</b> You can use it to transport the animals from the animal dealer to the barn. </li>
+                    <blockquote>
+                        <strong>Tip:</strong>
+                        <ul>
+                            <li>You do not have to buy a trailer. It only costs a tiny fee to buy or sell them directly at the barn. Only go ahead if you want the full role-play experience.</li>
+                            <li>Look for the horse icon at the dealership when shopping for a trailer in the "animal transport" section. It indicates that horses can be transported with this trailer.</li>
+                        </ul>
+                    </blockquote>
+                    <li><b>You will need a truck or a dolly</b> if you have bought the large transporter. A dolly serves as a link between the tractor and the trailer and saves you money. Small trailers don't require a truck or dolly - a tractor alone is enough.</li>
+                    <blockquote>
+                        <strong>Tip:</strong> When shopping for an animal trailer, if "combinations" is displayed, click it to see, if a truck or dolly is required to use it
+                    </blockquote>
+                </ul>
+            </blockquote>
+            <hr>
+            <h2>Equipment Selection</h2>
+            <img src="https://www.farming-simulator.com/cms/uploads/news_65116fef023f5.jpg" alt="Equipment">
+            <p>We recommend starting with the horse barn. This will cost a little more, but you will save the cost of buying a tank and the step of filling up the watering trough. Also, you can breed more horses as there is more room for offspring.</p>
+            <p>We chose the following equipment: You need a tractor and front loader attachments - you can buy the attachment configuration for the tractor at the dealership when parking the tractor in the designated customization area.</p>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">Eqiupment</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Model</th>
+                        </tr>
+                        <tr>
+                            <td><b>Tractor</b></td>
+                            <td>John Deere 7810
+                                <blockquote>
+                                    <strong>+</strong> front-loader attachment<br>
+                                    <strong>+</strong> bale spike<br>
+                                    <strong>+</strong> pallet fork
+                                </blockquote>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <hr>
+            <h2>Let's Go To Work!</h2>
+            <p>Got everything you need?</p>
+            <ol>
+                <li><b>Buy The Horses</b>
+                    <p>When you buy horses at the barn, you can have them delivered for a small fee. Alternatively, if you have bought a trailer, you can drive it to the cattle shop and buy cattle on-site to transport them yourself. We recommend, buying them directly at the barn to save money for the trailer.</p>
+                </li>
+                <li><b>Feeding The Horses</b>
+                    <p>Horses eat a mixed feed consisting of a base ingredient and hay as supplement. Unlike cows, however, you do not have to mix the feed yourself. You simply deliver both components to the stable separately. If you grow oat or sorghum on your farm, you can use the harvest and deliver it to the barn. Same for hay, if you mow grass and turn it into hay.</p>
+                    <p>You can also just buy the ingredients from the dealership. Buy a bigbag of oats and a bale of hay. Deliver both to the barn by using the pallet fork for the bigbag and the bale spike for the hay.</p>
+                    <blockquote>
+                        <strong>Tip</strong> If you grow oat or sorghum on your farm, you should prepare for winter by storing some of it in a silo. In case you run out, you can always buy the food at the dealership. 
+                    </blockquote>
+                </li>
+                <li><b>Providing Straw</b>
+                    <p>To keep the horses comfy and happy, they need straw. You simply fill it in like the feed in the stable. You can buy bales of straw at the dealership and deliver them with the bale spike, or you produce straw yourself.</p>
+                </li>
+                <li><b>Brush Your Horses</b>
+                    <p>It is also important to take care of the horses' hygiene. If you look at a horse with the cursor, you will see an information box in the lower right corner. You should brush your mounts regularly to maintain their health. When you look at the horse, the symbol of a brush appears, and you then press the respective button to interact.</p>
+                </li>
+                <li><b>Ride Your Horses</b>
+                    <p>Make sure that you ride your horses regularly. When you are sitting on the horse, you will see your riding progress in the top corner. Ride each horse 100% every day. This is the only way to increase their physical condition and thus their value when you sell them.</p>
+                </li>
+                <li><b>Selling The Horses</b>
+                    <p>When you have trained and cared for your horses long enough, you can sell them. This is done in the same way as buying them, either directly at the stable or by transporting them to the livestock dealer at the point of sale. On the animal screen in the menu, you can click on any animal and sell them on the right side of the screen.</p>
+                </li>
+            </ol>
+            <hr>
+            <h2>Breeding Horses</h2>
+            <p>Whether horses reproduce, depends on three factors: Their age, the space available in the barn and their health. From the age of 22 months onwards, the horses are mature and can give birth to offspring. But this is only possible if there is room for more horses in the stable. Also, the health of the horses always needs to be at 100%. You can achieve this by feeding the animals regularly.</p>
+            <blockquote>
+                <strong>Tip</strong> If you want to transfer your horses from one stable to another, just ride them to the respective stable.
+            </blockquote>
         `,
     },
 ];
 
 const mcGuides = [
-    { // Hypixel
-        title: 'Hypixel',
-        subtitle: 'Guides',
-        icon: 'https://www.justkaarlo.com/res/guides/badge/hypixel-badge.png',
-        link: 'https://www.justkaarlo.com/guides/minecraft/hypixel',
-        contentType: 'link',
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/minecraft-badge.png',
-            position: 'right'
-        },
-    },
     { // Mining Depths
         title: 'Mining Depths',
-        subtitle: 'Minecraft',
+        subtitle: '━━━',
         icon: 'https://www.justkaarlo.com/res/guides/iron-ingot.png',
         link: 'https://minecraft.fandom.com/wiki/Ore',
         contentType: 'description',
@@ -1635,19 +1747,21 @@ const mcGuides = [
             </table>
         `,
     },
-]
-
-const mcHypixelGuides = [
+    { // HYPIXEL
+        type: 'section',
+        title: 'HYPIXEL',
+        subtitle: '━━━━━━━'
+    },
     { // Hypixel Interactive Maps
         title: 'Interactive Maps',
-        subtitle: 'Hypixel',
+        subtitle: '━━━',
         icon: 'https://static.wikia.nocookie.net/hypixel-skyblock/images/9/92/Compass.png',
         contentType: 'link',
         link: 'https://hypixel-skyblock.fandom.com/wiki/Special:AllMaps',
     },
     { // Hypixel Fly on Island
         title: 'Fly on Island',
-        subtitle: 'Hypixel',
+        subtitle: '━━━',
         icon: 'https://www.justkaarlo.com/res/guides/fly-on-island.png',
         contentType: 'description',
         link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
@@ -1691,7 +1805,7 @@ const mcHypixelGuides = [
     },
     { // Hypixel Top Minions
         title: 'Top Minions',
-        subtitle: 'Hypixel',
+        subtitle: '━━━',
         icon: 'https://www.justkaarlo.com/res/guides/top-minions.png',
         contentType: 'description',
         link: 'https://hypixel.net/threads/2025-5-best-money-making-minions-with-layout-and-setups-also-if-you-have-a-small-budget.5834830/',
@@ -1740,30 +1854,16 @@ const mcHypixelGuides = [
 ]
 
 const arma3Guides = [
-    { // Antistasi Wiki
-        title: 'Antistasi Community',
-        subtitle: 'Wiki Documentation',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-wiki.png',
-        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/',
-        contentType: 'link',
-    },
-    { // Antistasi Ultimate Website
-        title: 'Official Website',
-        subtitle: 'Antistasi Ultimate',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
-        link: 'https://antistasiultimate.com/',
-        contentType: 'link',
+    { // Antistasi Ultimate Commands
+        title: 'Console Commands',
+        subtitle: 'Antistasi Ultimate ',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
+        contentType: 'description',
         badge: { 
             icon: 'https://www.justkaarlo.com/res/guides/badge/antistasi-ultimate-badge-2.png',
             position: 'right'
         },
-    },
-    { // Antistasi Ultimate Commands
-        title: 'Console Commands',
-        subtitle: 'Antistasi Ultimate ',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
-        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
-        contentType: 'description',
         showTOC: true,
         description: `
             <img src="https://antistasiultimate.com/images/SiteLogo1.png" alt="Description">
@@ -1772,8 +1872,8 @@ const arma3Guides = [
                 Following is an unsorted collection of debug console commands that usually are not or should not be used by admins and players on live servers.
             </div>
             <span data-toc="Preferance(s)"></span>
-            <button class="btn-action" onclick="window.open('https://antistasiultimate.com/Useful-Information/', '_blank');">Antistasi Ultimate Dev Docs</button>
-            <button class="btn-action" onclick="window.open('https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev_guide_index.html', '_blank');">Official Antistasi Dev Docs</button>
+            <button class="btn-action" onclick="window.open('https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Developer-Documentation', '_blank');">Antistasi Ultimate Github</button>
+            <button class="btn-action" onclick="window.open('https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev_guide_index.html', '_blank');">Official Antistasi Dev Guide</button>
             <hr>
 
             <span data-toc="Nearest Marker"></span><div class="box">
@@ -1804,84 +1904,24 @@ const arma3Guides = [
 </div>
         `,
     },
-    { // Antistasi Ultimate Commands
-        title: 'Arms Dealer',
-        subtitle: 'Vehicle Unlock Requirements',
+    { // RESOURCES
+        type: 'section',
+        title: 'RESOURCES',
+        subtitle: '━━━━━━━'
+    },
+    { // Antistasi Wiki
+        title: 'Antistasi Community',
+        subtitle: 'Wiki Documentation',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-wiki.png',
+        link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/',
+        contentType: 'link',
+    },
+    { // Antistasi Ultimate Website
+        title: 'Antistasi Ultimate',
+        subtitle: 'Official Website',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/antistasi-ultimate.png',
-        link: 'https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/wiki/Arms-Dealer',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <img src="https://antistasiultimate.com/images/SiteLogo1.png" alt="Description">
-            <h2>Vehicle Unlock Requirements</h2>
-            <div class="box">
-                If the map you are playing on has less than the required amount, this will be defaulted to ALL. So if you require 5 factories but the map only has 3, taking all 3 will count.
-            </div>
-            <br>
-            <h2>Requirements</h2>
-            <table>
-                <tr>
-                    <td>AA</td>
-                    <td>At least two factories; additionally one milbase or two seaports</td>
-                </tr>
-                <tr>
-                    <td>APC</td>
-                    <td>At least two factories; additionally one milbase or two seaports</td>
-                </tr>
-                <tr>
-                    <td>Unarmed Cars</td>
-                    <td>Need one resource and one factory</td>
-                </tr>
-                <tr>
-                    <td>Armed Cars</td>
-                    <td>Need one resource and two factories</td>
-                </tr>
-                <tr>
-                    <td>Artillery</td>
-                    <td>Needs three resources and three factories</td>
-                </tr>
-                <tr>
-                    <td>Boats</td>
-                    <td>Need one seaport</td>
-                </tr>
-                <tr>
-                    <td>Helicopters</td>
-                    <td>At least two factories; additionally an airport or a milbase</td>
-                </tr>
-                <tr>
-                    <td>Planes</td>
-                    <td>Need an airport and three factories</td>
-                </tr>
-                <tr>
-                    <td>Statics (AA)</td>
-                    <td>War level 3 or above and a factory</td>
-                </tr>
-                <tr>
-                    <td>Statics (AT)</td>
-                    <td>Needs one factory</td>
-                </tr>
-                <tr>
-                    <td>Statics (MG)</td>
-                    <td>Needs one factory</td>
-                </tr>
-                <tr>
-                    <td>Statics (Mortar)</td>
-                    <td>War level 3 or above and two factories</td>
-                </tr>
-                <tr>
-                    <td>Tanks</td>
-                    <td>Need a milbase and three factories</td>
-                </tr>
-                <tr>
-                    <td>UAV</td>
-                    <td>Needs an airport and a factory</td>
-                </tr>
-            </table>
-            <h2>Supported Vehicle Mods for Trader</h2>
-            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/workshop/filedetails/?id=2012417505', '_blank');">Flying Legends</button>
-            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=2710902874', '_blank');">Secret Weapons Reloaded</button>
-            <button class="btn-gradient arma3" onclick="window.open('https://steamcommunity.com/sharedfiles/filedetails/?id=2012371414', '_blank');">Naval Legends</button>
-        `,
+        link: 'https://antistasiultimate.com/',
+        contentType: 'link',
     },
 ]
 
@@ -1889,7 +1929,6 @@ const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
     minecraft: mcGuides,
-    hypixel: mcHypixelGuides,
     arma3: arma3Guides,
     mods: mods,
     // eldenRing: eldenRingGuides,

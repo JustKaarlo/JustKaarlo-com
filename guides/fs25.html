@@ -26,8 +26,8 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
             background: rgba(63, 63, 63, 0.25);
             backdrop-filter: brightness(0.75) blur(3px);
+            max-height: fit-content;
         }
-
         /* .guides-container::before {
             content: "";
             position: absolute;
@@ -41,12 +41,10 @@
             border: 1px solid rgba(61, 61, 61, 0.57);
             box-shadow: 0 1px 24px rgba(0, 0, 0, 0.6);
         } */
-
         .guides-container > * {
             position: relative;
             z-index: 1;
         }
-
         .guide-button {
             position: relative;
             overflow: hidden;
@@ -56,13 +54,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
             transition: all 0.2s ease;
         }
-
         .guides-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 12px;
         }
-
         .toc-item {
             border-left-color: rgba(255,255,255,0.08);
         }
@@ -76,6 +72,35 @@
         }
         span#small {
             line-height: 1 !important;
+        }
+        .toc-item.toc-h3 {
+            margin-left: 10px;
+        }
+        .toc-item.toc-h3 .toc-item-label {
+            margin-left: -15px;
+        }
+        .toc-item.toc-h4 {
+            margin-left: 15px;
+        }
+        .toc-item.toc-h4 .toc-item-label {
+            margin-left: -15px;
+        }
+        .section-title {
+            font-size: 14px;
+            color: #bbbbbb;
+        }
+        .game-icon {
+            width: 400px;
+            height: auto;
+        }
+        .guide-button[data-index] .guide-text .guide-subtitle {
+            color: rgba(191, 191, 191, 0.30) !important;
+            font-weight: normal;
+            letter-spacing: 0.4px !important;
+        }
+        .guide-button[data-index="0"] .guide-text .guide-subtitle {
+            color: rgba(170, 170, 170, 0.7) !important;
+            font-weight: 400 !important;
         }
     </style>
 </head>
@@ -161,7 +186,6 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="settings.js"></script>
     <script src="script.js"></script>
@@ -189,8 +213,6 @@
         
         // Initialize FS25 guides
         initializeGuidePage('fsGuidesGrid', fsGuides);
-
-
     </script>
 </body>
 </html>
