@@ -125,6 +125,9 @@
             "map-55": "https://www.kingmods.net/en/fs25/mods/75320/countryside-fields",
             "map-56": "https://www.kingmods.net/en/fs25/mods/74397/the-peasant-valley",
             "map-57": "https://www.kingmods.net/en/fs25/mods/65291/starowies",
+            "map-58": "https://www.kingmods.net/en/fs25/mods/75994/district-of-drensteinfurt",
+            "map-59": "https://www.kingmods.net/en/fs25/mods/76898/along-the-kiel-canal",
+            "map-60": "https://www.kingmods.net/en/fs25/mods/76662/solek",
 
             // TEXTURES
 
@@ -554,6 +557,20 @@
                     "https://www.kingmods.net/uploads/fs25/mods/district-of-drensteinfurt-fs25-96Wgt.jpg",
                 ],
             },
+            "map-59": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/along-the-kiel-canal-fs25-oCUOQ.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/along-the-kiel-canal-fs25-hW4sm.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/along-the-kiel-canal-fs25-RIM5K.jpg",
+                ],
+            },
+            "map-60": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/solek-fs25-MfeGc.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/solek-fs25-ByqEB.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/solek-fs25-KJsP7.jpg",
+                ],
+            },
 
             // MODS
             "mod-1": {
@@ -679,7 +696,7 @@
                 "map-17",
             ],
             "top4": [
-                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54", "map-52",
+                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54", "map-52", "map-59",
             ],
 
             // MAPS
@@ -688,7 +705,7 @@
             ],
             "2x-map": [],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-53", "map-54", "map-57", "map-52", "map-58",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-53", "map-54", "map-57", "map-52", "map-58", "map-59", "map-60",
             ],
             "16x-map": [
                 "map-5",
@@ -1083,6 +1100,18 @@
             {
                 id: "map-58",
                 name: "District Of Drensteinfurt",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-59",
+                name: "Along The Kiel Canal",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-60",
+                name: "Solek",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
