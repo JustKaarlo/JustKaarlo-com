@@ -47,6 +47,7 @@ const mods = [
 ];
 
 const fsGuides = [
+
     { // Aquaculture
         title: 'Aquaculture',
         subtitle: 'Breed & Manage',
@@ -142,7 +143,8 @@ const fsGuides = [
     { // CROPS
         type: 'section',
         title: 'CROPS',
-        subtitle: 'Sow & Harvest'
+        subtitle: 'Sow & Harvest',
+        icon: 'https://www.justkaarlo.com/res/guides/ico/section/crops.ico'
     },
     { // Potatoes
         title: 'Potatoes',
@@ -1009,7 +1011,8 @@ const fsGuides = [
     { // ANIMALS
         type: 'section',
         title: 'ANIMALS',
-        subtitle: 'Breed & Care'
+        subtitle: 'Breed & Care',
+        icon: 'https://www.justkaarlo.com/res/guides/ico/section/animals.ico'
     },
     { // Sheep
         title: 'Sheep',

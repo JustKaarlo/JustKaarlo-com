@@ -152,11 +152,16 @@ const GuideSystem = {
         return flat;
     },
 
+    // Detect whether a string is an image URL (http/https/relative path)
+    _isImageUrl(str) {
+        if (!str) return false;
+        return str.startsWith('http://') || str.startsWith('https://') || str.startsWith('/') || str.startsWith('./') || str.startsWith('../');
+    },
+
     // Create a single guide button element.
     // `index` must correspond to the flat guides array stored in this.currentGuides.
     createGuideButton(item, index) {
         const button = document.createElement('button');
-        button.className = 'guide-button';
         button.setAttribute('data-index', index);
 
         // Build badge HTML if defined
@@ -165,9 +170,7 @@ const GuideSystem = {
             const badgePosition = item.badge.position || 'right';
             const badgeClass = badgePosition === 'icon-tag' ? 'guide-badge-icon-tag' : 'guide-badge-right';
 
-            const isImageBadge = item.badge.icon.startsWith('http://') ||
-                                  item.badge.icon.startsWith('https://') ||
-                                  item.badge.icon.startsWith('/');
+            const isImageBadge = this._isImageUrl(item.badge.icon);
 
             const badgeContent = isImageBadge
                 ? `<img src="${item.badge.icon}" alt="${item.badge.tooltip || ''}">`
@@ -180,6 +183,26 @@ const GuideSystem = {
                 </div>
             `;
         }
+
+        // ── Grid-image display mode ──────────────────────────────
+        // When a guide has `gridImage` set, render as a full image card
+        // instead of the standard icon + text row layout.
+        if (item.gridImage) {
+            button.className = 'guide-button guide-button-image-card';
+            button.innerHTML = `
+                <div class="guide-image-card-bg" style="background-image: url('${item.gridImage}')"></div>
+                <div class="guide-image-card-overlay">
+                    ${item.title ? `<span class="guide-image-card-title">${item.title}</span>` : ''}
+                    ${item.subtitle ? `<span class="guide-image-card-subtitle">${item.subtitle}</span>` : ''}
+                </div>
+                ${badgeHTML}
+            `;
+            button.addEventListener('click', () => this.openGuide(index));
+            return button;
+        }
+
+        // ── Standard display mode ────────────────────────────────
+        button.className = 'guide-button';
 
         button.innerHTML = `
             <div class="guide-icon-wrapper">
@@ -204,12 +227,22 @@ const GuideSystem = {
         const catEl = document.createElement('div');
         catEl.className = `guide-category${open ? ' open' : ''}`;
 
+        // Resolve category icon: URL → <img>, otherwise render as HTML (emoji/text)
+        let catIconHTML = '';
+        if (category.icon) {
+            if (this._isImageUrl(category.icon)) {
+                catIconHTML = `<span class="guide-category-icon guide-category-icon-img"><img src="${category.icon}" alt=""></span>`;
+            } else {
+                catIconHTML = `<span class="guide-category-icon">${category.icon}</span>`;
+            }
+        }
+
         // Header row
         const headerEl = document.createElement('div');
         headerEl.className = 'guide-category-header';
         headerEl.innerHTML = `
             <span class="guide-category-arrow">▶</span>
-            ${category.icon ? `<span class="guide-category-icon">${category.icon}</span>` : ''}
+            ${catIconHTML}
             <span class="guide-category-title">${category.title}</span>
             ${category.subtitle ? `<span class="guide-category-subtitle-text">${category.subtitle}</span>` : ''}
             <span class="guide-category-count">${(category.guides || []).length}</span>
@@ -249,8 +282,22 @@ const GuideSystem = {
             if (item.type === 'section') {
                 const section = document.createElement('div');
                 section.className = 'guide-section';
+
+                // Resolve section icon: URL → <img>, otherwise render as HTML (emoji/text)
+                let sectionIconHTML = '';
+                if (item.icon) {
+                    if (this._isImageUrl(item.icon)) {
+                        sectionIconHTML = `<span class="section-icon section-icon-img"><img src="${item.icon}" alt=""></span>`;
+                    } else {
+                        sectionIconHTML = `<span class="section-icon">${item.icon}</span>`;
+                    }
+                }
+
                 section.innerHTML = `
-                    <h3 class="section-title">${item.title}</h3>
+                    <div class="section-title-row">
+                        ${sectionIconHTML}
+                        <h3 class="section-title">${item.title}</h3>
+                    </div>
                     ${item.subtitle ? `<p class="section-subtitle">${item.subtitle}</p>` : ''}
                 `;
                 container.appendChild(section);
