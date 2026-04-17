@@ -59,6 +59,7 @@
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
             "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
             "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting/releases/latest/download/FS25_RealisticHarvesting.zip",
+            "mod-4": "https://github.com/scfmod/FS25_TerraFarm/releases/latest/download/FS25_0_TerraFarm.zip",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -136,6 +137,7 @@
             "mod-1": "https://www.patreon.com/posts/fs25-filltypestp-139915899",
             "mod-2": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
             "mod-3": "https://www.kingmods.net/en/fs25/mods/73932/realistic-harvesting",
+            "mod-4": "https://github.com/scfmod/FS25_TerraFarm",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
@@ -604,6 +606,12 @@
                     "https://www.kingmods.net/uploads/fs25/mods/realistic-harvesting-fs25-AVvzS.jpg",
                 ],
             },
+            "mod-4": {
+                description: "With TerraFarm you can shape your own land using the equipment of your choice.",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/terrafarm-fs25-IauXp.jpg"
+                ],
+            },
 
             // WORK IN PROGRESS
             "wip-1": {
@@ -727,7 +735,7 @@
                 "mod-1",
             ],
             "latest": [
-                "mod-2", "mod-3",
+                "mod-2", "mod-3", "mod-4",
             ],
 
             // WORK IN PROGRESS
@@ -738,7 +746,7 @@
                 "wip-1", "wip-2",
             ],
             "script": [
-                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3", "mod-4",
             ],
         },
         customTags: {
@@ -1149,6 +1157,12 @@
             {
                 id: "mod-3",
                 name: "Realistic Harvesting",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+            {
+                id: "mod-4",
+                name: "TerraFarm",
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },

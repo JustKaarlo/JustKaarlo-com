@@ -463,7 +463,7 @@ function createEnhancedTooltip(data) {
         
         const images = data.images || [data.image];
         
-        if (images.length === 1) {
+        if (images.length === 0) {
             // Single image
             const img = document.createElement('img');
             img.src = images[0];
