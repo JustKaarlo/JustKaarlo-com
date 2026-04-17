@@ -31,7 +31,6 @@
             min-width: 900px !important;
             width: fit-content !important;
         }
-
         /* .guides-container::before {
             content: "";
             position: absolute;
@@ -45,12 +44,10 @@
             border: 1px solid rgba(61, 61, 61, 0.57);
             box-shadow: 0 1px 24px rgba(0, 0, 0, 0.6);
         } */
-
         .guides-container > * {
             position: relative;
             z-index: 1;
         }
-
         .guide-button {
             position: relative;
             overflow: hidden;
@@ -60,13 +57,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
             transition: all 0.2s ease;
         }
-
         .guides-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 12px;
         }
-
         .guide-description .btn-action {
             background: rgba(34, 34, 34, 0.6);
             color: #ffffff;
@@ -82,7 +77,6 @@
             transform: translateY(0px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
         .guide-description code {
             background: rgba(255, 255, 255, 0.05);
             padding: 2px 6px;
@@ -92,7 +86,6 @@
             color: #dfdfdf;
             font-weight: 600;
         }
-
         .guide-description h6 {
             font-size: 14px;
             font-weight: normal;
@@ -101,7 +94,6 @@
             font-family: 'Poppins', sans-serif;
             font-style: italic !important;
         }
-
         .toc-item {
             border-left-color: rgba(255,255,255,0.08);
         }
@@ -115,6 +107,11 @@
         }
         span#small {
             line-height: 1 !important;
+        }
+        .guide-description .tab-btn.active {
+            color: #d1d1d1;
+            border-bottom-color: #a3a3a3;
+            background: rgba(128, 128, 128, 0.15);
         }
     </style>
 </head>
