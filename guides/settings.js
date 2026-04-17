@@ -142,7 +142,7 @@ const fsGuides = [
     { // CROPS
         type: 'section',
         title: 'CROPS',
-        subtitle: '━━━━━━━'
+        subtitle: 'Sow & Harvest'
     },
     { // Potatoes
         title: 'Potatoes',
