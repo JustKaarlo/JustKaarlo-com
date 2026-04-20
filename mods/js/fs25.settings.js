@@ -130,6 +130,7 @@
             "map-59": "https://www.kingmods.net/en/fs25/mods/76898/along-the-kiel-canal",
             "map-60": "https://www.kingmods.net/en/fs25/mods/76662/solek",
             "map-61": "https://www.kingmods.net/en/fs25/mods/74978/birgland",
+            "map-62": "https://www.kingmods.net/en/fs25/mods/75654/lanrelas",
 
             // TEXTURES
 
@@ -581,6 +582,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/birgland-fs25-ETGqx.jpg",
                 ],
             },
+            "map-62": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/lanrelas-fs25-X6THL.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/lanrelas-fs25-qz0VC.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/lanrelas-fs25-b2EO5.jpg",
+                ],
+            },
 
             // MODS
             "mod-1": {
@@ -717,7 +725,7 @@
 
             // MAPS
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56", "map-62",
             ],
             "2x-map": [],
             "4x-map": [
@@ -1134,6 +1142,12 @@
             {
                 id: "map-61",
                 name: "Birgland",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-62",
+                name: "Lanrelas",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
