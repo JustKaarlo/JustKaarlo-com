@@ -60,6 +60,8 @@
             "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
             "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting/releases/latest/download/FS25_RealisticHarvesting.zip",
             "mod-4": "https://github.com/scfmod/FS25_TerraFarm/releases/latest/download/FS25_0_TerraFarm.zip",
+            
+            "map-63": "https://smeast1.5a7ade8d78df76bddb33a5f57aa7d05e.r2.cloudflarestorage.com/uploads/08687/lqem4pad7n9w?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=5d2726c29a75fcd1f981c5e2f14eecf8%2F20260421%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260421T152753Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22FS25_Nordic_Valley.zip%22&X-Amz-Signature=5eacddc42fe54fdfccd6c97bec0b24458595c75bf61c1c70d6b6305f602b98c8",
         },
         customWebsiteLinks: {
             "fs25-maps": "https://www.kingmods.net/en/fs25/categories/maps",
@@ -131,6 +133,7 @@
             "map-60": "https://www.kingmods.net/en/fs25/mods/76662/solek",
             "map-61": "https://www.kingmods.net/en/fs25/mods/74978/birgland",
             "map-62": "https://www.kingmods.net/en/fs25/mods/75654/lanrelas",
+            "map-63": "https://discord.com/channels/816739472640442378/1482423074300100920",
 
             // TEXTURES
 
@@ -589,6 +592,14 @@
                     "https://www.kingmods.net/uploads/fs25/mods/lanrelas-fs25-b2EO5.jpg",
                 ],
             },
+            "map-63": {
+                images: [
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-1.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-2.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-3.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-4.png",
+                ],
+            },
 
             // MODS
             "mod-1": {
@@ -720,12 +731,12 @@
                 "map-17",
             ],
             "top4": [
-                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54", "map-52", "map-59", "map-61",
+                "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54", "map-52", "map-59", "map-61", "map-63",
             ],
 
             // MAPS
             "1x-map": [
-                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56", "map-62",
+                "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56", "map-62", "map-63",
             ],
             "2x-map": [],
             "4x-map": [
@@ -1148,6 +1159,12 @@
             {
                 id: "map-62",
                 name: "Lanrelas",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-63",
+                name: "Nordic Valley",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
