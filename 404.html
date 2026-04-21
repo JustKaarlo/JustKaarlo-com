@@ -7,6 +7,12 @@
   <link rel="icon" type="image/x-icon" href="res/ico/favicon/favicon-1.ico">
 
   <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       height: 100vh;
@@ -18,14 +24,63 @@
       color: #f0f0f0;
     }
 
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    body {
+        position: relative;
+        font-family: 'Rubik', sans-serif;
+        color: #eee;
+        min-height: 100vh;
+        overflow-x: hidden;
+        overflow: scroll;
+    }
+
+    html::-webkit-scrollbar, body::-webkit-scrollbar {
+        display: none;
+    }
+
+  #bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: 0;
+      pointer-events: none;
+      filter: grayscale(100%);
+      background-image:
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+          url('https://www.justkaarlo.com/res/bg/bgBasicGrid.png');
+  }
+
+    #particles-js {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
     .error-container {
       background: rgba(40, 40, 40, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.003);
       border-radius: 20px;
       padding: 3rem;
       text-align: center;
       max-width: 400px;
       width: 90%;
+      backdrop-filter: saturate(120%);
+      -webkit-backdrop-filter: saturate(120%);
+      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
     }
 
     .error-code {
@@ -73,12 +128,14 @@
   </style>
 </head>
 <body>
+  <div id="bg"></div>
+  <div id="particles-js"></div>
   <div class="error-container">
     <div class="error-code">
       <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="error" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="100" role="img" viewBox="0 0 24 24" width="100"><title fill="#F5F5F5">error</title><path d="M12.001.504a11.5 11.5 0 1 0 11.5 11.5 11.513 11.513 0 0 0-11.5-11.5Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Zm0-6.594a1.279 1.279 0 1 0 1.278 1.279A1.28 1.28 0 0 0 12 14.91Zm0-8.443a1.326 1.326 0 0 0-.97.412 1.154 1.154 0 0 0-.313.872l.362 5.057a.928.928 0 0 0 1.84 0l.363-5.057a1.152 1.152 0 0 0-.313-.871 1.323 1.323 0 0 0-.97-.413Z" fill="currentColor"></path>
       </svg>
     </div>
-    <div class="error-message">Page not found.</div>
+    <div class="error-message">Page Not Found</div>
       <a class="btn" href="home" aria-label="Home">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="currentColor">
             <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
@@ -87,5 +144,24 @@
         Go Back
       </a>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <script>
+      // Initialize particles
+      particlesJS('particles-js', {
+          particles: {
+              number: { value: 15, density: { enable: true, value_area: 700 } },
+              color: { value: ['#545454', '#828282', '#323332', '#636363', '#9e9e9e'] },
+              shape: { type: 'circle' },
+              opacity: { value: 0.2, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
+              size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
+              line_linked: { enable: false },
+              move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
+          },
+          interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+          retina_detect: true
+      });
+    </script>
 </body>
 </html>

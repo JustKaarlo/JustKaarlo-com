@@ -72,44 +72,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         url('https://www.theland.com.au/images/transform/v1/crop/frm/187038826/c534ed48-33cf-49e6-bc1c-b42ece8c3415.jpg/r1_0_3839_2159_w3840_h2160_fmax.jpg');
 }
 
-#bg-mc {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 0;
-    pointer-events: none;
-    background-blend-mode: soft-light darken;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
-        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
-        linear-gradient(rgba(144, 87, 137, 0.2), rgba(55, 88, 43, 0.45)), 
-        url('https://i.redd.it/hey-i-just-realised-that-minecraft-dropped-wallpapers-for-v0-af632nce2dud1.jpg?width=3840&format=pjpg&auto=webp&s=102770acfd3d1534ba97f09cfcaab822e6485b9e');
-}
-
-#bg-hypixel {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 0;
-    pointer-events: none;
-    background-blend-mode: darken;
-    background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
-        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
-        linear-gradient(rgba(45, 61, 91, 0.3), rgba(54, 26, 25, 0.45)),
-        url('../res/guides/bg/hypixel-bg.png');
-}
-
 #bg-arma {
     position: fixed;
     inset: 0;
