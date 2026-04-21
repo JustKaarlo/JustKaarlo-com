@@ -113,6 +113,152 @@ body {
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.7));
 }
 
+/* ── Search Bar ────────────────────────────────────── */
+.filelist-search-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 880px;
+    width: 700px;
+    margin: 0 auto 12px auto;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    backdrop-filter: blur(4px) brightness(0.7);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    padding: 0 12px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filelist-search-wrapper:focus-within {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.5);
+}
+
+.filelist-search-icon {
+    color: rgba(170, 170, 170, 0.45);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 9px;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.filelist-search-wrapper:focus-within .filelist-search-icon {
+    color: rgba(200, 200, 200, 0.75);
+}
+
+.filelist-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #eeebebbe;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0;
+    caret-color: rgba(255, 255, 255, 0.7);
+}
+
+.filelist-search-input::placeholder {
+    color: rgba(170, 170, 170, 0.35);
+}
+
+.filelist-search-clear {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgba(160, 160, 160, 0.45);
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 0 0 6px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease;
+    flex-shrink: 0;
+}
+
+.filelist-search-clear:hover {
+    color: rgba(220, 220, 220, 0.8);
+}
+
+/* Search result items */
+.search-results-list {
+    margin-top: 10px !important;
+}
+
+.search-result-item {
+    margin: 8px 0;
+}
+
+.search-result-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.search-result-left > a {
+    color: var(--text-main);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-result-left > a:hover {
+    color: rgba(253, 255, 255, 0.72);
+}
+
+.search-result-left > img {
+    height: 16px;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.search-result-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: rgba(150, 150, 150, 0.5);
+    font-family: 'Poppins', monospace;
+    font-weight: 500;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.search-result-breadcrumb-icon {
+    height: 13px !important;
+    margin-right: 0 !important;
+}
+
+.search-result-sep {
+    color: rgba(150, 150, 150, 0.35);
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.search-no-results {
+    text-align: center;
+    opacity: 0.4;
+    padding: 20px 0 !important;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    cursor: default !important;
+}
+
+.search-no-results:hover {
+    background-color: transparent !important;
+}
+
+/* ── /Search Bar ───────────────────────────────────── */
+
 .filelist-frame {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.09);

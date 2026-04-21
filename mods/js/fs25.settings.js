@@ -26,6 +26,7 @@
         folderId: fsRootFolderId,
         container: fsContainer,
         apiKey,
+        enableSearch: true,
         iconDefinitions: {
             "ItemFxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-side-fx.png",
         },

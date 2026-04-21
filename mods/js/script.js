@@ -1503,6 +1503,323 @@ async function listFilesInFolder(options) {
 
         container.appendChild(li);
     }
+
+    // Initialize search bar (root level only)
+    if (path === "" && options.enableSearch !== false) {
+        const searchIndex = buildSearchIndex(options);
+        _initSearch(container, options, searchIndex);
+    }
+}
+
+// =============================================
+// SEARCH FUNCTIONALITY
+// =============================================
+
+function buildSearchIndex(options) {
+    const {
+        customFiles = [],
+        customFolders = [],
+        customDisplayNames = {},
+        iconDefinitions = {},
+        iconAssignments = {},
+        customIcons = {},
+    } = options;
+
+    const folderMap = {};
+    for (const folder of customFolders) {
+        folderMap[folder.id] = folder;
+    }
+
+    const index = [];
+
+    // Index top-level custom folders
+    for (const folder of customFolders) {
+        if (!folder.parentId) {
+            const displayName = getCustomDisplayName({ file: folder, folderId: '', path: '', customDisplayNames });
+            index.push({
+                type: 'folder',
+                id: folder.id,
+                name: folder.name,
+                displayName,
+                mimeType: folder.mimeType,
+                parentId: null,
+                parentName: null,
+                parentIcon: null,
+                icon: folder.icon || null,
+                searchText: `${displayName} ${folder.name} ${folder.id}`.toLowerCase(),
+                raw: folder
+            });
+        }
+    }
+
+    // Index ALL custom files (all depths, including subfolders)
+    for (const file of customFiles) {
+        const parentFolder = file.parentId ? folderMap[file.parentId] : null;
+        const displayName = getCustomDisplayName({
+            file,
+            folderId: file.parentId || '',
+            path: '',
+            customDisplayNames
+        });
+        const customIcon = getCustomIcon({
+            file,
+            folderId: file.parentId || '',
+            path: '',
+            customIcons,
+            iconDefinitions,
+            iconAssignments
+        });
+
+        index.push({
+            type: 'file',
+            id: file.id,
+            name: file.name,
+            displayName,
+            mimeType: file.mimeType,
+            parentId: file.parentId || null,
+            parentName: parentFolder ? parentFolder.name : null,
+            parentIcon: parentFolder ? parentFolder.icon : null,
+            icon: customIcon || file.icon || null,
+            searchText: `${displayName} ${file.name} ${file.id}`.toLowerCase(),
+            raw: file
+        });
+    }
+
+    return index;
+}
+
+function _createSearchResultItem(item, options) {
+    const {
+        apiKey,
+        customDownloadLinks = {},
+        customWebsiteLinks = {},
+        excludeDownloadFiles = [],
+        showDownloadButtonForAllFiles,
+        customTags = {},
+        tagDefinitions = {},
+        tagAssignments = {},
+    } = options;
+
+    const file = item.raw;
+    const folderId = file.parentId || '';
+
+    const li = document.createElement('li');
+    li.className = 'search-result-item';
+
+    const fileEntry = document.createElement('div');
+    fileEntry.className = 'file-entry';
+
+    // Left group: breadcrumb + icon + name
+    const leftGroup = document.createElement('div');
+    leftGroup.className = 'search-result-left';
+
+    // Breadcrumb (parent folder name)
+    if (item.parentName) {
+        const breadcrumb = document.createElement('span');
+        breadcrumb.className = 'search-result-breadcrumb';
+        if (item.parentIcon) {
+            const bIcon = document.createElement('img');
+            bIcon.src = item.parentIcon;
+            bIcon.alt = '';
+            bIcon.className = 'search-result-breadcrumb-icon';
+            breadcrumb.appendChild(bIcon);
+        }
+        breadcrumb.appendChild(document.createTextNode(item.parentName));
+        leftGroup.appendChild(breadcrumb);
+
+        const sep = document.createElement('span');
+        sep.className = 'search-result-sep';
+        sep.textContent = '›';
+        leftGroup.appendChild(sep);
+    }
+
+    // File icon
+    if (item.icon) {
+        const icon = document.createElement('img');
+        icon.src = item.icon;
+        icon.alt = '';
+        leftGroup.appendChild(icon);
+    }
+
+    // Name link
+    const websiteLink = getCustomWebsiteLink({ file, folderId, path: '', customWebsiteLinks });
+    const link = document.createElement('a');
+    link.href = websiteLink || file.webViewLink || file.url || '#';
+    if (link.href.endsWith('#')) link.onclick = e => e.preventDefault();
+    link.target = '_blank';
+    link.appendChild(document.createTextNode(item.displayName));
+    leftGroup.appendChild(link);
+    fileEntry.appendChild(leftGroup);
+
+    // Tags
+    const tagsContainer = document.createElement('div');
+    tagsContainer.className = 'tags-container';
+    const fileTags = getCustomTags({ file, folderId, path: '', customTags, tagDefinitions, tagAssignments });
+    fileTags.forEach(tagConfig => tagsContainer.appendChild(createCustomTag(tagConfig)));
+    if (tagsContainer.children.length > 0) fileEntry.appendChild(tagsContainer);
+
+    // Buttons
+    const buttonContainer = document.createElement('div');
+    buttonContainer.className = 'button-container';
+
+    const isExcluded = isExcludedDownloadFile({ file, folderId, path: '', excludeList: excludeDownloadFiles });
+    const shouldShow = shouldShowDownloadButtonForFile({
+        file, folderId, path: '',
+        downloadButtonFiles: [],
+        showDownloadButtonForAllFiles,
+        showDownloadButtonAtRoot: false
+    });
+
+    if (!isDriveDoc(file.mimeType) && shouldShow && !isExcluded) {
+        const downloadBtn = document.createElement('button');
+        downloadBtn.className = 'folder-open-button';
+
+        const dlTooltip = document.createElement('span');
+        dlTooltip.className = 'custom-tooltip';
+        dlTooltip.textContent = 'Download';
+        downloadBtn.appendChild(dlTooltip);
+
+        const dlIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        dlIcon.setAttribute('width', '16'); dlIcon.setAttribute('height', '16');
+        dlIcon.setAttribute('viewBox', '0 0 24 24'); dlIcon.setAttribute('fill', 'none');
+
+        const dlTray = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        dlTray.setAttribute('d', 'M5 20h14a1 1 0 0 0 1-1v-3h-2v2H6v-2H4v3a1 1 0 0 0 1 1z');
+        dlTray.setAttribute('fill', 'rgba(255, 255, 255, 0.15)');
+
+        const dlArrow = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        dlArrow.setAttribute('d', 'M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h2z');
+        dlArrow.setAttribute('fill', 'rgba(255, 255, 255, 0.35)');
+        dlArrow.setAttribute('class', 'arrow-part');
+
+        dlIcon.appendChild(dlTray); dlIcon.appendChild(dlArrow);
+        downloadBtn.appendChild(dlIcon);
+        downloadBtn.onclick = (e) => {
+            e.preventDefault(); e.stopPropagation();
+            const customLink = getCustomDownloadLink({ file, folderId, path: '', customDownloadLinks });
+            const url = customLink || file.downloadUrl || getDownloadUrl(file, apiKey);
+            window.open(url, '_blank');
+        };
+        buttonContainer.appendChild(downloadBtn);
+    }
+
+    if (websiteLink) {
+        const websiteBtn = document.createElement('button');
+        websiteBtn.className = 'folder-open-button website-button';
+
+        const wsTooltip = document.createElement('span');
+        wsTooltip.className = 'custom-tooltip';
+        wsTooltip.textContent = 'Visit Website';
+        websiteBtn.appendChild(wsTooltip);
+
+        const wsIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        wsIcon.setAttribute('width', '16'); wsIcon.setAttribute('height', '16');
+        wsIcon.setAttribute('viewBox', '0 0 24 24'); wsIcon.setAttribute('fill', 'none');
+
+        const wsPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        wsPath.setAttribute('d', 'M7 17L17 7M17 7H7M17 7V17');
+        wsPath.setAttribute('stroke', 'rgba(160, 160, 160, 0.7)');
+        wsPath.setAttribute('stroke-width', '2');
+        wsPath.setAttribute('stroke-linecap', 'round');
+        wsPath.setAttribute('stroke-linejoin', 'round');
+        wsPath.setAttribute('fill', 'none');
+
+        wsIcon.appendChild(wsPath);
+        websiteBtn.appendChild(wsIcon);
+        websiteBtn.onclick = (e) => { e.preventDefault(); e.stopPropagation(); window.open(websiteLink, '_blank'); };
+        buttonContainer.appendChild(websiteBtn);
+    }
+
+    if (buttonContainer.children.length > 0) fileEntry.appendChild(buttonContainer);
+    li.appendChild(fileEntry);
+    return li;
+}
+
+function _initSearch(container, options, searchIndex) {
+    const filelistFrame = container.closest('.filelist-frame');
+    if (!filelistFrame) return;
+
+    const section = filelistFrame.parentElement;
+    if (!section) return;
+
+    // Guard against duplicate init
+    if (section.querySelector('.filelist-search-wrapper')) return;
+
+    // Build search bar
+    const searchWrapper = document.createElement('div');
+    searchWrapper.className = 'filelist-search-wrapper';
+
+    const searchIcon = document.createElement('div');
+    searchIcon.className = 'filelist-search-icon';
+    searchIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`;
+
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.className = 'filelist-search-input';
+    searchInput.placeholder = 'Search';
+    searchInput.autocomplete = 'off';
+    searchInput.spellcheck = false;
+
+    const clearBtn = document.createElement('button');
+    clearBtn.className = 'filelist-search-clear';
+    clearBtn.innerHTML = '&#x2715;';
+    clearBtn.type = 'button';
+    clearBtn.style.display = 'none';
+
+    searchWrapper.appendChild(searchIcon);
+    searchWrapper.appendChild(searchInput);
+    searchWrapper.appendChild(clearBtn);
+    section.insertBefore(searchWrapper, filelistFrame);
+
+    // Search results list (rendered inside same frame)
+    const searchResultsList = document.createElement('ul');
+    searchResultsList.className = 'file-list search-results-list';
+    searchResultsList.style.display = 'none';
+    filelistFrame.appendChild(searchResultsList);
+
+    function runSearch(query) {
+        const q = query.trim();
+        clearBtn.style.display = q ? 'flex' : 'none';
+
+        if (!q) {
+            container.style.display = '';
+            searchResultsList.style.display = 'none';
+            searchResultsList.innerHTML = '';
+            filelistFrame.classList.remove('search-active');
+            return;
+        }
+
+        filelistFrame.classList.add('search-active');
+        container.style.display = 'none';
+        searchResultsList.style.display = '';
+        searchResultsList.innerHTML = '';
+
+        const results = searchIndex.filter(item => item.searchText.includes(q.toLowerCase()));
+
+        if (results.length === 0) {
+            const li = document.createElement('li');
+            li.className = 'search-no-results';
+            li.textContent = `No results for "${q}"`;
+            searchResultsList.appendChild(li);
+            return;
+        }
+
+        for (const item of results) {
+            searchResultsList.appendChild(_createSearchResultItem(item, options));
+        }
+    }
+
+    searchInput.addEventListener('input', () => runSearch(searchInput.value));
+
+    clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        runSearch('');
+        searchInput.focus();
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { searchInput.value = ''; runSearch(''); }
+    });
 }
 
 // Modal functionality

@@ -13,6 +13,7 @@
         folderId: fsRootFolderId,
         container: fsContainer,
         apiKey,
+        enableSearch: false,
         iconDefinitions: {
             "ConvergenceIcon": "https://www.justkaarlo.com/res/mods/elden-ring/Convergence.ico",
         },
