@@ -6,13 +6,6 @@ const guides = [
         link: 'https://www.justkaarlo.com/guides/fs25',
         contentType: 'link'
     },
-    { // Minecraft
-        title: 'Minecraft',
-        subtitle: 'Resources',
-        icon: 'https://www.justkaarlo.com/res/ico/favicon/minecraft-favicon-1.ico',
-        link: 'https://www.justkaarlo.com/guides/minecraft',
-        contentType: 'link'
-    },
     { // ArmA3
         title: 'ArmA3',
         subtitle: 'Resources',
@@ -1674,188 +1667,6 @@ const fsGuides = [
     },
 ];
 
-const mcGuides = [
-    { // Mining Depths
-        title: 'Mining Depths',
-        subtitle: '━━━',
-        icon: 'https://www.justkaarlo.com/res/guides/iron-ingot.png',
-        link: 'https://minecraft.fandom.com/wiki/Ore',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/35/Caves_%26_Cliffs_Ores.png/revision/latest/scale-to-width-down/1000?cb=20210415134055" alt="Banner">
-            <h2>Distribution</h2>
-            <h3>Overworld</h3>
-            <table>
-                <tr>
-                    <th></th>
-                    <th class="text-coal">Coal</th>
-                    <th class="text-copper">Copper</th>
-                    <th class="text-lapis">Lapis</th>
-                    <th class="text-iron">Iron</th>
-                    <th class="text-gold">Gold</th>
-                    <th class="text-redstone">Redstone</th>
-                    <th class="text-diamond">Diamond</th>
-                    <th class="text-emerald">Emerald</th>
-                </tr>
-                <tr>
-                    <th>Range</th>
-                    <td><code>0 To 320</code></td>
-                    <td><code>-16 To 112</code></td>
-                    <td><code>-64 To 64</code></td>
-                    <td><code>-64 To 320</code></td>
-                    <td><code>-64 To 32</code></td>
-                    <td><code>-64 To 16</code></td>
-                    <td><code>-64 To 16</code></td>
-                    <td><code>-16 To 320</code></td>
-                </tr>
-                <tr>
-                    <th>Found</th>
-                    <td><code>44,95 & 136</code></td>
-                    <td><code>48</code></td>
-                    <td><code>-1</code></td>
-                    <td><code>15 & 232</code></td>
-                    <td><code>-16</code></td>
-                    <td><code>-59</code></td>
-                    <td><code>-59</code></td>
-                    <td><code>236</code></td>
-                </tr>
-            </table>
-            <h3>Nether</h3>
-            <table>
-                <tr>
-                    <th></th>
-                    <th class="text-quartz">Nether Quartz</th>
-                    <th class="text-gold">Nether Gold</th>
-                    <th class="text-netherite">Ancient Debris</th>
-                </tr>
-                <tr>
-                    <th>Most Found</th>
-                    <td><code>10-114</code></td>
-                    <td><code>15</code></td>
-                    <td><code>13-17</code></td>
-                </tr>
-                <tr>
-                    <th>Commonly Up To</th>
-                    <td><code>120</code></td>
-                    <td><code>95</code></td>
-                    <td><code>23</code></td>
-                </tr>
-                <tr>
-                    <th>Rare On</th>
-                    <td><code>123-125</code></td>
-                    <td><code>96-116</code></td>
-                    <td><code>22-119</code></td>
-                </tr>
-            </table>
-        `,
-    },
-    { // HYPIXEL
-        type: 'section',
-        title: 'HYPIXEL',
-        subtitle: '━━━━━━━'
-    },
-    { // Hypixel Interactive Maps
-        title: 'Interactive Maps',
-        subtitle: '━━━',
-        icon: 'https://static.wikia.nocookie.net/hypixel-skyblock/images/9/92/Compass.png',
-        contentType: 'link',
-        link: 'https://hypixel-skyblock.fandom.com/wiki/Special:AllMaps',
-    },
-    { // Hypixel Fly on Island
-        title: 'Fly on Island',
-        subtitle: '━━━',
-        icon: 'https://www.justkaarlo.com/res/guides/fly-on-island.png',
-        contentType: 'description',
-        link: 'https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/',
-        showTOC: true,
-        description: `
-            <h2>How to Fly on Your Own Island!</h2>
-            <a href="https://hypixel.net/threads/guide-how-to-fly-on-your-own-island.2815567/" class="btn-action-hypixel btn-small">How to Fly on Your Own Island!</a> <a href="https://wiki.hypixel.net/Magical_Mushroom_Soup" class="btn-action-hypixel btn-small">Magical Mushroom Soup</a>
-            <hr>
-            <p>Under the Farming recipes in your Skyblock menu you can craft a special <strong class="text-green">Magical Mushroom Soup</strong>, this soup will grant you two minuets of fly at a time.</p>
-            <div class="box box-hypixel-1">
-                Remember if you leave your island the Magical Mushroom Soup effect will clear
-            </div>
-            <p>Link to forum thread where we give this <strong class="text-green">Magical Mushroom Soup</strong> a try.</p>
-            <hr>
-            <ol>
-                <li>
-                    <img class="align-left" src="https://hypixel.net/attachments/magical-mushroom-soup-jpg.1637561/" alt="steps">
-                </li>
-                <li>
-                    <p>To gain access to this recipe you will need to be <strong class="text-green">level[4]</strong> in your Mushroom collection,</p>
-                    <img class="align-left" src="https://hypixel.net/attachments/mushroom-collection-jpg.1637560/" alt="steps">
-                </li>
-                <li>
-                    <p>To achieve this start farming till you reach the <strong class="text-green">Mushroom Desert</strong> farming realm, continue and chop mushrooms to level up.</p>
-                    <img class="align-left" src="https://hypixel.net/attachments/mushroom-desert-jpg.1637593/" alt="steps">
-                </li>
-            </ol>
-            <hr>
-            <p>Once you level up and gain access to craft this recipe you will need:</p>
-            <div class="box box-hypixel-1">
-                <ul>
-                    <li><strong class="text-gray">[1x]</strong> <b>Red Mushroom</b> - optioned in the Mushroom Desert</li>
-                    <li><strong class="text-gray">[1x]</strong> <b>Brown Mushroom</b> - optioned in the Mushroom Desert</li>
-                    <li><strong class="text-gray">[1x]</strong> <b>Redstone</b> - optioned in the Deep Caverns <span class="text-gray">Pigmen's Den</span></li>
-                    <li><strong class="text-gray">[1x]</strong> <b>Glowstone</b> - optioned in the Blaze Realm</li>
-                    <li><strong class="text-gray">[1x]</strong> <b>Bowl</b> - craft with wood</li>
-                    <img class="align-left" src="https://hypixel.net/attachments/magical-mushroom-soup-recipe-jpg.1637611/" alt="recipe">
-                </ul>
-            </div>
-        `,
-    },
-    { // Hypixel Top Minions
-        title: 'Top Minions',
-        subtitle: '━━━',
-        icon: 'https://www.justkaarlo.com/res/guides/top-minions.png',
-        contentType: 'description',
-        link: 'https://hypixel.net/threads/2025-5-best-money-making-minions-with-layout-and-setups-also-if-you-have-a-small-budget.5834830/',
-        showTOC: false,
-        description: `
-            <h2>Best Money-Making Minions</h2>
-            <ol>
-                <li>
-                    <div class="box">
-                        <div class="box-title"><a class="link-slime-color" href="https://wiki.hypixel.net/Slime_Minion">Slime</a></div>
-                        Better if you log on every 1-3 days<br>
-                        <em><strong class="text-gray">takes 42 days to get money back</strong></em>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <div class="box-title"><a class="link-snow-color" href="https://wiki.hypixel.net/Snow_Minion">Snow</a></div>
-                        Can be challenging to get but good<br>
-                        <em><strong class="text-gray">only bc you get your money back in abt 4 days</strong></em>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <div class="box-title"><a class="link-magma-color" href="https://wiki.hypixel.net/Magma_Cube_Minion">Magma</a></div>
-                        Good, but you will have a high electrical bill<br>
-                        <em><strong class="text-gray">You have to be online to make it good and takes 21 days to get money back</strong></em>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <div class="box-title"><a class="link-clay-color" href="https://wiki.hypixel.net/Clay_Minion">Clay</a></div>
-                        This is good if you are going to be offline a while and you don't have a high purse<br>
-                        <em><strong class="text-gray">Takes 9 days to get money back</strong></em>
-                    </div>
-                </li>
-                <li>
-                    <div class="box">
-                        <div class="box-title"><a class="link-revenant-color" href="https://wiki.hypixel.net/Revenant_Minion">Revenant</a></div>
-                        Good but will take a long time to get money back <em><strong class="text-gray">375 DAYS</strong></em>
-                    </div>
-                </li>
-            </ol>
-            <br>
-        `,
-    },
-]
-
 const arma3Guides = [
     { // Infinite Fuel & Ammo
         title: 'Infinite Fuel & Ammo',
@@ -1949,7 +1760,7 @@ const arma3Guides = [
     },
     { // ACE ARSENAL
         title: 'ACE Arsenal',
-        subtitle: 'Snippets<br><b>WORK IN PROGRESS</b>',
+        subtitle: 'Snippets',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
         contentType: 'description',
         showTOC: false,
@@ -2041,10 +1852,6 @@ const arma3Guides = [
         subtitle: 'Ultimate',
         icon: 'https://www.justkaarlo.com/res/guides/ui/medium/link.png',
         link: 'https://antistasiultimate.com/',
-        badge: { 
-            icon: 'https://www.justkaarlo.com/res/guides/badge/antistasi-ultimate-badge-2.png',
-            position: 'right'
-        },
         contentType: 'link',
     },
     { // Antistasi Ultimate Commands
@@ -2098,7 +1905,6 @@ const arma3Guides = [
 const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
-    minecraft: mcGuides,
     arma3: arma3Guides,
     mods: mods,
     // eldenRing: eldenRingGuides,
