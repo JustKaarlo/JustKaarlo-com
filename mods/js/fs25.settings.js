@@ -4,6 +4,10 @@
     const fsContainer = document.getElementById("fs-fileList");
 
     // CUSTOM CONSTANTS
+    const excludeMapsNum = new Set([63]);
+    const numMapsArrayExclude = Array.from({ length: 100 }, (_, i) => i + 1)
+        .filter(n => !excludeMapsNum.has(n))
+        .map(n => `map-${n}`);
     const numMapsArray = Array.from({ length: 100 }, (_, i) => `map-${i + 1}`);
     const numTexturesArray = Array.from({ length: 100 }, (_, i) => `texture-${i + 1}`);
     const numOthersArray = Array.from({ length: 100 }, (_, i) => `other-${i + 1}`);
@@ -50,17 +54,19 @@
             "fs25-others",
             "fs25-mods",
             "fs25-wip",
-            ...numMapsArray,
+            ...numMapsArrayExclude,
             ...numTexturesArray,
             ...numOthersArray,
             ...numWIPArray,
         ],
         customDownloadLinks: {
+            // MODS
             "mod-1": "https://www.justkaarlo.com/download/fs25/ZZZ_FS25_FilltypesTP_for_all.zip",
             "mod-2": "https://github.com/id577/FS25_AdvancedDamageSystem/releases/latest/download/FS25_AdvancedDamageSystem.zip",
             "mod-3": "https://github.com/exekx/FS25_RealisticHarvesting/releases/latest/download/FS25_RealisticHarvesting.zip",
             "mod-4": "https://github.com/scfmod/FS25_TerraFarm/releases/latest/download/FS25_0_TerraFarm.zip",
             
+            // MAPS
             "map-63": "https://smeast1.5a7ade8d78df76bddb33a5f57aa7d05e.r2.cloudflarestorage.com/uploads/08687/lqem4pad7n9w?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=5d2726c29a75fcd1f981c5e2f14eecf8%2F20260421%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260421T152753Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22FS25_Nordic_Valley.zip%22&X-Amz-Signature=5eacddc42fe54fdfccd6c97bec0b24458595c75bf61c1c70d6b6305f602b98c8",
         },
         customWebsiteLinks: {
@@ -594,10 +600,10 @@
             },
             "map-63": {
                 images: [
-                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-1.png",
-                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-2.png",
-                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-3.png",
-                    "https://www.justkaarlo.com/res/mods/fs25/img/map-63-4.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map63-1.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map63-2.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map63-3.png",
+                    "https://www.justkaarlo.com/res/mods/fs25/img/map63-4.png",
                 ],
             },
 
