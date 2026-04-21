@@ -140,6 +140,7 @@
             "map-61": "https://www.kingmods.net/en/fs25/mods/74978/birgland",
             "map-62": "https://www.kingmods.net/en/fs25/mods/75654/lanrelas",
             "map-63": "https://discord.com/channels/816739472640442378/1482423074300100920",
+            "map-64": "https://www.kingmods.net/en/fs25/mods/73234/weipersdorf",
 
             // TEXTURES
 
@@ -606,6 +607,13 @@
                     "https://www.justkaarlo.com/res/mods/fs25/img/map63-4.png",
                 ],
             },
+            "map-64": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/weipersdorf-fs25-WY7h3.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/weipersdorf-fs25-m6hhA.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/weipersdorf-fs25-6jrtI.jpg",
+                ],
+            },
 
             // MODS
             "mod-1": {
@@ -744,7 +752,9 @@
             "1x-map": [
                 "map-10", "map-34", "map-35", "map-36", "map-37", "map-38", "map-23", "map-40", "map-42", "map-43", "map-44", "map-45", "map-46", "map-48", "map-50", "map-55", "map-56", "map-62", "map-63",
             ],
-            "2x-map": [],
+            "2x-map": [
+                "map-64",
+            ],
             "4x-map": [
                 "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-53", "map-54", "map-57", "map-52", "map-58", "map-59", "map-60", "map-61",
             ],
@@ -1171,6 +1181,12 @@
             {
                 id: "map-63",
                 name: "Nordic Valley",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-64",
+                name: "Weipersdorf",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
