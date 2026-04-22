@@ -29,12 +29,6 @@
         enableSearch: true,
         iconDefinitions: {
             "ItemFxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-side-fx.png",
-
-            // MODS
-            "Mod1FxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod1-icon.png",
-            "Mod2FxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod2-icon.png",
-            "Mod3FxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod3-icon.png",
-            "Mod4FxIcon": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod4-icon.png",
         },
         iconAssignments: {
             "ItemFxIcon": [
@@ -50,6 +44,7 @@
             "mod-2": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod2-icon.png",
             "mod-3": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod3-icon.png",
             "mod-4": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod4-icon.png",
+            "mod-5": "https://www.justkaarlo.com/res/mods/fs25/ico/custom/mod5-icon.png",
         },
         folderIconDefinitions: {},
         folderIconAssignments: {},
@@ -158,6 +153,7 @@
             "mod-2": "https://www.kingmods.net/en/fs25/mods/69590/advanced-damage-system",
             "mod-3": "https://www.kingmods.net/en/fs25/mods/73932/realistic-harvesting",
             "mod-4": "https://github.com/scfmod/FS25_TerraFarm",
+            "mod-5": "https://www.kingmods.net/en/fs25/mods/73208/mud-system-physics",
 
             // WORK IN PROGRESS
             "wip-3": "https://www.kingmods.net/en/fs25/work-in-progress/1856/rental-station",
@@ -654,6 +650,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/terrafarm-fs25-IauXp.jpg"
                 ],
             },
+            "mod-5": {
+                description: "Completely rethinks how equipment interacts with the soil during rainy weather.<br>- Wheel Behavior<br>- Surface Grip<br>- Visual Effects<br>- Vehicle Cross<br>- Country Ability<br>- Condition of Fields & Soil",
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/mud-system-physics-fs25-gdZUu.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/mud-system-physics-fs25-bL5sA.jpg",
+                ],
+            },
 
             // WORK IN PROGRESS
             "wip-1": {
@@ -790,7 +793,7 @@
                 "wip-1", "wip-2",
             ],
             "script": [
-                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3", "mod-4",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3", "mod-4", "mod-5",
             ],
         },
         customTags: {
@@ -1225,6 +1228,12 @@
             {
                 id: "mod-4",
                 name: "TerraFarm",
+                mimeType: "application/zip",
+                parentId: "fs25-mods"
+            },
+            {
+                id: "mod-5",
+                name: "Mud System Physics",
                 mimeType: "application/zip",
                 parentId: "fs25-mods"
             },
