@@ -470,7 +470,8 @@ a.btn-glassy {
     left: -2px;
     width: 36px;
     height: 36px;
-    background-image: url('https://shared.akamai.steamstatic.com/community_assets/images/items/1451190/c54be80ce1cf1f688875aa72d4f026f1e78b8f70.png');
+    /* background-image: url('https://shared.akamai.steamstatic.com/community_assets/images/items/1451190/c54be80ce1cf1f688875aa72d4f026f1e78b8f70.png'); */
+    background-image: url('https://www.justkaarlo.com/res/src/steam-avatar-frame.gif');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
