@@ -1316,7 +1316,7 @@ pre.sqf-code {
 
 .guide-description .box-green {
     border-color: rgb(155, 189, 21, 0.4);
-    background: rgba(155, 189, 21, 0.25);
+    background: rgba(155, 189, 21, 0.08);
 }
 
 .guide-description .box-hypixel-1 {

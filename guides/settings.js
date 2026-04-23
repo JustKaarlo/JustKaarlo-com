@@ -1665,6 +1665,32 @@ const fsGuides = [
             </blockquote>
         `,
     },
+    { // Goats
+        title: 'Goats',
+        subtitle: '<b>WORK IN PROGRESS</b>',
+        icon: 'https://www.justkaarlo.com/res/guides/goat.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=585',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6787be58deb9b.jpg" alt="Banner">
+            <hr>
+            <div class="box box-green"><strong>WORK IN PROGRESS</strong></div>
+        `,
+    },
+    { // Bees
+        title: 'Bees',
+        subtitle: '<b>WORK IN PROGRESS</b>',
+        icon: 'https://www.justkaarlo.com/res/guides/honey.png',
+        contentType: 'description',
+        link: 'https://www.farming-simulator.com/newsArticle.php?&news_id=341',
+        showTOC: true,
+        description: `
+            <img src="https://www.farming-simulator.com/cms/uploads/news_6229cfd50d45d.jpg" alt="Banner">
+            <hr>
+            <div class="box box-green"><strong>WORK IN PROGRESS</strong></div>
+        `,
+    },
 ];
 
 const arma3Guides = [
