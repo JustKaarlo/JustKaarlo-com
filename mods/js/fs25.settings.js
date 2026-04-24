@@ -145,6 +145,7 @@
             "map-62": "https://www.kingmods.net/en/fs25/mods/75654/lanrelas",
             "map-63": "https://discord.com/channels/816739472640442378/1482423074300100920",
             "map-64": "https://www.kingmods.net/en/fs25/mods/73234/weipersdorf",
+            "map-65": "https://www.kingmods.net/en/fs25/mods/77130/nordkirchen-map-4x",
 
             // TEXTURES
 
@@ -619,6 +620,13 @@
                     "https://www.kingmods.net/uploads/fs25/mods/weipersdorf-fs25-6jrtI.jpg",
                 ],
             },
+            "map-65": {
+                images: [
+                    "https://www.kingmods.net/uploads/fs25/mods/nordkirchen-map-4x-fs25-KbSxd.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/nordkirchen-map-4x-fs25-ani8T.jpg",
+                    "https://www.kingmods.net/uploads/fs25/mods/nordkirchen-map-4x-fs25-5YGyK.jpg",
+                ],
+            },
 
             // MODS
             "mod-1": {
@@ -754,7 +762,7 @@
                 "map-1", "map-50",
             ],
             "top3": [
-                "map-17",
+                "map-17", "map-65",
             ],
             "top4": [
                 "map-7", "map-15","map-16", "map-13", "map-14", "map-21", "map-48", "map-54", "map-52", "map-59", "map-61", "map-63",
@@ -768,7 +776,7 @@
                 "map-64",
             ],
             "4x-map": [
-                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-53", "map-54", "map-57", "map-52", "map-58", "map-59", "map-60", "map-61",
+                "map-1", "map-2", "map-3", "map-4", "map-6", "map-7", "map-11", "map-8", "map-9", "map-12", "map-13", "map-14", "map-15", "map-16", "map-17", "map-18", "map-19", "map-20", "map-21", "map-22", "map-24", "map-25", "map-26", "map-27", "map-28", "map-29", "map-30", "map-31", "map-32", "map-33", "map-39", "map-41", "map-47", "map-49", "map-51", "map-53", "map-54", "map-57", "map-52", "map-58", "map-59", "map-60", "map-61", "map-65",
             ],
             "16x-map": [
                 "map-5",
@@ -1199,6 +1207,18 @@
             {
                 id: "map-64",
                 name: "Weipersdorf",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-64",
+                name: "Weipersdorf",
+                mimeType: "application/zip",
+                parentId: "fs25-maps"
+            },
+            {
+                id: "map-65",
+                name: "Nordkirchen 4x",
                 mimeType: "application/zip",
                 parentId: "fs25-maps"
             },
