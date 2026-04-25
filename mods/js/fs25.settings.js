@@ -65,6 +65,9 @@
             ...numTexturesArray,
             ...numOthersArray,
             ...numWIPArray,
+
+            // MODS
+            "mod-5",
         ],
         customDownloadLinks: {
             // MODS
@@ -161,8 +164,7 @@
             "wip-4": "https://www.kingmods.net/en/fs25/work-in-progress/1916/production-extension",
             "wip-5": "https://www.kingmods.net/en/fs25/work-in-progress/1909/advanced-employee-manager",
             "wip-6": "https://www.kingmods.net/en/fs25/work-in-progress/1978/crop-diseases",
-            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1976/oil-maintenance",
-            "wip-8": "https://www.kingmods.net/en/fs25/work-in-progress/1970/skill-tree",
+            "wip-7": "https://www.kingmods.net/en/fs25/work-in-progress/1970/skill-tree",
         },
         tooltipData: {
             // MAPS
@@ -709,13 +711,6 @@
             },
             "wip-7": {
                 images: [
-                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-mPnQf.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-g8XqA.jpg",
-                    "https://www.kingmods.net/uploads/fs25/wips/oil-maintenance-fs25-p6RCW.jpg",
-                ],
-            },
-            "wip-8": {
-                images: [
                     "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-lhdhX.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-GAyqH.jpg",
                     "https://www.kingmods.net/uploads/fs25/wips/skill-tree-fs25-ziKcO.jpg",
@@ -794,14 +789,12 @@
             ],
 
             // WORK IN PROGRESS
-            "archived": [
-                "wip-7",
-            ],
+            "archived": [],
             "map": [
                 "wip-1", "wip-2",
             ],
             "script": [
-                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "wip-8", "mod-3", "mod-4", "mod-5",
+                "wip-3", "wip-4", "wip-5", "mod-2", "wip-6", "mod-3", "mod-4", "mod-5", "wip-7",
             ],
         },
         customTags: {
@@ -1299,12 +1292,6 @@
             },
             {
                 id: "wip-7",
-                name: "Oil Maintenance",
-                mimeType: "application/zip",
-                parentId: "fs25-wip"
-            },
-            {
-                id: "wip-8",
                 name: "Skill Tree",
                 mimeType: "application/zip",
                 parentId: "fs25-wip"
@@ -1340,7 +1327,7 @@
                 name: "Work In Progress",
                 mimeType: "application/vnd.google-apps.folder",
                 icon: "https://www.justkaarlo.com/res/mods/fs25/ico/fs25-wip-2.png",
-            }
+            },
         ],
     });
     attachDocPreview(fsContainer);
