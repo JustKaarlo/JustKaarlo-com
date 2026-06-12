@@ -1949,7 +1949,7 @@ const gzwGuides = [
         contentType: 'description',
         showTOC: true,
         description: `
-            <img src="https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0f/Handshake_banner.png/revision/latest?cb=20260329094222" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/guides/img/vendor-banners/handshake-banner.png" alt="Banner">
             <span data-toc="Sells"></span>
             <div class="box box-gzw">
                 <div class="box-title">Sells</div>
