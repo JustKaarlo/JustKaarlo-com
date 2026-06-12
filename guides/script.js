@@ -398,7 +398,7 @@ const GuideSystem = {
         );
 
         if (tocElements.length === 0) {
-            tocContent.innerHTML = '<p style="color: #999; padding: 10px;">No sections found</p>';
+            tocContent.innerHTML = '<p style="color: #999; padding: 10px;">No Sections Found</p>';
             return;
         }
 

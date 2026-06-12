@@ -1938,6 +1938,152 @@ const arma3Guides = [
 const gzwGuides = [
     {
         type: 'section',
+        title: 'Vendors',
+        subtitle: `━━━━━━━`
+    },
+    {
+        title: 'Handshake',
+        subtitle: 'Equipment',
+        icon: '../res/guides/ui/medium/vendors/handshake.png',
+        link: 'https://gzwloadout.com/vendors/handshake',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <img src="https://static.wikia.nocookie.net/gray-zone-warfare/images/0/0f/Handshake_banner.png/revision/latest?cb=20260329094222" alt="Banner">
+            <span data-toc="Sells"></span>
+            <div class="box box-gzw">
+                <div class="box-title">Sells</div>
+                <span class="badge">Helmets</span> <span class="badge">Glasses</span> <span class="badge">Hats</span> <span class="badge">Headphones</span> <span class="badge">Plate Carriers</span> <span class="badge">Vests</span> <span class="badge">Backpacks</span> <span class="badge">Belts</span> <span class="badge">Tactical Rigs</span> <span class="badge">Tools</span>
+            </div>
+
+            <div class="tabs" data-tabs>
+                <div class="tab-list">
+                    <button class="tab-btn active" data-tab="tab-handshake-r1">Rank 1</button>
+                    <button class="tab-btn" data-tab="tab-handshake-r2">Rank 2</button>
+                    <button class="tab-btn" data-tab="tab-handshake-r3">Rank 3</button>
+                    <button class="tab-btn" data-tab="tab-handshake-r4">Rank 4</button>
+                </div>
+                <div class="tab-pane active" id="tab-handshake-r1">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab-handshake-r2">
+                    <b>Work In Progress</b>
+                </div>
+                <div class="tab-pane active" id="tab-handshake-r3">
+                    <b>Work In Progress</b>
+                </div>
+                <div class="tab-pane" id="tab-handshake-r4">
+                    <b>Work In Progress</b>
+                </div>
+            </div>
+
+            <div class="box"><b>Work In Progress</b></div>
+            <div class="modal-width-container-spec-1"></div>
+        `,
+    },
+    {
+        type: 'section',
         title: 'Tasks',
         subtitle: `
             <b>Task Types</b>
@@ -1956,7 +2102,7 @@ const gzwGuides = [
     },
     {
         title: 'Handshake',
-        subtitle: 'Equipment',
+        subtitle: 'Lewis Pell',
         icon: '../res/guides/ui/medium/vendors/handshake.png',
         link: 'https://gray-zone-warfare.fandom.com/wiki/Handshake',
         contentType: 'description',
