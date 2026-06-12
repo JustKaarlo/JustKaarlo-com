@@ -91,6 +91,25 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         url('../res/guides/bg/arma-bg.png');
 }
 
+#bg-grayzone {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    pointer-events: none;
+    background-blend-mode: darken;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+        linear-gradient(rgba(45, 61, 91, 0.3), rgba(54, 26, 25, 0.3)),
+        url('../res/bg/grayzone.png');
+}
+
 #particles-js {
     position: fixed;
     inset: 0;

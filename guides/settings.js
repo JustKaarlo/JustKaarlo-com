@@ -13,6 +13,13 @@ const guides = [
         link: 'https://www.justkaarlo.com/guides/arma3',
         contentType: 'link'
     },
+    { // Gray Zone Warfare
+        title: 'Gray Zone Warfare',
+        subtitle: 'Guides',
+        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/grayzone.png',
+        link: 'https://www.justkaarlo.com/guides/grayzone',
+        contentType: 'link'
+    },
 ];
 
 const mods = [
@@ -1928,10 +1935,152 @@ const arma3Guides = [
     },
 ]
 
+const gzwGuides = [
+    {
+        type: 'section',
+        title: 'Tasks',
+        subtitle: `
+            <b>Task Types</b>
+            <br>• <b>Main</b> Primary means of advancing the plot and uncovering the secrets surrounding Lamang.
+            <br>• <b>Side</b> Side tasks serve to develop relationships with vendor and provide additional information that is not crucial to<br>         advancing the plot. Some side tasks are hidden. To trigger these tasks, the player must find them in the world.
+            <br>• <b>Contracts</b> Contracts are short tasks vendors assign when they need something done quickly.
+            <br><br>
+            <b>Repeatable Tasks</b>
+            <br>• Every tasks outside of the starter region can be repeated as much as the player wants.
+            <br>• Everytime a task is completed, it gives a new task from a pool of possible task to the player.
+            <br>• If the player fail a task, the tasks will be sent back into the pool of possible task after at least 20 minutes.
+            <br>• Rewards after the first completion are lower than the first completion rewards.
+            <br>
+            ━━━━━━━
+        `
+    },
+    {
+        title: 'Handshake',
+        subtitle: 'Equipment',
+        icon: '../res/guides/ui/medium/vendors/handshake.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Handshake',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="modal-width-container-max"></div>
+            <div class="tabs" data-tabs>
+                <div class="tab-list task-types">
+                    <button class="tab-btn active" data-tab="tab-main"><span class="text-medium-header main">Main</span></button>
+                    <button class="tab-btn" data-tab="tab-side"><span class="text-medium-header side">Side</span></button>
+                    <button class="tab-btn" data-tab="tab-contracts"><span class="text-medium-header contract">Contracts</span></button>
+                </div>
+                <div class="tab-pane active" id="tab-main">
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Objectives</th>
+                            <th>Rewards</th>
+                            <th>Area</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="https://gray-zone-warfare.fandom.com/wiki/First_Recon" class="btn-action btn-small" id="gzw-btn-1">First Recon</a>
+                            </td>
+                            <td>
+                                <span class="text-small">• Check the landing zone</span><br>
+                                <span class="text-small">• Check the shack on the outskirts</span><br>
+                                <span class="text-small">• Check the roadblock on the bridge</span><br>
+                                <span class="text-small">• Check the area around the gas station</span><br>
+                            </td>
+                            <td>
+                                <span class="text-small">• 225</span> <span class="text-small gzw-exp">Exp</span><br>
+                                <span class="text-small">• </span> <span class="text-small gzw-rep">+250</span> <span class="text-small">Reputation</span><br>
+                                <span class="text-small">• $400</span> <span class="text-small gzw-exp">USD</span><br>
+                            </td>
+                            <td>
+                                <img class="image-small" src="../res/guides/img/task-locations/first-recon.png" alt="First Recon Map">
+                                <a href="https://gzwtacmap.com/maps/lamang/tasks/first-recon"><span class="text-small gzw-exp">Kiu Vongsa</span></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab-side">
+                    <p></p>
+                </div>
+                <div class="tab-pane" id="tab-contracts">
+                    <p></p>
+                </div>
+            </div>
+        `,
+    },
+    {
+        title: 'Gunny',
+        subtitle: 'NATO Weapons',
+        icon: '../res/guides/ui/medium/vendors/gunny.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Gunny',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+    {
+        title: 'Lab Rat',
+        subtitle: 'Medical Supplies',
+        icon: '../res/guides/ui/medium/vendors/labrat.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Lab_Rat',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+    {
+        title: 'Artisan',
+        subtitle: 'Eastern Weapons',
+        icon: '../res/guides/ui/medium/vendors/artisan.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Artisan',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+    {
+        title: 'Turncoat',
+        subtitle: 'AK Variants',
+        icon: '../res/guides/ui/medium/vendors/turncoat.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Turncoat',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+    {
+        title: 'Banshee',
+        subtitle: 'High-Tech',
+        icon: '../res/guides/ui/medium/vendors/banshee.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Banshee',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+    {
+        title: 'Vulture',
+        subtitle: 'Weekly Rotation',
+        icon: '../res/guides/ui/medium/vendors/vulture.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Vulture',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <div class="box"><b>Work In Progress</b></div>
+        `,
+    },
+]
+
 const GuideConfigs = {
     main: guides,
     fs25: fsGuides,
     arma3: arma3Guides,
+    grayzone: gzwGuides,
     mods: mods,
     // eldenRing: eldenRingGuides,
 
