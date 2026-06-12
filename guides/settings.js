@@ -1962,11 +1962,13 @@ const gzwGuides = [
                     <button class="tab-btn" data-tab="tab-handshake-r2">Rank 2</button>
                     <button class="tab-btn" data-tab="tab-handshake-r3">Rank 3</button>
                     <button class="tab-btn" data-tab="tab-handshake-r4">Rank 4</button>
+                    <button class="tab-btn" data-tab="tab-handshake-rall">All</button>
                 </div>
                 <div class="tab-pane active" id="tab-handshake-r1">
                     <table>
                         <tr>
                             <td>
+                                <b>Helmets</b> <span class="text-small gzw-gray">(1)</span>
                                 <div class="cards">
                                     <div class="card">
                                         <div class="card-title"><span class="badge badge-gzw"></span></div>
@@ -2068,13 +2070,424 @@ const gzwGuides = [
                     </table>
                 </div>
                 <div class="tab-pane" id="tab-handshake-r2">
-                    <b>Work In Progress</b>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Helmets</b> <span class="text-small gzw-gray">(4)</span>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="tab-pane active" id="tab-handshake-r3">
-                    <b>Work In Progress</b>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Helmets</b> <span class="text-small gzw-gray">(4)</span>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="tab-pane" id="tab-handshake-r4">
-                    <b>Work In Progress</b>
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Helmets</b> <span class="text-small gzw-gray">(7)</span>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab-handshake-rall">
+                    <table>
+                        <tr>
+                            <td>
+                                <b>Helmets</b> <span class="text-small gzw-gray">(16)</span>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="cards">
+                                    <div class="card">
+                                        <div class="card-title"><span class="badge badge-gzw"></span></div>
+                                        <div class="card-body"></div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
