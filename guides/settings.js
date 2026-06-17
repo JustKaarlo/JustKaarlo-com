@@ -1936,7 +1936,7 @@ const arma3Guides = [
 ]
 
 const gzwGuides = [
-    {
+    /* {
         type: 'section',
         title: 'Vendors',
         subtitle: `━━━━━━━`
@@ -1994,26 +1994,143 @@ const gzwGuides = [
                 </div>
             </div>
         `,
+    }, */
+    {
+        type: 'section',
+        title: 'Resources',
+        subtitle: `━━━━━━━`
+    },
+    {
+        title: 'Ballistics',
+        subtitle: 'Information',
+        icon: '../res/guides/ui/medium/bullet.png',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <img src="../res/guides/img/gzw-ballistics-banner.png" alt="Banner">
+            <span data-toc="Top" data-toc-level="h1"></span>
+            <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/vendors" class="btn-action-gzw">Vendors</a>
+            <div class="box">
+                <b>...</b>
+            </div>
+            <hr>
+            <h2>Calibers</h2>
+            <div class="tabs" data-tabs>
+                <div class="tab-list task-types">
+                    <button class="tab-btn active" data-tab="tab-556x45">5.56x45mm</button>
+                    <button class="tab-btn" data-tab="tab-fill">...</button>
+                </div>
+                <div class="tab-pane active" id="tab-556x45">
+                    <h4>Early-Game</h4>
+                    <h4>Late-Game</h4>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Caliber</th>
+                            <th>Vendor</th>
+                        </tr>
+                        <tr>
+                            <td><img class="ammo" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/ammo_m855_a1_556x45.png" alt="desc"></td>
+                            <td>5.56x45mm AP (M855A1)</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="ammo" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/ammo_m995_556x45.png" alt="desc"></td>
+                            <td>5.56x45mm AP (M995)</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV4</span></td>
+                        </tr>
+                    </table>
+                    <h4>Overall Best</h4>
+                </div>
+                <div class="tab-pane" id="tab-fill">...</div>
+            </div>
+        `,
     },
     {
         type: 'section',
-        title: 'Tasks',
-        subtitle: `
-            <b>Task Types</b>
-            <br>• <b>Main</b> Primary means of advancing the plot and uncovering the secrets surrounding Lamang.
-            <br>• <b>Side</b> Side tasks serve to develop relationships with vendor and provide additional information that is not crucial to<br>         advancing the plot. Some side tasks are hidden. To trigger these tasks, the player must find them in the world.
-            <br>• <b>Contracts</b> Contracts are short tasks vendors assign when they need something done quickly.
-            <br><br>
-            <b>Repeatable Tasks</b>
-            <br>• Every tasks outside of the starter region can be repeated as much as the player wants.
-            <br>• Everytime a task is completed, it gives a new task from a pool of possible task to the player.
-            <br>• If the player fail a task, the tasks will be sent back into the pool of possible task after at least 20 minutes.
-            <br>• Rewards after the first completion are lower than the first completion rewards.
-            <br>
-            ━━━━━━━
-        `
+        title: 'Notes',
+        subtitle: `━━━━━━━`
     },
     {
+        title: 'Tasks',
+        subtitle: 'Information',
+        icon: '../res/guides/ui/medium/tasks.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Tasks',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <img src="../res/guides/img/gzw-tasks-banner.png" alt="Banner">
+            <span data-toc="Top" data-toc-level="h1"></span>
+            <div class="box">
+                <b>Quick information about tasks...</b>
+            </div>
+            <hr>
+            <h2>Task Types</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <span data-toc="Main Tasks" data-toc-level="h3"></span>
+                    <b><span class="text-gzw-1">Main Tasks</span></b><br>
+                      Primary means of advancing the plot and uncovering the secrets surrounding Lamang.
+                    <br><br>
+                    <span data-toc="Side Tasks" data-toc-level="h3"></span>
+                    <b><span class="text-gzw-1">Side Tasks</span></b><br>
+                      Side tasks serve to develop relationships with vendor and provide additional information that is not crucial to advancing the plot.<br>
+                      Some side tasks are hidden. To trigger these tasks, the player must find them in the world.
+                    <br><br>
+                    <span data-toc="Contracts" data-toc-level="h3"></span>
+                    <b><span class="text-gzw-1">Contracts</span></b><br>
+                      Contracts are short tasks vendors assign when they need something done quickly.
+                    <br><br>
+                    <span data-toc="Long-Term Contracts" data-toc-level="h3"></span>
+                    <b><span class="text-gzw-1">Long-Term Contracts</span></b><br>
+                      extensive assignments that may require the player to search for specific items, investigate remote locations, or<br>
+                      eliminate targets across regions.
+                    <br><br>
+                      Unlike other task types, long-term contracts are not displayed directly on the tactical map; instead,<br>
+                      they appear in a separate panel on its edge.
+                    <br><br>
+                      New long-term contracts are made available as the player unlocks new regions of the world.
+                </div>
+            </div>
+            <hr>
+            <h2>Repeatable Tasks</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <ul>
+                        <li>
+                            Every tasks outside of the starter region can be repeated as much as the player wants.
+                        </li>
+                        <li>
+                            Everytime a task is completed, it gives a new task from a pool of possible task to the player.
+                        </li>
+                        <li>
+                            If the player fail a task, the tasks will be sent back into the pool of possible task after at least 20 minutes.
+                        </li>
+                        <li>
+                            Rewards after the first completion are lower than the first completion rewards.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <h2>Task Items</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    Some items only spawn if the respective task is active. These items fall in the <a class="gzw" href="https://gray-zone-warfare.fandom.com/wiki/Category:Task_Item">task items category</a> and cannot be used, sold or discarded.
+                    <ul>
+                        <li>
+                            Tasks items are guaranteed to spawn, so each player in the same server with the same quest active can pick it up.
+                        </li>
+                        <li>
+                            When picked up, quest items are transferred to the player inventory (backpack/belt/vest). The player need<br>
+                            to survive up to a <a class="gzw" href="https://gray-zone-warfare.fandom.com/wiki/Locations#Combat_Outpost">Combat Outpost</a> or the main base to handover the item to the designated vendor.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        `,
+    },
+    /*{
         title: 'Handshake',
         subtitle: 'Lewis Pell',
         icon: '../res/guides/ui/medium/vendors/handshake.png',
@@ -2066,73 +2183,15 @@ const gzwGuides = [
                 </div>
             </div>
         `,
-    },
-    {
-        title: 'Gunny',
-        subtitle: 'NATO Weapons',
-        icon: '../res/guides/ui/medium/vendors/gunny.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Gunny',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
-    {
-        title: 'Lab Rat',
-        subtitle: 'Medical Supplies',
-        icon: '../res/guides/ui/medium/vendors/labrat.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Lab_Rat',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
-    {
-        title: 'Artisan',
-        subtitle: 'Eastern Weapons',
-        icon: '../res/guides/ui/medium/vendors/artisan.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Artisan',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
-    {
-        title: 'Turncoat',
-        subtitle: 'AK Variants',
-        icon: '../res/guides/ui/medium/vendors/turncoat.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Turncoat',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
-    {
-        title: 'Banshee',
-        subtitle: 'High-Tech',
-        icon: '../res/guides/ui/medium/vendors/banshee.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Banshee',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
-    {
-        title: 'Vulture',
-        subtitle: 'Weekly Rotation',
-        icon: '../res/guides/ui/medium/vendors/vulture.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Vulture',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="box"><b>Work In Progress</b></div>
-        `,
-    },
+    },*/
+    /*
+        Gunny       NATO Weapons
+        Rat         Medical Supplies
+        Artisan     Eastern Weapons
+        Turncoat    AK Variants
+        Banshee     High-Tech
+        Vulture     Weekly Rotation
+    */
 ]
 
 const GuideConfigs = {

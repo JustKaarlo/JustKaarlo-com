@@ -425,8 +425,17 @@ const GuideSystem = {
             el.id = sectionId;
 
             // TOC level class
-            let levelClass = 'toc-custom';
-            if (!isCustom) {
+            let levelClass;
+
+            if (isCustom) {
+                const tocLevel = el.getAttribute('data-toc-level');
+
+                if (tocLevel && /^h[1-6]$/i.test(tocLevel)) {
+                    levelClass = `toc-${tocLevel.toLowerCase()}`;
+                } else {
+                    levelClass = 'toc-custom';
+                }
+            } else {
                 levelClass = `toc-${el.tagName.toLowerCase()}`;
             }
 
