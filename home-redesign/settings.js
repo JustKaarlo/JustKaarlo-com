@@ -21,8 +21,8 @@ const SITE_CONFIG = {
     github: {
         enabled: true,
         owner: "JustKaarlo", // GitHub username or organization
-        repo: "JustKaarlo.com", // Repository name
-        branch: "main", // Default branch
+        repo: "justkaarlo.github.io", // Repository name
+        branch: "Home", // Default branch
         apiBaseUrl: "https://api.github.com",
         token: null // Leave null for public repos, add token if needed for private
     },
@@ -79,7 +79,7 @@ const SITE_CONFIG = {
         enabled: true,
         title: "Latest",
         subtitle: "Pages That Was Recently Updated",
-        maxItems: 5,
+        maxItems: 3,
         autoRefresh: true,
         refreshInterval: 600000, // 10 minutes
         cacheKey: "recentlyUpdatedCommits"
