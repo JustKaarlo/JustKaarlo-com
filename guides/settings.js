@@ -2209,6 +2209,53 @@ const gzwGuides = [
         `,
     },
     {
+        title: 'Mines & Tripwires',
+        subtitle: 'Handy-Notes',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/tripmine.png',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <span data-toc="Top" data-toc-level="h2"></span>
+            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/mines.png" alt="Banner">
+            <div class="box">
+                Mines and tripwires are environmental hazards that cause instant death or trigger traps.<br>
+                They are placed around Main Operating Bases, major Combat Outposts, specific mission areas<br>
+                (like the Troll Bridge west of Tiger Bay), and are randomly hidden on paths near campsites.
+            </div>
+            <hr>
+            <h2>Locations</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <b><span class="text-gzw-1">Main Bases & COPs</span></b><br>
+                      Automatically triggered if an enemy player attempts to breach or bypass the main base entrances.
+                    <br>
+                    <b><span class="text-gzw-1">Mission Areas</span></b><br>
+                      Known missions like "Troll Bridge" feature explicitly trapped/mined bridges leading to objective areas.
+                    <br>
+                    <b><span class="text-gzw-1">Randomized Tripwires</span></b><br>
+                      Scattered around LLA areas, campsites, and hidden docks (e.g., near Ban Pa)
+                </div>
+            </div>
+            <hr>
+            <h2>How to Survive & Defuse</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <b><span class="text-gzw-1">Tripwires</span></b><br>
+                      You can hear a distinct "click" when walking through them. If you hear it,<br>
+                      sprint away immediately.
+                    <br>
+                    <b><span class="text-gzw-1">Defusing</span></b><br>
+                      If equipped with a Multitool, you can crouch down, look directly at the wire<br>
+                      or a stick, and hold the interact key to safely disarm it.
+                    <br>
+                    <b><span class="text-gzw-1">Map Awareness</span></b><br>
+                      Because traps are incredibly difficult to spot in the brush, it is highly recommended to<br>
+                      use the <a class="gzw" href="https://mapgenie.io/gray-zone-warfare">Gray Zone Warfare Map on MapGenie</a> to check boundaries and avoid known danger zones.
+                </div>
+            </div>
+        `,
+    },
+    {
         type: 'section',
         title: 'Third-Party Links',
         subtitle: `━━━━━━━`
