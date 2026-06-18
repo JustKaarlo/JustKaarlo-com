@@ -75,7 +75,9 @@ const SITE_CONFIG = {
         
         // Files and folders to scan for updates
         monitoredLocations: [
-            "/guides/settings.js",
+            "/guides/",
+            "/mods/",
+            "/home-redesign/"
         ],
         
         // File extensions to monitor
@@ -89,7 +91,7 @@ const SITE_CONFIG = {
         excludeFolders: [],
         
         // Update check method
-        updateCheckMethod: "file-hash" // "file-hash" or "last-modified"
+        updateCheckMethod: "last-modified" // "file-hash" or "last-modified"
     },
 
     // ========================================================================
@@ -217,17 +219,18 @@ class RecentlyUpdatedManager {
      */
     scanSiteForFiles() {
         const commonFiles = [
-            "*",
+            "/index.html",
+            "/home.html",
+
             "/guides/grayzone.html",
             "/guides/arma3.html",
             "/guides/fs25.html",
 
-
             "/mods/elden-ring.html",
             "/mods/fs25.html",
 
-            "/.internal/.experimental/home-redesign/home.html",
-            "/.internal/.experimental/home-redesign/settings.js"
+            "/home-redesign/home.html",
+            "/home-redesign/settings.js"
         ];
 
         this.allFiles = {};
