@@ -1943,7 +1943,7 @@ const gzwGuides = [
     },
     {
         title: 'Ballistics',
-        subtitle: 'Handy-Notes',
+        subtitle: 'Information',
         icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/bullet.png',
         contentType: 'description',
         showTOC: true,
@@ -1959,10 +1959,10 @@ const gzwGuides = [
             <div class="tabs" data-tabs>
                 <div class="tab-list task-types">
                     <button class="tab-btn active" data-tab="tab-556x45">5.56x45mm</button>
+                    <button class="tab-btn" data-tab="tab-545x39">5.45x39mm</button>
                     <button class="tab-btn" data-tab="tab-fill">...</button>
                 </div>
                 <div class="tab-pane active" id="tab-556x45">
-                    <span class="text-tiny gzw-gray">Sorted From Best to Worse</span>
                     <table>
                         <tr>
                             <th>Tier</th>
@@ -2009,15 +2009,36 @@ const gzwGuides = [
                             <td>Tracer M856</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
+
+                        <tr>
+                            <td><span class="badge badge-c">C</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-fmj.png" alt="FMJ"></td>
+                            <td>FMJ</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="badge badge-f">F</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-hpbt.png" alt="HPBT"></td>
+                            <td>HPBT</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-f">F</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-sp.png" alt="SP"></td>
+                            <td>SP</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
+                        </tr>
                     </table>
                 </div>
+                <div class="tab-pane" id="tab-545x39">Work In Progress</div>
                 <div class="tab-pane" id="tab-fill">Work In Progress</div>
             </div>
         `,
     },
     {
         title: 'Tasks',
-        subtitle: 'Information',
+        subtitle: 'Handy-Notes',
         icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/tasks.png',
         link: 'https://gray-zone-warfare.fandom.com/wiki/Tasks',
         contentType: 'description',
@@ -2101,12 +2122,34 @@ const gzwGuides = [
     },
     {
         title: 'Vendors',
-        subtitle: 'Equipment',
+        subtitle: 'GZWLoadout.com',
         icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/cart.png',
         contentType: 'link',
         link: 'https://gzwloadout.com/vendors',
         badge: {
             icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/gzwloadout-com.png',
+            position: 'right'
+        }
+    },
+    {
+        title: 'Items',
+        subtitle: 'GZWItems.com',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/items.png',
+        contentType: 'link',
+        link: 'https://gzwitems.com/',
+        badge: {
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/gzwitems-com.png',
+            position: 'right'
+        }
+    },
+    {
+        title: 'Interactive Map',
+        subtitle: 'GZWTacMap.com',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/location.png',
+        contentType: 'link',
+        link: 'https://gzwtacmap.com/maps/lamang',
+        badge: {
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/gzwtacmap-com.png',
             position: 'right'
         }
     },
