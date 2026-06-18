@@ -78,3 +78,18 @@ if (logoCard && logoCardConfig.enableMouseTracking) {
         logoCard.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) scale(${logoCardConfig.normalScale})`;
     });
 }
+
+// Modal close on background click
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('commit-details-modal');
+    if (e.target === modal) {
+        closeCommitDetailsModal();
+    }
+});
+
+// Keyboard escape to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCommitDetailsModal();
+    }
+});

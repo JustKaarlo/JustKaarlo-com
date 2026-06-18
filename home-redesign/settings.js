@@ -13,11 +13,22 @@ const SITE_CONFIG = {
         domain: "justkaarlo.com",
         author: "JustKaarlo",
         defaultLanguage: "en",
-        siteRoot: "/" // Root directory for scanning files
     },
 
     // ========================================================================
-    // MAIN NAVIGATION SETTINGS (NOT FOR TOP NAV - FOR CONTENT SECTION)
+    // GITHUB SETTINGS - FOR RECENT COMMITS
+    // ========================================================================
+    github: {
+        enabled: true,
+        owner: "JustKaarlo", // GitHub username or organization
+        repo: "JustKaarlo.com", // Repository name
+        branch: "main", // Default branch
+        apiBaseUrl: "https://api.github.com",
+        token: null // Leave null for public repos, add token if needed for private
+    },
+
+    // ========================================================================
+    // MAIN NAVIGATION SETTINGS
     // ========================================================================
     navigation: {
         items: [
@@ -62,37 +73,16 @@ const SITE_CONFIG = {
     },
 
     // ========================================================================
-    // RECENTLY UPDATED SECTION SETTINGS - AUTO-SCANS ALL FILES
+    // RECENTLY UPDATED SECTION SETTINGS - FROM GITHUB COMMITS
     // ========================================================================
     recentlyUpdated: {
         enabled: true,
         title: "Latest",
         subtitle: "Pages That Was Recently Updated",
-        maxItems: 2, // Maximum number of recently updated items to display
+        maxItems: 5,
         autoRefresh: true,
-        refreshInterval: 10000, // 10 minutes in milliseconds (600000ms)
-        cacheKey: "recentlyUpdatedPages",
-        
-        // Files and folders to scan for updates
-        monitoredLocations: [
-            "/guides/",
-            "/mods/",
-            "/home-redesign/",
-            "/home.html"
-        ],
-        
-        // File extensions to monitor
-        monitoredExtensions: [
-            ".html",
-            ".css",
-            ".js"
-        ],
-        
-        // Folders to exclude from scanning
-        excludeFolders: [],
-        
-        // Update check method
-        updateCheckMethod: "last-modified" // "file-hash" or "last-modified"
+        refreshInterval: 600000, // 10 minutes
+        cacheKey: "recentlyUpdatedCommits"
     },
 
     // ========================================================================
@@ -165,200 +155,94 @@ const SITE_CONFIG = {
 };
 
 // ============================================================================
-// AUTOMATIC RECENTLY UPDATED DETECTION SYSTEM WITH FULL SITE SCANNING
+// GITHUB COMMITS MANAGER - FETCHES LATEST COMMITS AND FILE CHANGES
 // ============================================================================
 
-class RecentlyUpdatedManager {
+class GitHubCommitsManager {
     constructor(config) {
-        this.config = config.recentlyUpdated;
-        this.siteRoot = config.site.siteRoot;
-        this.allFiles = {};
-        this.checksums = {};
+        this.config = config.github;
+        this.recentlyUpdatedConfig = config.recentlyUpdated;
+        this.apiBaseUrl = config.github.apiBaseUrl;
+        this.commits = [];
+        this.selectedCommit = null;
         this.updateCallback = null;
         this.init();
     }
 
     init() {
         if (!this.config.enabled) return;
+        this.fetchLatestCommits();
 
-        this.loadChecksumsFromCache();
-        this.scanSiteForFiles();
-        this.checkForUpdates();
-
-        if (this.config.autoRefresh) {
-            setInterval(() => this.checkForUpdates(), this.config.refreshInterval);
+        if (this.recentlyUpdatedConfig.autoRefresh) {
+            setInterval(() => this.fetchLatestCommits(), this.recentlyUpdatedConfig.refreshInterval);
         }
     }
 
     /**
-     * Load cached checksums from localStorage
+     * Fetch latest commits from GitHub
      */
-    loadChecksumsFromCache() {
-        const cached = localStorage.getItem(this.config.cacheKey);
-        if (cached) {
-            try {
-                this.checksums = JSON.parse(cached);
-            } catch (e) {
-                console.error("Error parsing cached checksums:", e);
+    async fetchLatestCommits() {
+        try {
+            const url = `${this.apiBaseUrl}/repos/${this.config.owner}/${this.config.repo}/commits?per_page=${this.recentlyUpdatedConfig.maxItems}`;
+            
+            const headers = {};
+            if (this.config.token) {
+                headers['Authorization'] = `token ${this.config.token}`;
             }
-        }
-    }
 
-    /**
-     * Save checksums to localStorage
-     */
-    saveChecksumsToCache() {
-        try {
-            localStorage.setItem(this.config.cacheKey, JSON.stringify(this.checksums));
-        } catch (e) {
-            console.error("Error saving checksums to cache:", e);
-        }
-    }
+            const response = await fetch(url, { headers });
 
-    /**
-     * Scan the site for all files (common pages and directories)
-     */
-    scanSiteForFiles() {
-        const commonFiles = [
-            "../index.html",
-            "../home.html",
+            if (!response.ok) {
+                console.error(`GitHub API error: ${response.status}`);
+                return;
+            }
 
-            "/guides/grayzone.html",
-            "/guides/arma3.html",
-            "/guides/fs25.html",
+            const data = await response.json();
+            this.commits = data;
 
-            "/mods/elden-ring.html",
-            "/mods/fs25.html",
+            if (this.updateCallback) {
+                this.updateCallback(this.commits);
+            }
 
-            "/home-redesign/home.html",
-            "/home-redesign/settings.js"
-        ];
-
-        this.allFiles = {};
-        commonFiles.forEach(file => {
-            this.allFiles[file] = {
-                path: file,
-                name: this.extractPageName(file)
-            };
-        });
-    }
-
-    /**
-     * Extract a display-friendly name from file path
-     */
-    extractPageName(filePath) {
-        const parts = filePath.split('/').filter(p => p);
-        const fileName = parts[parts.length - 1];
-        
-        if (fileName === 'index.html' || fileName === 'home.html') {
-            if (parts.length === 1) return 'Home';
-            return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
-        }
-        
-        return fileName.replace('.html', '').charAt(0).toUpperCase() + fileName.replace('.html', '').slice(1);
-    }
-
-    /**
-     * Generate SHA-256 hash of content
-     */
-    async generateHash(content) {
-        try {
-            const encoder = new TextEncoder();
-            const data = encoder.encode(content);
-            const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+            return this.commits;
         } catch (error) {
-            console.error("Error generating hash:", error);
+            console.error("Error fetching commits from GitHub:", error);
+            return [];
+        }
+    }
+
+    /**
+     * Get detailed information about a specific commit including file changes
+     */
+    async getCommitDetails(commitSha) {
+        try {
+            const url = `${this.apiBaseUrl}/repos/${this.config.owner}/${this.config.repo}/commits/${commitSha}`;
+            
+            const headers = {};
+            if (this.config.token) {
+                headers['Authorization'] = `token ${this.config.token}`;
+            }
+
+            const response = await fetch(url, { headers });
+
+            if (!response.ok) {
+                console.error(`GitHub API error: ${response.status}`);
+                return null;
+            }
+
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error("Error fetching commit details:", error);
             return null;
         }
-    }
-
-    /**
-     * Fetch a file and generate its checksum
-     */
-    async getFileChecksum(filePath) {
-        try {
-            const response = await fetch(filePath);
-            if (!response.ok) return null;
-            const content = await response.text();
-            return await this.generateHash(content);
-        } catch (error) {
-            console.warn(`Error fetching ${filePath}:`, error);
-            return null;
-        }
-    }
-
-    /**
-     * Check all monitored files for updates
-     */
-    async checkForUpdates() {
-        const updatedPages = [];
-
-        for (const [filePath, fileData] of Object.entries(this.allFiles)) {
-            const newChecksum = await this.getFileChecksum(filePath);
-
-            if (!newChecksum) continue;
-
-            const oldChecksum = this.checksums[filePath];
-
-            // If checksum changed or is new, file was updated
-            if (oldChecksum !== newChecksum) {
-                updatedPages.push({
-                    path: filePath,
-                    name: fileData.name,
-                    displayName: fileData.name,
-                    lastUpdated: new Date(),
-                    checksum: newChecksum
-                });
-
-                this.checksums[filePath] = newChecksum;
-            }
-        }
-
-        // Save updated checksums
-        this.saveChecksumsToCache();
-
-        // Trigger callback if pages were updated
-        if (updatedPages.length > 0 && this.updateCallback) {
-            this.updateCallback(updatedPages);
-        }
-
-        return updatedPages;
-    }
-
-    /**
-     * Get the most recently updated files
-     */
-    async getRecentlyUpdatedPages() {
-        const recent = Object.entries(this.checksums)
-            .map(([path, checksum]) => {
-                const fileData = this.allFiles[path];
-                return {
-                    path: path,
-                    name: fileData?.name || path,
-                    displayName: fileData?.name || path,
-                    checksum,
-                    lastUpdated: new Date()
-                };
-            })
-            .sort((a, b) => (b.lastUpdated || 0) - (a.lastUpdated || 0))
-            .slice(0, this.config.maxItems);
-
-        return recent;
-    }
-
-    /**
-     * Register a callback for when updates are detected
-     */
-    onUpdate(callback) {
-        this.updateCallback = callback;
     }
 
     /**
      * Format date for display
      */
-    formatDate(date) {
+    formatDate(dateString) {
+        const date = new Date(dateString);
         const now = new Date();
         const diff = now - date;
         const seconds = Math.floor(diff / 1000);
@@ -372,6 +256,54 @@ class RecentlyUpdatedManager {
         if (days < 7) return `${days}d ago`;
         
         return date.toLocaleDateString();
+    }
+
+    /**
+     * Extract file extension for styling
+     */
+    getFileIcon(filename) {
+        const ext = filename.split('.').pop().toLowerCase();
+        const iconMap = {
+            'html': '🌐',
+            'css': '🎨',
+            'js': '⚙️',
+            'json': '📋',
+            'md': '📝',
+            'png': '🖼️',
+            'jpg': '🖼️',
+            'gif': '🖼️',
+            'svg': '🎭',
+            'txt': '📄',
+            'php': '🐘'
+        };
+        return iconMap[ext] || '📄';
+    }
+
+    /**
+     * Get status badge style
+     */
+    getStatusBadge(status) {
+        const badges = {
+            'added': { color: '#4ade80', label: 'Added' },
+            'removed': { color: '#f87171', label: 'Removed' },
+            'modified': { color: '#60a5fa', label: 'Modified' },
+            'renamed': { color: '#fbbf24', label: 'Renamed' }
+        };
+        return badges[status] || { color: '#9ca3af', label: 'Changed' };
+    }
+
+    /**
+     * Register update callback
+     */
+    onUpdate(callback) {
+        this.updateCallback = callback;
+    }
+
+    /**
+     * Set selected commit for details view
+     */
+    selectCommit(commitSha) {
+        this.selectedCommit = commitSha;
     }
 }
 
@@ -461,36 +393,195 @@ function generateWorkshopSection(workshopConfig) {
 }
 
 /**
- * Generate recently updated section with full details and button
+ * Generate recently updated section from GitHub commits
  */
-function generateRecentlyUpdatedSection(pages, updatedManager) {
+function generateRecentlyUpdatedSection(commits, commitsManager) {
     const container = document.getElementById("recently-updated-buttons");
 
     if (!container) return;
 
-    if (pages.length === 0) {
+    if (commits.length === 0) {
         container.innerHTML = `
             <div style="width: 100%; text-align: center; color: var(--text-2); opacity: 0.7; padding: 20px;">
-                <p style="margin: 0;">No recently updated pages yet. Check back soon!</p>
+                <p style="margin: 0;">No commits found. Check your GitHub repository.</p>
             </div>
         `;
         return;
     }
 
-    container.innerHTML = pages
-        .map(page => `
-            <div class="recently-updated-card">
-                <div class="updated-card-info">
-                    <div class="updated-card-name">${page.displayName || page.name}</div>
-                    <div class="updated-card-path">${page.path}</div>
-                    <div class="updated-card-time">Updated: ${updatedManager.formatDate(page.lastUpdated)}</div>
+    container.innerHTML = commits
+        .map((commit, index) => {
+            const commitData = commit.commit;
+            const shortSha = commit.sha.substring(0, 7);
+            const author = commitData.author?.name || 'Unknown';
+            const date = commitsManager.formatDate(commitData.author?.date);
+            const message = commitData.message.split('\n')[0];
+            const commitUrl = commit.html_url;
+
+            return `
+                <div class="recently-updated-card">
+                    <div class="updated-card-info">
+                        <div class="updated-card-name">${escapeHtml(message)}</div>
+                        <div class="updated-card-path">
+                            <strong>By:</strong> ${escapeHtml(author)} • 
+                            <strong>Commit:</strong> ${shortSha}
+                        </div>
+                        <div class="updated-card-time">Updated: ${date}</div>
+                    </div>
+                    <div class="updated-card-actions">
+                        <button class="updated-card-btn details-btn" data-commit-sha="${commit.sha}">
+                            View Details
+                        </button>
+                        <a href="${commitUrl}" class="updated-card-btn" target="_blank" rel="noopener noreferrer">
+                            On GitHub
+                        </a>
+                    </div>
                 </div>
-                <div class="updated-card-actions">
-                    <a href="${page.path}" class="updated-card-btn">View Page</a>
-                </div>
-            </div>
-        `)
+            `;
+        })
         .join("");
+
+    // Add click handlers to details buttons
+    document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            const commitSha = btn.dataset.commitSha;
+            
+            btn.textContent = 'Loading...';
+            btn.disabled = true;
+
+            const commitDetails = await commitsManager.getCommitDetails(commitSha);
+            if (commitDetails) {
+                showCommitDetailsModal(commitDetails, commitsManager);
+            }
+
+            btn.textContent = 'View Details';
+            btn.disabled = false;
+        });
+    });
+}
+
+/**
+ * Show detailed commit changes in a modal
+ */
+function showCommitDetailsModal(commitData, commitsManager) {
+    const modal = document.getElementById('commit-details-modal');
+    if (!modal) {
+        console.error('Modal not found');
+        return;
+    }
+
+    const commitMessage = commitData.commit.message;
+    const author = commitData.commit.author?.name || 'Unknown';
+    const date = commitsManager.formatDate(commitData.commit.author?.date);
+    const shortSha = commitData.sha.substring(0, 7);
+    const files = commitData.files || [];
+
+    // Calculate stats
+    const stats = {
+        added: files.filter(f => f.status === 'added').length,
+        removed: files.filter(f => f.status === 'removed').length,
+        modified: files.filter(f => f.status === 'modified').length,
+        renamed: files.filter(f => f.status === 'renamed').length
+    };
+
+    // Build files HTML
+    const filesHTML = files.map(file => {
+        const icon = commitsManager.getFileIcon(file.filename);
+        const status = commitsManager.getStatusBadge(file.status);
+        const changes = file.changes ? `+${file.additions} -${file.deletions}` : '';
+
+        let patchPreview = '';
+        if (file.patch) {
+            const lines = file.patch.split('\n').slice(0, 10).join('\n');
+            patchPreview = `<div class="commit-file-patch"><pre>${escapeHtml(lines)}</pre></div>`;
+        }
+
+        return `
+            <div class="commit-file-item">
+                <div class="commit-file-header">
+                    <span class="commit-file-icon">${icon}</span>
+                    <span class="commit-file-name">${escapeHtml(file.filename)}</span>
+                    <span class="commit-file-status" style="background-color: ${status.color}20; border: 1px solid ${status.color}; color: ${status.color};">
+                        ${status.label}
+                    </span>
+                </div>
+                ${file.changes ? `<div class="commit-file-changes">${changes}</div>` : ''}
+                ${patchPreview}
+            </div>
+        `;
+    }).join('');
+
+    const modalContent = `
+        <div class="commit-modal-header">
+            <h2>Commit Details</h2>
+            <button class="modal-close-btn" onclick="closeCommitDetailsModal()">&times;</button>
+        </div>
+
+        <div class="commit-modal-info">
+            <div class="commit-info-item">
+                <strong>Message:</strong>
+                <p class="commit-message-text">${escapeHtml(commitMessage)}</p>
+            </div>
+
+            <div class="commit-info-item">
+                <strong>Author:</strong> ${escapeHtml(author)}
+            </div>
+
+            <div class="commit-info-item">
+                <strong>Commit:</strong> ${shortSha}
+            </div>
+
+            <div class="commit-info-item">
+                <strong>Date:</strong> ${date}
+            </div>
+        </div>
+
+        <div class="commit-stats">
+            ${stats.added > 0 ? `<div class="stat-item added"><span>${stats.added}</span> Added</div>` : ''}
+            ${stats.modified > 0 ? `<div class="stat-item modified"><span>${stats.modified}</span> Modified</div>` : ''}
+            ${stats.removed > 0 ? `<div class="stat-item removed"><span>${stats.removed}</span> Removed</div>` : ''}
+            ${stats.renamed > 0 ? `<div class="stat-item renamed"><span>${stats.renamed}</span> Renamed</div>` : ''}
+        </div>
+
+        <div class="commit-files">
+            <h3>Changed Files (${files.length})</h3>
+            <div class="commit-files-list">
+                ${filesHTML}
+            </div>
+        </div>
+    `;
+
+    const contentContainer = document.querySelector('.commit-modal-content');
+    if (contentContainer) {
+        contentContainer.innerHTML = modalContent;
+    }
+
+    modal.style.display = 'flex';
+}
+
+/**
+ * Close the commit details modal
+ */
+function closeCommitDetailsModal() {
+    const modal = document.getElementById('commit-details-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+/**
+ * Escape HTML to prevent XSS
+ */
+function escapeHtml(text) {
+    if (typeof text !== 'string') return '';
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, m => map[m]);
 }
 
 // ============================================================================
@@ -507,21 +598,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Generate workshop section
     generateWorkshopSection(SITE_CONFIG.workshop);
 
-    // Initialize Recently Updated Manager
-    const updatedManager = new RecentlyUpdatedManager(SITE_CONFIG);
+    // Initialize GitHub Commits Manager
+    const commitsManager = new GitHubCommitsManager(SITE_CONFIG);
 
     // Set callback to update UI
-    updatedManager.onUpdate(async () => {
-        const recentPages = await updatedManager.getRecentlyUpdatedPages();
-        generateRecentlyUpdatedSection(recentPages, updatedManager);
+    commitsManager.onUpdate((commits) => {
+        generateRecentlyUpdatedSection(commits, commitsManager);
     });
 
-    // Initial render
-    updatedManager.getRecentlyUpdatedPages().then(pages => {
-        generateRecentlyUpdatedSection(pages, updatedManager);
-    });
+    // Initial fetch
+    commitsManager.fetchLatestCommits();
 });
 
 if (typeof module !== "undefined" && module.exports) {
-    module.exports = { SITE_CONFIG, RecentlyUpdatedManager, applyTheme };
+    module.exports = { SITE_CONFIG, GitHubCommitsManager };
 }

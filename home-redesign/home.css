@@ -79,12 +79,6 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .bg {
-        animation: none;
-    }
-}
-
 /* ============================================================================
    GLASS EFFECT - UNIVERSAL FRAME STYLE
    ============================================================================ */
@@ -365,6 +359,7 @@ body::-webkit-scrollbar {
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.2px;
+    word-break: break-word;
 }
 
 .updated-card-path {
@@ -404,11 +399,241 @@ body::-webkit-scrollbar {
     justify-content: center;
 }
 
-.updated-card-btn:hover {
+.updated-card-btn:hover:not(:disabled) {
     background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.2));
     border-color: rgba(106, 169, 255, 0.5);
     box-shadow: 0 4px 12px rgba(106, 169, 255, 0.2);
     transform: translateY(-1px);
+}
+
+.updated-card-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ============================================================================
+   COMMIT DETAILS MODAL
+   ============================================================================ */
+
+.commit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.commit-modal.glass {
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    backdrop-filter: unset;
+}
+
+.commit-modal-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.commit-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    sticky: top 0;
+    background: var(--glass-bg);
+    z-index: 1;
+}
+
+.commit-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-1);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-2);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 150ms ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-1);
+}
+
+.commit-modal-info {
+    padding: 24px;
+    display: grid;
+    gap: 16px;
+}
+
+.commit-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.commit-info-item strong {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+.commit-message-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent);
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.commit-stats {
+    display: flex;
+    gap: 12px;
+    padding: 0 24px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.stat-item span {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.stat-item.added {
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+}
+
+.stat-item.modified {
+    background: rgba(96, 165, 250, 0.15);
+    color: #60a5fa;
+}
+
+.stat-item.removed {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+}
+
+.stat-item.renamed {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+.commit-files {
+    padding: 24px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.commit-files h3 {
+    margin: 0 0 16px 0;
+    color: var(--text-1);
+    font-size: 1.1rem;
+}
+
+.commit-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.commit-file-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: all 150ms ease;
+}
+
+.commit-file-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.commit-file-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.commit-file-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.commit-file-name {
+    flex: 1;
+    color: var(--text-1);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+}
+
+.commit-file-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.commit-file-changes {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--text-2);
+    border-top: 1px solid var(--glass-border);
+}
+
+.commit-file-patch {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid var(--glass-border);
+    overflow-x: auto;
+}
+
+.commit-file-patch pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--text-2);
+    line-height: 1.4;
 }
 
 /* ============================================================================
@@ -600,12 +825,6 @@ body::-webkit-scrollbar {
     margin: 0;
 }
 
-.workshop-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-
 .workshop-actions {
     display: flex;
     gap: 8px;
@@ -659,8 +878,6 @@ body::-webkit-scrollbar {
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
     transform: translateX(-50%);
     background: rgba(52, 52, 52, 0.9);
     color: #ffffff;
@@ -744,6 +961,11 @@ body::-webkit-scrollbar {
         width: 100%;
         margin-left: 0;
         margin-top: 12px;
+        gap: 8px;
+    }
+
+    .updated-card-btn {
+        flex: 1;
     }
 
     .workshop-frame {
@@ -761,9 +983,13 @@ body::-webkit-scrollbar {
         height: 38px;
     }
 
-    .btn-icon {
-        width: 18px;
-        height: 18px;
+    .commit-modal-content {
+        max-height: 80vh;
+    }
+
+    .commit-file-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
@@ -846,6 +1072,19 @@ body::-webkit-scrollbar {
         height: 16px;
     }
 
+    .commit-modal-content {
+        max-height: 90vh;
+        max-width: 95vw;
+    }
+
+    .commit-modal-header {
+        padding: 16px;
+    }
+
+    .commit-modal-header h2 {
+        font-size: 1.2rem;
+    }
+
     .footer {
         margin: 30px auto 0;
         padding: 15px 16px;
@@ -875,4 +1114,23 @@ body::-webkit-scrollbar {
         padding: 6px 10px;
         font-size: 0.85rem;
     }
+}
+
+/* Scrollbar styling for modal */
+.commit-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.commit-modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.commit-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(106, 169, 255, 0.3);
+    border-radius: 10px;
+}
+
+.commit-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(106, 169, 255, 0.5);
 }

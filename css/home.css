@@ -425,16 +425,16 @@ a.btn-glassy {
 .workshop-frame {
     --workshop-bg: rgba(255, 255, 255, 0.04);
     position: fixed;
-    top: 400px;
+    top: 730px !important;
     left: 50%;
     transform: translateX(-50%);
     padding: 12px 20px;
     border-radius: 16px;
-    z-index: 998;
+    z-index: 999;
     background-color: rgba(0, 0, 0, 0.9);
     background-image: 
         linear-gradient(rgba(33, 33, 33, 0.7), rgba(22, 22, 22, 0.7)),
-        url("../res/bg/steam-profile.png");
+        url("https://www.justkaarlo.com/res/bg/steam-profile.png");
     background-size: 110%;
     background-position: 50% 15%;
     background-repeat: no-repeat;
@@ -442,10 +442,11 @@ a.btn-glassy {
     backdrop-filter: blur(10px) saturate(110%);
     -webkit-backdrop-filter: blur(10px) saturate(110%);
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-    transition: all 200ms ease;
+    transition: all 400ms ease;
     margin-top: 50px;
     user-select: none;
     width: 300px;
+    cursor: grab;
 }
 
 .workshop-frame:hover {
