@@ -2347,14 +2347,6 @@ const gzwGuides = [
             </div>
         `,
     },*/
-    /*
-        Gunny       NATO Weapons
-        Rat         Medical Supplies
-        Artisan     Eastern Weapons
-        Turncoat    AK Variants
-        Banshee     High-Tech
-        Vulture     Weekly Rotation
-    */
 ]
 
 const GuideConfigs = {
@@ -2363,7 +2355,6 @@ const GuideConfigs = {
     arma3: arma3Guides,
     grayzone: gzwGuides,
     mods: mods,
-    // eldenRing: eldenRingGuides,
 
     getGuides(pageName) {
         return this[pageName] || [];
