@@ -893,3 +893,47 @@ function initializeGuidePage(containerId, guidesArray) {
         }
     });
 }
+
+function updateMetaTags(guideTitle, guideImage, guideDesc) {
+  // Remove existing og tags
+  document.querySelectorAll('meta[property^="og:"]').forEach(tag => {
+    if (tag.getAttribute('property') !== 'og:type') tag.remove();
+  });
+  
+  // Add new og tags
+  const metaTags = [
+    { property: 'og:title', content: `JustKaarlo - ${guideTitle}` },
+    { property: 'og:description', content: guideDesc },
+    { property: 'og:image', content: guideImage },
+    { property: 'og:url', content: window.location.href }
+  ];
+  
+  metaTags.forEach(tag => {
+    const meta = document.createElement('meta');
+    meta.setAttribute('property', tag.property);
+    meta.setAttribute('content', tag.content);
+    document.head.appendChild(meta);
+  });
+}
+
+// Listen for hash changes
+window.addEventListener('hashchange', () => {
+  const hash = window.location.hash.substring(1);
+  const guide = GuideSystem.currentGuides.find(g => 
+    GuideSystem.titleToSlug(g.title) === hash.split('--')[0]
+  );
+  
+  if (guide) {
+    updateMetaTags(
+      guide.title,
+      guide.image || 'default-og-image.png',
+      guide.subtitle || guide.description?.substring(0, 100)
+    );
+  }
+});
+
+// Run on initial load
+window.addEventListener('load', () => {
+  const hash = window.location.hash.substring(1);
+  if (hash) window.dispatchEvent(new Event('hashchange'));
+});
