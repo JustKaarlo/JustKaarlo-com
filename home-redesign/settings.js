@@ -71,13 +71,14 @@ const SITE_CONFIG = {
         maxItems: 2, // Maximum number of recently updated items to display
         autoRefresh: true,
         refreshInterval: 10000, // 10 minutes in milliseconds (600000ms)
-        cacheKey: "RecentlyUpdatedPages",
+        cacheKey: "recentlyUpdatedPages",
         
         // Files and folders to scan for updates
         monitoredLocations: [
             "/guides/",
             "/mods/",
-            "/home-redesign/"
+            "/home-redesign/",
+            "/home.html"
         ],
         
         // File extensions to monitor
@@ -219,8 +220,8 @@ class RecentlyUpdatedManager {
      */
     scanSiteForFiles() {
         const commonFiles = [
-            "/index.html",
-            "/home.html",
+            "../index.html",
+            "../home.html",
 
             "/guides/grayzone.html",
             "/guides/arma3.html",

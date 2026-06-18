@@ -270,13 +270,24 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 .footer {
+    position: relative;
+    z-index: 10;
     max-width: 1200px;
-    margin: 32px auto 24px;
-    padding: 12px 16px;
+    margin: 60px auto 0;
+    padding: 20px 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color: var(--text-2);
+    justify-content: center;
+    color: #505050;
+    text-align: center;
+    font-size: 0.9rem;
+    top: 800px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.footer p {
+    margin: 0;
 }
 
 @media (max-width: 520px) {
@@ -434,7 +445,7 @@ a.btn-glassy {
     transition: all 200ms ease;
     margin-top: 50px;
     user-select: none;
-    width: 550px;
+    width: 300px;
 }
 
 .workshop-frame:hover {
@@ -453,8 +464,9 @@ a.btn-glassy {
 
 .steam-avatar {
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
 }
 
 .steam-avatar-image {
@@ -466,11 +478,10 @@ a.btn-glassy {
 
 .steam-avatar-border {
     position: absolute;
-    top: -2px;
-    left: -2px;
-    width: 36px;
-    height: 36px;
-    /* background-image: url('https://shared.akamai.steamstatic.com/community_assets/images/items/1451190/c54be80ce1cf1f688875aa72d4f026f1e78b8f70.png'); */
+    top: -4px;
+    left: -4px;
+    width: 48px;
+    height: 48px;
     background-image: url('https://www.justkaarlo.com/res/src/steam-avatar-frame.gif');
     background-size: contain;
     background-repeat: no-repeat;
@@ -478,7 +489,6 @@ a.btn-glassy {
     pointer-events: none;
     filter: drop-shadow(0 0 6px rgba(102, 192, 244, 0.2));
 }
-
 .workshop-text {
     display: flex;
     flex-direction: column;
@@ -538,7 +548,7 @@ a.btn-glassy {
 } */
 
 .workshop-btn {
-    position: relative;
+    position: sticky;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -553,6 +563,7 @@ a.btn-glassy {
     border-radius: 12px;
     transition: all 150ms ease;
     filter: contrast(1.35);
+    margin: 12px 0 6px -100px;
 }
 .btn-icon {
     width: 20px;
