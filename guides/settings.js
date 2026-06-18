@@ -1936,65 +1936,6 @@ const arma3Guides = [
 ]
 
 const gzwGuides = [
-    /* {
-        type: 'section',
-        title: 'Vendors',
-        subtitle: `━━━━━━━`
-    },
-    {
-        title: 'Handshake',
-        subtitle: 'Equipment',
-        icon: '../res/guides/ui/medium/vendors/handshake.png',
-        link: 'https://gzwloadout.com/vendors/handshake',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <img src="https://www.justkaarlo.com/res/guides/img/vendor-banners/handshake-banner.png" alt="Banner">
-            <span data-toc="Sells"></span>
-            <div class="box box-gzw">
-                <div class="box-title">Sells</div>
-                <span class="badge">Helmets</span> <span class="badge">Glasses</span> <span class="badge">Hats</span> <span class="badge">Headphones</span> <span class="badge">Plate Carriers</span> <span class="badge">Vests</span> <span class="badge">Backpacks</span> <span class="badge">Belts</span> <span class="badge">Tactical Rigs</span> <span class="badge">Tools</span>
-            </div>
-
-            <span data-toc="Items"></span>
-            <div class="tabs" data-tabs>
-                <div class="tab-list">
-                    <button class="tab-btn active" data-tab="tab-handshake-r1">Rank 1</button>
-                    <button class="tab-btn" data-tab="tab-handshake-r2">Rank 2</button>
-                    <button class="tab-btn" data-tab="tab-handshake-r3">Rank 3</button>
-                    <button class="tab-btn" data-tab="tab-handshake-r4">Rank 4</button>
-                </div>
-                <div class="tab-pane active" id="tab-handshake-r1">
-                    <div class="box">
-                        <b>Helmets</b> <span class="text-small gzw-gray">(1)</span>
-                        <img src="../res/guides/ui/vendor-items/handshake/rank-1-helmets.webp" alt="Banner">
-                    </div>
-                    <div class="box">
-                        <b>Gear</b> <span class="text-small gzw-gray">(3)</span>
-                        <img src="../res/guides/ui/vendor-items/handshake/rank-1-gear.webp" alt="Banner">
-                    </div>
-                    <div class="box">
-                        <b>Body Armor</b> <span class="text-small gzw-gray">(7)</span>
-                        <img src="../res/guides/ui/vendor-items/handshake/rank-1-body-armor.webp" alt="Banner">
-                    </div>
-                    <div class="box">
-                        <b>Containers</b> <span class="text-small gzw-gray">(3)</span>
-                        <img src="../res/guides/ui/vendor-items/handshake/rank-1-containers.webp" alt="Banner">
-                    </div>
-                    <div class="box">
-                        <b>Tools</b> <span class="text-small gzw-gray">(2)</span>
-                        <img src="../res/guides/ui/vendor-items/handshake/rank-1-tools.webp" alt="Banner">
-                    </div>
-                </div>
-                <div class="tab-pane" id="tab-handshake-r2">
-                </div>
-                <div class="tab-pane" id="tab-handshake-r3">
-                </div>
-                <div class="tab-pane" id="tab-handshake-r4">
-                </div>
-            </div>
-        `,
-    }, */
     {
         type: 'section',
         title: 'Resources',
@@ -2003,46 +1944,74 @@ const gzwGuides = [
     {
         title: 'Ballistics',
         subtitle: 'Information',
-        icon: '../res/guides/ui/medium/bullet.png',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/bullet.png',
         contentType: 'description',
         showTOC: true,
         description: `
-            <img src="../res/guides/img/gzw-ballistics-banner.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/ballistics.png" alt="Banner">
             <span data-toc="Top" data-toc-level="h1"></span>
-            <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/vendors" class="btn-action-gzw">Vendors</a>
+            <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/vendors" class="btn-action-gzw">Vendors</a> <a href="https://gzwitems.com/" class="btn-action-gzw">Price Tracker</a> <a href="https://gzwtacmap.com/maps/lamang" class="btn-action-gzw">Interactive Map</a> <a href="https://gzwloadout.com/" class="btn-action-gzw">Weapon Builder</a>
             <div class="box">
                 <b>...</b>
             </div>
             <hr>
-            <h2>Calibers</h2>
+            <h3>Ammunition Ranking</h3>
             <div class="tabs" data-tabs>
                 <div class="tab-list task-types">
                     <button class="tab-btn active" data-tab="tab-556x45">5.56x45mm</button>
                     <button class="tab-btn" data-tab="tab-fill">...</button>
                 </div>
                 <div class="tab-pane active" id="tab-556x45">
-                    <h4>Early-Game</h4>
-                    <h4>Late-Game</h4>
+                    <span class="text-tiny gzw-gray">Sorted From Best to Worse</span>
                     <table>
                         <tr>
+                            <th>Tier</th>
                             <th></th>
                             <th>Caliber</th>
                             <th>Vendor</th>
                         </tr>
+
                         <tr>
-                            <td><img class="ammo" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/ammo_m855_a1_556x45.png" alt="desc"></td>
-                            <td>5.56x45mm AP (M855A1)</td>
+                            <td><span class="badge badge-s">S</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m855a1.png" alt="M855A1"></td>
+                            <td>AP M855A1</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
                         </tr>
                         <tr>
-                            <td><img class="ammo" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/ammo_m995_556x45.png" alt="desc"></td>
-                            <td>5.56x45mm AP (M995)</td>
+                            <td><span class="badge badge-s">S</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m995.png" alt="M995"></td>
+                            <td>AP M995</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV4</span></td>
                         </tr>
+
+                        <tr>
+                            <td><span class="badge badge-a">A</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m855.png" alt="M855"></td>
+                            <td>AP M855</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-a">A</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m193.png" alt="M193"></td>
+                            <td>FMJ M193</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+
+                        <tr>
+                            <td><span class="badge badge-b">B</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m856a1.png" alt="M856A1"></td>
+                            <td>Tracer M856A1</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-b">B</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m856.png" alt="M856"></td>
+                            <td>Tracer M856</td>
+                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
                     </table>
-                    <h4>Overall Best</h4>
                 </div>
-                <div class="tab-pane" id="tab-fill">...</div>
+                <div class="tab-pane" id="tab-fill">Work In Progress</div>
             </div>
         `,
     },
@@ -2054,12 +2023,12 @@ const gzwGuides = [
     {
         title: 'Tasks',
         subtitle: 'Information',
-        icon: '../res/guides/ui/medium/tasks.png',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/tasks.png',
         link: 'https://gray-zone-warfare.fandom.com/wiki/Tasks',
         contentType: 'description',
         showTOC: true,
         description: `
-            <img src="../res/guides/img/gzw-tasks-banner.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/tasks.png" alt="Banner">
             <span data-toc="Top" data-toc-level="h1"></span>
             <div class="box">
                 <b>Quick information about tasks...</b>
@@ -2129,6 +2098,23 @@ const gzwGuides = [
                 </div>
             </div>
         `,
+    },
+    {
+        type: 'section',
+        title: 'Vendors',
+        subtitle: `━━━━━━━`
+    },
+    {
+        title: 'Handshake',
+        subtitle: 'Equipment',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/vendors/handshake.png',
+        contentType: 'link',
+        link: 'https://gzwloadout.com/vendors/handshake',
+        badge: {
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/core/link-badge.png',
+            tooltip: 'Open',
+            position: 'right'
+        }
     },
     /*{
         title: 'Handshake',
