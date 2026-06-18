@@ -13,8 +13,8 @@ const SITE_CONFIG = {
     github: {
         enabled: true,
         owner: "JustKaarlo",
-        repo: "JustKaarlo.com",
-        branch: "main",
+        repo: "justkaarlo.github.io",
+        branch: "Home",
         apiBaseUrl: "https://api.github.com",
         token: null
     },
