@@ -13,18 +13,31 @@ const SITE_CONFIG = {
     github: {
         enabled: true,
         owner: "JustKaarlo",
-        repo: "justkaarlo.github.io",
-        branch: "Home",
+        repo: "JustKaarlo.com",
+        branch: "main",
         apiBaseUrl: "https://api.github.com",
         token: null
     },
 
     navigation: {
-        items: []
+        items: [
+            {
+                label: "Mods",
+                href: "../mods",
+                icon: "../res/ico/mods.svg",
+                tooltip: "Browse Mods"
+            },
+            {
+                label: "Guides",
+                href: "../guides",
+                icon: "../res/ico/guides.svg",
+                tooltip: "View Guides"
+            }
+        ]
     },
 
     workshop: {
-        enabled: false,
+        enabled: true,
         platform: "Steam",
         username: "@JustKaarlo",
         avatar: "https://www.justkaarlo.com/res/src/steam-avatar.png",
@@ -48,10 +61,9 @@ const SITE_CONFIG = {
     recentlyUpdated: {
         enabled: true,
         title: "Latest",
-        subtitle: "Pages That Was Recently Updated",
-        maxItems: 3,
+        maxItems: 6,
         autoRefresh: true,
-        refreshInterval: 30000,
+        refreshInterval: 600000,
         cacheKey: "recentlyUpdatedCommits"
     },
 
@@ -67,8 +79,8 @@ const SITE_CONFIG = {
     },
 
     logoCard: {
-        selector: ".logo-section",
-        image: "",
+        selector: ".logo-card",
+        image: "https://www.justkaarlo.com/res/src/header-cards/header-home.svg",
         enableMouseTracking: true,
         rotationSensitivity: 150,
         hoverScale: 0.98,
@@ -322,7 +334,7 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
 
     if (commits.length === 0) {
         container.innerHTML = `
-            <div style="width: 100%; text-align: center; color: var(--text-2); opacity: 0.7; padding: 20px; grid-column: 1/-1;">
+            <div class="recently-updated-card" style="text-align: center; color: var(--text-2); opacity: 0.7; padding: 20px;">
                 <p style="margin: 0;">No commits found. Check your GitHub repository.</p>
             </div>
         `;
@@ -340,21 +352,25 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
 
             return `
                 <div class="recently-updated-card">
-                    <div class="updated-card-info">
-                        <div class="updated-card-name">${escapeHtml(message)}</div>
-                        <div class="updated-card-path">
-                            <strong>By:</strong> ${escapeHtml(author)}
+                    <div class="updated-card-header">
+                        <div class="updated-card-info">
+                            <div class="updated-card-name">${escapeHtml(message)}</div>
+                            <div class="updated-card-meta">
+                                <span><strong>By:</strong> ${escapeHtml(author)}</span> • 
+                                <span><strong>SHA:</strong> ${shortSha}</span>
+                            </div>
+                            <div class="updated-card-time">Updated: ${date}</div>
                         </div>
-                        <div class="updated-card-time">Updated: ${date}</div>
+                        <div class="updated-card-actions">
+                            <button class="updated-card-btn changelog-btn" data-commit-sha="${commit.sha}" title="View Changelog">
+                                📝 Changelog
+                            </button>
+                            <a href="${commitUrl}" class="updated-card-btn" target="_blank" rel="noopener noreferrer" title="View on GitHub">
+                                🔗 GitHub
+                            </a>
+                        </div>
                     </div>
-                    <div class="updated-card-actions">
-                        <button class="updated-card-btn changelog-btn" data-commit-sha="${commit.sha}" title="View Changelog">
-                            📝 Changelog
-                        </button>
-                        <a href="${commitUrl}" class="updated-card-btn" target="_blank" rel="noopener noreferrer" title="View on GitHub">
-                            🔗 GitHub
-                        </a>
-                    </div>
+                    <div class="file-tree" id="tree-${shortSha}"></div>
                 </div>
             `;
         })
@@ -377,6 +393,36 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
             btn.disabled = false;
         });
     });
+
+    // Populate file trees
+    commits.forEach(commit => {
+        const shortSha = commit.sha.substring(0, 7);
+        const treeContainer = document.getElementById(`tree-${shortSha}`);
+        if (treeContainer && commit.files) {
+            populateFileTree(treeContainer, commit.files, commitsManager);
+        }
+    });
+}
+
+function populateFileTree(container, files, commitsManager) {
+    const filesHTML = files.map(file => {
+        const icon = commitsManager.getFileIcon(file.filename);
+        const status = commitsManager.getStatusBadge(file.status);
+        const changes = file.changes || 0;
+        const fileName = file.filename.split('/').pop();
+        const filePath = file.filename;
+
+        return `
+            <div class="file-tree-item">
+                <span class="file-tree-icon">${icon}</span>
+                <span class="file-tree-name">${escapeHtml(fileName)}</span>
+                <span class="file-tree-changes" title="Total changes (additions + deletions)">${changes}</span>
+                <span class="file-tree-status status-${file.status}">${status.label}</span>
+            </div>
+        `;
+    }).join('');
+
+    container.innerHTML = filesHTML;
 }
 
 function showChangelogModal(commitData, commitsManager) {

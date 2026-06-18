@@ -39,17 +39,13 @@ body {
     background: var(--bg-1);
     line-height: 1.4;
     overflow-x: hidden;
-    position: relative;
+    overflow: hidden;
 }
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none;
 }
-
-/* ============================================================================
-   BACKGROUND & CANVAS
-   ============================================================================ */
 
 #particle-canvas {
     position: fixed;
@@ -79,9 +75,23 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
-/* ============================================================================
-   GLASS EFFECT - UNIVERSAL FRAME STYLE
-   ============================================================================ */
+@keyframes kenburns {
+    0% {
+        transform: scale(1.07) translate3d(0, 0, 0);
+        background-position: 48% 50%;
+    }
+
+    100% {
+        transform: scale(1.15) translate3d(0, -1vh, 0);
+        background-position: 52% 46%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bg {
+        animation: none;
+    }
+}
 
 .glass {
     background: var(--glass-bg);
@@ -102,60 +112,56 @@ body::-webkit-scrollbar {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
-/* ============================================================================
-   MAIN WRAPPER & CONTAINER
-   ============================================================================ */
-
-.main-wrapper {
+.container {
+    max-width: 1200px;
+    margin: 0 auto 64px;
     position: relative;
     z-index: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 40px 20px;
+    padding: 20px;
 }
-
-.container {
-    max-width: 1400px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-}
-
-/* ============================================================================
-   LOGO SECTION
-   ============================================================================ */
 
 .logo-section {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
+    margin: 28px auto 18px;
+    padding: 28px;
     display: grid;
     place-items: center;
     text-align: center;
     box-shadow: var(--shadow-2);
-    border-radius: var(--radius-lg);
+}
+
+.button-section {
+    margin: 12px auto 0;
+    display: flex;
+    justify-content: center;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .logo-card {
-    width: 100%;
+    --size: clamp(260px, 42vw, 520px);
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    width: 50%;
     max-width: 400px;
+    height: auto;
     aspect-ratio: 1;
-    background: url('https://www.justkaarlo.com/res/src/header-cards/header-home.svg') center/cover no-repeat !important;
+    background:
+        url('https://www.justkaarlo.com/res/src/header-cards/header-home.svg') fixed no-repeat center/cover !important;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 var(--glass-inner);
     transition: transform 200ms ease;
-    transform: perspective(800px) rotateX(0) rotateY(0) translateY(0px);
+    transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
+    text-align: center;
     border-radius: 35px;
     filter: brightness(1.2);
-    cursor: pointer;
 }
 
 .logo-card:hover {
-    transform: perspective(800px) rotateX(0) rotateY(0) translateY(-4px);
+    transform: perspective(800px) rotateX(0) rotateY(0) translateY(-8px);
     box-shadow: 0 18px 56px rgba(0, 0, 0, 0.6), inset 0 1px 0 var(--glass-inner);
 }
 
@@ -165,26 +171,6 @@ body::-webkit-scrollbar {
     object-fit: cover;
     user-select: none;
     border-radius: 35px;
-}
-
-/* ============================================================================
-   BUTTON STYLES
-   ============================================================================ */
-
-.button-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-}
-
-.button-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 1000px;
 }
 
 .btn {
@@ -233,6 +219,7 @@ body::-webkit-scrollbar {
 
 .btn:hover {
     transform: scale(1.03);
+    transition: transform 180ms ease;
 }
 
 .btn:active {
@@ -286,16 +273,170 @@ body::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.04);
 }
 
+.footer {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 20px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #505050;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 520px) {
+    .button-row a {
+        flex: 1 1 100%;
+    }
+
+    .button-row {
+        width: 100%;
+    }
+}
+
+.btn-glass-dark {
+    --btn-bg: linear-gradient(180deg, rgba(45, 45, 55, 0.55), rgba(35, 35, 45, 0.4));
+    --btn-border: rgba(255, 255, 255, 0.12);
+    --btn-text: #e0e0e6;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    border-radius: 14px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 14px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 160ms ease, transform 120ms ease;
+}
+
+.btn-glass-dark:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(180deg, rgba(55, 55, 65, 0.6), rgba(45, 45, 55, 0.5));
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.btn-glass-dark:active {
+    transform: translateY(1px);
+}
+
+.btn-glassy {
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --border-glass: rgba(255, 255, 255, 0.12);
+    --text: #e1e2e7;
+    background: var(--bg-glass);
+    color: var(--text);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    transition: transform 160ms ease, background 160ms ease;
+}
+
+.btn-glassy:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.btn-glassy:active {
+    transform: translateY(1px);
+}
+
+a.btn-glassy {
+    cursor: pointer;
+}
+
+.nav-frame {
+    --nav-bg: rgba(255, 255, 255, 0.03);
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 24px;
+    border-radius: 20px;
+    z-index: 999;
+    background: var(--nav-bg);
+    border: 0px solid var(--glass-border);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    box-shadow: var(--shadow-1);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    --bg-glass: rgba(255, 255, 255, 0.05);
+    --text: #e1e2e7;
+    background: var(--bg-glass);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 160ms ease, transform 120ms ease;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+.nav-btn svg,
+.nav-btn img {
+    display: block;
+}
+
+.nav-btn.white image {
+    filter: hue-rotate(120deg) brightness(2.5);
+}
+
+#SelectedNavBtn {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+    cursor: not-allowed;
+}
+
 /* ============================================================================
-   RECENTLY UPDATED SECTION - 3 COLUMN GRID
+   RECENTLY UPDATED SECTION - FILE TREE
    ============================================================================ */
 
 .recently-updated-section {
     width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 16px;
 }
 
 .recently-updated-title {
@@ -304,30 +445,18 @@ body::-webkit-scrollbar {
     font-weight: 700;
     letter-spacing: 0.3px;
     margin: 0;
-    text-align: center;
-}
-
-.recently-updated-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
 }
 
 .recently-updated-card {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-1);
     backdrop-filter: blur(14px) saturate(120%);
     -webkit-backdrop-filter: blur(14px) saturate(120%);
+    padding: 20px;
     transition: all 200ms ease;
     position: relative;
-    height: 100%;
 }
 
 .recently-updated-card::before {
@@ -343,54 +472,56 @@ body::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.25);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    transform: translateY(-4px);
+    transform: translateY(-2px);
+}
+
+.updated-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .updated-card-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     flex: 1;
-    z-index: 1;
-    margin-bottom: 16px;
 }
 
 .updated-card-name {
     color: var(--text-1);
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1rem;
     letter-spacing: 0.2px;
     word-break: break-word;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
-.updated-card-path {
+.updated-card-meta {
     color: var(--text-2);
     font-size: 0.8rem;
     opacity: 0.8;
-    word-break: break-all;
 }
 
 .updated-card-time {
     color: var(--accent);
     font-size: 0.8rem;
     font-weight: 500;
-    margin-top: 4px;
 }
 
 .updated-card-actions {
     display: flex;
     gap: 8px;
-    z-index: 1;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .updated-card-btn {
-    flex: 1;
-    min-width: 100px;
     padding: 8px 12px;
     background: linear-gradient(180deg, rgba(106, 169, 255, 0.2), rgba(106, 169, 255, 0.1));
     border: 1px solid rgba(106, 169, 255, 0.3);
@@ -404,7 +535,6 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .updated-card-btn:hover:not(:disabled) {
@@ -417,6 +547,99 @@ body::-webkit-scrollbar {
 .updated-card-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+}
+
+/* File Tree Styles */
+.file-tree {
+    margin-top: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.file-tree-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 150ms ease;
+    border-radius: 6px;
+    position: relative;
+}
+
+.file-tree-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-tree-indent {
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-right: 4px;
+}
+
+.file-tree-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    min-width: 18px;
+}
+
+.file-tree-name {
+    color: var(--text-1);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    flex: 1;
+    word-break: break-all;
+}
+
+.file-tree-changes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 24px;
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.15));
+    border: 1px solid rgba(106, 169, 255, 0.3);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.file-tree-status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.status-added {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+.status-modified {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+.status-removed {
+    background: rgba(248, 113, 113, 0.2);
+    color: #f87171;
+}
+
+.status-renamed {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
 }
 
 /* ============================================================================
@@ -645,127 +868,32 @@ body::-webkit-scrollbar {
     line-height: 1.4;
 }
 
-/* ============================================================================
-   NAVIGATION BAR - UNIVERSAL FRAME STYLE
-   ============================================================================ */
-
-.nav-frame {
-    --nav-bg: rgba(255, 255, 255, 0.03);
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 24px;
-    border-radius: 20px;
-    z-index: 1000;
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-.nav-btn {
-    --bg-glass: rgba(255, 255, 255, 0.05);
-    --text: #e1e2e7;
-    background: var(--bg-glass);
-    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
-    color: var(--text);
-    font-weight: 600;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background 160ms ease, transform 120ms ease;
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-}
-
-.nav-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-1px);
-}
-
-.nav-btn svg,
-.nav-btn img {
-    display: block;
-    width: 18px;
-    height: 18px;
-}
-
-.nav-tooltip {
-    --glass-border: rgba(255, 255, 255, 0.18);
-    --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
-    position: absolute;
-    bottom: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(52, 52, 52, 0.34);
-    color: #ffffff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-    font-family: 'Poppins', sans-serif;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: saturate(120%);
-    -webkit-backdrop-filter: saturate(120%);
-    box-shadow: var(--shadow-1);
-    z-index: 10000;
-}
-
-.nav-tooltip::before {
-    content: '';
-    position: absolute;
-    top: -6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid rgba(40, 40, 40, 0.95);
-}
-
-.nav-btn:hover .nav-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(-5px);
-    transition-delay: 0.5s;
-}
-
-/* ============================================================================
-   WORKSHOP/PROFILE FRAME - UNIVERSAL FRAME STYLE
-   ============================================================================ */
-
+/* Workshop Frame Styles */
 .workshop-frame {
+    --workshop-bg: rgba(255, 255, 255, 0.04);
     position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 16px 20px;
+    padding: 12px 20px;
+    border-radius: 16px;
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.9);
     background-image: 
         linear-gradient(rgba(33, 33, 33, 0.7), rgba(22, 22, 22, 0.7)),
-        url("../res/bg/steam-profile.png");
+        url("https://www.justkaarlo.com/res/bg/steam-profile.png");
     background-size: 110%;
     background-position: 50% 15%;
     background-repeat: no-repeat;
-    transition: all 200ms ease;
+    backdrop-filter: blur(10px) saturate(110%);
+    -webkit-backdrop-filter: blur(10px) saturate(110%);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    transition: all 400ms ease;
     user-select: none;
     width: auto;
     max-width: calc(100% - 40px);
     min-width: 300px;
+    cursor: grab;
 }
 
 .workshop-frame:hover {
@@ -834,6 +962,12 @@ body::-webkit-scrollbar {
     margin: 0;
 }
 
+.workshop-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .workshop-actions {
     display: flex;
     gap: 8px;
@@ -860,8 +994,8 @@ body::-webkit-scrollbar {
 }
 
 .workshop-btn:hover {
-    background: rgba(46, 46, 46, 0.6);
-    transform: translateY(-2px);
+    background: rgba(46, 46, 46, 0.5);
+    transform: translateY(-1px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -918,67 +1052,43 @@ body::-webkit-scrollbar {
     transition-delay: 0.5s;
 }
 
-/* ============================================================================
-   FOOTER
-   ============================================================================ */
-
-.footer {
-    position: relative;
-    z-index: 10;
-    max-width: 1200px;
-    margin: 60px auto 0;
-    padding: 20px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-2);
-    text-align: center;
-    font-size: 0.9rem;
+.workshop-btn:hover {
+    background: rgba(46, 46, 46, 0.5);
+    transform: translateY(-1px);
 }
 
-.footer p {
-    margin: 0;
+.profile-btn {
+    background: rgba(46, 46, 46, 0.6);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+    color: #dcdedf;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    transition: all 150ms ease;
+    filter: contrast(1.35);
 }
 
-/* ============================================================================
-   RESPONSIVE DESIGN
-   ============================================================================ */
-
-@media (max-width: 1024px) {
-    .recently-updated-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .pages-grid {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    }
+.profile-btn:hover {
+    background: rgba(46, 46, 46, 0.7);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
-    .main-wrapper {
-        padding: 30px 15px;
-    }
-
-    .container {
-        gap: 30px;
-    }
-
-    .logo-section {
-        padding: 20px;
-    }
-
-    .logo-card {
-        max-width: 300px;
-    }
-
-    .recently-updated-container {
-        grid-template-columns: 1fr;
-    }
-
     .workshop-frame {
+        left: 10px;
+        right: 10px;
+        transform: none;
         bottom: 20px;
-        padding: 12px 16px;
-        max-width: calc(100% - 30px);
+        width: calc(100% - 20px);
+    }
+
+    .workshop-frame:hover {
+        transform: translateY(-2px);
+    }
+
+    .workshop-content {
+        gap: 12px;
     }
 
     .workshop-actions {
@@ -986,145 +1096,101 @@ body::-webkit-scrollbar {
     }
 
     .workshop-btn {
-        width: 38px;
-        height: 38px;
+        padding: 5px 10px;
+        font-size: 0.7rem;
     }
 
-    .changelog-modal-content {
-        max-height: 80vh;
-    }
-
-    .pages-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    .file-tree {
+        max-height: 300px;
+        overflow-y: auto;
     }
 }
 
 @media (max-width: 480px) {
-    .nav-frame {
-        top: 10px;
-        padding: 8px 16px;
-        max-width: calc(100% - 20px);
+    .workshop-text {
+        flex: 1;
     }
 
-    .nav-btn {
-        padding: 6px 12px;
+    .workshop-title {
         font-size: 0.85rem;
     }
 
-    .button-row {
-        gap: 10px;
+    .workshop-subtitle {
+        font-size: 0.72rem;
     }
 
-    .btn {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    .btn-lg {
-        min-height: 44px;
-        padding: 10px 14px;
-    }
-
-    .logo-card {
-        max-width: 250px;
-    }
-
-    .recently-updated-title {
-        font-size: 1.2rem;
+    .workshop-actions {
+        flex-direction: column;
+        gap: 4px;
+        margin-left: 0;
     }
 
     .recently-updated-card {
         padding: 16px;
     }
 
-    .updated-card-name {
-        font-size: 0.95rem;
+    .updated-card-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .updated-card-path {
-        font-size: 0.75rem;
+    .updated-card-actions {
+        width: 100%;
     }
 
     .updated-card-btn {
-        padding: 6px 10px;
-        font-size: 0.75rem;
-        min-width: 80px;
+        flex: 1;
     }
 
-    .workshop-frame {
-        bottom: 15px;
-        padding: 12px 14px;
-    }
-
-    .workshop-content {
-        gap: 12px;
-    }
-
-    .workshop-text {
-        display: none;
-    }
-
-    .workshop-actions {
-        margin-left: 0;
-    }
-
-    .workshop-btn {
-        width: 36px;
-        height: 36px;
-        padding: 6px 10px;
-    }
-
-    .btn-icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    .changelog-modal-content {
-        max-height: 90vh;
-        max-width: 95vw;
-    }
-
-    .changelog-header {
-        padding: 16px;
-    }
-
-    .changelog-header h2 {
-        font-size: 1.2rem;
-    }
-
-    .pages-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    .footer {
-        margin: 30px auto 0;
-        padding: 15px 16px;
-        font-size: 0.8rem;
+    .file-tree-name {
+        font-size: 0.85rem;
     }
 }
 
-@media (max-width: 360px) {
-    .nav-frame {
-        padding: 6px 12px;
-    }
+.nav-tooltip {
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(52, 52, 52, 0.34);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    border: 0px solid var(--glass-border);
+    backdrop-filter: saturate(120%);
+    -webkit-backdrop-filter: saturate(120%);
+    box-shadow: var(--shadow-1);
+    z-index: 10000;
+}
 
-    .nav-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
+.nav-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(40, 40, 40, 0.95);
+}
 
-    .container {
-        gap: 20px;
-    }
-
-    .logo-card {
-        max-width: 200px;
-    }
-
-    .btn {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-    }
+.nav-btn:hover .nav-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+    transition-delay: 0.5s;
 }
 
 /* Scrollbar styling for modal */
@@ -1143,5 +1209,23 @@ body::-webkit-scrollbar {
 }
 
 .changelog-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(106, 169, 255, 0.5);
+}
+
+.file-tree::-webkit-scrollbar {
+    width: 6px;
+}
+
+.file-tree::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.file-tree::-webkit-scrollbar-thumb {
+    background: rgba(106, 169, 255, 0.3);
+    border-radius: 6px;
+}
+
+.file-tree::-webkit-scrollbar-thumb:hover {
     background: rgba(106, 169, 255, 0.5);
 }
