@@ -926,7 +926,7 @@ window.addEventListener('hashchange', () => {
   if (guide) {
     updateMetaTags(
       guide.title,
-      guide.image || 'default-og-image.png',
+      guide.image || 'https://www.justkaarlo.com/res/ico/favicon/favicon-1.ico',
       guide.subtitle || guide.description?.substring(0, 100)
     );
   }
