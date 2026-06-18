@@ -61,7 +61,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     position: fixed;
     inset: 0;
     z-index: 0;
-    background-image: url("../res/bg/DarkWaveBlur.png");
+    background-image: url("https://www.justkaarlo.com/res/bg/DarkWaveBlur.png");
     background-size: cover;
     background-position: 50% 50%;
     filter: brightness(0.82);

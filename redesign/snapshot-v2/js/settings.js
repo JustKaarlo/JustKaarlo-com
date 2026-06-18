@@ -6,17 +6,17 @@ const SITE_CONFIG = {
     github: {
         enabled: true,
         owner: "JustKaarlo",
-        repo: "JustKaarlo.com",
-        branch: "main",
+        repo: "justkaarlo.github.io",
+        branch: "Home",
         apiBaseUrl: "https://api.github.com",
         token: null
     },
 
     recentlyUpdated: {
         enabled: true,
-        maxItems: 6,
+        maxItems: 3,
         autoRefresh: true,
-        refreshInterval: 600000,
+        refreshInterval: 30000,
     }
 };
 
