@@ -1933,27 +1933,54 @@ pre.sqf-code {
 
 .guide-description .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 0.5fr));
     gap: 16px;
-    margin: 20px 0;
+    margin: 5px 0;
 }
-
-.guide-description .cards-2 { grid-template-columns: repeat(2, 1fr); }
-.guide-description .cards-3 { grid-template-columns: repeat(3, 1fr); }
+.guide-description .cards-1 { grid-template-columns: repeat(1, 0.5fr); }
+.guide-description .cards-2 { grid-template-columns: repeat(2, 0.5fr); }
+.guide-description .cards-3 { grid-template-columns: repeat(3, 0.5fr); }
+.guide-description .cards-4 { grid-template-columns: repeat(4, 0.5fr); }
+.guide-description .cards-5 { grid-template-columns: repeat(5, 0.5fr); }
+.guide-description .cards-6 { grid-template-columns: repeat(6, 0.5fr); }
+.guide-description .cards-7 { grid-template-columns: repeat(7, 0.5fr); }
 
 .guide-description .card {
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.025);
     border-radius: 10px;
     padding: 20px;
-    transition: all 0.25s ease;
+    transition: all 0.8s ease;
+
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: left !important;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.guide-description .card div {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease;
+}
+.guide-description .card div:hover {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+    transform: translateY(-1px);
+}
 .guide-description .card:hover {
     background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.05);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    cursor: help;
+    user-select: text;
+    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); */
 }
 
 .guide-description a.card-link {

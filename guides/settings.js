@@ -2116,6 +2116,99 @@ const gzwGuides = [
         `,
     },
     {
+        title: 'Medical System',
+        subtitle: 'Useful',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/medical.png',
+        link: 'https://gray-zone-warfare.fandom.com/wiki/Health_system',
+        contentType: 'description',
+        showTOC: true,
+        description: `
+            <span data-toc="Top" data-toc-level="h2"></span>
+            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/medical.png" alt="Banner">
+            <div class="box">
+                <b>Useful information and notes about the medical system, including medical item effects, treatments, and what supplies you should always carry.</b>
+            </div>
+            <hr>
+            <h2>Treatment Options</h2>
+            You can find a list of all available medical items and what they do <a class="gzw" href="https://gray-zone-warfare.fandom.com/wiki/Medical">here</a>. This page lists every medical item<br>
+            in the game, and their weakness/buffs.
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <b><span class="text-gzw-1">Bandages</span></b>  Treats wounds but not bruises.<br>
+                    <b><span class="text-gzw-1">Tourniquets</span></b>  Stops bleeding but won't treat wounds.<br>
+                    <b><span class="text-gzw-1">Splints</span></b>  Repair damaged bones.<br>
+                    <b><span class="text-gzw-1">Surgery Kits</span></b>  Restore damaged or destroyed organs.<br>
+                    <b><span class="text-gzw-1">Blood Bags</span></b>  Replenish lost blood.<br>
+                    <b><span class="text-gzw-1">Pain Killers</span></b>  Pills that can treat pain; details provided in item descriptions.<br>
+                    <b><span class="text-gzw-1">Intoxication Pills</span></b>  Pills that can cure radiation and intoxication; details provided in item descriptions.<br>
+                    <b><span class="text-gzw-1">Stimulants</span></b>  Alter Health System behavior with benefits and drawbacks; details provided in item descriptions.<br>
+                </div>
+            </div>
+            <hr>
+            <h2>What To Bring Every Deployment</h2>
+            <div class="callout callout-gzw-1">
+                <div class="callout-body">
+                    <h5>Always Carry</h5>
+                    <div class="cards cards-4">
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_tour_cat.png">Tourniquet
+                            </div>
+                            <div class="card-body">
+                                 Instantly stops heavy or medium bleeding so you don't bleeding out.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_band_emergency_trauma_dressing.png">Bandages
+                            </div>
+                            <div class="card-body">
+                                Seals light wounds (Bandages stop bleeds but do not heal bruises).
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_surg_emergency_suture_kit.png">Surgery Kit
+                            </div>
+                            <div class="card-body">
+                                Fixing damaged or destroyed organs (which can cause sickness and nausea).
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_splint_flexible_splint.png">Splint
+                            </div>
+                            <div class="card-body">
+                                Repairs fractured or broken bones.
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h5>Highly Recommended</h5>
+                    <div class="cards cards-2">
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_pills_ibalin_bottle.png">Painkillers
+                            </div>
+                           <div class="card-body">
+                                Treats concussion symptoms and pain.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-title">
+                                <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_iv_blood_bag_small.png">Blood Bag
+                            </div>
+                           <div class="card-body">
+                                Restores lost blood to stop dizziness & prevent comas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        `,
+    },
+    {
         type: 'section',
         title: 'Third-Party Links',
         subtitle: `━━━━━━━`
@@ -2229,3 +2322,14 @@ const GuideConfigs = {
         return this[pageName] || [];
     }
 };
+
+            // <div class="cards cards-4">
+            //     <div class="card">
+            //         <div class="card-title">
+            //             <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_band_emergency_trauma_dressing.png">Bandages
+            //         </div>
+            //         <div class="card-body">
+            //             Treats wounds but not bruises.
+            //         </div>
+            //     </div>
+            // </div>
