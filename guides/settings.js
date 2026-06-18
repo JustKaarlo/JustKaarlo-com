@@ -1943,14 +1943,14 @@ const gzwGuides = [
     },
     {
         title: 'Ballistics',
-        subtitle: 'Information',
+        subtitle: 'Handy-Notes',
         icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/bullet.png',
         contentType: 'description',
         showTOC: true,
         description: `
             <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/ballistics.png" alt="Banner">
             <span data-toc="Top" data-toc-level="h1"></span>
-            <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/vendors" class="btn-action-gzw">Vendors</a> <a href="https://gzwitems.com/" class="btn-action-gzw">Price Tracker</a> <a href="https://gzwtacmap.com/maps/lamang" class="btn-action-gzw">Interactive Map</a> <a href="https://gzwloadout.com/" class="btn-action-gzw">Weapon Builder</a>
+            <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/" class="btn-action-gzw">Weapon Builder</a>
             <div class="box">
                 <b>...</b>
             </div>
@@ -2014,11 +2014,6 @@ const gzwGuides = [
                 <div class="tab-pane" id="tab-fill">Work In Progress</div>
             </div>
         `,
-    },
-    {
-        type: 'section',
-        title: 'Notes',
-        subtitle: `━━━━━━━`
     },
     {
         title: 'Tasks',
@@ -2101,18 +2096,17 @@ const gzwGuides = [
     },
     {
         type: 'section',
-        title: 'Vendors',
+        title: 'Third-Party Links',
         subtitle: `━━━━━━━`
     },
     {
-        title: 'Handshake',
+        title: 'Vendors',
         subtitle: 'Equipment',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/vendors/handshake.png',
+        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/cart.png',
         contentType: 'link',
-        link: 'https://gzwloadout.com/vendors/handshake',
+        link: 'https://gzwloadout.com/vendors',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/core/link-badge.png',
-            tooltip: 'Open',
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/gzwloadout-com.png',
             position: 'right'
         }
     },
