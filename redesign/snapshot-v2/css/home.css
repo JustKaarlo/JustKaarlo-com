@@ -53,13 +53,14 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .bg {
     position: fixed;
     inset: 0;
-    z-index: -2;
+    z-index: 0;
     background-image: url("../res/bg/DarkWaveBlur.png");
     background-size: cover;
     background-position: 50% 50%;
@@ -196,6 +197,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         filter var(--transition-fast);
     position: relative;
     isolation: isolate;
+    cursor: pointer;
 }
 
 .btn::after {
@@ -267,6 +269,445 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 .btn-ghost:hover {
     color: var(--text-1);
     background: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================================================
+   RECENTLY UPDATED SECTION - FILE TREE
+   ============================================================================ */
+
+.recently-updated-section {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 20px;
+}
+
+.recently-updated-title {
+    color: var(--text-1);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.recently-updated-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-1);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    padding: 20px;
+    transition: all 200ms ease;
+    position: relative;
+}
+
+.recently-updated-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.recently-updated-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.updated-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.updated-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.updated-card-name {
+    color: var(--text-1);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    word-break: break-word;
+}
+
+.updated-card-meta {
+    color: var(--text-2);
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.updated-card-time {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.updated-card-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.updated-card-btn {
+    padding: 8px 12px;
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.2), rgba(106, 169, 255, 0.1));
+    border: 1px solid rgba(106, 169, 255, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 150ms ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.updated-card-btn:hover:not(:disabled) {
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.2));
+    border-color: rgba(106, 169, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(106, 169, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.updated-card-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* File Tree Styles */
+.file-tree {
+    margin-top: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    position: relative;
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.file-tree-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 150ms ease;
+    border-radius: 6px;
+    position: relative;
+}
+
+.file-tree-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-tree-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    min-width: 18px;
+}
+
+.file-tree-name {
+    color: var(--text-1);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    flex: 1;
+    word-break: break-all;
+}
+
+.file-tree-changes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 24px;
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.15));
+    border: 1px solid rgba(106, 169, 255, 0.3);
+    border-radius: 4px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.file-tree-status {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    margin-left: 8px;
+}
+
+.status-added {
+    background: rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+}
+
+.status-modified {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+}
+
+.status-removed {
+    background: rgba(248, 113, 113, 0.2);
+    color: #f87171;
+}
+
+.status-renamed {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+/* ============================================================================
+   CHANGELOG MODAL
+   ============================================================================ */
+
+.changelog-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.changelog-modal.glass {
+    background: unset;
+    border: unset;
+    box-shadow: unset;
+    backdrop-filter: unset;
+}
+
+.changelog-modal-content {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    backdrop-filter: blur(14px) saturate(120%);
+    -webkit-backdrop-filter: blur(14px) saturate(120%);
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.changelog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-bottom: 1px solid var(--glass-border);
+    sticky: top 0;
+    background: var(--glass-bg);
+    z-index: 1;
+}
+
+.changelog-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-1);
+}
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-2);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 150ms ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--text-1);
+}
+
+.changelog-info {
+    padding: 24px;
+    display: grid;
+    gap: 12px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.changelog-info-item {
+    display: flex;
+    gap: 12px;
+}
+
+.changelog-info-item strong {
+    color: var(--accent);
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.changelog-message {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent);
+    margin: 12px 24px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-2);
+}
+
+.changelog-pages {
+    padding: 24px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.changelog-pages h3 {
+    margin: 0 0 16px 0;
+    color: var(--text-1);
+    font-size: 1.1rem;
+}
+
+.pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.page-btn {
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.2), rgba(106, 169, 255, 0.1));
+    border: 1px solid rgba(106, 169, 255, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 150ms ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.page-btn:hover {
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.2));
+    border-color: rgba(106, 169, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(106, 169, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.changelog-files {
+    padding: 24px;
+}
+
+.changelog-files h3 {
+    margin: 0 0 16px 0;
+    color: var(--text-1);
+    font-size: 1.1rem;
+}
+
+.changelog-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.changelog-file-item {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: all 150ms ease;
+}
+
+.changelog-file-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--accent);
+}
+
+.changelog-file-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.changelog-file-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.changelog-file-name {
+    flex: 1;
+    color: var(--text-1);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    word-break: break-all;
+}
+
+.changelog-file-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.changelog-file-changes {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--text-2);
+    border-top: 1px solid var(--glass-border);
+}
+
+.changelog-file-patch {
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid var(--glass-border);
+    overflow-x: auto;
+}
+
+.changelog-file-patch pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--text-2);
+    line-height: 1.4;
 }
 
 .footer {
@@ -398,7 +839,9 @@ a.btn-glassy {
     text-decoration: none;
     padding: 8px 16px;
     border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: background 160ms ease, transform 120ms ease;
+    cursor: pointer;
 }
 
 .nav-btn:hover {
@@ -562,9 +1005,11 @@ a.btn-glassy {
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 150ms ease;
     filter: contrast(1.35);
     margin: 12px 0 6px -100px;
+    cursor: pointer;
 }
 .btn-icon {
     width: 20px;
@@ -678,6 +1123,10 @@ a.btn-glassy {
         padding: 5px 10px;
         font-size: 0.7rem;
     }
+
+    .file-tree {
+        max-height: 250px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -696,6 +1145,19 @@ a.btn-glassy {
     .workshop-actions {
         flex-direction: column;
         gap: 4px;
+    }
+
+    .updated-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .updated-card-actions {
+        width: 100%;
+    }
+
+    .updated-card-btn {
+        flex: 1;
     }
 }
 
@@ -744,4 +1206,41 @@ a.btn-glassy {
     visibility: visible;
     transform: translateX(-50%) translateY(-5px);
     transition-delay: 0.5s;
+}
+
+/* Scrollbar styling */
+.file-tree::-webkit-scrollbar {
+    width: 6px;
+}
+
+.file-tree::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.file-tree::-webkit-scrollbar-thumb {
+    background: rgba(106, 169, 255, 0.3);
+    border-radius: 6px;
+}
+
+.file-tree::-webkit-scrollbar-thumb:hover {
+    background: rgba(106, 169, 255, 0.5);
+}
+
+.changelog-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.changelog-modal-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.changelog-modal-content::-webkit-scrollbar-thumb {
+    background: rgba(106, 169, 255, 0.3);
+    border-radius: 10px;
+}
+
+.changelog-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(106, 169, 255, 0.5);
 }

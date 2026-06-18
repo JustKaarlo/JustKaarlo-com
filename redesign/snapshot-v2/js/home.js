@@ -74,3 +74,24 @@ logoCard.addEventListener('mousemove', (e) => {
 logoCard.addEventListener('mouseleave', () => {
     logoCard.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
 });
+
+// Modal close handlers
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('changelog-modal');
+    if (e.target === modal) {
+        closeChangelogModal();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeChangelogModal();
+    }
+});
+
+function closeChangelogModal() {
+    const modal = document.getElementById('changelog-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
