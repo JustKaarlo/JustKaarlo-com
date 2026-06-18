@@ -79,17 +79,16 @@ if (logoCard && logoCardConfig.enableMouseTracking) {
     });
 }
 
-// Modal close on background click
+// Modal close handlers
 document.addEventListener('click', (e) => {
-    const modal = document.getElementById('commit-details-modal');
+    const modal = document.getElementById('changelog-modal');
     if (e.target === modal) {
-        closeCommitDetailsModal();
+        closeChangelogModal();
     }
 });
 
-// Keyboard escape to close modal
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeCommitDetailsModal();
+        closeChangelogModal();
     }
 });

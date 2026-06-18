@@ -1,13 +1,8 @@
 // ============================================================================
 // SETTINGS.JS - Centralized Configuration for JustKaarlo.com
 // ============================================================================
-// This file contains all customizable settings for the website.
-// Modify values here to instantly update your site without editing HTML/CSS.
 
 const SITE_CONFIG = {
-    // ========================================================================
-    // GENERAL SITE SETTINGS
-    // ========================================================================
     site: {
         title: "JustKaarlo",
         domain: "justkaarlo.com",
@@ -15,43 +10,21 @@ const SITE_CONFIG = {
         defaultLanguage: "en",
     },
 
-    // ========================================================================
-    // GITHUB SETTINGS - FOR RECENT COMMITS
-    // ========================================================================
     github: {
         enabled: true,
-        owner: "JustKaarlo", // GitHub username or organization
-        repo: "justkaarlo.github.io", // Repository name
-        branch: "Home", // Default branch
+        owner: "JustKaarlo",
+        repo: "justkaarlo.github.io",
+        branch: "Home",
         apiBaseUrl: "https://api.github.com",
-        token: null // Leave null for public repos, add token if needed for private
+        token: null
     },
 
-    // ========================================================================
-    // MAIN NAVIGATION SETTINGS
-    // ========================================================================
     navigation: {
-        items: [
-            {
-                label: "Mods",
-                href: "../mods",
-                icon: "../res/ico/mods.svg",
-                tooltip: "Browse Mods"
-            },
-            {
-                label: "Guides",
-                href: "../guides",
-                icon: "../res/ico/guides.svg",
-                tooltip: "View Guides"
-            }
-        ]
+        items: []
     },
 
-    // ========================================================================
-    // WORKSHOP/PROFILE SETTINGS (Steam)
-    // ========================================================================
     workshop: {
-        enabled: true,
+        enabled: false,
         platform: "Steam",
         username: "@JustKaarlo",
         avatar: "https://www.justkaarlo.com/res/src/steam-avatar.png",
@@ -72,22 +45,16 @@ const SITE_CONFIG = {
         ]
     },
 
-    // ========================================================================
-    // RECENTLY UPDATED SECTION SETTINGS - FROM GITHUB COMMITS
-    // ========================================================================
     recentlyUpdated: {
         enabled: true,
         title: "Latest",
         subtitle: "Pages That Was Recently Updated",
         maxItems: 3,
         autoRefresh: true,
-        refreshInterval: 600000, // 10 minutes
+        refreshInterval: 30000,
         cacheKey: "recentlyUpdatedCommits"
     },
 
-    // ========================================================================
-    // PARTICLE ANIMATION SETTINGS
-    // ========================================================================
     particles: {
         enabled: true,
         canvasId: "particle-canvas",
@@ -99,12 +66,9 @@ const SITE_CONFIG = {
         animationSpeed: "requestAnimationFrame"
     },
 
-    // ========================================================================
-    // LOGO CARD SETTINGS
-    // ========================================================================
     logoCard: {
-        selector: ".logo-card",
-        image: "https://www.justkaarlo.com/res/src/header-cards/header-home.svg",
+        selector: ".logo-section",
+        image: "",
         enableMouseTracking: true,
         rotationSensitivity: 150,
         hoverScale: 0.98,
@@ -112,9 +76,6 @@ const SITE_CONFIG = {
         filter: "brightness(1.2)"
     },
 
-    // ========================================================================
-    // THEME & COLOR SETTINGS
-    // ========================================================================
     theme: {
         mode: "dark",
         colors: {
@@ -143,9 +104,6 @@ const SITE_CONFIG = {
         }
     },
 
-    // ========================================================================
-    // PERFORMANCE SETTINGS
-    // ========================================================================
     performance: {
         enableLazyLoading: true,
         enableImageOptimization: true,
@@ -155,7 +113,7 @@ const SITE_CONFIG = {
 };
 
 // ============================================================================
-// GITHUB COMMITS MANAGER - FETCHES LATEST COMMITS AND FILE CHANGES
+// GITHUB COMMITS MANAGER
 // ============================================================================
 
 class GitHubCommitsManager {
@@ -164,7 +122,6 @@ class GitHubCommitsManager {
         this.recentlyUpdatedConfig = config.recentlyUpdated;
         this.apiBaseUrl = config.github.apiBaseUrl;
         this.commits = [];
-        this.selectedCommit = null;
         this.updateCallback = null;
         this.init();
     }
@@ -178,9 +135,6 @@ class GitHubCommitsManager {
         }
     }
 
-    /**
-     * Fetch latest commits from GitHub
-     */
     async fetchLatestCommits() {
         try {
             const url = `${this.apiBaseUrl}/repos/${this.config.owner}/${this.config.repo}/commits?per_page=${this.recentlyUpdatedConfig.maxItems}`;
@@ -206,14 +160,11 @@ class GitHubCommitsManager {
 
             return this.commits;
         } catch (error) {
-            console.error("Error fetching commits from GitHub:", error);
+            console.error("Error fetching commits:", error);
             return [];
         }
     }
 
-    /**
-     * Get detailed information about a specific commit including file changes
-     */
     async getCommitDetails(commitSha) {
         try {
             const url = `${this.apiBaseUrl}/repos/${this.config.owner}/${this.config.repo}/commits/${commitSha}`;
@@ -238,9 +189,6 @@ class GitHubCommitsManager {
         }
     }
 
-    /**
-     * Format date for display
-     */
     formatDate(dateString) {
         const date = new Date(dateString);
         const now = new Date();
@@ -258,9 +206,6 @@ class GitHubCommitsManager {
         return date.toLocaleDateString();
     }
 
-    /**
-     * Extract file extension for styling
-     */
     getFileIcon(filename) {
         const ext = filename.split('.').pop().toLowerCase();
         const iconMap = {
@@ -279,9 +224,6 @@ class GitHubCommitsManager {
         return iconMap[ext] || '📄';
     }
 
-    /**
-     * Get status badge style
-     */
     getStatusBadge(status) {
         const badges = {
             'added': { color: '#4ade80', label: 'Added' },
@@ -292,18 +234,8 @@ class GitHubCommitsManager {
         return badges[status] || { color: '#9ca3af', label: 'Changed' };
     }
 
-    /**
-     * Register update callback
-     */
     onUpdate(callback) {
         this.updateCallback = callback;
-    }
-
-    /**
-     * Set selected commit for details view
-     */
-    selectCommit(commitSha) {
-        this.selectedCommit = commitSha;
     }
 }
 
@@ -311,9 +243,6 @@ class GitHubCommitsManager {
 // UTILITY FUNCTIONS
 // ============================================================================
 
-/**
- * Apply theme to CSS variables
- */
 function applyTheme(themeConfig) {
     const root = document.documentElement;
     const colors = themeConfig.colors;
@@ -342,9 +271,6 @@ function applyTheme(themeConfig) {
     root.style.setProperty("--transition-slow", transitions.slow);
 }
 
-/**
- * Generate main navigation HTML
- */
 function generateNavigation(navConfig) {
     const navContainer = document.getElementById("main-nav-buttons");
     if (!navContainer) return;
@@ -359,9 +285,6 @@ function generateNavigation(navConfig) {
         .join("");
 }
 
-/**
- * Generate workshop section
- */
 function generateWorkshopSection(workshopConfig) {
     if (!workshopConfig.enabled) return;
 
@@ -392,9 +315,6 @@ function generateWorkshopSection(workshopConfig) {
     `;
 }
 
-/**
- * Generate recently updated section from GitHub commits
- */
 function generateRecentlyUpdatedSection(commits, commitsManager) {
     const container = document.getElementById("recently-updated-buttons");
 
@@ -402,7 +322,7 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
 
     if (commits.length === 0) {
         container.innerHTML = `
-            <div style="width: 100%; text-align: center; color: var(--text-2); opacity: 0.7; padding: 20px;">
+            <div style="width: 100%; text-align: center; color: var(--text-2); opacity: 0.7; padding: 20px; grid-column: 1/-1;">
                 <p style="margin: 0;">No commits found. Check your GitHub repository.</p>
             </div>
         `;
@@ -410,7 +330,7 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
     }
 
     container.innerHTML = commits
-        .map((commit, index) => {
+        .map((commit) => {
             const commitData = commit.commit;
             const shortSha = commit.sha.substring(0, 7);
             const author = commitData.author?.name || 'Unknown';
@@ -423,17 +343,16 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
                     <div class="updated-card-info">
                         <div class="updated-card-name">${escapeHtml(message)}</div>
                         <div class="updated-card-path">
-                            <strong>By:</strong> ${escapeHtml(author)} • 
-                            <strong>Commit:</strong> ${shortSha}
+                            <strong>By:</strong> ${escapeHtml(author)}
                         </div>
                         <div class="updated-card-time">Updated: ${date}</div>
                     </div>
                     <div class="updated-card-actions">
-                        <button class="updated-card-btn details-btn" data-commit-sha="${commit.sha}">
-                            View Details
+                        <button class="updated-card-btn changelog-btn" data-commit-sha="${commit.sha}" title="View Changelog">
+                            📝 Changelog
                         </button>
-                        <a href="${commitUrl}" class="updated-card-btn" target="_blank" rel="noopener noreferrer">
-                            On GitHub
+                        <a href="${commitUrl}" class="updated-card-btn" target="_blank" rel="noopener noreferrer" title="View on GitHub">
+                            🔗 GitHub
                         </a>
                     </div>
                 </div>
@@ -441,30 +360,27 @@ function generateRecentlyUpdatedSection(commits, commitsManager) {
         })
         .join("");
 
-    // Add click handlers to details buttons
-    document.querySelectorAll('.details-btn').forEach(btn => {
+    // Add click handlers to changelog buttons
+    document.querySelectorAll('.changelog-btn').forEach(btn => {
         btn.addEventListener('click', async (e) => {
             const commitSha = btn.dataset.commitSha;
             
-            btn.textContent = 'Loading...';
+            btn.textContent = '⏳ Loading...';
             btn.disabled = true;
 
             const commitDetails = await commitsManager.getCommitDetails(commitSha);
             if (commitDetails) {
-                showCommitDetailsModal(commitDetails, commitsManager);
+                showChangelogModal(commitDetails, commitsManager);
             }
 
-            btn.textContent = 'View Details';
+            btn.textContent = '📝 Changelog';
             btn.disabled = false;
         });
     });
 }
 
-/**
- * Show detailed commit changes in a modal
- */
-function showCommitDetailsModal(commitData, commitsManager) {
-    const modal = document.getElementById('commit-details-modal');
+function showChangelogModal(commitData, commitsManager) {
+    const modal = document.getElementById('changelog-modal');
     if (!modal) {
         console.error('Modal not found');
         return;
@@ -476,6 +392,9 @@ function showCommitDetailsModal(commitData, commitsManager) {
     const shortSha = commitData.sha.substring(0, 7);
     const files = commitData.files || [];
 
+    // Filter HTML pages
+    const htmlPages = files.filter(f => f.filename.endsWith('.html'));
+    
     // Calculate stats
     const stats = {
         added: files.filter(f => f.status === 'added').length,
@@ -492,66 +411,76 @@ function showCommitDetailsModal(commitData, commitsManager) {
 
         let patchPreview = '';
         if (file.patch) {
-            const lines = file.patch.split('\n').slice(0, 10).join('\n');
-            patchPreview = `<div class="commit-file-patch"><pre>${escapeHtml(lines)}</pre></div>`;
+            const lines = file.patch.split('\n').slice(0, 8).join('\n');
+            patchPreview = `<div class="changelog-file-patch"><pre>${escapeHtml(lines)}</pre></div>`;
         }
 
         return `
-            <div class="commit-file-item">
-                <div class="commit-file-header">
-                    <span class="commit-file-icon">${icon}</span>
-                    <span class="commit-file-name">${escapeHtml(file.filename)}</span>
-                    <span class="commit-file-status" style="background-color: ${status.color}20; border: 1px solid ${status.color}; color: ${status.color};">
+            <div class="changelog-file-item">
+                <div class="changelog-file-header">
+                    <span class="changelog-file-icon">${icon}</span>
+                    <span class="changelog-file-name">${escapeHtml(file.filename)}</span>
+                    <span class="changelog-file-status" style="background-color: ${status.color}20; border: 1px solid ${status.color}; color: ${status.color};">
                         ${status.label}
                     </span>
                 </div>
-                ${file.changes ? `<div class="commit-file-changes">${changes}</div>` : ''}
+                ${file.changes ? `<div class="changelog-file-changes">${changes}</div>` : ''}
                 ${patchPreview}
             </div>
         `;
     }).join('');
 
+    // Build pages grid
+    const pagesHTML = htmlPages.length > 0 ? htmlPages.map(page => {
+        const pagePath = page.filename;
+        return `
+            <a href="${pagePath}" class="page-btn" title="Visit ${pagePath}">
+                🌐 ${pagePath.split('/').pop()}
+            </a>
+        `;
+    }).join('') : '<p style="color: var(--text-2); opacity: 0.7;">No HTML pages modified in this commit.</p>';
+
     const modalContent = `
-        <div class="commit-modal-header">
-            <h2>Commit Details</h2>
-            <button class="modal-close-btn" onclick="closeCommitDetailsModal()">&times;</button>
+        <div class="changelog-header">
+            <h2>Changelog</h2>
+            <button class="modal-close-btn" onclick="closeChangelogModal()">&times;</button>
         </div>
 
-        <div class="commit-modal-info">
-            <div class="commit-info-item">
-                <strong>Message:</strong>
-                <p class="commit-message-text">${escapeHtml(commitMessage)}</p>
+        <div class="changelog-info">
+            <div class="changelog-info-item">
+                <strong>Commit:</strong>
+                <span>${shortSha}</span>
             </div>
-
-            <div class="commit-info-item">
-                <strong>Author:</strong> ${escapeHtml(author)}
+            <div class="changelog-info-item">
+                <strong>Author:</strong>
+                <span>${escapeHtml(author)}</span>
             </div>
-
-            <div class="commit-info-item">
-                <strong>Commit:</strong> ${shortSha}
-            </div>
-
-            <div class="commit-info-item">
-                <strong>Date:</strong> ${date}
+            <div class="changelog-info-item">
+                <strong>Date:</strong>
+                <span>${date}</span>
             </div>
         </div>
 
-        <div class="commit-stats">
-            ${stats.added > 0 ? `<div class="stat-item added"><span>${stats.added}</span> Added</div>` : ''}
-            ${stats.modified > 0 ? `<div class="stat-item modified"><span>${stats.modified}</span> Modified</div>` : ''}
-            ${stats.removed > 0 ? `<div class="stat-item removed"><span>${stats.removed}</span> Removed</div>` : ''}
-            ${stats.renamed > 0 ? `<div class="stat-item renamed"><span>${stats.renamed}</span> Renamed</div>` : ''}
-        </div>
+        <div class="changelog-message">${escapeHtml(commitMessage)}</div>
 
-        <div class="commit-files">
-            <h3>Changed Files (${files.length})</h3>
-            <div class="commit-files-list">
+        ${htmlPages.length > 0 ? `
+            <div class="changelog-pages">
+                <h3>📄 Modified Pages (${htmlPages.length})</h3>
+                <div class="pages-grid">
+                    ${pagesHTML}
+                </div>
+            </div>
+        ` : ''}
+
+        <div class="changelog-files">
+            <h3>📋 All Changes (${files.length} files)</h3>
+            <div class="changelog-files-list">
                 ${filesHTML}
             </div>
         </div>
     `;
 
-    const contentContainer = document.querySelector('.commit-modal-content');
+    const contentContainer = document.querySelector('.changelog-modal-content');
     if (contentContainer) {
         contentContainer.innerHTML = modalContent;
     }
@@ -559,19 +488,13 @@ function showCommitDetailsModal(commitData, commitsManager) {
     modal.style.display = 'flex';
 }
 
-/**
- * Close the commit details modal
- */
-function closeCommitDetailsModal() {
-    const modal = document.getElementById('commit-details-modal');
+function closeChangelogModal() {
+    const modal = document.getElementById('changelog-modal');
     if (modal) {
         modal.style.display = 'none';
     }
 }
 
-/**
- * Escape HTML to prevent XSS
- */
 function escapeHtml(text) {
     if (typeof text !== 'string') return '';
     const map = {
@@ -589,24 +512,16 @@ function escapeHtml(text) {
 // ============================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Apply theme
     applyTheme(SITE_CONFIG.theme);
-
-    // Generate navigation
     generateNavigation(SITE_CONFIG.navigation);
-
-    // Generate workshop section
     generateWorkshopSection(SITE_CONFIG.workshop);
 
-    // Initialize GitHub Commits Manager
     const commitsManager = new GitHubCommitsManager(SITE_CONFIG);
 
-    // Set callback to update UI
     commitsManager.onUpdate((commits) => {
         generateRecentlyUpdatedSection(commits, commitsManager);
     });
 
-    // Initial fetch
     commitsManager.fetchLatestCommits();
 });
 

@@ -117,7 +117,7 @@ body::-webkit-scrollbar {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -184,7 +184,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .btn {
@@ -287,12 +287,11 @@ body::-webkit-scrollbar {
 }
 
 /* ============================================================================
-   RECENTLY UPDATED SECTION - CARD STYLE
+   RECENTLY UPDATED SECTION - 3 COLUMN GRID
    ============================================================================ */
 
 .recently-updated-section {
     width: 100%;
-    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -310,16 +309,16 @@ body::-webkit-scrollbar {
 
 .recently-updated-container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
 }
 
 .recently-updated-card {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 20px;
+    flex-direction: column;
+    padding: 20px;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
@@ -328,6 +327,7 @@ body::-webkit-scrollbar {
     -webkit-backdrop-filter: blur(14px) saturate(120%);
     transition: all 200ms ease;
     position: relative;
+    height: 100%;
 }
 
 .recently-updated-card::before {
@@ -343,28 +343,33 @@ body::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.25);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
 .updated-card-info {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     flex: 1;
     z-index: 1;
+    margin-bottom: 16px;
 }
 
 .updated-card-name {
     color: var(--text-1);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.05rem;
     letter-spacing: 0.2px;
     word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .updated-card-path {
     color: var(--text-2);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     word-break: break-all;
 }
@@ -379,24 +384,27 @@ body::-webkit-scrollbar {
 .updated-card-actions {
     display: flex;
     gap: 8px;
-    margin-left: 16px;
     z-index: 1;
+    flex-wrap: wrap;
 }
 
 .updated-card-btn {
-    padding: 8px 14px;
+    flex: 1;
+    min-width: 100px;
+    padding: 8px 12px;
     background: linear-gradient(180deg, rgba(106, 169, 255, 0.2), rgba(106, 169, 255, 0.1));
     border: 1px solid rgba(106, 169, 255, 0.3);
     border-radius: var(--radius-sm);
     color: var(--accent);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     transition: all 150ms ease;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .updated-card-btn:hover:not(:disabled) {
@@ -412,10 +420,10 @@ body::-webkit-scrollbar {
 }
 
 /* ============================================================================
-   COMMIT DETAILS MODAL
+   CHANGELOG MODAL
    ============================================================================ */
 
-.commit-modal {
+.changelog-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -430,14 +438,14 @@ body::-webkit-scrollbar {
     backdrop-filter: blur(4px);
 }
 
-.commit-modal.glass {
+.changelog-modal.glass {
     background: unset;
     border: unset;
     box-shadow: unset;
     backdrop-filter: unset;
 }
 
-.commit-modal-content {
+.changelog-modal-content {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
@@ -451,7 +459,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.commit-modal-header {
+.changelog-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -462,7 +470,7 @@ body::-webkit-scrollbar {
     z-index: 1;
 }
 
-.commit-modal-header h2 {
+.changelog-header h2 {
     margin: 0;
     font-size: 1.5rem;
     color: var(--text-1);
@@ -486,93 +494,94 @@ body::-webkit-scrollbar {
     color: var(--text-1);
 }
 
-.commit-modal-info {
+.changelog-info {
     padding: 24px;
     display: grid;
-    gap: 16px;
+    gap: 12px;
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.commit-info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.commit-info-item strong {
-    color: var(--accent);
-    font-size: 0.9rem;
-}
-
-.commit-message-text {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 12px;
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--accent);
-    margin: 0;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-.commit-stats {
+.changelog-info-item {
     display: flex;
     gap: 12px;
-    padding: 0 24px;
-    flex-wrap: wrap;
 }
 
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
+.changelog-info-item strong {
+    color: var(--accent);
     font-size: 0.9rem;
-    font-weight: 600;
+    min-width: 80px;
 }
 
-.stat-item span {
-    font-size: 1.1rem;
-    font-weight: 700;
+.changelog-message {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--accent);
+    margin: 12px 24px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-2);
 }
 
-.stat-item.added {
-    background: rgba(74, 222, 128, 0.15);
-    color: #4ade80;
-}
-
-.stat-item.modified {
-    background: rgba(96, 165, 250, 0.15);
-    color: #60a5fa;
-}
-
-.stat-item.removed {
-    background: rgba(248, 113, 113, 0.15);
-    color: #f87171;
-}
-
-.stat-item.renamed {
-    background: rgba(251, 191, 36, 0.15);
-    color: #fbbf24;
-}
-
-.commit-files {
+.changelog-pages {
     padding: 24px;
-    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.commit-files h3 {
+.changelog-pages h3 {
     margin: 0 0 16px 0;
     color: var(--text-1);
     font-size: 1.1rem;
 }
 
-.commit-files-list {
+.pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.page-btn {
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.2), rgba(106, 169, 255, 0.1));
+    border: 1px solid rgba(106, 169, 255, 0.3);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 150ms ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+}
+
+.page-btn:hover {
+    background: linear-gradient(180deg, rgba(106, 169, 255, 0.3), rgba(106, 169, 255, 0.2));
+    border-color: rgba(106, 169, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(106, 169, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.changelog-files {
+    padding: 24px;
+}
+
+.changelog-files h3 {
+    margin: 0 0 16px 0;
+    color: var(--text-1);
+    font-size: 1.1rem;
+}
+
+.changelog-files-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.commit-file-item {
+.changelog-file-item {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-sm);
@@ -580,12 +589,12 @@ body::-webkit-scrollbar {
     transition: all 150ms ease;
 }
 
-.commit-file-item:hover {
+.changelog-file-item:hover {
     background: rgba(0, 0, 0, 0.3);
     border-color: var(--accent);
 }
 
-.commit-file-header {
+.changelog-file-header {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -593,12 +602,12 @@ body::-webkit-scrollbar {
     cursor: pointer;
 }
 
-.commit-file-icon {
+.changelog-file-icon {
     font-size: 1.2rem;
     flex-shrink: 0;
 }
 
-.commit-file-name {
+.changelog-file-name {
     flex: 1;
     color: var(--text-1);
     font-weight: 600;
@@ -606,7 +615,7 @@ body::-webkit-scrollbar {
     word-break: break-all;
 }
 
-.commit-file-status {
+.changelog-file-status {
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.75rem;
@@ -614,21 +623,21 @@ body::-webkit-scrollbar {
     white-space: nowrap;
 }
 
-.commit-file-changes {
+.changelog-file-changes {
     padding: 8px 12px;
     font-size: 0.85rem;
     color: var(--text-2);
     border-top: 1px solid var(--glass-border);
 }
 
-.commit-file-patch {
+.changelog-file-patch {
     padding: 12px;
     background: rgba(0, 0, 0, 0.4);
     border-top: 1px solid var(--glass-border);
     overflow-x: auto;
 }
 
-.commit-file-patch pre {
+.changelog-file-patch pre {
     margin: 0;
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;
@@ -935,6 +944,16 @@ body::-webkit-scrollbar {
    RESPONSIVE DESIGN
    ============================================================================ */
 
+@media (max-width: 1024px) {
+    .recently-updated-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .main-wrapper {
         padding: 30px 15px;
@@ -952,20 +971,8 @@ body::-webkit-scrollbar {
         max-width: 300px;
     }
 
-    .recently-updated-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .updated-card-actions {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 12px;
-        gap: 8px;
-    }
-
-    .updated-card-btn {
-        flex: 1;
+    .recently-updated-container {
+        grid-template-columns: 1fr;
     }
 
     .workshop-frame {
@@ -983,13 +990,12 @@ body::-webkit-scrollbar {
         height: 38px;
     }
 
-    .commit-modal-content {
+    .changelog-modal-content {
         max-height: 80vh;
     }
 
-    .commit-file-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }
 
@@ -1028,7 +1034,7 @@ body::-webkit-scrollbar {
     }
 
     .recently-updated-card {
-        padding: 12px 16px;
+        padding: 16px;
     }
 
     .updated-card-name {
@@ -1042,6 +1048,7 @@ body::-webkit-scrollbar {
     .updated-card-btn {
         padding: 6px 10px;
         font-size: 0.75rem;
+        min-width: 80px;
     }
 
     .workshop-frame {
@@ -1072,17 +1079,21 @@ body::-webkit-scrollbar {
         height: 16px;
     }
 
-    .commit-modal-content {
+    .changelog-modal-content {
         max-height: 90vh;
         max-width: 95vw;
     }
 
-    .commit-modal-header {
+    .changelog-header {
         padding: 16px;
     }
 
-    .commit-modal-header h2 {
+    .changelog-header h2 {
         font-size: 1.2rem;
+    }
+
+    .pages-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
 
     .footer {
@@ -1117,20 +1128,20 @@ body::-webkit-scrollbar {
 }
 
 /* Scrollbar styling for modal */
-.commit-modal-content::-webkit-scrollbar {
+.changelog-modal-content::-webkit-scrollbar {
     width: 8px;
 }
 
-.commit-modal-content::-webkit-scrollbar-track {
+.changelog-modal-content::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
-.commit-modal-content::-webkit-scrollbar-thumb {
+.changelog-modal-content::-webkit-scrollbar-thumb {
     background: rgba(106, 169, 255, 0.3);
     border-radius: 10px;
 }
 
-.commit-modal-content::-webkit-scrollbar-thumb:hover {
+.changelog-modal-content::-webkit-scrollbar-thumb:hover {
     background: rgba(106, 169, 255, 0.5);
 }
