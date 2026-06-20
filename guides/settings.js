@@ -2267,7 +2267,7 @@ const gzwGuides = [
         contentType: 'link',
         link: 'https://gzwloadout.com/vendors',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
             position: 'right'
         }
     },
@@ -2278,7 +2278,7 @@ const gzwGuides = [
         contentType: 'link',
         link: 'https://gzwitems.com/',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
             position: 'right'
         }
     },
@@ -2289,7 +2289,7 @@ const gzwGuides = [
         contentType: 'link',
         link: 'https://gzwtacmap.com/maps/lamang',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
             position: 'right'
         }
     },
@@ -2300,7 +2300,7 @@ const gzwGuides = [
         contentType: 'link',
         link: 'https://whereisvulture.com/blueprints',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
             position: 'right'
         }
     },
