@@ -796,14 +796,3 @@ const GuideConfigs = {
         return this[pageName] || [];
     }
 };
-
-            // <div class="cards cards-4">
-            //     <div class="card">
-            //         <div class="card-title">
-            //             <img class="image-24x24" src="https://pub-0f96b00a20824fbbb1756d5bf2bd2ae3.r2.dev/items/med_band_emergency_trauma_dressing.png">Bandages
-            //         </div>
-            //         <div class="card-body">
-            //             Treats wounds but not bruises.
-            //         </div>
-            //     </div>
-            // </div>
