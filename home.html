@@ -3,46 +3,54 @@
 
 <head>
     <title>JustKaarlo's</title>
-    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/favicon-1.ico">
+    <link rel="icon" type="image/x-icon" href="res/core/favicons/justkaarlo.ico">
 
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/grid-overlay.css">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="JustKaarlo's /">
     <meta property="og:description" content="Personal website for guides, resources, projects, handy-notes etc...">
-    <meta property="og:image" content="https://www.justkaarlo.com/res/ico/favicon/favicon-1.ico">
+    <meta property="og:image" content="res/core/images/embed.png">
     <meta property="og:url" content="https://www.justkaarlo.com">
 </head>
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" as="image" href="https://www.justkaarlo.com/res/bg/DarkWave.png">
+    <link rel="preload" as="image" href="res/core/images/waves-blur.png">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --grid-size: 24px; /* Spread out the grid dots wider */
+            --grid-color: rgba(105, 105, 105, 0.301); /* Make the grid dots light green */
+        }
+    </style>
 </head>
 
 <body>
-    <canvas id="particle-canvas"></canvas>
+    <!-- <canvas id="particle-canvas"></canvas> -->
     <div class="bg" aria-hidden="true"></div>
     <header class="nav-frame glass">
         <nav class="nav-buttons">
             <a class="nav-btn" id="SelectedNavBtn" aria-label="Home">
-                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="1 0 20 20" >
-                    <image height="21" width="21" href="res\ico\favicon\home.ico" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1 0 20 20" >
+                    <image height="20" width="20" href="res/core/favicons/home.ico" />
                 </svg>
             </a>
             <br>
             <a href="../mods" target="_self" class="nav-btn white" aria-label="Mods">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1 0 20 20">
-                    <image height="20" width="20" href="res\ico\favicon\mods.ico" />
+                    <image height="20" width="20" href="res/core/favicons/mods.ico" />
                 </svg>
                 <div class="nav-tooltip">Mods</div>
             </a>
             <a href="../guides" target="_self" class="nav-btn white" aria-label="Guides">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="1 0 20 20">
-                    <image height="20" width="20" href="res\ico\favicon\guides.ico" />
+                    <image height="20" width="20" href="res/core/favicons/guides.ico" />
                 </svg>
                 <div class="nav-tooltip">Guides</div>
             </a>
@@ -51,7 +59,7 @@
     <div class="workshop-frame glass" style="top: 80px;">
         <div class="workshop-content">
             <div class="steam-avatar">
-                <img src="https://www.justkaarlo.com/res/src/steam-avatar.png"
+                <img src="res/core/assets/steam/steam-avatar.png"
                     alt="Steam Avatar" class="steam-avatar-image">
                 <div class="steam-avatar-border"></div>
             </div>
@@ -62,15 +70,65 @@
             <div class="workshop-actions">
                 <a href="https://steamcommunity.com/id/justkaarlo/"
                 target="_self" class="workshop-btn has-tooltip" style="left: 120px !important;">
-                    <img src="https://www.justkaarlo.com/res/ico/profile.svg" alt="Workshop" class="btn-icon">
+                    <img src="res/core/assets/profile.svg" alt="Workshop" class="btn-icon">
                     <div class="card-tooltip">Profile</div>
                 </a>
 
                 <a href="https://steamcommunity.com/id/justkaarlo/myworkshopfiles/"
                 target="_self" class="workshop-btn profile-btn has-tooltip" style="left: 120px !important;">
-                    <img src="https://www.justkaarlo.com/res/ico/steam.svg" alt="Profile" class="btn-icon">
+                    <img src="res/core/assets/steam.svg" alt="Profile" class="btn-icon">
                     <div class="card-tooltip">Workshop</div>
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GitHub Commit Frame -->
+    <div class="github-frame glass" id="github-frame">
+        <div class="github-content">
+            <div class="github-header-section">
+                <div class="github-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <image height="24" width="24" href="res/core/assets/github.svg" />
+                    </svg>
+                </div>
+                <div class="github-info">
+                    <div class="github-title" id="github-commit-message">Loading commit...</div>
+                    <div class="github-timestamp" id="github-timestamp">Fetching data...</div>
+                </div>
+            </div>
+            <button class="github-btn" id="github-open-modal">View Changes</button>
+        </div>
+    </div>
+
+    <!-- GitHub Modal -->
+    <div class="github-modal" id="github-modal">
+        <div class="github-modal-content">
+            <div class="github-modal-header">
+                <h2>Changed Files</h2>
+                <button class="github-modal-close" id="github-close-modal">✕</button>
+            </div>
+            <div class="github-modal-body">
+                <div id="github-file-tree" class="github-file-tree">
+                    <div class="github-loading">Loading file changes...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="maintenance-frame glass">
+        <div class="maintenance-content">
+            <div class="maintenance-animation">
+                <div class="maintenance-ring"></div>
+                <div class="maintenance-ring delay"></div>
+                <img src="res/core/assets/wrench.svg" alt="Maintenance">
+            </div>
+
+            <div class="maintenance-text">
+                <span class="maintenance-title">Under Maintenance</span>
+                <span class="maintenance-subtitle">
+                    We are currently rolling out new features and improvements, Website will not be fully functional under maintenance...
+                </span>
             </div>
         </div>
     </div>
@@ -78,5 +136,26 @@
         <p>&copy; 2026 JustKaarlo. All rights reserved.</p>
     </footer>
     <script src="js/home.js"></script>
+    <script>
+        window.gridConfig = {
+            bgColor: '#1a1a1a',
+            gridColor: 'rgba(117, 117, 117, 0.35)',
+            gridSize: '50px',
+            
+            particleCount: 40,
+            shape: 'circle',
+            particleColorRGB: '117, 117, 117',
+            twinkle: false,
+            minSize: 0.2,
+            maxSize: 3.5,
+            minFadeSpeed: 1.0,
+            maxFadeSpeed: 2.0,
+            minSpeedX: -0.01,
+            maxSpeedX: -0.15,
+            minSpeedY: -0.01,
+            maxSpeedY: -0.15
+        };
+    </script>
+    <script src="js/grid-overlay.js"></script>
 </body>
 </html>
