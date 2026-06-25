@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Page Not Found</title>
+  <link rel="stylesheet" href="css/grid-overlay.css">
   <link rel="icon" type="image/x-icon" href="res/core/favicons/justkaarlo.ico">
 
   <style>
@@ -52,15 +53,15 @@
       width: 100%;
       height: 100%;
       background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      background-repeat: repeat;
+      background-size: 30%;
       background-attachment: fixed;
       z-index: 0;
       pointer-events: none;
       filter: grayscale(100%);
       background-image:
           linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-          url('res/core/images/default-grid.png');
+          url('res/core/style/fakebricks-large.webp');
   }
 
     #particles-js {
@@ -71,16 +72,19 @@
     }
 
     .error-container {
-      background: rgba(40, 40, 40, 0.55);
-      border: 1px solid rgba(255, 255, 255, 0.003);
       border-radius: 20px;
       padding: 3rem;
       text-align: center;
       max-width: 400px;
       width: 90%;
-      backdrop-filter: saturate(120%);
-      -webkit-backdrop-filter: saturate(120%);
-      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(0.7px);
+      font-family: "Geist Mono", monospace;
+      font-weight: 600;
+      color: #e6e7eb4f;
+      background: linear-gradient(rgba(22,22,22,0.2), rgba(14,14,14,0.4));
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: all 300ms ease;
     }
 
     .error-code {
@@ -93,32 +97,35 @@
     .error-message {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      color: #dcdcdc;
+      color: #e6e7ebc0;
     }
 
     .btn {
-      --bg-glass: rgba(255, 255, 255, 0.05);
-      --border-glass: rgba(255, 255, 255, 0.12);
-      --text: #e1e2e7;
-      background: var(--bg-glass);
-      color: var(--text);
-      border: 1px solid var(--border-glass);
-      border-radius: 16px;
-      padding: 12px 15px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      transition: transform 160ms ease, background 160ms ease;
-      cursor: pointer;
+        --bg-glass: rgba(255, 255, 255, 0.05);
+        --border-glass: rgba(255, 255, 255, 0.12);
+        --text: #e1e2e7;
+        border-radius: 16px;
+        padding: 12px 15px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 0.4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        font-family: "Geist Mono", monospace;
+        background: linear-gradient(180deg, rgba(110, 110, 110, 0.2), rgba(151, 151, 151, 0.164));
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #e6e7eb;
+        transition: all 150ms ease;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(110, 110, 110, 0.4), rgba(151, 151, 151, 0.2));
+      border: 1px solid rgba(36, 36, 36, 0.3);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(95, 95, 95, 0.15);
     }
 
     .btn svg {
@@ -141,27 +148,30 @@
             <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
             </path>
         </svg>
-        Go Back
+        Back
       </a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
   <script>
-      // Initialize particles
-      particlesJS('particles-js', {
-          particles: {
-              number: { value: 15, density: { enable: true, value_area: 700 } },
-              color: { value: ['#545454', '#828282', '#323332', '#636363', '#9e9e9e'] },
-              shape: { type: 'circle' },
-              opacity: { value: 0.2, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
-              size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
-              line_linked: { enable: false },
-              move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
-          },
-          interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
-          retina_detect: true
-      });
-    </script>
+    window.gridConfig = {
+      bgColor: '#1a1a1a',
+      gridColor: 'rgba(117, 117, 117, 0.2)',
+      gridSize: '19px',
+      particleCount: 40,
+      shape: 'circle',
+      particleColorRGB: '117, 117, 117',
+      twinkle: false,
+      minSize: 0.2,
+      maxSize: 3.5,
+      minFadeSpeed: 1.0,
+      maxFadeSpeed: 2.0,
+      minSpeedX: 0.01,
+      maxSpeedX: 0.05,
+      minSpeedY: -0.01,
+      maxSpeedY: -0.05
+    };
+  </script>
+  <script src="js/grid-overlay.js"></script>
 </body>
 </html>
