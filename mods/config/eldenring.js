@@ -15,7 +15,7 @@
         apiKey,
         enableSearch: false,
         iconDefinitions: {
-            "ConvergenceIcon": "https://www.justkaarlo.com/res/mods/elden-ring/Convergence.ico",
+            "ConvergenceIcon": "../../res/icons/Convergence.ico",
         },
         iconAssignments: {
             "ConvergenceIcon": [

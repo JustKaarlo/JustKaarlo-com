@@ -1,11 +1,4 @@
 const guides = [
-    // {
-    //     title: 'Farming Simulator 25',
-    //     subtitle: 'Tutorials',
-    //     icon: 'https://www.justkaarlo.com/res/ico/favicon/fs25-favicon-2.ico',
-    //     link: 'https://www.justkaarlo.com/guides/fs25',
-    //     contentType: 'link'
-    // },
     {
         title: 'ArmA3',
         subtitle: 'Resources',
@@ -23,27 +16,13 @@ const guides = [
 ];
 
 const mods = [
-    // {
-    //     title: 'Total War',
-    //     subtitle: 'Shared Mods',
-    //     icon: 'https://www.justkaarlo.com/res/ico/total-war-logo.svg',
-    //     link: 'https://www.justkaarlo.com/mods/total-war',
-    //     contentType: 'link'
-    // },
     {
         title: 'Elden Ring',
         subtitle: 'Shared Mods',
-        icon: '../res/ico/favicon/elden-ring-favicon-1.ico',
+        icon: '../res/icons/eldenring.ico',
         link: 'https://www.justkaarlo.com/mods/elden-ring',
         contentType: 'link'
     },
-    // {
-    //     title: 'Farming Simulator 25',
-    //     subtitle: 'Shared Mods',
-    //     icon: '../res/ico/favicon/fs25-favicon-2.ico',
-    //     link: 'https://www.justkaarlo.com/mods/fs25',
-    //     contentType: 'link'
-    // },
 ];
 
 const arma3Guides = [

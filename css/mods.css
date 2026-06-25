@@ -41,17 +41,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    z-index: 0;
+    z-index: -3;
     pointer-events: none;
     transition: opacity 0.4s ease;
-}
-
-#bg-tw {
-    opacity: 1;
-    background-image:
-        linear-gradient(var(--tw-overlay-1), var(--tw-overlay-1)),
-        linear-gradient(var(--tw-overlay-2), var(--tw-overlay-2)),
-        url('https://www.justkaarlo.com/res/bg/total-war-bg.png');
 }
 
 #bg-er {
@@ -59,15 +51,7 @@ body {
     background-image:
         linear-gradient(var(--er-overlay-1), var(--er-overlay-1)),
         linear-gradient(var(--er-overlay-2), var(--er-overlay-2)),
-        url('https://www.justkaarlo.com/res/bg/elden-ring-bg.png');
-}
-
-#bg-fs {
-    opacity: 1;
-    background-image:
-        linear-gradient(var(--fs-overlay-1), var(--fs-overlay-1)),
-        linear-gradient(var(--fs-overlay-2), var(--fs-overlay-2)),
-        url('https://4kwallpapers.com/images/wallpapers/farming-simulator-5120x2880-20864.jpg');
+        url('../res/images/elden-ring.png');
 }
 
 #particles-js {

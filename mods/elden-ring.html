@@ -2,43 +2,36 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
     <title>Elden Ring Mods</title>
     <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/core/favicons/justkaarlo.ico">
+    <link rel="stylesheet" href="../css/mods.css">
+    <link rel="stylesheet" href="../css/grid-overlay.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.justkaarlo.com/mods/eldenring">
-    <meta property="og:title" content="JustKaarlo's Elden Ring">
-    <meta property="og:description" content="Shared Mods">
-    <meta property="og:image" content="https://www.justkaarlo.com/res/core/images/embed.png">
+    <meta property="og:title" content="JustKaarlo's /">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="res/core/images/embed.png">
+    <meta property="og:url" content="https://www.justkaarlo.com/mods/elden-ring">
 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/mods.css">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="bg-er" class="bg-layer" aria-hidden="true"></div>
-    <div id="particles-js"></div>
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass">
             <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
-                        <image height="21" width="21" href="..\res\ico\favicon\home.ico" />
+                        <image height="21" width="21" href="../res/core/favicons/home.ico" />
                     </svg>
                     <div class="nav-tooltip">Home</div>
                 </a>
-                <!-- <a href="../mods" target="_self" class="nav-btn" aria-label="Mods">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
-                        fill="currentColor">
-                        <path
-                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-                        </path>
-                    </svg>
-                </a> -->
                 <a href="../mods" target="_self" class="nav-btn" aria-label="Mods">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
                         fill="currentColor">
@@ -46,7 +39,7 @@
                             d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
                         </path>
                     </svg>
-                    <div class="nav-tooltip">Go Back</div>
+                    <div class="nav-tooltip">Back</div>
                 </a>
             </nav>
         </header>
@@ -55,7 +48,7 @@
     <div class="sections-container">
         <div class="content">
             <section id="elden-section" class="section-slide active">
-                <img id="customIcon" class="game-icon" src="https://www.justkaarlo.com/res/src/elden-ring-logo.png"
+                <img id="customIcon" class="game-icon" src="../res/logos/elden-ring-logo.png"
                     alt="Elden Ring Icon" style="margin-top: 30px; margin-bottom: 20px;" />
                 <div class="filelist-frame">
                     <ul id="fileList" class="file-list">Loading...</ul>
@@ -81,9 +74,28 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="../js/mods.js"></script>
     <script src="config/eldenring.js"></script>
+    <script>
+        window.gridConfig = {
+            bgColor: '#1a1a1a',
+            gridColor: 'rgba(37, 87, 87, 0.4)',
+            gridSize: '25px',
+            particleCount: 40,
+            shape: 'circle',
+            particleColorRGB: '43, 112, 112',
+            twinkle: false,
+            minSize: 0.2,
+            maxSize: 3.5,
+            minFadeSpeed: 1.0,
+            maxFadeSpeed: 2.0,
+            minSpeedX: 0.01,
+            maxSpeedX: 0.05,
+            minSpeedY: -0.01,
+            maxSpeedY: -0.05
+        };
+    </script>
+    <script src="../js/grid-overlay.js"></script>
 </body>
 
 </html>
