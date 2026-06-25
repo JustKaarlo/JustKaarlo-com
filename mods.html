@@ -5,7 +5,7 @@
     <title>JustKaarlo - Mods</title>
     <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/mods.ico">
 
-    <link rel="stylesheet" href="guides/style.css">
+    <link rel="stylesheet" href="css/guides.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
@@ -23,11 +23,15 @@
             border: 0;
             box-shadow: 0;
             border: 0px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: brightness(0.47) blur(1px);
+            backdrop-filter: brightness(0.5) blur(0px);
             max-width: 550px;
-            background: rgba(63, 63, 63, 0.25);
+            width: auto;
+            /* background: rgba(63, 63, 63, 0.2); */
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
             top: -150px;
+            background-blend-mode: multiply;
+            background:
+                rgba(54, 54, 54, 0.2) url('https://www.justkaarlo.com/res/assets/fake-brick.png') repeat center/25% !important;
         }
         /* .guides-container {
             --nav-bg: rgb(54, 54, 54, 0.7);
@@ -61,8 +65,42 @@
             border: 2px solid rgba(255, 255, 255, 0.02);
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            transition: all 0.2s ease;
+            /* transition: all 0.2s ease; */
             background: rgba(27, 27, 27, 0.35);
+            height: 140px;
+            width: max-content;
+            padding: 5px 18px !important;
+        }
+        /* ELDEN RING */
+        button[data-index="0"].guide-button {
+            border-color: rgba(56, 56, 56, 0.315);
+            transition: all 0.25s ease;
+            background-attachment: fixed;
+            background-blend-mode: darken;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
+                linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
+                url('https://www.justkaarlo.com/res/bg/elden-ring-bg.png') repeat center/cover !important;
+        }
+        button[data-index="0"].guide-button:hover {
+            border-color: rgba(56, 56, 56, 0.315);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
+                linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
+                url('https://www.justkaarlo.com/res/bg/elden-ring-bg.png') repeat center/cover !important;
+        }
+        .guide-icon {
+            width: 84px;
+            height: auto;
+            transition: all 0.7s ease;
+        }
+        .guide-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .guide-subtitle {
         }
         .guides-grid {
             display: grid;
@@ -74,9 +112,9 @@
             gap: 12px;
             margin: 0 auto;
         } */
-        .guide-button:hover {
+        /* .guide-button:hover {
             border: 2px solid rgba(255, 255, 255, 0.03) !important;
-        }
+        } */
         .container {
             max-width: 1000px;
             margin: 0 auto 0;
@@ -174,7 +212,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="guides/settings.js"></script>
-    <script src="guides/script.js"></script>
+    <script src="js/guides.js"></script>
     
     <script>
         function closeGuide() {
