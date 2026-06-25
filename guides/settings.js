@@ -1956,13 +1956,17 @@ const gzwGuides = [
             </div>
             <hr>
             <h3>Ammunition Ranking</h3>
-            <div class="tabs" data-tabs>
-                <div class="tab-list task-types">
-                    <button class="tab-btn active" data-tab="tab-556x45">5.56x45mm</button>
-                    <button class="tab-btn" data-tab="tab-545x39">5.45x39mm</button>
-                    <button class="tab-btn" data-tab="tab-fill">...</button>
+            <span data-toc="5.56x45mm" data-toc-level="h4"></span>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">5.56x45mm</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
                 </div>
-                <div class="tab-pane active" id="tab-556x45">
+                <div class="dropdown-content">
                     <table>
                         <tr>
                             <th>Tier</th>
@@ -2031,8 +2035,105 @@ const gzwGuides = [
                         </tr>
                     </table>
                 </div>
-                <div class="tab-pane" id="tab-545x39">Work In Progress</div>
-                <div class="tab-pane" id="tab-fill">Work In Progress</div>
+            </div>
+
+            <span data-toc="5.45x39mm" data-toc-level="h4"></span>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">5.45x39mm</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th>Tier</th>
+                            <th></th>
+                            <th>Caliber</th>
+                            <th>Vendor</th>
+                        </tr>
+
+                        <tr>
+                            <td><span class="badge badge-s">S</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bs7n24.png" alt="Bullet"></td>
+                            <td>BS 7N24</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-s">S</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bp7n22.png" alt="Bullet"></td>
+                            <td>BP 7N22</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-a">A</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-pp7n10.png" alt="Bullet"></td>
+                            <td>PP 7N10</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-b">B</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bt7bt4.png" alt="Bullet"></td>
+                            <td>BT 7BT4</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-b">B</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-ps7n6.png" alt="Bullet"></td>
+                            <td>PS 7N6</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-c">C</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-fmj.png" alt="Bullet"></td>
+                            <td>FMJ</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-f">F</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-hp.png" alt="Bullet"></td>
+                            <td>HP</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-f">F</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-us.png" alt="Bullet"></td>
+                            <td>US</td>
+                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV1</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <span data-toc="7.62x25mm" data-toc-level="h4"></span>
+            <div class="dropdown">
+                <div class="dropdown-header">
+                    <span class="dropdown-header-title">7.62x25mm</span>
+                    <div class="dropdown-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th>Tier</th>
+                            <th></th>
+                            <th>Caliber</th>
+                            <th>Vendor</th>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-s">S</span></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/" alt="Bullet"></td>
+                            <td></td>
+                            <td><span class="badge"></span> <span class="badge badge-gzw">LV</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         `,
     },
