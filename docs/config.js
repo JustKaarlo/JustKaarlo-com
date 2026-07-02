@@ -273,7 +273,7 @@ const gzwGuides = [
         contentType: 'description',
         showTOC: true,
         description: `
-            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/ballistics.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/assets/banners/ballistics.png" alt="Banner">
             <span data-toc="Top" data-toc-level="h1"></span>
             <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/" class="btn-action-gzw">Weapon Builder</a>
             <div class="box">
@@ -302,59 +302,59 @@ const gzwGuides = [
 
                         <tr>
                             <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m855a1.png" alt="M855A1"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m855a1.png" alt="M855A1"></td>
                             <td>AP M855A1</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m995.png" alt="M995"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m995.png" alt="M995"></td>
                             <td>AP M995</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV4</span></td>
                         </tr>
 
                         <tr>
                             <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m855.png" alt="M855"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m855.png" alt="M855"></td>
                             <td>AP M855</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m193.png" alt="M193"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m193.png" alt="M193"></td>
                             <td>FMJ M193</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
 
                         <tr>
                             <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m856a1.png" alt="M856A1"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m856a1.png" alt="M856A1"></td>
                             <td>Tracer M856A1</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-m856.png" alt="M856"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m856.png" alt="M856"></td>
                             <td>Tracer M856</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
 
                         <tr>
                             <td><span class="badge badge-c">C</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-fmj.png" alt="FMJ"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-fmj.png" alt="FMJ"></td>
                             <td>FMJ</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
                         </tr>
 
                         <tr>
                             <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-hpbt.png" alt="HPBT"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-hpbt.png" alt="HPBT"></td>
                             <td>HPBT</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/556x45-sp.png" alt="SP"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-sp.png" alt="SP"></td>
                             <td>SP</td>
                             <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
                         </tr>
@@ -383,49 +383,49 @@ const gzwGuides = [
 
                         <tr>
                             <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bs7n24.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bs7n24.png" alt="Bullet"></td>
                             <td>BS 7N24</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bp7n22.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bp7n22.png" alt="Bullet"></td>
                             <td>BP 7N22</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-pp7n10.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-pp7n10.png" alt="Bullet"></td>
                             <td>PP 7N10</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-bt7bt4.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bt7bt4.png" alt="Bullet"></td>
                             <td>BT 7BT4</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-ps7n6.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-ps7n6.png" alt="Bullet"></td>
                             <td>PS 7N6</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-c">C</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-fmj.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-fmj.png" alt="Bullet"></td>
                             <td>FMJ</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-hp.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-hp.png" alt="Bullet"></td>
                             <td>HP</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
                         </tr>
                         <tr>
                             <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/545x39-us.png" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-us.png" alt="Bullet"></td>
                             <td>US</td>
                             <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV1</span></td>
                         </tr>
@@ -453,7 +453,7 @@ const gzwGuides = [
                         </tr>
                         <tr>
                             <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/guides/grayzone/documents/icons/ammo/" alt="Bullet"></td>
+                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/" alt="Bullet"></td>
                             <td></td>
                             <td><span class="badge"></span> <span class="badge badge-gzw">LV</span></td>
                         </tr>
@@ -470,7 +470,7 @@ const gzwGuides = [
         contentType: 'description',
         showTOC: true,
         description: `
-            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/tasks.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/assets/banners/tasks.png" alt="Banner">
             <span data-toc="Top" data-toc-level="h1"></span>
             <div class="box">
                 <b>Quick information about tasks...</b>
@@ -550,7 +550,7 @@ const gzwGuides = [
         showTOC: true,
         description: `
             <span data-toc="Top" data-toc-level="h2"></span>
-            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/medical.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/assets/banners/medical.png" alt="Banner">
             <div class="box">
                 <b>Useful information and notes about the medical system, including medical item effects, treatments, and what supplies you should always carry.</b>
             </div>
@@ -642,7 +642,7 @@ const gzwGuides = [
         showTOC: true,
         description: `
             <span data-toc="Top" data-toc-level="h2"></span>
-            <img src="https://www.justkaarlo.com/res/guides/grayzone/documents/images/banners/mines.png" alt="Banner">
+            <img src="https://www.justkaarlo.com/res/assets/banners/mines.png" alt="Banner">
             <div class="box">
                 Mines and tripwires are environmental hazards that cause instant death or trigger traps.<br>
                 They are placed around Main Operating Bases, major Combat Outposts, specific mission areas<br>
