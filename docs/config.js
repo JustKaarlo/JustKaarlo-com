@@ -29,7 +29,7 @@ const arma3Guides = [
     { // Infinite Fuel & Ammo
         title: 'Infinite Fuel & Ammo',
         subtitle: 'Snippets',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/star.png',
         contentType: 'description',
         showTOC: true,
         description: `
@@ -92,7 +92,7 @@ const arma3Guides = [
     { // Disable Stamina For All AI
         title: 'Disable Stamina For All AI',
         subtitle: 'Snippets',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/star.png',
         contentType: 'description',
         showTOC: true,
         description: `
@@ -108,7 +108,7 @@ const arma3Guides = [
     { // Adjusting Cargo Space For Vehicle
         title: 'Adjusting Cargo Space',
         subtitle: 'Snippets',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/star.png',
         contentType: 'description',
         showTOC: true,
         description: `
@@ -119,7 +119,7 @@ const arma3Guides = [
     { // ACE ARSENAL
         title: 'ACE Arsenal',
         subtitle: 'Snippets',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/star.png',
         contentType: 'description',
         showTOC: false,
         description: `
@@ -201,21 +201,21 @@ const arma3Guides = [
     { // Antistasi Wiki
         title: 'Wiki Documentation',
         subtitle: 'Default & Ultimate',
-        icon: 'https://www.justkaarlo.com//res/guides/ui/medium/wiki.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/wiki.png',
         link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/',
         contentType: 'link',
     },
     { // Antistasi Ultimate Website
         title: 'Official Website',
         subtitle: 'Ultimate',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/link.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/link.png',
         link: 'https://antistasiultimate.com/',
         contentType: 'link',
     },
     { // Antistasi Ultimate Commands
         title: 'Console Commands',
         subtitle: 'Default & Ultimate',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/console-commands.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/star.png',
         link: 'https://official-antistasi-community.github.io/A3-Antistasi-Docs/dev_guide/dev/dev_guide_console_commands.html#',
         contentType: 'description',
         showTOC: true,
@@ -269,7 +269,7 @@ const gzwGuides = [
     {
         title: 'Ballistics',
         subtitle: 'Information',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/bullet.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/bullet.png',
         contentType: 'description',
         showTOC: true,
         description: `
@@ -465,7 +465,7 @@ const gzwGuides = [
     {
         title: 'Tasks',
         subtitle: 'Handy-Notes',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/tasks.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/items.png',
         link: 'https://gray-zone-warfare.fandom.com/wiki/Tasks',
         contentType: 'description',
         showTOC: true,
@@ -544,7 +544,7 @@ const gzwGuides = [
     {
         title: 'Medical System',
         subtitle: 'Useful',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/medical.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/medical.png',
         link: 'https://gray-zone-warfare.fandom.com/wiki/Health_system',
         contentType: 'description',
         showTOC: true,
@@ -637,7 +637,7 @@ const gzwGuides = [
     {
         title: 'Mines & Tripwires',
         subtitle: 'Handy-Notes',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/tripmine.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/tripmine.png',
         contentType: 'description',
         showTOC: true,
         description: `
