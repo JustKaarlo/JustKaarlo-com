@@ -1,119 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>JustKaarlo - Guides</title>
-    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/guides.ico">
-
-    <link rel="stylesheet" href="css/guides.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="JustKaarlo's - Guides">
-    <meta property="og:description" content="Comprehensive guides for different games.">
+    <title>JustKaarlo's Documentation</title>
+    <link rel="icon" type="image/x-icon" href="res/core/favicons/justkaarlo.ico">
     
+    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/grid-overlay.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JustKaarlo's /">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="res/core/images/embed.png">
+    <meta property="og:url" content="https://www.justkaarlo.com/docs">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <!-- <style>
-        .guides-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            border: 0;
-            box-shadow: 0;
-            border: 0px solid rgba(255, 255, 255, 0.18);
-            backdrop-filter: brightness(0.47) blur(1px);
-            max-width: 550px;
-            background: rgba(63, 63, 63, 0.25);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
-            top: -150px;
-        }
-        /* .guides-container {
-            --nav-bg: rgb(54, 54, 54, 0.7);
-            --shadow-1: 0 8px 30px rgba(0, 0, 0, 0.45);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            background: rgba(63, 63, 63, 0.25);
-            border: 0px solid var(--glass-border);
-            box-shadow: var(--shadow-1);
-            backdrop-filter: brightness(0.37) !important;
-            max-width: 900px !important;
-            max-height: fit-content !important;
-            width: fit-content !important;
-            min-height: fit-content !important;
-            min-width: none !important;
-            bottom: 150px !important;
-        } */
-        .guides-container > * {
-            position: relative;
-            z-index: 1;
-        }
-        .guide-button {
-            position: relative;
-            overflow: hidden;
-            background-blend-mode: saturation;
-            border: 2px solid rgba(255, 255, 255, 0.02);
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-            transition: all 0.2s ease;
-            background: rgba(27, 27, 27, 0.35);
-        }
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
-        }
-        /* .guides-grid {
-            display: flex;
-            gap: 12px;
-            margin: 0 auto;
-        } */
-        .guide-button:hover {
-            border: 2px solid rgba(255, 255, 255, 0.03) !important;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto 0;
-            position: relative;
-            height: auto;
-            bottom: 100px;
-        }
-        .logo-card {
-            --size: clamp(260px, 42vw, 520px);
-            padding-top: 0.5px;
-            padding-bottom: 0.5;
-            width: 50%;
-            height: 100%;
-            background:
-                url('../res/src/header-cards/header-guides.svg') fixed no-repeat center/cover !important;
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-            transition: transform 200ms ease;
-            transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
-            margin: 230px auto 0 auto;
-            text-align: center;
-            border-radius: 35px;
-        }
-        .logo-card:hover {
-            transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
-            box-shadow: 0 18px 56px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-        }
-        .logo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            user-select: none;
-        }
-        .title-btn {
-            margin-top: 2.4px !important;
-            font-size: 25px !important;
-        }
-    </style> -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         .guides-container {
             position: relative;
@@ -123,7 +28,7 @@
             box-shadow: 0;
             border: 0px solid rgba(255, 255, 255, 0.18);
             backdrop-filter: brightness(0.5) blur(0px);
-            max-width: 900px;
+            max-width: max-content;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
             top: -150px;
             background-blend-mode: multiply;
@@ -154,7 +59,7 @@
             background:
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
                 linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
-                url('https://www.justkaarlo.com/res/bg/arma3.png') repeat center/cover !important;
+                url('res/images/arma3.png') repeat center/cover !important;
         }
         button[data-index="0"].guide-button:hover {
             border-color: rgba(56, 56, 56, 0.315);
@@ -163,7 +68,7 @@
             background:
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
                 linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
-                url('https://www.justkaarlo.com/res/bg/arma3.png') repeat center/cover !important;
+                url('res/images/arma3.png') repeat center/cover !important;
         }
         button[data-index="1"].guide-button {
             border-color: rgba(56, 56, 56, 0.315);
@@ -173,7 +78,7 @@
             background:
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
                 linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
-                url('https://www.justkaarlo.com/res/bg/grayzone.png') repeat center/cover !important;
+                url('res/images/grayzone.png') repeat center/cover !important;
         }
         button[data-index="1"].guide-button:hover {
             border-color: rgba(56, 56, 56, 0.315);
@@ -182,22 +87,24 @@
             background:
                 linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
                 linear-gradient(rgba(45, 61, 91, 0.8), rgba(54, 26, 25, 0.5)),
-                url('https://www.justkaarlo.com/res/bg/grayzone.png') repeat center/cover !important;
+                url('res/images/grayzone.png') repeat center/cover !important;
         }
         .guide-icon {
-            width: 84px;
+            width: 64px;
             height: auto;
             transition: all 0.7s ease;
         }
         .guide-title {
+            white-space: nowrap;
             font-size: 24px;
             font-weight: 600;
         }
         .guide-subtitle {
+            margin-left: 5px;
         }
         .guides-grid {
-            display: f;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
         }
         .container {
@@ -214,7 +121,7 @@
             width: 50%;
             height: 100%;
             background:
-                url('../res/src/header-cards/header-guides.svg') fixed no-repeat center/cover !important;
+                url('') fixed no-repeat center/cover !important;
             box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
             transition: transform 200ms ease;
             transform: perspective(800px) rotateX(0) rotateY(0) translateY(-2px);
@@ -240,14 +147,13 @@
 </head>
 <body>
     <div id="bg"></div>
-    <div id="particles-js"></div>
     
     <!-- Navigation -->
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass">
             <nav class="nav-buttons">
                 <a class="title-btn">
-                    Guides
+                    Docs
                 </a>
             </nav>
         </header>
@@ -255,16 +161,17 @@
             <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
-                        <image height="21" width="21" href="res\ico\favicon\home.ico" />
+                        <image height="21" width="21" href="res/core/favicons/home.ico" />
                     </svg>
                     <div class="nav-tooltip">Home</div>
                 </a>
             </nav>
         </header>
     </div>
+
     <div class="content">
         <div class="guides-container" style="margin-top: 170px;">
-            <div class="guides-grid" id="guidesGrid">
+            <div class="guides-grid" id="docsGrid">
                 <!-- Guide buttons will be dynamically generated here -->
             </div>
         </div>
@@ -274,7 +181,7 @@
     <div id="guideModal" class="guide-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="modal-title" id="modalTitle">Guides</span>
+                <span class="modal-title" id="modalTitle">Docs</span>
                 <div class="modal-header-actions">
                     <a id="guideLink" href="#" target="_self" class="guide-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-40 -65 512 550"
@@ -294,28 +201,36 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
-    <script src="guides/settings.js"></script>
-    <script src="js/guides.js"></script>
-    
+    <script src="docs/config.js"></script>
+    <script src="js/docs.js"></script>
     <script>
-        // Initialize particles
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 15, density: { enable: true, value_area: 700 } },
-                color: { value: ['#4c4c4c', '#494949', '#8a8a8a'] },
-                shape: { type: 'circle' },
-                opacity: { value: 0.2, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
-                size: { value: 3, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
-            retina_detect: true
-        });
-        
+        function closeGuide() {
+            GuideSystem.closeModal();
+            const url = window.location.href.split('#')[0];
+            history.replaceState(null, '', url);
+        }
+
+        window.gridConfig = {
+            bgColor: '#1a1a1a',
+            gridColor: 'rgba(117, 117, 117, 0.2)',
+            gridSize: '25px',
+            particleCount: 40,
+            shape: 'circle',
+            particleColorRGB: '117, 117, 117',
+            twinkle: false,
+            minSize: 0.2,
+            maxSize: 3.5,
+            minFadeSpeed: 1.0,
+            maxFadeSpeed: 2.0,
+            minSpeedX: 0.01,
+            maxSpeedX: 0.05,
+            minSpeedY: -0.01,
+            maxSpeedY: -0.05
+        };
+
         // Initialize main guides page
-        initializeGuidePage('guidesGrid', guides);
+        initializeGuidePage('docsGrid', docs);
     </script>
+    <script src="js/grid-overlay.js"></script>
 </body>
 </html>

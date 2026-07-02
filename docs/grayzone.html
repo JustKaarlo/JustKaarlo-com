@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Grayzone Warfare Guides</title>
-    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/guides.ico">
+    <title>Grayzone Documentation</title>
+    <link rel="icon" type="image/x-icon" href="../res/core/favicons/justkaarlo.ico">
 
-    <link rel="stylesheet" href="../css/guides.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/grid-overlay.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="JustKaarlo's / Gray Zone Warfare">
-    <meta property="og:description" content="Guides, resources & handy-notes">
-    <meta property="og:image" content="https://www.justkaarlo.com/res/ico/favicon/favicon-1.ico">
+    <meta property="og:title" content="JustKaarlo's / Grayzone Warfare">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="res/core/images/embed.png">
+    <meta property="og:url" content="https://www.justkaarlo.com/docs/grayzone">
 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         .guides-container {
             position: relative;
@@ -361,18 +364,18 @@
             <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
-                        <image height="21" width="21" href="..\res\ico\favicon\home.ico" />
+                        <image height="21" width="21" href="../res/core/favicons/home.ico" />
                     </svg>
                     <div class="nav-tooltip">Home</div>
                 </a>
-                <a href="../guides" target="_self" class="nav-btn" aria-label="Mods">
+                <a href="../docs" target="_self" class="nav-btn" aria-label="Mods">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
                         fill="currentColor">
                         <path
                             d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
                         </path>
                     </svg>
-                    <div class="nav-tooltip">Go Back</div>
+                    <div class="nav-tooltip">Back</div>
                 </a>
                 <br>
             </nav>
@@ -381,8 +384,8 @@
     
     <div class="content">
         <img class="game-icon" style="width: auto;"
-            src="/res/guides/logo/grayzone-logo.png"
-            alt="Gray Zone Warfare Icon"/>
+            src="../res/logos/grayzone-logo.png"
+            alt="Gray Zone Warfare"/>
         <div class="guides-container">
             <div class="guides-grid" id="gzwGuidesGrid">
                 <!-- Guide buttons will be dynamically generated here -->
@@ -434,8 +437,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="settings.js"></script>
-    <script src="../js/guides.js"></script>
+    <script src="../docs/config.js"></script>
+    <script src="../js/docs.js"></script>
     <script>
         function closeGuide() {
             GuideSystem.closeModal();

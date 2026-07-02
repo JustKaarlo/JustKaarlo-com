@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>ArmA3 Guides</title>
-    <link rel="icon" type="image/x-icon" href="https://www.justkaarlo.com/res/ico/favicon/guides.ico">
+    <title>ArmA3 Documentation</title>
+    <link rel="icon" type="image/x-icon" href="../res/core/favicons/justkaarlo.ico">
 
-    <link rel="stylesheet" href="../css/guides.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/grid-overlay.css">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="JustKaarlo's - ArmA3 Guides">
-    <meta property="og:description" content="Comprehensive guides for ArmA3">
-    
+    <meta property="og:title" content="JustKaarlo's / ArmA3">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="res/core/images/embed.png">
+    <meta property="og:url" content="https://www.justkaarlo.com/docs/arma3">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         .guides-container {
             position: relative;
@@ -31,19 +35,6 @@
             min-width: 900px !important;
             width: fit-content !important;
         }
-        /* .guides-container::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-blend-mode: saturation;
-            background:
-                -webkit-linear-gradient(120deg, rgba(155, 189, 21, 0.15) 0%, rgba(155, 189, 21, 0.2) 100%),
-                url("https://www.justkaarlo.com/res/bg/bgBasicGrid.png") top 50% left 50% / cover no-repeat;
-            filter: blur(1px) opacity(85%);
-            z-index: 0;
-            border: 1px solid rgba(61, 61, 61, 0.57);
-            box-shadow: 0 1px 24px rgba(0, 0, 0, 0.6);
-        } */
         .guides-container > * {
             position: relative;
             z-index: 1;
@@ -116,27 +107,26 @@
     </style>
 </head>
 <body>
-    <div id="bg-arma"></div>
-    <div id="particles-js"></div>
-    
+    <!-- <div id="bg-arma"></div> -->
+    <div id="bg-arma" class="bg-layer" aria-hidden="true"></div>
     <!-- Navigation -->
     <div class="nav-container" id="NavSmallIcons">
         <header class="nav-frame glass" style="width: 170px !important;">
             <nav class="nav-buttons">
                 <a href="../home" target="_self" class="nav-btn" aria-label="Home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="1 0 20 20" >
-                        <image height="21" width="21" href="..\res\ico\favicon\home.ico" />
+                        <image height="21" width="21" href="../res/core/favicons/home.ico" />
                     </svg>
                     <div class="nav-tooltip">Home</div>
                 </a>
-                <a href="../guides" target="_self" class="nav-btn" aria-label="Mods">
+                <a href="../docs" target="_self" class="nav-btn" aria-label="Mods">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"
                         fill="currentColor">
                         <path
                             d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
                         </path>
                     </svg>
-                    <div class="nav-tooltip">Go Back</div>
+                    <div class="nav-tooltip">Back</div>
                 </a>
                 <br>
             </nav>
@@ -144,9 +134,9 @@
     </div>
     
     <div class="content">
-        <img class="game-icon" style="width: auto;"
-            src="/res/guides/logo/arma3-logo.png"
-            alt="ArmA3 Icon"/>
+        <img class="game-icon" style="width: 350px !important; height: auto;"
+            src="../res/logos/arma3-logo.png"
+            alt="ArmA3"/>
         <div class="guides-container">
             <div class="guides-grid" id="arma3GuidesGrid">
                 <!-- Guide buttons will be dynamically generated here -->
@@ -198,8 +188,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="settings.js"></script>
-    <script src="../js/guides.js"></script>
+    <script src="../docs/config.js"></script>
+    <script src="../js/docs.js"></script>
     <script>
         function closeGuide() {
             GuideSystem.closeModal();
@@ -207,23 +197,26 @@
             history.replaceState(null, '', url);
         }
 
-        // Initialize particles
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 40, density: { enable: true, value_area: 700 } },
-                color: { value: ['#ffaa00', '#ff6a00', '#8a8a8a'] },
-                shape: { type: 'circle' },
-                opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
-                size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
-            retina_detect: true
-        });
+        window.gridConfig = {
+            bgColor: '#1a1a1a',
+            gridColor: 'rgba(99, 89, 72, 0.6)',
+            gridSize: '25px',
+            particleCount: 60,
+            shape: 'square',
+            particleColorRGB: '77, 72, 63',
+            twinkle: false,
+            minSize: 0.5,
+            maxSize: 4.5,
+            minFadeSpeed: 1.0,
+            maxFadeSpeed: 2.0,
+            minSpeedX: 0.01,
+            maxSpeedX: 0.05,
+            minSpeedY: -0.01,
+            maxSpeedY: -0.05
+        };
         
-        // Initialize FS25 guides
         initializeGuidePage('arma3GuidesGrid', arma3Guides);
     </script>
+    <script src="../js/grid-overlay.js"></script>
 </body>
 </html>

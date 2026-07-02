@@ -1,16 +1,16 @@
-const guides = [
+const docs = [
     {
         title: 'ArmA3',
-        subtitle: 'Resources',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/arma3.png',
-        link: 'https://www.justkaarlo.com/guides/arma3',
+        subtitle: 'Documentation',
+        icon: 'https://www.justkaarlo.com/res/icons/arma3.ico',
+        link: 'https://www.justkaarlo.com/docs/arma3',
         contentType: 'link'
     },
     {
         title: 'Gray Zone Warfare',
-        subtitle: 'Guides',
-        icon: 'https://www.justkaarlo.com/res/guides/ui/medium/grayzone.png',
-        link: 'https://www.justkaarlo.com/guides/grayzone',
+        subtitle: 'Documentation',
+        icon: 'https://www.justkaarlo.com/res/icons/grayzone.ico',
+        link: 'https://www.justkaarlo.com/docs/grayzone',
         contentType: 'link'
     },
 ];
@@ -19,7 +19,7 @@ const mods = [
     {
         title: 'Elden Ring',
         subtitle: 'Shared Mods',
-        icon: '../res/icons/eldenring.ico',
+        icon: 'https://www.justkaarlo.com/res/icons/eldenring.ico',
         link: 'https://www.justkaarlo.com/mods/elden-ring',
         contentType: 'link'
     },
@@ -689,44 +689,44 @@ const gzwGuides = [
     {
         title: 'Vendors',
         subtitle: 'GZWLoadout.com',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/cart.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/cart.png',
         contentType: 'link',
         link: 'https://gzwloadout.com/vendors',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/ui/32x32/grayzone-web.png',
             position: 'right'
         }
     },
     {
         title: 'Items',
         subtitle: 'GZWItems.com',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/items.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/items.png',
         contentType: 'link',
         link: 'https://gzwitems.com/',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/ui/32x32/grayzone-web.png',
             position: 'right'
         }
     },
     {
         title: 'Interactive Map',
         subtitle: 'GZWTacMap.com',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/location.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/location.png',
         contentType: 'link',
         link: 'https://gzwtacmap.com/maps/lamang',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/ui/32x32/grayzone-web.png',
             position: 'right'
         }
     },
     {
         title: 'Blueprints',
         subtitle: 'WhereIsVulture.com',
-        icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/icons/core/blueprint.png',
+        icon: 'https://www.justkaarlo.com/res/core/icons/blueprint.png',
         contentType: 'link',
         link: 'https://whereisvulture.com/blueprints',
         badge: {
-            icon: 'https://www.justkaarlo.com/res/guides/grayzone/layout/buttons/badges/third-party/grayzone-yellow.png',
+            icon: 'https://www.justkaarlo.com/res/ui/32x32/grayzone-web.png',
             position: 'right'
         }
     },
@@ -791,6 +791,7 @@ const GuideConfigs = {
     arma3: arma3Guides,
     grayzone: gzwGuides,
     mods: mods,
+    docs: docs,
 
     getGuides(pageName) {
         return this[pageName] || [];

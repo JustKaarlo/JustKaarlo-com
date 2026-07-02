@@ -38,16 +38,18 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: none;
 }
 
-#bg {
+
+
+/* #bg {
     position: fixed;
     inset: 0;
     z-index: -2;
     background: 
         radial-gradient(circle at 0 0, #cfcfcf08, #00000000 40%),
         radial-gradient(circle at 100% 100%, #cfcfcf08, #00000000 40%);
-}
+} */
 
-#bg-fs {
+.bg-layer {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -56,31 +58,17 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    z-index: 0;
+    z-index: -3;
     pointer-events: none;
-    background-image:
-        linear-gradient(var(--fs-overlay-1), var(--fs-overlay-1)),
-        linear-gradient(var(--fs-overlay-2), var(--fs-overlay-2)),
-        url('https://www.theland.com.au/images/transform/v1/crop/frm/187038826/c534ed48-33cf-49e6-bc1c-b42ece8c3415.jpg/r1_0_3839_2159_w3840_h2160_fmax.jpg');
+    transition: opacity 0.4s ease;
 }
 
 #bg-arma {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: 0;
-    pointer-events: none;
-    background-blend-mode: darken;
-    background-image:
-    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
-        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
-        linear-gradient(rgba(45, 61, 91, 0.3), rgba(54, 26, 25, 0.45)),
-        url('../res/bg/arma3.png');
+    opacity: 1;
+    background:
+        linear-gradient(rgba(160, 160, 160, 0.08), rgba(160, 160, 160, 0.08)),
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+        url('../res/images/arma3.png');
 }
 
 #bg-grayzone {
@@ -99,7 +87,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
         linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
         linear-gradient(rgba(45, 61, 91, 0.3), rgba(54, 26, 25, 0.3)),
-        url('../res/bg/grayzone.png');
+        url('../res/images/grayzone.png');
 }
 
 #particles-js {
