@@ -32,7 +32,7 @@ body {
     overflow-x: hidden;
 }
 
-.bg-layer {
+.bg, .bg-layer {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -714,7 +714,7 @@ li.folder-open .folder-entry img {
 }
 
 body.modal-open {
-    overflow: hidden;
+    overflow: visible;
     margin: 0;
     padding: 0;
 }

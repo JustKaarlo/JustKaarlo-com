@@ -3,58 +3,58 @@ const twColors = ['#ffaa00', '#ff6a00', '#8a8a8a'];
 const erColors = ['#9ab97d', '#6c8f5a', '#a1ffe1'];
 const fsColors = ['#ffaa00', '#ff6a00', '#8a8a8a'];
 
-// Initialize particles based on current page
-function initializeParticles(colors) {
-    if (window.pJSDom && pJSDom[0]) {
-        pJSDom[0].pJS.particles.color.value = colors;
-        pJSDom[0].pJS.fn.particlesRefresh();
-    } else {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 40, density: { enable: true, value_area: 700 } },
-                color: { value: colors },
-                shape: { type: 'circle' },
-                opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
-                size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
-            retina_detect: true
-        });
-    }
-}
+// // Initialize particles based on current page
+// function initializeParticles(colors) {
+//     if (window.pJSDom && pJSDom[0]) {
+//         pJSDom[0].pJS.particles.color.value = colors;
+//         pJSDom[0].pJS.fn.particlesRefresh();
+//     } else {
+//         particlesJS('particles-js', {
+//             particles: {
+//                 number: { value: 40, density: { enable: true, value_area: 700 } },
+//                 color: { value: colors },
+//                 shape: { type: 'circle' },
+//                 opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.2, sync: false } },
+//                 size: { value: 4, random: true, anim: { enable: true, speed: 4, size_min: 1, sync: false } },
+//                 line_linked: { enable: false },
+//                 move: { enable: true, speed: 0.15, direction: 'top', random: true, straight: false, out_mode: 'out', bounce: false }
+//             },
+//             interactivity: { detect_on: 'canvas', events: { onhover: { enable: false }, onclick: { enable: false }, resize: true } },
+//             retina_detect: true
+//         });
+//     }
+// }
 
-// Initialize particles based on current page
-function initParticlesForCurrentPage() {
-    const path = window.location.pathname;
-    if (path.includes('totalwar')) {
-        initializeParticles(twColors);
-    } else if (path.includes('eldenring')) {
-        initializeParticles(erColors);
-    } else if (path.includes('fs25')) {
-        initializeParticles(fsColors);
-    } else {
-        initializeParticles(twColors); // default
-    }
-}
+// // Initialize particles based on current page
+// function initParticlesForCurrentPage() {
+//     const path = window.location.pathname;
+//     if (path.includes('totalwar')) {
+//         initializeParticles(twColors);
+//     } else if (path.includes('eldenring')) {
+//         initializeParticles(erColors);
+//     } else if (path.includes('fs25')) {
+//         initializeParticles(fsColors);
+//     } else {
+//         initializeParticles(twColors); // default
+//     }
+// }
 
-// Initialize particles when page loads
-initParticlesForCurrentPage();
+// // Initialize particles when page loads
+// initParticlesForCurrentPage();
 
-function pauseParticles() {
-    if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
-        pJSDom[0].pJS.particles.move.enable = false;
-        pJSDom[0].pJS.fn.particlesRefresh();
-    }
-}
+// function pauseParticles() {
+//     if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
+//         pJSDom[0].pJS.particles.move.enable = false;
+//         pJSDom[0].pJS.fn.particlesRefresh();
+//     }
+// }
 
-function resumeParticles() {
-    if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
-        pJSDom[0].pJS.particles.move.enable = true;
-        pJSDom[0].pJS.fn.particlesRefresh();
-    }
-}
+// function resumeParticles() {
+//     if (window.pJSDom && pJSDom[0] && pJSDom[0].pJS) {
+//         pJSDom[0].pJS.particles.move.enable = true;
+//         pJSDom[0].pJS.fn.particlesRefresh();
+//     }
+// }
 
 // Utility functions
 function formatBytes(bytes) {

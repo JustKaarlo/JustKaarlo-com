@@ -27,9 +27,7 @@
         highlightFiles: [
             "Convergence (2.2.3).zip"
         ],
-        colorizeFiles: [
-            "Convergence (2.2.3).zip"
-        ],
+        colorizeFiles: [],
         excludePartsFolders: [],
         folderGradientFallback: {},
         showDownloadButtonForAllFiles: false,
@@ -42,10 +40,23 @@
         tooltipData: {},
         showDownloadButtonAtRoot: true,
         customDisplayNames: {
-            "Convergence (2.2.3).zip": "Convergence (2.2.3)",
+            "Convergence (2.2.3).zip": "Convergence.zip",
         },
-        tagDefinitions: {},
-        tagAssignments: {},
+        tagDefinitions: {
+            "version": {
+                text: "v2.2.3",
+                textColor: "#c1c1c1",
+                textOpacity: 0.8,
+                color: "#60a1c8",
+                opacity: 0.3,
+                priority: 1
+            }
+        },
+        tagAssignments: {
+            "version": [
+                "Convergence (2.2.3).zip"
+            ]
+        },
         hideAllSizeTags: false,
         hideSizeTagFiles: [
             "Convergence Classes Summaries",
