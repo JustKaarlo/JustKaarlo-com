@@ -209,11 +209,14 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     position: relative;
     width: 100%;
     padding: 16px;
+    /* background-image: 
+        linear-gradient(rgba(33, 33, 33, 0.7), rgba(22, 22, 22, 0.7)),
+        url("../res/core/images/steam-profile.png"); */
     background-image: 
         linear-gradient(rgba(33, 33, 33, 0.7), rgba(22, 22, 22, 0.7)),
-        url("../res/core/images/steam-profile.png");
-    background-size: 110%;
-    background-position: 50% 15%;
+        url("../res/core/assets/steam/steam-background.gif");
+    background-size: 105%;
+    background-position: 50% 25%;
     background-repeat: no-repeat;
     border: 1px solid rgba(255,255,255,0.06);
     box-shadow: 0 8px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
