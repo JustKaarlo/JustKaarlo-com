@@ -342,24 +342,24 @@ const gzwGuides = [
                     <span data-toc="Main Tasks" data-toc-level="h3"></span>
                     <b><span class="text-gzw-1">Main Tasks</span></b><br>
                       Primary means of advancing the plot and uncovering the secrets surrounding Lamang.
-                    <br><br>
+                    <br>
                     <span data-toc="Side Tasks" data-toc-level="h3"></span>
                     <b><span class="text-gzw-1">Side Tasks</span></b><br>
                       Side tasks serve to develop relationships with vendor and provide additional information that is not crucial to advancing the plot.<br>
                       Some side tasks are hidden. To trigger these tasks, the player must find them in the world.
-                    <br><br>
+                    <br>
                     <span data-toc="Contracts" data-toc-level="h3"></span>
                     <b><span class="text-gzw-1">Contracts</span></b><br>
                       Contracts are short tasks vendors assign when they need something done quickly.
-                    <br><br>
+                    <br>
                     <span data-toc="Long-Term Contracts" data-toc-level="h3"></span>
                     <b><span class="text-gzw-1">Long-Term Contracts</span></b><br>
                       extensive assignments that may require the player to search for specific items, investigate remote locations, or<br>
                       eliminate targets across regions.
-                    <br><br>
+                    <br><span class="spacer t10"></span>
                       Unlike other task types, long-term contracts are not displayed directly on the tactical map; instead,<br>
                       they appear in a separate panel on its edge.
-                    <br><br>
+                    <br><span class="spacer t10"></span>
                       New long-term contracts are made available as the player unlocks new regions of the world.
                 </div>
             </div>
