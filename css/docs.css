@@ -1941,7 +1941,7 @@ pre.sqf-code {
     text-overflow: ellipsis;
 }
 
-.guide-description .card div {
+/* .guide-description .card div {
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -1960,7 +1960,27 @@ pre.sqf-code {
     transform: translateY(-2px);
     cursor: help;
     user-select: text;
-    /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); */
+} */
+.guide-description .card div {
+    display: block;
+    white-space: wrap;
+    overflow: visible;
+    text-overflow: ellipsis;
+    transition: all 0.5s ease;
+}
+.guide-description .card div:hover {
+    /* text-overflow: inherit;
+    overflow: visible; */
+    transform: translateY(-1px);
+}
+.guide-description .card div.card-body {
+    cursor: crosshair;
+    user-select: text;
+}
+.guide-description .card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
 }
 
 .guide-description a.card-link {

@@ -267,8 +267,8 @@ const gzwGuides = [
         subtitle: `━━━━━━━`
     },
     {
-        title: 'Ballistics',
-        subtitle: 'Information',
+        title: 'Top Ammunitions',
+        subtitle: 'Ranking',
         icon: 'https://www.justkaarlo.com/res/core/icons/bullet.png',
         contentType: 'description',
         showTOC: true,
@@ -277,187 +277,47 @@ const gzwGuides = [
             <span data-toc="Top" data-toc-level="h1"></span>
             <a href="https://www.grayzonewarfare.net/ballistics" class="btn-action-gzw">Ballistics</a> <a href="https://gzwloadout.com/" class="btn-action-gzw">Weapon Builder</a>
             <div class="box">
-                <b>...</b>
+                <b>List the top ammunition to use for each caliber.</b>
             </div>
             <hr>
-            <h3>Ammunition Ranking</h3>
-            <span data-toc="5.56x45mm" data-toc-level="h4"></span>
-            <div class="dropdown">
-                <div class="dropdown-header">
-                    <span class="dropdown-header-title">5.56x45mm</span>
-                    <div class="dropdown-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7 10l5 5 5-5z"/>
-                        </svg>
+            <div class="cards cards-2">
+                <div class="card">
+                    <div class="card-title"><h4 style="margin-top: -2px; margin-bottom: -14px;">5.56x45mm</h4></div>
+                    <div class="card-body">
+                        <div class="box">
+                            <span class="font-size-14 text-gzw-2 text-gzw-weight-500 text-gzw-font-1 frame-gzw-1"><img class="image-28x28" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m855a1.png">AP M855A1</span>
+                            <span class="spacer t10"></span>
+                            <span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span>
+                            <br><span class="spacer t20"></span><hr>
+                            <span class="font-size-14 text-gzw-2 text-gzw-weight-500 text-gzw-font-1 frame-gzw-1"><img class="image-28x28" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m995.png">AP M995</span>
+                            <span class="spacer t10"></span>
+                            <span class="badge">Gunny</span> <span class="badge badge-gzw">LV4</span>
+                        </div>
                     </div>
                 </div>
-                <div class="dropdown-content">
-                    <table>
-                        <tr>
-                            <th>Tier</th>
-                            <th></th>
-                            <th>Caliber</th>
-                            <th>Vendor</th>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m855a1.png" alt="M855A1"></td>
-                            <td>AP M855A1</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m995.png" alt="M995"></td>
-                            <td>AP M995</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV4</span></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m855.png" alt="M855"></td>
-                            <td>AP M855</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m193.png" alt="M193"></td>
-                            <td>FMJ M193</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m856a1.png" alt="M856A1"></td>
-                            <td>Tracer M856A1</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV3</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-m856.png" alt="M856"></td>
-                            <td>Tracer M856</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-c">C</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-fmj.png" alt="FMJ"></td>
-                            <td>FMJ</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-hpbt.png" alt="HPBT"></td>
-                            <td>HPBT</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/556x45-sp.png" alt="SP"></td>
-                            <td>SP</td>
-                            <td><span class="badge">Gunny</span> <span class="badge badge-gzw">LV1</span></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <span data-toc="5.45x39mm" data-toc-level="h4"></span>
-            <div class="dropdown">
-                <div class="dropdown-header">
-                    <span class="dropdown-header-title">5.45x39mm</span>
-                    <div class="dropdown-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7 10l5 5 5-5z"/>
-                        </svg>
+                <div class="card">
+                    <div class="card-title"><h4 style="margin-top: -2px; margin-bottom: -14px;">5.45x39mm</h4></div>
+                    <div class="card-body">
+                        <div class="box">
+                            <span class="font-size-14 text-gzw-2 text-gzw-weight-500 text-gzw-font-1 frame-gzw-1"><img class="image-28x28" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bs7n24.png">BS 7N24</span>
+                            <span class="spacer t10"></span>
+                            <span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span>
+                            <br><span class="spacer t20"></span><hr>
+                            <span class="font-size-14 text-gzw-2 text-gzw-weight-500 text-gzw-font-1 frame-gzw-1"><img class="image-28x28" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bp7n22.png">BP 7N22</span>
+                            <span class="spacer t10"></span>
+                            <span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span>
+                        </div>
                     </div>
                 </div>
-                <div class="dropdown-content">
-                    <table>
-                        <tr>
-                            <th>Tier</th>
-                            <th></th>
-                            <th>Caliber</th>
-                            <th>Vendor</th>
-                        </tr>
-
-                        <tr>
-                            <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bs7n24.png" alt="Bullet"></td>
-                            <td>BS 7N24</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bp7n22.png" alt="Bullet"></td>
-                            <td>BP 7N22</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV4</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-a">A</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-pp7n10.png" alt="Bullet"></td>
-                            <td>PP 7N10</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-bt7bt4.png" alt="Bullet"></td>
-                            <td>BT 7BT4</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV3</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-b">B</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-ps7n6.png" alt="Bullet"></td>
-                            <td>PS 7N6</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-c">C</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-fmj.png" alt="Bullet"></td>
-                            <td>FMJ</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-hp.png" alt="Bullet"></td>
-                            <td>HP</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV2</span></td>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-f">F</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/545x39-us.png" alt="Bullet"></td>
-                            <td>US</td>
-                            <td><span class="badge">Turncoat</span> <span class="badge badge-gzw">LV1</span></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <span data-toc="7.62x25mm" data-toc-level="h4"></span>
-            <div class="dropdown">
-                <div class="dropdown-header">
-                    <span class="dropdown-header-title">7.62x25mm</span>
-                    <div class="dropdown-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7 10l5 5 5-5z"/>
-                        </svg>
+                <div class="card">
+                    <div class="card-title"><h4 style="margin-top: -2px; margin-bottom: -14px;">7.62x25mm</h4></div>
+                    <div class="card-body">
+                        <div class="box">
+                            <span class="font-size-14 text-gzw-2 text-gzw-weight-500 text-gzw-font-1 frame-gzw-1"><img class="image-28x28" src="url">None</span>
+                            <span class="spacer t10"></span>
+                            <span class="badge">N/A</span> <span class="badge badge-gzw">N/A</span>
+                        </div>
                     </div>
-                </div>
-                <div class="dropdown-content">
-                    <table>
-                        <tr>
-                            <th>Tier</th>
-                            <th></th>
-                            <th>Caliber</th>
-                            <th>Vendor</th>
-                        </tr>
-                        <tr>
-                            <td><span class="badge badge-s">S</span></td>
-                            <td><img class="ammo" src="https://www.justkaarlo.com/res/assets/ammo/" alt="Bullet"></td>
-                            <td></td>
-                            <td><span class="badge"></span> <span class="badge badge-gzw">LV</span></td>
-                        </tr>
-                    </table>
                 </div>
             </div>
         `,
@@ -730,60 +590,6 @@ const gzwGuides = [
             position: 'right'
         }
     },
-    /*{
-        title: 'Handshake',
-        subtitle: 'Lewis Pell',
-        icon: '../res/guides/ui/medium/vendors/handshake.png',
-        link: 'https://gray-zone-warfare.fandom.com/wiki/Handshake',
-        contentType: 'description',
-        showTOC: true,
-        description: `
-            <div class="modal-width-container-max"></div>
-            <div class="tabs" data-tabs>
-                <div class="tab-list task-types">
-                    <button class="tab-btn active" data-tab="tab-main"><span class="text-medium-header main">Main</span></button>
-                    <button class="tab-btn" data-tab="tab-side"><span class="text-medium-header side">Side</span></button>
-                    <button class="tab-btn" data-tab="tab-contracts"><span class="text-medium-header contract">Contracts</span></button>
-                </div>
-                <div class="tab-pane active" id="tab-main">
-                    <table>
-                        <tr>
-                            <th>Name</th>
-                            <th>Objectives</th>
-                            <th>Rewards</th>
-                            <th>Area</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="https://gray-zone-warfare.fandom.com/wiki/First_Recon" class="btn-action btn-small" id="gzw-btn-1">First Recon</a>
-                            </td>
-                            <td>
-                                <span class="text-small">• Check the landing zone</span><br>
-                                <span class="text-small">• Check the shack on the outskirts</span><br>
-                                <span class="text-small">• Check the roadblock on the bridge</span><br>
-                                <span class="text-small">• Check the area around the gas station</span><br>
-                            </td>
-                            <td>
-                                <span class="text-small">• 225</span> <span class="text-small gzw-exp">Exp</span><br>
-                                <span class="text-small">• </span> <span class="text-small gzw-rep">+250</span> <span class="text-small">Reputation</span><br>
-                                <span class="text-small">• $400</span> <span class="text-small gzw-exp">USD</span><br>
-                            </td>
-                            <td>
-                                <img class="image-small" src="../res/guides/img/task-locations/first-recon.png" alt="First Recon Map">
-                                <a href="https://gzwtacmap.com/maps/lamang/tasks/first-recon"><span class="text-small gzw-exp">Kiu Vongsa</span></a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="tab-pane" id="tab-side">
-                    <p></p>
-                </div>
-                <div class="tab-pane" id="tab-contracts">
-                    <p></p>
-                </div>
-            </div>
-        `,
-    },*/
 ]
 
 const GuideConfigs = {
